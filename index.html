@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>San Mateo Local | The San Mateo Only Locals Know</title>
   <meta name="description" content="The San Mateo only locals know. Born and raised here: the restaurants, neighborhoods, hidden gems, and longtime favorites that make San Mateo feel like home, not just another place on the map." />
+  <link rel="canonical" href="https://sanmateolocal.com/" />
+  <meta name="theme-color" content="#221D16" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="San Mateo Local" />
+  <meta property="og:title" content="San Mateo Local | The San Mateo Only Locals Know" />
+  <meta property="og:description" content="The restaurants, neighborhoods, hidden gems, and longtime favorites that make San Mateo feel like home. An honest local guide, from someone born and raised here." />
+  <meta property="og:url" content="https://sanmateolocal.com/" />
+  <meta property="og:image" content="https://sanmateolocal.com/images/central-park-japanese-garden.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="San Mateo Local | The San Mateo Only Locals Know" />
+  <meta name="twitter:description" content="An honest, local guide to the best of San Mateo, California." />
+  <meta name="twitter:image" content="https://sanmateolocal.com/images/central-park-japanese-garden.jpg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"San Mateo Local","url":"https://sanmateolocal.com/","description":"An honest, local guide to the best of San Mateo, California, from someone born and raised here."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"San Mateo Local","url":"https://sanmateolocal.com/","logo":"https://sanmateolocal.com/images/central-park-japanese-garden.jpg","description":"A local guide to San Mateo, California, and websites for local businesses.","areaServed":"San Mateo, California"}</script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='14' r='6' fill='%23C25B3A'/><path d='M1 27 Q9 19 16 23 T31 25 V32 H1 Z' fill='%2341614B'/></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -183,10 +197,26 @@
     .f-nav a { font-size: 0.92rem; color: var(--ink-soft); }
     .f-nav a:hover { color: var(--clay-deep); }
     .f-copy { width: 100%; border-top: 1px solid var(--line); margin-top: 1.5rem; padding-top: 1.5rem; font-size: 0.8rem; color: var(--ink-soft); }
+
+    /* ===== Scroll reveal ===== */
+    .reveal { transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+    .js .reveal { opacity: 0; transform: translateY(24px); }
+    .reveal.in { opacity: 1 !important; transform: none !important; }
+    .fav-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+    .fav-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+    .guide-grid .reveal:nth-child(2) { transition-delay: 0.06s; }
+    .guide-grid .reveal:nth-child(3) { transition-delay: 0.12s; }
+    .guide-grid .reveal:nth-child(4) { transition-delay: 0.18s; }
+    .guide-grid .reveal:nth-child(5) { transition-delay: 0.24s; }
+    .guide-grid .reveal:nth-child(6) { transition-delay: 0.30s; }
+    .involve .reveal:nth-child(2) { transition-delay: 0.08s; }
+    /* sharper, modern keyboard focus */
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; border-radius: 2px; }
+    @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } html { scroll-behavior: auto; } }
   </style>
   <script>
     /* Set day/night before paint: saved choice first, otherwise match the phone's setting. */
-    (function(){ try { var s = localStorage.getItem('sml-theme'); var t = s || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+    (function(){ try { document.documentElement.classList.add('js'); var s = localStorage.getItem('sml-theme'); var t = s || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
   </script>
 </head>
 <body id="top">
@@ -264,7 +294,7 @@
       </div>
       <div class="fav-grid">
 
-        <article class="fav">
+        <article class="fav reveal">
           <a href="https://joe.coffee/locations/ca/san-mateo/3-bees-coffee-san-mateo-1e154c5d-9dc4-4a6e-b587-6e899e9d2618/" target="_blank" rel="noopener">
             <span class="fav-kicker">Coffee</span>
             <h3>3 Bees Coffee</h3>
@@ -274,7 +304,7 @@
           </a>
         </article>
 
-        <article class="fav">
+        <article class="fav reveal">
           <a href="#">
             <span class="fav-kicker">Italian</span>
             <h3>Pausa</h3>
@@ -284,7 +314,7 @@
           </a>
         </article>
 
-        <article class="fav">
+        <article class="fav reveal">
           <a href="#">
             <span class="fav-kicker">Cocktails</span>
             <h3>Fogbird</h3>
@@ -306,12 +336,12 @@
         <span class="link">Updated all the time</span>
       </div>
       <div class="guide-grid">
-        <a class="guide-cell" href="eat-drink.html"><div class="num">01</div><h3>Eat &amp; Drink</h3><p>Restaurants, coffee, happy hours, brunch, and the bakeries worth the line.</p></a>
-        <a class="guide-cell" href="things-to-do.html"><div class="num">02</div><h3>Things To Do</h3><p>Coyote Point, Central Park's Japanese Garden, the Bay Trail, and where to take the dog.</p></a>
-        <a class="guide-cell" href="#"><div class="num">03</div><h3>Weekend Guides</h3><p>A perfect Saturday, date nights, rainy days, and what to do with the kids.</p></a>
-        <a class="guide-cell" href="#"><div class="num">04</div><h3>Hidden Gems</h3><p>The corners only locals know. No tourist traps, no filler.</p></a>
-        <a class="guide-cell feature" href="#legacies"><div class="num">05</div><h3>San Mateo Legacies ✦</h3><p>The spots that have been here since the '80s and before. Nobody else is telling these stories.</p></a>
-        <a class="guide-cell" href="local-services.html"><div class="num">06</div><h3>Local Services</h3><p>Vetted local roofers, plumbers, dentists, and realtors. Real recommendations, not random.</p></a>
+        <a class="guide-cell reveal" href="eat-drink.html"><div class="num">01</div><h3>Eat &amp; Drink</h3><p>Restaurants, coffee, happy hours, brunch, and the bakeries worth the line.</p></a>
+        <a class="guide-cell reveal" href="things-to-do.html"><div class="num">02</div><h3>Things To Do</h3><p>Coyote Point, Central Park's Japanese Garden, the Bay Trail, and where to take the dog.</p></a>
+        <a class="guide-cell reveal" href="#"><div class="num">03</div><h3>Weekend Guides</h3><p>A perfect Saturday, date nights, rainy days, and what to do with the kids.</p></a>
+        <a class="guide-cell reveal" href="#"><div class="num">04</div><h3>Hidden Gems</h3><p>The corners only locals know. No tourist traps, no filler.</p></a>
+        <a class="guide-cell feature reveal" href="#legacies"><div class="num">05</div><h3>San Mateo Legacies ✦</h3><p>The spots that have been here since the '80s and before. Nobody else is telling these stories.</p></a>
+        <a class="guide-cell reveal" href="local-services.html"><div class="num">06</div><h3>Local Services</h3><p>Vetted local roofers, plumbers, dentists, and realtors. Real recommendations, not random.</p></a>
       </div>
     </div>
   </section>
@@ -319,14 +349,14 @@
   <!-- ===== Legacies ===== -->
   <section class="legacies sec" id="legacies">
     <div class="wrap">
-      <div>
+      <div class="reveal">
         <span class="lg-mark">✦ The series</span>
         <h2>San Mateo Legacies</h2>
         <p>A tribute to the diners, the shops, and the family-run spots that have been part of San Mateo since the 1980s and before. The ones that outlasted every trend. No other guide is doing this.</p>
         <a class="btn btn-clay" href="mailto:hello@sanmateolocal.com?subject=Legacy%20nomination">Nominate a legacy spot</a>
         <p style="margin-top:1.3rem;"><a href="gone-but-not-forgotten.html" style="color:var(--clay-deep); font-weight:600;">And remember the ones we lost &rarr; Gone But Not Forgotten</a></p>
       </div>
-      <div>
+      <div class="reveal">
         <p class="pull">"Some of these places don't even have a website. Find them the old-fashioned way. Just walk in."</p>
       </div>
     </div>
@@ -335,7 +365,7 @@
   <!-- ===== Local note (founder voice) ===== -->
   <section class="note">
     <div class="wrap">
-      <div class="inner">
+      <div class="inner reveal">
         <span class="label">Why trust a local</span>
         <h2>I grew up here. I'm not an algorithm.</h2>
         <p>I was born and raised in San Mateo. I know which taco counter is worth the wait, which park has the light at the end of the day, and which "hidden gems" on the review sites are just tourist traps with good SEO.</p>
@@ -365,13 +395,13 @@
   <!-- ===== Get involved ===== -->
   <section class="involve">
     <div class="wrap">
-      <div class="involve-card">
+      <div class="involve-card reveal">
         <p class="label">For business owners</p>
         <h3>Own a San Mateo business?</h3>
         <p>Get featured on the guide, ask about a featured spot, or get a website that actually works. We're local, and we'd love to have you.</p>
         <a class="btn btn-clay" href="mailto:hello@sanmateolocal.com?subject=Featured%20listing%20inquiry">Get featured</a>
       </div>
-      <div class="involve-card">
+      <div class="involve-card reveal">
         <p class="label">For locals</p>
         <h3>Know a spot we're missing?</h3>
         <p>Locals run this guide. Send us your favorite, the hidden gem, or a place that should be on here.</p>
@@ -399,6 +429,18 @@
       <p class="f-copy">© 2026 San Mateo Local. Made by a local, for locals. SanMateoLocal.com &nbsp;·&nbsp; Central Park photo via Wikimedia Commons (public domain).</p>
     </div>
   </footer>
+
+  <script>
+    /* Scroll reveal: fade + rise elements as they enter the viewport */
+    (function () {
+      var els = [].slice.call(document.querySelectorAll('.reveal'));
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 
 </body>
 </html>
