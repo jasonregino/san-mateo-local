@@ -22,6 +22,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='14' r='6' fill='%23C25B3A'/><path d='M1 27 Q9 19 16 23 T31 25 V32 H1 Z' fill='%2341614B'/></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="images/central-park-japanese-garden.jpg" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -258,7 +259,7 @@
         </div>
       </div>
       <figure class="hero-photo">
-        <img src="images/central-park-japanese-garden.jpg" alt="The Japanese Tea Garden in Central Park, San Mateo" loading="eager" />
+        <img src="images/central-park-japanese-garden.jpg" alt="The Japanese Tea Garden in Central Park, San Mateo" loading="eager" fetchpriority="high" decoding="async" />
         <figcaption>Central Park's Japanese Tea Garden, right here in San Mateo</figcaption>
       </figure>
     </div>
@@ -305,7 +306,7 @@
         </article>
 
         <article class="fav reveal">
-          <a href="#">
+          <a href="eat-drink.html">
             <span class="fav-kicker">Italian</span>
             <h3>Pausa</h3>
             <p class="meta">Downtown · 4th Avenue</p>
@@ -315,7 +316,7 @@
         </article>
 
         <article class="fav reveal">
-          <a href="#">
+          <a href="eat-drink.html">
             <span class="fav-kicker">Cocktails</span>
             <h3>Fogbird</h3>
             <p class="meta">Downtown · B Street</p>
@@ -338,8 +339,8 @@
       <div class="guide-grid">
         <a class="guide-cell reveal" href="eat-drink.html"><div class="num">01</div><h3>Eat &amp; Drink</h3><p>Restaurants, coffee, happy hours, brunch, and the bakeries worth the line.</p></a>
         <a class="guide-cell reveal" href="things-to-do.html"><div class="num">02</div><h3>Things To Do</h3><p>Coyote Point, Central Park's Japanese Garden, the Bay Trail, and where to take the dog.</p></a>
-        <a class="guide-cell reveal" href="#"><div class="num">03</div><h3>Weekend Guides</h3><p>A perfect Saturday, date nights, rainy days, and what to do with the kids.</p></a>
-        <a class="guide-cell reveal" href="#"><div class="num">04</div><h3>Hidden Gems</h3><p>The corners only locals know. No tourist traps, no filler.</p></a>
+        <a class="guide-cell reveal" href="things-to-do.html"><div class="num">03</div><h3>Weekend Guides</h3><p>A perfect Saturday, date nights, rainy days, and what to do with the kids.</p></a>
+        <a class="guide-cell reveal" href="eat-drink.html"><div class="num">04</div><h3>Hidden Gems</h3><p>The corners only locals know. No tourist traps, no filler.</p></a>
         <a class="guide-cell feature reveal" href="#legacies"><div class="num">05</div><h3>San Mateo Legacies ✦</h3><p>The spots that have been here since the '80s and before. Nobody else is telling these stories.</p></a>
         <a class="guide-cell reveal" href="local-services.html"><div class="num">06</div><h3>Local Services</h3><p>Vetted local roofers, plumbers, dentists, and realtors. Real recommendations, not random.</p></a>
       </div>

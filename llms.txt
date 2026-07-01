@@ -1,0 +1,13 @@
+# San Mateo Local
+
+> An honest, locally-run guide to San Mateo, California. The restaurants, shops, services, and things to do, all hand-picked by a born-and-raised local, not paid placement. San Mateo Local also builds and hosts affordable websites for local businesses.
+
+## Guide sections
+- [Eat & Drink](https://sanmateolocal.com/eat-drink.html): restaurants, coffee, bars, brunch, and bakeries
+- [Things To Do](https://sanmateolocal.com/things-to-do.html): parks, trails, the bayfront, family, and entertainment
+- [Shopping](https://sanmateolocal.com/shopping.html): independent shops, boutiques, jewelers, and specialty markets
+- [Local Services](https://sanmateolocal.com/local-services.html): barbers, salons, dentists, mechanics, plumbers, electricians, and other trades
+- [Gone But Not Forgotten](https://sanmateolocal.com/gone-but-not-forgotten.html): a tribute to beloved San Mateo businesses that have closed
+
+## About
+San Mateo Local is written and maintained by a born-and-raised San Mateo local. Every listing is a genuine recommendation. The guide covers the city of San Mateo, California (zip codes 94401 through 94403) on the San Francisco Peninsula.
