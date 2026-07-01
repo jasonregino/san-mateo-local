@@ -161,6 +161,27 @@
     .legacies .pull { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.5rem; line-height: 1.4; color: var(--ink); border-left: 3px solid var(--clay); padding-left: 1.5rem; }
     @media (max-width: 880px) { .legacies .wrap { grid-template-columns: 1fr; gap: 1.5rem; } }
 
+    /* ===== San Mateo tech heritage ===== */
+    .techstory { background: var(--ink); color: var(--paper); border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
+    [data-theme="dark"] .techstory { background: var(--paper-2); color: var(--ink); }
+    .techstory .label { color: var(--clay); }
+    .techstory h2 { font-size: clamp(1.8rem, 4.5vw, 2.7rem); color: var(--paper); margin: 0.8rem 0 1rem; }
+    [data-theme="dark"] .techstory h2 { color: var(--ink); }
+    .techstory .lede { font-size: 1.1rem; color: rgba(250,246,236,0.72); max-width: 40rem; margin-bottom: 2.5rem; }
+    [data-theme="dark"] .techstory .lede { color: var(--ink-soft); }
+    .tech-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 3rem; }
+    .tech-col h3 { font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: var(--clay); margin-bottom: 0.8rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(250,246,236,0.18); }
+    [data-theme="dark"] .tech-col h3 { border-bottom-color: var(--line); }
+    .tech-item { padding: 0.7rem 0; border-bottom: 1px solid rgba(250,246,236,0.1); }
+    [data-theme="dark"] .tech-item { border-bottom-color: var(--line); }
+    .tech-item:last-child { border-bottom: none; }
+    .tech-item .co { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600; }
+    .tech-item .co-desc { font-size: 0.92rem; color: rgba(250,246,236,0.68); margin-top: 0.15rem; }
+    [data-theme="dark"] .tech-item .co-desc { color: var(--ink-soft); }
+    .techstory .kicker { margin-top: 2.5rem; font-family: 'Fraunces', serif; font-style: italic; font-size: 1.15rem; color: rgba(250,246,236,0.85); }
+    [data-theme="dark"] .techstory .kicker { color: var(--ink); }
+    @media (max-width: 760px) { .tech-cols { grid-template-columns: 1fr; gap: 2rem; } }
+
     /* ===== Local note (founder) ===== */
     .note { padding: 5rem 0; }
     .note .inner { max-width: 40rem; }
@@ -360,6 +381,34 @@
       <div class="reveal">
         <p class="pull">"Some of these places don't even have a website. Find them the old-fashioned way. Just walk in."</p>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== San Mateo tech heritage ===== -->
+  <section class="techstory sec">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="label">A quiet tech hometown</span>
+        <h2>You've used more San Mateo than you think.</h2>
+        <p class="lede">This town looks like parks, taquerias, and Little League games, and it is. It's also where a surprising slice of the internet got its start, and where a lot of it still runs from today.</p>
+      </div>
+      <div class="tech-cols">
+        <div class="tech-col reveal">
+          <h3>Started here</h3>
+          <div class="tech-item"><div class="co">YouTube</div><div class="co-desc">The whole thing began in 2005, in an office above Amici's pizzeria on East 3rd Avenue.</div></div>
+          <div class="tech-item"><div class="co">Electronic Arts</div><div class="co-desc">Trip Hawkins founded EA right here in San Mateo in 1982.</div></div>
+          <div class="tech-item"><div class="co">Snowflake</div><div class="co-desc">The data company was founded in San Mateo in 2012.</div></div>
+          <div class="tech-item"><div class="co">Napster</div><div class="co-desc">The file-sharing pioneer set up shop near 4th Avenue back in 1999.</div></div>
+        </div>
+        <div class="tech-col reveal">
+          <h3>Headquartered here today</h3>
+          <div class="tech-item"><div class="co">PlayStation</div><div class="co-desc">Sony Interactive Entertainment runs the global PlayStation business from Bridgepointe.</div></div>
+          <div class="tech-item"><div class="co">Roblox</div><div class="co-desc">Headquartered right over in Bay Meadows.</div></div>
+          <div class="tech-item"><div class="co">GoPro</div><div class="co-desc">Moved its headquarters to San Mateo in 2012.</div></div>
+          <div class="tech-item"><div class="co">Verkada, Coupa &amp; Guidewire</div><div class="co-desc">All three call San Mateo home right now.</div></div>
+        </div>
+      </div>
+      <p class="kicker reveal">Not bad for a town most people just drive through on the way to somewhere else.</p>
     </div>
   </section>
 
