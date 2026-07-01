@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gone But Not Forgotten | San Mateo Local</title>
+  <meta name="description" content="A tribute to the beloved San Mateo businesses that have closed. The diners, shops, and spots we lost but never forgot." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='14' r='6' fill='%23C25B3A'/><path d='M1 27 Q9 19 16 23 T31 25 V32 H1 Z' fill='%2341614B'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --paper:#FAF6EC; --paper-2:#F2E9D4; --ink:#221D16; --ink-soft:#5E5446; --clay:#C25B3A; --clay-deep:#A5492B; --sage:#41614B; --sage-deep:#324C3A; --line:#E3D6BC; }
+    [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage:#88AC8F; --sage-deep:#6E9077; --line:#3A2E24; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased; }
+    h1,h2,h3 { font-family:'Fraunces',Georgia,serif; line-height:1.12; letter-spacing:-0.01em; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
+    .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:50; }
+    .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1.5rem; max-width:1140px; margin:0 auto; }
+    .brand { display:flex; align-items:center; gap:0.6rem; }
+    .brand svg { width:30px; height:30px; flex:none; }
+    .brand-name { font-family:'Fraunces',serif; font-weight:700; font-size:1.45rem; letter-spacing:-0.02em; }
+    .masthead-right { display:flex; align-items:center; gap:1.25rem; }
+    .masthead-nav { display:flex; gap:1.5rem; align-items:center; }
+    .masthead-nav a { font-size:0.9rem; font-weight:500; color:var(--ink-soft); }
+    .masthead-nav a:hover { color:var(--clay-deep); }
+    .masthead-nav .sub { color:var(--clay-deep); font-weight:600; }
+    .theme-toggle { background:none; border:1.5px solid var(--line); border-radius:999px; width:36px; height:36px; cursor:pointer; color:var(--ink); font-size:1rem; display:inline-flex; align-items:center; justify-content:center; flex:none; }
+    .theme-toggle .sun { display:none; } [data-theme="dark"] .theme-toggle .moon { display:none; } [data-theme="dark"] .theme-toggle .sun { display:inline; }
+    .dateline { border-top:1px solid var(--line); text-align:center; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft); padding:0.4rem 1rem; }
+    @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } }
+    .page-head { padding:3rem 0 2rem; border-bottom:1.5px solid var(--ink); }
+    .back { font-size:0.85rem; font-weight:600; color:var(--clay-deep); }
+    .page-head h1 { font-size:clamp(2.2rem,6vw,3.6rem); font-weight:600; margin:0.8rem 0 0.8rem; }
+    .page-head p { color:var(--ink-soft); font-size:1.1rem; max-width:42rem; }
+    .chips { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.5rem; }
+    .chip { font-family:inherit; font-size:0.85rem; font-weight:600; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all 0.15s; }
+    .chip:hover { border-color:var(--clay); color:var(--clay-deep); }
+    .chip.is-on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+    .listing-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.3rem; padding:2.5rem 0 1rem; }
+    .listing { border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); padding:1.4rem 1.4rem 1.5rem; display:flex; flex-direction:column; }
+    .l-pick { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#2A1E0E; background:#E6A828; border:1px solid #E6A828; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; }
+    .l-chain { display:inline-block; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:var(--ink-soft); border:1px solid var(--line); border-radius:999px; padding:0.15rem 0.55rem; margin-bottom:0.55rem; }
+    .l-closing { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#fff; background:#B0402F; border:1px solid #B0402F; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; margin-right:0.4rem; }
+    .listing .l-type { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+    .listing h3 { font-size:1.4rem; margin:0.45rem 0 0.35rem; }
+    .listing .l-meta { font-size:0.74rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--sage-deep); font-weight:600; margin-bottom:0.7rem; }
+    .listing .l-desc { color:var(--ink-soft); font-size:0.96rem; flex:1; }
+    .l-acts { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.1rem; }
+    .act { font-size:0.82rem; font-weight:600; padding:0.45rem 0.9rem; border-radius:999px; border:1.5px solid var(--line); color:var(--ink); }
+    .act:hover { border-color:var(--clay); color:var(--clay-deep); }
+    .more-note { text-align:center; color:var(--ink-soft); font-size:0.95rem; padding:2rem 0 1rem; }
+    .more-note a { color:var(--clay-deep); font-weight:600; }
+    .mem-list { max-width:760px; margin:0 auto; padding:1rem 0; }
+    .mem { padding:2.2rem 0; border-bottom:1px solid var(--line); }
+    .mem:last-child { border-bottom:none; }
+    .mem .mem-era { font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+    .mem h3 { font-size:1.9rem; margin:0.45rem 0 0.3rem; }
+    .mem .mem-where { font-size:0.8rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--sage-deep); font-weight:600; margin-bottom:0.9rem; }
+    .mem p.mem-body { color:var(--ink-soft); font-size:1.06rem; }
+    .mem .mem-note { font-family:'Fraunces',serif; font-style:italic; color:var(--ink); font-size:1rem; margin-top:0.8rem; border-left:2px solid var(--sage); padding-left:1rem; }
+    footer.site { padding:3rem 0 2.5rem; border-top:1.5px solid var(--ink); margin-top:2rem; }
+    footer.site .wrap { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    footer .brand { display:flex; align-items:center; gap:0.5rem; }
+    footer .brand-name { font-size:1.3rem; }
+    .f-tag { color:var(--ink-soft); font-size:0.9rem; margin-top:0.4rem; max-width:18rem; }
+    .f-nav { display:flex; flex-direction:column; gap:0.4rem; }
+    .f-nav a { font-size:0.92rem; color:var(--ink-soft); }
+    .f-nav a:hover { color:var(--clay-deep); }
+    .f-copy { width:100%; border-top:1px solid var(--line); margin-top:1.5rem; padding-top:1.5rem; font-size:0.8rem; color:var(--ink-soft); }
+  </style>
+  <script>(function(){try{var s=localStorage.getItem('sml-theme');var t=s||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-top">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
+        <span class="brand-name">San Mateo Local</span>
+      </a>
+      <div class="masthead-right">
+        <nav class="masthead-nav">
+          <a href="eat-drink.html">Eat &amp; Drink</a>
+          <a href="things-to-do.html">Things To Do</a>
+          <a href="shopping.html">Shopping</a>
+          <a href="local-services.html">Services</a>
+          <a href="index.html#legacies">Legacies</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch between day and night mode" onclick="(function(d){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('sml-theme',t)}catch(e){}})(document.documentElement)"><span class="moon" aria-hidden="true">&#9790;</span><span class="sun" aria-hidden="true">&#9728;</span></button>
+      </div>
+    </div>
+    <div class="dateline">A tribute to the San Mateo we lost</div>
+  </header>
+
+  <section class="page-head">
+    <div class="wrap" style="max-width:760px;">
+      <a class="back" href="index.html">&larr; San Mateo Local</a>
+      <h1>Gone But Not Forgotten</h1>
+      <p>San Mateo isn't only what's here now. It's also what we lost. A small tribute to the places that closed their doors but never quite left. Remember one we're missing? <a href="mailto:hello@sanmateolocal.com?subject=Gone%20but%20not%20forgotten" style="color:var(--clay-deep);font-weight:600;">Tell us, and we'll add it.</a></p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div class="mem-list">
+      <article class="mem">
+        <p class="mem-era">1988 – 2024</p>
+        <h3>Sushi Sam's Edomata</h3>
+        <p class="mem-where">218 E 3rd Ave, Downtown</p>
+        <p class="mem-body">For thirty-six years this was the Peninsula's sushi landmark, the counter people drove across the Bay for. It was famously one of Mark Zuckerberg's favorites; he donated a hundred thousand dollars to help it through the pandemic. Chef-owner Sam Sugiyama served his last plate in December 2024 and retired.</p>
+        <p class="mem-note">The legacy lives on: Sam's family reopened as Sushi Edomata on 25th Avenue, with his nephew behind the counter.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">2018 – 2025</p>
+        <h3>Wursthall</h3>
+        <p class="mem-where">310 Baldwin Ave, Downtown</p>
+        <p class="mem-body">The German beer hall from food writer Kenji López-Alt, with house-made sausages and more than twenty-five beers on tap. It put downtown San Mateo on a lot of food-world maps before quietly closing in September 2025.</p>
+        <p class="mem-note">Its downstairs cocktail bar, Wunderbar, is still pouring.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">1990 – 2014</p>
+        <h3>Ristorante Capellini</h3>
+        <p class="mem-where">310 Baldwin Ave, Downtown</p>
+        <p class="mem-body">The upscale Italian spot on B and Baldwin that a lot of people credit with kick-starting downtown San Mateo's whole restaurant scene. Aaron Ferer opened it in 1990 because he was tired of everyone driving up to the city for a nice dinner. It ran twenty-four years, some of the staff nearly the whole time, before closing in 2014.</p>
+        <p class="mem-note">The same Baldwin Avenue corner later became Wursthall, right above.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">1953 – 2020</p>
+        <h3>Talbot's Toyland</h3>
+        <p class="mem-where">B Street &amp; 5th Ave, Downtown</p>
+        <p class="mem-body">Sixty-six years of San Mateo kids grew up in this toy store, with the bike shop, Talbot's Cyclery, right alongside it. Family-run for generations, it kept expanding into neighboring storefronts until it filled a whole stretch of B Street. When it closed in 2020, it took a piece of four generations' childhoods with it.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">1972 – 2019</p>
+        <h3>Trag's Market</h3>
+        <p class="mem-where">303 Baldwin Ave, Downtown</p>
+        <p class="mem-body">The Tragoutsis family's downtown grocery, the corner market that downtown actually had. After forty-seven years it closed in 2019, and a lot of neighbors felt the loss of a real grocery store you could walk to.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">1982 – 2023</p>
+        <h3>The Fish Market</h3>
+        <p class="mem-where">1855 S Norfolk St</p>
+        <p class="mem-body">For about forty-one years this was the Peninsula's seafood go-to: the oyster bar, the mesquite grill, the fresh catch on ice. The San Mateo location closed in 2023, ending the chain's long run in the Bay Area.</p>
+        <p class="mem-note">The brand still operates down in Southern California.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">1982 – 1996</p>
+        <h3>San Mateo Fashion Island</h3>
+        <p class="mem-where">Where Bridgepointe is now</p>
+        <p class="mem-body">The enclosed mall by the 92 and 101 interchange, with JCPenney, Bullock's, a food court, a multiplex, an indoor ice rink, and the Gold Mine (later Tilt) arcade where half of San Mateo blew their allowance as kids. It struggled almost from the start and closed as a mall in 1996, demolished a few years later. The ice rink, somehow, outlived it all the way to 2013.</p>
+        <p class="mem-note">The site is the open-air Bridgepointe Shopping Center today. And who else remembers that arcade?</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">Closed around 2020</p>
+        <h3>B Street Station</h3>
+        <p class="mem-where">236 S B St, Downtown</p>
+        <p class="mem-body">A dim, easygoing downtown cocktail spot, Edison bulbs and big communal tables, the kind of place you ended up at without planning to. It closed around 2020.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">2007 – 2016</p>
+        <h3>38th Floor Bar</h3>
+        <p class="mem-where">38 E 25th Ave</p>
+        <p class="mem-body">It opened as the Mandala Lounge and got its odd name after a Bar Rescue TV makeover in 2015. The fame didn't save it; it closed about a year later, in 2016. A short, strange chapter, but a San Mateo one.</p>
+      </article>
+      <article class="mem">
+        <h3>Bar 12</h3>
+        <p class="mem-where">E 4th Ave</p>
+        <p class="mem-body">A neighborhood dive on 4th Avenue. The kind of place that doesn't leave much of a paper trail, just regulars who remember it. If you've got the story, we'd love to hear it.</p>
+      </article>
+      <article class="mem">
+        <h3>Wolmer's Music</h3>
+        <p class="mem-where">4th Ave &amp; B, now a phone store</p>
+        <p class="mem-body">A longtime downtown music shop; the storefront is a T-Mobile now. We couldn't pin down all the dates, so if you remember Wolmer's, help us tell it right.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">1950 – 1988</p>
+        <h3>The Lanai</h3>
+        <p class="mem-where">Inside the Villa Hotel, San Mateo</p>
+        <p class="mem-body">San Mateo's original tiki temple, tucked inside the old Villa Hotel for thirty-eight years. It went all in: a twenty-foot fish tank, a waterfall wall, an authentic luau pit, and a huge South Seas mural lit to shift from day to night, all under the glow of a neon palm tree out front. When it closed in 1988, its koa tables and tiki decor moved to a little strip-mall spot that didn't last the decade. The real thing, gone but never quite forgotten.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">1950s – tower demolished 2001</p>
+        <h3>The Hillsdale Inn Tower</h3>
+        <p class="mem-where">Along Highway 101, San Mateo</p>
+        <p class="mem-body">The Hillsdale Inn was a Highway 101 hot spot, and its showpiece was a tower shaped like an air-traffic-control tower, a honeymoon suite floating in the sky. Couples booked the suite-in-the-sky for years, but it sat unused after the mid-1970s and slowly fell apart. Deemed structurally unsafe, the tower came down in April 2001. Some called it a landmark, some called it an eyesore; either way, the skyline lost something.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">Closed around 2021</p>
+        <h3>The Downtown Tiki Lounge</h3>
+        <p class="mem-where">144 S B St, Downtown</p>
+        <p class="mem-body">A proper tiki bar in the middle of downtown, thatched roofs, dim booths, and rum drinks with little umbrellas. When it closed, the space was reborn as Fogbird, the bright cocktail lounge there now, so the address carries on even though the tiki torches went out.</p>
+        <p class="mem-note">San Mateo tiki lore runs in a line: The Lanai, then this, and now Fogbird on the same block.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">Its castle years, until 1997</p>
+        <h3>The Dunfey Hotel</h3>
+        <p class="mem-where">1770 S Amphlett Blvd</p>
+        <p class="mem-body">Long before it was the San Mateo Marriott, this hotel looked like a Tudor castle. It started life as the Royal Coach Inn, all turrets and old-world theming, and later became the Dunfey Hotel. A 1997 remodel traded the castle for a Spanish-villa look, so the building still stands, but the castle a lot of us grew up driving past is gone.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">Closed around 2025</p>
+        <h3>M &amp; H Market (aka Fred's Market)</h3>
+        <p class="mem-where">159 N Kingston St</p>
+        <p class="mem-body">The corner neighborhood market on Kingston, known to different generations as M &amp; H Market and as Fred's, run for years by Henry Herro. Fresh Mexican bread delivered like clockwork, a candy counter the kids remember, and the everyday stuff the block ran on. The kind of little store a neighborhood doesn't realize it needs until it's gone.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">Long since closed</p>
+        <h3>Telecenter</h3>
+        <p class="mem-where">1830 S Delaware St</p>
+        <p class="mem-body">The go-to San Mateo spot for appliances, TVs, and electronics, back when you bought that stuff in person from people who knew your name. Long gone now, but ask around and someone will still finish the slogan for you.</p>
+        <p class="mem-note">"If it's not from Telecenter, you paid too much."</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">1991 – 2016</p>
+        <h3>Tres Amigos</h3>
+        <p class="mem-where">243 S B St, Downtown</p>
+        <p class="mem-body">A downtown taqueria that fed B Street for more than twenty-five years before it lost its lease and served its last tacos on Christmas Day, 2016. One of the anchors of the old B Street 'amigos' lineup, missed by everyone who had a regular order there.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">1949 – 2005</p>
+        <h3>The Palm Theatre</h3>
+        <p class="mem-where">1705 Palm Ave</p>
+        <p class="mem-body">It opened in 1949 as a proper neighborhood movie house, was briefly the Paris Theater, and then spent its last thirty years as San Mateo's one and only adults-only cinema (we'll leave it there). It came down in 2005 and condos went up, though a few of the Palm's etched-glass panels were saved and tucked into the new building's rec room.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">1947 – 2001</p>
+        <h3>The Rolladium</h3>
+        <p class="mem-where">863 Amphlett Blvd, by Highway 101</p>
+        <p class="mem-body">The Peninsula's roller rink, right off 101, where generations learned to skate and blew out birthday candles. Its maple floor was a survivor, salvaged from an earlier rink that burned in the 1940s and skated on for something like ninety years. The wheels stopped for good in 2001.</p>
+      </article>
+      <article class="mem">
+        <h3>The Broiler</h3>
+        <p class="mem-where">1855 S Delaware St</p>
+        <p class="mem-body">By local memory, the restaurant that held the South Delaware spot now home to The Pantry. We couldn't dig up the dates, so if you ate at The Broiler, help us fill in its story.</p>
+      </article>
+      <article class="mem">
+        <h3>19th Avenue Bowl</h3>
+        <p class="mem-where">San Mateo</p>
+        <p class="mem-body">A mid-century San Mateo bowling alley, remembered on old matchbooks and by anyone who rolled a home game there. It's long gone, and the exact address and years have gotten foggy, so if you remember 19th Avenue Bowl, set us straight.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">2000 – 2018</p>
+        <h3>Kingfish</h3>
+        <p class="mem-where">201 S B St (the House of Merkel), Downtown</p>
+        <p class="mem-body">The seafood restaurant and bar that was the last tenant of the historic House of Merkel at Morse's Corner, a building that had been, over the decades, a cigar store, a tailor, an antique shop, Redbird Brewery, and Barley &amp; Hopps before it. Kingfish closed in 2018 after about eighteen years; the building sold for over ten million and holds offices now.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">Gone by 2006</p>
+        <h3>The Good Guys</h3>
+        <p class="mem-where">41 W Hillsdale Blvd</p>
+        <p class="mem-body">The Bay Area electronics chain half of us bought our first stereo or TV from. The San Mateo store started out on El Camino before moving to Hillsdale Boulevard, right by Tower Records, where the two eventually shared a roof as a 'WOW!' superstore. When the whole chain was sold off, the stores closed by 2006, taking a piece of Hillsdale, and Tower Records, down with them.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">Closed in recent years</p>
+        <h3>Byron's Shoes</h3>
+        <p class="mem-where">101 E 4th Ave, Downtown</p>
+        <p class="mem-body">The downtown shoe store where San Mateo got fitted for years, run by Byron Eisenberg. It's gone now, though fittingly another shoe shop, Footwear etc., stepped into the same 4th Avenue spot.</p>
+      </article>
+      <article class="mem">
+        <p class="mem-era">Closed 2023</p>
+        <h3>San Mateo Electronics</h3>
+        <p class="mem-where">16 W 42nd Ave</p>
+        <p class="mem-body">The old-school electronics and parts shop, the place you went for a fuse, a cable, an odd little component, and advice from someone who actually knew what they were talking about. When it finally closed, the Daily Journal called it the end of an era, because it was.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>
+        <div class="brand">
+          <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
+          <span class="brand-name">San Mateo Local</span>
+        </div>
+        <p class="f-tag">An honest, local guide to the best of San Mateo, California.</p>
+      </div>
+      <nav class="f-nav">
+        <a href="eat-drink.html">Eat &amp; Drink</a>
+        <a href="things-to-do.html">Things To Do</a>
+        <a href="shopping.html">Shopping</a>
+        <a href="local-services.html">Services</a>
+        <a href="gone-but-not-forgotten.html">Gone But Not Forgotten</a>
+      </nav>
+      <p class="f-copy">&copy; 2026 San Mateo Local. Made by a local, for locals. SanMateoLocal.com</p>
+    </div>
+  </footer>
+</body>
+</html>

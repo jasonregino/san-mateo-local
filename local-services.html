@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Services in San Mateo | San Mateo Local</title>
+  <meta name="description" content="The barbers, gyms, dentists, mechanics, cleaners, and shops that locals in San Mateo actually use." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='14' r='6' fill='%23C25B3A'/><path d='M1 27 Q9 19 16 23 T31 25 V32 H1 Z' fill='%2341614B'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --paper:#FAF6EC; --paper-2:#F2E9D4; --ink:#221D16; --ink-soft:#5E5446; --clay:#C25B3A; --clay-deep:#A5492B; --sage:#41614B; --sage-deep:#324C3A; --line:#E3D6BC; }
+    [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage:#88AC8F; --sage-deep:#6E9077; --line:#3A2E24; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased; }
+    h1,h2,h3 { font-family:'Fraunces',Georgia,serif; line-height:1.12; letter-spacing:-0.01em; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
+    .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:50; }
+    .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1.5rem; max-width:1140px; margin:0 auto; }
+    .brand { display:flex; align-items:center; gap:0.6rem; }
+    .brand svg { width:30px; height:30px; flex:none; }
+    .brand-name { font-family:'Fraunces',serif; font-weight:700; font-size:1.45rem; letter-spacing:-0.02em; }
+    .masthead-right { display:flex; align-items:center; gap:1.25rem; }
+    .masthead-nav { display:flex; gap:1.5rem; align-items:center; }
+    .masthead-nav a { font-size:0.9rem; font-weight:500; color:var(--ink-soft); }
+    .masthead-nav a:hover { color:var(--clay-deep); }
+    .masthead-nav .sub { color:var(--clay-deep); font-weight:600; }
+    .theme-toggle { background:none; border:1.5px solid var(--line); border-radius:999px; width:36px; height:36px; cursor:pointer; color:var(--ink); font-size:1rem; display:inline-flex; align-items:center; justify-content:center; flex:none; }
+    .theme-toggle .sun { display:none; } [data-theme="dark"] .theme-toggle .moon { display:none; } [data-theme="dark"] .theme-toggle .sun { display:inline; }
+    .dateline { border-top:1px solid var(--line); text-align:center; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft); padding:0.4rem 1rem; }
+    @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } }
+    .page-head { padding:3rem 0 2rem; border-bottom:1.5px solid var(--ink); }
+    .back { font-size:0.85rem; font-weight:600; color:var(--clay-deep); }
+    .page-head h1 { font-size:clamp(2.2rem,6vw,3.6rem); font-weight:600; margin:0.8rem 0 0.8rem; }
+    .page-head p { color:var(--ink-soft); font-size:1.1rem; max-width:42rem; }
+    .chips { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.5rem; }
+    .chip { font-family:inherit; font-size:0.85rem; font-weight:600; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all 0.15s; }
+    .chip:hover { border-color:var(--clay); color:var(--clay-deep); }
+    .chip.is-on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+    .listing-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.3rem; padding:2.5rem 0 1rem; }
+    .listing { border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); padding:1.4rem 1.4rem 1.5rem; display:flex; flex-direction:column; }
+    .l-pick { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#2A1E0E; background:#E6A828; border:1px solid #E6A828; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; }
+    .l-chain { display:inline-block; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:var(--ink-soft); border:1px solid var(--line); border-radius:999px; padding:0.15rem 0.55rem; margin-bottom:0.55rem; }
+    .l-closing { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#fff; background:#B0402F; border:1px solid #B0402F; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; margin-right:0.4rem; }
+    .listing .l-type { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+    .listing h3 { font-size:1.4rem; margin:0.45rem 0 0.35rem; }
+    .listing .l-meta { font-size:0.74rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--sage-deep); font-weight:600; margin-bottom:0.7rem; }
+    .listing .l-desc { color:var(--ink-soft); font-size:0.96rem; flex:1; }
+    .l-acts { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.1rem; }
+    .act { font-size:0.82rem; font-weight:600; padding:0.45rem 0.9rem; border-radius:999px; border:1.5px solid var(--line); color:var(--ink); }
+    .act:hover { border-color:var(--clay); color:var(--clay-deep); }
+    .more-note { text-align:center; color:var(--ink-soft); font-size:0.95rem; padding:2rem 0 1rem; }
+    .more-note a { color:var(--clay-deep); font-weight:600; }
+    .mem-list { max-width:760px; margin:0 auto; padding:1rem 0; }
+    .mem { padding:2.2rem 0; border-bottom:1px solid var(--line); }
+    .mem:last-child { border-bottom:none; }
+    .mem .mem-era { font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+    .mem h3 { font-size:1.9rem; margin:0.45rem 0 0.3rem; }
+    .mem .mem-where { font-size:0.8rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--sage-deep); font-weight:600; margin-bottom:0.9rem; }
+    .mem p.mem-body { color:var(--ink-soft); font-size:1.06rem; }
+    .mem .mem-note { font-family:'Fraunces',serif; font-style:italic; color:var(--ink); font-size:1rem; margin-top:0.8rem; border-left:2px solid var(--sage); padding-left:1rem; }
+    footer.site { padding:3rem 0 2.5rem; border-top:1.5px solid var(--ink); margin-top:2rem; }
+    footer.site .wrap { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    footer .brand { display:flex; align-items:center; gap:0.5rem; }
+    footer .brand-name { font-size:1.3rem; }
+    .f-tag { color:var(--ink-soft); font-size:0.9rem; margin-top:0.4rem; max-width:18rem; }
+    .f-nav { display:flex; flex-direction:column; gap:0.4rem; }
+    .f-nav a { font-size:0.92rem; color:var(--ink-soft); }
+    .f-nav a:hover { color:var(--clay-deep); }
+    .f-copy { width:100%; border-top:1px solid var(--line); margin-top:1.5rem; padding-top:1.5rem; font-size:0.8rem; color:var(--ink-soft); }
+  </style>
+  <script>(function(){try{var s=localStorage.getItem('sml-theme');var t=s||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-top">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
+        <span class="brand-name">San Mateo Local</span>
+      </a>
+      <div class="masthead-right">
+        <nav class="masthead-nav">
+          <a href="eat-drink.html">Eat &amp; Drink</a>
+          <a href="things-to-do.html">Things To Do</a>
+          <a href="shopping.html">Shopping</a>
+          <a href="local-services.html">Services</a>
+          <a href="index.html#legacies">Legacies</a>
+          <a href="index.html#newsletter" class="sub">Subscribe</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch between day and night mode" onclick="(function(d){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('sml-theme',t)}catch(e){}})(document.documentElement)"><span class="moon" aria-hidden="true">&#9790;</span><span class="sun" aria-hidden="true">&#9728;</span></button>
+      </div>
+    </div>
+    <div class="dateline">Local Services &nbsp;&middot;&nbsp; 18 local picks and counting</div>
+  </header>
+
+  <section class="page-head">
+    <div class="wrap">
+      <a class="back" href="index.html">&larr; San Mateo Local</a>
+      <h1>Local Services in San Mateo</h1>
+      <p>The barbers, gyms, dentists, mechanics, and cleaners locals actually use. Independent and local, not corporate.</p>
+      <div class="chips"><button class="chip is-on" data-filter="all">All</button><button class="chip" data-filter="hair-grooming">Hair &amp; Grooming</button><button class="chip" data-filter="health-fitness">Health &amp; Fitness</button><button class="chip" data-filter="health-wellness">Health &amp; Wellness</button><button class="chip" data-filter="pets">Pets</button><button class="chip" data-filter="home-auto">Home &amp; Auto</button></div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div class="listing-grid">
+      <article class="listing" data-bucket="home-auto">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Dry Cleaner</span>
+        <h3>Rose Cleaners</h3>
+        <p class="l-meta">Shoreview &middot; $$</p>
+        <p class="l-desc">A longtime Shoreview Shopping Center dry cleaner and alterations shop with a loyal neighborhood following.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503446105">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Rose%20Cleaners%20550%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="hair-grooming">
+        <span class="l-type">Barber</span>
+        <h3>Around the Edge Barbershop</h3>
+        <p class="l-meta">Hayward Park &middot; $$</p>
+        <p class="l-desc">A neighborhood barbershop that has cut hair in San Mateo for over a decade, open Tuesday through Saturday.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505718484">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Around%20the%20Edge%20Barbershop%2022%20E%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://aroundtheedgebarbershop.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="hair-grooming">
+        <span class="l-type">Barber</span>
+        <h3>The San Mateo Zoo Barbershop</h3>
+        <p class="l-meta">Downtown &middot; $$</p>
+        <p class="l-desc">An appointment-style shop where independent barbers specialize in current cuts and fades, open Tuesday through Saturday.</p>
+        <div class="l-acts"><a class="act" href="tel:+16506381624">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=The%20San%20Mateo%20Zoo%20Barbershop%20Downtown%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="hair-grooming">
+        <span class="l-type">Salon</span>
+        <h3>Classic Touch Salon</h3>
+        <p class="l-meta">Downtown &middot; $$</p>
+        <p class="l-desc">A full-service salon offering hair, nails, and body treatments under one roof, run by stylists with decades of experience.</p>
+        <div class="l-acts"><a class="act" href="tel:+16506859254">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Classic%20Touch%20Salon%20509%20South%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.classictouchsalon.net" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="hair-grooming">
+        <span class="l-type">Nails</span>
+        <h3>Bella Nails</h3>
+        <p class="l-meta">Hillsdale &middot; $$</p>
+        <p class="l-desc">A long-standing Hillsdale nail salon that also offers waxing and skin treatments, open seven days a week.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505770202">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Bella%20Nails%201238%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.bellanails.net" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="hair-grooming">
+        <span class="l-type">Nails</span>
+        <h3>Dahliana Nail Spa</h3>
+        <p class="l-meta">Hillsdale &middot; $$</p>
+        <p class="l-desc">An inside-the-mall nail spa that welcomes walk-ins for manicures, pedicures, and fills with evening hours.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503152911">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Dahliana%20Nail%20Spa%20354%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="health-fitness">
+        <span class="l-type">Yoga</span>
+        <h3>Nandi Yoga</h3>
+        <p class="l-meta">Downtown &middot; $$</p>
+        <p class="l-desc">An established studio running more than sixty-five weekly classes across Iyengar, flow, restorative, prenatal, and kids' yoga since 2008.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503439642">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Nandi%20Yoga%20309%208th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.nandiyoga.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="health-fitness">
+        <span class="l-type">Gym</span>
+        <h3>The Fitness Farm</h3>
+        <p class="l-meta">Baywood &middot; $$$</p>
+        <p class="l-desc">A private personal-training gym offering one-on-one coaching, shared training, and open-gym access.</p>
+        <div class="l-acts"><a class="act" href="tel:+16507060666">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=The%20Fitness%20Farm%20143%20South%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.the-fitness-farm.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="health-wellness">
+        <span class="l-type">Dentist</span>
+        <h3>San Mateo Dental Arts</h3>
+        <p class="l-meta">Downtown &middot; $$$</p>
+        <p class="l-desc">A family dental practice offering same-day crowns, Invisalign, implants, and sedation dentistry for all ages.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503457981">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=San%20Mateo%20Dental%20Arts%20150%20N%20San%20Mateo%20Dr%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.sanmateodentalarts.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="health-wellness">
+        <span class="l-type">Chiropractor</span>
+        <h3>Bella Vita Chiropractic</h3>
+        <p class="l-meta">Baywood &middot; $$</p>
+        <p class="l-desc">A solo practice led by a Bay Area native, focused on personalized adjustment care for the local community.</p>
+        <div class="l-acts"><a class="act" href="tel:+16502577186">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Bella%20Vita%20Chiropractic%20214%20De%20Anza%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.sanmateocachiropractor.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="home-auto">
+        <span class="l-type">Auto</span>
+        <h3>Bo Jonsson's Foreign Car Service</h3>
+        <p class="l-meta">Hayward Park &middot; $$</p>
+        <p class="l-desc">A family-run European auto specialist serving Volvo, BMW, Mercedes, Audi, and VW owners since 1966.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503493606">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Bo%20Jonsson's%20Foreign%20Car%20Service%20111%20E%2020th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://bojonsson.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="home-auto">
+        <span class="l-type">Dry Cleaner</span>
+        <h3>Crystal Cleaning Center</h3>
+        <p class="l-meta">Baywood &middot; $$</p>
+        <p class="l-desc">An on-site dry cleaner of more than sixty years known for wedding gown preservation, vintage garments, and alterations.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503426978">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Crystal%20Cleaning%20Center%20110%20De%20Anza%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.crystalcleaningcenter.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="home-auto">
+        <span class="l-type">Tailor</span>
+        <h3>Perfit Alterations</h3>
+        <p class="l-meta">Baywood &middot; $$</p>
+        <p class="l-desc">A well-reviewed tailor handling everything from quick hems to designer and bridal alterations with fast turnaround.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503417526">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Perfit%20Alterations%2094%2017th%20Ave%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="pets">
+        <span class="l-type">Vet</span>
+        <h3>Peninsula Avenue Veterinary Clinic</h3>
+        <p class="l-meta">North Central &middot; $$$</p>
+        <p class="l-desc">A small independent, non-corporate animal hospital serving the area for forty years with wellness, surgery, and dental care.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503488022">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Peninsula%20Avenue%20Veterinary%20Clinic%20440%20Peninsula%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.peninsulaavevet.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="pets">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Vet</span>
+        <h3>Aragon Veterinary Clinic</h3>
+        <p class="l-meta">Aragon &middot; $$</p>
+        <p class="l-desc">A small family-owned full-service vet clinic offering exams, vaccines, surgery, dentals, and in-house lab work.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503427282">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Aragon%20Veterinary%20Clinic%20819%20South%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="health-wellness">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Optician</span>
+        <h3>Bundy Opticians</h3>
+        <p class="l-meta">Downtown &middot; $$$</p>
+        <p class="l-desc">A family-owned optician since 1958 with a curated selection of Japanese and European frames and an in-house lens lab.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503444232">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Bundy%20Opticians%20201%20S%20San%20Mateo%20Dr%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://bundyopticians.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="home-auto">
+        <span class="l-type">Services</span>
+        <h3>San Mateo Lock Works</h3>
+        <p class="l-meta">Downtown &middot; $$</p>
+        <p class="l-desc">A family-owned, full-service lock and safe shop operating in San Mateo since 1927, with a downtown storefront and mobile service.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503444905">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=San%20Mateo%20Lock%20Works%20321%20Second%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://sanmateolockworks.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="home-auto">
+        <span class="l-type">Auto</span>
+        <h3>Norfolk Auto Service</h3>
+        <p class="l-meta">Norfolk &middot; $$</p>
+        <p class="l-desc">A longtime independent auto-repair shop on Norfolk with a deep bench of loyal regulars and hundreds of strong reviews.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503457556">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Norfolk%20Auto%20Service%202051%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+    </div>
+    <p class="more-note">More added every week. Spotting something missing? <a href="mailto:hello@sanmateolocal.com?subject=Spot%20suggestion">Suggest a spot.</a> &nbsp;&middot;&nbsp; Own a business here? <a href="mailto:hello@sanmateolocal.com?subject=Featured%20listing%20inquiry">Get featured.</a></p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>
+        <div class="brand">
+          <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
+          <span class="brand-name">San Mateo Local</span>
+        </div>
+        <p class="f-tag">An honest, local guide to the best of San Mateo, California.</p>
+      </div>
+      <nav class="f-nav">
+        <a href="eat-drink.html">Eat &amp; Drink</a>
+        <a href="things-to-do.html">Things To Do</a>
+        <a href="index.html#hoods">Neighborhoods</a>
+        <a href="index.html#legacies">Legacies</a>
+        <a href="index.html#newsletter">Subscribe</a>
+      </nav>
+      <p class="f-copy">&copy; 2026 San Mateo Local. Made by a local, for locals. SanMateoLocal.com</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.chip').forEach(function(c){
+      c.addEventListener('click', function(){
+        document.querySelectorAll('.chip').forEach(function(x){ x.classList.remove('is-on'); });
+        c.classList.add('is-on');
+        var f = c.getAttribute('data-filter');
+        document.querySelectorAll('.listing').forEach(function(l){
+          l.style.display = (f === 'all' || l.getAttribute('data-bucket') === f) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

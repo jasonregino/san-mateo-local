@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eat &amp; Drink in San Mateo | San Mateo Local</title>
+  <meta name="description" content="The full local guide to eating and drinking in San Mateo: coffee, restaurants, brunch, bakeries, and bars, hand-picked by a born-and-raised local." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='14' r='6' fill='%23C25B3A'/><path d='M1 27 Q9 19 16 23 T31 25 V32 H1 Z' fill='%2341614B'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --paper:#FAF6EC; --paper-2:#F2E9D4; --ink:#221D16; --ink-soft:#5E5446; --clay:#C25B3A; --clay-deep:#A5492B; --sage:#41614B; --sage-deep:#324C3A; --line:#E3D6BC; }
+    [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage:#88AC8F; --sage-deep:#6E9077; --line:#3A2E24; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased; }
+    h1,h2,h3 { font-family:'Fraunces',Georgia,serif; line-height:1.12; letter-spacing:-0.01em; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
+    .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:50; }
+    .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1.5rem; max-width:1140px; margin:0 auto; }
+    .brand { display:flex; align-items:center; gap:0.6rem; }
+    .brand svg { width:30px; height:30px; flex:none; }
+    .brand-name { font-family:'Fraunces',serif; font-weight:700; font-size:1.45rem; letter-spacing:-0.02em; }
+    .masthead-right { display:flex; align-items:center; gap:1.25rem; }
+    .masthead-nav { display:flex; gap:1.5rem; align-items:center; }
+    .masthead-nav a { font-size:0.9rem; font-weight:500; color:var(--ink-soft); }
+    .masthead-nav a:hover { color:var(--clay-deep); }
+    .masthead-nav .sub { color:var(--clay-deep); font-weight:600; }
+    .theme-toggle { background:none; border:1.5px solid var(--line); border-radius:999px; width:36px; height:36px; cursor:pointer; color:var(--ink); font-size:1rem; display:inline-flex; align-items:center; justify-content:center; flex:none; }
+    .theme-toggle .sun { display:none; } [data-theme="dark"] .theme-toggle .moon { display:none; } [data-theme="dark"] .theme-toggle .sun { display:inline; }
+    .dateline { border-top:1px solid var(--line); text-align:center; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft); padding:0.4rem 1rem; }
+    @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } }
+    .page-head { padding:3rem 0 2rem; border-bottom:1.5px solid var(--ink); }
+    .back { font-size:0.85rem; font-weight:600; color:var(--clay-deep); }
+    .page-head h1 { font-size:clamp(2.2rem,6vw,3.6rem); font-weight:600; margin:0.8rem 0 0.8rem; }
+    .page-head p { color:var(--ink-soft); font-size:1.1rem; max-width:42rem; }
+    .chips { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.5rem; }
+    .chip { font-family:inherit; font-size:0.85rem; font-weight:600; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all 0.15s; }
+    .chip:hover { border-color:var(--clay); color:var(--clay-deep); }
+    .chip.is-on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+    .listing-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.3rem; padding:2.5rem 0 1rem; }
+    .listing { border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); padding:1.4rem 1.4rem 1.5rem; display:flex; flex-direction:column; }
+    .l-pick { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#2A1E0E; background:#E6A828; border:1px solid #E6A828; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; }
+    .l-chain { display:inline-block; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:var(--ink-soft); border:1px solid var(--line); border-radius:999px; padding:0.15rem 0.55rem; margin-bottom:0.55rem; }
+    .l-closing { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#fff; background:#B0402F; border:1px solid #B0402F; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; margin-right:0.4rem; }
+    .listing .l-type { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+    .listing h3 { font-size:1.4rem; margin:0.45rem 0 0.35rem; }
+    .listing .l-meta { font-size:0.74rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--sage-deep); font-weight:600; margin-bottom:0.7rem; }
+    .listing .l-desc { color:var(--ink-soft); font-size:0.96rem; flex:1; }
+    .l-acts { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.1rem; }
+    .act { font-size:0.82rem; font-weight:600; padding:0.45rem 0.9rem; border-radius:999px; border:1.5px solid var(--line); color:var(--ink); }
+    .act:hover { border-color:var(--clay); color:var(--clay-deep); }
+    .more-note { text-align:center; color:var(--ink-soft); font-size:0.95rem; padding:2rem 0 1rem; }
+    .more-note a { color:var(--clay-deep); font-weight:600; }
+    .mem-list { max-width:760px; margin:0 auto; padding:1rem 0; }
+    .mem { padding:2.2rem 0; border-bottom:1px solid var(--line); }
+    .mem:last-child { border-bottom:none; }
+    .mem .mem-era { font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+    .mem h3 { font-size:1.9rem; margin:0.45rem 0 0.3rem; }
+    .mem .mem-where { font-size:0.8rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--sage-deep); font-weight:600; margin-bottom:0.9rem; }
+    .mem p.mem-body { color:var(--ink-soft); font-size:1.06rem; }
+    .mem .mem-note { font-family:'Fraunces',serif; font-style:italic; color:var(--ink); font-size:1rem; margin-top:0.8rem; border-left:2px solid var(--sage); padding-left:1rem; }
+    footer.site { padding:3rem 0 2.5rem; border-top:1.5px solid var(--ink); margin-top:2rem; }
+    footer.site .wrap { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+    footer .brand { display:flex; align-items:center; gap:0.5rem; }
+    footer .brand-name { font-size:1.3rem; }
+    .f-tag { color:var(--ink-soft); font-size:0.9rem; margin-top:0.4rem; max-width:18rem; }
+    .f-nav { display:flex; flex-direction:column; gap:0.4rem; }
+    .f-nav a { font-size:0.92rem; color:var(--ink-soft); }
+    .f-nav a:hover { color:var(--clay-deep); }
+    .f-copy { width:100%; border-top:1px solid var(--line); margin-top:1.5rem; padding-top:1.5rem; font-size:0.8rem; color:var(--ink-soft); }
+  </style>
+  <script>(function(){try{var s=localStorage.getItem('sml-theme');var t=s||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-top">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
+        <span class="brand-name">San Mateo Local</span>
+      </a>
+      <div class="masthead-right">
+        <nav class="masthead-nav">
+          <a href="eat-drink.html">Eat &amp; Drink</a>
+          <a href="things-to-do.html">Things To Do</a>
+          <a href="shopping.html">Shopping</a>
+          <a href="local-services.html">Services</a>
+          <a href="index.html#legacies">Legacies</a>
+          <a href="index.html#newsletter" class="sub">Subscribe</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch between day and night mode" onclick="(function(d){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('sml-theme',t)}catch(e){}})(document.documentElement)"><span class="moon" aria-hidden="true">&#9790;</span><span class="sun" aria-hidden="true">&#9728;</span></button>
+      </div>
+    </div>
+    <div class="dateline">Eat &amp; Drink &nbsp;&middot;&nbsp; 60 local picks and counting</div>
+  </header>
+
+  <section class="page-head">
+    <div class="wrap">
+      <a class="back" href="index.html">&larr; San Mateo Local</a>
+      <h1>Eat &amp; Drink in San Mateo</h1>
+      <p>Coffee, restaurants, brunch, bakeries, and bars. Every one hand-picked, none of it paid placement. Tap to call or get directions.</p>
+      <div class="chips"><button class="chip is-on" data-filter="all">All</button><button class="chip" data-filter="coffee-caf-s">Coffee &amp; Cafés</button><button class="chip" data-filter="restaurants">Restaurants</button><button class="chip" data-filter="taco-trucks">Taco Trucks</button><button class="chip" data-filter="brunch">Brunch</button><button class="chip" data-filter="bakeries-sweets">Bakeries &amp; Sweets</button><button class="chip" data-filter="bars-nightlife">Bars &amp; Nightlife</button></div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div class="listing-grid">
+      <article class="listing" data-bucket="coffee-caf-s">
+        <span class="l-type">Coffee</span>
+        <h3>3 Bees Coffee</h3>
+        <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
+        <p class="l-desc">Family-run coffee house with what regulars call the best espresso in the county, warm rotating local art, and sunny sidewalk seating.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503442339">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=3%20Bees%20Coffee%20224%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Pausa Bar &amp; Cookery</h3>
+        <p class="l-meta">Downtown (4th Ave) &middot; $$$</p>
+        <p class="l-desc">Scratch-made Northern-Italian plates and house pastas with an all-Italian wine list; a Michelin Guide listee.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503750818">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Pausa%20Bar%20%26%20Cookery%20223%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.pausasanmateo.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Flores San Mateo</h3>
+        <p class="l-meta">Hillsdale &middot; $$$</p>
+        <p class="l-desc">Regional Mexican dishes and standout margaritas in a lively room with a big patio; a Michelin Bib Gourmand pick.</p>
+        <div class="l-acts"><a class="act" href="tel:+16504189742">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Flores%20San%20Mateo%204%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://floressf.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Porterhouse</h3>
+        <p class="l-meta">Downtown (B St) &middot; $$$</p>
+        <p class="l-desc">The Peninsula's in-house dry-aging steakhouse, with the meat locker visible at the entry.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505795911">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Porterhouse%20164%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.porterhousesanmateo.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Espetus Churrascaria</h3>
+        <p class="l-meta">Downtown (B St) &middot; $$$</p>
+        <p class="l-desc">All-you-can-eat rodizio with tableside skewered meats carved to order.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503428700">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Espetus%20Churrascaria%20710%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://espetus.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Palette Tea Garden &amp; Dim Sum</h3>
+        <p class="l-meta">Hillsdale &middot; $$$</p>
+        <p class="l-desc">Modern dim sum, Cantonese roast meats, and Peking duck from the Koi Palace team.</p>
+        <div class="l-acts"><a class="act" href="tel:+16507698888">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Palette%20Tea%20Garden%20%26%20Dim%20Sum%2048%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://paletteteagarden.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Bahche Mezzehouse &amp; Wine Bar</h3>
+        <p class="l-meta">Bay Meadows &middot; $$$</p>
+        <p class="l-desc">Family-run mezze and wood-fire Mediterranean plates paired with a focused wine list.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503152197">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Bahche%20Mezzehouse%20%26%20Wine%20Bar%203081%20S%20Delaware%20St%2C%20Ste%20C%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://bahchesf.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>El Sinaloense</h3>
+        <p class="l-meta">North Central (Palm Ave) &middot; $$</p>
+        <p class="l-desc">Sinaloa-style seafood, especially ceviche, tostadas, and shrimp dishes.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503451180">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=El%20Sinaloense%201622%20Palm%20Ave%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://el-sinaloense.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Sushi Edomata</h3>
+        <p class="l-meta">North Central (25th Ave) &middot; $$$</p>
+        <p class="l-desc">Edomae sushi carrying on the Sushi Sam's legacy, serving the area since 1988.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503440888">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sushi%20Edomata%2038%20E%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://sushiedomata.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Joy Sushi</h3>
+        <p class="l-meta">Downtown (B St) &middot; $$</p>
+        <p class="l-desc">Generous rolls and traditional sushi in a casual room with a strong catering side.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503408974">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Joy%20Sushi%2030%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://joy-sushi.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Oceanic Restaurant</h3>
+        <p class="l-meta">El Camino Real &middot; $$</p>
+        <p class="l-desc">Hunan and Mandarin home cooking; regulars cite the garlic eggplant, green onion pancake, and crispy noodles.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505704234">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Oceanic%20Restaurant%202507%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Thonglor Thai Bistro</h3>
+        <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
+        <p class="l-desc">Modern-leaning Thai with curries, pad see ew, and customizable spice levels.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503426451">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Thonglor%20Thai%20Bistro%20173%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://thonglorthaibistro.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Sole Ristorante Italiano</h3>
+        <p class="l-meta">Hillsdale (37th Ave) &middot; $$</p>
+        <p class="l-desc">Family-owned, home-style Italian plates and classic pastas in a neighborhood setting.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503415555">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sole%20Ristorante%20Italiano%2069%20W%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://soleristorante.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Tannourine Lebanese &amp; Mediterranean</h3>
+        <p class="l-meta">North Central (25th Ave) &middot; $$</p>
+        <p class="l-desc">Family-run Lebanese kitchen known for lamb shanks and mixed grills.</p>
+        <div class="l-acts"><a class="act" href="tel:+16504588696">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Tannourine%20Lebanese%20%26%20Mediterranean%20120%20W%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://tannourinecuisine.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Champagne Seafood Restaurant</h3>
+        <p class="l-meta">El Camino Real &middot; $$</p>
+        <p class="l-desc">Cantonese dim sum and seafood with a broad traditional menu.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503433170">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Champagne%20Seafood%20Restaurant%201325%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="coffee-caf-s">
+        <span class="l-type">Coffee</span>
+        <h3>Kaizen &amp; Coffee</h3>
+        <p class="l-meta">El Camino Real (south) &middot; $$</p>
+        <p class="l-desc">Specialty coffee bar with Asian-inspired signature drinks like black sesame and miso caramel lattes.</p>
+        <div class="l-acts"><a class="act" href="https://www.google.com/maps/search/?api=1&query=Kaizen%20%26%20Coffee%202337%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://kaizenandcoffee.com/" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bakeries-sweets">
+        <span class="l-type">Bakery</span>
+        <h3>Backhaus</h3>
+        <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
+        <p class="l-desc">Naturally leavened artisan breads and pastries baked fresh daily, visible through the open bakery windows.</p>
+        <div class="l-acts"><a class="act" href="tel:+16502009493">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Backhaus%2032%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.backhausbread.com/" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="coffee-caf-s">
+        <span class="l-type">Café</span>
+        <h3>Fiero Caffe</h3>
+        <p class="l-meta">El Camino Real (downtown edge) &middot; $$</p>
+        <p class="l-desc">Owner-run Italian-style cafe serving espresso plus homemade breakfast and brunch like Sicilian omelette, carbonara, and tiramisu.</p>
+        <div class="l-acts"><a class="act" href="tel:+16506858210">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Fiero%20Caffe%20106%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="bakeries-sweets">
+        <span class="l-type">Bakery</span>
+        <h3>Bonjour Bakehouse</h3>
+        <p class="l-meta">Downtown (Howard Ave) &middot; $$</p>
+        <p class="l-desc">French-inspired bakery known for croissants, macarons, scones, and vegan/gluten-free pastries.</p>
+        <div class="l-acts"><a class="act" href="tel:+16504764095">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Bonjour%20Bakehouse%201007%20Howard%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://bonjourbakehouse.com/" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="coffee-caf-s">
+        <span class="l-type">Coffee</span>
+        <h3>Sama Coffee Shop</h3>
+        <p class="l-meta">Downtown (South B St) &middot; $$</p>
+        <p class="l-desc">Friendly neighborhood coffee shop on South B Street with long daily hours and Turkish-coffee options.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503935553">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sama%20Coffee%20Shop%20800%20S%20B%20St%2C%20Ste%20500%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="brunch">
+        <span class="l-type">Brunch</span>
+        <h3>Taste &amp; Glory</h3>
+        <p class="l-meta">El Camino Real (south) &middot; $$</p>
+        <p class="l-desc">Asian-American fusion brunch with creative plates like Thai tea French toast and Tom Yum scramble; weekends are walk-in only.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503934951">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Taste%20%26%20Glory%201208%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="brunch">
+        <span class="l-type">Brunch</span>
+        <h3>Apple Fritter</h3>
+        <p class="l-meta">Hayward Park / Norfolk &middot; $$</p>
+        <p class="l-desc">Casual all-American breakfast and lunch spot with hearty portions and its namesake apple fritters.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505259125">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Apple%20Fritter%201901%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.applefrittereatery.com/" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="brunch">
+        <span class="l-type">Brunch</span>
+        <h3>The Breakfast Club at Midtown</h3>
+        <p class="l-meta">Bay Meadows &middot; $$</p>
+        <p class="l-desc">High-energy all-day brunch with many Benedict varieties, a big American/Mexican menu, a patio, and brunch cocktails.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503152348">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=The%20Breakfast%20Club%20at%20Midtown%203035%20S%20Delaware%20St%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.bcmidtown.com/" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="brunch">
+        <span class="l-type">Brunch</span>
+        <h3>La Casa de los Huevos</h3>
+        <p class="l-meta">El Camino Real (mid) &middot; $$</p>
+        <p class="l-desc">Sinaloa-style Mexican breakfast and brunch including chilaquiles, huevos rancheros, omelets, and mariscos.</p>
+        <div class="l-acts"><a class="act" href="https://www.google.com/maps/search/?api=1&query=La%20Casa%20de%20los%20Huevos%201214%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.lacasadeloshuevos.com/" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bakeries-sweets">
+        <span class="l-type">Bakery</span>
+        <h3>SimplyCake</h3>
+        <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
+        <p class="l-desc">Hong Kong-style bakery with artisan breads, Asian-inspired pastries, custom cakes, and specialty drinks.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503482888">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=SimplyCake%20132%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.simplycakebakery.com/" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bakeries-sweets">
+        <span class="l-type">Bakery</span>
+        <h3>Lolita Artisanal Bakery-Cafe</h3>
+        <p class="l-meta">El Camino Real (south) &middot; $$</p>
+        <p class="l-desc">Latin-American artisan bakery cafe known for alfajores and pastries, with coffee in a cozy setting.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505046997">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Lolita%20Artisanal%20Bakery-Cafe%203790%20S%20El%20Camino%20Real%2C%20Ste%20101%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.lolitaalfajores.com/" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="brunch">
+        <span class="l-type">Brunch</span>
+        <h3>Patio Coffee Shop</h3>
+        <p class="l-meta">Beresford (25th Ave) &middot; $</p>
+        <p class="l-desc">Decades-old neighborhood diner-style coffee shop serving all-day breakfast to local regulars.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505703037">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Patio%20Coffee%20Shop%2025%20W%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="coffee-caf-s">
+        <span class="l-type">Coffee</span>
+        <h3>Caffeinated Cowboy</h3>
+        <p class="l-meta">El Camino Real (south) &middot; $</p>
+        <p class="l-desc">Locally owned shop for customizable coffee, matcha, and energy drinks plus breakfast burritos and pastries.</p>
+        <div class="l-acts"><a class="act" href="tel:+17073872946">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Caffeinated%20Cowboy%203721%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://caffeinatedcowboy.com/" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bakeries-sweets">
+        <span class="l-type">Bakery</span>
+        <h3>Made Out of Dough</h3>
+        <p class="l-meta">South Grant &middot; $$</p>
+        <p class="l-desc">Small-batch custom cakes, cupcakes, scones, and sugar cookies, also seen at local farmers markets.</p>
+        <div class="l-acts"><a class="act" href="https://www.google.com/maps/search/?api=1&query=Made%20Out%20of%20Dough%20622%20S%20Grant%20St%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.madeoutofdough.com/" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-type">Cocktail Lounge</span>
+        <h3>Fogbird</h3>
+        <p class="l-meta">Downtown (B St) &middot; $$</p>
+        <p class="l-desc">Craft cocktails and bar bites in a high-ceilinged room with an original brick wall and a nine-foot bar.</p>
+        <div class="l-acts"><a class="act" href="tel:+16504580049">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Fogbird%20144%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.fogbird.co" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-type">Cocktail Lounge</span>
+        <h3>Wunderbar</h3>
+        <p class="l-meta">Downtown (Baldwin Ave) &middot; $$$</p>
+        <p class="l-desc">Reservation-only underground cocktail bar with an inventive, whimsical drink list.</p>
+        <div class="l-acts"><a class="act" href="tel:+16509314282">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Wunderbar%20310%20Baldwin%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.exploretock.com/wunderbarsanmateo" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Brewery</span>
+        <h3>Fieldwork Brewing Co.</h3>
+        <p class="l-meta">Bay Meadows &middot; $$</p>
+        <p class="l-desc">More than 20 rotating fresh taps and Detroit-style pizzas on an industrial-style patio near the Hillsdale Caltrain stop.</p>
+        <div class="l-acts"><a class="act" href="tel:+16502421280">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Fieldwork%20Brewing%20Co.%203030%20S%20Delaware%20St%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://fieldworkbrewing.com/san-mateo" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-type">Wine Bar</span>
+        <h3>The Barrel Bistro &amp; Wine Bar</h3>
+        <p class="l-meta">Downtown (B St) &middot; $$</p>
+        <p class="l-desc">Hundreds of wines by the glass and bottle paired with cheese and charcuterie boards, seafood, and cocktails.</p>
+        <div class="l-acts"><a class="act" href="tel:+16504457250">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=The%20Barrel%20Bistro%20%26%20Wine%20Bar%20246%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.thebarrelbistrowinebar.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-type">Wine Bar</span>
+        <h3>B Street &amp; Vine</h3>
+        <p class="l-meta">Downtown (B St) &middot; $$</p>
+        <p class="l-desc">Family-run wine and bruschetta spot since 2006 with live jazz on weekends and a real happy hour.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503478463">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=B%20Street%20%26%20Vine%20320%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.bstreetandvine.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-type">Bar</span>
+        <h3>McGovern's Bar</h3>
+        <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
+        <p class="l-desc">Comfortable downtown Irish-style pub and local hangout with a global beer and drink mix.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503725335">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=McGovern's%20Bar%20215%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://mcgovernssanmateo.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-type">Bar</span>
+        <h3>The Swingin' Door</h3>
+        <p class="l-meta">Hayward Park (25th Ave) &middot; $$</p>
+        <p class="l-desc">Long-running British pub open until 2am with karaoke four nights a week, trivia, live bands, and award-winning fish and chips.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505229800">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=The%20Swingin'%20Door%20106%20E%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-type">Bar</span>
+        <h3>Antone's Cocktail Lounge</h3>
+        <p class="l-meta">Hillsdale (37th Ave) &middot; $</p>
+        <p class="l-desc">Family-run neighborhood dive open daily until 2am with pool tables, bumper pool, Pac-Man, and a jukebox.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505749672">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Antone's%20Cocktail%20Lounge%2032%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://antonesbarsm.wixsite.com/bars" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-type">Bar</span>
+        <h3>Route 92 Cocktail Lounge</h3>
+        <p class="l-meta">El Camino Real (south) &middot; $</p>
+        <p class="l-desc">No-frills neighborhood bar with daily happy hour, a pool table, darts, and a back smoking area.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503459911">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Route%2092%20Cocktail%20Lounge%202128%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Pub</span>
+        <h3>O'Neill's Irish Pub</h3>
+        <p class="l-meta">Downtown (B St) &middot; $$</p>
+        <p class="l-desc">A longtime downtown Irish pub since 1998, steps from the Caltrain station, with a full bar, sports on the screens, and live music, trivia, and karaoke through the week.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503471544">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=O'Neill's%20Irish%20Pub%2034%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Cocktail Lounge</span>
+        <h3>Bucky's Cocktail Lounge</h3>
+        <p class="l-meta">Hayward Park &middot; $$</p>
+        <p class="l-desc">A renovated neighborhood lounge with dark oak counters, a deep beer-and-whiskey lineup, a back patio, and yard games like cornhole and darts.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503494711">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Bucky's%20Cocktail%20Lounge%20101%20South%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Bar</span>
+        <h3>Steamies Bar</h3>
+        <p class="l-meta">Hayward Park &middot; $</p>
+        <p class="l-desc">A laid-back neighborhood dive of about twenty-five years with a pool table, game-day TVs, a patio, midweek karaoke, and taco trucks parked outside.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503934344">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Steamies%20Bar%203403%20Pacific%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Deli</span>
+        <h3>Harry's Shoreview Deli</h3>
+        <p class="l-meta">Shoreview &middot; $</p>
+        <p class="l-desc">An old-school Shoreview deli known for classic build-your-own sandwiches, roast beef, pastrami, and turkey, piled with all the fixings.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503484009">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Harry's%20Shoreview%20Deli%201446%20Cary%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="bakeries-sweets">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Frozen Yogurt</span>
+        <h3>Yumi Yogurt</h3>
+        <p class="l-meta">El Camino Real (south) &middot; $</p>
+        <p class="l-desc">A family-owned frozen yogurt and ice cream shop serving San Mateo since 1985, open late every night with a wall of self-serve flavors and toppings.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503410939">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Yumi%20Yogurt%203955%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.yumiyogurtsanmateo.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Avenida Restaurant</h3>
+        <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
+        <p class="l-desc">Modern Filipino cooking in downtown San Mateo, with elevated takes on kare kare, sinigang, pancit, and lumpia.</p>
+        <div class="l-acts"><a class="act" href="tel:+16507813641">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Avenida%20Restaurant%20201%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://avenidarestaurant.net" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="taco-trucks">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Taco Truck</span>
+        <h3>Leo's Tacos Truck</h3>
+        <p class="l-meta">El Camino Real (south) &middot; $</p>
+        <p class="l-desc">Al pastor tacos carved off a vertical trompo, a family Mexican-food operation that started in LA and now parks on El Camino, open late.</p>
+        <div class="l-acts"><a class="act" href="tel:+13233462001">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Leo's%20Tacos%20Truck%201990%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.leostacostruck.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Diner</span>
+        <h3>Heidi's Pies</h3>
+        <p class="l-meta">El Camino Real (south) &middot; $$</p>
+        <p class="l-desc">A San Mateo classic since 1970, famous for dozens of house-made-from-scratch pies served alongside all-day American diner fare.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505740505">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Heidi's%20Pies%201941%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.heidipies.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Diner</span>
+        <h3>The Pantry</h3>
+        <p class="l-meta">Hayward Park &middot; $</p>
+        <p class="l-desc">A longtime family-run kitchen serving hearty American breakfast and lunch alongside Filipino classics, a Hayward Park favorite for decades.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503454544">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=The%20Pantry%201855%20S%20Delaware%20St%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Diner</span>
+        <h3>Neal's Coffee Shop</h3>
+        <p class="l-meta">Baywood / Crystal Springs &middot; $$</p>
+        <p class="l-desc">A classic diner-style coffee shop in the Crystal Springs plaza serving big American breakfasts and comfort food from morning to night.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505811754">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Neal's%20Coffee%20Shop%20114%20De%20Anza%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://nealscoffeeshop.net" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="coffee-caf-s">
+        <span class="l-type">Coffee</span>
+        <h3>Penelope's Coffee &amp; Tea</h3>
+        <p class="l-meta">Hillsdale &middot; $</p>
+        <p class="l-desc">A neighborhood coffee and tea spot near Hillsdale with espresso drinks, loose-leaf teas, and light bites.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503934035">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Penelope's%20Coffee%20%26%20Tea%201326%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://penelopescoffee.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Restaurant</span>
+        <h3>Kaz Teriyaki Grill</h3>
+        <p class="l-meta">Downtown (4th Ave) &middot; $</p>
+        <p class="l-desc">A tiny downtown Japanese takeout counter, no seating, just fresh teriyaki with homemade sauces that locals have leaned on for years.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503475777">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Kaz%20Teriyaki%20Grill%2071%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Amigos Grill Cocina Mexicana</h3>
+        <p class="l-meta">Norfolk &middot; $$</p>
+        <p class="l-desc">A neighborhood Mexican grill on Norfolk turning out big plates of American-Mexican classics from breakfast through dinner.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505718679">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Amigos%20Grill%20Cocina%20Mexicana%202974%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Taqueria Los Primos</h3>
+        <p class="l-meta">Downtown (N B St) &middot; $</p>
+        <p class="l-desc">A downtown taqueria slinging tacos, burritos, and Mexican plates, a quick no-fuss local standby with a second spot on Ellsworth.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503478760">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Taqueria%20Los%20Primos%2085%20N%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>La Piñata Mexicatesen</h3>
+        <p class="l-meta">Downtown (N B St) &middot; $$</p>
+        <p class="l-desc">A downtown spot for Mexican and Salvadoran home cooking, from enchiladas salvadoreñas and carne guisada to super tacos and shrimp burritos.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503445722">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=La%20Pi%C3%B1ata%20Mexicatesen%20120%20N%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-type">Restaurant</span>
+        <h3>Suavecito Birria &amp; Tacos</h3>
+        <p class="l-meta">Amphlett / Hayward Park &middot; $$</p>
+        <p class="l-desc">A takeout-and-delivery counter for crispy quesabirria, birria ramen, and overstuffed burritos. No seating, just a cult-favorite walk-up window.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505811284">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Suavecito%20Birria%20%26%20Tacos%201100%20S%20Amphlett%20Blvd%2C%20Ste%20B%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.suavecitosm.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-closing">Closing soon</span>
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Pizza</span>
+        <h3>Aldo's Pizza</h3>
+        <p class="l-meta">Norfolk &middot; $$</p>
+        <p class="l-desc">A longtime neighborhood pizza joint and local favorite, sadly closing in July 2026. Go grab a pie while you still can.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503445051">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Aldo's%20Pizza%20600%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.aldospizza.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="restaurants">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
+        <span class="l-type">Pizza</span>
+        <h3>Rainbow Pizza</h3>
+        <p class="l-meta">Baywood / Crystal Springs &middot; $$</p>
+        <p class="l-desc">A Crystal Springs plaza institution since 1983, serving pizza and Greek favorites to generations of regulars.</p>
+        <div class="l-acts"><a class="act" href="tel:+16505711848">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Rainbow%20Pizza%20112%20De%20Anza%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://rainbowpizza.com" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="taco-trucks">
+        <span class="l-type">Taco Truck</span>
+        <h3>Taqueria El Chacho</h3>
+        <p class="l-meta">Bridgepointe / Fashion Island &middot; $</p>
+        <p class="l-desc">A late-night outdoor taco stand near Bridgepointe, cutting al pastor fresh off the trompo for the after-hours crowd.</p>
+        <div class="l-acts"><a class="act" href="tel:+13239755948">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Taqueria%20El%20Chacho%202036%20Fashion%20Island%20Blvd%2C%20San%20Mateo%2C%20CA%2094404" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+      <article class="listing" data-bucket="taco-trucks">
+        <span class="l-type">Taco Truck</span>
+        <h3>Lilo's Kitchen</h3>
+        <p class="l-meta">Roaming &middot; $</p>
+        <p class="l-desc">A roaming food truck slinging some of the best birria in San Mateo. Check their Instagram (@lilos_kitchen17) for where they're parked today.</p>
+        <div class="l-acts"><a class="act" href="tel:+16507666677">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Lilo's%20Kitchen%20San%20Mateo%2C%20CA" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.liloskitchen.net" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-type">Cocktail Lounge</span>
+        <h3>Mortar &amp; Pestle Bar</h3>
+        <p class="l-meta">Downtown (B St) &middot; $$</p>
+        <p class="l-desc">An industrial-chic downtown cocktail lounge with house-made syrups and Indian-inspired drinks like the Bangalore Old Fashioned, plus Curry Up Now street food alongside.</p>
+        <div class="l-acts"><a class="act" href="tel:+16508996669">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Mortar%20%26%20Pestle%20Bar%20130%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.curryupnow.com/mortarandpestlebar" target="_blank" rel="noopener">Website</a></div>
+      </article>
+      <article class="listing" data-bucket="bars-nightlife">
+        <span class="l-type">Cocktail Lounge</span>
+        <h3>Sky Lounge</h3>
+        <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
+        <p class="l-desc">A downtown lounge and late-night spot with drinks, DJs, and events just off B Street.</p>
+        <div class="l-acts"><a class="act" href="tel:+16503426623">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sky%20Lounge%2076%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
+      </article>
+    </div>
+    <p class="more-note">More added every week. Spotting something missing? <a href="mailto:hello@sanmateolocal.com?subject=Spot%20suggestion">Suggest a spot.</a> &nbsp;&middot;&nbsp; Own a business here? <a href="mailto:hello@sanmateolocal.com?subject=Featured%20listing%20inquiry">Get featured.</a></p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>
+        <div class="brand">
+          <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
+          <span class="brand-name">San Mateo Local</span>
+        </div>
+        <p class="f-tag">An honest, local guide to the best of San Mateo, California.</p>
+      </div>
+      <nav class="f-nav">
+        <a href="eat-drink.html">Eat &amp; Drink</a>
+        <a href="things-to-do.html">Things To Do</a>
+        <a href="index.html#hoods">Neighborhoods</a>
+        <a href="index.html#legacies">Legacies</a>
+        <a href="index.html#newsletter">Subscribe</a>
+      </nav>
+      <p class="f-copy">&copy; 2026 San Mateo Local. Made by a local, for locals. SanMateoLocal.com</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.chip').forEach(function(c){
+      c.addEventListener('click', function(){
+        document.querySelectorAll('.chip').forEach(function(x){ x.classList.remove('is-on'); });
+        c.classList.add('is-on');
+        var f = c.getAttribute('data-filter');
+        document.querySelectorAll('.listing').forEach(function(l){
+          l.style.display = (f === 'all' || l.getAttribute('data-bucket') === f) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

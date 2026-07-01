@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>San Mateo Local | The San Mateo Only Locals Know</title>
+  <meta name="description" content="The San Mateo only locals know. Born and raised here: the restaurants, neighborhoods, hidden gems, and longtime favorites that make San Mateo feel like home, not just another place on the map." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='14' r='6' fill='%23C25B3A'/><path d='M1 27 Q9 19 16 23 T31 25 V32 H1 Z' fill='%2341614B'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #FAF6EC;
+      --paper-2: #F2E9D4;
+      --ink: #221D16;
+      --ink-soft: #5E5446;
+      --clay: #C25B3A;
+      --clay-deep: #A5492B;
+      --sage: #41614B;
+      --sage-deep: #324C3A;
+      --bay: #2E5A6B;
+      --line: #E3D6BC;
+      --line-soft: #ECE1CB;
+    }
+
+    /* ===== Night edition (warm dark mode) ===== */
+    [data-theme="dark"] {
+      --paper: #181410;
+      --paper-2: #241D17;
+      --ink: #F2E7D4;
+      --ink-soft: #B6A88E;
+      --clay: #E27D50;
+      --clay-deep: #CB6336;
+      --sage: #88AC8F;
+      --sage-deep: #6E9077;
+      --line: #3A2E24;
+      --line-soft: #2C231B;
+    }
+    /* keep the dark "bands" dark at night instead of flipping bright */
+    [data-theme="dark"] .hoods { background: var(--paper-2); color: var(--ink); }
+    [data-theme="dark"] .hoods .hood-list a { color: var(--ink); }
+    [data-theme="dark"] .hoods .hood-list a:hover { color: #fff; }
+    [data-theme="dark"] .news { background: var(--paper-2); color: var(--ink); }
+    [data-theme="dark"] .news h2 { color: var(--ink); }
+    [data-theme="dark"] .news-form input { color: var(--ink); border-color: var(--line); }
+    [data-theme="dark"] .hero-photo img { filter: brightness(0.85); }
+
+    /* day / night toggle */
+    .masthead-right { display: flex; align-items: center; gap: 1.25rem; }
+    .theme-toggle { background: none; border: 1.5px solid var(--line); border-radius: 999px; width: 36px; height: 36px; cursor: pointer; color: var(--ink); font-size: 1rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; flex: none; transition: border-color 0.15s, color 0.15s; }
+    .theme-toggle:hover { border-color: var(--clay); color: var(--clay-deep); }
+    .theme-toggle .sun { display: none; }
+    [data-theme="dark"] .theme-toggle .moon { display: none; }
+    [data-theme="dark"] .theme-toggle .sun { display: inline; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4 { font-family: 'Fraunces', Georgia, serif; line-height: 1.1; font-weight: 600; letter-spacing: -0.01em; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+    .serif-it { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
+
+    /* eyebrow / editorial labels */
+    .label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--clay-deep); }
+
+    /* buttons */
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 4px; font-weight: 600; font-size: 0.98rem; border: 1.5px solid transparent; cursor: pointer; transition: background 0.15s, color 0.15s, transform 0.1s; }
+    .btn:active { transform: translateY(1px); }
+    .btn-clay { background: var(--clay-deep); color: #fff; }
+    .btn-clay:hover { background: #8f3d22; }
+    .btn-outline { background: transparent; border-color: var(--ink); color: var(--ink); }
+    .btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+    /* ===== Masthead ===== */
+    .masthead { border-bottom: 1.5px solid var(--ink); background: var(--paper); position: sticky; top: 0; z-index: 50; }
+    .masthead-top { display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.5rem; max-width: 1140px; margin: 0 auto; }
+    .brand { display: flex; align-items: center; gap: 0.6rem; }
+    .brand svg { width: 30px; height: 30px; flex: none; }
+    .brand-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.45rem; letter-spacing: -0.02em; }
+    .masthead-nav { display: flex; gap: 1.5rem; align-items: center; }
+    .masthead-nav a { font-size: 0.9rem; font-weight: 500; color: var(--ink-soft); }
+    .masthead-nav a:hover { color: var(--clay-deep); }
+    .masthead-nav .sub { color: var(--clay-deep); font-weight: 600; }
+    .dateline { border-top: 1px solid var(--line); text-align: center; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); padding: 0.4rem 1rem; }
+    @media (max-width: 880px) { .masthead-nav { display: none; } html { font-size: 17px; } }
+
+    /* ===== Hero ===== */
+    .hero { padding: 4.5rem 0 3.5rem; border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 3.5rem; align-items: stretch; }
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 600; margin: 1.1rem 0 1.4rem; }
+    .hero h1 .serif-it { color: var(--clay); }
+    .hero p.lede { font-size: 1.18rem; color: var(--ink-soft); max-width: 33rem; margin-bottom: 2rem; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    /* hero photo */
+    .hero-photo { margin: 0; display: flex; flex-direction: column; }
+    .hero-photo img { width: 100%; flex: 1; min-height: 340px; object-fit: cover; border: 1.5px solid var(--ink); display: block; }
+    .hero-photo figcaption { font-family: 'Fraunces', serif; font-style: italic; font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.6rem; }
+    @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; } .hero { padding: 3rem 0 2.5rem; } }
+
+    /* ===== Neighborhood strip ===== */
+    .hoods { background: var(--ink); color: var(--paper); padding: 1.5rem 0; }
+    .hoods .wrap { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .hoods .label { color: var(--clay); flex: none; }
+    .hood-list { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; }
+    .hood-list a { font-family: 'Fraunces', serif; font-size: 1.05rem; color: var(--paper); border-bottom: 1px solid transparent; }
+    .hood-list a:hover { border-bottom-color: var(--clay); color: #fff; }
+
+    /* ===== Section scaffolding ===== */
+    section { scroll-margin-top: 90px; }
+    .sec { padding: 4.5rem 0; }
+    .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; border-bottom: 1.5px solid var(--ink); padding-bottom: 1rem; margin-bottom: 2.5rem; }
+    .sec-head h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); }
+    .sec-head .link { font-size: 0.9rem; font-weight: 600; color: var(--clay-deep); white-space: nowrap; }
+
+    /* ===== Favorites (editorial, text-forward) ===== */
+    .fav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .fav { border: 1.5px solid var(--ink); border-top: 4px solid var(--clay-deep); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+    .fav a { display: flex; flex-direction: column; height: 100%; padding: 1.6rem 1.5rem 1.7rem; }
+    .fav:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -20px rgba(34,29,22,0.45); }
+    .fav .fav-kicker { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--clay-deep); }
+    .fav h3 { font-size: 1.55rem; margin: 0.5rem 0 0.45rem; }
+    .fav .meta { font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage-deep); font-weight: 600; margin-bottom: 0.7rem; }
+    .fav p { color: var(--ink-soft); font-size: 0.98rem; flex: 1; }
+    .fav .readon { margin-top: 1rem; font-weight: 600; font-size: 0.9rem; color: var(--clay-deep); }
+    @media (max-width: 880px) { .fav-grid { grid-template-columns: 1fr; } }
+
+    /* ===== Sections list (the guide index) ===== */
+    .guide-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1.5px solid var(--ink); }
+    .guide-cell { padding: 1.6rem 1.5rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background 0.15s; }
+    .guide-cell:hover { background: var(--paper-2); }
+    .guide-cell .num { font-family: 'Fraunces', serif; font-size: 0.85rem; color: var(--clay-deep); }
+    .guide-cell h3 { font-size: 1.35rem; margin: 0.3rem 0 0.4rem; }
+    .guide-cell p { font-size: 0.92rem; color: var(--ink-soft); }
+    .guide-cell.feature { background: var(--sage); color: var(--paper); }
+    .guide-cell.feature .num, .guide-cell.feature p { color: rgba(250,246,236,0.82); }
+    .guide-cell.feature:hover { background: var(--sage-deep); }
+    @media (max-width: 620px) { .guide-grid { grid-template-columns: 1fr; } }
+
+    /* ===== Legacies ===== */
+    .legacies { background: var(--paper-2); border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
+    .legacies .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .legacies .lg-mark { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.1rem; color: var(--clay-deep); }
+    .legacies h2 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0.8rem 0 1.2rem; }
+    .legacies p { font-size: 1.1rem; color: var(--ink-soft); margin-bottom: 1.8rem; }
+    .legacies .pull { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.5rem; line-height: 1.4; color: var(--ink); border-left: 3px solid var(--clay); padding-left: 1.5rem; }
+    @media (max-width: 880px) { .legacies .wrap { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+    /* ===== Local note (founder) ===== */
+    .note { padding: 5rem 0; }
+    .note .inner { max-width: 40rem; }
+    .note .label { color: var(--sage-deep); }
+    .note h2 { font-size: clamp(1.8rem, 4.5vw, 2.7rem); margin: 1rem 0 1.3rem; }
+    .note p { font-size: 1.12rem; color: var(--ink-soft); margin-bottom: 1.1rem; }
+    .note .sig { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.5rem; color: var(--ink); margin-top: 0.5rem; }
+
+    /* ===== Newsletter ===== */
+    .news { background: var(--ink); color: var(--paper); padding: 4rem 0; }
+    .news .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+    .news .label { color: var(--clay); }
+    .news h2 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); margin: 0.8rem 0 0.6rem; color: var(--paper); }
+    .news p { color: rgba(250,246,236,0.7); }
+    .news-form { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .news-form input { flex: 1; min-width: 200px; padding: 0.85rem 1rem; border: 1.5px solid rgba(250,246,236,0.3); background: transparent; color: var(--paper); font-size: 1rem; font-family: inherit; border-radius: 4px; }
+    .news-form input::placeholder { color: rgba(250,246,236,0.45); }
+    .news-form input:focus { outline: none; border-color: var(--clay); }
+
+    /* Get involved (business + locals) */
+    .involve { padding: 3.5rem 0; border-top: 1px solid var(--line); }
+    .involve .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .involve-card { border: 1.5px solid var(--ink); border-top: 4px solid var(--clay-deep); padding: 1.7rem 1.6rem; }
+    .involve-card h3 { font-size: 1.45rem; margin-bottom: 0.5rem; }
+    .involve-card p { color: var(--ink-soft); margin-bottom: 1.3rem; }
+    @media (max-width: 760px) { .involve .wrap { grid-template-columns: 1fr; } }
+    @media (max-width: 760px) { .news .wrap { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+    /* ===== Footer ===== */
+    footer.site { padding: 3rem 0 2.5rem; border-top: 1.5px solid var(--ink); }
+    footer.site .wrap { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; align-items: flex-start; }
+    footer .brand-name { font-size: 1.3rem; }
+    footer .f-tag { color: var(--ink-soft); font-size: 0.9rem; margin-top: 0.4rem; max-width: 18rem; }
+    .f-nav { display: flex; flex-direction: column; gap: 0.4rem; }
+    .f-nav a { font-size: 0.92rem; color: var(--ink-soft); }
+    .f-nav a:hover { color: var(--clay-deep); }
+    .f-copy { width: 100%; border-top: 1px solid var(--line); margin-top: 1.5rem; padding-top: 1.5rem; font-size: 0.8rem; color: var(--ink-soft); }
+  </style>
+  <script>
+    /* Set day/night before paint: saved choice first, otherwise match the phone's setting. */
+    (function(){ try { var s = localStorage.getItem('sml-theme'); var t = s || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+  </script>
+</head>
+<body id="top">
+
+  <!-- ===== Masthead ===== -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <a class="brand" href="#top">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
+        <span class="brand-name">San Mateo Local</span>
+      </a>
+      <div class="masthead-right">
+        <nav class="masthead-nav">
+          <a href="eat-drink.html">Eat &amp; Drink</a>
+          <a href="things-to-do.html">Things To Do</a>
+          <a href="shopping.html">Shopping</a>
+          <a href="local-services.html">Services</a>
+          <a href="#legacies">Legacies</a>
+          <a href="#newsletter" class="sub">Subscribe</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch between day and night mode" onclick="(function(d){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('sml-theme',t)}catch(e){}})(document.documentElement)">
+          <span class="moon" aria-hidden="true">☾</span><span class="sun" aria-hidden="true">☀</span>
+        </button>
+      </div>
+    </div>
+    <div class="dateline">A born-and-raised local's guide to San Mateo, California &nbsp;·&nbsp; Est. 2026</div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="label">From a local, not an algorithm</span>
+        <h1>The San Mateo <span class="serif-it">only locals know.</span></h1>
+        <p class="lede">Born and raised here. These are the restaurants, neighborhoods, hidden gems, and longtime favorites that make San Mateo feel like home, not just another place on the map.</p>
+        <div class="hero-cta">
+          <a class="btn btn-clay" href="#favorites">Start with the guide</a>
+          <a class="btn btn-outline" href="#hoods">Browse by neighborhood</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="images/central-park-japanese-garden.jpg" alt="The Japanese Tea Garden in Central Park, San Mateo" loading="eager" />
+        <figcaption>Central Park's Japanese Tea Garden, right here in San Mateo</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== Neighborhood strip ===== -->
+  <div class="hoods" id="hoods">
+    <div class="wrap">
+      <span class="label">By neighborhood</span>
+      <nav class="hood-list">
+        <a href="#favorites">Downtown</a>
+        <a href="#favorites">Hayward Park</a>
+        <a href="#favorites">Hillsdale</a>
+        <a href="#favorites">Bay Meadows</a>
+        <a href="#favorites">Baywood</a>
+        <a href="#favorites">Aragon</a>
+        <a href="#favorites">North Central</a>
+        <a href="#favorites">Shoreview</a>
+        <a href="#favorites">Laurelwood</a>
+        <a href="#favorites">Beresford</a>
+        <a href="#favorites">San Mateo Park</a>
+        <a href="#favorites">Marina Lagoon</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ===== Local favorites ===== -->
+  <section class="sec" id="favorites">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>A few spots I send everyone to</h2>
+        <a class="link" href="eat-drink.html">All of Eat &amp; Drink →</a>
+      </div>
+      <div class="fav-grid">
+
+        <article class="fav">
+          <a href="https://joe.coffee/locations/ca/san-mateo/3-bees-coffee-san-mateo-1e154c5d-9dc4-4a6e-b587-6e899e9d2618/" target="_blank" rel="noopener">
+            <span class="fav-kicker">Coffee</span>
+            <h3>3 Bees Coffee</h3>
+            <p class="meta">Downtown · 3rd Avenue</p>
+            <p>The opposite of corporate. A family-run coffee house with what regulars call the best espresso in the county, rotating local art, and a sunny spot out front to actually slow down.</p>
+            <span class="readon">Read more →</span>
+          </a>
+        </article>
+
+        <article class="fav">
+          <a href="#">
+            <span class="fav-kicker">Italian</span>
+            <h3>Pausa</h3>
+            <p class="meta">Downtown · 4th Avenue</p>
+            <p>Scratch pastas and an all-Italian wine list. The downtown date-night anchor, and a Michelin Guide name to boot.</p>
+            <span class="readon">Read more →</span>
+          </a>
+        </article>
+
+        <article class="fav">
+          <a href="#">
+            <span class="fav-kicker">Cocktails</span>
+            <h3>Fogbird</h3>
+            <p class="meta">Downtown · B Street</p>
+            <p>Craft cocktails under a nine-foot bar and an old brick wall. Where you go when you actually want to impress someone.</p>
+            <span class="readon">Read more →</span>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== The Guide (sections index) ===== -->
+  <section class="sec" id="guide" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>The whole guide</h2>
+        <span class="link">Updated all the time</span>
+      </div>
+      <div class="guide-grid">
+        <a class="guide-cell" href="eat-drink.html"><div class="num">01</div><h3>Eat &amp; Drink</h3><p>Restaurants, coffee, happy hours, brunch, and the bakeries worth the line.</p></a>
+        <a class="guide-cell" href="things-to-do.html"><div class="num">02</div><h3>Things To Do</h3><p>Coyote Point, Central Park's Japanese Garden, the Bay Trail, and where to take the dog.</p></a>
+        <a class="guide-cell" href="#"><div class="num">03</div><h3>Weekend Guides</h3><p>A perfect Saturday, date nights, rainy days, and what to do with the kids.</p></a>
+        <a class="guide-cell" href="#"><div class="num">04</div><h3>Hidden Gems</h3><p>The corners only locals know. No tourist traps, no filler.</p></a>
+        <a class="guide-cell feature" href="#legacies"><div class="num">05</div><h3>San Mateo Legacies ✦</h3><p>The spots that have been here since the '80s and before. Nobody else is telling these stories.</p></a>
+        <a class="guide-cell" href="local-services.html"><div class="num">06</div><h3>Local Services</h3><p>Vetted local roofers, plumbers, dentists, and realtors. Real recommendations, not random.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Legacies ===== -->
+  <section class="legacies sec" id="legacies">
+    <div class="wrap">
+      <div>
+        <span class="lg-mark">✦ The series</span>
+        <h2>San Mateo Legacies</h2>
+        <p>A tribute to the diners, the shops, and the family-run spots that have been part of San Mateo since the 1980s and before. The ones that outlasted every trend. No other guide is doing this.</p>
+        <a class="btn btn-clay" href="mailto:hello@sanmateolocal.com?subject=Legacy%20nomination">Nominate a legacy spot</a>
+        <p style="margin-top:1.3rem;"><a href="gone-but-not-forgotten.html" style="color:var(--clay-deep); font-weight:600;">And remember the ones we lost &rarr; Gone But Not Forgotten</a></p>
+      </div>
+      <div>
+        <p class="pull">"Some of these places don't even have a website. Find them the old-fashioned way. Just walk in."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Local note (founder voice) ===== -->
+  <section class="note">
+    <div class="wrap">
+      <div class="inner">
+        <span class="label">Why trust a local</span>
+        <h2>I grew up here. I'm not an algorithm.</h2>
+        <p>I was born and raised in San Mateo. I know which taco counter is worth the wait, which park has the light at the end of the day, and which "hidden gems" on the review sites are just tourist traps with good SEO.</p>
+        <p>This is my honest, regularly updated guide to the city I love. If it's listed here, I stand behind it. That's the whole promise.</p>
+        <p class="sig">— A San Mateo local</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Newsletter ===== -->
+  <section class="news" id="newsletter">
+    <div class="wrap">
+      <div>
+        <span class="label">The Friday note</span>
+        <h2>The San Mateo Local, every Friday.</h2>
+        <p>New spots, the weekend's best, and a legacy story or two. Free.</p>
+      </div>
+      <!-- CONNECT TO EMAIL SERVICE: wire to Resend (already used on Jason's other projects) or Mailchimp/ConvertKit -->
+      <form class="news-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('button').textContent='Thanks, see you Friday.';">
+        <input type="email" placeholder="you@email.com" required aria-label="Email address" />
+        <button type="submit" class="btn btn-clay">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <!-- ===== Get involved ===== -->
+  <section class="involve">
+    <div class="wrap">
+      <div class="involve-card">
+        <p class="label">For business owners</p>
+        <h3>Own a San Mateo business?</h3>
+        <p>Get featured on the guide, ask about a featured spot, or get a website that actually works. We're local, and we'd love to have you.</p>
+        <a class="btn btn-clay" href="mailto:hello@sanmateolocal.com?subject=Featured%20listing%20inquiry">Get featured</a>
+      </div>
+      <div class="involve-card">
+        <p class="label">For locals</p>
+        <h3>Know a spot we're missing?</h3>
+        <p>Locals run this guide. Send us your favorite, the hidden gem, or a place that should be on here.</p>
+        <a class="btn btn-outline" href="mailto:hello@sanmateolocal.com?subject=Spot%20suggestion">Suggest a spot</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>
+        <div class="brand">
+          <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
+          <span class="brand-name">San Mateo Local</span>
+        </div>
+        <p class="f-tag">An honest, local guide to the best of San Mateo, California.</p>
+      </div>
+      <nav class="f-nav">
+        <a href="eat-drink.html">Eat &amp; Drink</a>
+        <a href="things-to-do.html">Things To Do</a>
+        <a href="#hoods">Neighborhoods</a>
+        <a href="#legacies">Legacies</a>
+        <a href="#newsletter">Subscribe</a>
+      </nav>
+      <p class="f-copy">© 2026 San Mateo Local. Made by a local, for locals. SanMateoLocal.com &nbsp;·&nbsp; Central Park photo via Wikimedia Commons (public domain).</p>
+    </div>
+  </footer>
+
+</body>
+</html>
