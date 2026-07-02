@@ -37,6 +37,7 @@
       --bay: #2E5A6B;
       --line: #E3D6BC;
       --line-soft: #ECE1CB;
+      --card: #FFFDF7;
     }
 
     /* ===== Night edition (warm dark mode) ===== */
@@ -51,6 +52,7 @@
       --sage-deep: #6E9077;
       --line: #3A2E24;
       --line-soft: #2C231B;
+      --card: #241D17;
     }
     /* keep the dark "bands" dark at night instead of flipping bright */
     [data-theme="dark"] .hoods { background: var(--paper-2); color: var(--ink); }
@@ -131,6 +133,7 @@
     .hood-list { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; }
     .hood-list a { font-family: 'Fraunces', serif; font-size: 1.05rem; color: var(--paper); border-bottom: 1px solid transparent; }
     .hood-list a:hover { border-bottom-color: var(--clay); color: #fff; }
+    .hood-list .hood-more { margin-left: 0.4rem; color: var(--clay); font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; }
 
     /* ===== Section scaffolding ===== */
     section { scroll-margin-top: 90px; }
@@ -144,7 +147,7 @@
     .fav-track { display: flex; gap: 1.25rem; width: max-content; animation: fav-marquee 75s linear infinite; }
     .fav-scroll:hover .fav-track { animation-play-state: paused; }
     @keyframes fav-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .fav { flex: 0 0 300px; border: 1.5px solid var(--ink); border-top: 4px solid var(--clay-deep); background: var(--paper); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+    .fav { flex: 0 0 300px; border: 1.5px solid var(--ink); border-top: 4px solid var(--clay-deep); background: var(--card); box-shadow: 0 2px 6px -3px rgba(34,29,22,0.16); transition: transform 0.18s ease, box-shadow 0.18s ease; }
     .fav a { display: flex; flex-direction: column; height: 100%; padding: 1.4rem 1.4rem 1.5rem; }
     .fav:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -20px rgba(34,29,22,0.45); }
     .fav .fav-kicker { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--clay-deep); }
@@ -269,6 +272,7 @@
           <a href="things-to-do.html">Things To Do</a>
           <a href="shopping.html">Shopping</a>
           <a href="local-services.html">Services</a>
+          <a href="blog.html">Guides</a>
           <a href="#legacies">Legacies</a>
           <a href="#newsletter" class="sub">Subscribe</a>
         </nav>
@@ -285,6 +289,7 @@
       <a href="things-to-do.html">Things To Do</a>
       <a href="shopping.html">Shopping</a>
       <a href="local-services.html">Services</a>
+      <a href="blog.html">Guides</a>
       <a href="#legacies">Legacies</a>
       <a href="#newsletter" class="sub">Subscribe</a>
     </nav>
@@ -300,7 +305,7 @@
         <p class="lede">Born and raised here. These are the restaurants, neighborhoods, hidden gems, and longtime favorites that make San Mateo feel like home, not just another place on the map.</p>
         <div class="hero-cta">
           <a class="btn btn-clay" href="#favorites">Start with the guide</a>
-          <a class="btn btn-outline" href="#hoods">Browse by neighborhood</a>
+          <a class="btn btn-outline" href="blog.html">Read the guide</a>
         </div>
       </div>
       <figure class="hero-photo">
@@ -310,23 +315,15 @@
     </div>
   </section>
 
-  <!-- ===== Neighborhood strip ===== -->
-  <div class="hoods" id="hoods">
+  <!-- ===== Latest from the guide strip (auto-updated by scripts/build-blog.mjs) ===== -->
+  <div class="hoods" id="latest">
     <div class="wrap">
-      <span class="label">By neighborhood</span>
+      <span class="label">Latest from the guide</span>
       <nav class="hood-list">
-        <a href="#favorites">Downtown</a>
-        <a href="#favorites">Hayward Park</a>
-        <a href="#favorites">Hillsdale</a>
-        <a href="#favorites">Bay Meadows</a>
-        <a href="#favorites">Baywood</a>
-        <a href="#favorites">Aragon</a>
-        <a href="#favorites">North Central</a>
-        <a href="#favorites">Shoreview</a>
-        <a href="#favorites">Laurelwood</a>
-        <a href="#favorites">Beresford</a>
-        <a href="#favorites">San Mateo Park</a>
-        <a href="#favorites">Marina Lagoon</a>
+        <!-- LATEST:START -->
+        <a href="new-openings-summer-2026.html">New Openings &mdash; New in San Mateo: Summer 2026 &rarr;</a>
+        <a class="hood-more" href="blog.html">All guides &rarr;</a>
+        <!-- LATEST:END -->
       </nav>
     </div>
   </div>
@@ -479,7 +476,7 @@
       <nav class="f-nav">
         <a href="eat-drink.html">Eat &amp; Drink</a>
         <a href="things-to-do.html">Things To Do</a>
-        <a href="#hoods">Neighborhoods</a>
+        <a href="blog.html">Guides</a>
         <a href="#legacies">Legacies</a>
         <a href="#newsletter">Subscribe</a>
       </nav>

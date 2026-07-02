@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guides &amp; Updates | San Mateo Local</title>
+  <meta name="description" content="New openings, weekend picks, and local guides to San Mateo, California, from a born-and-raised local." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='14' r='6' fill='%23C25B3A'/><path d='M1 27 Q9 19 16 23 T31 25 V32 H1 Z' fill='%2341614B'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+  :root { --paper:#FAF6EC; --paper-2:#F2E9D4; --ink:#221D16; --ink-soft:#5E5446; --clay:#C25B3A; --clay-deep:#A5492B; --sage-deep:#324C3A; --line:#E3D6BC; --line-soft:#ECE1CB; }
+  [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3 { font-family:'Fraunces',Georgia,serif; line-height:1.12; font-weight:600; letter-spacing:-0.01em; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
+  .article { max-width:46rem; margin:0 auto; padding:0 1.5rem; }
+  .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+  /* masthead */
+  .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:50; }
+  .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1.5rem; max-width:1140px; margin:0 auto; }
+  .brand { display:flex; align-items:center; gap:0.6rem; }
+  .brand svg { width:30px; height:30px; flex:none; }
+  .brand-name { font-family:'Fraunces',serif; font-weight:700; font-size:1.45rem; letter-spacing:-0.02em; }
+  .masthead-right { display:flex; align-items:center; gap:1.25rem; }
+  .masthead-nav { display:flex; gap:1.4rem; align-items:center; }
+  .masthead-nav a { font-size:0.9rem; font-weight:500; color:var(--ink-soft); }
+  .masthead-nav a:hover { color:var(--clay-deep); }
+  .masthead-nav a.on { color:var(--clay-deep); font-weight:600; }
+  .theme-toggle { background:none; border:1.5px solid var(--line); border-radius:999px; width:36px; height:36px; cursor:pointer; color:var(--ink); font-size:1rem; display:inline-flex; align-items:center; justify-content:center; flex:none; }
+  .theme-toggle .sun { display:none; } [data-theme="dark"] .theme-toggle .moon { display:none; } [data-theme="dark"] .theme-toggle .sun { display:inline; }
+  .menu-btn { display:none; background:none; border:1.5px solid var(--line); border-radius:8px; width:38px; height:38px; cursor:pointer; color:var(--ink); align-items:center; justify-content:center; padding:0; flex:none; }
+  .menu-btn svg { width:20px; height:20px; }
+  .mobile-nav { display:none; }
+  .dateline { border-top:1px solid var(--line); text-align:center; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft); padding:0.4rem 1rem; }
+  @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line-soft); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--clay-deep); } }
+  /* blog index */
+  .blog-head { padding:3.5rem 0 2rem; border-bottom:1.5px solid var(--ink); }
+  .blog-head h1 { font-size:clamp(2.2rem,6vw,3.4rem); margin:0.7rem 0 0.6rem; }
+  .blog-head p { color:var(--ink-soft); font-size:1.1rem; max-width:40rem; }
+  .post-list { display:grid; gap:1.3rem; padding:2.5rem 0 3rem; }
+  .post-card { border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); background:#fff; padding:1.6rem 1.6rem 1.7rem; transition:transform 0.18s ease, box-shadow 0.18s ease; }
+  [data-theme="dark"] .post-card { background:var(--paper-2); }
+  .post-card:hover { transform:translateY(-4px); box-shadow:0 16px 34px -20px rgba(34,29,22,0.45); }
+  .post-card .k { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+  .post-card h2 { font-size:1.7rem; margin:0.4rem 0 0.3rem; }
+  .post-card .date { font-size:0.78rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.6rem; }
+  .post-card p { color:var(--ink-soft); }
+  .post-card .readon { margin-top:0.9rem; font-weight:600; color:var(--clay-deep); font-size:0.92rem; }
+  /* article */
+  .post { padding:3.2rem 0 2rem; }
+  .post .back { font-size:0.85rem; font-weight:600; color:var(--clay-deep); }
+  .post h1 { font-size:clamp(2rem,5.5vw,3rem); margin:0.8rem 0 0.5rem; }
+  .post .date { font-size:0.8rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.1em; }
+  .post .dek { font-family:'Fraunces',serif; font-style:italic; font-size:1.3rem; color:var(--ink); margin:1rem 0 0; line-height:1.4; }
+  .post .intro { font-size:1.12rem; color:var(--ink-soft); margin:1.6rem 0 0.5rem; }
+  .post h2 { font-size:1.5rem; margin:2.4rem 0 0.3rem; padding-bottom:0.5rem; border-bottom:2px solid var(--clay); }
+  .spot { padding:1.1rem 0; border-bottom:1px solid var(--line); }
+  .spot:last-child { border-bottom:none; }
+  .spot h3 { font-size:1.3rem; margin-bottom:0.2rem; }
+  .spot h3 a:hover { color:var(--clay-deep); }
+  .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.4rem; }
+  .spot p { color:var(--ink-soft); }
+  .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--clay); font-family:'Fraunces',serif; font-style:italic; font-size:1.1rem; }
+  .post .outro a { color:var(--clay-deep); font-weight:600; font-style:normal; }
+  /* footer */
+  footer.site { padding:3rem 0 2.5rem; border-top:1.5px solid var(--ink); margin-top:2rem; }
+  footer.site .wrap { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; align-items:flex-start; }
+  footer .brand-name { font-size:1.3rem; }
+  .f-nav { display:flex; flex-direction:column; gap:0.4rem; }
+  .f-nav a { font-size:0.92rem; color:var(--ink-soft); }
+  .f-nav a:hover { color:var(--clay-deep); }
+  .f-copy { width:100%; border-top:1px solid var(--line); margin-top:1.5rem; padding-top:1.5rem; font-size:0.8rem; color:var(--ink-soft); }</style>
+  <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-top">
+      <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg><span class="brand-name">San Mateo Local</span></a>
+      <div class="masthead-right">
+        <nav class="masthead-nav">
+          <a href="eat-drink.html">Eat &amp; Drink</a>
+          <a href="things-to-do.html">Things To Do</a>
+          <a href="shopping.html">Shopping</a>
+          <a href="local-services.html">Services</a>
+          <a href="blog.html" class="on">Guides</a>
+          <a href="index.html#legacies">Legacies</a>
+          <a href="index.html#newsletter" class="sub">Subscribe</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch between day and night mode" onclick="(function(d){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('sml-theme',t)}catch(e){}})(document.documentElement)"><span class="moon" aria-hidden="true">&#9790;</span><span class="sun" aria-hidden="true">&#9728;</span></button>
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" onclick="(function(b){var o=document.querySelector('.masthead').classList.toggle('nav-open');b.setAttribute('aria-expanded',o);})(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      </div>
+    </div>
+    <nav class="mobile-nav">
+      <a href="eat-drink.html">Eat &amp; Drink</a>
+      <a href="things-to-do.html">Things To Do</a>
+      <a href="shopping.html">Shopping</a>
+      <a href="local-services.html">Services</a>
+      <a href="blog.html">Guides</a>
+      <a href="index.html#legacies">Legacies</a>
+      <a href="index.html#newsletter" class="sub">Subscribe</a>
+    </nav>
+    <div class="dateline">A born-and-raised local's guide to San Mateo, California</div>
+  </header>
+  <section class="blog-head"><div class="wrap">
+    <span class="label">Guides &amp; updates</span>
+    <h1>The latest from San Mateo Local</h1>
+    <p>New openings, weekend picks, and honest local guides. Fresh takes on what's worth your time around town.</p>
+  </div></section>
+  <div class="wrap"><div class="post-list">
+        <a class="post-card" href="new-openings-summer-2026.html">
+          <div class="k">New Openings</div>
+          <h2>New in San Mateo: Summer 2026</h2>
+          <div class="date">July 1, 2026</div>
+          <p>A downtown brunch boom, a matcha bar, Korean BBQ, and more — the freshest spots to open around town.</p>
+          <div class="readon">Read the guide &rarr;</div>
+        </a>
+  </div></div>
+  <footer class="site">
+    <div class="wrap">
+      <div>
+        <div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg><span class="brand-name">San Mateo Local</span></div>
+      </div>
+      <nav class="f-nav">
+        <a href="eat-drink.html">Eat &amp; Drink</a>
+        <a href="things-to-do.html">Things To Do</a>
+        <a href="blog.html">Guides</a>
+        <a href="index.html#legacies">Legacies</a>
+        <a href="index.html#newsletter">Subscribe</a>
+      </nav>
+      <p class="f-copy">&copy; 2026 San Mateo Local. Made by a local, for locals. SanMateoLocal.com</p>
+    </div>
+  </footer>
+<script>(function(){var h=document.querySelector('.masthead');function c(){if(h.classList.contains('nav-open')){h.classList.remove('nav-open');var b=h.querySelector('.menu-btn');if(b)b.setAttribute('aria-expanded','false');}}document.querySelectorAll('.mobile-nav a').forEach(function(a){a.addEventListener('click',c);});window.addEventListener('scroll',c,{passive:true});document.addEventListener('click',function(e){if(h.classList.contains('nav-open')&&!h.contains(e.target))c();});})();</script>
+</body>
+</html>
