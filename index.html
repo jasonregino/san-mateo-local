@@ -216,6 +216,7 @@
     .news-form input { flex: 1; min-width: 200px; padding: 0.85rem 1rem; border: 1.5px solid rgba(250,246,236,0.3); background: transparent; color: var(--paper); font-size: 1rem; font-family: inherit; border-radius: 4px; }
     .news-form input::placeholder { color: rgba(250,246,236,0.45); }
     .news-form input:focus { outline: none; border-color: var(--clay); }
+    .news-ok { color: var(--clay); font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; margin: 0.2rem 0 0; }
 
     /* Get involved (business + locals) */
     .involve { padding: 3.5rem 0; border-top: 1px solid var(--line); }
@@ -439,11 +440,23 @@
         <h2>The San Mateo Local, every Friday.</h2>
         <p>New spots, the weekend's best, and a legacy story or two. Free.</p>
       </div>
-      <!-- CONNECT TO EMAIL SERVICE: wire to Resend (already used on Jason's other projects) or Mailchimp/ConvertKit -->
-      <form class="news-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('button').textContent='Thanks, see you Friday.';">
-        <input type="email" placeholder="you@email.com" required aria-label="Email address" />
+      <!-- Wired to Buttondown (username: sanmateolocal). JS posts in the background + shows an inline confirmation; if JS is off, the native POST opens Buttondown's confirm page in a new tab. -->
+      <form class="news-form" action="https://buttondown.com/api/emails/embed-subscribe/sanmateolocal" method="post" target="_blank" onsubmit="return smlSubscribe(this)">
+        <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address" />
         <button type="submit" class="btn btn-clay">Subscribe</button>
       </form>
+      <script>
+        function smlSubscribe(form) {
+          try {
+            fetch(form.action, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'email=' + encodeURIComponent(form.email.value) });
+          } catch (e) { return true; }
+          var ok = document.createElement('p');
+          ok.className = 'news-ok';
+          ok.textContent = "You're on the list. Check your inbox to confirm your email.";
+          form.replaceWith(ok);
+          return false;
+        }
+      </script>
     </div>
   </section>
 
