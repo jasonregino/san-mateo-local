@@ -45,7 +45,10 @@
     .theme-toggle { background:none; border:1.5px solid var(--line); border-radius:999px; width:36px; height:36px; cursor:pointer; color:var(--ink); font-size:1rem; display:inline-flex; align-items:center; justify-content:center; flex:none; }
     .theme-toggle .sun { display:none; } [data-theme="dark"] .theme-toggle .moon { display:none; } [data-theme="dark"] .theme-toggle .sun { display:inline; }
     .dateline { border-top:1px solid var(--line); text-align:center; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft); padding:0.4rem 1rem; }
-    @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } }
+    .menu-btn { display:none; background:none; border:1.5px solid var(--line); border-radius:8px; width:38px; height:38px; cursor:pointer; color:var(--ink); align-items:center; justify-content:center; padding:0; flex:none; }
+    .menu-btn svg { width:20px; height:20px; }
+    .mobile-nav { display:none; }
+    @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--clay-deep); } }
     .page-head { padding:3rem 0 2rem; border-bottom:1.5px solid var(--ink); }
     .back { font-size:0.85rem; font-weight:600; color:var(--clay-deep); }
     .page-head h1 { font-size:clamp(2.2rem,6vw,3.6rem); font-weight:600; margin:0.8rem 0 0.8rem; }
@@ -119,8 +122,17 @@
           <a href="index.html#newsletter" class="sub">Subscribe</a>
         </nav>
         <button class="theme-toggle" type="button" aria-label="Switch between day and night mode" onclick="(function(d){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('sml-theme',t)}catch(e){}})(document.documentElement)"><span class="moon" aria-hidden="true">&#9790;</span><span class="sun" aria-hidden="true">&#9728;</span></button>
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" onclick="(function(b){var o=document.querySelector('.masthead').classList.toggle('nav-open');b.setAttribute('aria-expanded',o);})(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
       </div>
     </div>
+    <nav class="mobile-nav">
+      <a href="eat-drink.html">Eat &amp; Drink</a>
+      <a href="things-to-do.html">Things To Do</a>
+      <a href="shopping.html">Shopping</a>
+      <a href="local-services.html">Services</a>
+      <a href="index.html#legacies">Legacies</a>
+      <a href="index.html#newsletter" class="sub">Subscribe</a>
+    </nav>
     <div class="dateline">Shopping &nbsp;&middot;&nbsp; 43 local picks and counting</div>
   </header>
 

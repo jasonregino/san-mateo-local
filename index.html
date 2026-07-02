@@ -98,7 +98,18 @@
     .masthead-nav a:hover { color: var(--clay-deep); }
     .masthead-nav .sub { color: var(--clay-deep); font-weight: 600; }
     .dateline { border-top: 1px solid var(--line); text-align: center; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); padding: 0.4rem 1rem; }
-    @media (max-width: 880px) { .masthead-nav { display: none; } html { font-size: 17px; } }
+    .menu-btn { display: none; background: none; border: 1.5px solid var(--line); border-radius: 8px; width: 38px; height: 38px; cursor: pointer; color: var(--ink); align-items: center; justify-content: center; padding: 0; flex: none; }
+    .menu-btn svg { width: 20px; height: 20px; }
+    .mobile-nav { display: none; }
+    @media (max-width: 880px) {
+      .masthead-nav { display: none; }
+      html { font-size: 17px; }
+      .menu-btn { display: inline-flex; }
+      .masthead.nav-open .mobile-nav { display: flex; flex-direction: column; padding: 0.2rem 1.5rem 0.9rem; }
+      .mobile-nav a { padding: 0.85rem 0.2rem; font-size: 1.12rem; font-weight: 600; color: var(--ink); border-top: 1px solid var(--line-soft); }
+      .mobile-nav a:first-child { border-top: none; }
+      .mobile-nav a.sub { color: var(--clay-deep); }
+    }
 
     /* ===== Hero ===== */
     .hero { padding: 4.5rem 0 3.5rem; border-bottom: 1px solid var(--line); }
@@ -128,17 +139,19 @@
     .sec-head h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); }
     .sec-head .link { font-size: 0.9rem; font-weight: 600; color: var(--clay-deep); white-space: nowrap; }
 
-    /* ===== Favorites (editorial, text-forward) ===== */
-    .fav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .fav { border: 1.5px solid var(--ink); border-top: 4px solid var(--clay-deep); transition: transform 0.18s ease, box-shadow 0.18s ease; }
-    .fav a { display: flex; flex-direction: column; height: 100%; padding: 1.6rem 1.5rem 1.7rem; }
+    /* ===== Favorites (auto-scrolling marquee) ===== */
+    .fav-scroll { overflow: hidden; position: relative; padding: 0.4rem 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+    .fav-track { display: flex; gap: 1.25rem; width: max-content; animation: fav-marquee 75s linear infinite; }
+    .fav-scroll:hover .fav-track { animation-play-state: paused; }
+    @keyframes fav-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .fav { flex: 0 0 300px; border: 1.5px solid var(--ink); border-top: 4px solid var(--clay-deep); background: var(--paper); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+    .fav a { display: flex; flex-direction: column; height: 100%; padding: 1.4rem 1.4rem 1.5rem; }
     .fav:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -20px rgba(34,29,22,0.45); }
     .fav .fav-kicker { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--clay-deep); }
-    .fav h3 { font-size: 1.55rem; margin: 0.5rem 0 0.45rem; }
-    .fav .meta { font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage-deep); font-weight: 600; margin-bottom: 0.7rem; }
-    .fav p { color: var(--ink-soft); font-size: 0.98rem; flex: 1; }
-    .fav .readon { margin-top: 1rem; font-weight: 600; font-size: 0.9rem; color: var(--clay-deep); }
-    @media (max-width: 880px) { .fav-grid { grid-template-columns: 1fr; } }
+    .fav h3 { font-size: 1.4rem; margin: 0.5rem 0 0.4rem; }
+    .fav .meta { font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage-deep); font-weight: 600; margin-bottom: 0.6rem; }
+    .fav p { color: var(--ink-soft); font-size: 0.95rem; flex: 1; }
+    @media (prefers-reduced-motion: reduce) { .fav-track { animation: none; } .fav-scroll { overflow-x: auto; } }
 
     /* ===== Sections list (the guide index) ===== */
     .guide-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1.5px solid var(--ink); }
@@ -262,8 +275,19 @@
         <button class="theme-toggle" type="button" aria-label="Switch between day and night mode" onclick="(function(d){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('sml-theme',t)}catch(e){}})(document.documentElement)">
           <span class="moon" aria-hidden="true">☾</span><span class="sun" aria-hidden="true">☀</span>
         </button>
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" onclick="(function(b){var o=document.querySelector('.masthead').classList.toggle('nav-open');b.setAttribute('aria-expanded',o);})(this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
       </div>
     </div>
+    <nav class="mobile-nav">
+      <a href="eat-drink.html">Eat &amp; Drink</a>
+      <a href="things-to-do.html">Things To Do</a>
+      <a href="shopping.html">Shopping</a>
+      <a href="local-services.html">Services</a>
+      <a href="#legacies">Legacies</a>
+      <a href="#newsletter" class="sub">Subscribe</a>
+    </nav>
     <div class="dateline">A born-and-raised local's guide to San Mateo, California &nbsp;·&nbsp; Est. 2026</div>
   </header>
 
@@ -314,38 +338,21 @@
         <h2>A Short List of Local Favorites</h2>
         <a class="link" href="eat-drink.html">All of Eat &amp; Drink →</a>
       </div>
-      <div class="fav-grid">
-
-        <article class="fav reveal">
-          <a href="https://joe.coffee/locations/ca/san-mateo/3-bees-coffee-san-mateo-1e154c5d-9dc4-4a6e-b587-6e899e9d2618/" target="_blank" rel="noopener">
-            <span class="fav-kicker">Coffee</span>
-            <h3>3 Bees Coffee</h3>
-            <p class="meta">Downtown · 3rd Avenue</p>
-            <p>The opposite of corporate. A family-run coffee house with what regulars call the best espresso in the county, rotating local art, and a sunny spot out front to actually slow down.</p>
-            <span class="readon">Read more →</span>
-          </a>
-        </article>
-
-        <article class="fav reveal">
-          <a href="eat-drink.html">
-            <span class="fav-kicker">Italian</span>
-            <h3>Pausa</h3>
-            <p class="meta">Downtown · 4th Avenue</p>
-            <p>Scratch pastas and an all-Italian wine list. The downtown date-night anchor, and a Michelin Guide name to boot.</p>
-            <span class="readon">Read more →</span>
-          </a>
-        </article>
-
-        <article class="fav reveal">
-          <a href="eat-drink.html">
-            <span class="fav-kicker">Cocktails</span>
-            <h3>Fogbird</h3>
-            <p class="meta">Downtown · B Street</p>
-            <p>Craft cocktails under a nine-foot bar and an old brick wall. Where you go when you actually want to impress someone.</p>
-            <span class="readon">Read more →</span>
-          </a>
-        </article>
-
+      <div class="fav-scroll">
+        <div class="fav-track">
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Coffee</span><h3>3 Bees Coffee</h3><p class="meta">Downtown · 3rd Ave</p><p>Family-run espresso, rotating local art, and a sunny spot out front.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Italian</span><h3>Pausa</h3><p class="meta">Downtown · 4th Ave</p><p>Scratch pastas and an all-Italian wine list. A Michelin Guide name.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Cocktails</span><h3>Fogbird</h3><p class="meta">Downtown · B Street</p><p>Craft cocktails under a nine-foot bar and an old brick wall.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Steakhouse</span><h3>Porterhouse</h3><p class="meta">Downtown · B Street</p><p>The Peninsula's in-house dry-aging steakhouse.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Brazilian</span><h3>Espetus Churrascaria</h3><p class="meta">B Street</p><p>All-you-can-eat rodizio, carved tableside.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Dim Sum</span><h3>Palette Tea Garden</h3><p class="meta">Hillsdale</p><p>Modern dim sum and Peking duck from the Koi Palace team.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">British Pub</span><h3>The Swingin' Door</h3><p class="meta">25th Avenue</p><p>A proper British pub since 1955, with award-winning fish and chips.</p></a></article>
+          <article class="fav"><a href="shopping.html"><span class="fav-kicker">Market</span><h3>Takahashi Market</h3><p class="meta">Downtown</p><p>Hawaiian and Japanese groceries, and Spam musubi worth the trip.</p></a></article>
+          <article class="fav"><a href="shopping.html"><span class="fav-kicker">Florist</span><h3>Ah Sam Floral</h3><p class="meta">El Camino · since 1933</p><p>A family florist that has bloomed in San Mateo since 1933.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Italian</span><h3>Luceti's on 25th</h3><p class="meta">25th Avenue</p><p>Old-school Italian with live jazz several nights a week.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Fine Dining</span><h3>All Spice</h3><p class="meta">El Camino</p><p>Modern Californian dining in a converted Victorian.</p></a></article>
+          <article class="fav"><a href="things-to-do.html"><span class="fav-kicker">Outdoors</span><h3>Japanese Tea Garden</h3><p class="meta">Central Park</p><p>A serene tea garden right in the middle of the city.</p></a></article>
+        </div>
       </div>
     </div>
   </section>
@@ -490,6 +497,10 @@
       }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
       els.forEach(function (el) { io.observe(el); });
     })();
+    /* Favorites marquee: duplicate the cards so the scroll loops seamlessly */
+    (function () { var t = document.querySelector('.fav-track'); if (t) t.innerHTML += t.innerHTML; })();
+    /* Close the mobile menu after tapping a link */
+    (function () { var h = document.querySelector('.masthead'); document.querySelectorAll('.mobile-nav a').forEach(function (a) { a.addEventListener('click', function () { h.classList.remove('nav-open'); }); }); })();
   </script>
 
 </body>
