@@ -509,6 +509,13 @@
       }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
       els.forEach(function (el) { io.observe(el); });
     })();
+    (function () {
+      var h = document.querySelector('.masthead');
+      function close(){ if (h.classList.contains('nav-open')) { h.classList.remove('nav-open'); var b = h.querySelector('.menu-btn'); if (b) b.setAttribute('aria-expanded', 'false'); } }
+      document.querySelectorAll('.mobile-nav a').forEach(function (a) { a.addEventListener('click', close); });
+      window.addEventListener('scroll', close, { passive: true });
+      document.addEventListener('click', function (e) { if (h.classList.contains('nav-open') && !h.contains(e.target)) close(); });
+    })();
   </script>
 </body>
 </html>

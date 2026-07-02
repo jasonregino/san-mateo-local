@@ -499,8 +499,14 @@
     })();
     /* Favorites marquee: duplicate the cards so the scroll loops seamlessly */
     (function () { var t = document.querySelector('.fav-track'); if (t) t.innerHTML += t.innerHTML; })();
-    /* Close the mobile menu after tapping a link */
-    (function () { var h = document.querySelector('.masthead'); document.querySelectorAll('.mobile-nav a').forEach(function (a) { a.addEventListener('click', function () { h.classList.remove('nav-open'); }); }); })();
+    /* Mobile menu: close on link tap, on scroll, or on tap outside */
+    (function () {
+      var h = document.querySelector('.masthead');
+      function close(){ if (h.classList.contains('nav-open')) { h.classList.remove('nav-open'); var b = h.querySelector('.menu-btn'); if (b) b.setAttribute('aria-expanded', 'false'); } }
+      document.querySelectorAll('.mobile-nav a').forEach(function (a) { a.addEventListener('click', close); });
+      window.addEventListener('scroll', close, { passive: true });
+      document.addEventListener('click', function (e) { if (h.classList.contains('nav-open') && !h.contains(e.target)) close(); });
+    })();
   </script>
 
 </body>
