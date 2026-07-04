@@ -149,6 +149,7 @@
       const data = new FormData(form);
       const checked = [...form.querySelectorAll('input[name="remembered[]"]:checked')].map(c=>c.value);
       data.set('remembered', checked.join(', '));
+      data.delete('remembered[]');
       try {
         const res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:data });
         const j = await res.json();
