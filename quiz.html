@@ -50,6 +50,9 @@
     .opt:disabled{cursor:default}
     .next{margin-top:1.3rem;display:none}
     .next.show{display:inline-block}
+    .explain{display:none;margin-top:1rem;font-size:.9rem;color:var(--ink-soft);background:var(--paper-2);border-left:3px solid var(--clay);padding:.65rem .9rem;border-radius:0 8px 8px 0}
+    .explain.show{display:block}
+    .explain a{color:var(--clay-deep);font-weight:700}
     .result .score{font-family:'Fraunces',serif;font-size:3rem;font-weight:700;color:var(--clay-deep);line-height:1}
     .result h2{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;margin:.5rem 0 .4rem}
     .result p.tier{color:var(--ink-soft);font-size:1.05rem;margin-bottom:1.4rem}
@@ -88,7 +91,17 @@
     {q:"The Castaway, the special-occasion spot with wide bay views, sat at...", options:["The marina","Coyote Point","Downtown","Hillsdale"], answer:1},
     {q:"Downtown's grand old department store, on the corner of 4th and Ellsworth, was...", options:["Macy's","Levy Brothers","The Emporium","Woolworth"], answer:1},
     {q:"Handmade ravioli and deli sandwiches on South B Street, since 1948, come from...", options:["Vince's","Ravioli House","Romolo's","Luceti's"], answer:1},
-    {q:"San Mateo's roller-skating carhops, frosted mugs, and root beer floats were at the...", options:["Foster's Freeze / A&W","Farrell's","Baskin-Robbins","Thrifty"], answer:0}
+    {q:"San Mateo's roller-skating carhops, frosted mugs, and root beer floats were at the...", options:["Foster's Freeze / A&W","Farrell's","Baskin-Robbins","Thrifty"], answer:0},
+    {q:"Which tech giant got its start in San Mateo?", options:["Google","YouTube","Netflix","Facebook"], answer:1, explain:"YouTube was founded in 2005 in an office above a pizzeria on East 2nd Avenue in San Mateo."},
+    {q:"Three of these went to Serra High in San Mateo. Which one did NOT?", options:["Barry Bonds","Tom Brady","Gregg Jefferies","Rickey Henderson"], answer:3, explain:"Serra High produced Barry Bonds, Tom Brady, and Gregg Jefferies. Rickey Henderson went to Oakland Tech."},
+    {q:"The grassy mound on the Bay Trail at the end of 3rd Avenue used to be a...", options:["Ancient shell mound","City dump","Rock quarry","Ballpark"], answer:1, explain:"The hill at Seal Point Park was built right on top of the old San Mateo landfill."},
+    {q:"Which crooner called the San Mateo area home?", options:["Frank Sinatra","Bing Crosby","Dean Martin","Perry Como"], answer:1, explain:"Bing Crosby lived in the San Mateo area. <a href='https://en.wikipedia.org/wiki/Bing_Crosby' target='_blank' rel='noopener'>Learn more &rarr;</a>"},
+    {q:"Before San Mateo got the 650 area code, the whole Peninsula was...", options:["408","415","510","925"], answer:1, explain:"The Peninsula shared 415 with San Francisco until 650 split off in 1997. Old-timers still say 415."},
+    {q:"The arcade at Fashion Island before it was Tilt was called...", options:["Time-Out","Gold Mine","Aladdin's Castle","Nickel City"], answer:1},
+    {q:"What is the name of the tall copper giraffe statue by the Central Park tennis courts?", options:["George","Leon","Gerald","Stretch"], answer:1, explain:"Leon the giraffe has stood by the Central Park tennis courts for years, and plenty of kids have tried to climb him."},
+    {q:"The little market on Barneson that looks like a house, up from McDonald's, is called...", options:["Barneson Market","The Cottage","Bungalow Grocery","House of Groceries"], answer:2, explain:"Bungalow Grocery, the house-shaped market on Barneson, is still open."},
+    {q:"San Mateo's biggest downtown hotel, now long gone, was the...", options:["The Villa","Benjamin Franklin Hotel","The Dunfey","Peninsula Grand"], answer:1},
+    {q:"The Rolladium proudly billed itself as home to the world's largest what?", options:["Jukebox","Roller skate","Disco ball","Snack bar"], answer:1, explain:"The 'World's Largest Roller Skate' was the Rolladium's claim to fame."}
   ];
 
   var card = document.getElementById('quizCard');
@@ -111,7 +124,7 @@
     for (var i=0;i<item.options.length;i++){
       html += '<button class="opt" data-i="' + i + '">' + item.options[i] + '</button>';
     }
-    html += '</div><button class="btn next" id="nextBtn">' + (idx===QUESTIONS.length-1 ? 'See my score &rarr;' : 'Next &rarr;') + '</button>';
+    html += '</div><div class="explain" id="explain"></div><button class="btn next" id="nextBtn">' + (idx===QUESTIONS.length-1 ? 'See my score &rarr;' : 'Next &rarr;') + '</button>';
     card.innerHTML = html;
     var opts = card.querySelectorAll('.opt');
     opts.forEach(function(b){ b.onclick = function(){ choose(parseInt(b.dataset.i), opts); }; });
@@ -129,6 +142,8 @@
       if (bi===correct) b.classList.add('correct');
       else if (bi===i) b.classList.add('wrong');
     });
+    var ex = document.getElementById('explain');
+    if (ex && QUESTIONS[idx].explain){ ex.innerHTML = QUESTIONS[idx].explain; ex.classList.add('show'); }
     document.getElementById('nextBtn').classList.add('show');
   }
 
