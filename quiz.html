@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBBC09ZJZQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZBBC09ZJZQ');
+  </script>
+  <title>How San Mateo Are You? | San Mateo Local</title>
+  <meta name="description" content="A 10-question quiz for real San Mateo locals. Do you remember Magic Mountain, Bay Meadows, the Rolladium? Find out how San Mateo you really are." />
+  <link rel="canonical" href="https://sanmateolocal.com/quiz.html" />
+  <meta name="theme-color" content="#221D16" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="How San Mateo Are You?" />
+  <meta property="og:description" content="A 10-question quiz for real San Mateo locals. Think you know your hometown?" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='14' r='6' fill='%23C25B3A'/><path d='M1 27 Q9 19 16 23 T31 25 V32 H1 Z' fill='%2341614B'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--paper:#FAF6EC;--paper-2:#F3ECD9;--ink:#221D16;--ink-soft:#5E5446;--clay:#C25B3A;--clay-deep:#A8482C;--green:#41614B;--green-deep:#324C3A;--line:#E3D6BC;--card:#fff;--red:#B23A2A}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;min-height:100vh}
+    .wrap{max-width:640px;margin:0 auto;padding:0 1.25rem}
+    a{color:var(--clay-deep)}
+    header.site{border-bottom:1.5px solid var(--ink)}
+    header.site .bar{max-width:1080px;margin:0 auto;padding:0 1.25rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+    .brand svg{width:25px;height:25px}
+    .brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;color:var(--ink)}
+    header .back{font-size:.85rem;color:var(--ink-soft);text-decoration:none}
+    .card{background:var(--card);border:1.5px solid var(--ink);border-radius:16px;padding:2rem 1.75rem;margin:2.5rem auto;box-shadow:0 8px 30px rgba(34,29,22,.07)}
+    .kick{font-family:'Fraunces',serif;font-style:italic;color:var(--clay-deep);font-size:1.05rem}
+    h1{font-family:'Fraunces',serif;font-size:clamp(1.9rem,6vw,2.7rem);font-weight:600;line-height:1.08;margin:.3rem 0 .8rem}
+    .lede{color:var(--ink-soft);font-size:1.05rem;margin-bottom:1.5rem}
+    .btn{display:inline-block;background:var(--clay);color:#fff;border:none;font-family:inherit;font-weight:700;font-size:1.05rem;padding:.85rem 1.6rem;border-radius:11px;cursor:pointer;text-decoration:none}
+    .btn:hover{filter:brightness(1.06)}
+    .prog{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--clay-deep);margin-bottom:.6rem}
+    .q{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:600;line-height:1.25;margin-bottom:1.3rem}
+    .opts{display:flex;flex-direction:column;gap:.65rem}
+    .opt{text-align:left;background:var(--paper-2);border:1.5px solid var(--line);border-radius:11px;padding:.85rem 1.1rem;font-family:inherit;font-size:1rem;font-weight:500;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+    .opt:hover{border-color:var(--clay)}
+    .opt.correct{background:#E7F3E7;border-color:var(--green);color:var(--green-deep);font-weight:700}
+    .opt.wrong{background:#F7E4E1;border-color:var(--red);color:var(--red)}
+    .opt:disabled{cursor:default}
+    .next{margin-top:1.3rem;display:none}
+    .next.show{display:inline-block}
+    .result .score{font-family:'Fraunces',serif;font-size:3rem;font-weight:700;color:var(--clay-deep);line-height:1}
+    .result h2{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;margin:.5rem 0 .4rem}
+    .result p.tier{color:var(--ink-soft);font-size:1.05rem;margin-bottom:1.4rem}
+    .result .links{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:.5rem}
+    .result .links a{background:var(--paper-2);border:1.5px solid var(--line);border-radius:9px;padding:.55rem .95rem;text-decoration:none;font-weight:600;font-size:.9rem;color:var(--ink)}
+    footer{text-align:center;color:var(--ink-soft);font-size:.82rem;padding:1.5rem 0 3rem}
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="bar">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
+        <span class="brand-name">San Mateo Local</span>
+      </a>
+      <a class="back" href="index.html">&larr; Back to the guide</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="card" id="quizCard">
+      <!-- intro / question / result injected here -->
+    </div>
+  </div>
+
+  <footer>San Mateo Local &middot; The San Mateo only locals know</footer>
+
+  <script>
+  var QUESTIONS = [
+    {q:"You rode flattened cardboard down long concrete slides at San Mateo's most infamous playground. Where was it?", options:["Central Park","Magic Mountain at Coyote Point","Laurelwood Park","Beresford Park"], answer:1},
+    {q:"Before it became Chavez Market, the grocery anchoring the Shoreview Center was best known as...", options:["Lucky","Safeway","Key Market","Piggly Wiggly"], answer:2},
+    {q:"Generations of San Mateans, maybe you, were born at this hospital.", options:["Mills","Stanford","Kaiser Redwood City","Sequoia"], answer:0},
+    {q:"The Rolladium was a San Mateo institution for decades. It was a...", options:["Bowling alley","Roller rink","Drive-in theater","Dance hall"], answer:1},
+    {q:"San Mateo's oldest business still open today has been around since 1906. It's...", options:["Ravioli House","Steiner's Jewelry","Takahashi Market","Antone's"], answer:2},
+    {q:"Families cut through the tunnel to the infield playground at Bay Meadows, which was a...", options:["County fairground","Thoroughbred racetrack","Drive-in","Amusement park"], answer:1},
+    {q:"The Castaway, the special-occasion spot with wide bay views, sat at...", options:["The marina","Coyote Point","Downtown","Hillsdale"], answer:1},
+    {q:"Downtown's grand old department store, on the corner of 4th and Ellsworth, was...", options:["Macy's","Levy Brothers","The Emporium","Woolworth"], answer:1},
+    {q:"Handmade ravioli and deli sandwiches on South B Street, since 1948, come from...", options:["Vince's","Ravioli House","Romolo's","Luceti's"], answer:1},
+    {q:"San Mateo's roller-skating carhops, frosted mugs, and root beer floats were at the...", options:["Foster's Freeze / A&W","Farrell's","Baskin-Robbins","Thrifty"], answer:0}
+  ];
+
+  var card = document.getElementById('quizCard');
+  var idx = 0, score = 0, answered = false;
+
+  function intro(){
+    card.innerHTML =
+      '<div class="kick">✦ For locals only</div>' +
+      '<h1>How San Mateo are you?</h1>' +
+      '<p class="lede">Ten questions. No Googling. We\'ll tell you if you\'re truly born-and-raised, or fresh off the 101.</p>' +
+      '<button class="btn" id="startBtn">Start the quiz &rarr;</button>';
+    document.getElementById('startBtn').onclick = function(){ idx=0; score=0; render(); };
+  }
+
+  function render(){
+    answered = false;
+    var item = QUESTIONS[idx];
+    var html = '<div class="prog">Question ' + (idx+1) + ' of ' + QUESTIONS.length + '</div>' +
+      '<div class="q">' + item.q + '</div><div class="opts">';
+    for (var i=0;i<item.options.length;i++){
+      html += '<button class="opt" data-i="' + i + '">' + item.options[i] + '</button>';
+    }
+    html += '</div><button class="btn next" id="nextBtn">' + (idx===QUESTIONS.length-1 ? 'See my score &rarr;' : 'Next &rarr;') + '</button>';
+    card.innerHTML = html;
+    var opts = card.querySelectorAll('.opt');
+    opts.forEach(function(b){ b.onclick = function(){ choose(parseInt(b.dataset.i), opts); }; });
+    document.getElementById('nextBtn').onclick = function(){ idx++; (idx<QUESTIONS.length) ? render() : result(); };
+  }
+
+  function choose(i, opts){
+    if (answered) return;
+    answered = true;
+    var correct = QUESTIONS[idx].answer;
+    if (i===correct) score++;
+    opts.forEach(function(b){
+      var bi = parseInt(b.dataset.i);
+      b.disabled = true;
+      if (bi===correct) b.classList.add('correct');
+      else if (bi===i) b.classList.add('wrong');
+    });
+    document.getElementById('nextBtn').classList.add('show');
+  }
+
+  function result(){
+    var pct = score;
+    var title, tier;
+    if (pct===10){ title="🏆 Born & Raised"; tier="You ARE San Mateo. Nobody's questioning it."; }
+    else if (pct>=8){ title="Certified Local"; tier="You know your hometown cold. Real deal."; }
+    else if (pct>=5){ title="Solid Roots"; tier="You've been around. A few gaps, but the town's in you."; }
+    else if (pct>=3){ title="Newcomer, Catching On"; tier="Getting there. Read a little Gone But Not Forgotten and level up."; }
+    else { title="Fresh Off the 101"; tier="Welcome to San Mateo! Start exploring, the good stuff isn't on the freeway."; }
+    card.className = 'card result';
+    card.innerHTML =
+      '<div class="kick">✦ Your result</div>' +
+      '<div class="score">' + score + ' / 10</div>' +
+      '<h2>' + title + '</h2>' +
+      '<p class="tier">' + tier + '</p>' +
+      '<button class="btn" id="shareBtn">Challenge a friend</button>' +
+      '<div class="links">' +
+        '<a href="quiz.html">Try again</a>' +
+        '<a href="legacies.html">San Mateo Legacies</a>' +
+        '<a href="gone-but-not-forgotten.html">Gone But Not Forgotten</a>' +
+      '</div>';
+    document.getElementById('shareBtn').onclick = function(){
+      var text = "I scored " + score + "/10 on the How San Mateo Are You? quiz. Think you can beat me?";
+      var url = "https://sanmateolocal.com/quiz.html";
+      if (navigator.share){ navigator.share({title:"How San Mateo Are You?", text:text, url:url}).catch(function(){}); }
+      else {
+        navigator.clipboard.writeText(text + " " + url).then(function(){
+          document.getElementById('shareBtn').textContent = "Link copied!";
+        }, function(){});
+      }
+    };
+  }
+
+  intro();
+  </script>
+</body>
+</html>
