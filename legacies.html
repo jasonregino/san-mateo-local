@@ -65,6 +65,10 @@
     .hm-item p{color:var(--ink-soft);font-size:.95rem;margin-top:.2rem}
     footer{border-top:1.5px solid var(--ink);margin-top:2.5rem;padding:1.8rem 0;font-size:.85rem;color:var(--ink-soft);text-align:center}
     footer a{color:var(--clay-deep)}
+    .been-score{margin-top:1.2rem;font-size:.98rem;color:var(--green);font-weight:700;background:#EAF3EA;border:1px solid #C4DBC4;border-radius:9px;padding:.6rem .95rem;display:inline-block}
+    .been-toggle{display:flex;align-items:center;gap:.4rem;margin-top:.7rem;font-size:.82rem;font-weight:600;color:var(--ink-soft);cursor:pointer;user-select:none;width:fit-content}
+    .been-toggle input{width:16px;height:16px;accent-color:var(--green);cursor:pointer}
+    .leg.been-yes .been-toggle{color:var(--green)}
   </style>
 </head>
 <body>
@@ -92,6 +96,7 @@
       <h1>San Mateo Legacies</h1>
       <p class="dek">The diners, the shops, the family-run spots that have been part of San Mateo since the 1980s and before, and are still open today. The ones that outlasted every trend. Walk in and say hi.</p>
       <a class="nominate" href="mailto:hello@sanmateolocal.com?subject=Legacy%20nomination">Nominate a legacy spot</a>
+      <div id="beenScore" class="been-score"></div>
     </section>
 
     <main>
@@ -164,5 +169,36 @@
   <footer>
     <div class="wrap">San Mateo Local &middot; The San Mateo only locals know &middot; <a href="gone-but-not-forgotten.html">Gone But Not Forgotten &rarr;</a></div>
   </footer>
+  <script>
+  (function(){
+    var legs = Array.prototype.slice.call(document.querySelectorAll('main .leg'));
+    var N = legs.length, KEY = 'sml-legacy-been', saved = {};
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e){}
+    var scoreEl = document.getElementById('beenScore');
+    function update(){
+      var n = 0; for (var k in saved){ if (saved[k]) n++; }
+      scoreEl.innerHTML = "You've been to <b>" + n + "</b> of " + N + " San Mateo legacies." + (n===N ? " 🏆 A true local." : (n>=Math.ceil(N/2) ? " Not bad." : ""));
+    }
+    legs.forEach(function(leg, i){
+      var content = leg.children[1] || leg;
+      var label = document.createElement('label');
+      label.className = 'been-toggle';
+      var cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.checked = !!saved[i];
+      if (saved[i]) leg.classList.add('been-yes');
+      cb.addEventListener('change', function(){
+        saved[i] = cb.checked;
+        try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){}
+        leg.classList.toggle('been-yes', cb.checked);
+        update();
+      });
+      label.appendChild(cb);
+      label.appendChild(document.createTextNode(' Been here'));
+      content.appendChild(label);
+    });
+    update();
+  })();
+  </script>
 </body>
 </html>
