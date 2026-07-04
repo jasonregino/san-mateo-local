@@ -102,7 +102,7 @@
     {q:"The arcade at Fashion Island before it was Tilt was called...", options:["Time-Out","Gold Mine","Aladdin's Castle","Nickel City"], answer:1},
     {q:"What is the name of the tall copper giraffe statue by the Central Park tennis courts?", options:["George","Leon","Gerald","Stretch"], answer:1, explain:"Leon the giraffe has stood by the Central Park tennis courts for years, and plenty of kids have tried to climb him."},
     {q:"The little market on Barneson that looks like a house, up from McDonald's, is called...", options:["Barneson Market","The Cottage","Bungalow Grocery","House of Groceries"], answer:2, explain:"Bungalow Grocery, the house-shaped market on Barneson, is still open."},
-    {q:"San Mateo's biggest downtown hotel, now long gone, was the...", options:["The Villa","Benjamin Franklin Hotel","The Dunfey","Peninsula Grand"], answer:1},
+    {q:"The grand old downtown hotel that was San Mateo's biggest in its heyday was the...", options:["The Villa","Benjamin Franklin Hotel","The Dunfey","Peninsula Grand"], answer:1, explain:"The Benjamin Franklin Hotel was downtown San Mateo's grandest. The building still stands today, now home to other businesses."},
     {q:"The Rolladium proudly billed itself as home to the world's largest what?", options:["Jukebox","Roller skate","Disco ball","Snack bar"], answer:1, explain:"The 'World's Largest Roller Skate' was the Rolladium's claim to fame."}
   ];
 
@@ -162,17 +162,18 @@
   }
 
   function result(){
-    var pct = score;
+    var N = QUESTIONS.length;
+    var pct = score / N;
     var title, tier;
-    if (pct===10){ title="🏆 Born & Raised"; tier="You ARE San Mateo. Nobody's questioning it."; }
-    else if (pct>=8){ title="Certified Local"; tier="You know your hometown cold. Real deal."; }
-    else if (pct>=5){ title="Solid Roots"; tier="You've been around. A few gaps, but the town's in you."; }
-    else if (pct>=3){ title="Newcomer, Catching On"; tier="Getting there. Read a little Gone But Not Forgotten and level up."; }
+    if (score===N){ title="🏆 Born & Raised"; tier="A perfect score. You ARE San Mateo. Nobody's questioning it."; }
+    else if (pct>=0.85){ title="Certified Local"; tier="You know your hometown cold. Real deal."; }
+    else if (pct>=0.6){ title="Solid Roots"; tier="You've been around. A few gaps, but the town's in you."; }
+    else if (pct>=0.35){ title="Newcomer, Catching On"; tier="Getting there. Read a little Gone But Not Forgotten and level up."; }
     else { title="Fresh Off the 101"; tier="Welcome to San Mateo! Start exploring, the good stuff isn't on the freeway."; }
     card.className = 'card result';
     card.innerHTML =
       '<div class="kick">✦ Your result</div>' +
-      '<div class="score">' + score + ' / 10</div>' +
+      '<div class="score">' + score + ' / ' + N + '</div>' +
       '<h2>' + title + '</h2>' +
       '<p class="tier">' + tier + '</p>' +
       '<button class="btn" id="shareBtn">Challenge a friend</button>' +
