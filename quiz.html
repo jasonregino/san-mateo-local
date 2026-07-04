@@ -40,6 +40,8 @@
     .lede{color:var(--ink-soft);font-size:1.05rem;margin-bottom:1.5rem}
     .btn{display:inline-block;background:var(--clay);color:#fff;border:none;font-family:inherit;font-weight:700;font-size:1.05rem;padding:.85rem 1.6rem;border-radius:11px;cursor:pointer;text-decoration:none}
     .btn:hover{filter:brightness(1.06)}
+    .btn:disabled{opacity:.45;cursor:default;filter:none}
+    .opt.selected{border-color:var(--clay);background:#F6E6DE;font-weight:700}
     .prog{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--clay-deep);margin-bottom:.6rem}
     .q{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:600;line-height:1.25;margin-bottom:1.3rem}
     .opts{display:flex;flex-direction:column;gap:.65rem}
@@ -105,46 +107,58 @@
   ];
 
   var card = document.getElementById('quizCard');
-  var idx = 0, score = 0, answered = false;
+  var idx = 0, score = 0, selected = -1, checked = false;
 
   function intro(){
     card.innerHTML =
       '<div class="kick">✦ For locals only</div>' +
       '<h1>How San Mateo are you?</h1>' +
-      '<p class="lede">Ten questions. No Googling. We\'ll tell you if you\'re truly born-and-raised, or fresh off the 101.</p>' +
+      '<p class="lede">Twenty questions. No Googling. We\'ll tell you if you\'re truly born-and-raised, or fresh off the 101.</p>' +
       '<button class="btn" id="startBtn">Start the quiz &rarr;</button>';
     document.getElementById('startBtn').onclick = function(){ idx=0; score=0; render(); };
   }
 
   function render(){
-    answered = false;
+    selected = -1; checked = false;
     var item = QUESTIONS[idx];
     var html = '<div class="prog">Question ' + (idx+1) + ' of ' + QUESTIONS.length + '</div>' +
       '<div class="q">' + item.q + '</div><div class="opts">';
     for (var i=0;i<item.options.length;i++){
       html += '<button class="opt" data-i="' + i + '">' + item.options[i] + '</button>';
     }
-    html += '</div><div class="explain" id="explain"></div><button class="btn next" id="nextBtn">' + (idx===QUESTIONS.length-1 ? 'See my score &rarr;' : 'Next &rarr;') + '</button>';
+    html += '</div><div class="explain" id="explain"></div><button class="btn action" id="actionBtn" disabled>Check answer</button>';
     card.innerHTML = html;
     var opts = card.querySelectorAll('.opt');
-    opts.forEach(function(b){ b.onclick = function(){ choose(parseInt(b.dataset.i), opts); }; });
-    document.getElementById('nextBtn').onclick = function(){ idx++; (idx<QUESTIONS.length) ? render() : result(); };
+    opts.forEach(function(b){ b.onclick = function(){ pick(parseInt(b.dataset.i), opts); }; });
+    document.getElementById('actionBtn').onclick = function(){ act(opts); };
   }
 
-  function choose(i, opts){
-    if (answered) return;
-    answered = true;
-    var correct = QUESTIONS[idx].answer;
-    if (i===correct) score++;
-    opts.forEach(function(b){
-      var bi = parseInt(b.dataset.i);
-      b.disabled = true;
-      if (bi===correct) b.classList.add('correct');
-      else if (bi===i) b.classList.add('wrong');
-    });
-    var ex = document.getElementById('explain');
-    if (ex && QUESTIONS[idx].explain){ ex.innerHTML = QUESTIONS[idx].explain; ex.classList.add('show'); }
-    document.getElementById('nextBtn').classList.add('show');
+  function pick(i, opts){
+    if (checked) return;
+    selected = i;
+    opts.forEach(function(b){ b.classList.toggle('selected', parseInt(b.dataset.i)===i); });
+    document.getElementById('actionBtn').disabled = false;
+  }
+
+  function act(opts){
+    if (!checked){
+      if (selected < 0) return;
+      checked = true;
+      var correct = QUESTIONS[idx].answer;
+      if (selected===correct) score++;
+      opts.forEach(function(b){
+        var bi = parseInt(b.dataset.i);
+        b.disabled = true; b.classList.remove('selected');
+        if (bi===correct) b.classList.add('correct');
+        else if (bi===selected) b.classList.add('wrong');
+      });
+      var ex = document.getElementById('explain');
+      if (ex && QUESTIONS[idx].explain){ ex.innerHTML = QUESTIONS[idx].explain; ex.classList.add('show'); }
+      document.getElementById('actionBtn').textContent = (idx===QUESTIONS.length-1 ? 'See my score →' : 'Next →');
+    } else {
+      idx++;
+      (idx<QUESTIONS.length) ? render() : result();
+    }
   }
 
   function result(){
