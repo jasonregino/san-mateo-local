@@ -128,6 +128,33 @@
   </div>
 
   <div class="wrap">
+    <section id="getlisted" style="padding-top:2.2rem;">
+      <div style="background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--green); border-radius:14px; padding:1.7rem 1.8rem;">
+        <p class="sec-label" style="text-align:left; color:var(--green);">Free, no catch</p>
+        <h2 style="text-align:left; font-size:1.7rem; margin:.3rem 0 .4rem;">Not on the guide yet?</h2>
+        <p style="color:var(--ink-soft); margin-bottom:1.2rem;">If you run a San Mateo spot we're missing, tell us about it and we'll add it. Free, no strings. We genuinely love finding places we didn't know about.</p>
+        <div id="listOk" style="display:none; background:#EAF3EA; border:1px solid #B9D7B9; color:#2A4A2A; border-radius:12px; padding:1.2rem;">
+          <strong>Thank you.</strong> We'll take a look and get your spot added to the guide.
+        </div>
+        <form id="listForm">
+          <input type="hidden" name="access_key" value="54743f1e-b34e-4d1a-aca8-6ff2554e06a0" />
+          <input type="hidden" name="subject" value="San Mateo Local — Add my business (free listing)" />
+          <input type="hidden" name="from_name" value="San Mateo Local — Get Listed" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="row"><label class="fld" for="lbiz">Business name</label><input type="text" id="lbiz" name="business_name" required /></div>
+          <div class="row"><label class="fld" for="lcat">Category</label>
+            <select id="lcat" name="category" style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.75rem; font:inherit; background:#fff; color:var(--ink);">
+              <option>Eat &amp; Drink</option><option>Shopping / Market</option><option>Things to Do</option><option>Local Service</option><option>Other</option>
+            </select></div>
+          <div class="row"><label class="fld" for="laddr">Address</label><input type="text" id="laddr" name="address" placeholder="Street, San Mateo" /></div>
+          <div class="row"><label class="fld" for="lknown">What are you known for?</label><input type="text" id="lknown" name="known_for" placeholder="In a sentence" /></div>
+          <div class="row"><label class="fld" for="lname">Your name</label><input type="text" id="lname" name="name" /></div>
+          <div class="row"><label class="fld" for="lemail">Email</label><input type="email" id="lemail" name="email" placeholder="So we can follow up" required /></div>
+          <button type="submit" id="lsend" style="background:var(--green);">Add my business</button>
+        </form>
+      </div>
+    </section>
+
     <section>
       <p class="sec-label">How we help</p>
       <h2 class="sec-h">Three ways to show up better</h2>
@@ -259,6 +286,9 @@
         alert("Sorry, that didn't go through. You can email us at hello@sanmateolocal.com instead.");
       }
     });
+  </script>
+  <script>
+  (function(){var f=document.getElementById('listForm');if(!f)return;f.addEventListener('submit',async function(e){e.preventDefault();var b=document.getElementById('lsend');b.textContent='Sending...';b.disabled=true;try{var res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)});var j=await res.json();if(j.success){f.style.display='none';document.getElementById('listOk').style.display='block';document.getElementById('listOk').scrollIntoView({behavior:'smooth',block:'center'});}else throw new Error();}catch(err){b.textContent='Add my business';b.disabled=false;alert("Sorry, that didn't go through. Email hello@sanmateolocal.com instead.");}});})();
   </script>
 </body>
 </html>
