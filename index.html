@@ -68,6 +68,8 @@
     [data-theme="dark"] .hoods { background: var(--paper-2); color: var(--ink); }
     [data-theme="dark"] .hoods .hood-list a { color: var(--ink); }
     [data-theme="dark"] .hoods .hood-list a:hover { color: #fff; }
+    [data-theme="dark"] .hoods .label { color: var(--clay-deep); }
+    [data-theme="dark"] .hood-list .hood-more { color: var(--clay-deep); }
     [data-theme="dark"] .news { background: var(--paper-2); color: var(--ink); }
     [data-theme="dark"] .news h2 { color: var(--ink); }
     [data-theme="dark"] .news-form input { color: var(--ink); border-color: var(--line); }
@@ -139,11 +141,11 @@
     /* ===== Neighborhood strip ===== */
     .hoods { background: var(--ink); color: var(--paper); padding: 1.5rem 0; }
     .hoods .wrap { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
-    .hoods .label { color: var(--clay); flex: none; }
+    .hoods .label { color: var(--paper); flex: none; }
     .hood-list { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; }
     .hood-list a { font-family: 'Fraunces', serif; font-size: 1.05rem; color: var(--paper); border-bottom: 1px solid transparent; }
     .hood-list a:hover { border-bottom-color: var(--clay); color: #fff; }
-    .hood-list .hood-more { margin-left: 0.4rem; color: var(--clay); font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; }
+    .hood-list .hood-more { margin-left: 0.4rem; color: var(--paper); font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; }
 
     /* ===== Section scaffolding ===== */
     section { scroll-margin-top: 90px; }
@@ -267,6 +269,7 @@
     /* Set day/night before paint: saved choice first, otherwise match the phone's setting. */
     (function(){ try { document.documentElement.classList.add('js'); var s = localStorage.getItem('sml-theme'); var t = s || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
   </script>
+  <!-- LATESTBG:START --><style>.hoods{background:#324C3A;}</style><!-- LATESTBG:END -->
 </head>
 <body id="top">
 
@@ -334,7 +337,7 @@
       <span class="label">Latest from the guide</span>
       <nav class="hood-list">
         <!-- LATEST:START -->
-        <a href="this-weekend-fourth-of-july-2026.html">This Weekend &mdash; Fourth of July, Markets &amp; Music in the Park &rarr;</a>
+        <a href="this-weekend.html">This Weekend &mdash; Markets, Music in the Park, and the Gem Show &rarr;</a>
         <a href="new-openings-summer-2026.html">New Openings &mdash; New in San Mateo: Summer 2026 &rarr;</a>
         <a href="best-coffee-in-san-mateo.html">Best Of &mdash; The Best Coffee in San Mateo &rarr;</a>
         <a class="hood-more" href="blog.html">All guides &rarr;</a>
