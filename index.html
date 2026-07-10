@@ -393,13 +393,13 @@
   <!-- ===== Local Spotlight ===== -->
   <section class="sec" style="padding:2.6rem 0; border-top:1.5px solid var(--ink);">
     <div class="wrap">
-      <p class="label" style="color:var(--clay-deep);">Local Spotlight</p>
+      <div class="sec-head"><h2>Local Spotlight</h2></div>
       <!-- SPOTLIGHT:START -->
       <style>
         .spot-card{transition:transform .18s ease, box-shadow .18s ease;}
         .spot-card:hover{transform:translateY(-4px); box-shadow:0 16px 34px -20px rgba(34,29,22,.45);}
       </style>
-      <div style="margin-top:.6rem; display:flex; flex-wrap:wrap; gap:1.2rem;">
+      <div id="spotTrack" style="margin-top:.6rem; display:flex; flex-wrap:wrap; gap:1.2rem;">
         <div class="spot-card" style="flex:1 1 320px; background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.9rem;">
           <h2 style="font-family:'Fraunces',serif; font-size:1.8rem; margin-bottom:.2rem;">Takahashi Market</h2>
           <p style="font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--sage-deep); font-weight:700; margin-bottom:.6rem;">Since 1906 &middot; Downtown San Mateo</p>
@@ -424,7 +424,31 @@
             <a href="https://www.google.com/maps/search/?api=1&amp;query=Blue%20Moon%20Bar%20San%20Mateo" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Map &rarr;</a> <span style="color:var(--ink-soft);">&middot;</span> <a href="https://www.instagram.com/bluemoonsanmateo" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Instagram &rarr;</a>
           </div>
         </div>
+        <div class="spot-card" style="flex:1 1 320px; background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.9rem;">
+          <h2 style="font-family:'Fraunces',serif; font-size:1.8rem; margin-bottom:.2rem;">Balanced Hart</h2>
+          <p style="font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--sage-deep); font-weight:700; margin-bottom:.6rem;">Therapeutic Massage &middot; Downtown</p>
+          <p style="color:var(--ink-soft);">Charlie Hart's independent massage studio, with nearly two decades of hands-on work in deep tissue, prenatal, and lymphatic massage. Longtime clients call her the muscle whisperer, and her personal-training background means she treats the cause, not just the ache.</p>
+          <div style="margin-top:1rem; padding-top:.9rem; border-top:1px solid rgba(0,0,0,.12); font-size:.9rem; color:var(--ink-soft); line-height:1.75;">
+            <div><strong style="color:var(--ink);">Known for</strong> &middot; Deep tissue, prenatal, lymphatic, personal training</div>
+            <div><strong style="color:var(--ink);">Where</strong> &middot; 15 N Ellsworth Ave, Ste 202</div>
+          </div>
+          <div style="margin-top:1rem;">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Balanced%20Hart%20San%20Mateo" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Map &rarr;</a> <span style="color:var(--ink-soft);">&middot;</span> <a href="https://www.instagram.com/balancedhart4life" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Instagram &rarr;</a>
+          </div>
+        </div>
       </div>
+      <script>
+        (function(){
+          var track=document.getElementById('spotTrack');
+          if(!track)return;
+          var cards=[].slice.call(track.querySelectorAll('.spot-card'));
+          if(cards.length<3)return;
+          var off=0;
+          try{ off=(parseInt(localStorage.getItem('sml_spot')||'0',10)||0)%cards.length;
+               localStorage.setItem('sml_spot',String((off+1)%cards.length)); }catch(e){}
+          cards.forEach(function(c,i){ c.style.display=(i===off||i===(off+1)%cards.length)?'':'none'; });
+        })();
+      </script>
       <!-- SPOTLIGHT:END -->
       <p style="margin-top:.9rem; color:var(--ink-soft); font-size:.92rem;">Own a San Mateo spot? <a href="for-business-owners.html#getlisted" style="color:var(--clay-deep); font-weight:700;">Get listed, free &rarr;</a></p>
     </div>
