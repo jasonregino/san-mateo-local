@@ -129,10 +129,10 @@
 
   <div class="wrap">
     <section id="getlisted" style="padding-top:2.2rem;">
-      <div style="background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--green); border-radius:14px; padding:1.7rem 1.8rem;">
-        <p class="sec-label" style="text-align:left; color:var(--green);">Free, no catch</p>
+      <div style="background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.8rem;">
+        <p class="sec-label" style="text-align:left; color:var(--clay-deep);">Free, no catch</p>
         <h2 style="text-align:left; font-size:1.7rem; margin:.3rem 0 .4rem;">Not on the guide yet?</h2>
-        <p style="color:var(--ink-soft); margin-bottom:1.2rem;">If you run a San Mateo spot we're missing, tell us about it and we'll add it. Free, no strings. We genuinely love finding places we didn't know about.</p>
+        <p style="color:var(--ink-soft); margin-bottom:1.2rem;">If you run a San Mateo spot we're missing, tell us about it and we'll add it. <strong>Free, no strings.</strong> We genuinely love finding places we didn't know about.</p>
         <div id="listOk" style="display:none; background:#EAF3EA; border:1px solid #B9D7B9; color:#2A4A2A; border-radius:12px; padding:1.2rem;">
           <strong>Thank you.</strong> We'll take a look and get your spot added to the guide.
         </div>
@@ -148,10 +148,39 @@
             </select></div>
           <div class="row"><label class="fld" for="laddr">Address</label><input type="text" id="laddr" name="address" placeholder="Street, San Mateo" /></div>
           <div class="row"><label class="fld" for="lknown">What are you known for?</label><input type="text" id="lknown" name="known_for" placeholder="In a sentence" /></div>
+          <div class="row"><label class="fld" for="lweb">Website (optional)</label><input type="text" id="lweb" name="website" placeholder="yoursite.com" /></div>
+          <div class="row"><label class="fld" for="linsta">Instagram (optional)</label><input type="text" id="linsta" name="instagram" placeholder="@yourhandle" /></div>
+          <div class="row"><label class="fld" for="lfb">Facebook (optional)</label><input type="text" id="lfb" name="facebook" placeholder="facebook.com/yourpage" /></div>
           <div class="row"><label class="fld" for="lname">Your name</label><input type="text" id="lname" name="name" /></div>
           <div class="row"><label class="fld" for="lemail">Email</label><input type="email" id="lemail" name="email" placeholder="So we can follow up" required /></div>
-          <button type="submit" id="lsend" style="background:var(--green);">Add my business</button>
+          <button type="submit" id="lsend" style="background:var(--clay);">Add my business</button>
         </form>
+      </div>
+    </section>
+
+    <section id="feature" style="padding-top:0.5rem;"><style>.feat-card{transition:transform .18s ease, box-shadow .18s ease;} .feat-card:hover{transform:translateY(-4px); box-shadow:0 16px 34px -20px rgba(34,29,22,.45);}</style>
+      <div style="background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.8rem;">
+        <p class="sec-label" style="text-align:left; color:var(--clay-deep);">Paid &middot; want a boost?</p>
+        <h2 style="text-align:left; font-size:1.7rem; margin:.3rem 0 .4rem;">Feature your business</h2>
+        <p style="color:var(--ink-soft); margin-bottom:1.4rem;">Getting listed is free. If you want to stand out, you can pay to be featured on the pages locals actually browse. Always clearly marked as featured, so the guide stays honest.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:1.2rem;">
+
+          <div class="feat-card" style="flex:1 1 300px; border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:12px; padding:1.5rem 1.6rem; background:#fff; display:flex; flex-direction:column;">
+            <h3 style="margin-bottom:.35rem;">Featured Spot</h3>
+            <p style="color:var(--ink-soft); font-size:.95rem;">Your business up in the homepage Local Spotlight for 30 days, in front of people already deciding where to go.</p>
+            <p style="font-size:1.7rem; font-weight:800; color:var(--clay-deep); margin:auto 0 1rem;">$49<span style="font-size:.9rem; font-weight:600; color:var(--ink-soft);"> / 30 days</span></p>
+            <a href="https://buy.stripe.com/5kQ7sM0G04srcuF6GlabK00" style="display:inline-block; background:var(--clay); color:#fff; font-weight:700; padding:.85rem 1.5rem; border-radius:8px; text-decoration:none;">Get featured &rarr;</a>
+          </div>
+
+          <div class="feat-card" style="flex:1 1 300px; border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:12px; padding:1.5rem 1.6rem; background:#fff; display:flex; flex-direction:column;">
+            <p style="font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--clay-deep); font-weight:800; margin-bottom:.3rem;">Best value</p>
+            <h3 style="margin-bottom:.35rem;">Featured Spot + Story</h3>
+            <p style="color:var(--ink-soft); font-size:.95rem;">Everything in Featured Spot, plus a polished write-up on your listing and a full feature story on its own page. The spotlight runs 30 days; <strong>the story stays up for good</strong>, working for you in Google long after.</p>
+            <p style="font-size:1.7rem; font-weight:800; color:var(--clay-deep); margin:auto 0 1rem;">$149<span style="font-size:.9rem; font-weight:600; color:var(--ink-soft);"> one time</span></p>
+            <a href="https://buy.stripe.com/fZudRa74o9MLamxfcRabK01" style="display:inline-block; background:var(--clay); color:#fff; font-weight:700; padding:.85rem 1.5rem; border-radius:8px; text-decoration:none;">Feature my story &rarr;</a>
+          </div>
+
+        </div>
       </div>
     </section>
 
