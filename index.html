@@ -134,7 +134,14 @@
     .hero-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; }
     /* hero photo */
     .hero-photo { margin: 0; display: flex; flex-direction: column; }
-    .hero-photo img { width: 100%; flex: 1; min-height: 340px; object-fit: cover; border: 1.5px solid var(--ink); display: block; }
+    .hero-photo-frame { position: relative; flex: 1; min-height: 340px; overflow: hidden; border: 1.5px solid var(--ink); }
+    .hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; animation: heroFade 36s infinite; }
+    .hero-slide:nth-child(1) { animation-delay: 0s; }
+    .hero-slide:nth-child(2) { animation-delay: 9s; }
+    .hero-slide:nth-child(3) { animation-delay: 18s; }
+    .hero-slide:nth-child(4) { animation-delay: 27s; }
+    @keyframes heroFade { 0% { opacity: 0; transform: scale(1.005); } 3% { opacity: 1; } 25% { opacity: 1; transform: scale(1.05); } 30% { opacity: 0; } 100% { opacity: 0; transform: scale(1.005); } }
+    @media (prefers-reduced-motion: reduce) { .hero-slide { animation: none; opacity: 0; } .hero-slide:first-child { opacity: 1; } }
     .hero-photo figcaption { font-family: 'Fraunces', serif; font-style: italic; font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.6rem; }
     @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; } .hero { padding: 3rem 0 2.5rem; } }
 
@@ -146,6 +153,12 @@
     .hood-list a { font-family: 'Fraunces', serif; font-size: 1.05rem; color: var(--paper); border-bottom: 1px solid transparent; }
     .hood-list a:hover { border-bottom-color: var(--clay); color: #fff; }
     .hood-list .hood-more { margin-left: 0.4rem; color: var(--paper); font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; }
+    /* Latest-from-guide rotator: cycles one headline at a time */
+    .hoods .latest-rotator { position: relative; flex: 1 1 auto; min-height: 1.7em; min-width: 12rem; }
+    .hoods .latest-rotator a { position: absolute; left: 0; top: 50%; transform: translateY(calc(-50% + 6px)); opacity: 0; transition: opacity 0.55s ease, transform 0.55s ease; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+    .hoods .latest-rotator a.is-live { opacity: 1; transform: translateY(-50%); }
+    .hoods .latest-more-out { flex: none; margin-left: auto; }
+    @media (prefers-reduced-motion: reduce) { .hoods .latest-rotator { position: static; min-height: 0; } .hoods .latest-rotator a { position: static; opacity: 1; transform: none; } }
 
     /* ===== Section scaffolding ===== */
     section { scroll-margin-top: 90px; }
@@ -159,13 +172,17 @@
     .fav-track { display: flex; gap: 1.25rem; width: max-content; animation: fav-marquee 75s linear infinite; }
     .fav-scroll:hover .fav-track { animation-play-state: paused; }
     @keyframes fav-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .fav { flex: 0 0 300px; border: 1.5px solid var(--ink); border-top: 4px solid var(--clay-deep); background: var(--card); box-shadow: 0 2px 6px -3px rgba(34,29,22,0.16); transition: transform 0.18s ease, box-shadow 0.18s ease; }
-    .fav a { display: flex; flex-direction: column; height: 100%; padding: 1.4rem 1.4rem 1.5rem; }
+    .fav { flex: 0 0 370px; border: 1.5px solid var(--ink); border-top: 4px solid var(--clay-deep); background: var(--card); box-shadow: 0 2px 6px -3px rgba(34,29,22,0.16); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+    .fav a { display: flex; flex-direction: column; height: 100%; padding: 1.7rem 1.7rem 1.8rem; }
     .fav:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -20px rgba(34,29,22,0.45); }
     .fav .fav-kicker { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--clay-deep); }
-    .fav h3 { font-size: 1.4rem; margin: 0.5rem 0 0.4rem; }
+    .fav h3 { font-size: 1.55rem; margin: 0.5rem 0 0.4rem; }
     .fav .meta { font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage-deep); font-weight: 600; margin-bottom: 0.6rem; }
-    .fav p { color: var(--ink-soft); font-size: 0.95rem; flex: 1; }
+    .fav p { color: var(--ink-soft); font-size: 0.97rem; flex: 1; }
+    /* Blended paid Featured card in the scroller */
+    .fav.is-featured { background: #FBE7DC; border: 2px solid var(--clay); }
+    [data-theme="dark"] .fav.is-featured { background: #3A2A1C; }
+    .fav .fav-tag { display: inline-block; align-self: flex-start; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; color: #fff; background: var(--clay); border-radius: 999px; padding: 0.22rem 0.6rem; margin-bottom: 0.7rem; }
     @media (prefers-reduced-motion: reduce) { .fav-track { animation: none; } .fav-scroll { overflow-x: auto; } }
 
     /* ===== Sections list (the guide index) ===== */
@@ -325,8 +342,13 @@
         </div>
       </div>
       <figure class="hero-photo">
-        <img src="images/central-park-japanese-garden.jpg" alt="The Japanese Tea Garden in Central Park, San Mateo" loading="eager" fetchpriority="high" decoding="async" />
-        <figcaption>Central Park's Japanese Tea Garden, right here in San Mateo</figcaption>
+        <div class="hero-photo-frame">
+          <img class="hero-slide" src="images/central-park-japanese-garden.jpg" alt="The Japanese Tea Garden in Central Park, San Mateo" loading="eager" fetchpriority="high" decoding="async" />
+          <img class="hero-slide" src="images/hero-tea-house.jpg" alt="The tea house and Japanese maple in Central Park, San Mateo" loading="lazy" decoding="async" />
+          <img class="hero-slide" src="images/hero-park-lawn.jpg" alt="The lawn and palm at Central Park, San Mateo" loading="lazy" decoding="async" />
+          <img class="hero-slide" src="images/hero-reservoir.jpg" alt="Crystal Springs Reservoir above San Mateo" loading="lazy" decoding="async" />
+        </div>
+        <figcaption>From Central Park to Crystal Springs, this is San Mateo.</figcaption>
       </figure>
     </div>
   </section>
@@ -345,50 +367,6 @@
       </nav>
     </div>
   </div>
-
-  <!-- ===== Local favorites ===== -->
-  <section class="sec" id="favorites">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>A Short List of Local Favorites</h2>
-        <a class="link" href="eat-drink.html">All of Eat &amp; Drink →</a>
-      </div>
-      <div class="fav-scroll">
-        <div class="fav-track">
-          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Coffee</span><h3>3 Bees Coffee</h3><p class="meta">Downtown · 3rd Ave</p><p>Family-run espresso, rotating local art, and a sunny spot out front.</p></a></article>
-          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Italian</span><h3>Pausa</h3><p class="meta">Downtown · 4th Ave</p><p>Scratch pastas and an all-Italian wine list. A Michelin Guide name.</p></a></article>
-          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Cocktails</span><h3>Fogbird</h3><p class="meta">Downtown · B Street</p><p>Craft cocktails under a nine-foot bar and an old brick wall.</p></a></article>
-          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Steakhouse</span><h3>Porterhouse</h3><p class="meta">Downtown · B Street</p><p>The Peninsula's in-house dry-aging steakhouse.</p></a></article>
-          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Brazilian</span><h3>Espetus Churrascaria</h3><p class="meta">B Street</p><p>All-you-can-eat rodizio, carved tableside.</p></a></article>
-          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Dim Sum</span><h3>Palette Tea Garden</h3><p class="meta">Hillsdale</p><p>Modern dim sum and Peking duck from the Koi Palace team.</p></a></article>
-          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">British Pub</span><h3>The Swingin' Door</h3><p class="meta">25th Avenue</p><p>A proper British pub since 1955, with award-winning fish and chips.</p></a></article>
-          <article class="fav"><a href="shopping.html"><span class="fav-kicker">Market</span><h3>Takahashi Market</h3><p class="meta">Downtown</p><p>Hawaiian and Japanese groceries, and Spam musubi worth the trip.</p></a></article>
-          <article class="fav"><a href="shopping.html"><span class="fav-kicker">Florist</span><h3>Ah Sam Floral</h3><p class="meta">El Camino · since 1933</p><p>A family florist that has bloomed in San Mateo since 1933.</p></a></article>
-          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Italian</span><h3>Luceti's on 25th</h3><p class="meta">25th Avenue</p><p>Old-school Italian with live jazz several nights a week.</p></a></article>
-          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Fine Dining</span><h3>All Spice</h3><p class="meta">El Camino</p><p>Modern Californian dining in a converted Victorian.</p></a></article>
-          <article class="fav"><a href="things-to-do.html"><span class="fav-kicker">Outdoors</span><h3>Japanese Tea Garden</h3><p class="meta">Central Park</p><p>A serene tea garden right in the middle of the city.</p></a></article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== The Guide (sections index) ===== -->
-  <section class="sec" id="guide" style="padding-top:0;">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>The whole guide</h2>
-        <span class="link">Updated all the time</span>
-      </div>
-      <div class="guide-grid">
-        <a class="guide-cell reveal" href="eat-drink.html"><div class="num">01</div><h3>Eat &amp; Drink</h3><p>Restaurants, coffee, happy hours, brunch, and the bakeries worth the line.</p></a>
-        <a class="guide-cell reveal" href="things-to-do.html"><div class="num">02</div><h3>Things To Do</h3><p>Coyote Point, Central Park's Japanese Garden, the Bay Trail, and where to take the dog.</p></a>
-        <a class="guide-cell reveal" href="things-to-do.html"><div class="num">03</div><h3>Weekend Guides</h3><p>A perfect Saturday, date nights, rainy days, and what to do with the kids.</p></a>
-        <a class="guide-cell reveal" href="eat-drink.html"><div class="num">04</div><h3>Hidden Gems</h3><p>The corners only locals know. No tourist traps, no filler.</p></a>
-        <a class="guide-cell feature reveal" href="legacies.html"><div class="num">05</div><h3>San Mateo Legacies ✦</h3><p>The spots that have been here since the '80s and before. Nobody else is telling these stories.</p></a>
-        <a class="guide-cell reveal" href="local-services.html"><div class="num">06</div><h3>Local Services</h3><p>Vetted local roofers, plumbers, dentists, and realtors. Real recommendations, not random.</p></a>
-      </div>
-    </div>
-  </section>
 
   <!-- ===== Local Spotlight ===== -->
   <section class="sec" style="padding:2.6rem 0; border-top:1.5px solid var(--ink);">
@@ -453,6 +431,51 @@
       <p style="margin-top:.9rem; color:var(--ink-soft); font-size:.92rem;">Own a San Mateo spot? <a href="for-business-owners.html#getlisted" style="color:var(--clay-deep); font-weight:700;">Get listed, free &rarr;</a></p>
     </div>
   </section>
+
+  <!-- ===== Local favorites ===== -->
+  <section class="sec" id="favorites" style="padding-top:1rem;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>A Short List of Local Favorites</h2>
+        <a class="link" href="eat-drink.html">All of Eat &amp; Drink →</a>
+      </div>
+      <div class="fav-scroll">
+        <div class="fav-track">
+          <article class="fav is-featured"><a href="eat-drink.html"><span class="fav-tag">&#9733; Featured</span><span class="fav-kicker">Steakhouse</span><h3>Porterhouse</h3><p class="meta">Downtown · B Street</p><p>The Peninsula's in-house dry-aging steakhouse.</p></a></article>
+          <article class="fav is-featured"><a href="eat-drink.html"><span class="fav-tag">&#9733; Featured</span><span class="fav-kicker">Brazilian</span><h3>Espetus Churrascaria</h3><p class="meta">B Street</p><p>All-you-can-eat rodizio, carved tableside.</p></a></article>
+          <article class="fav is-featured"><a href="shopping.html"><span class="fav-tag">&#9733; Featured</span><span class="fav-kicker">Market</span><h3>Takahashi Market</h3><p class="meta">Downtown</p><p>Hawaiian and Japanese groceries, and Spam musubi worth the trip.</p></a></article>
+          <article class="fav is-featured"><a href="shopping.html"><span class="fav-tag">&#9733; Featured</span><span class="fav-kicker">Florist</span><h3>Ah Sam Floral</h3><p class="meta">El Camino · since 1933</p><p>A family florist that has bloomed in San Mateo since 1933.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Coffee</span><h3>3 Bees Coffee</h3><p class="meta">Downtown · 3rd Ave</p><p>Family-run espresso, rotating local art, and a sunny spot out front.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Italian</span><h3>Pausa</h3><p class="meta">Downtown · 4th Ave</p><p>Scratch pastas and an all-Italian wine list. A Michelin Guide name.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Cocktails</span><h3>Fogbird</h3><p class="meta">Downtown · B Street</p><p>Craft cocktails under a nine-foot bar and an old brick wall.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Dim Sum</span><h3>Palette Tea Garden</h3><p class="meta">Hillsdale</p><p>Modern dim sum and Peking duck from the Koi Palace team.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">British Pub</span><h3>The Swingin' Door</h3><p class="meta">25th Avenue</p><p>A proper British pub since 1955, with award-winning fish and chips.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Italian</span><h3>Luceti's on 25th</h3><p class="meta">25th Avenue</p><p>Old-school Italian with live jazz several nights a week.</p></a></article>
+          <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Fine Dining</span><h3>All Spice</h3><p class="meta">El Camino</p><p>Modern Californian dining in a converted Victorian.</p></a></article>
+          <article class="fav"><a href="things-to-do.html"><span class="fav-kicker">Outdoors</span><h3>Japanese Tea Garden</h3><p class="meta">Central Park</p><p>A serene tea garden right in the middle of the city.</p></a></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== The Guide (sections index) ===== -->
+  <section class="sec" id="guide" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>The whole guide</h2>
+        <span class="link">Updated all the time</span>
+      </div>
+      <div class="guide-grid">
+        <a class="guide-cell reveal" href="eat-drink.html"><div class="num">01</div><h3>Eat &amp; Drink</h3><p>Restaurants, coffee, happy hours, brunch, and the bakeries worth the line.</p></a>
+        <a class="guide-cell reveal" href="things-to-do.html"><div class="num">02</div><h3>Things To Do</h3><p>Coyote Point, Central Park's Japanese Garden, the Bay Trail, and where to take the dog.</p></a>
+        <a class="guide-cell reveal" href="things-to-do.html"><div class="num">03</div><h3>Weekend Guides</h3><p>A perfect Saturday, date nights, rainy days, and what to do with the kids.</p></a>
+        <a class="guide-cell reveal" href="eat-drink.html"><div class="num">04</div><h3>Hidden Gems</h3><p>The corners only locals know. No tourist traps, no filler.</p></a>
+        <a class="guide-cell feature reveal" href="legacies.html"><div class="num">05</div><h3>San Mateo Legacies ✦</h3><p>The spots that have been here since the '80s and before. Nobody else is telling these stories.</p></a>
+        <a class="guide-cell reveal" href="local-services.html"><div class="num">06</div><h3>Local Services</h3><p>Vetted local roofers, plumbers, dentists, and realtors. Real recommendations, not random.</p></a>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ===== Quiz callout ===== -->
   <section class="sec" style="text-align:center; padding:2.2rem 0; background:var(--paper-2); border-top:1.5px solid var(--ink);">
@@ -551,7 +574,7 @@
       <div class="inner reveal">
         <span class="label">Why trust a local</span>
         <h2>I grew up here. I'm not an algorithm.</h2>
-        <p>I was born and raised in San Mateo. I know which taco counter is worth the wait, which park has the light at the end of the day, and which "hidden gems" on the review sites are just tourist traps with good SEO.</p>
+        <p>I was born and raised in San Mateo. I crawled out of Mills Hospital, knew which way to get to Talbot's Toyland from my street, and now know which "hidden gems" on the review sites are just tourist traps with good SEO.</p>
         <p>This is my honest, regularly updated guide to the city I love. If it's listed here, I stand behind it. That's the whole promise.</p>
         <p class="sig">— A San Mateo local</p>
       </div>
@@ -639,6 +662,26 @@
     })();
     /* Favorites marquee: duplicate the cards so the scroll loops seamlessly */
     (function () { var t = document.querySelector('.fav-track'); if (t) t.innerHTML += t.innerHTML; })();
+    /* Latest-from-guide: cycle one headline at a time (skipped for reduced-motion) */
+    (function () {
+      var strip = document.getElementById('latest');
+      if (!strip) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var wrap = strip.querySelector('.wrap'), list = strip.querySelector('.hood-list');
+      if (!list) return;
+      var links = [].slice.call(list.querySelectorAll('a'));
+      var more = list.querySelector('.hood-more');
+      var guides = links.filter(function (a) { return a !== more; });
+      if (guides.length < 2) return;
+      if (more) { more.classList.add('latest-more-out'); wrap.appendChild(more); }
+      list.classList.add('latest-rotator');
+      var i = 0; guides[0].classList.add('is-live');
+      setInterval(function () {
+        guides[i].classList.remove('is-live');
+        i = (i + 1) % guides.length;
+        guides[i].classList.add('is-live');
+      }, 4200);
+    })();
     /* Mobile menu: close on link tap, on scroll, or on tap outside */
     (function () {
       var h = document.querySelector('.masthead');
