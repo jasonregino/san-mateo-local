@@ -130,11 +130,36 @@
   <div class="wrap">
     <section id="getlisted" style="padding-top:2.2rem;">
       <div style="background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.8rem;">
-        <p class="sec-label" style="text-align:left; color:var(--clay-deep);">Free, no catch</p>
-        <h2 style="text-align:left; font-size:1.7rem; margin:.3rem 0 .4rem;">Not on the guide yet?</h2>
-        <p style="color:var(--ink-soft); margin-bottom:1.2rem;">If you run a San Mateo spot we're missing, tell us about it and we'll add it. <strong>Free, no strings.</strong> We genuinely love finding places we didn't know about.</p>
-        <div id="listOk" style="display:none; background:#EAF3EA; border:1px solid #B9D7B9; color:#2A4A2A; border-radius:12px; padding:1.2rem;">
-          <strong>Thank you.</strong> We'll take a look and get your spot added to the guide.
+        <div id="listIntro">
+          <p style="text-align:left; margin:0 0 .35rem;"><span style="display:inline-block; background:#F2C94C; color:#221D16; font-size:.85rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase; padding:.42rem .95rem; border-radius:999px; box-shadow:0 2px 8px -2px rgba(0,0,0,.18);">&#9733; Free, no catch</span></p>
+          <h2 style="text-align:left; font-size:1.7rem; margin:.3rem 0 .4rem;">Not on the guide yet?</h2>
+          <p style="color:var(--ink-soft); margin-bottom:1.2rem;">If you run a San Mateo spot we're missing, tell us about it and we'll add it. <strong>Free, no strings.</strong> We genuinely love finding places we didn't know about.</p>
+        </div>
+        <div id="listOk" style="display:none; background:#EAF3EA; border:1px solid #B9D7B9; color:#2A4A2A; border-radius:12px; padding:1.4rem;">
+          <strong>Thank you.</strong> We'll take a look and get your spot added to the guide, usually within a day or two. You can always add a <a href="#feature" style="color:#2A4A2A; font-weight:700;">boost</a> later.
+        </div>
+        <div id="upsell" style="display:none;">
+          <p class="sec-label" style="text-align:left; color:var(--clay-deep);">One quick thing before we add you</p>
+          <h3 style="font-size:1.4rem; margin:.2rem 0 .3rem;">Want to stand out?</h3>
+          <p style="color:var(--ink-soft); font-size:.92rem; margin-bottom:1.1rem;">Your listing is free either way. If you'd like more of the locals already browsing to find you, add a boost now, or just continue with your free listing.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:.8rem;">
+            <div style="flex:1 1 210px; background:#fff; border:1.5px solid var(--line); border-top:3px solid var(--clay-deep); border-radius:10px; padding:1rem 1.1rem; display:flex; flex-direction:column;">
+              <p style="font-weight:700; color:var(--ink);">Featured Listing</p>
+              <p style="font-size:.85rem; color:var(--ink-soft); margin:.25rem 0 .6rem;">Top of your category and a card on the homepage.</p>
+              <p style="font-weight:800; color:var(--clay-deep); margin:auto 0 .6rem;">$39<span style="font-weight:600; font-size:.8rem; color:var(--ink-soft);">/mo, or $49 once</span></p>
+              <button type="button" id="upsellFeatured" style="width:100%; background:var(--clay); color:#fff; font-weight:700; padding:.6rem; border:none; border-radius:7px; cursor:pointer; font-size:.9rem;">Get featured &rarr;</button>
+            </div>
+            <div style="flex:1 1 210px; background:#fff; border:1.5px solid var(--ink); border-top:3px solid var(--clay-deep); border-radius:10px; padding:1rem 1.1rem; display:flex; flex-direction:column;">
+              <p style="font-weight:700; color:var(--ink);">Business Spotlight</p>
+              <p style="font-size:.85rem; color:var(--ink-soft); margin:.25rem 0 .45rem;">A 30-day homepage feature, plus a story page that stays for good.</p>
+              <p style="margin:0 0 .55rem;"><a href="sample-business-spotlight.html" style="color:var(--clay-deep); font-weight:700; font-size:.82rem;">See a sample &rarr;</a></p>
+              <p style="font-weight:800; color:var(--clay-deep); margin:auto 0 .6rem;">$149 <span style="font-weight:600; font-size:.8rem; color:var(--ink-soft);">one time</span></p>
+              <button type="button" id="upsellSpotlight" style="width:100%; background:var(--clay); color:#fff; font-weight:700; padding:.6rem; border:none; border-radius:7px; cursor:pointer; font-size:.9rem;">Get the Spotlight &rarr;</button>
+            </div>
+          </div>
+          <p class="sec-label" style="text-align:center; color:var(--clay-deep); margin:1.4rem 0 .15rem;">Not ready for a boost?</p>
+          <p style="text-align:center; font-size:.82rem; color:var(--ink-soft); margin:0 0 .55rem;">Keep it free, no problem. You can always add a boost later.</p>
+          <button type="button" id="upsellFree" style="width:100%; background:transparent; color:var(--ink-soft); font-weight:700; padding:.7rem; border:1.5px solid var(--line); border-radius:8px; cursor:pointer; font-size:.92rem;">Just add my free listing &rarr;</button>
         </div>
         <form id="listForm">
           <input type="hidden" name="access_key" value="54743f1e-b34e-4d1a-aca8-6ff2554e06a0" />
@@ -151,9 +176,14 @@
           <div class="row"><label class="fld" for="lweb">Website (optional)</label><input type="text" id="lweb" name="website" placeholder="yoursite.com" /></div>
           <div class="row"><label class="fld" for="linsta">Instagram (optional)</label><input type="text" id="linsta" name="instagram" placeholder="@yourhandle" /></div>
           <div class="row"><label class="fld" for="lfb">Facebook (optional)</label><input type="text" id="lfb" name="facebook" placeholder="facebook.com/yourpage" /></div>
+          <div class="row"><label class="fld" for="lphoto">Cover photo <span style="font-weight:400;color:var(--ink-soft)">(optional, a nice one of your spot)</span></label><input type="file" id="lphoto" name="photo" accept="image/*" style="width:100%; font:inherit; font-size:.9rem; color:var(--ink-soft);" /></div>
+          <div class="row" style="background:var(--paper-2); border-radius:10px; padding:.8rem 1rem;">
+            <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer; margin-bottom:.55rem;"><input type="checkbox" name="photo_permission" value="Yes, may use a photo I own from my site or Google" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">No photo handy? You may use a photo of my business that I own, from my website or Google profile. I confirm it's mine to share.</span></label>
+            <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer;"><input type="checkbox" name="photo_shoot" value="Yes, OK to come take a photo" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">I don't have a good photo. You're welcome to swing by and take one.</span></label>
+          </div>
           <div class="row"><label class="fld" for="lname">Your name</label><input type="text" id="lname" name="name" /></div>
           <div class="row"><label class="fld" for="lemail">Email</label><input type="email" id="lemail" name="email" placeholder="So we can follow up" required /></div>
-          <button type="submit" id="lsend" style="background:var(--clay);">Add my business</button>
+          <button type="button" id="lsend" style="background:var(--clay);">Add my business</button>
         </form>
       </div>
     </section>
@@ -162,25 +192,131 @@
       <div style="background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.8rem;">
         <p class="sec-label" style="text-align:left; color:var(--clay-deep);">Paid &middot; want a boost?</p>
         <h2 style="text-align:left; font-size:1.7rem; margin:.3rem 0 .4rem;">Feature your business</h2>
-        <p style="color:var(--ink-soft); margin-bottom:1.4rem;">Getting listed is free. If you want to stand out, you can pay to be featured on the pages locals actually browse. Always clearly marked as featured, so the guide stays honest.</p>
+        <p style="color:var(--ink-soft); margin-bottom:1rem;">Getting listed is free. If you want to stand out, you can pay to be featured on the pages locals actually browse. Always clearly marked as featured, so the guide stays honest.</p>
+        <p style="color:var(--clay-deep); font-weight:700; font-size:.9rem; margin-bottom:1.4rem;">&#9733; Only 6 featured slots at a time, kept limited on purpose.</p>
         <div style="display:flex; flex-wrap:wrap; gap:1.2rem;">
 
           <div class="feat-card" style="flex:1 1 300px; border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:12px; padding:1.5rem 1.6rem; background:#fff; display:flex; flex-direction:column;">
-            <h3 style="margin-bottom:.35rem;">Featured Spot</h3>
-            <p style="color:var(--ink-soft); font-size:.95rem;">Your business up in the homepage Local Spotlight for 30 days, in front of people already deciding where to go.</p>
-            <p style="font-size:1.7rem; font-weight:800; color:var(--clay-deep); margin:auto 0 1rem;">$49<span style="font-size:.9rem; font-weight:600; color:var(--ink-soft);"> / 30 days</span></p>
-            <a href="https://buy.stripe.com/5kQ7sM0G04srcuF6GlabK00" style="display:inline-block; background:var(--clay); color:#fff; font-weight:700; padding:.85rem 1.5rem; border-radius:8px; text-decoration:none;">Get featured &rarr;</a>
+            <h3 style="margin-bottom:.35rem;">Featured Listing</h3>
+            <p style="color:var(--ink-soft); font-size:.95rem;">The Featured badge, the top of your category, and a place in the Featured strip on our homepage. When locals are deciding where to go, you&#39;re one of the first things they see.</p>
+            <p style="font-size:1.7rem; font-weight:800; color:var(--clay-deep); margin:auto 0 .15rem;">$39<span style="font-size:.9rem; font-weight:600; color:var(--ink-soft);"> / month</span></p>
+            <p style="font-size:.85rem; color:var(--ink-soft); margin-bottom:1rem;">Cancel anytime, or <strong>$49 once for 30 days</strong>.</p>
+            <button type="button" id="featStart" style="width:100%; text-align:center; background:var(--clay); color:#fff; font-weight:700; padding:.85rem 1.5rem; border:none; border-radius:8px; cursor:pointer; font-size:1rem;">Get featured &rarr;</button>
           </div>
 
           <div class="feat-card" style="flex:1 1 300px; border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:12px; padding:1.5rem 1.6rem; background:#fff; display:flex; flex-direction:column;">
             <p style="font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--clay-deep); font-weight:800; margin-bottom:.3rem;">Best value</p>
-            <h3 style="margin-bottom:.35rem;">Featured Spot + Story</h3>
-            <p style="color:var(--ink-soft); font-size:.95rem;">Everything in Featured Spot, plus a polished write-up on your listing and a full feature story on its own page. The spotlight runs 30 days; <strong>the story stays up for good</strong>, working for you in Google long after.</p>
+            <h3 style="margin-bottom:.35rem;">Business Spotlight</h3>
+            <p style="color:var(--ink-soft); font-size:.95rem;">Your own editorial story page that <strong>stays up for good</strong>, plus a 30-day feature up top on the homepage to launch it. The story keeps working for you in Google long after.</p>
+            <p style="margin:.7rem 0 0;"><a href="sample-business-spotlight.html" style="color:var(--clay-deep); font-weight:700; font-size:.92rem;">See a sample feature &rarr;</a></p>
             <p style="font-size:1.7rem; font-weight:800; color:var(--clay-deep); margin:auto 0 1rem;">$149<span style="font-size:.9rem; font-weight:600; color:var(--ink-soft);"> one time</span></p>
-            <a href="https://buy.stripe.com/fZudRa74o9MLamxfcRabK01" style="display:inline-block; background:var(--clay); color:#fff; font-weight:700; padding:.85rem 1.5rem; border-radius:8px; text-decoration:none;">Feature my story &rarr;</a>
+            <button type="button" id="spotStart" style="width:100%; background:var(--clay); color:#fff; font-weight:700; padding:.85rem 1.5rem; border:none; border-radius:8px; cursor:pointer; font-size:1rem;">Feature my story &rarr;</button>
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <section id="featuredIntake" style="display:none; padding-top:0.5rem;">
+      <div style="background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.8rem;">
+        <p class="sec-label" style="text-align:left; color:var(--clay-deep);">Featured Listing</p>
+        <h2 style="text-align:left; font-size:1.7rem; margin:.3rem 0 .4rem;">Let's get you featured</h2>
+        <p style="color:var(--ink-soft); margin-bottom:.4rem;">Tell us about your spot so we can build your listing right. The more you share, the better it looks.</p>
+        <p style="color:var(--ink-soft); font-size:.9rem; margin-bottom:1.3rem;">Only your business name and email are required. Everything else helps your listing shine.</p>
+
+        <div id="featOk" style="display:none; background:#EAF3EA; border:1px solid #B9D7B9; color:#2A4A2A; border-radius:12px; padding:1.4rem;">
+          <strong>Got it, thank you.</strong> We have your details. If checkout didn't open, you can <a href="https://buy.stripe.com/7sYbJ2bkE3on52d9SxabK02" style="color:#2A4A2A; font-weight:700;">finish payment here</a>. We'll have your featured spot live soon.
+        </div>
+
+        <form id="featForm">
+          <input type="hidden" name="access_key" value="54743f1e-b34e-4d1a-aca8-6ff2554e06a0" />
+          <input type="hidden" name="subject" value="San Mateo Local — Featured Listing intake" />
+          <input type="hidden" name="from_name" value="San Mateo Local — Featured Intake" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="row"><label class="fld" for="fbiz">Business name</label><input type="text" id="fbiz" name="business_name" required /></div>
+          <div class="row"><label class="fld" for="fcat">Category</label>
+            <select id="fcat" name="category" style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.75rem; font:inherit; background:#fff; color:var(--ink);">
+              <option>Eat &amp; Drink</option><option>Shopping / Market</option><option>Things to Do</option><option>Local Service</option><option>Other</option>
+            </select></div>
+          <div class="row"><label class="fld" for="faddr">Address</label><input type="text" id="faddr" name="address" placeholder="Street, San Mateo" /></div>
+          <div class="row"><label class="fld" for="fknown">What are you known for?</label><input type="text" id="fknown" name="known_for" placeholder="In a sentence" /></div>
+          <div class="row"><label class="fld" for="fweb">Website (optional)</label><input type="text" id="fweb" name="website" placeholder="yoursite.com" /></div>
+          <div class="row"><label class="fld" for="finsta">Instagram (optional)</label><input type="text" id="finsta" name="instagram" placeholder="@yourhandle" /></div>
+          <div class="row"><label class="fld" for="ffb">Facebook (optional)</label><input type="text" id="ffb" name="facebook" placeholder="facebook.com/yourpage" /></div>
+          <div class="row"><label class="fld" for="fphoto">Cover photo <span style="font-weight:400;color:var(--ink-soft)">(optional, a nice one of your spot)</span></label><input type="file" id="fphoto" name="photo" accept="image/*" style="width:100%; font:inherit; font-size:.9rem; color:var(--ink-soft);" /></div>
+          <div class="row" style="background:var(--paper-2); border-radius:10px; padding:.8rem 1rem;">
+            <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer; margin-bottom:.55rem;"><input type="checkbox" name="photo_permission" value="Yes, may use a photo I own from my site or Google" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">No photo handy? You may use a photo of my business that I own, from my website or Google profile. I confirm it's mine to share.</span></label>
+            <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer;"><input type="checkbox" name="photo_shoot" value="Yes, OK to come take a photo" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">I don't have a good photo. You're welcome to swing by and take one.</span></label>
+          </div>
+          <div class="row"><label class="fld" for="fname">Your name</label><input type="text" id="fname" name="contact_name" /></div>
+          <div class="row"><label class="fld" for="femail">Email</label><input type="email" id="femail" name="email" placeholder="So we can follow up" required /></div>
+
+          <input type="hidden" id="fplan" name="plan" value="" />
+          <button type="button" id="featSendMo" style="background:var(--clay); margin-top:.4rem;">Continue, $39/mo &rarr;</button>
+          <button type="button" id="featSendOnce" style="width:100%; background:transparent; color:var(--clay-deep); font-weight:700; padding:.7rem; border:1.5px solid var(--line); border-radius:8px; cursor:pointer; font-size:.92rem; margin-top:.6rem;">Or just 30 days for $49 &rarr;</button>
+          <p style="text-align:center; font-size:.8rem; color:var(--ink-soft); margin-top:.7rem;">Next step is secure checkout. Your details reach us either way.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="spotlightIntake" style="display:none; padding-top:0.5rem;">
+      <div style="background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.8rem;">
+        <p class="sec-label" style="text-align:left; color:var(--clay-deep);">Business Spotlight &middot; $149</p>
+        <h2 style="text-align:left; font-size:1.7rem; margin:.3rem 0 .4rem;">Tell us your story</h2>
+        <p style="color:var(--ink-soft); margin-bottom:.4rem;">This is what we turn into your feature. Answer whatever you feel like, skip the rest. There are no wrong answers, and we'll shape it into something that sounds like you.</p>
+        <p style="color:var(--ink-soft); font-size:.9rem; margin-bottom:.6rem;">The only things we truly need are your business name and email. Everything else just helps us write a better story.</p>
+        <p style="margin-bottom:1.3rem;"><a href="sample-business-spotlight.html" style="color:var(--clay-deep); font-weight:700; font-size:.92rem;">Want to see one first? Read a sample feature &rarr;</a></p>
+
+        <div id="spotOk" style="display:none; background:#EAF3EA; border:1px solid #B9D7B9; color:#2A4A2A; border-radius:12px; padding:1.4rem;">
+          <strong>Got it, thank you.</strong> We have your story notes. If checkout didn't open, you can <a id="spotPayLink" href="https://buy.stripe.com/fZudRa74o9MLamxfcRabK01" style="color:#2A4A2A; font-weight:700;">finish payment here</a>. Either way we'll be in touch soon to walk through your feature.
+        </div>
+
+        <form id="spotForm">
+          <input type="hidden" name="access_key" value="54743f1e-b34e-4d1a-aca8-6ff2554e06a0" />
+          <input type="hidden" name="subject" value="San Mateo Local — Business Spotlight intake ($149)" />
+          <input type="hidden" name="from_name" value="San Mateo Local — Spotlight Intake" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <p style="font-weight:700; color:var(--ink); margin:0 0 .8rem;">Your business</p>
+          <div class="row"><label class="fld" for="sbiz">Business name</label><input type="text" id="sbiz" name="business_name" required /></div>
+          <div class="row"><label class="fld" for="scat">Category</label>
+            <select id="scat" name="category" style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.75rem; font:inherit; background:#fff; color:var(--ink);">
+              <option>Eat &amp; Drink</option><option>Shopping / Market</option><option>Things to Do</option><option>Local Service</option><option>Other</option>
+            </select></div>
+          <div class="row"><label class="fld" for="saddr">Address</label><input type="text" id="saddr" name="address" placeholder="Street, San Mateo" /></div>
+          <div class="row"><label class="fld" for="sknown">What are you known for?</label><input type="text" id="sknown" name="known_for" placeholder="In a sentence" /></div>
+          <div class="row"><label class="fld" for="sweb">Website (optional)</label><input type="text" id="sweb" name="website" placeholder="yoursite.com" /></div>
+          <div class="row"><label class="fld" for="sinsta">Instagram (optional)</label><input type="text" id="sinsta" name="instagram" placeholder="@yourhandle" /></div>
+          <div class="row"><label class="fld" for="sfb">Facebook (optional)</label><input type="text" id="sfb" name="facebook" placeholder="facebook.com/yourpage" /></div>
+          <div class="row"><label class="fld" for="sphoto">Cover photo <span style="font-weight:400;color:var(--ink-soft)">(optional, a nice one of your spot)</span></label><input type="file" id="sphoto" name="photo" accept="image/*" style="width:100%; font:inherit; font-size:.9rem; color:var(--ink-soft);" /></div>
+          <div class="row" style="background:var(--paper-2); border-radius:10px; padding:.8rem 1rem;">
+            <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer; margin-bottom:.55rem;"><input type="checkbox" name="photo_permission" value="Yes, may use a photo I own from my site or Google" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">No photo handy? You may use a photo of my business that I own, from my website or Google profile. I confirm it's mine to share.</span></label>
+            <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer;"><input type="checkbox" name="photo_shoot" value="Yes, OK to come take a photo" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">I don't have a good photo. You're welcome to swing by and take one.</span></label>
+          </div>
+          <div class="row"><label class="fld" for="sname">Your name</label><input type="text" id="sname" name="contact_name" /></div>
+          <div class="row"><label class="fld" for="semail">Email</label><input type="email" id="semail" name="email" placeholder="So we can send your draft to look over" required /></div>
+          <div class="row"><label class="fld" for="sphone">Phone <span style="font-weight:400;color:var(--ink-soft)">(optional)</span></label><input type="tel" id="sphone" name="phone" placeholder="Best number to reach you" /></div>
+
+          <p style="font-weight:700; color:var(--ink); margin:1.4rem 0 .2rem;">Your story</p>
+          <p style="color:var(--ink-soft); font-size:.88rem; margin-bottom:1rem;">Answer the ones you like, add your own, or skip straight to the facts box. A sentence or two each is plenty.</p>
+
+          <div class="row"><label class="fld" for="sq1">How did your business get started here?</label><textarea id="sq1" name="q_started" rows="2" placeholder="Where it began, and how you ended up in San Mateo" style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.7rem; font:inherit; background:#fff; color:var(--ink);"></textarea></div>
+          <div class="row"><label class="fld" for="sq2">What's one thing customers often don't know about what you do?</label><textarea id="sq2" name="q_surprise" rows="2" placeholder="The thing that surprises people" style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.7rem; font:inherit; background:#fff; color:var(--ink);"></textarea></div>
+          <div class="row"><label class="fld" for="sq3">What's your favorite part of serving this community?</label><textarea id="sq3" name="q_community" rows="2" placeholder="What you love about the locals and the neighborhood" style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.7rem; font:inherit; background:#fff; color:var(--ink);"></textarea></div>
+          <div class="row"><label class="fld" for="sq4">If someone's never visited, what should they expect?</label><textarea id="sq4" name="q_firsttime" rows="2" placeholder="What a first-timer walks into, and what to try" style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.7rem; font:inherit; background:#fff; color:var(--ink);"></textarea></div>
+
+          <div class="row"><label class="fld" for="sownqa">Your own questions <span style="font-weight:400;color:var(--ink-soft)">(optional)</span></label><textarea id="sownqa" name="own_qa" rows="3" placeholder="Any questions you wish customers asked? Write your own question and answer, one per line. Perfect for the specifics we'd never guess, like parking, catering, gift cards, or dietary options." style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.7rem; font:inherit; background:#fff; color:var(--ink);"></textarea></div>
+
+          <div class="row"><label class="fld" for="sfacts">Or just give us the facts, we'll shape it</label><textarea id="sfacts" name="facts" rows="3" placeholder="Don't feel like writing? Drop anything here. History, specials, awards, what you're proud of. We'll do the rest." style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.7rem; font:inherit; background:#fff; color:var(--ink);"></textarea></div>
+
+          <div class="row" style="background:var(--paper-2); border-radius:10px; padding:.9rem 1rem;">
+            <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer;"><input type="checkbox" id="sinterview" name="prefers_interview" value="Yes, call to interview" style="margin-top:.2rem;"> <span>Rather talk than type? Check this and add your number above. We'll call and interview you, then write it up for you.</span></label>
+          </div>
+
+          <button type="button" id="spotSend" style="background:var(--clay); margin-top:.4rem;">Save my story &amp; continue to checkout &rarr;</button>
+          <p style="text-align:center; font-size:.8rem; color:var(--ink-soft); margin-top:.7rem;">Next step is a secure $149 checkout. Your notes reach us either way.</p>
+        </form>
       </div>
     </section>
 
@@ -237,9 +373,10 @@
         <div class="row">
           <label class="fld">What are you interested in?</label>
           <div class="checks">
+            <label class="chk"><input type="checkbox" name="interest[]" value="Featured Listing"> Featured Listing</label>
+            <label class="chk"><input type="checkbox" name="interest[]" value="Business Spotlight (feature story)"> Business Spotlight (story)</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="More Google reviews"> More Google reviews</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="A website"> A website</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="Featured listing"> Featured listing</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="Not sure yet"> Not sure yet</label>
           </div>
         </div>
@@ -263,6 +400,32 @@
       </form>
 
       <p class="or">Prefer email? Write us at <a href="mailto:hello@sanmateolocal.com?subject=Working%20with%20San%20Mateo%20Local">hello@sanmateolocal.com</a>.</p>
+    </section>
+
+    <section id="faq" style="padding-top:0.5rem;">
+      <style>
+        .faq details { border-bottom:1px solid var(--line); padding:1.05rem 0; }
+        .faq details:first-of-type { border-top:1px solid var(--line); }
+        .faq summary { font-weight:700; font-size:1.05rem; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem; color:var(--ink); }
+        .faq summary::-webkit-details-marker { display:none; }
+        .faq summary::after { content:'+'; color:var(--clay-deep); font-weight:800; font-size:1.35rem; line-height:1; flex:none; }
+        .faq details[open] summary::after { content:'\2212'; }
+        .faq details p { color:var(--ink-soft); margin-top:.7rem; font-size:.97rem; line-height:1.65; }
+      </style>
+      <p class="sec-label">Good to know</p>
+      <h2 class="sec-h">Questions from business owners</h2>
+      <div class="faq">
+        <details><summary>Is getting listed really free?</summary><p>Yes. A basic listing is free, no strings. If you run a real San Mateo business, we want you on the guide. Send it to us with the form above and we&#39;ll add it.</p></details>
+        <details><summary>What&#39;s the difference between a free listing and a Featured Listing?</summary><p>A free listing puts you in the guide where locals can find you. A Featured Listing makes you stand out: the orange Featured badge, the top of your category, and a place in the Featured strip on our homepage.</p></details>
+        <details><summary>What exactly do I get with a Featured Listing?</summary><p>The Featured badge on your listing, top position on your category page, and a spot in the rotating Featured strip on the homepage. When someone&#39;s browsing for what you offer, you&#39;re one of the first things they see.</p></details>
+        <details><summary>Is it monthly or one-time?</summary><p>Your choice. Go monthly at $39 a month to stay featured for as long as you like (cancel anytime), or pay $49 once for a single 30-day run. Same placement either way. Monthly is the better deal if you plan to stick around.</p></details>
+        <details><summary>What&#39;s the $149 Business Spotlight?</summary><p>Everything in a Featured Listing, plus two things that keep working long-term: a full editorial story about your business on its own page (Google can find it for years), and a big feature card up top on the homepage. It&#39;s a one-time payment, and the story page stays up for good.</p></details>
+        <details><summary>Do you write the story, or do I?</summary><p>We write it, with you. We&#39;ll ask a few quick questions, put together a draft, and send it to you to approve before it goes live. Your story, in your words, just polished.</p></details>
+        <details><summary>How many featured slots are there?</summary><p>We keep it to six at a time, on purpose. If everyone&#39;s featured, no one stands out, so we cap it. When all six are taken, we start a waitlist and let you know when one opens up.</p></details>
+        <details><summary>How long until my Featured Listing goes live?</summary><p>Usually a day or two after payment. We add you by hand (that&#39;s the point of a curated guide), so it&#39;s not instant, but it&#39;s quick.</p></details>
+        <details><summary>What happens if I cancel, or when my 30 days end?</summary><p>Your placement comes down and you go back to a normal free listing, still in the guide. Nothing disappears. With the $149, your story page stays up permanently either way.</p></details>
+        <details><summary>Can I fix a mistake in my listing?</summary><p>Yes. Use the &quot;Is this your business?&quot; link on your listing or just email us, and we&#39;ll update it. Free listings included.</p></details>
+      </div>
     </section>
   </div>
 
@@ -317,7 +480,80 @@
     });
   </script>
   <script>
-  (function(){var f=document.getElementById('listForm');if(!f)return;f.addEventListener('submit',async function(e){e.preventDefault();var b=document.getElementById('lsend');b.textContent='Sending...';b.disabled=true;try{var res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)});var j=await res.json();if(j.success){f.style.display='none';document.getElementById('listOk').style.display='block';document.getElementById('listOk').scrollIntoView({behavior:'smooth',block:'center'});}else throw new Error();}catch(err){b.textContent='Add my business';b.disabled=false;alert("Sorry, that didn't go through. Email hello@sanmateolocal.com instead.");}});})();
+  (function(){
+    var f=document.getElementById('listForm');if(!f)return;
+    var up=document.getElementById('upsell'), ok=document.getElementById('listOk'), intro=document.getElementById('listIntro');
+    document.getElementById('lsend').addEventListener('click',function(){
+      if(!f.reportValidity())return;
+      if(intro)intro.style.display='none';
+      f.style.display='none'; up.style.display='block'; up.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+    async function finish(redirect, btn, after){
+      if(!f.checkValidity()){ up.style.display='none'; if(intro)intro.style.display=''; f.style.display=''; f.reportValidity(); return; }
+      if(btn){ btn.textContent = 'Saving...'; btn.disabled=true; }
+      try{
+        var res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)});
+        var j=await res.json();
+        if(!j.success)throw new Error();
+        if(after){ after(); return; }
+        if(redirect){window.location=redirect;return;}
+        up.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'});
+      }catch(err){ if(btn){btn.disabled=false;} alert("Sorry, that didn't go through. Email hello@sanmateolocal.com instead."); }
+    }
+    function val(id){ var el=document.getElementById(id); return el?el.value:''; }
+    function setVal(id,v){ if(v){ var el=document.getElementById(id); if(el) el.value=v; } }
+    function freeVals(){ return { biz:val('lbiz'), cat:val('lcat'), addr:val('laddr'), known:val('lknown'), web:val('lweb'), insta:val('linsta'), fb:val('lfb'), name:val('lname'), email:val('lemail') }; }
+
+    document.getElementById('upsellFree').addEventListener('click',function(){finish(null,this);});
+    document.getElementById('upsellFeatured').addEventListener('click',function(){
+      var pre=freeVals();
+      finish(null,this,function(){ up.style.display='none'; openFeatured(pre); });
+    });
+    document.getElementById('upsellSpotlight').addEventListener('click',function(){
+      var pre=freeVals();
+      finish(null,this,function(){ up.style.display='none'; openSpotlight(pre); });
+    });
+
+    // ---- shared: submit a paid intake form, then send to checkout ----
+    async function payAfter(form, url, btn, resetLabel){
+      if(!form.reportValidity())return;
+      btn.textContent='Saving...'; btn.disabled=true;
+      try{
+        var res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(form)});
+        var j=await res.json();
+        if(!j.success)throw new Error();
+        window.location=url; return;
+      }catch(err){ btn.disabled=false; btn.textContent=resetLabel; alert("Sorry, that didn't go through. Email hello@sanmateolocal.com instead."); }
+    }
+
+    // ---- Featured Listing intake ----
+    var FEAT_MO='https://buy.stripe.com/7sYbJ2bkE3on52d9SxabK02';
+    var FEAT_ONCE='https://buy.stripe.com/5kQ7sM0G04srcuF6GlabK00';
+    var fi=document.getElementById('featuredIntake'), ff=document.getElementById('featForm'), fok=document.getElementById('featOk');
+    function openFeatured(pre){
+      if(pre){ setVal('fbiz',pre.biz); setVal('fcat',pre.cat); setVal('faddr',pre.addr); setVal('fknown',pre.known); setVal('fweb',pre.web); setVal('finsta',pre.insta); setVal('ffb',pre.fb); setVal('fname',pre.name); setVal('femail',pre.email); }
+      ff.style.display=''; if(fok)fok.style.display='none';
+      fi.style.display='block'; fi.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    var fstart=document.getElementById('featStart');
+    if(fstart) fstart.addEventListener('click',function(){ openFeatured(); });
+    var fmo=document.getElementById('featSendMo'), fonce=document.getElementById('featSendOnce');
+    if(fmo) fmo.addEventListener('click',function(){ document.getElementById('fplan').value='Featured $39/mo'; payAfter(ff, FEAT_MO, this, 'Continue, $39/mo →'); });
+    if(fonce) fonce.addEventListener('click',function(){ document.getElementById('fplan').value='Featured $49 once'; payAfter(ff, FEAT_ONCE, this, 'Or just 30 days for $49 →'); });
+
+    // ---- Business Spotlight intake ----
+    var SPOT_PAY='https://buy.stripe.com/fZudRa74o9MLamxfcRabK01';
+    var si=document.getElementById('spotlightIntake'), sf=document.getElementById('spotForm'), sok=document.getElementById('spotOk');
+    function openSpotlight(pre){
+      if(pre){ setVal('sbiz',pre.biz); setVal('scat',pre.cat); setVal('saddr',pre.addr); setVal('sknown',pre.known); setVal('sweb',pre.web); setVal('sinsta',pre.insta); setVal('sfb',pre.fb); setVal('sname',pre.name); setVal('semail',pre.email); }
+      sf.style.display=''; if(sok)sok.style.display='none';
+      si.style.display='block'; si.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    var ss=document.getElementById('spotStart');
+    if(ss) ss.addEventListener('click',function(){ openSpotlight(); });
+    var ssend=document.getElementById('spotSend');
+    if(ssend) ssend.addEventListener('click',function(){ payAfter(sf, SPOT_PAY, this, 'Save my story & continue to checkout →'); });
+  })();
   </script>
 </body>
 </html>

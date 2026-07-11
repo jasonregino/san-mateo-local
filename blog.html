@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBBC09ZJZQ"></script>
   <script>
@@ -42,6 +43,17 @@
   .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
   .article { max-width:46rem; margin:0 auto; padding:0 1.5rem; }
   .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+  /* per-type kicker colors (dark-mode safe) */
+  .k-spotlight { display:inline-block !important; background:#2E5A6B; color:#fff !important; padding:0.3rem 0.7rem; border-radius:999px; letter-spacing:0.13em; }
+  [data-theme="dark"] .k-spotlight { background:#4A7E92; color:#fff !important; }
+  .k-weekend { color:#A5492B !important; }
+  [data-theme="dark"] .k-weekend { color:#E27D50 !important; }
+  .k-new { color:#41614B !important; }
+  [data-theme="dark"] .k-new { color:#88AC8F !important; }
+  .k-best { color:#C25B3A !important; }
+  [data-theme="dark"] .k-best { color:#E27D50 !important; }
+  .k-hood { color:#8A6D3B !important; }
+  [data-theme="dark"] .k-hood { color:#C6A35E !important; }
   /* masthead */
   .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:50; }
   .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1.5rem; max-width:1140px; margin:0 auto; }
@@ -89,6 +101,13 @@
   .spot p { color:var(--ink-soft); }
   .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--clay); font-family:'Fraunces',serif; font-style:italic; font-size:1.1rem; }
   .post .outro a { color:var(--clay-deep); font-weight:600; font-style:normal; }
+  .post .s-para { font-size:1.08rem; color:var(--ink); margin:1.15rem 0 0; line-height:1.7; }
+  .qa { padding:1.1rem 0; border-bottom:1px solid var(--line); }
+  .qa:last-of-type { border-bottom:none; }
+  .qa .q { font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; color:var(--ink); margin-bottom:0.35rem; }
+  .qa .a { color:var(--ink-soft); font-size:1.02rem; line-height:1.65; }
+  .visit p { color:var(--ink-soft); margin:0.35rem 0; }
+  .visit a { color:var(--clay-deep); font-weight:600; }
   /* footer */
   footer.site { padding:3rem 0 2.5rem; border-top:1.5px solid var(--ink); margin-top:2rem; }
   footer.site .wrap { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; align-items:flex-start; }
@@ -109,9 +128,9 @@
           <a href="things-to-do.html">Things To Do</a>
           <a href="shopping.html">Shopping</a>
           <a href="local-services.html">Services</a>
+          <a href="local-buzz.html">Local Buzz</a>
           <a href="blog.html" class="on">Guides</a>
           <a href="legacies.html">Legacies</a>
-          <a href="gone-but-not-forgotten.html">Gone But Not Forgotten</a>
           <a href="index.html#newsletter" class="sub">Subscribe</a>
         </nav>
         <button class="theme-toggle" type="button" aria-label="Switch between day and night mode" onclick="(function(d){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('sml-theme',t)}catch(e){}})(document.documentElement)"><span class="moon" aria-hidden="true">&#9790;</span><span class="sun" aria-hidden="true">&#9728;</span></button>
@@ -123,9 +142,9 @@
       <a href="things-to-do.html">Things To Do</a>
       <a href="shopping.html">Shopping</a>
       <a href="local-services.html">Services</a>
+      <a href="local-buzz.html">Local Buzz</a>
       <a href="blog.html">Guides</a>
       <a href="legacies.html">Legacies</a>
-      <a href="gone-but-not-forgotten.html">Gone But Not Forgotten</a>
       <a href="index.html#newsletter" class="sub">Subscribe</a>
     </nav>
     <div class="dateline">A born-and-raised local's guide to San Mateo, California</div>
@@ -137,77 +156,84 @@
   </div></section>
   <div class="wrap"><div class="post-list">
         <a class="post-card" href="this-weekend.html">
-          <div class="k">This Weekend</div>
+          <div class="k k-weekend">This Weekend</div>
           <h2>Markets, Music in the Park, and the Gem Show</h2>
           <div class="date">July 6, 2026</div>
           <p>Your guide to this week around town: the summer farmers' markets, the free Thursday concerts in Central Park, and a three-day gem and jewelry show at the Event Center this weekend.</p>
           <div class="readon">Read the guide &rarr;</div>
         </a>
+        <a class="post-card" href="spotlight-takahashi-market.html">
+          <div class="k k-spotlight">Business Spotlight</div>
+          <h2>Takahashi Market: A San Mateo Institution Since 1906</h2>
+          <div class="date">July 2026</div>
+          <p>The story of a family market that opened in 1906, came home after internment, and became the Peninsula's go-to for poke, Spam musubi, and a taste of the islands.</p>
+          <div class="readon">Read the story &rarr;</div>
+        </a>
         <a class="post-card" href="new-openings-summer-2026.html">
-          <div class="k">New Openings</div>
+          <div class="k k-new">New Openings</div>
           <h2>New in San Mateo: Summer 2026</h2>
           <div class="date">July 1, 2026</div>
           <p>A downtown brunch boom, a matcha bar, Korean BBQ, and more — the freshest spots to open around town.</p>
           <div class="readon">Read the guide &rarr;</div>
         </a>
         <a class="post-card" href="best-coffee-in-san-mateo.html">
-          <div class="k">Best Of</div>
+          <div class="k k-best">Best Of</div>
           <h2>The Best Coffee in San Mateo</h2>
           <div class="date">Updated July 2, 2026</div>
           <p>A born-and-raised local's short list of the independent cafes worth going out of your way for.</p>
           <div class="readon">Read the guide &rarr;</div>
         </a>
         <a class="post-card" href="best-breakfast-in-san-mateo.html">
-          <div class="k">Best Of</div>
+          <div class="k k-best">Best Of</div>
           <h2>The Best Breakfast &amp; Brunch in San Mateo</h2>
           <div class="date">Updated July 2, 2026</div>
           <p>Where locals actually line up for breakfast, from greasy-spoon classics to the new brunch crowd.</p>
           <div class="readon">Read the guide &rarr;</div>
         </a>
         <a class="post-card" href="best-sushi-in-san-mateo.html">
-          <div class="k">Best Of</div>
+          <div class="k k-best">Best Of</div>
           <h2>The Best Sushi in San Mateo</h2>
           <div class="date">Updated July 2, 2026</div>
           <p>From a Michelin-starred omakase counter to the neighborhood roll spot, San Mateo's Japanese food runs deep.</p>
           <div class="readon">Read the guide &rarr;</div>
         </a>
         <a class="post-card" href="best-happy-hour-in-san-mateo.html">
-          <div class="k">Best Of</div>
+          <div class="k k-best">Best Of</div>
           <h2>The Best Happy Hour in San Mateo</h2>
           <div class="date">Updated July 2, 2026</div>
           <p>Where to be at 5pm, from $2 oysters and $10 margaritas to a proper dive with cheap pours.</p>
           <div class="readon">Read the guide &rarr;</div>
         </a>
         <a class="post-card" href="best-of-25th-avenue-san-mateo.html">
-          <div class="k">Neighborhood</div>
+          <div class="k k-hood">Neighborhood</div>
           <h2>Best of 25th Avenue</h2>
           <div class="date">Updated July 2, 2026</div>
           <p>A short, storied block near the center of San Mateo, from a Michelin-legacy sushi counter to a 1972 barbershop.</p>
           <div class="readon">Read the guide &rarr;</div>
         </a>
         <a class="post-card" href="best-tacos-in-san-mateo.html">
-          <div class="k">Best Of</div>
+          <div class="k k-best">Best Of</div>
           <h2>The Best Tacos in San Mateo</h2>
           <div class="date">Updated July 2, 2026</div>
           <p>Al pastor off a real trompo, Sinaloa mariscos, birria, and a market counter locals swear by.</p>
           <div class="readon">Read the guide &rarr;</div>
         </a>
         <a class="post-card" href="best-pizza-in-san-mateo.html">
-          <div class="k">Best Of</div>
+          <div class="k k-best">Best Of</div>
           <h2>The Best Pizza in San Mateo</h2>
           <div class="date">Updated July 2, 2026</div>
           <p>Michelin-recognized Neapolitan, cult SF square slices, Detroit-style, and a late-night NY slice.</p>
           <div class="readon">Read the guide &rarr;</div>
         </a>
         <a class="post-card" href="best-of-downtown-san-mateo.html">
-          <div class="k">Neighborhood</div>
+          <div class="k k-hood">Neighborhood</div>
           <h2>Best of Downtown San Mateo</h2>
           <div class="date">Updated July 2, 2026</div>
           <p>A walkable tour of the downtown core, from a Michelin sushi counter to the bakery everyone lines up for.</p>
           <div class="readon">Read the guide &rarr;</div>
         </a>
         <a class="post-card" href="best-of-bay-meadows-san-mateo.html">
-          <div class="k">Neighborhood</div>
+          <div class="k k-hood">Neighborhood</div>
           <h2>Best of Bay Meadows</h2>
           <div class="date">Updated July 2, 2026</div>
           <p>San Mateo's newest neighborhood, built on the old racetrack, from a beer garden to a pottery studio.</p>
@@ -224,6 +250,7 @@
         <a href="things-to-do.html">Things To Do</a>
         <a href="blog.html">Guides</a>
         <a href="legacies.html">Legacies</a>
+        <a href="gone-but-not-forgotten.html">Gone But Not Forgotten</a>
         <a href="index.html#newsletter">Subscribe</a>
       </nav>
       <p class="f-copy">&copy; 2026 San Mateo Local. Made by a local, for locals. SanMateoLocal.com</p>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBBC09ZJZQ"></script>
   <script>
@@ -42,6 +43,17 @@
   .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
   .article { max-width:46rem; margin:0 auto; padding:0 1.5rem; }
   .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+  /* per-type kicker colors (dark-mode safe) */
+  .k-spotlight { display:inline-block !important; background:#2E5A6B; color:#fff !important; padding:0.3rem 0.7rem; border-radius:999px; letter-spacing:0.13em; }
+  [data-theme="dark"] .k-spotlight { background:#4A7E92; color:#fff !important; }
+  .k-weekend { color:#A5492B !important; }
+  [data-theme="dark"] .k-weekend { color:#E27D50 !important; }
+  .k-new { color:#41614B !important; }
+  [data-theme="dark"] .k-new { color:#88AC8F !important; }
+  .k-best { color:#C25B3A !important; }
+  [data-theme="dark"] .k-best { color:#E27D50 !important; }
+  .k-hood { color:#8A6D3B !important; }
+  [data-theme="dark"] .k-hood { color:#C6A35E !important; }
   /* masthead */
   .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:50; }
   .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1.5rem; max-width:1140px; margin:0 auto; }
@@ -89,6 +101,13 @@
   .spot p { color:var(--ink-soft); }
   .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--clay); font-family:'Fraunces',serif; font-style:italic; font-size:1.1rem; }
   .post .outro a { color:var(--clay-deep); font-weight:600; font-style:normal; }
+  .post .s-para { font-size:1.08rem; color:var(--ink); margin:1.15rem 0 0; line-height:1.7; }
+  .qa { padding:1.1rem 0; border-bottom:1px solid var(--line); }
+  .qa:last-of-type { border-bottom:none; }
+  .qa .q { font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; color:var(--ink); margin-bottom:0.35rem; }
+  .qa .a { color:var(--ink-soft); font-size:1.02rem; line-height:1.65; }
+  .visit p { color:var(--ink-soft); margin:0.35rem 0; }
+  .visit a { color:var(--clay-deep); font-weight:600; }
   /* footer */
   footer.site { padding:3rem 0 2.5rem; border-top:1.5px solid var(--ink); margin-top:2rem; }
   footer.site .wrap { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; align-items:flex-start; }
@@ -110,9 +129,9 @@
           <a href="things-to-do.html">Things To Do</a>
           <a href="shopping.html">Shopping</a>
           <a href="local-services.html">Services</a>
+          <a href="local-buzz.html">Local Buzz</a>
           <a href="blog.html" class="on">Guides</a>
           <a href="legacies.html">Legacies</a>
-          <a href="gone-but-not-forgotten.html">Gone But Not Forgotten</a>
           <a href="index.html#newsletter" class="sub">Subscribe</a>
         </nav>
         <button class="theme-toggle" type="button" aria-label="Switch between day and night mode" onclick="(function(d){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('sml-theme',t)}catch(e){}})(document.documentElement)"><span class="moon" aria-hidden="true">&#9790;</span><span class="sun" aria-hidden="true">&#9728;</span></button>
@@ -124,19 +143,20 @@
       <a href="things-to-do.html">Things To Do</a>
       <a href="shopping.html">Shopping</a>
       <a href="local-services.html">Services</a>
+      <a href="local-buzz.html">Local Buzz</a>
       <a href="blog.html">Guides</a>
       <a href="legacies.html">Legacies</a>
-      <a href="gone-but-not-forgotten.html">Gone But Not Forgotten</a>
       <a href="index.html#newsletter" class="sub">Subscribe</a>
     </nav>
     <div class="dateline">A born-and-raised local's guide to San Mateo, California</div>
   </header>
   <article class="article post">
     <a class="back" href="blog.html">&larr; All guides</a>
-    <span class="label" style="display:block; margin-top:1rem;">New Openings</span>
+    <span class="label k-new" style="display:block; margin-top:1rem;">New Openings</span>
     <h1>New in San Mateo: Summer 2026</h1>
     <div class="date">Updated July 1, 2026</div>
     <p class="dek">A downtown brunch boom, a matcha bar, Korean BBQ, and more — the freshest spots to open around town.</p>
+
     <p class="intro">San Mateo's food scene has been on a tear this year, especially downtown. Here are the newest places worth checking out, all opened in roughly the last year.</p>
       <h2>Eat &amp; Drink</h2>
       <div class="spot">
@@ -196,6 +216,7 @@
         <p>A collector's shop stocked with Gunpla model kits, direct-import anime figures, gashapon, and trading cards.</p>
       </div>
     <p class="outro">Know a spot we missed? Tell us at <a href="mailto:hello@sanmateolocal.com">hello@sanmateolocal.com</a> and we'll add it to the guide.</p>
+
     <div class="locals-cta" style="margin:2.5rem 0 1.5rem; padding:1.25rem 1.5rem; background:#F2E9D4; border:1px solid #E3D6BC; border-radius:12px; font-size:0.95rem;">
       <strong>Been to one of these spots?</strong> Snap a photo, tag it and <strong>@sanmateolocal</strong> on Instagram, and we'll feature you in our locals' gallery.
     </div>
@@ -211,6 +232,7 @@
         <a href="things-to-do.html">Things To Do</a>
         <a href="blog.html">Guides</a>
         <a href="legacies.html">Legacies</a>
+        <a href="gone-but-not-forgotten.html">Gone But Not Forgotten</a>
         <a href="index.html#newsletter">Subscribe</a>
       </nav>
       <p class="f-copy">&copy; 2026 San Mateo Local. Made by a local, for locals. SanMateoLocal.com</p>
