@@ -228,7 +228,7 @@
           <div class="tier-top"><h3>Local Buzz<span class="tier-new">New</span></h3><span class="tier-price">$35<span>/mo</span></span></div>
           <p class="tier-win">Your specials and events reach people planning their week, so you stay on their mind between visits.</p>
           <p class="tier-relief">Text us the details. We write it and post it to the guide and the homepage. No content calendar, no captions to fuss over.</p>
-          <a class="tier-cta ghost" href="#start">Ask about Local Buzz &rarr;</a>
+          <button type="button" id="tierBuzz" class="tier-cta">Get Local Buzz &rarr;</button>
         </div>
 
         <div class="tier pop">
@@ -294,6 +294,50 @@
           <button type="button" id="featSendMo" style="background:var(--clay); margin-top:.4rem;">Continue, $39/mo &rarr;</button>
           <button type="button" id="featSendOnce" style="width:100%; background:transparent; color:var(--clay-deep); font-weight:700; padding:.7rem; border:1.5px solid var(--line); border-radius:8px; cursor:pointer; font-size:.92rem; margin-top:.6rem;">Or just 30 days for $49 &rarr;</button>
           <p style="text-align:center; font-size:.8rem; color:var(--ink-soft); margin-top:.7rem;">Next step is secure checkout. Your details reach us either way.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="localBuzzIntake" style="display:none; padding-top:0.5rem;">
+      <div style="background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.8rem;">
+        <p class="sec-label" style="text-align:left; color:var(--clay-deep);">Local Buzz &middot; $35/mo</p>
+        <h2 style="text-align:left; font-size:1.7rem; margin:.3rem 0 .4rem;">Get your specials on the guide</h2>
+        <p style="color:var(--ink-soft); margin-bottom:.4rem;">Sign up once, then just text us your deals, events, happy hours, or new menu items and we post them to the guide and the homepage. Takes nothing on your end but a text.</p>
+        <p style="color:var(--ink-soft); font-size:.9rem; margin-bottom:1.3rem;">Only your business name and email are required. A phone number helps, since that's how you'll send us your specials.</p>
+
+        <div id="buzzOk" style="display:none; background:#EAF3EA; border:1px solid #B9D7B9; color:#2A4A2A; border-radius:12px; padding:1.4rem;">
+          <strong>You're in, thank you.</strong> We have your details. If checkout didn't open, you can <a id="buzzPayLink" href="#" style="color:#2A4A2A; font-weight:700;">finish payment here</a>. Text your first special to (650) 260-8084 whenever you're ready.
+        </div>
+
+        <form id="buzzForm">
+          <input type="hidden" name="access_key" value="54743f1e-b34e-4d1a-aca8-6ff2554e06a0" />
+          <input type="hidden" name="subject" value="San Mateo Local — Local Buzz signup ($35/mo)" />
+          <input type="hidden" name="from_name" value="San Mateo Local — Local Buzz" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="row"><label class="fld" for="bbiz">Business name</label><input type="text" id="bbiz" name="business_name" required /></div>
+          <div class="row"><label class="fld" for="bcat">Category</label>
+            <select id="bcat" name="category" style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.75rem; font:inherit; background:#fff; color:var(--ink);">
+              <option>Eat &amp; Drink</option><option>Shopping / Market</option><option>Things to Do</option><option>Local Service</option><option>Other</option>
+            </select></div>
+          <div class="row"><label class="fld" for="baddr">Address</label><input type="text" id="baddr" name="address" placeholder="Street, San Mateo" /></div>
+          <div class="row"><label class="fld" for="bknown">What are you known for?</label><input type="text" id="bknown" name="known_for" placeholder="In a sentence" /></div>
+          <div class="row"><label class="fld" for="bweb">Website (optional)</label><input type="text" id="bweb" name="website" placeholder="yoursite.com" /></div>
+          <div class="row"><label class="fld" for="binsta">Instagram (optional)</label><input type="text" id="binsta" name="instagram" placeholder="@yourhandle" /></div>
+          <div class="row"><label class="fld" for="bfb">Facebook (optional)</label><input type="text" id="bfb" name="facebook" placeholder="facebook.com/yourpage" /></div>
+          <div class="row"><label class="fld" for="bphoto">Cover photo <span style="font-weight:400;color:var(--ink-soft)">(optional, a nice one of your spot)</span></label><input type="file" id="bphoto" name="photo" accept="image/*" style="width:100%; font:inherit; font-size:.9rem; color:var(--ink-soft);" /></div>
+          <div class="row" style="background:var(--paper-2); border-radius:10px; padding:.8rem 1rem;">
+            <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer; margin-bottom:.55rem;"><input type="checkbox" name="photo_permission" value="Yes, may use a photo I own from my site or Google" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">No photo handy? You may use a photo of my business that I own, from my website or Google profile. I confirm it's mine to share.</span></label>
+            <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer;"><input type="checkbox" name="photo_shoot" value="Yes, OK to come take a photo" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">I don't have a good photo. You're welcome to swing by and take one.</span></label>
+          </div>
+          <div class="row"><label class="fld" for="bname">Your name</label><input type="text" id="bname" name="contact_name" /></div>
+          <div class="row"><label class="fld" for="bemail">Email</label><input type="email" id="bemail" name="email" placeholder="So we can follow up" required /></div>
+          <div class="row"><label class="fld" for="bphone">Phone <span style="font-weight:400;color:var(--ink-soft)">(best number to text your specials to)</span></label><input type="tel" id="bphone" name="phone" placeholder="(650) 555-1234" /></div>
+          <div class="row"><label class="fld" for="bfirst">Your first special <span style="font-weight:400;color:var(--ink-soft)">(optional, we'll post it to start)</span></label><textarea id="bfirst" name="first_buzz" rows="2" placeholder="Half-off oysters every Thursday, live music Friday nights, whatever you'd like locals to know." style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.7rem; font:inherit; background:#fff; color:var(--ink);"></textarea></div>
+          <div class="row"><label class="fld" for="blink">Flyer, reel, or video link <span style="font-weight:400;color:var(--ink-soft)">(optional)</span></label><input type="url" id="blink" name="media_link" placeholder="A YouTube or Instagram reel, or a link to your flyer" /></div>
+
+          <button type="button" id="buzzSend" style="background:var(--clay); margin-top:.4rem;">Continue, $35/mo &rarr;</button>
+          <p style="text-align:center; font-size:.8rem; color:var(--ink-soft); margin-top:.7rem;">Cancel anytime. Next step is a secure $35/mo checkout. Your details reach us either way.</p>
         </form>
       </div>
     </section>
@@ -593,6 +637,30 @@
     if(ss) ss.addEventListener('click',function(){ openSpotlight(); });
     var ssend=document.getElementById('spotSend');
     if(ssend) ssend.addEventListener('click',function(){ payAfter(sf, SPOT_PAY, this, 'Save my story & continue to checkout →'); });
+
+    // ---- Local Buzz intake ----
+    var BUZZ_PAY='https://buy.stripe.com/eVqfZi0G0cYX7al4ydabK03';  // $35/mo Local Buzz
+    var bi=document.getElementById('localBuzzIntake'), bf=document.getElementById('buzzForm'), bok=document.getElementById('buzzOk');
+    function openBuzz(pre){
+      if(pre){ setVal('bbiz',pre.biz); setVal('bcat',pre.cat); setVal('baddr',pre.addr); setVal('bknown',pre.known); setVal('bweb',pre.web); setVal('binsta',pre.insta); setVal('bfb',pre.fb); setVal('bname',pre.name); setVal('bemail',pre.email); }
+      bf.style.display=''; if(bok)bok.style.display='none';
+      bi.style.display='block'; bi.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    var bstart=document.getElementById('tierBuzz');
+    if(bstart) bstart.addEventListener('click',function(){ openBuzz(); });
+    var bpl=document.getElementById('buzzPayLink'); if(bpl && BUZZ_PAY.indexOf('http')===0) bpl.href=BUZZ_PAY;
+    var bsend=document.getElementById('buzzSend');
+    if(bsend) bsend.addEventListener('click',function(){
+      var btn=this;
+      if(BUZZ_PAY.indexOf('http')===0){ payAfter(bf, BUZZ_PAY, this, 'Continue, $35/mo →'); return; }
+      // Stripe link not wired yet: still capture the lead, then show the thank-you
+      if(!bf.reportValidity())return;
+      btn.textContent='Saving...'; btn.disabled=true;
+      fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(bf)}).then(function(r){return r.json();}).then(function(j){
+        if(!j.success)throw new Error();
+        bf.style.display='none'; bok.style.display='block'; bok.scrollIntoView({behavior:'smooth',block:'center'});
+      }).catch(function(){ btn.disabled=false; btn.textContent='Continue, $35/mo →'; alert("Sorry, that didn't go through. Email hello@sanmateolocal.com instead."); });
+    });
   })();
   </script>
 </body>

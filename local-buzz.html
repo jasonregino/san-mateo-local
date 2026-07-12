@@ -84,6 +84,7 @@
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
+  <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--clay-deep);">Get on the guide &rarr;</strong></a></div>
   <header class="masthead">
     <div class="masthead-top">
       <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg><span class="brand-name">San Mateo Local</span></a>
@@ -124,6 +125,7 @@
     <div class="chips">
       <button class="chip on" data-f="all">Everything</button>
       <button class="chip" data-f="Featured"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Featured</button>
+      <button class="chip" data-f="Event"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</button>
       <button class="chip" data-f="New Opening"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg> New Opening</button>
       <button class="chip" data-f="Live Music"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Live Music</button>
     </div>
@@ -156,42 +158,49 @@
           <p class="d">A family florist that has bloomed in San Mateo since 1933.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="new-openings-summer-2026.html" data-type="New Opening" style="--tc:#41614B; animation-delay:0.2s;">
+        <a class="bcard" href="san-mateo-citywide-yard-sale-2026.html" data-type="Event" style="--tc:#3B5BA0; animation-delay:0.2s;">
+          <span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</span>
+          <h3>Citywide Yard Sale</h3>
+          <p class="meta">All over San Mateo · Jul 25–26</p>
+          <p class="d">The whole city's garages open for one weekend. Sell your stuff or hunt for treasure, with a citywide map of every sale.</p>
+          <span class="go">Take a look &rarr;</span>
+        </a>
+        <a class="bcard" href="new-openings-summer-2026.html" data-type="New Opening" style="--tc:#41614B; animation-delay:0.25s;">
           <span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg> New Opening</span>
           <h3>Whisper</h3>
           <p class="meta">Downtown · Baldwin Ave</p>
           <p class="d">A former Sweet Maple chef turned the old Wursthall space into a 140-seat brunch spot with galbi eggs Benedict and gochujang cioppino.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="new-openings-summer-2026.html" data-type="New Opening" style="--tc:#41614B; animation-delay:0.25s;">
+        <a class="bcard" href="new-openings-summer-2026.html" data-type="New Opening" style="--tc:#41614B; animation-delay:0.30000000000000004s;">
           <span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg> New Opening</span>
           <h3>Reposado</h3>
           <p class="meta">Downtown · Baldwin Ave</p>
           <p class="d">The Palo Alto favorite's second location brings regional cooking from Oaxaca and the Yucatan, with a deep tequila list.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="new-openings-summer-2026.html" data-type="New Opening" style="--tc:#41614B; animation-delay:0.30000000000000004s;">
+        <a class="bcard" href="new-openings-summer-2026.html" data-type="New Opening" style="--tc:#41614B; animation-delay:0.35000000000000003s;">
           <span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg> New Opening</span>
           <h3>Johnny's</h3>
           <p class="meta">Downtown · B St</p>
           <p class="d">The Half Moon Bay brunch destination from the It's Italia team moved its full menu into the Brickline building.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="new-openings-summer-2026.html" data-type="New Opening" style="--tc:#41614B; animation-delay:0.35000000000000003s;">
+        <a class="bcard" href="new-openings-summer-2026.html" data-type="New Opening" style="--tc:#41614B; animation-delay:0.4s;">
           <span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg> New Opening</span>
           <h3>Izumi Matcha</h3>
           <p class="meta">Downtown · E 3rd Ave</p>
           <p class="d">A premium Japanese matcha bar pouring ceremonial-grade lattes in the heart of downtown.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="new-openings-summer-2026.html" data-type="New Opening" style="--tc:#41614B; animation-delay:0.4s;">
+        <a class="bcard" href="new-openings-summer-2026.html" data-type="New Opening" style="--tc:#41614B; animation-delay:0.45s;">
           <span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg> New Opening</span>
           <h3>Sama Coffee Shop</h3>
           <p class="meta">Downtown · S B St</p>
           <p class="d">An Iraqi-Palestinian coffee house serving sand-brewed Turkish coffee, cardamom lattes, and Middle Eastern sweets.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="eat-drink.html" data-type="Live Music" style="--tc:#2E7D8A; animation-delay:0.45s;">
+        <a class="bcard" href="eat-drink.html" data-type="Live Music" style="--tc:#2E7D8A; animation-delay:0.5s;">
           <span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Live Music</span>
           <h3>Luceti's on 25th</h3>
           <p class="meta">25th Avenue</p>
@@ -204,6 +213,7 @@
       <a href="index.html">&larr; Back to the guide</a>
     </div>
   </div>
+  <p style="text-align:center; color:var(--ink-soft); font-size:0.92rem; padding:1.75rem 1.5rem 0;">More added every week. Spotting something missing? <a href="mailto:hello@sanmateolocal.com?subject=Spot%20suggestion" style="color:var(--clay-deep); font-weight:700;">Suggest a spot.</a> &nbsp;&middot;&nbsp; Own a business we're missing? <a href="for-business-owners.html#getlisted" style="color:var(--clay-deep); font-weight:700;">Get listed, free.</a></p>
   <footer class="site">
     <div class="wrap">
       <div><div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg><span class="brand-name">San Mateo Local</span></div></div>
