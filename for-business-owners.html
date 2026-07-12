@@ -661,6 +661,14 @@
         bf.style.display='none'; bok.style.display='block'; bok.scrollIntoView({behavior:'smooth',block:'center'});
       }).catch(function(){ btn.disabled=false; btn.textContent='Continue, $35/mo →'; alert("Sorry, that didn't go through. Email hello@sanmateolocal.com instead."); });
     });
+
+    // deep-link: open a specific intake form directly via #hash
+    (function(){
+      var h = (location.hash || '').toLowerCase();
+      if(h === '#localbuzz') openBuzz();
+      else if(h === '#getfeatured') openFeatured();
+      else if(h === '#getspotlight') openSpotlight();
+    })();
   })();
   </script>
 </body>
