@@ -190,30 +190,66 @@
 
     <section id="feature" style="padding-top:0.5rem;"><style>.feat-card{transition:transform .18s ease, box-shadow .18s ease;} .feat-card:hover{transform:translateY(-4px); box-shadow:0 16px 34px -20px rgba(34,29,22,.45);}</style>
       <div style="background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.8rem;">
-        <p class="sec-label" style="text-align:left; color:var(--clay-deep);">Paid &middot; want a boost?</p>
-        <h2 style="text-align:left; font-size:1.7rem; margin:.3rem 0 .4rem;">Feature your business</h2>
-        <p style="color:var(--ink-soft); margin-bottom:1rem;">Getting listed is free. If you want to stand out, you can pay to be featured on the pages locals actually browse. Always clearly marked as featured, so the guide stays honest.</p>
+        <style>
+          .tier { border:1.5px solid var(--ink); border-top:3px solid var(--clay-deep); border-radius:12px; padding:1.25rem 1.45rem; background:#fff; margin-bottom:1rem; transition:transform .16s ease, box-shadow .16s ease; }
+          .tier:hover { transform:translateY(-3px); box-shadow:0 14px 30px -18px rgba(34,29,22,.45); }
+          .tier.pop { border:2px solid var(--clay); box-shadow:0 6px 22px -10px rgba(194,91,58,.5); }
+          .tier-top { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap; }
+          .tier-top h3 { font-size:1.35rem; margin:0; }
+          .tier-price { font-weight:800; color:var(--clay-deep); font-size:1.2rem; white-space:nowrap; }
+          .tier-price span { font-size:.78rem; font-weight:600; color:var(--ink-soft); }
+          .tier-win { color:var(--ink); font-weight:600; margin:.55rem 0 .2rem; }
+          .tier-relief { color:var(--ink-soft); font-size:.9rem; font-style:italic; margin-bottom:.95rem; }
+          .tier-cta { display:inline-block; background:var(--clay); color:#fff; font-weight:700; padding:.7rem 1.4rem; border:none; border-radius:8px; cursor:pointer; font-size:.95rem; text-decoration:none; }
+          .tier-cta.ghost { background:transparent; color:var(--clay-deep); border:1.5px solid var(--line); }
+          .tier-pop-tag { display:inline-block; font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:#fff; background:var(--clay); border-radius:999px; padding:.2rem .6rem; font-weight:800; margin-bottom:.5rem; }
+          .tier-new { font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sage-deep); font-weight:800; border:1px solid var(--sage-deep); border-radius:999px; padding:.12rem .48rem; vertical-align:middle; margin-left:.4rem; }
+        </style>
+        <p class="sec-label" style="text-align:left; color:var(--clay-deep);">Pick your level</p>
+        <h2 style="text-align:left; font-size:1.7rem; margin:.3rem 0 .4rem;">Ways to show up better</h2>
+        <p style="color:var(--ink-soft); margin-bottom:.6rem;">Getting listed is always free. From there, here is every way to stand out. Pick what fits. Paid spots are always clearly marked, so the guide stays honest.</p>
         <p style="color:var(--clay-deep); font-weight:700; font-size:.9rem; margin-bottom:1.4rem;">&#9733; Only 6 featured slots at a time, kept limited on purpose.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:1.2rem;">
 
-          <div class="feat-card" style="flex:1 1 300px; border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:12px; padding:1.5rem 1.6rem; background:#fff; display:flex; flex-direction:column;">
-            <h3 style="margin-bottom:.35rem;">Featured Listing</h3>
-            <p style="color:var(--ink-soft); font-size:.95rem;">The Featured badge, the top of your category, and a place in the Featured strip on our homepage. When locals are deciding where to go, you&#39;re one of the first things they see.</p>
-            <p style="font-size:1.7rem; font-weight:800; color:var(--clay-deep); margin:auto 0 .15rem;">$39<span style="font-size:.9rem; font-weight:600; color:var(--ink-soft);"> / month</span></p>
-            <p style="font-size:.85rem; color:var(--ink-soft); margin-bottom:1rem;">Cancel anytime, or <strong>$49 once for 30 days</strong>.</p>
-            <button type="button" id="featStart" style="width:100%; text-align:center; background:var(--clay); color:#fff; font-weight:700; padding:.85rem 1.5rem; border:none; border-radius:8px; cursor:pointer; font-size:1rem;">Get featured &rarr;</button>
-          </div>
-
-          <div class="feat-card" style="flex:1 1 300px; border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:12px; padding:1.5rem 1.6rem; background:#fff; display:flex; flex-direction:column;">
-            <p style="font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--clay-deep); font-weight:800; margin-bottom:.3rem;">Best value</p>
-            <h3 style="margin-bottom:.35rem;">Business Spotlight</h3>
-            <p style="color:var(--ink-soft); font-size:.95rem;">Your own editorial story page that <strong>stays up for good</strong>, plus a 30-day feature up top on the homepage to launch it. The story keeps working for you in Google long after.</p>
-            <p style="margin:.7rem 0 0;"><a href="sample-business-spotlight.html" style="color:var(--clay-deep); font-weight:700; font-size:.92rem;">See a sample feature &rarr;</a></p>
-            <p style="font-size:1.7rem; font-weight:800; color:var(--clay-deep); margin:auto 0 1rem;">$149<span style="font-size:.9rem; font-weight:600; color:var(--ink-soft);"> one time</span></p>
-            <button type="button" id="spotStart" style="width:100%; background:var(--clay); color:#fff; font-weight:700; padding:.85rem 1.5rem; border:none; border-radius:8px; cursor:pointer; font-size:1rem;">Feature my story &rarr;</button>
-          </div>
-
+        <div class="tier">
+          <div class="tier-top"><h3>Free Listing</h3><span class="tier-price">$0</span></div>
+          <p class="tier-win">Get found by locals already looking for a place like yours.</p>
+          <p class="tier-relief">We add you to the guide ourselves. Nothing to build, nothing to manage.</p>
+          <a class="tier-cta ghost" href="#getlisted">Add my business &rarr;</a>
         </div>
+
+        <div class="tier">
+          <div class="tier-top"><h3>Featured Listing</h3><span class="tier-price">$39<span>/mo or $49 once</span></span></div>
+          <p class="tier-win">Be one of the first names locals see when they are deciding where to go.</p>
+          <p class="tier-relief">We handle the placement, the badge, and your spot in the matching Best-Of list. You just keep doing what you do.</p>
+          <button type="button" id="featStart" class="tier-cta">Get featured &rarr;</button>
+        </div>
+
+        <div class="tier">
+          <div class="tier-top"><h3>Local Buzz<span class="tier-new">New</span></h3><span class="tier-price">$35<span>/mo</span></span></div>
+          <p class="tier-win">Your specials and events reach people planning their week, so you stay on their mind between visits.</p>
+          <p class="tier-relief">Text us the details. We write it and post it to the guide and the homepage. No content calendar, no captions to fuss over.</p>
+          <a class="tier-cta ghost" href="#start">Ask about Local Buzz &rarr;</a>
+        </div>
+
+        <div class="tier pop">
+          <span class="tier-pop-tag">Most popular</span>
+          <div class="tier-top"><h3>Business Spotlight</h3><span class="tier-price">$149<span> one time</span></span></div>
+          <p class="tier-win">A real story that helps a stranger choose you, and keeps working in Google long after.</p>
+          <p class="tier-relief">We interview you or take your notes and write the whole thing. You never touch a keyboard.</p>
+          <div style="display:flex; align-items:center; gap:1.1rem; flex-wrap:wrap;">
+            <button type="button" id="spotStart" class="tier-cta">Feature my story &rarr;</button>
+            <a href="sample-business-spotlight.html" style="color:var(--clay-deep); font-weight:700; font-size:.9rem;">See a sample &rarr;</a>
+          </div>
+        </div>
+
+        <div class="tier">
+          <div class="tier-top"><h3>Best-Of Guide Sponsorship</h3><span class="tier-price">from $600<span>/year</span></span></div>
+          <p class="tier-win">Own the top of the page locals and Google already trust for "the best in San Mateo," all year long.</p>
+          <p class="tier-relief">One exclusive sponsor per guide. We build it, keep it current, and keep it honest. You just get the credit.</p>
+          <a class="tier-cta ghost" href="#start">Ask about a sponsorship &rarr;</a>
+        </div>
+
+        <p style="color:var(--ink-soft); font-size:.9rem; margin-top:1.3rem;">Want more customers, not just more visibility? We also set up <strong>Google reviews</strong> and build <strong>websites</strong>, more on those just below.</p>
       </div>
     </section>
 
@@ -375,6 +411,8 @@
           <div class="checks">
             <label class="chk"><input type="checkbox" name="interest[]" value="Featured Listing"> Featured Listing</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="Business Spotlight (feature story)"> Business Spotlight (story)</label>
+            <label class="chk"><input type="checkbox" name="interest[]" value="Local Buzz (specials & events)"> Local Buzz (specials &amp; events)</label>
+            <label class="chk"><input type="checkbox" name="interest[]" value="Best-Of guide sponsorship"> Best-Of guide sponsorship</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="More Google reviews"> More Google reviews</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="A website"> A website</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="Not sure yet"> Not sure yet</label>
