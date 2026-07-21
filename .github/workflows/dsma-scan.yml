@@ -1,0 +1,28 @@
+name: DSMA weekly scan
+
+# Runs on GitHub's servers — no need for anything to be open on Jason's end.
+# Every Monday it checks Downtown San Mateo events for businesses not yet in the
+# guide and, if it finds any, opens an Issue with a review list. It never edits
+# the site.
+
+on:
+  schedule:
+    - cron: '37 15 * * 1'   # Mondays 15:37 UTC (~8:37am Pacific)
+  workflow_dispatch: {}       # lets Jason run it on demand from the Actions tab
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run DSMA scan
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/dsma-scan.mjs
