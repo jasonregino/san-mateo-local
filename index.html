@@ -146,8 +146,8 @@
     @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; } .hero { padding: 3rem 0 2.5rem; } }
 
     /* ===== Neighborhood strip ===== */
-    .hoods { background: var(--ink); color: var(--paper); padding: 1.5rem 0; }
-    .hoods .wrap { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .hoods { background: var(--ink); color: var(--paper); padding: 1.75rem 0; }
+    .hoods .wrap { display: flex; align-items: center; justify-content: space-between; gap: 0.9rem 2rem; flex-wrap: wrap; }
     .hoods .label { color: var(--paper); flex: none; }
     .hood-list { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; }
     .hood-list a { font-family: 'Fraunces', serif; font-size: 1.05rem; color: var(--paper); border-bottom: 1px solid transparent; }
@@ -159,6 +159,17 @@
     .hoods .latest-rotator a.is-live { opacity: 1; transform: translateY(-50%); }
     .hoods .latest-more-out { flex: none; margin-left: auto; }
     @media (prefers-reduced-motion: reduce) { .hoods .latest-rotator { position: static; min-height: 0; } .hoods .latest-rotator a { position: static; opacity: 1; transform: none; } }
+    /* This Weekend lead + secondary (replaces the rotating ticker so the timely post is always visible) */
+    .latest-lead { display: inline-flex; align-items: center; gap: 0.7rem; flex: 1 1 auto; min-width: 0; color: inherit; }
+    .latest-lead .ll-kick { flex: none; font-family: 'Inter', sans-serif; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; background: rgba(255,255,255,0.18); padding: 0.32rem 0.66rem; border-radius: 999px; white-space: nowrap; }
+    .latest-lead .ll-title { font-family: 'Fraunces', serif; font-size: 1.42rem; font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; border-bottom: 1.5px solid transparent; }
+    .latest-lead:hover .ll-title { border-bottom-color: var(--clay); }
+    .latest-side { display: flex; align-items: center; gap: 0.4rem 1.2rem; flex: none; flex-wrap: wrap; }
+    .latest-side .side-label { font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; opacity: 0.72; color: inherit; }
+    .latest-side a { font-family: 'Fraunces', serif; font-size: 0.98rem; opacity: 0.92; border-bottom: 1px solid transparent; color: inherit; }
+    .latest-side a:hover { border-bottom-color: var(--clay); opacity: 1; }
+    .latest-side .hood-more { font-family: 'Inter', sans-serif; font-size: 0.84rem; font-weight: 600; letter-spacing: 0.02em; }
+    @media (max-width: 640px) { .latest-lead .ll-title { font-size: 1.2rem; } .latest-lead { gap: 0.5rem; } }
 
     /* ===== Section scaffolding ===== */
     section { scroll-margin-top: 90px; }
@@ -359,15 +370,12 @@
   <!-- ===== Latest from the guide strip (auto-updated by scripts/build-blog.mjs) ===== -->
   <div class="hoods" id="latest">
     <div class="wrap">
-      <span class="label">Latest from the guide</span>
-      <nav class="hood-list">
-        <!-- LATEST:START -->
-        <a href="perfect-summer-saturday-san-mateo.html">Around Town &mdash; A Perfect Summer Saturday in San Mateo &rarr;</a>
-        <a href="san-mateo-citywide-yard-sale-2026.html">Around Town &mdash; The San Mateo Citywide Yard Sale Is Back, July 25 and 26 &rarr;</a>
-        <a href="this-weekend.html">This Weekend &mdash; The Music Series Finale, Trivia Nights, and Karaoke All Week &rarr;</a>
+      <!-- LATEST:START -->
+      <a class="latest-lead" href="this-weekend.html"><span class="ll-kick">This Weekend</span><span class="ll-title">The Music Series Finale, Trivia Nights, and Karaoke All Week</span><span aria-hidden="true">&rarr;</span></a>
+      <div class="latest-side">
         <a class="hood-more" href="blog.html">All guides &rarr;</a>
-        <!-- LATEST:END -->
-      </nav>
+      </div>
+      <!-- LATEST:END -->
     </div>
   </div>
 
