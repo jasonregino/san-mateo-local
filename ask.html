@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- HELD until the ANTHROPIC_API_KEY is set + tested. Remove noindex + add entry points at go-live. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBBC09ZJZQ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZBBC09ZJZQ');</script>
+  <title>Ask the Guide | San Mateo Local</title>
+  <meta name="description" content="Tell San Mateo Local's guide what you're in the mood for and get real, local restaurant picks." />
+  <link rel="canonical" href="https://sanmateolocal.com/ask.html" />
+  <meta name="theme-color" content="#221D16" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--paper:#FAF6EC;--paper-2:#F2E9D4;--ink:#221D16;--ink-soft:#5E5446;--clay:#C25B3A;--clay-deep:#A5492B;--sage-deep:#324C3A;--line:#E3D6BC;--card:#FFFDF7}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh}
+    h1,h2{font-family:'Fraunces',Georgia,serif;line-height:1.14;font-weight:600;letter-spacing:-0.01em}
+    a{color:inherit}
+    header.site{border-bottom:1.5px solid var(--ink);background:var(--paper)}
+    header.site .bar{max-width:820px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 1.1rem}
+    .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--ink)}
+    .brand span{font-family:'Fraunces',serif;font-weight:700;font-size:1.2rem;letter-spacing:-0.02em}
+    header .back{color:var(--ink-soft);text-decoration:none;font-size:.88rem}
+    header .back:hover{color:var(--clay-deep)}
+    .wrap{max-width:820px;margin:0 auto;width:100%;padding:0 1.1rem;flex:1;display:flex;flex-direction:column}
+    .intro{padding:1.7rem 0 .6rem;text-align:center}
+    .intro .kick{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--clay-deep);font-weight:700}
+    .intro h1{font-size:clamp(1.8rem,5vw,2.4rem);margin:.5rem 0 .35rem}
+    .intro p{color:var(--ink-soft);font-size:1.02rem;max-width:34rem;margin:0 auto}
+    #chat{flex:1;display:flex;flex-direction:column;gap:.9rem;padding:1.2rem 0 1rem;overflow-y:auto}
+    .msg{max-width:88%;padding:.8rem 1.05rem;border-radius:14px;font-size:.98rem;white-space:normal}
+    .msg.bot{align-self:flex-start;background:var(--card);border:1.5px solid var(--line);border-bottom-left-radius:4px}
+    .msg.me{align-self:flex-end;background:var(--clay);color:#fff;border-bottom-right-radius:4px}
+    .msg a{color:var(--clay-deep);font-weight:700}
+    .msg.me a{color:#fff;text-decoration:underline}
+    .msg.bot strong{color:var(--ink)}
+    .typing{align-self:flex-start;color:var(--ink-soft);font-size:.9rem;padding:.4rem .2rem}
+    .chips{display:flex;flex-wrap:wrap;gap:.5rem;padding:.2rem 0 .8rem}
+    .chip{background:var(--card);border:1.5px solid var(--line);color:var(--ink);font-size:.85rem;font-weight:600;padding:.45rem .9rem;border-radius:999px;cursor:pointer}
+    .chip:hover{border-color:var(--clay)}
+    .composer{position:sticky;bottom:0;background:var(--paper);border-top:1px solid var(--line);padding:.8rem 0 1.1rem;display:flex;gap:.6rem}
+    .composer input{flex:1;border:1.5px solid var(--line);border-radius:999px;padding:.8rem 1.1rem;font:inherit;background:#fff;color:var(--ink)}
+    .composer input:focus{outline:2px solid var(--clay);border-color:transparent}
+    .composer button{flex:none;background:var(--clay);color:#fff;border:none;border-radius:999px;padding:.8rem 1.4rem;font-weight:700;font-size:.95rem;cursor:pointer}
+    .composer button:hover{background:var(--clay-deep)}
+    .composer button:disabled{opacity:.55;cursor:default}
+    .disclaim{text-align:center;color:var(--ink-soft);font-size:.76rem;padding:0 0 1rem}
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="bar">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
+        <span>San Mateo Local</span>
+      </a>
+      <a class="back" href="eat-drink.html">&larr; Eat &amp; Drink</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="intro">
+      <p class="kick">Ask the guide</p>
+      <h1>Where should you eat?</h1>
+      <p>Tell me what you're in the mood for, or where you are, and I'll point you to real local spots from the guide.</p>
+    </div>
+
+    <div id="chat"></div>
+
+    <div class="chips" id="chips">
+      <button class="chip">Best coffee downtown</button>
+      <button class="chip">Tacos near me</button>
+      <button class="chip">Date-night dinner</button>
+      <button class="chip">Something cheap and good</button>
+    </div>
+
+    <form class="composer" id="composer">
+      <input id="q" type="text" placeholder="e.g. I'm on 25th Ave and want ramen" autocomplete="off" required />
+      <button type="submit" id="send">Ask</button>
+    </form>
+    <p class="disclaim">Picks come from San Mateo Local's guide. Hours and details change, so call ahead.</p>
+  </div>
+
+  <script>
+    var chat = document.getElementById('chat');
+    var chips = document.getElementById('chips');
+    var form = document.getElementById('composer');
+    var input = document.getElementById('q');
+    var sendBtn = document.getElementById('send');
+    var messages = [];
+
+    function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function render(t){
+      var h = esc(t);
+      h = h.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      h = h.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      h = h.replace(/\n/g, '<br>');
+      return h;
+    }
+    function bubble(role, text){
+      var d = document.createElement('div');
+      d.className = 'msg ' + (role === 'me' ? 'me' : 'bot');
+      d.innerHTML = render(text);
+      chat.appendChild(d);
+      chat.scrollTop = chat.scrollHeight;
+      return d;
+    }
+
+    bubble('bot', "Hi! I'm your San Mateo Local guide. What are you in the mood for, or where are you headed?");
+
+    var busy = false;
+    async function ask(text){
+      if (busy || !text.trim()) return;
+      busy = true; sendBtn.disabled = true;
+      chips.style.display = 'none';
+      bubble('me', text);
+      messages.push({ role: 'user', content: text });
+      var typing = document.createElement('div');
+      typing.className = 'typing'; typing.textContent = 'Looking...';
+      chat.appendChild(typing); chat.scrollTop = chat.scrollHeight;
+      try {
+        var res = await fetch('/api/concierge', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ messages: messages })
+        });
+        var data = await res.json();
+        typing.remove();
+        var reply = data.reply || data.error || "Sorry, I had trouble there. Try asking again.";
+        bubble('bot', reply);
+        if (data.reply) messages.push({ role: 'assistant', content: data.reply });
+      } catch (e) {
+        typing.remove();
+        bubble('bot', "Sorry, I couldn't reach the guide just now. Try again in a moment.");
+      }
+      busy = false; sendBtn.disabled = false; input.focus();
+    }
+
+    form.addEventListener('submit', function(e){ e.preventDefault(); var t = input.value; input.value = ''; ask(t); });
+    chips.addEventListener('click', function(e){ if (e.target.classList.contains('chip')) ask(e.target.textContent); });
+  </script>
+</body>
+</html>
