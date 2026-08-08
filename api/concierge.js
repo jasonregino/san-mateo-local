@@ -39,7 +39,8 @@ STRICT RULES:
 - San Mateo Local covers LOCAL, INDEPENDENT businesses, not chains. If someone asks about a chain or a place not in THE GUIDE, do not endorse it. Warmly say the guide is about local independents and offer a real listed option if one fits.
 - If the guide truly does not cover what they need, say so warmly and point them to the closest thing it does have or the right SECTION page. Never say the guide is "only food and drink"; it covers restaurants, home services, local services, shopping, and things to do.
 - SERVICE-AREA BUSINESSES: many home services and local services (plumbers, electricians, roofers, landscapers, cleaners, movers) travel to the customer and have no set neighborhood. For these, do NOT ask which neighborhood they are in and do not worry about proximity. Just recommend the best-fitting independent providers and give the phone number to call. Ask about neighborhood only for a place the person travels TO, like a restaurant, cafe, bar, barber, or shop.
-- LOCATION HONESTY: you know each place's neighborhood, street address, and phone, but not exact walking distances. Never say a place is "on" a street, "near", "next to", "nearby", or "a few minutes from" another place unless the street addresses clearly support it. On the same street only close block numbers are close: 1901 and 2051 S Norfolk St are close; 478 and 2051 S Norfolk St are far. When you are unsure two places are close, say the distance is approximate and tell them to check the map pin. Never guess or invent a location.
+- LOCATION HONESTY: unless a PROXIMITY CONTEXT section is provided, you know each place's neighborhood, street address, and phone, but not exact distances. Without it, never say a place is "on" a street, "near", "next to", "nearby", or "a few minutes from" another place unless the street addresses clearly support it (same street only counts when block numbers are close: 1901 and 2051 S Norfolk St are close; 478 and 2051 S Norfolk St are far). When unsure two places are close, say it is approximate and tell them to check the map pin. Never guess or invent a location.
+- If a PROXIMITY CONTEXT section is provided after the guide, it lists real computed distances in miles from where the visitor is. Trust it completely for anything about nearby, close, next door, or walking distance: recommend the closest options in the category they asked for and mention the approximate distance. Under 0.4 mi is an easy walk; 0.4 to 1 mile is a longer walk or short drive; over 1 mile, suggest driving.
 - Recommend 2 to 3 options at most, each with a short reason it fits and its neighborhood. For a broad ask (best tacos, what to do this weekend), you may also add the matching SECTION page link.
 - You do not have live hours. Never state a specific closing time as fact; tell them to call ahead to confirm.
 - You can only chat here. Never offer to call a business, book a table, check hours, or do anything outside this conversation. When someone needs hours, a quote, wait times, or a reservation, give them the listed phone number and tell them to contact the place directly. Only give a phone number that appears in THE GUIDE.
@@ -52,6 +53,69 @@ ${LIST}
 
 SECTIONS (guide pages you may link as [title](/url)):
 ${SECTIONS}`;
+
+// ---- Proximity: rank by REAL distance when we can tell where the visitor is ----
+const coordPlaces = places.filter(p => typeof p.lat === 'number' && typeof p.lng === 'number');
+
+function haversineMi(aLat, aLng, bLat, bLng) {
+  const R = 3958.8, toRad = d => d * Math.PI / 180;
+  const dLat = toRad(bLat - aLat), dLng = toRad(bLng - aLng);
+  const s = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(aLat)) * Math.cos(toRad(bLat)) * Math.sin(dLng / 2) ** 2;
+  return R * 2 * Math.asin(Math.min(1, Math.sqrt(s)));
+}
+
+// Base neighborhood -> centroid, so "I'm in Shoreview" becomes a real map anchor.
+const centroids = (() => {
+  const groups = {};
+  for (const p of coordPlaces) {
+    if (!p.area) continue;
+    const key = p.area.toLowerCase().replace(/\(.*?\)/g, '').trim(); // "Downtown (B St)" -> "downtown"
+    if (key) (groups[key] = groups[key] || []).push(p);
+  }
+  return Object.entries(groups).map(([key, ps]) => ({
+    key,
+    lat: ps.reduce((s, p) => s + p.lat, 0) / ps.length,
+    lng: ps.reduce((s, p) => s + p.lng, 0) / ps.length,
+  })).sort((a, b) => b.key.length - a.key.length); // prefer the most specific name match
+})();
+
+const NBHD_ALIASES = [{ say: '25th ave', key: '25th avenue' }];
+
+// Figure out where the visitor is: a listed place they named, or a neighborhood.
+function detectAnchor(clean) {
+  const lastUser = [...clean].reverse().find(m => m.role === 'user');
+  if (!lastUser) return null;
+  const text = lastUser.content.toLowerCase();
+
+  let best = null; // a specific listed place they named ("near Norfolk Auto")
+  for (const p of coordPlaces) {
+    const n = p.name.toLowerCase();
+    if (n.length >= 5 && text.includes(n) && (!best || n.length > best.name.length)) best = p;
+  }
+  if (best) return { label: best.name, lat: best.lat, lng: best.lng };
+
+  for (const a of NBHD_ALIASES) {                          // a neighborhood ("I'm in Shoreview")
+    if (text.includes(a.say)) {
+      const c = centroids.find(c => c.key === a.key);
+      if (c) return { label: 'the ' + a.key + ' area', lat: c.lat, lng: c.lng };
+    }
+  }
+  for (const c of centroids) {
+    if (c.key.length >= 5 && text.includes(c.key)) return { label: 'the ' + c.key + ' area', lat: c.lat, lng: c.lng };
+  }
+  return null;
+}
+
+function proximityBlock(anchor) {
+  const ranked = coordPlaces
+    .map(p => ({ p, mi: haversineMi(anchor.lat, anchor.lng, p.lat, p.lng) }))
+    .sort((a, b) => a.mi - b.mi);
+  let near = ranked.filter(r => r.mi <= 1.5).slice(0, 24);
+  if (near.length < 8) near = ranked.slice(0, 12); // sparse area: just take the nearest dozen
+  const lines = near.map(r => `- ${r.p.name} | ${r.p.cat} | ${r.mi.toFixed(1)} mi`).join('\n');
+  return `PROXIMITY CONTEXT (real distances from ${anchor.label}; use these for any nearby / close / walking-distance request; pick the closest option in the category they asked for):
+${lines}`;
+}
 
 async function readBody(req) {
   const chunks = [];
@@ -77,6 +141,12 @@ module.exports = async (req, res) => {
   })).filter(m => m.content);
   if (!clean.length) { res.status(400).json({ error: 'no messages' }); return; }
 
+  // The big grounding block is identical every call, so cache it. When we can tell
+  // where the visitor is, append a small, per-call block of real computed distances.
+  const anchor = detectAnchor(clean);
+  const system = [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }];
+  if (anchor) system.push({ type: 'text', text: proximityBlock(anchor) });
+
   try {
     const r = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -88,8 +158,7 @@ module.exports = async (req, res) => {
       body: JSON.stringify({
         model: MODEL,
         max_tokens: 800,
-        // The big grounding block is identical on every call, so cache it.
-        system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
+        system,
         messages: clean,
       }),
     });
