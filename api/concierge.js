@@ -73,7 +73,7 @@ module.exports = async (req, res) => {
     }
     const data = await r.json();
     let reply = (data.content && data.content[0] && data.content[0].text) || 'Sorry, I did not catch that. What are you in the mood for?';
-    reply = reply.replace(/\s*—\s*/g, ', '); // strip em-dashes: the voice rule, enforced even when the model ignores it
+    reply = reply.replace(/\s*[—―]\s*/g, ', '); // strip em-dashes (U+2014/2015): the voice rule, enforced even when the model ignores it
     res.status(200).json({ reply });
   } catch (e) {
     console.error('concierge error', e.message);
