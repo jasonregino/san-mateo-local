@@ -82,30 +82,37 @@ const centroids = (() => {
 const NBHD_ALIASES = [{ say: '25th ave', key: '25th avenue' }];
 
 // Words too generic to identify a place by, so "Norfolk Auto" still matches
-// "Norfolk Auto Service" and a lone "restaurant" never anchors anything.
-const NAME_STOP = new Set(['the', 'and', 'of', 'san', 'mateo', 'ca', 'inc', 'llc', 'co',
+// "Norfolk Auto Service", a lone "restaurant" never anchors anything, and a
+// common phrase like "how about" never latches onto a business named that.
+const NAME_STOP = new Set([
+  // business-name filler
+  'the', 'and', 'of', 'san', 'mateo', 'ca', 'inc', 'llc', 'co',
   'service', 'services', 'restaurant', 'cafe', 'coffee', 'shop', 'store', 'bar', 'grill',
-  'kitchen', 'company', 'taqueria', 'pizza', 'market']);
+  'kitchen', 'company', 'taqueria', 'pizza', 'market', 'deli', 'house', 'gourmet',
+  // everyday query words a visitor types (must never be an anchor signal)
+  'how', 'about', 'near', 'nearby', 'good', 'great', 'best', 'place', 'places', 'where',
+  'some', 'something', 'need', 'want', 'looking', 'find', 'get', 'there', 'here', 'have',
+  'open', 'right', 'now', 'today', 'tonight', 'this', 'that', 'area', 'spot', 'spots',
+  'food', 'eat', 'drink', 'close', 'closest', 'option', 'options', 'around', 'you', 'tell',
+  'please', 'thanks', 'grab', 'bite', 'from', 'for', 'with', 'any', 'anything']);
 
-// How strongly the visitor's text names this place (partial names count).
+// How strongly the visitor's text names this place. Requires TWO distinctive words
+// so a food word ("sandwiches") never anchors on a business named for it ("Village
+// Sandwich"); a real reference like "Norfolk Auto" has two and still matches.
 function anchorScore(name, text) {
   const words = name.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().split(' ')
     .filter(w => w.length >= 3 && !NAME_STOP.has(w));
-  if (!words.length) return 0;
+  if (words.length < 2) return 0;
   const matched = words.filter(w => text.includes(w));
-  const len = matched.reduce((s, w) => s + w.length, 0);
-  if (matched.length >= 2) return 100 + len;                            // two+ distinctive words = strong
-  if (matched.length === 1 && matched[0].length >= 6) return 50 + len;  // one long distinctive word
+  if (matched.length >= 2) return 100 + matched.reduce((s, w) => s + w.length, 0);
   return 0;
 }
 
-// Figure out where the visitor is: a listed place they named, or a neighborhood.
-function detectAnchor(clean) {
-  const lastUser = [...clean].reverse().find(m => m.role === 'user');
-  if (!lastUser) return null;
-  const text = lastUser.content.toLowerCase();
+// Detect a location in ONE message: a listed place they named, or a neighborhood.
+function anchorFromText(raw) {
+  const text = String(raw || '').toLowerCase();
 
-  let best = null, bestScore = 0; // a specific listed place they named ("near Norfolk Auto")
+  let best = null, bestScore = 0; // a specific listed place ("near Norfolk Auto")
   for (const p of coordPlaces) {
     const s = anchorScore(p.name, text);
     if (s > bestScore) { bestScore = s; best = p; }
@@ -124,6 +131,19 @@ function detectAnchor(clean) {
   return null;
 }
 
+// Where is the visitor? Use the most recent location they gave. It carries across
+// turns until they name a new one, so "sandwiches nearby" after "...in Shoreview"
+// stays anchored on Shoreview instead of guessing across town.
+function detectAnchor(clean) {
+  for (const m of [...clean].reverse()) {
+    if (m.role === 'user') {
+      const a = anchorFromText(m.content);
+      if (a) return a;
+    }
+  }
+  return null;
+}
+
 function proximityBlock(anchor) {
   const ranked = coordPlaces
     .map(p => ({ p, mi: haversineMi(anchor.lat, anchor.lng, p.lat, p.lng) }))
@@ -131,7 +151,7 @@ function proximityBlock(anchor) {
   let near = ranked.filter(r => r.mi <= 1.5).slice(0, 24);
   if (near.length < 8) near = ranked.slice(0, 12); // sparse area: just take the nearest dozen
   const lines = near.map(r => `- ${r.p.name} | ${r.p.cat} | ${r.mi.toFixed(2)} mi`).join('\n');
-  return `PROXIMITY CONTEXT (real distances from ${anchor.label}, nearest first). Use these for any nearby / close / walking-distance request. Lead with the CLOSEST spots in the category they asked for, in distance order, and never skip a closer place to feature a farther one. Include every spot clearly among the closest (for example all within about 0.3 miles) before mentioning anything farther. State each distance. A food truck or taqueria is a perfectly good "grab a bite" spot.
+  return `PROXIMITY CONTEXT (real distances from ${anchor.label}, nearest first). Use these for any nearby / close / walking-distance request. Lead with the CLOSEST spots in the category they asked for, in distance order, and never skip a closer place to feature a farther one. Include every spot clearly among the closest (for example all within about 0.3 miles) before mentioning anything farther. State each distance. A food truck or taqueria is a perfectly good "grab a bite" spot. If they ask for a set number of nearby options but only a couple are genuinely close, give those and say the rest would be a drive. Never pad a "nearby" answer with places over about 1.5 miles away and call them nearby; be honest that they are farther.
 ${lines}`;
 }
 
