@@ -37,7 +37,7 @@
     .intro .note{font-size:.8rem;color:var(--ink-soft);margin-top:.6rem}
     #chat{display:flex;flex-direction:column;gap:.9rem;padding:1.1rem 0 .4rem}
     .msg{max-width:88%;padding:.8rem 1.05rem;border-radius:14px;font-size:.98rem}
-    .msg.bot{align-self:flex-start;background:var(--card);border:1.5px solid var(--line);border-bottom-left-radius:4px}
+    .msg.bot{align-self:flex-start;background:var(--paper-2);border:1.5px solid var(--line);border-bottom-left-radius:4px}
     .msg.me{align-self:flex-end;background:var(--clay);color:#fff;border-bottom-right-radius:4px}
     .msg a{color:var(--clay-deep);font-weight:700}
     .msg.me a{color:#fff;text-decoration:underline}
@@ -60,6 +60,11 @@
     .send:hover{background:var(--clay-deep)}
     .send:disabled{opacity:.55;cursor:default}
     @media (max-width:520px){ .send{padding:.8rem 1.05rem} }
+    /* Wider screens: the input flows right under the conversation instead of pinning to the far bottom */
+    @media (min-width:760px){
+      body{padding-bottom:1.5rem}
+      .composer{position:static;background:transparent;border-top:none;box-shadow:none;padding:.4rem 1.1rem 2.5rem}
+    }
   </style>
 </head>
 <body>
