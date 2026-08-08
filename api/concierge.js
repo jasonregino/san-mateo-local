@@ -81,16 +81,34 @@ const centroids = (() => {
 
 const NBHD_ALIASES = [{ say: '25th ave', key: '25th avenue' }];
 
+// Words too generic to identify a place by, so "Norfolk Auto" still matches
+// "Norfolk Auto Service" and a lone "restaurant" never anchors anything.
+const NAME_STOP = new Set(['the', 'and', 'of', 'san', 'mateo', 'ca', 'inc', 'llc', 'co',
+  'service', 'services', 'restaurant', 'cafe', 'coffee', 'shop', 'store', 'bar', 'grill',
+  'kitchen', 'company', 'taqueria', 'pizza', 'market']);
+
+// How strongly the visitor's text names this place (partial names count).
+function anchorScore(name, text) {
+  const words = name.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().split(' ')
+    .filter(w => w.length >= 3 && !NAME_STOP.has(w));
+  if (!words.length) return 0;
+  const matched = words.filter(w => text.includes(w));
+  const len = matched.reduce((s, w) => s + w.length, 0);
+  if (matched.length >= 2) return 100 + len;                            // two+ distinctive words = strong
+  if (matched.length === 1 && matched[0].length >= 6) return 50 + len;  // one long distinctive word
+  return 0;
+}
+
 // Figure out where the visitor is: a listed place they named, or a neighborhood.
 function detectAnchor(clean) {
   const lastUser = [...clean].reverse().find(m => m.role === 'user');
   if (!lastUser) return null;
   const text = lastUser.content.toLowerCase();
 
-  let best = null; // a specific listed place they named ("near Norfolk Auto")
+  let best = null, bestScore = 0; // a specific listed place they named ("near Norfolk Auto")
   for (const p of coordPlaces) {
-    const n = p.name.toLowerCase();
-    if (n.length >= 5 && text.includes(n) && (!best || n.length > best.name.length)) best = p;
+    const s = anchorScore(p.name, text);
+    if (s > bestScore) { bestScore = s; best = p; }
   }
   if (best) return { label: best.name, lat: best.lat, lng: best.lng };
 
