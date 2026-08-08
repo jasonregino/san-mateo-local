@@ -130,8 +130,8 @@ function proximityBlock(anchor) {
     .sort((a, b) => a.mi - b.mi);
   let near = ranked.filter(r => r.mi <= 1.5).slice(0, 24);
   if (near.length < 8) near = ranked.slice(0, 12); // sparse area: just take the nearest dozen
-  const lines = near.map(r => `- ${r.p.name} | ${r.p.cat} | ${r.mi.toFixed(1)} mi`).join('\n');
-  return `PROXIMITY CONTEXT (real distances from ${anchor.label}; use these for any nearby / close / walking-distance request; pick the closest option in the category they asked for):
+  const lines = near.map(r => `- ${r.p.name} | ${r.p.cat} | ${r.mi.toFixed(2)} mi`).join('\n');
+  return `PROXIMITY CONTEXT (real distances from ${anchor.label}, nearest first). Use these for any nearby / close / walking-distance request. Lead with the CLOSEST spots in the category they asked for, in distance order, and never skip a closer place to feature a farther one. Include every spot clearly among the closest (for example all within about 0.3 miles) before mentioning anything farther. State each distance. A food truck or taqueria is a perfectly good "grab a bite" spot.
 ${lines}`;
 }
 
