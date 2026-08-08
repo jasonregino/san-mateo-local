@@ -8,7 +8,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBBC09ZJZQ"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZBBC09ZJZQ');</script>
   <title>Ask the Guide | San Mateo Local</title>
-  <meta name="description" content="Tell San Mateo Local's guide what you're in the mood for and get real, local restaurant picks." />
+  <meta name="description" content="Tell San Mateo Local's guide what you need, a restaurant, a plumber, a barber, or something to do, and get real, local picks." />
   <link rel="canonical" href="https://sanmateolocal.com/ask.html" />
   <meta name="theme-color" content="#221D16" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -74,15 +74,15 @@
         <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
         <span>San Mateo Local</span>
       </a>
-      <a class="back" href="eat-drink.html">&larr; Eat &amp; Drink</a>
+      <a class="back" href="index.html">&larr; Home</a>
     </div>
   </header>
 
   <div class="wrap">
     <div class="intro">
       <p class="kick">Ask the guide</p>
-      <h1>Where should you eat?</h1>
-      <p>Tell me what you're in the mood for, or where you are, and I'll point you to real local spots from the guide.</p>
+      <h1>What are you looking for?</h1>
+      <p>A restaurant, a plumber, a barber, something to do this weekend. Tell me what you need and I'll point you to real local spots from the guide.</p>
       <p class="note">Tap a spot's name for the map and directions. Hours change, so call ahead.</p>
     </div>
 
@@ -90,9 +90,9 @@
 
     <div class="chips" id="chips">
       <button class="chip">Best coffee downtown</button>
-      <button class="chip">Tacos near me</button>
+      <button class="chip">I need a plumber</button>
+      <button class="chip">Something to do this weekend</button>
       <button class="chip">Date-night dinner</button>
-      <button class="chip">Something cheap and good</button>
     </div>
   </div>
 
@@ -101,7 +101,7 @@
       <button type="button" class="mic" id="mic" aria-label="Speak your question">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
       </button>
-      <input id="q" type="text" placeholder="e.g. I'm on 25th Ave and want ramen" autocomplete="off" required />
+      <input id="q" type="text" placeholder="e.g. I need a plumber, or tacos near 25th Ave" autocomplete="off" required />
       <button type="submit" class="send" id="send">Ask</button>
     </form>
   </div>
@@ -134,7 +134,7 @@
       return d;
     }
 
-    bubble('bot', "Hi! I'm your San Mateo Local guide. What are you in the mood for, or where are you headed?");
+    bubble('bot', "Hi! I'm your San Mateo Local guide. Looking for a place to eat, a local service, or something to do? Tell me what you need.");
 
     var busy = false;
     async function ask(text){

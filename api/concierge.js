@@ -1,36 +1,52 @@
-// San Mateo Local — restaurant concierge (discovery mode V1).
+// San Mateo Local — site concierge (discovery mode V2).
 //
 // A Vercel serverless function at /api/concierge. It answers a visitor's
-// "where should I eat?" chat, grounded ONLY in real, listed San Mateo
-// restaurants (concierge-data.json). It never invents a place or a detail.
+// "help me find..." chat, grounded ONLY in the real, listed San Mateo
+// businesses and guide pages in concierge-data.json. It never invents a
+// place, a service, or a detail.
+//
+// Covers the WHOLE guide: Eat & Drink, Home Services, Local Services,
+// Shopping, and Things to Do, plus the section pages it can link to.
 //
 // Needs one Vercel env var (Jason sets it; never in the code):
 //   ANTHROPIC_API_KEY  - an Anthropic API key
 //
-// No dependencies: global fetch only. Model is Haiku (fast + cheap).
+// No dependencies: global fetch only. Model is Haiku (fast + cheap), and the
+// big grounding block is prompt-cached so repeat calls stay quick and cheap.
 
-const { restaurants } = require('../concierge-data.json');
+const { places, sections } = require('../concierge-data.json');
 
 const MODEL = 'claude-haiku-4-5-20251001';
 
-const LIST = restaurants
-  .map(r => `- ${r.name} | ${r.cuisine} | ${r.area} | ${r.price} | ${r.about} | MAPS: ${r.maps}`)
-  .join('\n');
+// Group the places by category so the model sees the site's structure.
+const CATS = ['EAT & DRINK', 'HOME SERVICES', 'LOCAL SERVICES', 'SHOPPING', 'THINGS TO DO'];
+const LIST = CATS.map(cat => {
+  const rows = places.filter(p => p.cat === cat)
+    .map(p => `- ${p.name} | ${p.type} | ${p.area} | ${p.price} | ${p.about} | MAPS: ${p.maps}`)
+    .join('\n');
+  return `## ${cat}\n${rows}`;
+}).join('\n\n');
 
-const SYSTEM = `You are the friendly concierge for San Mateo Local, a local guide to San Mateo, California. You help a visitor find a great place to eat, drink, or grab coffee.
+const SECTIONS = sections.map(s => `- ${s.title} | ${s.url} | ${s.about}`).join('\n');
+
+const SYSTEM = `You are the friendly concierge for San Mateo Local, a curated local guide to San Mateo, California. You help residents and visitors find real local spots: places to eat and drink, home services, everyday local services, shops, and things to do.
 
 STRICT RULES:
-- Recommend ONLY restaurants from THE LIST below. Never invent a place, a dish, an address, or any detail. If nothing on the list fits what they want, say so warmly and point them to the Eat & Drink page.
-- San Mateo Local features LOCAL, INDEPENDENT spots, not chains. If someone asks about a chain (Jack in the Box, McDonald's, Starbucks, any fast-food or national brand) or any place NOT on THE LIST, do not recommend or endorse it as a pick. Warmly explain that the guide is about local, independent places, and offer a spot from THE LIST if one fits. You can acknowledge a chain is convenient without recommending it.
-- You do not have live hours. If someone asks what is open now or late, share what the listing notes say, but never state a specific closing time as fact, tell them to call ahead to confirm.
-- Recommend 2 to 3 spots at most. For each, give a short reason it fits and its neighborhood.
-- If the request is vague, ask ONE short clarifying question first (cuisine, neighborhood, or vibe).
-- Warm, local, and concise, like a friend who knows the town. Short sentences.
-- No em-dashes. No hype or marketing buzzwords.
-- Format each recommendation as a markdown link to its map using the exact MAPS url given for that restaurant, like: [Name](https://maps-url) in Neighborhood, one short reason.
+- Recommend ONLY real places from THE GUIDE below, and link to pages ONLY from SECTIONS. Never invent a place, a service, an address, a phone number, an hour, or any detail.
+- Match the request to the right kind of place. Plumber, electrician, roofer, landscaper, painter: use HOME SERVICES. Auto repair, barber, salon, dentist, chiropractor, dry cleaner: use LOCAL SERVICES. Food, coffee, drinks: use EAT & DRINK. A shop or gift: use SHOPPING. Something to do, a park, a trail: use THINGS TO DO.
+- San Mateo Local covers LOCAL, INDEPENDENT businesses, not chains. If someone asks about a chain or a place not in THE GUIDE, do not endorse it. Warmly say the guide is about local independents and offer a real listed option if one fits.
+- If the guide truly does not cover what they need, say so warmly and point them to the closest thing it does have or the right SECTION page. Never say the guide is "only food and drink"; it covers restaurants, home services, local services, shopping, and things to do.
+- Recommend 2 to 3 options at most, each with a short reason it fits and its neighborhood. For a broad ask (best tacos, what to do this weekend), you may also add the matching SECTION page link.
+- You do not have live hours. Never state a specific closing time as fact; tell them to call ahead to confirm.
+- If the request is vague, ask ONE short clarifying question first (what kind of place, which neighborhood, or the vibe).
+- Warm, local, and concise, like a friend who knows the town. Short sentences. No em-dashes. No hype or marketing buzzwords.
+- Format each place as a markdown link to its map using its exact MAPS url: [Name](https://maps-url) in Neighborhood, one short reason. Format a section as [Page title](/url).
 
-THE LIST (name | cuisine | area | price | about | MAPS url to use for the link):
-${LIST}`;
+THE GUIDE (name | type | area | price | about | MAPS url to use for the link):
+${LIST}
+
+SECTIONS (guide pages you may link as [title](/url)):
+${SECTIONS}`;
 
 async function readBody(req) {
   const chunks = [];
@@ -64,7 +80,13 @@ module.exports = async (req, res) => {
         'anthropic-version': '2023-06-01',
         'content-type': 'application/json',
       },
-      body: JSON.stringify({ model: MODEL, max_tokens: 700, system: SYSTEM, messages: clean }),
+      body: JSON.stringify({
+        model: MODEL,
+        max_tokens: 800,
+        // The big grounding block is identical on every call, so cache it.
+        system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
+        messages: clean,
+      }),
     });
     if (!r.ok) {
       console.error('anthropic', r.status, await r.text());
@@ -72,7 +94,7 @@ module.exports = async (req, res) => {
       return;
     }
     const data = await r.json();
-    let reply = (data.content && data.content[0] && data.content[0].text) || 'Sorry, I did not catch that. What are you in the mood for?';
+    let reply = (data.content && data.content[0] && data.content[0].text) || 'Sorry, I did not catch that. What are you looking for?';
     reply = reply.replace(/\s*[—―]\s*/g, ', '); // strip em-dashes (U+2014/2015): the voice rule, enforced even when the model ignores it
     res.status(200).json({ reply });
   } catch (e) {
