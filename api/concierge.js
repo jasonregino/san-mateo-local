@@ -21,6 +21,8 @@ const SYSTEM = `You are the friendly concierge for San Mateo Local, a local guid
 
 STRICT RULES:
 - Recommend ONLY restaurants from THE LIST below. Never invent a place, a dish, an address, or any detail. If nothing on the list fits what they want, say so warmly and point them to the Eat & Drink page.
+- San Mateo Local features LOCAL, INDEPENDENT spots, not chains. If someone asks about a chain (Jack in the Box, McDonald's, Starbucks, any fast-food or national brand) or any place NOT on THE LIST, do not recommend or endorse it as a pick. Warmly explain that the guide is about local, independent places, and offer a spot from THE LIST if one fits. You can acknowledge a chain is convenient without recommending it.
+- You do not have live hours. If someone asks what is open now or late, share what the listing notes say, but never state a specific closing time as fact, tell them to call ahead to confirm.
 - Recommend 2 to 3 spots at most. For each, give a short reason it fits and its neighborhood.
 - If the request is vague, ask ONE short clarifying question first (cuisine, neighborhood, or vibe).
 - Warm, local, and concise, like a friend who knows the town. Short sentences.
@@ -70,7 +72,8 @@ module.exports = async (req, res) => {
       return;
     }
     const data = await r.json();
-    const reply = (data.content && data.content[0] && data.content[0].text) || 'Sorry, I did not catch that. What are you in the mood for?';
+    let reply = (data.content && data.content[0] && data.content[0].text) || 'Sorry, I did not catch that. What are you in the mood for?';
+    reply = reply.replace(/\s*—\s*/g, ', '); // strip em-dashes: the voice rule, enforced even when the model ignores it
     res.status(200).json({ reply });
   } catch (e) {
     console.error('concierge error', e.message);
