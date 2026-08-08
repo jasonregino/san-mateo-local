@@ -35,12 +35,13 @@ STRICT RULES:
 - Recommend ONLY real places from THE GUIDE below, and link to pages ONLY from SECTIONS. Never invent a place, a service, an address, a phone number, an hour, or any detail.
 - CATEGORY IS THE FIRST, NON-NEGOTIABLE FILTER. Only recommend a place whose category actually matches the need. For a plumber, recommend ONLY plumbers. Never recommend a business from a different category (a dry cleaner, a restaurant, a shop) just because it sits in the right neighborhood. Matching the service always beats matching the location. If nothing in the right category fits, say so; never substitute a wrong-category place.
 - Route the need to the right category. Plumber, electrician, roofer, landscaper, painter, handyman: HOME SERVICES. Auto or tire, barber, salon, dentist, chiropractor, dry cleaner: LOCAL SERVICES. Food, coffee, drinks: EAT & DRINK. A shop or gift: SHOPPING. Something to do, a park, a trail: THINGS TO DO.
+- MENU OVERLAP: a place's category is its headline, not its whole menu. A taqueria typically also makes tortas (a Mexican sandwich) and burritos; a deli or market makes sandwiches; a bakery or cafe has pastries and light bites. When a visitor wants one of these and the closest spot is that kind of place, you may offer it and name the item, so they are not sent far for something available close by. If a listing's about text names a specific item, trust that over any guess, and never invent a dish a listing does not support.
 - If a visitor names a place that is not an exact match but plausibly refers to a listing in THE GUIDE (a local nickname, a shortening, or a partial name, like "The Fritter" for Apple Fritter), offer that listing as a question to confirm before you recommend it. Only say a place is not in the guide when nothing in THE GUIDE plausibly matches.
 - San Mateo Local covers LOCAL, INDEPENDENT businesses, not chains. If someone asks about a chain or a place not in THE GUIDE, do not endorse it. Warmly say the guide is about local independents and offer a real listed option if one fits.
 - If the guide truly does not cover what they need, say so warmly and point them to the closest thing it does have or the right SECTION page. Never say the guide is "only food and drink"; it covers restaurants, home services, local services, shopping, and things to do.
 - SERVICE-AREA BUSINESSES: many home services and local services (plumbers, electricians, roofers, landscapers, cleaners, movers) travel to the customer and have no set neighborhood. For these, do NOT ask which neighborhood they are in and do not worry about proximity. Just recommend the best-fitting independent providers and give the phone number to call. Ask about neighborhood only for a place the person travels TO, like a restaurant, cafe, bar, barber, or shop.
 - LOCATION HONESTY: unless a PROXIMITY CONTEXT section is provided, you know each place's neighborhood, street address, and phone, but not exact distances. Without it, never say a place is "on" a street, "near", "next to", "nearby", or "a few minutes from" another place unless the street addresses clearly support it (same street only counts when block numbers are close: 1901 and 2051 S Norfolk St are close; 478 and 2051 S Norfolk St are far). When unsure two places are close, say it is approximate and tell them to check the map pin. Never guess or invent a location.
-- If a PROXIMITY CONTEXT section is provided after the guide, it lists real computed distances in miles from where the visitor is. Trust it completely for anything about nearby, close, next door, or walking distance: recommend the closest options in the category they asked for and mention the approximate distance. Under 0.4 mi is an easy walk; 0.4 to 1 mile is a longer walk or short drive; over 1 mile, suggest driving.
+- When a NEARBY list of real distances from the visitor's location is provided, trust it completely for anything about nearby, close, next door, or walking distance: recommend the closest options in the category they asked for and mention the approximate distance. Under 0.4 mi is an easy walk; 0.4 to 1 mile is a longer walk or short drive; over 1 mile, suggest driving. That list is internal: never mention it, never say the words "proximity context", never say you were "given" anything, and never tell the visitor you "lack" location info. Just speak naturally about how close things are. If you truly do not know where the visitor is, simply ask which neighborhood or nearest cross street.
 - Recommend 2 to 3 options at most, each with a short reason it fits and its neighborhood. For a broad ask (best tacos, what to do this weekend), you may also add the matching SECTION page link.
 - You do not have live hours. Never state a specific closing time as fact; tell them to call ahead to confirm.
 - You can only chat here. Never offer to call a business, book a table, check hours, or do anything outside this conversation. When someone needs hours, a quote, wait times, or a reservation, give them the listed phone number and tell them to contact the place directly. Only give a phone number that appears in THE GUIDE.
@@ -131,14 +132,67 @@ function anchorFromText(raw) {
   return null;
 }
 
-// Where is the visitor? Use the most recent location they gave. It carries across
-// turns until they name a new one, so "sandwiches nearby" after "...in Shoreview"
-// stays anchored on Shoreview instead of guessing across town.
-function detectAnchor(clean) {
+// A street or place the visitor typed that is not a listing or known neighborhood
+// (e.g. "Echo Avenue"). Read in original case so the geocoder has the real name.
+const LOC_FILLER = new Set(['anywhere', 'somewhere', 'close', 'closest', 'near', 'nearby',
+  'to', 'by', 'around', 'right', 'off', 'next', 'the', 'a', 'an', 'on', 'in', 'at', 'is',
+  'are', 'there', 'any', 'i', 'im', 'need', 'want', 'looking', 'for', 'me', 'my', 'get',
+  'find', 'something', 'place', 'places', 'good', 'great', 'best', 'can', 'you', 'do', 'up']);
+function cleanPhrase(p) {
+  const w = String(p).trim().replace(/[?.!,]+$/, '').split(/\s+/);
+  while (w.length > 1 && LOC_FILLER.has(w[0].toLowerCase().replace(/[^a-z]/g, ''))) w.shift();
+  return w.join(' ').trim();
+}
+function extractLocationPhrase(raw) {
+  const t = String(raw || '');
+  const street = t.match(/\b([A-Za-z0-9]+(?:\s+[A-Za-z0-9]+){0,3}\s+(?:Ave|Avenue|St|Street|Blvd|Boulevard|Rd|Road|Dr|Drive|Way|Ln|Lane|Ct|Court|Pl|Place|Hwy|Highway|Real|Parkway|Pkwy|Circle|Cir|Terrace|Ter)\.?)\b/i);
+  if (street) { const c = cleanPhrase(street[1]); if (c.length >= 3) return c; }
+  const prep = t.match(/\b(?:closest to|close to|near|right by|next to|by|around|off)\s+([A-Za-z][A-Za-z0-9'&. ]{2,30})/i);
+  if (prep) {
+    const p = cleanPhrase(prep[1].replace(/\b(where|what|which|is|are|can|could|please|do|you|there|any|anything|open|now)\b.*$/i, ''));
+    if (p.length >= 3) return p;
+  }
+  return null;
+}
+
+// Geocode a typed location to coordinates, once, via OpenStreetMap (free). Cached,
+// and clamped to the San Mateo area so a same-named street elsewhere never matches.
+const geoCache = new Map();
+async function geocodeLocation(query) {
+  const key = query.toLowerCase();
+  if (geoCache.has(key)) return geoCache.get(key);
+  let result = null;
+  try {
+    const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q='
+      + encodeURIComponent(query + ', San Mateo, California');
+    const r = await fetch(url, {
+      headers: { 'User-Agent': 'SanMateoLocal/1.0 (jason@sanmateolocal.com)' },
+      signal: AbortSignal.timeout(4000),
+    });
+    if (r.ok) {
+      const j = await r.json();
+      if (Array.isArray(j) && j.length) {
+        const lat = +j[0].lat, lng = +j[0].lon;
+        if (lat >= 37.51 && lat <= 37.60 && lng >= -122.36 && lng <= -122.25) result = { lat, lng };
+      }
+    }
+  } catch (e) { result = null; }
+  geoCache.set(key, result);
+  return result;
+}
+
+// Where is the visitor? The most recent location they gave, carried across turns.
+// First a listed place or known neighborhood; if none, a street/place they typed,
+// geocoded live. The most recent location of any kind wins.
+async function detectAnchor(clean) {
   for (const m of [...clean].reverse()) {
-    if (m.role === 'user') {
-      const a = anchorFromText(m.content);
-      if (a) return a;
+    if (m.role !== 'user') continue;
+    const known = anchorFromText(m.content);
+    if (known) return known;
+    const phrase = extractLocationPhrase(m.content);
+    if (phrase) {
+      const geo = await geocodeLocation(phrase);
+      if (geo) return { label: phrase, lat: geo.lat, lng: geo.lng };
     }
   }
   return null;
@@ -151,7 +205,7 @@ function proximityBlock(anchor) {
   let near = ranked.filter(r => r.mi <= 1.5).slice(0, 24);
   if (near.length < 8) near = ranked.slice(0, 12); // sparse area: just take the nearest dozen
   const lines = near.map(r => `- ${r.p.name} | ${r.p.cat} | ${r.mi.toFixed(2)} mi`).join('\n');
-  return `PROXIMITY CONTEXT (real distances from ${anchor.label}, nearest first). Use these for any nearby / close / walking-distance request. Lead with the CLOSEST spots in the category they asked for, in distance order, and never skip a closer place to feature a farther one. Include every spot clearly among the closest (for example all within about 0.3 miles) before mentioning anything farther. State each distance. A food truck or taqueria is a perfectly good "grab a bite" spot. If they ask for a set number of nearby options but only a couple are genuinely close, give those and say the rest would be a drive. Never pad a "nearby" answer with places over about 1.5 miles away and call them nearby; be honest that they are farther.
+  return `NEARBY (internal reference from ${anchor.label}, real distances in miles, nearest first, never mention this list to the visitor). Use these for any nearby / close / walking-distance request. Lead with the CLOSEST spots in the category they asked for, in distance order, and never skip a closer place to feature a farther one. Include every spot clearly among the closest (for example all within about 0.3 miles) before mentioning anything farther. State each distance. A food truck or taqueria is a perfectly good "grab a bite" spot. If they ask for a set number of nearby options but only a couple are genuinely close, give those and say the rest would be a drive. Never pad a "nearby" answer with places over about 1.5 miles away and call them nearby; be honest that they are farther.
 ${lines}`;
 }
 
@@ -181,7 +235,7 @@ module.exports = async (req, res) => {
 
   // The big grounding block is identical every call, so cache it. When we can tell
   // where the visitor is, append a small, per-call block of real computed distances.
-  const anchor = detectAnchor(clean);
+  const anchor = await detectAnchor(clean);
   const system = [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }];
   if (anchor) system.push({ type: 'text', text: proximityBlock(anchor) });
 
