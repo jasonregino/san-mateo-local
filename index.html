@@ -65,7 +65,7 @@
       --card: #241D17;
     }
     /* keep the dark "bands" dark at night instead of flipping bright */
-    [data-theme="dark"] .hoods { background: var(--paper-2); color: var(--ink); }
+    [data-theme="dark"] .hoods { background: #EFE4CC; color: #221D16; }
     [data-theme="dark"] .hoods .hood-list a { color: var(--ink); }
     [data-theme="dark"] .hoods .hood-list a:hover { color: #fff; }
     [data-theme="dark"] .hoods .label { color: var(--clay-deep); }
@@ -146,7 +146,7 @@
     @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; } .hero { padding: 3rem 0 2.5rem; } }
 
     /* ===== Neighborhood strip ===== */
-    .hoods { background: var(--ink); color: var(--paper); padding: 1.75rem 0; }
+    .hoods { background: #EFE4CC; color: #221D16; padding: 1.75rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .hoods .wrap { display: flex; align-items: center; justify-content: space-between; gap: 0.9rem 2rem; flex-wrap: wrap; }
     .hoods .label { color: var(--paper); flex: none; }
     .hood-list { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; }
@@ -161,7 +161,7 @@
     @media (prefers-reduced-motion: reduce) { .hoods .latest-rotator { position: static; min-height: 0; } .hoods .latest-rotator a { position: static; opacity: 1; transform: none; } }
     /* This Weekend lead + secondary (replaces the rotating ticker so the timely post is always visible) */
     .latest-lead { display: inline-flex; align-items: center; gap: 0.7rem; flex: 1 1 auto; min-width: 0; color: inherit; }
-    .latest-lead .ll-kick { flex: none; font-family: 'Inter', sans-serif; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; background: rgba(255,255,255,0.18); padding: 0.32rem 0.66rem; border-radius: 999px; white-space: nowrap; }
+    .latest-lead .ll-kick { flex: none; font-family: 'Inter', sans-serif; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; background: var(--clay); color: #fff; padding: 0.32rem 0.66rem; border-radius: 999px; white-space: nowrap; }
     .latest-lead .ll-title { font-family: 'Fraunces', serif; font-size: 1.42rem; font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; border-bottom: 1.5px solid transparent; }
     .latest-lead:hover .ll-title { border-bottom-color: var(--clay); }
     .latest-side { display: flex; align-items: center; gap: 0.4rem 1.2rem; flex: none; flex-wrap: wrap; }
@@ -297,7 +297,7 @@
     /* Set day/night before paint: saved choice first, otherwise match the phone's setting. */
     (function(){ try { document.documentElement.classList.add('js'); var s = localStorage.getItem('sml-theme'); var t = s || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
   </script>
-  <!-- LATESTBG:START --><style>.hoods{background:#21514E;}</style><!-- LATESTBG:END -->
+  <!-- LATESTBG:START --><style>.hoods{background:#EFE4CC;}</style><!-- LATESTBG:END -->
 </head>
 <body id="top">
 
