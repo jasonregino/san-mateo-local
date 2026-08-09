@@ -149,9 +149,9 @@ function extractLocationPhrase(raw) {
   const t = String(raw || '');
   const street = t.match(/\b([A-Za-z0-9]+(?:\s+[A-Za-z0-9]+){0,3}\s+(?:Ave|Avenue|St|Street|Blvd|Boulevard|Rd|Road|Dr|Drive|Way|Ln|Lane|Ct|Court|Pl|Place|Hwy|Highway|Real|Parkway|Pkwy|Circle|Cir|Terrace|Ter)\.?)\b/i);
   if (street) { const c = cleanPhrase(street[1]); if (c.length >= 3) return c; }
-  const prep = t.match(/\b(?:closest to|close to|near|right by|next to|by|around|off)\s+([A-Za-z][A-Za-z0-9'&. ]{2,30})/i);
+  const prep = t.match(/\b(?:closest to|close to|near|right by|next to|over on|live on|i'?m on|i am on|on|at|by|around|off|called)\s+([A-Za-z][A-Za-z0-9'. ]{2,28})/i);
   if (prep) {
-    const p = cleanPhrase(prep[1].replace(/\b(where|what|which|is|are|can|could|please|do|you|there|any|anything|open|now)\b.*$/i, ''));
+    const p = cleanPhrase(prep[1].replace(/\b(where|what|which|is|are|can|could|please|do|you|there|any|anything|open|now|and|but|the|a|an)\b.*$/i, ''));
     if (p.length >= 3) return p;
   }
   return null;
@@ -160,29 +160,39 @@ function extractLocationPhrase(raw) {
 // Geocode a typed location to coordinates, once, via OpenStreetMap (free). Cached,
 // and clamped to the San Mateo area so a same-named street elsewhere never matches.
 const geoCache = new Map();
-async function geocodeLocation(query) {
-  const key = query.toLowerCase();
-  if (geoCache.has(key)) return geoCache.get(key);
-  let result = null;
+const ST_SUFFIX = /\b(ave|avenue|st|street|blvd|boulevard|rd|road|dr|drive|way|ln|lane|ct|court|pl|place|hwy|highway|real|parkway|pkwy|circle|cir|terrace|ter)\.?$/i;
+async function geocodeOnce(q) {
   try {
     const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q='
-      + encodeURIComponent(query + ', San Mateo, California');
+      + encodeURIComponent(q + ', San Mateo, California');
     const r = await fetch(url, {
       headers: { 'User-Agent': 'SanMateoLocal/1.0 (jason@sanmateolocal.com)' },
       signal: AbortSignal.timeout(4000),
     });
-    if (r.ok) {
-      const j = await r.json();
-      if (Array.isArray(j) && j.length) {
-        const lat = +j[0].lat, lng = +j[0].lon;
-        const inSanMateo = /,\s*san mateo\s*,/i.test(j[0].display_name || ''); // the CITY, not just "San Mateo County"
-        if (inSanMateo && lat >= 37.51 && lat <= 37.60 && lng >= -122.36 && lng <= -122.25) result = { lat, lng };
-      }
-    }
-  } catch (e) { result = null; }
+    if (!r.ok) return null;
+    const j = await r.json();
+    if (!Array.isArray(j) || !j.length) return null;
+    const lat = +j[0].lat, lng = +j[0].lon;
+    const inSanMateo = /,\s*san mateo\s*,/i.test(j[0].display_name || ''); // the CITY, not just "San Mateo County"
+    if (inSanMateo && lat >= 37.51 && lat <= 37.60 && lng >= -122.36 && lng <= -122.25) return { lat, lng };
+    return null;
+  } catch (e) { return null; }
+}
+async function geocodeLocation(query) {
+  const key = query.toLowerCase();
+  if (geoCache.has(key)) return geoCache.get(key);
+  // If it already has a street suffix, one lookup. A bare name like "Patricia" tries
+  // the common street types (Patricia Ave, Patricia St, ...) and keeps the first that
+  // resolves to a real San Mateo street.
+  const variants = ST_SUFFIX.test(query.trim()) ? [query] : [query + ' Ave', query + ' St', query + ' Dr', query + ' Blvd'];
+  let result = null;
+  for (const v of variants) { result = await geocodeOnce(v); if (result) break; }
   geoCache.set(key, result);
   return result;
 }
+
+// Injected when we genuinely cannot place the visitor, so the model stops fabricating.
+const NO_LOCATION = `NO LOCATION: you could not place where the visitor is, so for THIS reply you have NO distances and NO neighborhood for them. Hard rules: never call any place close, nearby, convenient, "your best bet", or "a short drive", never state a distance, and never name or guess which neighborhood their street is in. If they want something nearby, tell them plainly you cannot judge distance yet and ask which neighborhood they are in (Downtown, Shoreview, Hayward Park, Baywood, San Mateo Park, North Central, Los Prados, Bay Meadows, Hillsdale) or a street with its type (like "Patricia Ave"); you may still offer a couple of solid options meanwhile. If they are NOT asking about proximity, just recommend good options normally.`;
 
 // Where is the visitor? The most recent location they gave, carried across turns.
 // First a listed place or known neighborhood; if none, a street/place they typed,
@@ -240,7 +250,7 @@ module.exports = async (req, res) => {
   // where the visitor is, append a small, per-call block of real computed distances.
   const anchor = await detectAnchor(clean);
   const system = [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }];
-  if (anchor) system.push({ type: 'text', text: proximityBlock(anchor) });
+  system.push({ type: 'text', text: anchor ? proximityBlock(anchor) : NO_LOCATION });
 
   try {
     const r = await fetch('https://api.anthropic.com/v1/messages', {
