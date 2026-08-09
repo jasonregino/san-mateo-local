@@ -67,10 +67,13 @@
     .search { width:100%; max-width:440px; margin-top:1.5rem; padding:0.75rem 1rem; border:1.5px solid var(--ink); border-radius:6px; background:var(--paper); color:var(--ink); font-size:1rem; font-family:inherit; }
     .search::placeholder { color:var(--ink-soft); }
     .search:focus { outline:none; border-color:var(--clay); box-shadow:0 0 0 3px rgba(194,91,58,0.15); }
-    .ask-row { display:flex; align-items:center; flex-wrap:wrap; gap:.6rem; margin-top:.9rem; }
-    .ask-inline { display:inline-flex; align-items:center; gap:.4rem; background:var(--clay); color:#fff; font-weight:700; font-size:.92rem; padding:.55rem 1.1rem; border-radius:999px; text-decoration:none; box-shadow:0 4px 14px -6px rgba(194,91,58,.6); }
-    .ask-inline:hover { background:var(--clay-deep); }
-    .ask-hint { color:var(--ink-soft); font-size:.88rem; }
+    .ask-hero { display:flex; align-items:center; gap:1rem; margin:1.4rem 0 .2rem; padding:1.05rem 1.3rem; background:linear-gradient(135deg, var(--clay), var(--clay-deep)); border-radius:12px; color:#fff; text-decoration:none; box-shadow:0 8px 24px -10px rgba(194,91,58,.6); transition:transform .16s ease, box-shadow .16s ease; }
+    .ask-hero:hover { transform:translateY(-2px); box-shadow:0 14px 30px -12px rgba(194,91,58,.72); }
+    .ask-hero-ico { font-size:1.7rem; flex:none; line-height:1; }
+    .ask-hero-txt { flex:1 1 auto; line-height:1.32; }
+    .ask-hero-txt strong { font-family:'Fraunces',Georgia,serif; font-size:1.3rem; font-weight:600; display:block; margin-bottom:.1rem; }
+    .ask-hero-txt span { font-size:.92rem; opacity:.93; }
+    .ask-hero-go { flex:none; font-size:1.5rem; font-weight:700; }
     .no-results { text-align:center; color:var(--ink-soft); font-size:1rem; padding:2.5rem 0 0.5rem; display:none; }
     .chip { font-family:inherit; font-size:0.85rem; font-weight:600; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all 0.15s; }
     .chip:hover { border-color:var(--clay); color:var(--clay-deep); }
@@ -170,8 +173,8 @@
       <a class="back" href="index.html">&larr; San Mateo Local</a>
       <h1>Local Services in San Mateo</h1>
       <p>The barbers, gyms, dentists, salons, and vets locals actually use. Independent and local, not corporate. Looking for a plumber, electrician, or roofer? See Home Services.</p>
+      <a href="ask.html" class="ask-hero"><span class="ask-hero-ico">&#128172;</span><span class="ask-hero-txt"><strong>Ask a Local</strong><span>Not sure where to start? Tell it what you need and get real local picks in seconds.</span></span><span class="ask-hero-go">&rarr;</span></a>
       <input type="search" class="search" id="listingSearch" placeholder="Search local services&hellip;" aria-label="Search Local Services" autocomplete="off" />
-      <div class="ask-row"><a href="ask.html" class="ask-inline">&#128172; Ask a Local &rarr;</a> <span class="ask-hint">Not sure? Tell it what you need.</span></div>
       <div class="chips"><button class="chip is-on" data-filter="all">All</button><button class="chip" data-filter="hair-grooming">Hair &amp; Grooming</button><button class="chip" data-filter="health-fitness">Health &amp; Fitness</button><button class="chip" data-filter="health-wellness">Health &amp; Wellness</button><button class="chip" data-filter="pets">Pets</button><button class="chip" data-filter="cleaners-tailors">Cleaners &amp; Tailors</button><button class="chip" data-filter="auto">Auto</button><button class="chip" data-filter="professional-services">Professional Services</button></div>
     </div>
   </section>
