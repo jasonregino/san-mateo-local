@@ -16,7 +16,7 @@
 
 const { places, sections } = require('../concierge-data.json');
 
-const MODEL = 'claude-haiku-4-5-20251001';
+const MODEL = 'claude-sonnet-5'; // accuracy over speed (Jason 2026-08-09): Sonnet follows the closest-first / no-fabrication rules far more reliably than Haiku
 
 // Group the places by category so the model sees the site's structure.
 const CATS = ['EAT & DRINK', 'HOME SERVICES', 'LOCAL SERVICES', 'SHOPPING', 'THINGS TO DO'];
@@ -288,14 +288,19 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-7'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-8'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
-  let messages;
+  let messages, coords = null;
   try {
     const body = JSON.parse(await readBody(req));
     messages = Array.isArray(body.messages) ? body.messages : null;
+    const c = body.coords; // GPS from "use my location", only trusted if it is inside the San Mateo area
+    if (c && typeof c.lat === 'number' && typeof c.lng === 'number'
+        && c.lat >= 37.50 && c.lat <= 37.61 && c.lng >= -122.40 && c.lng <= -122.24) {
+      coords = { lat: c.lat, lng: c.lng };
+    }
   } catch (e) { res.status(400).json({ error: 'bad request' }); return; }
   if (!messages || !messages.length) { res.status(400).json({ error: 'no messages' }); return; }
 
@@ -308,7 +313,16 @@ module.exports = async (req, res) => {
 
   // The big grounding block is identical every call, so cache it. When we can tell
   // where the visitor is, append a small, per-call block of real computed distances.
-  const anchor = await detectAnchor(clean);
+  // GPS coords (from "use my location") are the most reliable anchor for "near me"
+  // asks and skip all street-name guessing. An explicit place in the LATEST message
+  // still wins (they are asking about somewhere else on purpose); if text detection
+  // finds nothing, fall back to GPS.
+  const gpsAnchor = coords ? { label: 'your location', lat: coords.lat, lng: coords.lng } : null;
+  const lastUser = [...clean].reverse().find(m => m.role === 'user');
+  const lastNamesPlace = lastUser && (anchorFromText(lastUser.content) || extractLocationPhrase(lastUser.content));
+  let anchor;
+  if (gpsAnchor && !lastNamesPlace) anchor = gpsAnchor;
+  else anchor = (await detectAnchor(clean)) || gpsAnchor;
   res.setHeader('x-smc-anchor', anchor ? encodeURIComponent(anchor.label) : 'none');
   const system = [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }];
   system.push({ type: 'text', text: anchor ? proximityBlock(anchor) : NO_LOCATION });

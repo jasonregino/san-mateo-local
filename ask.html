@@ -59,6 +59,12 @@
     .send:hover{background:var(--clay-deep)}
     .send:disabled{opacity:.55;cursor:default}
     @media (max-width:520px){ .send{padding:.8rem 1.05rem} }
+    /* GPS location pill: exact-distance anchoring for phone users */
+    .locrow{max-width:820px;margin:0 auto .5rem;display:flex;justify-content:center}
+    .locbtn{background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:.42rem 1rem;font:inherit;font-size:.85rem;font-weight:600;color:var(--ink-soft);cursor:pointer;display:inline-flex;align-items:center;gap:.35rem}
+    .locbtn:hover{border-color:var(--clay);color:var(--ink)}
+    .locbtn.on{background:var(--clay);border-color:var(--clay);color:#fff}
+    .locbtn:disabled{opacity:.6;cursor:default}
     /* Wider screens: the input flows right under the conversation instead of pinning to the far bottom */
     @media (min-width:760px){
       body{padding-bottom:1.5rem}
@@ -96,6 +102,7 @@
   </div>
 
   <div class="composer">
+    <div class="locrow"><button type="button" class="locbtn" id="loc">📍 Use my location</button></div>
     <form id="composer">
       <button type="button" class="mic" id="mic" aria-label="Speak your question">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
@@ -112,7 +119,9 @@
     var input = document.getElementById('q');
     var sendBtn = document.getElementById('send');
     var micBtn = document.getElementById('mic');
+    var locBtn = document.getElementById('loc');
     var messages = [];
+    var userCoords = null;
 
     function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
     function render(t){
@@ -150,7 +159,7 @@
         var res = await fetch('/api/concierge', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ messages: messages })
+          body: JSON.stringify({ messages: messages, coords: userCoords })
         });
         var data = await res.json();
         typing.remove();
@@ -166,6 +175,32 @@
 
     form.addEventListener('submit', function(e){ e.preventDefault(); var t = input.value; input.value = ''; ask(t); });
     chips.addEventListener('click', function(e){ if (e.target.classList.contains('chip')) ask(e.target.textContent); });
+
+    /* GPS: exact-distance anchoring. One tap shares your spot; the guide then measures
+       real distances from where you actually are, no street-name guessing needed. */
+    var SM = { latMin: 37.50, latMax: 37.61, lngMin: -122.40, lngMax: -122.24 };
+    locBtn.addEventListener('click', function(){
+      if (userCoords) { // toggle off
+        userCoords = null; locBtn.classList.remove('on'); locBtn.textContent = '📍 Use my location'; return;
+      }
+      if (!navigator.geolocation) { bubble('bot', "Your browser can't share location. Just tell me a cross street or neighborhood and I'll find the closest spots."); return; }
+      locBtn.disabled = true; locBtn.textContent = '📍 Locating...';
+      navigator.geolocation.getCurrentPosition(function(pos){
+        locBtn.disabled = false;
+        var la = pos.coords.latitude, ln = pos.coords.longitude;
+        if (la < SM.latMin || la > SM.latMax || ln < SM.lngMin || ln > SM.lngMax) {
+          locBtn.textContent = '📍 Use my location';
+          bubble('bot', "Looks like you're outside San Mateo. This guide only covers San Mateo, but tell me a neighborhood here and I'll help.");
+          return;
+        }
+        userCoords = { lat: la, lng: ln };
+        locBtn.classList.add('on'); locBtn.textContent = '📍 Using your location';
+        bubble('bot', "Got it, I'll use your location to find the closest spots. What are you looking for?");
+      }, function(){
+        locBtn.disabled = false; locBtn.textContent = '📍 Use my location';
+        bubble('bot', "No problem. Just tell me a cross street or neighborhood and I'll find the closest spots.");
+      }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
+    });
 
     /* Voice input: speak instead of type (hidden if the browser can't do it) */
     var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
