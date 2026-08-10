@@ -18,6 +18,16 @@ const { places, sections } = require('../concierge-data.json');
 
 const MODEL = 'claude-sonnet-5'; // accuracy over speed (Jason 2026-08-09): Sonnet follows the closest-first / no-fabrication rules far more reliably than Haiku
 
+// FEATURED PARTNERS (paid top-slot placement). Add a business's EXACT name here when
+// it signs up for a Featured spot. It then gets the top recommendation ONLY among
+// genuinely-close, fitting options, with an honest "even closer option" note. This is
+// the only place to flag one, no data rebuild needed. Keep it honest: the guardrails in
+// the prompt make sure a featured place never jumps ahead of a much-closer one.
+const FEATURED = new Set([
+  'Ay Caray Taqueria', // TEMP for testing the Featured ranking; remove after verifying
+]);
+const isFeatured = p => p.featured === true || FEATURED.has(p.name);
+
 // Group the places by category so the model sees the site's structure.
 const CATS = ['EAT & DRINK', 'HOME SERVICES', 'LOCAL SERVICES', 'SHOPPING', 'THINGS TO DO'];
 // Encode ( ) in map URLs so a place with parens in its name ("... (Coyote Point ...)")
@@ -282,7 +292,7 @@ function proximityBlock(anchor) {
     .sort((a, b) => a.mi - b.mi);
   let near = ranked.filter(r => r.mi <= 1.5).slice(0, 24);
   if (near.length < 8) near = ranked.slice(0, 12); // sparse area: just take the nearest dozen
-  const lines = near.map((r, i) => `${i + 1}. ${r.p.name} | ${r.p.cat} | ${r.p.type || r.p.cat} | ${r.mi.toFixed(2)} mi | ${(r.p.about || '').replace(/\s+/g, ' ').trim()}`).join('\n');
+  const lines = near.map((r, i) => `${i + 1}. ${isFeatured(r.p) ? '[FEATURED PARTNER] ' : ''}${r.p.name} | ${r.p.cat} | ${r.p.type || r.p.cat} | ${r.mi.toFixed(2)} mi | ${(r.p.about || '').replace(/\s+/g, ' ').trim()}`).join('\n');
   return `NEARBY LIST (internal, from ${anchor.label}; each line is: number. name | category | type | REAL distance in miles | description). It is ALREADY SORTED closest-first: line 1 is the closest place, and distance only increases down the list. This is the ONLY source of truth for anything about close, nearby, near me, walking distance, or "closest". Never mention this list or name any internal data; just speak like a local who knows the town. You ALREADY know where the visitor is (${anchor.label}); do NOT ask them for their neighborhood or nearest cross street again, just give the closest options with confidence. IMPORTANT: even if EARLIER in this same conversation you said you could not place them or could not calculate distance, that is no longer true, you CAN now. Do not repeat that you cannot judge distance, do not tell them to check the map themselves, and do not apologize for not knowing, just answer with the real distances below.
 
 HOW TO ANSWER A NEARBY REQUEST:
@@ -291,6 +301,7 @@ HOW TO ANSWER A NEARBY REQUEST:
 3. Copy each distance EXACTLY as written on its line (for example "0.21 mi"); never round it to a different number, average it, or invent one. (Two places genuinely near each other CAN show the same distance, that is fine, just copy what the line says.) NEVER say a place is "0.00 mi", "right here", "at your location", or "where you are", the visitor is NEAR these places, not standing inside one.
 4. Under 0.4 mi is an easy walk; 0.4 to 1 mi a longer walk or short drive; over 1 mi, suggest driving.
 5. Only places ON this list have a known distance. NEVER present a place that is not on this list as close, convenient, nearby, or a short drive, and NEVER state or guess a distance for an off-list place. If the only real fit is far, say plainly it is a drive and to check the map. Inventing or estimating a distance is never allowed.
+6. FEATURED PARTNERS (be transparent): a line tagged [FEATURED PARTNER] is a San Mateo Local featured business. WHEN a featured place genuinely fits what they asked for AND is close (within about 0.5 mi), give it the FIRST recommendation with its full, appealing description, and say plainly it is "a San Mateo Local featured spot" so the visitor knows it is a promoted pick. THEN, if another fitting place is even closer, name it honestly right after, for example "and if you want something a touch closer, [name] is [x] mi away." GUARDRAILS you must NEVER break: do not lead with a featured place that does not fit the request or is not close; never put a featured place ahead of a fitting place that is MORE THAN 0.2 mi closer (in that case lead with the closer place and you may mention the featured one second); feature at most ONE place per answer. If no featured place both fits and is close, ignore the tag completely and answer purely by distance. The honesty is the point: a featured pick is only ever worth showing because the guide is trusted.
 
 ${lines}`;
 }
@@ -302,7 +313,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-11'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-12'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
