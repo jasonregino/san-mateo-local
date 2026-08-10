@@ -265,6 +265,9 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
+  // Deploy/diagnostic markers: prove which build is live and whether the gazetteer loaded.
+  res.setHeader('x-smc-build', 'gazetteer-3');
+  res.setHeader('x-smc-streets', String(Object.keys(STREETS || {}).length));
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
@@ -285,6 +288,7 @@ module.exports = async (req, res) => {
   // The big grounding block is identical every call, so cache it. When we can tell
   // where the visitor is, append a small, per-call block of real computed distances.
   const anchor = await detectAnchor(clean);
+  res.setHeader('x-smc-anchor', anchor ? encodeURIComponent(anchor.label) : 'none');
   const system = [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }];
   system.push({ type: 'text', text: anchor ? proximityBlock(anchor) : NO_LOCATION });
 
