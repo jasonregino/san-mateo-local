@@ -217,8 +217,15 @@ function proximityBlock(anchor) {
     .sort((a, b) => a.mi - b.mi);
   let near = ranked.filter(r => r.mi <= 1.5).slice(0, 24);
   if (near.length < 8) near = ranked.slice(0, 12); // sparse area: just take the nearest dozen
-  const lines = near.map(r => `- ${r.p.name} | ${r.p.cat} | ${r.mi.toFixed(2)} mi`).join('\n');
-  return `NEARBY (internal reference from ${anchor.label}, real distances in miles, nearest first, never mention this list to the visitor). Use these for any nearby / close / walking-distance request. Lead with the CLOSEST spots in the category they asked for, in distance order, and never skip a closer place to feature a farther one. Include every spot clearly among the closest (for example all within about 0.3 miles) before mentioning anything farther. State each distance. A food truck or taqueria is a perfectly good "grab a bite" spot. If they ask for a set number of nearby options but only a couple are genuinely close, give those and say the rest would be a drive. Never pad a "nearby" answer with places over about 1.5 miles away and call them nearby; be honest that they are farther. Only the places on THIS list have known distances: if you recommend anything NOT on this list, never state a number for it, just say it is farther out and to check the map.
+  const lines = near.map(r => `- ${r.p.name} | ${r.p.cat} | ${r.p.type || r.p.cat} | ${r.mi.toFixed(2)} mi`).join('\n');
+  return `NEARBY LIST (internal, from ${anchor.label}; each line is: name | category | what they do | REAL distance in miles, nearest first). This is the ONLY source of truth for anything about close, nearby, near me, walking distance, or "closest". Never mention this list, never say "proximity context", just speak naturally about how close things are.
+
+HOW TO ANSWER A NEARBY REQUEST:
+1. Match what they asked for to the "what they do" field, NOT just the name. A cleaner whose line says "alterations" does alterations. A deli, market, or taqueria can do a sandwich; a bakery or cafe has pastries. Do not skip a closer place that genuinely fits to feature a farther one whose name matches better.
+2. Recommend the CLOSEST 2 to 3 that fit, in distance order, and state each one's exact distance straight from this list.
+3. Under 0.4 mi is an easy walk; 0.4 to 1 mi a longer walk or short drive; over 1 mi, suggest driving.
+4. Only places ON this list have a known distance. NEVER present a place that is not on this list as close, convenient, nearby, or a short drive, and NEVER state or guess a distance for an off-list place. If the only real fit is far, say plainly it is a drive and to check the map. Inventing or estimating a distance is never allowed.
+
 ${lines}`;
 }
 
