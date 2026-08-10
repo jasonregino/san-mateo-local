@@ -16,7 +16,13 @@
 
 const { places, sections } = require('../concierge-data.json');
 
-const MODEL = 'claude-haiku-4-5-20251001'; // accuracy over speed (Jason 2026-08-09): Sonnet follows the closest-first / no-fabrication rules far more reliably than Haiku
+// Model (hybrid, Jason 2026-08-09): Haiku is fast (~2.5s) and handles everyday ranking
+// well now that the rules are explicit. Upgrade to Sonnet ONLY when a Featured partner is
+// among the nearby options, because that is the one case Haiku fumbles (it drops the honest
+// "even closer option" note that makes the paid top-slot trustworthy). Fast for everyone,
+// precise where revenue + trust are on the line.
+const HAIKU = 'claude-haiku-4-5-20251001';
+const SONNET = 'claude-sonnet-5';
 
 // FEATURED PARTNERS (paid top-slot placement). Add a business's EXACT name here when
 // it signs up for a Featured spot. It then gets the top recommendation ONLY among
@@ -286,6 +292,12 @@ async function detectAnchor(clean) {
   return null;
 }
 
+// Is a Featured partner within reach of the visitor? If so, this reply uses the smarter
+// (slower) model so the paid top-slot and its honest "even closer" note are exactly right.
+function featuredNear(anchor) {
+  return !!anchor && coordPlaces.some(p => isFeatured(p) && haversineMi(anchor.lat, anchor.lng, p.lat, p.lng) <= 1.5);
+}
+
 function proximityBlock(anchor) {
   const ranked = coordPlaces
     .map(p => ({ p, mi: haversineMi(anchor.lat, anchor.lng, p.lat, p.lng) }))
@@ -313,7 +325,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-14'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-15'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
@@ -350,6 +362,8 @@ module.exports = async (req, res) => {
   else anchor = (await detectAnchor(clean)) || gpsAnchor;
   const system = [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }];
   system.push({ type: 'text', text: anchor ? proximityBlock(anchor) : NO_LOCATION });
+  const model = featuredNear(anchor) ? SONNET : HAIKU; // fast Haiku by default, precise Sonnet only near a Featured partner
+  res.setHeader('x-smc-model', model); // temp: verify the hybrid picks the right model
 
   try {
     const r = await fetch('https://api.anthropic.com/v1/messages', {
@@ -360,7 +374,7 @@ module.exports = async (req, res) => {
         'content-type': 'application/json',
       },
       body: JSON.stringify({
-        model: MODEL,
+        model,
         max_tokens: 1500,
         system,
         messages: clean,
