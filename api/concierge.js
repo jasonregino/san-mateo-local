@@ -16,7 +16,7 @@
 
 const { places, sections } = require('../concierge-data.json');
 
-const MODEL = 'claude-sonnet-5'; // accuracy over speed (Jason 2026-08-09): Sonnet follows the closest-first / no-fabrication rules far more reliably than Haiku
+const MODEL = 'claude-haiku-4-5-20251001'; // accuracy over speed (Jason 2026-08-09): Sonnet follows the closest-first / no-fabrication rules far more reliably than Haiku
 
 // FEATURED PARTNERS (paid top-slot placement). Add a business's EXACT name here when
 // it signs up for a Featured spot. It then gets the top recommendation ONLY among
@@ -24,7 +24,7 @@ const MODEL = 'claude-sonnet-5'; // accuracy over speed (Jason 2026-08-09): Sonn
 // the only place to flag one, no data rebuild needed. Keep it honest: the guardrails in
 // the prompt make sure a featured place never jumps ahead of a much-closer one.
 const FEATURED = new Set([
-  // 'Business Name Exactly As Listed',  // add a business here when it signs up for a Featured spot
+  'Ay Caray Taqueria', // TEMP: A/B testing Haiku on the Featured ranking; remove after
 ]);
 const isFeatured = p => p.featured === true || FEATURED.has(p.name);
 
@@ -313,7 +313,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-13'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-14'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
