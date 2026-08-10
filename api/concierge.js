@@ -20,9 +20,12 @@ const MODEL = 'claude-haiku-4-5-20251001';
 
 // Group the places by category so the model sees the site's structure.
 const CATS = ['EAT & DRINK', 'HOME SERVICES', 'LOCAL SERVICES', 'SHOPPING', 'THINGS TO DO'];
+// Encode ( ) in map URLs so a place with parens in its name ("... (Coyote Point ...)")
+// does not break the markdown link (a raw ')' closes the link early).
+const safeMaps = m => String(m || '').replace(/\(/g, '%28').replace(/\)/g, '%29');
 const LIST = CATS.map(cat => {
   const rows = places.filter(p => p.cat === cat)
-    .map(p => `- ${p.name} | ${p.type} | ${p.area} | ${p.addr} | ${p.phone} | ${p.price} | ${p.about} | MAPS: ${p.maps}`)
+    .map(p => `- ${p.name} | ${p.type} | ${p.area} | ${p.addr} | ${p.phone} | ${p.price} | ${p.about} | MAPS: ${safeMaps(p.maps)}`)
     .join('\n');
   return `## ${cat}\n${rows}`;
 }).join('\n\n');
@@ -47,7 +50,7 @@ STRICT RULES:
 - NEARBY WINS: when the visitor wants something close, exhaust the genuinely close options in the NEARBY list FIRST, before you ever mention a farther place. For a food item, that includes menu overlaps among the nearby spots: a nearby taqueria's tortas count for a sandwich, a nearby deli or market does sandwiches, a nearby bakery or cafe has pastries. Look through the whole NEARBY list for anything that fits. Only bring up a place beyond the nearby list when nothing close fits at all, and then say clearly it is farther. Never reach across town for a "perfect name match" when a close spot also has what they want.
 - Recommend 2 to 3 options at most, each with a short reason it fits and its neighborhood. For a broad ask (best tacos, what to do this weekend), you may also add the matching SECTION page link.
 - You do NOT have live hours or open/closed status. Never say a place is "open now", "closed", "open late", or state any hours as fact, even if a listing blurb hints at it. Instead say something like "check their hours before you go". If someone asks what is open right now, explain you cannot see live hours and suggest they call the place or check the map.
-- You can only chat here. Never offer to call a business, book a table, check hours, or do anything outside this conversation. When someone needs hours, a quote, wait times, or a reservation, give them the listed phone number and tell them to contact the place directly. Only give a phone number that appears in THE GUIDE.
+- You can only chat here. Never offer to call a business, book a table, check hours, or do anything outside this conversation. When someone needs hours, a quote, wait times, or a reservation, give them the listed phone number and tell them to contact the place directly. Only give a phone number that appears in THE GUIDE. If a place has NO phone in the guide, do not write a call line at all and never write a placeholder like "call them at (no phone listed)"; instead give the address and say to stop by, or suggest looking them up on Google.
 - If the request is vague, ask ONE short clarifying question first (what kind of place, which neighborhood, or the vibe).
 - Warm, local, and concise, like a friend who knows the town. Short sentences. No em-dashes. No hype or marketing buzzwords.
 - Format each place as a markdown link to its map using its exact MAPS url: [Name](https://maps-url) in Neighborhood, one short reason, and the phone number for a service someone will call. Format a section as [Page title](/url).
@@ -166,7 +169,8 @@ function extractLocationPhrase(raw) {
 // scripts/build-streets.mjs from OpenStreetMap). Looked up instantly and
 // reliably, instead of calling a live geocoder that Vercel's IPs get throttled
 // on ~60% of the time. Rebuild after boundary/street changes; it rarely changes.
-const { streets: STREETS } = require('../streets.json');
+const { streets: STREETS, long: LONG_ARR } = require('../streets.json');
+const LONG_STREETS = new Set(LONG_ARR || []); // known streets too long to anchor from a midpoint (El Camino etc.)
 const SUF = { avenue: 'ave', av: 'ave', ave: 'ave', street: 'st', st: 'st', boulevard: 'blvd', blvd: 'blvd', road: 'rd', rd: 'rd', drive: 'dr', dr: 'dr', lane: 'ln', ln: 'ln', court: 'ct', ct: 'ct', place: 'pl', pl: 'pl', way: 'way', circle: 'cir', cir: 'cir', terrace: 'ter', ter: 'ter', parkway: 'pkwy', pkwy: 'pkwy', highway: 'hwy', hwy: 'hwy', real: 'real' };
 const DIRW = { north: 'n', south: 's', east: 'e', west: 'w', n: 'n', s: 's', e: 'e', w: 'w' };
 const SUFSET = new Set(Object.values(SUF));
@@ -181,10 +185,12 @@ function normStreet(name) {
 // shorter forms the build script keyed on (drop suffix, drop direction).
 function streetLookup(phrase) {
   const q = normStreet(phrase);
-  if (STREETS[q]) return STREETS[q];
   const w = q.split(' ');
-  if (w.length > 1 && SUFSET.has(w[w.length - 1]) && STREETS[w.slice(0, -1).join(' ')]) return STREETS[w.slice(0, -1).join(' ')];
-  if (w.length > 1 && DIRSET.has(w[0]) && STREETS[w.slice(1).join(' ')]) return STREETS[w.slice(1).join(' ')];
+  const forms = [q];
+  if (w.length > 1 && SUFSET.has(w[w.length - 1])) forms.push(w.slice(0, -1).join(' '));
+  if (w.length > 1 && DIRSET.has(w[0])) forms.push(w.slice(1).join(' '));
+  for (const f of forms) if (STREETS[f]) return STREETS[f];
+  for (const f of forms) if (LONG_STREETS.has(f)) return 'LONG'; // known street, too long to anchor
   return null;
 }
 
@@ -215,6 +221,9 @@ async function geocodeLocation(query) {
   if (geoCache.has(key)) return geoCache.get(key);
   // 1) Gazetteer first: instant, reliable, no network. Covers 750+ San Mateo streets.
   let result = streetLookup(query);
+  // A known-but-too-long street (El Camino): don't geocode it live (that would pin an
+  // arbitrary point on a 5-mile street). Signal LONG so the guide asks for a cross street.
+  if (result === 'LONG') { geoCache.set(key, 'LONG'); return 'LONG'; }
   // 2) Rare fallback for anything not in the gazetteer: a live lookup. If it already
   // has a street suffix, one call; a bare name tries the common street types.
   if (!result) {
@@ -226,7 +235,7 @@ async function geocodeLocation(query) {
 }
 
 // Injected when we genuinely cannot place the visitor, so the model stops fabricating.
-const NO_LOCATION = `NO LOCATION: you could not place where the visitor is, so for THIS reply you have NO distances and NO neighborhood for them. Hard rules: never call any place close, nearby, convenient, "your best bet", or "a short drive", never state OR ESTIMATE a distance in miles or minutes for ANY place (not "0.34 mi", not "0.00 mi", not "about a mile", not "a 7-minute drive"), never give two places the same made-up distance, never say a place is "right here" or "at your location", and never name or guess which neighborhood their street is in. If they want something nearby, tell them plainly you cannot judge distance yet and ask which neighborhood they are in (Downtown, Shoreview, Hayward Park, Baywood, San Mateo Park, North Central, Los Prados, Bay Meadows, Hillsdale) or a street with its type (like "Patricia Ave"); you may still offer a couple of solid options meanwhile. If they are NOT asking about proximity, just recommend good options normally.`;
+const NO_LOCATION = `NO LOCATION: you could not place where the visitor is, so for THIS reply you have NO distances and NO neighborhood for them. Hard rules: never call any place close, nearby, convenient, "your best bet", or "a short drive", never state OR ESTIMATE a distance in miles or minutes for ANY place (not "0.34 mi", not "0.00 mi", not "about a mile", not "a 7-minute drive"), never give two places the same made-up distance, never say a place is "right here" or "at your location", and never name or guess which neighborhood their street is in. If they want something nearby, tell them plainly you cannot judge distance yet and ask which neighborhood they are in (Downtown, Shoreview, Hayward Park, Baywood, San Mateo Park, North Central, Los Prados, Bay Meadows, Hillsdale), or, if they named a long street like El Camino Real, ask for a nearby cross street or landmark so you can pin them down; you may still offer a couple of solid options meanwhile. If they are NOT asking about proximity, just recommend good options normally.`;
 
 // Where is the visitor? The most recent location they gave, carried across turns.
 // First a listed place or known neighborhood; if none, a street/place they typed,
@@ -239,7 +248,10 @@ async function detectAnchor(clean) {
     const loc = extractLocationPhrase(m.content);
     if (loc) {
       const geo = await geocodeLocation(loc.phrase);
-      if (geo) return { label: loc.phrase, lat: geo.lat, lng: geo.lng };
+      if (geo && geo.lat) return { label: loc.phrase, lat: geo.lat, lng: geo.lng };
+      // A known street too long to anchor (El Camino): stop and let NO_LOCATION ask
+      // for a cross street, rather than guess a midpoint.
+      if (geo === 'LONG') return null;
       // They clearly named a place ("on B Street") we could not map. Do NOT fall
       // back to an OLDER street from earlier in the chat, that answers the wrong
       // location. Stop so NO_LOCATION asks them to clarify THIS one. A weak
@@ -260,9 +272,9 @@ function proximityBlock(anchor) {
   return `NEARBY LIST (internal, from ${anchor.label}; each line is: number. name | category | type | REAL distance in miles | description). It is ALREADY SORTED closest-first: line 1 is the closest place, and distance only increases down the list. This is the ONLY source of truth for anything about close, nearby, near me, walking distance, or "closest". Never mention this list or name any internal data; just speak like a local who knows the town. You ALREADY know where the visitor is (${anchor.label}); do NOT ask them for their neighborhood or nearest cross street again, just give the closest options with confidence.
 
 HOW TO ANSWER A NEARBY REQUEST:
-1. Match what they asked for to BOTH the type AND the description, NOT just the name. The description is what a place actually offers: if it names the item, that place fits, even if the type does not (Aldo's Pizza "also serves sandwiches" fits a sandwich ask; Ay Caray's "tortas (Mexican sandwiches)" fits; a cleaner whose description says "alterations" does alterations). Also, a dedicated deli, a taqueria, or a food market can do a sandwich, and a bakery or cafe has pastries, even if not spelled out. BUT do NOT send someone for food to a liquor store, convenience store, or general grocery whose description does not say it actually makes that food, a corner "deli" license is not a sandwich counter. For a food ask, prefer EAT & DRINK places that clearly serve it over a SHOPPING place that merely might. READ every nearby line's description before answering.
+1. Match what they asked for to BOTH the type AND the description, NOT just the name. The description is what a place actually offers: if it names the item, that place fits, even if the type does not (Aldo's Pizza "also serves sandwiches" fits a sandwich ask; Ay Caray's "tortas (Mexican sandwiches)" fits; a cleaner whose description says "alterations" does alterations). Also, a dedicated deli, a taqueria, or a food market can do a sandwich, and a bakery or cafe has pastries, even if not spelled out. A SHOPPING place absolutely counts as a real food option WHEN its description names the prepared food it makes (a Mexican market whose description says "on-site taqueria serving tacos and burritos" IS a taco spot, a bakery counter has pastries), so include it and rank it by distance like anything else, even if it is the closest. Only refuse to treat a place as a food spot when it is a liquor store, convenience store, or general grocery whose description does NOT say it makes that food, a corner "deli" license is not a sandwich counter. READ every nearby line's description before answering.
 2. STRICT ORDER: walk DOWN the list from line 1 and pick the first 2 or 3 that fit. Present them in that same order. The place you name FIRST must be the lowest-numbered one that fits, and you must NEVER present a higher-numbered place above a lower-numbered one that also fits. Only ever call something "the closest" if no lower-numbered line also fits. Before you send your answer, double check the one you called closest truly has the smallest distance among the ones you named.
-3. Copy each distance EXACTLY as written on its line (for example "0.21 mi"); never round it to a different number, average it, or invent one. Two different places must never be given the same distance. NEVER say a place is "0.00 mi", "right here", "at your location", or "where you are", the visitor is NEAR these places, not standing inside one. Give every recommendation its own real distance from the list.
+3. Copy each distance EXACTLY as written on its line (for example "0.21 mi"); never round it to a different number, average it, or invent one. (Two places genuinely near each other CAN show the same distance, that is fine, just copy what the line says.) NEVER say a place is "0.00 mi", "right here", "at your location", or "where you are", the visitor is NEAR these places, not standing inside one.
 4. Under 0.4 mi is an easy walk; 0.4 to 1 mi a longer walk or short drive; over 1 mi, suggest driving.
 5. Only places ON this list have a known distance. NEVER present a place that is not on this list as close, convenient, nearby, or a short drive, and NEVER state or guess a distance for an off-list place. If the only real fit is far, say plainly it is a drive and to check the map. Inventing or estimating a distance is never allowed.
 
@@ -276,7 +288,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-6'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-7'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
