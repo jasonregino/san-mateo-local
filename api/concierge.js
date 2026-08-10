@@ -255,7 +255,7 @@ function proximityBlock(anchor) {
 
 HOW TO ANSWER A NEARBY REQUEST:
 1. Match what they asked for to the "what they do" field, NOT just the name. A cleaner whose line says "alterations" does alterations. A deli, market, or taqueria can do a sandwich; a bakery or cafe has pastries. Do not skip a closer place that genuinely fits to feature a farther one whose name matches better.
-2. Recommend the CLOSEST 2 to 3 that fit, in distance order, and state each one's exact distance straight from this list.
+2. Lead with the SINGLE closest place that fits, then up to two more in increasing distance order. NEVER list a farther place before a closer one that also fits. Copy each distance EXACTLY as written on its line (for example "0.21 mi"); never round it to a different number, average it, or invent one like "about 0.6 miles".
 3. Under 0.4 mi is an easy walk; 0.4 to 1 mi a longer walk or short drive; over 1 mi, suggest driving.
 4. Only places ON this list have a known distance. NEVER present a place that is not on this list as close, convenient, nearby, or a short drive, and NEVER state or guess a distance for an off-list place. If the only real fit is far, say plainly it is a drive and to check the map. Inventing or estimating a distance is never allowed.
 
@@ -269,9 +269,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  // Deploy/diagnostic markers: prove which build is live and whether the gazetteer loaded.
-  res.setHeader('x-smc-build', 'gazetteer-3');
-  res.setHeader('x-smc-streets', String(Object.keys(STREETS || {}).length));
+  res.setHeader('x-smc-build', 'gaz-4'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
