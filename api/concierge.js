@@ -288,7 +288,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-8'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-9'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
@@ -337,7 +337,7 @@ module.exports = async (req, res) => {
       },
       body: JSON.stringify({
         model: MODEL,
-        max_tokens: 800,
+        max_tokens: 1500,
         system,
         messages: clean,
       }),
@@ -348,7 +348,11 @@ module.exports = async (req, res) => {
       return;
     }
     const data = await r.json();
-    let reply = (data.content && data.content[0] && data.content[0].text) || 'Sorry, I did not catch that. What are you looking for?';
+    // Find the TEXT block: Sonnet can emit a leading reasoning/other block, so the
+    // answer is not always content[0]. Join all text blocks just in case.
+    const textBlocks = Array.isArray(data.content) ? data.content.filter(b => b && b.type === 'text' && b.text) : [];
+    res.setHeader('x-smc-blocks', (Array.isArray(data.content) ? data.content.map(b => b.type).join(',') : 'none') + '|' + (data.stop_reason || '')); // temp diagnostic
+    let reply = textBlocks.map(b => b.text).join('\n').trim() || 'Sorry, I did not catch that. What are you looking for?';
     reply = reply.replace(/\s*[—―]\s*/g, ', '); // strip em-dashes (U+2014/2015): the voice rule, enforced even when the model ignores it
     res.status(200).json({ reply });
   } catch (e) {
