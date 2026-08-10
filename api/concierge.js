@@ -147,13 +147,17 @@ function cleanPhrase(p) {
 }
 function extractLocationPhrase(raw) {
   const t = String(raw || '');
-  const street = t.match(/\b([A-Za-z0-9]+(?:\s+[A-Za-z0-9]+){0,3}\s+(?:Ave|Avenue|St|Street|Blvd|Boulevard|Rd|Road|Dr|Drive|Way|Ln|Lane|Ct|Court|Pl|Place|Hwy|Highway|Real|Parkway|Pkwy|Circle|Cir|Terrace|Ter)\.?)\b/i);
-  if (street) { const c = cleanPhrase(street[1]); if (c.length >= 3) return c; }
-  const prep = t.match(/\b(?:closest to|close to|near|right by|next to|over on|live on|i'?m on|i am on|on|at|by|around|off|called)\s+([A-Za-z][A-Za-z0-9'. ]{2,28})/i);
+  // Prefer the "...on/near/live on <place>" pattern FIRST: it isolates just the
+  // street name. The bare street-suffix matcher below would otherwise greedily
+  // swallow the lead-in words ("I live on Patricia Ave" -> "live on patricia ave"),
+  // which no exact lookup can resolve.
+  const prep = t.match(/\b(?:closest to|close to|near|right by|next to|over on|live on|i'?m on|i am on|i live on|on|at|by|around|off|called)\s+([A-Za-z][A-Za-z0-9'. ]{2,28})/i);
   if (prep) {
-    const p = cleanPhrase(prep[1].replace(/\b(where|what|which|is|are|can|could|please|do|you|there|any|anything|open|now|and|but|the|a|an)\b.*$/i, ''));
+    const p = cleanPhrase(prep[1].replace(/\b(where|what|which|is|are|can|could|please|do|you|there|any|anything|open|now|looking|for|and|but|the|a|an)\b.*$/i, ''));
     if (p.length >= 3) return p;
   }
+  const street = t.match(/\b([A-Za-z0-9]+(?:\s+[A-Za-z0-9]+){0,3}\s+(?:Ave|Avenue|St|Street|Blvd|Boulevard|Rd|Road|Dr|Drive|Way|Ln|Lane|Ct|Court|Pl|Place|Hwy|Highway|Real|Parkway|Pkwy|Circle|Cir|Terrace|Ter)\.?)\b/i);
+  if (street) { const c = cleanPhrase(street[1]); if (c.length >= 3) return c; }
   return null;
 }
 
