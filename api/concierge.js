@@ -11,8 +11,9 @@
 // Needs one Vercel env var (Jason sets it; never in the code):
 //   ANTHROPIC_API_KEY  - an Anthropic API key
 //
-// No dependencies: global fetch only. Model is Sonnet (accuracy-first; it emits a
-// leading thinking block), and the big grounding block is prompt-cached.
+// No dependencies: global fetch only. Model is a HYBRID: fast Haiku by default, Sonnet
+// only when a Featured partner is nearby (Sonnet emits a leading thinking block, so the
+// text is extracted by block type). The big grounding block is prompt-cached.
 
 const { places, sections } = require('../concierge-data.json');
 
@@ -30,7 +31,7 @@ const SONNET = 'claude-sonnet-5';
 // the only place to flag one, no data rebuild needed. Keep it honest: the guardrails in
 // the prompt make sure a featured place never jumps ahead of a much-closer one.
 const FEATURED = new Set([
-  'Ay Caray Taqueria', // TEMP: A/B testing Haiku on the Featured ranking; remove after
+  // 'Business Name Exactly As Listed',  // add a business here when it signs up for a Featured spot
 ]);
 const isFeatured = p => p.featured === true || FEATURED.has(p.name);
 
@@ -325,7 +326,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-15'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-16'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
@@ -363,7 +364,6 @@ module.exports = async (req, res) => {
   const system = [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }];
   system.push({ type: 'text', text: anchor ? proximityBlock(anchor) : NO_LOCATION });
   const model = featuredNear(anchor) ? SONNET : HAIKU; // fast Haiku by default, precise Sonnet only near a Featured partner
-  res.setHeader('x-smc-model', model); // temp: verify the hybrid picks the right model
 
   try {
     const r = await fetch('https://api.anthropic.com/v1/messages', {
