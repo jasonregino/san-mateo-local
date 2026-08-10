@@ -161,7 +161,7 @@ function extractLocationPhrase(raw) {
 // scripts/build-streets.mjs from OpenStreetMap). Looked up instantly and
 // reliably, instead of calling a live geocoder that Vercel's IPs get throttled
 // on ~60% of the time. Rebuild after boundary/street changes; it rarely changes.
-const { streets: STREETS } = require('./streets.json');
+const { streets: STREETS } = require('../streets.json');
 const SUF = { avenue: 'ave', av: 'ave', ave: 'ave', street: 'st', st: 'st', boulevard: 'blvd', blvd: 'blvd', road: 'rd', rd: 'rd', drive: 'dr', dr: 'dr', lane: 'ln', ln: 'ln', court: 'ct', ct: 'ct', place: 'pl', pl: 'pl', way: 'way', circle: 'cir', cir: 'cir', terrace: 'ter', ter: 'ter', parkway: 'pkwy', pkwy: 'pkwy', highway: 'hwy', hwy: 'hwy', real: 'real' };
 const DIRW = { north: 'n', south: 's', east: 'e', west: 'w', n: 'n', s: 's', e: 'e', w: 'w' };
 const SUFSET = new Set(Object.values(SUF));
