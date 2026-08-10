@@ -43,7 +43,7 @@ STRICT RULES:
 - If a visitor names a place that is not an exact match but plausibly refers to a listing in THE GUIDE (a local nickname, a shortening, or a partial name, like "The Fritter" for Apple Fritter), offer that listing as a question to confirm before you recommend it. Only say a place is not in the guide when nothing in THE GUIDE plausibly matches.
 - San Mateo Local covers LOCAL, INDEPENDENT businesses, not chains. If someone asks about a chain or a place not in THE GUIDE, do not endorse it. Warmly say the guide is about local independents and offer a real listed option if one fits.
 - If the guide truly does not cover what they need, say so warmly and point them to the closest thing it does have or the right SECTION page. Never say the guide is "only food and drink"; it covers restaurants, home services, local services, shopping, and things to do.
-- SERVICE-AREA BUSINESSES: many home services and local services (plumbers, electricians, roofers, landscapers, cleaners, movers) travel to the customer and have no set neighborhood. For these, do NOT ask which neighborhood they are in and do not worry about proximity. Just recommend the best-fitting independent providers and give the phone number to call. Ask about neighborhood only for a place the person travels TO, like a restaurant, cafe, bar, barber, or shop.
+- SERVICE-AREA vs STOREFRONT: only a few businesses TRAVEL TO the customer with no place to visit: plumbers, electricians, roofers, landscapers, painters, handymen, movers, and house-cleaning/maid services. For ONLY those, do not ask the neighborhood or rank by distance, just recommend the best fit and give the phone. EVERYTHING ELSE is a storefront the customer goes TO and MUST be ranked by proximity when you know where they are, including DRY CLEANERS, TAILORS and ALTERATIONS shops, barbers, salons, auto and tire shops, dentists, restaurants, cafes, bars, and stores. A "dry cleaner and alterations" shop is a storefront you visit, not a come-to-you service, so absolutely use distance for it.
 - LOCATION HONESTY: unless a NEARBY list is provided, you know each place's neighborhood, street address, and phone, but not exact distances. Without it, never say a place is "on" a street, "near", "next to", "nearby", or "a few minutes from" another place unless the street addresses clearly support it (same street only counts when block numbers are close: 1901 and 2051 S Norfolk St are close; 478 and 2051 S Norfolk St are far). When unsure two places are close, say it is approximate and tell them to check the map pin. Never guess or invent a location.
 - If you do NOT have a NEARBY list (you cannot place where the visitor lives), never claim any spot is convenient, close, nearby, or a short trip for them, and never say a neighborhood "should be convenient" for them. First ask which neighborhood they are in (for example Downtown, Shoreview, Hayward Park, or Baywood), since that lets you find the genuinely closest options. You may still list a couple of options meanwhile, but say plainly you cannot judge distance until you know their area. Do not guess convenience, and do not guess which neighborhood their street is in.
 - When a NEARBY list of real distances from the visitor's location is provided, trust it completely for anything about nearby, close, next door, or walking distance: recommend the closest options in the category they asked for and mention the approximate distance. Under 0.4 mi is an easy walk; 0.4 to 1 mile is a longer walk or short drive; over 1 mile, suggest driving. That list is internal: never mention it, never name any internal list or data by name, never say you were "given" anything, and never tell the visitor you "lack" location info. Never use the words "proximity", "context", "data", or "list" to describe your own knowledge to the visitor; just speak naturally like a local who knows the town. If you truly do not know where the visitor is, simply ask which neighborhood or nearest cross street. CRITICAL: only ever state a distance in miles for a place that is IN the NEARBY list. If you mention any place that is NOT in the NEARBY list (for example a farther option that fits what they want), do NOT state or estimate its distance and never call it "about a mile" or any number; just say it is farther out and suggest they check the map. Inventing or guessing a distance is never allowed.
@@ -155,7 +155,7 @@ function extractLocationPhrase(raw) {
   // street name. The bare street-suffix matcher below would otherwise greedily
   // swallow the lead-in words ("I live on Patricia Ave" -> "live on patricia ave"),
   // which no exact lookup can resolve.
-  const prep = t.match(/\b(?:closest to|close to|near|right by|next to|over on|live on|i'?m on|i am on|i live on|on|at|by|around|off|called)\s+([A-Za-z][A-Za-z0-9'. ]{2,28})/i);
+  const prep = t.match(/\b(?:closest to|close to|near|right by|next to|over on|live on|i'?m on|i am on|i live on|on|at|by|around|off|called)\s+(?:\d+\s+)?([A-Za-z][A-Za-z0-9'. ]{2,28})/i);
   if (prep) {
     const p = cleanPhrase(prep[1].replace(/\b(where|what|which|is|are|can|could|please|do|you|there|any|anything|open|now|looking|for|and|but|the|a|an)\b.*$/i, ''));
     if (p.length >= 3) return { phrase: p, confident: true }; // explicit "on/near <place>" = they mean THIS place
@@ -184,13 +184,18 @@ function normStreet(name) {
 // Look a typed street up in the gazetteer, trying the full name then the same
 // shorter forms the build script keyed on (drop suffix, drop direction).
 function streetLookup(phrase) {
-  const q = normStreet(phrase);
-  const w = q.split(' ');
-  const forms = [q];
-  if (w.length > 1 && SUFSET.has(w[w.length - 1])) forms.push(w.slice(0, -1).join(' '));
-  if (w.length > 1 && DIRSET.has(w[0])) forms.push(w.slice(1).join(' '));
-  for (const f of forms) if (STREETS[f]) return STREETS[f];
-  for (const f of forms) if (LONG_STREETS.has(f)) return 'LONG'; // known street, too long to anchor
+  let words = normStreet(phrase).split(' ').filter(Boolean);
+  if (words.length > 1 && /^\d+$/.test(words[0])) words = words.slice(1); // drop a leading house number ("957 patricia" -> "patricia")
+  // Try the phrase, then drop trailing words one at a time, so "patricia ave at the
+  // moment" -> "patricia ave" and "el camino real near hillsdale" -> "el camino real".
+  for (let len = words.length; len >= 1; len--) {
+    const w = words.slice(0, len);
+    const q = w.join(' ');
+    if (STREETS[q]) return STREETS[q];
+    if (w.length > 1 && SUFSET.has(w[w.length - 1]) && STREETS[w.slice(0, -1).join(' ')]) return STREETS[w.slice(0, -1).join(' ')];
+    if (w.length > 1 && DIRSET.has(w[0]) && STREETS[w.slice(1).join(' ')]) return STREETS[w.slice(1).join(' ')];
+    if (LONG_STREETS.has(q)) return 'LONG'; // known street, too long to anchor
+  }
   return null;
 }
 
@@ -258,6 +263,15 @@ async function detectAnchor(clean) {
       // suffix-only guess ("cross street") is allowed to fall through.
       if (loc.confident) return null;
     }
+    // A short bare reply that IS a known street ("Newbridge", "Beacon", "957 Patricia"),
+    // with no "on/near" cue. Gazetteer-only (no live geocode), and only when the whole
+    // message is short, so an ordinary sentence never accidentally matches a street word.
+    const bareWords = cleanPhrase(m.content).split(' ').filter(Boolean);
+    if (bareWords.length >= 1 && bareWords.length <= 3) {
+      const bare = streetLookup(bareWords.join(' '));
+      if (bare && bare.lat) return { label: bareWords.join(' '), lat: bare.lat, lng: bare.lng };
+      if (bare === 'LONG') return null;
+    }
   }
   return null;
 }
@@ -269,7 +283,7 @@ function proximityBlock(anchor) {
   let near = ranked.filter(r => r.mi <= 1.5).slice(0, 24);
   if (near.length < 8) near = ranked.slice(0, 12); // sparse area: just take the nearest dozen
   const lines = near.map((r, i) => `${i + 1}. ${r.p.name} | ${r.p.cat} | ${r.p.type || r.p.cat} | ${r.mi.toFixed(2)} mi | ${(r.p.about || '').replace(/\s+/g, ' ').trim()}`).join('\n');
-  return `NEARBY LIST (internal, from ${anchor.label}; each line is: number. name | category | type | REAL distance in miles | description). It is ALREADY SORTED closest-first: line 1 is the closest place, and distance only increases down the list. This is the ONLY source of truth for anything about close, nearby, near me, walking distance, or "closest". Never mention this list or name any internal data; just speak like a local who knows the town. You ALREADY know where the visitor is (${anchor.label}); do NOT ask them for their neighborhood or nearest cross street again, just give the closest options with confidence.
+  return `NEARBY LIST (internal, from ${anchor.label}; each line is: number. name | category | type | REAL distance in miles | description). It is ALREADY SORTED closest-first: line 1 is the closest place, and distance only increases down the list. This is the ONLY source of truth for anything about close, nearby, near me, walking distance, or "closest". Never mention this list or name any internal data; just speak like a local who knows the town. You ALREADY know where the visitor is (${anchor.label}); do NOT ask them for their neighborhood or nearest cross street again, just give the closest options with confidence. IMPORTANT: even if EARLIER in this same conversation you said you could not place them or could not calculate distance, that is no longer true, you CAN now. Do not repeat that you cannot judge distance, do not tell them to check the map themselves, and do not apologize for not knowing, just answer with the real distances below.
 
 HOW TO ANSWER A NEARBY REQUEST:
 1. Match what they asked for to BOTH the type AND the description, NOT just the name. The description is what a place actually offers: if it names the item, that place fits, even if the type does not (Aldo's Pizza "also serves sandwiches" fits a sandwich ask; Ay Caray's "tortas (Mexican sandwiches)" fits; a cleaner whose description says "alterations" does alterations). Also, a dedicated deli, a taqueria, or a food market can do a sandwich, and a bakery or cafe has pastries, even if not spelled out. A SHOPPING place absolutely counts as a real food option WHEN its description names the prepared food it makes (a Mexican market whose description says "on-site taqueria serving tacos and burritos" IS a taco spot, a bakery counter has pastries), so include it and rank it by distance like anything else, even if it is the closest. Only refuse to treat a place as a food spot when it is a liquor store, convenience store, or general grocery whose description does NOT say it makes that food, a corner "deli" license is not a sandwich counter. READ every nearby line's description before answering.
@@ -288,7 +302,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-10'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-11'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
