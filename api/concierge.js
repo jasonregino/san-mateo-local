@@ -11,8 +11,8 @@
 // Needs one Vercel env var (Jason sets it; never in the code):
 //   ANTHROPIC_API_KEY  - an Anthropic API key
 //
-// No dependencies: global fetch only. Model is Haiku (fast + cheap), and the
-// big grounding block is prompt-cached so repeat calls stay quick and cheap.
+// No dependencies: global fetch only. Model is Sonnet (accuracy-first; it emits a
+// leading thinking block), and the big grounding block is prompt-cached.
 
 const { places, sections } = require('../concierge-data.json');
 
@@ -288,7 +288,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-9'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-10'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
@@ -323,7 +323,6 @@ module.exports = async (req, res) => {
   let anchor;
   if (gpsAnchor && !lastNamesPlace) anchor = gpsAnchor;
   else anchor = (await detectAnchor(clean)) || gpsAnchor;
-  res.setHeader('x-smc-anchor', anchor ? encodeURIComponent(anchor.label) : 'none');
   const system = [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }];
   system.push({ type: 'text', text: anchor ? proximityBlock(anchor) : NO_LOCATION });
 
@@ -348,10 +347,9 @@ module.exports = async (req, res) => {
       return;
     }
     const data = await r.json();
-    // Find the TEXT block: Sonnet can emit a leading reasoning/other block, so the
-    // answer is not always content[0]. Join all text blocks just in case.
+    // Find the TEXT block: Sonnet emits a leading `thinking` block, so the answer is
+    // not content[0]. Join all text blocks in case there is more than one.
     const textBlocks = Array.isArray(data.content) ? data.content.filter(b => b && b.type === 'text' && b.text) : [];
-    res.setHeader('x-smc-blocks', (Array.isArray(data.content) ? data.content.map(b => b.type).join(',') : 'none') + '|' + (data.stop_reason || '')); // temp diagnostic
     let reply = textBlocks.map(b => b.text).join('\n').trim() || 'Sorry, I did not catch that. What are you looking for?';
     reply = reply.replace(/\s*[—―]\s*/g, ', '); // strip em-dashes (U+2014/2015): the voice rule, enforced even when the model ignores it
     res.status(200).json({ reply });
