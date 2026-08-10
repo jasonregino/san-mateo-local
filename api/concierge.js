@@ -154,10 +154,10 @@ function extractLocationPhrase(raw) {
   const prep = t.match(/\b(?:closest to|close to|near|right by|next to|over on|live on|i'?m on|i am on|i live on|on|at|by|around|off|called)\s+([A-Za-z][A-Za-z0-9'. ]{2,28})/i);
   if (prep) {
     const p = cleanPhrase(prep[1].replace(/\b(where|what|which|is|are|can|could|please|do|you|there|any|anything|open|now|looking|for|and|but|the|a|an)\b.*$/i, ''));
-    if (p.length >= 3) return p;
+    if (p.length >= 3) return { phrase: p, confident: true }; // explicit "on/near <place>" = they mean THIS place
   }
   const street = t.match(/\b([A-Za-z0-9]+(?:\s+[A-Za-z0-9]+){0,3}\s+(?:Ave|Avenue|St|Street|Blvd|Boulevard|Rd|Road|Dr|Drive|Way|Ln|Lane|Ct|Court|Pl|Place|Hwy|Highway|Real|Parkway|Pkwy|Circle|Cir|Terrace|Ter)\.?)\b/i);
-  if (street) { const c = cleanPhrase(street[1]); if (c.length >= 3) return c; }
+  if (street) { const c = cleanPhrase(street[1]); if (c.length >= 3) return { phrase: c, confident: false }; } // bare suffix match, weaker (can be "cross street")
   return null;
 }
 
@@ -235,10 +235,15 @@ async function detectAnchor(clean) {
     if (m.role !== 'user') continue;
     const known = anchorFromText(m.content);
     if (known) return known;
-    const phrase = extractLocationPhrase(m.content);
-    if (phrase) {
-      const geo = await geocodeLocation(phrase);
-      if (geo) return { label: phrase, lat: geo.lat, lng: geo.lng };
+    const loc = extractLocationPhrase(m.content);
+    if (loc) {
+      const geo = await geocodeLocation(loc.phrase);
+      if (geo) return { label: loc.phrase, lat: geo.lat, lng: geo.lng };
+      // They clearly named a place ("on B Street") we could not map. Do NOT fall
+      // back to an OLDER street from earlier in the chat, that answers the wrong
+      // location. Stop so NO_LOCATION asks them to clarify THIS one. A weak
+      // suffix-only guess ("cross street") is allowed to fall through.
+      if (loc.confident) return null;
     }
   }
   return null;
@@ -269,7 +274,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-4'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-5'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
