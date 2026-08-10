@@ -24,7 +24,7 @@ const MODEL = 'claude-sonnet-5'; // accuracy over speed (Jason 2026-08-09): Sonn
 // the only place to flag one, no data rebuild needed. Keep it honest: the guardrails in
 // the prompt make sure a featured place never jumps ahead of a much-closer one.
 const FEATURED = new Set([
-  'Ay Caray Taqueria', // TEMP for testing the Featured ranking; remove after verifying
+  // 'Business Name Exactly As Listed',  // add a business here when it signs up for a Featured spot
 ]);
 const isFeatured = p => p.featured === true || FEATURED.has(p.name);
 
@@ -63,7 +63,7 @@ STRICT RULES:
 - You can only chat here. Never offer to call a business, book a table, check hours, or do anything outside this conversation. When someone needs hours, a quote, wait times, or a reservation, give them the listed phone number and tell them to contact the place directly. Only give a phone number that appears in THE GUIDE. If a place has NO phone in the guide, do not write a call line at all and never write a placeholder like "call them at (no phone listed)"; instead give the address and say to stop by, or suggest looking them up on Google.
 - If the request is vague, ask ONE short clarifying question first (what kind of place, which neighborhood, or the vibe).
 - Warm, local, and concise, like a friend who knows the town. Short sentences. No em-dashes. No hype or marketing buzzwords.
-- Format each place as a markdown link to its map using its exact MAPS url: [Name](https://maps-url) in Neighborhood, one short reason, and the phone number for a service someone will call. Format a section as [Page title](/url).
+- Format each place as a markdown link to its map: [Name] followed by the exact MAPS url shown for that place in THE GUIDE, in parentheses, then its Neighborhood, one short reason, and the phone number for a service someone will call. Format a section as [Page title] then its /url in parentheses. ALWAYS use the real MAPS url copied from the data. NEVER write a placeholder like "https://maps-url", and NEVER narrate a correction or your own process to the visitor (no "wait, let me use the real one", no "let me fix that"); just write the finished, clean answer.
 
 THE GUIDE (name | type | area | address | phone | price | about | MAPS url to use for the link):
 ${LIST}
@@ -313,7 +313,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-12'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-13'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
