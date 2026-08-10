@@ -157,8 +157,35 @@ function extractLocationPhrase(raw) {
   return null;
 }
 
-// Geocode a typed location to coordinates, once, via OpenStreetMap (free). Cached,
-// and clamped to the San Mateo area so a same-named street elsewhere never matches.
+// Built-in gazetteer of every named San Mateo street (built offline by
+// scripts/build-streets.mjs from OpenStreetMap). Looked up instantly and
+// reliably, instead of calling a live geocoder that Vercel's IPs get throttled
+// on ~60% of the time. Rebuild after boundary/street changes; it rarely changes.
+const { streets: STREETS } = require('./streets.json');
+const SUF = { avenue: 'ave', av: 'ave', ave: 'ave', street: 'st', st: 'st', boulevard: 'blvd', blvd: 'blvd', road: 'rd', rd: 'rd', drive: 'dr', dr: 'dr', lane: 'ln', ln: 'ln', court: 'ct', ct: 'ct', place: 'pl', pl: 'pl', way: 'way', circle: 'cir', cir: 'cir', terrace: 'ter', ter: 'ter', parkway: 'pkwy', pkwy: 'pkwy', highway: 'hwy', hwy: 'hwy', real: 'real' };
+const DIRW = { north: 'n', south: 's', east: 'e', west: 'w', n: 'n', s: 's', e: 'e', w: 'w' };
+const SUFSET = new Set(Object.values(SUF));
+const DIRSET = new Set(Object.values(DIRW));
+function normStreet(name) {
+  const w = String(name).toLowerCase().replace(/[.,]/g, '').replace(/\s+/g, ' ').trim().split(' ');
+  if (SUF[w[w.length - 1]]) w[w.length - 1] = SUF[w[w.length - 1]];
+  if (w.length > 1 && DIRW[w[0]]) w[0] = DIRW[w[0]];
+  return w.join(' ');
+}
+// Look a typed street up in the gazetteer, trying the full name then the same
+// shorter forms the build script keyed on (drop suffix, drop direction).
+function streetLookup(phrase) {
+  const q = normStreet(phrase);
+  if (STREETS[q]) return STREETS[q];
+  const w = q.split(' ');
+  if (w.length > 1 && SUFSET.has(w[w.length - 1]) && STREETS[w.slice(0, -1).join(' ')]) return STREETS[w.slice(0, -1).join(' ')];
+  if (w.length > 1 && DIRSET.has(w[0]) && STREETS[w.slice(1).join(' ')]) return STREETS[w.slice(1).join(' ')];
+  return null;
+}
+
+// Geocode a typed location to coordinates, once. The gazetteer answers first;
+// a live OpenStreetMap (Nominatim) call is only a rare fallback for anything not
+// in it. Clamped to the San Mateo area so a same-named street elsewhere never matches.
 const geoCache = new Map();
 const ST_SUFFIX = /\b(ave|avenue|st|street|blvd|boulevard|rd|road|dr|drive|way|ln|lane|ct|court|pl|place|hwy|highway|real|parkway|pkwy|circle|cir|terrace|ter)\.?$/i;
 async function geocodeOnce(q) {
@@ -181,12 +208,14 @@ async function geocodeOnce(q) {
 async function geocodeLocation(query) {
   const key = query.toLowerCase();
   if (geoCache.has(key)) return geoCache.get(key);
-  // If it already has a street suffix, one lookup. A bare name like "Patricia" tries
-  // the common street types (Patricia Ave, Patricia St, ...) and keeps the first that
-  // resolves to a real San Mateo street.
-  const variants = ST_SUFFIX.test(query.trim()) ? [query] : [query + ' Ave', query + ' St', query + ' Dr', query + ' Blvd'];
-  let result = null;
-  for (const v of variants) { result = await geocodeOnce(v); if (result) break; }
+  // 1) Gazetteer first: instant, reliable, no network. Covers 750+ San Mateo streets.
+  let result = streetLookup(query);
+  // 2) Rare fallback for anything not in the gazetteer: a live lookup. If it already
+  // has a street suffix, one call; a bare name tries the common street types.
+  if (!result) {
+    const variants = ST_SUFFIX.test(query.trim()) ? [query] : [query + ' Ave', query + ' St', query + ' Dr', query + ' Blvd'];
+    for (const v of variants) { result = await geocodeOnce(v); if (result) break; }
+  }
   geoCache.set(key, result);
   return result;
 }
@@ -218,7 +247,7 @@ function proximityBlock(anchor) {
   let near = ranked.filter(r => r.mi <= 1.5).slice(0, 24);
   if (near.length < 8) near = ranked.slice(0, 12); // sparse area: just take the nearest dozen
   const lines = near.map(r => `- ${r.p.name} | ${r.p.cat} | ${r.p.type || r.p.cat} | ${r.mi.toFixed(2)} mi`).join('\n');
-  return `NEARBY LIST (internal, from ${anchor.label}; each line is: name | category | what they do | REAL distance in miles, nearest first). This is the ONLY source of truth for anything about close, nearby, near me, walking distance, or "closest". Never mention this list, never say "proximity context", just speak naturally about how close things are.
+  return `NEARBY LIST (internal, from ${anchor.label}; each line is: name | category | what they do | REAL distance in miles, nearest first). This is the ONLY source of truth for anything about close, nearby, near me, walking distance, or "closest". Never mention this list, never say "proximity context", just speak naturally about how close things are. You ALREADY know where the visitor is (${anchor.label}); do NOT ask them for their neighborhood or nearest cross street again, just give them the closest options with confidence.
 
 HOW TO ANSWER A NEARBY REQUEST:
 1. Match what they asked for to the "what they do" field, NOT just the name. A cleaner whose line says "alterations" does alterations. A deli, market, or taqueria can do a sandwich; a bakery or cafe has pastries. Do not skip a closer place that genuinely fits to feature a farther one whose name matches better.
