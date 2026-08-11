@@ -300,12 +300,14 @@
     /* Set day/night before paint: saved choice first, otherwise match the phone's setting. */
     (function(){ try { document.documentElement.classList.add('js'); var s = localStorage.getItem('sml-theme'); var t = s || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
   </script>
-  <!-- LATESTBG:START --><style>.hoods{background:#EFE4CC;}</style><!-- LATESTBG:END -->
+  <!-- LATESTBG:START --><style>.hoods{background:#21514E;}</style><!-- LATESTBG:END -->
 </head>
 <body id="top">
 
   <!-- ===== Masthead ===== -->
   <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--clay-deep);">Get on the guide &rarr;</strong></a></div>
+  <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--clay-deep); font-weight:700;">899</strong> hand-picked local San Mateo businesses and counting</div>
+  <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
   <header class="masthead">
     <div class="masthead-top">
       <a class="brand" href="#top">
@@ -471,7 +473,6 @@
           <article class="fav is-featured"><a href="spotlight-takahashi-market.html"><span class="fav-tag">&#9733; Featured</span><span class="fav-kicker">Market</span><h3>Takahashi Market</h3><p class="meta">Downtown</p><p>Hawaiian and Japanese groceries, and Spam musubi worth the trip.</p></a></article>
           <article class="fav is-featured"><a href="shopping.html"><span class="fav-tag">&#9733; Featured</span><span class="fav-kicker">Florist</span><h3>Ah Sam Floral</h3><p class="meta">El Camino · since 1933</p><p>A family florist that has bloomed in San Mateo since 1933.</p></a></article>
           <article class="fav"><a href="aldos-pizza-san-mateo.html"><span class="fav-kicker">Support Local</span><h3>Aldo's Pizza</h3><p class="meta">600 S Norfolk St</p><p>San Mateo's oldest pizzeria nearly closed this summer. The neighborhood is keeping it open, so go grab a pie. Read their story.</p></a></article>
-          <article class="fav"><a href="home-services.html"><span class="fav-kicker">Deal</span><h3>Full Circle Barbershop</h3><p class="meta">Downtown · Sun Aug 9</p><p>Free back-to-school haircuts on Sunday, August 9, from 9am to 1pm.</p></a></article>
           <article class="fav"><a href="things-to-do.html"><span class="fav-kicker">Event</span><h3>HEAD WEST Marketplace</h3><p class="meta">Downtown · B Street · Sat Aug 15</p><p>The makers market returns to B Street, 11am to 5pm, with local makers, crafters, artists, and food. Third Saturday of every month.</p></a></article>
           <article class="fav"><a href="things-to-do.html"><span class="fav-kicker">Event</span><h3>Central Bark</h3><p class="meta">Central Park · Sun Aug 16</p><p>A free family and dog celebration at Fitzgerald Field, noon to 3pm, with dog contests, demos, pet-friendly vendors, and community resources. Presented by San Mateo PAL and Parks &amp; Rec.</p></a></article>
           <article class="fav"><a href="things-to-do.html"><span class="fav-kicker">Event</span><h3>Paw-fect Match Adoption Pop-Up</h3><p class="meta">Downtown · B Street · Sun Aug 23</p><p>Meet adoptable pets with the Peninsula Humane Society &amp; SPCA on B Street at 1st Ave, 1 to 3pm. You can start an adoption application on-site.</p></a></article>
@@ -496,7 +497,6 @@
           <article aria-hidden="true" class="fav is-featured"><a href="spotlight-takahashi-market.html"><span class="fav-tag">&#9733; Featured</span><span class="fav-kicker">Market</span><h3>Takahashi Market</h3><p class="meta">Downtown</p><p>Hawaiian and Japanese groceries, and Spam musubi worth the trip.</p></a></article>
           <article aria-hidden="true" class="fav is-featured"><a href="shopping.html"><span class="fav-tag">&#9733; Featured</span><span class="fav-kicker">Florist</span><h3>Ah Sam Floral</h3><p class="meta">El Camino · since 1933</p><p>A family florist that has bloomed in San Mateo since 1933.</p></a></article>
           <article aria-hidden="true" class="fav"><a href="aldos-pizza-san-mateo.html"><span class="fav-kicker">Support Local</span><h3>Aldo's Pizza</h3><p class="meta">600 S Norfolk St</p><p>San Mateo's oldest pizzeria nearly closed this summer. The neighborhood is keeping it open, so go grab a pie. Read their story.</p></a></article>
-          <article aria-hidden="true" class="fav"><a href="home-services.html"><span class="fav-kicker">Deal</span><h3>Full Circle Barbershop</h3><p class="meta">Downtown · Sun Aug 9</p><p>Free back-to-school haircuts on Sunday, August 9, from 9am to 1pm.</p></a></article>
           <article aria-hidden="true" class="fav"><a href="things-to-do.html"><span class="fav-kicker">Event</span><h3>HEAD WEST Marketplace</h3><p class="meta">Downtown · B Street · Sat Aug 15</p><p>The makers market returns to B Street, 11am to 5pm, with local makers, crafters, artists, and food. Third Saturday of every month.</p></a></article>
           <article aria-hidden="true" class="fav"><a href="things-to-do.html"><span class="fav-kicker">Event</span><h3>Central Bark</h3><p class="meta">Central Park · Sun Aug 16</p><p>A free family and dog celebration at Fitzgerald Field, noon to 3pm, with dog contests, demos, pet-friendly vendors, and community resources. Presented by San Mateo PAL and Parks &amp; Rec.</p></a></article>
           <article aria-hidden="true" class="fav"><a href="things-to-do.html"><span class="fav-kicker">Event</span><h3>Paw-fect Match Adoption Pop-Up</h3><p class="meta">Downtown · B Street · Sun Aug 23</p><p>Meet adoptable pets with the Peninsula Humane Society &amp; SPCA on B Street at 1st Ave, 1 to 3pm. You can start an adoption application on-site.</p></a></article>

@@ -104,8 +104,10 @@
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Bay Meadows — San Mateo Local","description":"A local's guide to Bay Meadows in San Mateo, the transit-oriented neighborhood built on the historic racetrack where Seabiscuit ran. Where to eat and go, plus the story behind it.","itemListElement":[{"@type":"ListItem","position":1,"name":"Bahche Mezzehouse & Wine Bar","address":"3081 S Delaware St, Ste C, San Mateo, CA 94403"},{"@type":"ListItem","position":2,"name":"The Breakfast Club at Midtown","address":"3035 S Delaware St, San Mateo, CA 94403"},{"@type":"ListItem","position":3,"name":"Fieldwork Brewing Co.","address":"3030 S Delaware St, San Mateo, CA 94403"},{"@type":"ListItem","position":4,"name":"Bay Meadows Community Park","address":"301 E 28th Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":5,"name":"Paddock Park","address":"2900 Baze Rd, San Mateo, CA 94403"},{"@type":"ListItem","position":6,"name":"Basecamp Fitness","address":"3050 S Delaware St, Ste 120, San Mateo, CA 94403"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Bay Meadows — San Mateo Local","description":"A local's guide to Bay Meadows in San Mateo, the transit-oriented neighborhood built on the historic racetrack where Seabiscuit ran. Where to eat and go, plus the story behind it.","itemListElement":[{"@type":"ListItem","position":1,"name":"Bahche Mezzehouse & Wine Bar","address":"3081 S Delaware St, Ste C, San Mateo, CA 94403"},{"@type":"ListItem","position":2,"name":"The Breakfast Club at Midtown","address":"3035 S Delaware St, San Mateo, CA 94403"},{"@type":"ListItem","position":3,"name":"Fieldwork Brewing Co.","address":"3030 S Delaware St, San Mateo, CA 94403"},{"@type":"ListItem","position":4,"name":"Bay Meadows Community Park","address":"301 E 28th Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":5,"name":"Paddock Park","address":"2900 Baze Rd, San Mateo, CA 94403"},{"@type":"ListItem","position":6,"name":"Basecamp Fitness","address":"3050 S Delaware St, Ste 120, San Mateo, CA 94403"},{"@type":"ListItem","position":7,"name":"Tacos El Grullense C&D","address":"60 31st Ave"},{"@type":"ListItem","position":8,"name":"LFBA Studios - San Mateo","address":"3035 S Delaware St Suite B"},{"@type":"ListItem","position":9,"name":"Titus Tang DDS, MAGD, Dental 360","address":"360 W Sailer Dr"},{"@type":"ListItem","position":10,"name":"Optical Illusions of San Mateo | An Optometric Practice - Hillsdale Mall","address":"194 Hillsdale Mall"},{"@type":"ListItem","position":11,"name":"Dahliana Nail & Spa","address":"356 E Sailer Dr"}]}</script>
   <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--clay-deep);">Get on the guide &rarr;</strong></a></div>
+  <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--clay-deep); font-weight:700;">899</strong> hand-picked local San Mateo businesses and counting</div>
+  <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
   <header class="masthead">
     <div class="masthead-top">
       <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg><span class="brand-name">San Mateo Local</span></a>
@@ -176,6 +178,11 @@
         <div class="m">Brewery / taproom &middot; $$</div>
         <p>More than 20 rotating fresh taps and Detroit-style pizzas on an industrial-style patio near the Hillsdale Caltrain stop.</p>
       </div>
+      <div class="spot">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Tacos%20El%20Grullense%20C%26D%2060%2031st%20Ave" target="_blank" rel="noopener">Tacos El Grullense C&amp;D</a></h3>
+        <div class="m">Mexican &middot; $$</div>
+        <p>A Mexican restaurant on 31st Avenue.</p>
+      </div>
     <h2>Things to Do</h2>
       <div class="spot">
         <h3><a href="https://www.google.com/maps/search/?api=1&query=Bay%20Meadows%20Community%20Park%20301%20E%2028th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Bay Meadows Community Park</a></h3>
@@ -192,6 +199,26 @@
         <h3><a href="https://www.google.com/maps/search/?api=1&query=Basecamp%20Fitness%203050%20S%20Delaware%20St%2C%20Ste%20120%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Basecamp Fitness</a></h3>
         <div class="m">gym</div>
         <p>High-intensity interval training studio in Bay Meadows, with quick treadmill-and-strength group classes.</p>
+      </div>
+      <div class="spot">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=LFBA%20Studios%20-%20San%20Mateo%203035%20S%20Delaware%20St%20Suite%20B" target="_blank" rel="noopener">LFBA Studios - San Mateo</a></h3>
+        <div class="m">gym</div>
+        <p>A gym on South Delaware Street.</p>
+      </div>
+      <div class="spot">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Titus%20Tang%20DDS%2C%20MAGD%2C%20Dental%20360%20360%20W%20Sailer%20Dr" target="_blank" rel="noopener">Titus Tang DDS, MAGD, Dental 360</a></h3>
+        <div class="m">dentist</div>
+        <p>A dentist on West Sailer Drive.</p>
+      </div>
+      <div class="spot">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Optical%20Illusions%20of%20San%20Mateo%20%7C%20An%20Optometric%20Practice%20-%20Hillsdale%20Mall%20194%20Hillsdale%20Mall" target="_blank" rel="noopener">Optical Illusions of San Mateo | An Optometric Practice - Hillsdale Mall</a></h3>
+        <div class="m">optician</div>
+        <p>An optometry office on Hillsdale Mall.</p>
+      </div>
+      <div class="spot">
+        <h3><a href="https://www.google.com/maps/search/?api=1&query=Dahliana%20Nail%20%26%20Spa%20356%20E%20Sailer%20Dr" target="_blank" rel="noopener">Dahliana Nail &amp; Spa</a></h3>
+        <div class="m">nails</div>
+        <p>A nail salon on East Sailer Drive.</p>
       </div>
     </section>
 
