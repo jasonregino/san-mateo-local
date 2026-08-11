@@ -12,6 +12,9 @@ scripts/
 photos-staging/
 MONETIZATION_ROADMAP.md
 SPOTLIGHT_OUTREACH.md
+COWORK_LOCAL_SERVICES_COVERAGE.md
+local-services-coverage.md
+local-services-clean.md
 
 # Local env / secrets — NEVER commit
 .env
