@@ -12,3 +12,8 @@ scripts/
 photos-staging/
 MONETIZATION_ROADMAP.md
 SPOTLIGHT_OUTREACH.md
+
+# Local env / secrets — NEVER commit
+.env
+.env.local
+.env*.local
