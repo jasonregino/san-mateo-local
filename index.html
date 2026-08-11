@@ -363,6 +363,7 @@
           <a class="btn btn-clay btn-ask" href="ask.html">&#128172; Ask a Local &rarr;</a>
           <a class="btn btn-outline" href="#favorites">Browse the favorites</a>
           <a class="btn btn-outline" href="blog.html">Read the guide</a>
+          <button class="btn btn-outline" id="surpriseBtn" type="button">&#127922; Surprise me</button>
         </div>
         <p style="margin-top:1rem; font-size:0.98rem; color:var(--ink-soft); max-width:33rem;">New: looking for food, services, or something to do? Just ask, and get real local spots in seconds.</p>
       </div>
@@ -776,6 +777,59 @@
     })();
   </script>
 
+  <style>
+    .sm-modal { position:fixed; inset:0; background:rgba(34,29,22,.55); display:none; align-items:center; justify-content:center; z-index:200; padding:1.5rem; }
+    .sm-modal.on { display:flex; }
+    .sm-card { background:var(--paper); border:1.5px solid var(--ink); border-top:5px solid var(--clay-deep); border-radius:8px; max-width:24rem; width:100%; padding:1.7rem 1.6rem 1.5rem; box-shadow:0 24px 60px -14px rgba(0,0,0,.55); position:relative; }
+    .sm-close { position:absolute; top:.5rem; right:.7rem; background:none; border:none; font-size:1.5rem; line-height:1; cursor:pointer; color:var(--ink-soft); }
+    .sm-kick { font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+    .sm-name { font-family:'Fraunces',Georgia,serif; font-size:1.55rem; font-weight:600; line-height:1.15; margin:.35rem 0 .2rem; }
+    .sm-meta { font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft); font-weight:600; margin-bottom:.7rem; }
+    .sm-about { color:var(--ink-soft); font-size:.98rem; line-height:1.55; margin-bottom:1.15rem; min-height:1.4rem; }
+    .sm-acts { display:flex; gap:.5rem; flex-wrap:wrap; }
+    .sm-acts a { font-size:.84rem; font-weight:600; padding:.5rem .9rem; border-radius:999px; border:1.5px solid var(--line); color:var(--ink); text-decoration:none; }
+    .sm-acts a:hover { border-color:var(--clay); color:var(--clay-deep); }
+    .sm-again { margin-top:.9rem; font-size:.84rem; font-weight:600; padding:.5rem .9rem; border-radius:999px; border:1.5px solid var(--clay); color:var(--clay-deep); background:none; cursor:pointer; }
+  </style>
+  <div class="sm-modal" id="smModal" role="dialog" aria-modal="true" aria-label="A local surprise">
+    <div class="sm-card">
+      <button class="sm-close" id="smClose" type="button" aria-label="Close">&times;</button>
+      <div class="sm-kick">&#127922; A local surprise</div>
+      <h3 class="sm-name" id="smName">&hellip;</h3>
+      <p class="sm-meta" id="smMeta"></p>
+      <p class="sm-about" id="smAbout"></p>
+      <div class="sm-acts" id="smActs"></div>
+      <button class="sm-again" id="smAgain" type="button">&#127922; Show me another</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var data=null, btn=document.getElementById('surpriseBtn'), modal=document.getElementById('smModal');
+      if(!btn||!modal) return;
+      function render(p){
+        document.getElementById('smName').textContent=String(p.name||'');
+        document.getElementById('smMeta').textContent=[p.type,p.area].filter(Boolean).join(' · ');
+        document.getElementById('smAbout').textContent=String(p.about||'');
+        var acts=document.getElementById('smActs'); acts.innerHTML='';
+        function add(href,txt,blank){var a=document.createElement('a');a.href=href;a.textContent=txt;if(blank){a.target='_blank';a.rel='noopener';}acts.appendChild(a);}
+        if(p.maps) add(p.maps,'Directions',true);
+        if(p.phone) add('tel:+1'+String(p.phone).replace(/\D/g,''),'Call',false);
+        add('ask.html','Ask a Local →',false);
+      }
+      function pick(){ if(data&&data.length) render(data[Math.floor(Math.random()*data.length)]); }
+      function open(){
+        modal.classList.add('on');
+        if(data){pick();return;}
+        fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){data=(d.places||[]).filter(function(p){return p&&p.name;});pick();}).catch(function(){document.getElementById('smName').textContent='Try again in a moment';});
+      }
+      function shut(){modal.classList.remove('on');}
+      btn.addEventListener('click',open);
+      document.getElementById('smAgain').addEventListener('click',pick);
+      document.getElementById('smClose').addEventListener('click',shut);
+      modal.addEventListener('click',function(e){if(e.target===modal)shut();});
+      document.addEventListener('keydown',function(e){if(e.key==='Escape')shut();});
+    })();
+  </script>
   <script src="/ask-widget.js" defer></script>
 </body>
 </html>
