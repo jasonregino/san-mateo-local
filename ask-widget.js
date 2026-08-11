@@ -27,7 +27,11 @@
   '.smlw-b.me{background:#C25B3A;color:#fff;border-bottom-right-radius:4px;align-self:flex-end}' +
   '.smlw-b a{color:inherit;font-weight:600}' +
   '.smlw-b.bot a{color:#A5492B}' +
-  '.smlw-typing{align-self:flex-start;color:#5E5446;font-size:.9rem;font-style:italic;padding:.2rem .3rem}' +
+  '.smlw-typing{align-self:flex-start;background:#F2E9D4;border-radius:14px;border-bottom-left-radius:4px;padding:.65rem .85rem;display:inline-flex;gap:5px;align-items:center}' +
+  '.smlw-typing span{width:7px;height:7px;border-radius:50%;background:#C25B3A;opacity:.35;animation:smlw-blink 1.2s infinite ease-in-out}' +
+  '.smlw-typing span:nth-child(2){animation-delay:.18s}.smlw-typing span:nth-child(3){animation-delay:.36s}' +
+  '@keyframes smlw-blink{0%,70%,100%{opacity:.3;transform:translateY(0)}35%{opacity:1;transform:translateY(-3px)}}' +
+  '@media (prefers-reduced-motion:reduce){.smlw-typing span{animation:none;opacity:.55}}' +
   '.smlw-foot{flex:none;border-top:1.5px solid #E3D6BC;background:#FAF6EC;padding:.6rem .7rem;padding-bottom:calc(.6rem + env(safe-area-inset-bottom))}' +
   '.smlw-locrow{display:flex;justify-content:center;margin-bottom:.5rem}' +
   '.smlw-loc{background:#FFFDF7;border:1.5px solid #E3D6BC;border-radius:999px;padding:.35rem .8rem;font:inherit;font-size:.8rem;font-weight:600;color:#5E5446;cursor:pointer}' +
@@ -96,7 +100,7 @@
     busy = true; go.disabled = true;
     bubble('me', text);
     messages.push({ role: 'user', content: text });
-    var typing = document.createElement('div'); typing.className = 'smlw-typing'; typing.textContent = 'Looking...';
+    var typing = document.createElement('div'); typing.className = 'smlw-typing'; typing.setAttribute('aria-label', 'Looking'); typing.innerHTML = '<span></span><span></span><span></span>';
     msgs.appendChild(typing); msgs.scrollTop = msgs.scrollHeight;
     fetch(API, { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ messages: messages, coords: userCoords }) })
       .then(function(r){ return r.json(); })

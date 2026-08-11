@@ -41,7 +41,12 @@
     .msg a{color:var(--clay-deep);font-weight:700}
     .msg.me a{color:#fff;text-decoration:underline}
     .msg.bot strong{color:var(--ink)}
-    .typing{align-self:flex-start;color:var(--ink-soft);font-size:.9rem;padding:.4rem .2rem}
+    .typing{align-self:flex-start;background:var(--paper-2);border:1.5px solid var(--line);border-radius:14px;border-bottom-left-radius:4px;padding:.75rem .95rem;display:inline-flex;gap:5px;align-items:center}
+    .typing span{width:7px;height:7px;border-radius:50%;background:var(--clay);opacity:.35;animation:sml-blink 1.2s infinite ease-in-out}
+    .typing span:nth-child(2){animation-delay:.18s}
+    .typing span:nth-child(3){animation-delay:.36s}
+    @keyframes sml-blink{0%,70%,100%{opacity:.3;transform:translateY(0)}35%{opacity:1;transform:translateY(-3px)}}
+    @media (prefers-reduced-motion: reduce){ .typing span{animation:none;opacity:.55} }
     .chips{display:flex;flex-wrap:wrap;gap:.5rem;padding:.2rem 0 .6rem}
     .chip{background:var(--card);border:1.5px solid var(--line);color:var(--ink);font-size:.85rem;font-weight:600;padding:.45rem .9rem;border-radius:999px;cursor:pointer}
     .chip:hover{border-color:var(--clay)}
@@ -153,7 +158,7 @@
       bubble('me', text);
       messages.push({ role: 'user', content: text });
       var typing = document.createElement('div');
-      typing.className = 'typing'; typing.textContent = 'Looking...';
+      typing.className = 'typing'; typing.setAttribute('aria-label', 'Looking'); typing.innerHTML = '<span></span><span></span><span></span>';
       chat.appendChild(typing); toBottom();
       try {
         var res = await fetch('/api/concierge', {
