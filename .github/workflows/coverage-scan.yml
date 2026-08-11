@@ -1,0 +1,29 @@
+name: Weekly coverage scan
+
+# Runs on GitHub's servers — nothing needs to be open on Jason's end.
+# Each week it sweeps one rotating slice of San Mateo businesses from Google Places,
+# compares them to the deployed guide, and opens an Issue with local spots not yet
+# listed. It never edits the site — Jason + Claude Code verify and add with approval.
+
+on:
+  schedule:
+    - cron: '41 15 * * 1'   # Mondays 15:41 UTC (~8:41am Pacific), just after the DSMA scan
+  workflow_dispatch: {}       # lets Jason run it on demand from the Actions tab
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run coverage scan
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+        run: node .github/coverage-scan.mjs
