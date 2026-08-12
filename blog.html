@@ -37,7 +37,7 @@
   [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; }
   * { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
-  body { font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased; }
+  body { overflow-x: hidden; max-width: 100%; font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased; }
   h1,h2,h3 { font-family:'Fraunces',Georgia,serif; line-height:1.12; font-weight:600; letter-spacing:-0.01em; }
   a { color:inherit; text-decoration:none; }
   .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
@@ -122,7 +122,7 @@
   .f-nav a { font-size:0.92rem; color:var(--ink-soft); }
   .f-nav a:hover { color:var(--clay-deep); }
   .f-copy { width:100%; border-top:1px solid var(--line); margin-top:1.5rem; padding-top:1.5rem; font-size:0.8rem; color:var(--ink-soft); }</style>
-  <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
   <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--clay-deep);">Get on the guide &rarr;</strong></a></div>

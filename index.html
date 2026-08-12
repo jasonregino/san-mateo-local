@@ -83,8 +83,8 @@
     [data-theme="dark"] .theme-toggle .moon { display: none; }
     [data-theme="dark"] .theme-toggle .sun { display: inline; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; width: 100%; max-width: 100%; }
     h1, h2, h3, h4 { font-family: 'Fraunces', Georgia, serif; line-height: 1.1; font-weight: 600; letter-spacing: -0.01em; }
     a { color: inherit; text-decoration: none; }
     .wrap { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
@@ -198,6 +198,8 @@
     [data-theme="dark"] .fav.is-featured { background: #3A2A1C; }
     .fav .fav-tag { display: inline-block; align-self: flex-start; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; color: #fff; background: var(--clay); border-radius: 999px; padding: 0.22rem 0.6rem; margin-bottom: 0.7rem; }
     @media (prefers-reduced-motion: reduce) { .fav-track { animation: none; } .fav-scroll { overflow-x: auto; } }
+    /* Mobile: the infinite marquee causes scroll stutter on phones, so turn it into a plain swipe row. */
+    @media (max-width: 880px) { .fav-track { animation: none; width: auto; } .fav-scroll { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; -webkit-mask-image: none; mask-image: none; } .fav { flex: 0 0 82%; } }
 
     /* ===== Sections list (the guide index) ===== */
     .guide-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1.5px solid var(--ink); }
@@ -298,7 +300,7 @@
   </style>
   <script>
     /* Set day/night before paint: saved choice first, otherwise match the phone's setting. */
-    (function(){ try { document.documentElement.classList.add('js'); var s = localStorage.getItem('sml-theme'); var t = s || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'); document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
+    (function(){ try { document.documentElement.classList.add('js'); var s = localStorage.getItem('sml-theme'); var t = s || 'light'; document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
   </script>
   <!-- LATESTBG:START --><style>.hoods{background:#21514E;color:#FAF6EC;}</style><!-- LATESTBG:END -->
 </head>
