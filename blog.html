@@ -163,19 +163,48 @@
     <h1>The latest from San Mateo Local</h1>
     <p>New openings, weekend picks, and honest local guides. Fresh takes on what's worth your time around town.</p>
   </div></section>
+  <style>
+    .pinned{display:block;margin:1.6rem auto 0;padding:1.4rem 1.6rem;background:var(--paper-2);border:1.5px solid var(--clay);border-left:5px solid var(--clay);border-radius:12px;text-decoration:none;color:var(--ink);}
+    .pinned-flag{display:inline-block;font-size:.78rem;font-weight:700;color:var(--clay-deep);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem;}
+    .pinned h2{font-family:'Fraunces',Georgia,serif;font-size:1.55rem;margin:0 0 .5rem;line-height:1.25;}
+    .pinned p{color:var(--ink-soft);margin:0 0 .8rem;line-height:1.55;}
+    .pinned-read{color:var(--clay-deep);font-weight:700;}
+    .bestof{margin:2.2rem 0 .5rem;}
+    .bestof>h2{font-family:'Fraunces',Georgia,serif;font-size:1.6rem;margin:0 0 .2rem;}
+    .bestof-sub{color:var(--ink-soft);margin:0 0 1rem;line-height:1.5;}
+    .bestof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.7rem;}
+    .bestof-card{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:.85rem 1.1rem;background:var(--paper-2);border:1.5px solid var(--ink);border-top:4px solid var(--clay-deep);text-decoration:none;color:var(--ink);font-weight:600;}
+    .bestof-card:hover{background:var(--clay);color:#fff;border-color:var(--clay);}
+    .feed-head{font-family:'Fraunces',Georgia,serif;font-size:1.4rem;margin:2.2rem 0 .2rem;}
+  </style>
+  <div class="wrap"><a class="pinned" href="aldos-pizza-san-mateo.html">
+      <span class="pinned-flag">&#9733; A local spot worth saving</span>
+      <h2>Aldo's Pizza: 68 Years, Three Owners, and a Neighborhood Keeping It Alive</h2>
+      <p>San Mateo's oldest pizzeria has fed Shoreview families since 1958. This summer it came close to closing, and the neighborhood is the reason it's still open.</p>
+      <span class="pinned-read">Read their story, then go support them &rarr;</span>
+    </a></div>
+  <div class="wrap"><section class="bestof">
+      <h2>Best-of guides</h2>
+      <p class="bestof-sub">Our evergreen local picks, the spots we send friends to. Kept up to date, never expiring.</p>
+      <div class="bestof-grid">
+        <a class="bestof-card" href="best-coffee-in-san-mateo.html"><span>The Best Coffee in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
+        <a class="bestof-card" href="best-breakfast-in-san-mateo.html"><span>The Best Breakfast &amp; Brunch in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
+        <a class="bestof-card" href="best-sushi-in-san-mateo.html"><span>The Best Sushi in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
+        <a class="bestof-card" href="best-happy-hour-in-san-mateo.html"><span>The Best Happy Hour in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
+        <a class="bestof-card" href="best-of-25th-avenue-san-mateo.html"><span>Best of 25th Avenue</span><span aria-hidden="true">&rarr;</span></a>
+        <a class="bestof-card" href="best-tacos-in-san-mateo.html"><span>The Best Tacos in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
+        <a class="bestof-card" href="best-pizza-in-san-mateo.html"><span>The Best Pizza in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
+        <a class="bestof-card" href="best-of-downtown-san-mateo.html"><span>Best of Downtown San Mateo</span><span aria-hidden="true">&rarr;</span></a>
+        <a class="bestof-card" href="best-of-bay-meadows-san-mateo.html"><span>Best of Bay Meadows</span><span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section></div>
+  <div class="wrap"><h2 class="feed-head">Latest updates</h2></div>
   <div class="wrap"><div class="post-list">
         <a class="post-card" href="this-weekend.html">
           <div class="k k-weekend">This Weekend</div>
           <h2>Free Back-to-School Haircuts, Jazz Nights, and the Saturday Market</h2>
           <div class="date">August 7, 2026</div>
           <p>Your guide to this week around town: free back-to-school haircuts downtown Sunday, weekend jazz on B Street, the big Saturday farmers market, plus trivia and karaoke most nights and a packed few weekends coming up.</p>
-          <div class="readon">Read the guide &rarr;</div>
-        </a>
-        <a class="post-card" href="aldos-pizza-san-mateo.html">
-          <div class="k k-town">Around Town</div>
-          <h2>Aldo's Pizza: 68 Years, Three Owners, and a Neighborhood Keeping It Alive</h2>
-          <div class="date">August 7, 2026</div>
-          <p>San Mateo's oldest pizzeria has fed Shoreview families since 1958. This summer it came close to closing, and the neighborhood is the reason it's still open.</p>
           <div class="readon">Read the guide &rarr;</div>
         </a>
         <a class="post-card" href="perfect-summer-saturday-san-mateo.html">
@@ -198,69 +227,6 @@
           <div class="date">July 2026</div>
           <p>The story of a family market that opened in 1906, came home after internment, and became the Peninsula's go-to for poke, Spam musubi, and a taste of the islands.</p>
           <div class="readon">Read the story &rarr;</div>
-        </a>
-        <a class="post-card" href="best-coffee-in-san-mateo.html">
-          <div class="k k-best">Best Of</div>
-          <h2>The Best Coffee in San Mateo</h2>
-          <div class="date">Updated July 2, 2026</div>
-          <p>A born-and-raised local's short list of the independent cafes worth going out of your way for.</p>
-          <div class="readon">Read the guide &rarr;</div>
-        </a>
-        <a class="post-card" href="best-breakfast-in-san-mateo.html">
-          <div class="k k-best">Best Of</div>
-          <h2>The Best Breakfast &amp; Brunch in San Mateo</h2>
-          <div class="date">Updated July 2, 2026</div>
-          <p>Where locals actually line up for breakfast, from greasy-spoon classics to the new brunch crowd.</p>
-          <div class="readon">Read the guide &rarr;</div>
-        </a>
-        <a class="post-card" href="best-sushi-in-san-mateo.html">
-          <div class="k k-best">Best Of</div>
-          <h2>The Best Sushi in San Mateo</h2>
-          <div class="date">Updated July 2, 2026</div>
-          <p>From a Michelin-starred omakase counter to the neighborhood roll spot, San Mateo's Japanese food runs deep.</p>
-          <div class="readon">Read the guide &rarr;</div>
-        </a>
-        <a class="post-card" href="best-happy-hour-in-san-mateo.html">
-          <div class="k k-best">Best Of</div>
-          <h2>The Best Happy Hour in San Mateo</h2>
-          <div class="date">Updated July 2, 2026</div>
-          <p>Where to be at 5pm, from $2 oysters and $10 margaritas to a proper dive with cheap pours.</p>
-          <div class="readon">Read the guide &rarr;</div>
-        </a>
-        <a class="post-card" href="best-of-25th-avenue-san-mateo.html">
-          <div class="k k-hood">Neighborhood</div>
-          <h2>Best of 25th Avenue</h2>
-          <div class="date">Updated July 2, 2026</div>
-          <p>A short, storied block near the center of San Mateo, from a Michelin-legacy sushi counter to a 1972 barbershop.</p>
-          <div class="readon">Read the guide &rarr;</div>
-        </a>
-        <a class="post-card" href="best-tacos-in-san-mateo.html">
-          <div class="k k-best">Best Of</div>
-          <h2>The Best Tacos in San Mateo</h2>
-          <div class="date">Updated July 2, 2026</div>
-          <p>Al pastor off a real trompo, Sinaloa mariscos, birria, and a market counter locals swear by.</p>
-          <div class="readon">Read the guide &rarr;</div>
-        </a>
-        <a class="post-card" href="best-pizza-in-san-mateo.html">
-          <div class="k k-best">Best Of</div>
-          <h2>The Best Pizza in San Mateo</h2>
-          <div class="date">Updated July 2, 2026</div>
-          <p>Michelin-recognized Neapolitan, cult SF square slices, Detroit-style, and a late-night NY slice.</p>
-          <div class="readon">Read the guide &rarr;</div>
-        </a>
-        <a class="post-card" href="best-of-downtown-san-mateo.html">
-          <div class="k k-hood">Neighborhood</div>
-          <h2>Best of Downtown San Mateo</h2>
-          <div class="date">Updated July 2, 2026</div>
-          <p>A walkable tour of the downtown core, from a Michelin sushi counter to the bakery everyone lines up for.</p>
-          <div class="readon">Read the guide &rarr;</div>
-        </a>
-        <a class="post-card" href="best-of-bay-meadows-san-mateo.html">
-          <div class="k k-hood">Neighborhood</div>
-          <h2>Best of Bay Meadows</h2>
-          <div class="date">Updated July 2, 2026</div>
-          <p>San Mateo's newest neighborhood, built on the old racetrack, from a beer garden to a pottery studio.</p>
-          <div class="readon">Read the guide &rarr;</div>
         </a>
         <a class="post-card" href="new-openings-summer-2026.html">
           <div class="k k-new">New Openings</div>
