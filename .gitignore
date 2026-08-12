@@ -22,3 +22,5 @@ local-services-clean.md
 .env
 .env.local
 .env*.local
+
+NEIGHBORHOOD_AUDIT_SHEET.md
