@@ -40,8 +40,10 @@
     .masthead-nav a:hover { color:var(--clay-deep); }
     .masthead-nav .sub { color:var(--clay-deep); font-weight:600; }
     @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } }
-    .biz-banner { height:96px; display:flex; align-items:center; justify-content:center; border-bottom:1.5px solid var(--ink); }
-    .biz-banner span { font-size:3rem; filter:drop-shadow(0 3px 8px rgba(0,0,0,.28)); }
+    .biz-hero { position:relative; border-bottom:1.5px solid var(--ink); background:linear-gradient(120deg,rgba(34,40,32,.86),rgba(34,40,32,.58)), url('/images/central-park-japanese-garden.jpg'); background-size:cover; background-position:center; }
+    .biz-hero .article { min-height:118px; display:flex; flex-direction:column; justify-content:center; padding-top:1.2rem; padding-bottom:1.2rem; }
+    .biz-hero-brand { font-family:'Fraunces',Georgia,serif; font-weight:600; font-size:1.2rem; color:#FAF6EC; letter-spacing:-0.01em; text-shadow:0 1px 6px rgba(0,0,0,.45); }
+    .biz-hero-loc { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; color:#EBDFC4; margin-top:0.32rem; text-shadow:0 1px 6px rgba(0,0,0,.45); }
     .biz-head { padding:1.4rem 0 1.4rem; border-bottom:1.5px solid var(--ink); }
     .biz-back { font-size:0.85rem; font-weight:600; color:var(--clay-deep); }
     .biz-kicker { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); margin-top:0.7rem; }
@@ -106,13 +108,15 @@
       </nav>
     </div>
   </header>
-  <div class="biz-banner" style="background:linear-gradient(135deg,#4A7E5C,#324C3A);"><span aria-hidden="true">🐾</span></div>
+  <div class="biz-hero"><div class="article">
+    <span class="biz-hero-brand">San Mateo Local</span>
+    <span class="biz-hero-loc">San Mateo, California</span>
+  </div></div>
   <section class="biz-head">
     <div class="article">
       <a class="biz-back" href="/local-services.html">&larr; Local Services</a>
       <div class="biz-kicker">Pet</div>
       <h1>Bark Busters San Mateo</h1>
-      <p class="biz-sub">Pet</p>
       <div class="biz-acts">
         <a class="primary" href="tel:+18775002275">Call</a>
         <a href="https://www.google.com/maps/search/?api=1&query=Bark%20Busters%20San%20Mateo%20San%20Mateo%2C%20CA%2094404" target="_blank" rel="noopener">Get Directions</a>
