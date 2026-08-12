@@ -39,9 +39,18 @@
   <!-- BLOG:END -->
   <!-- NEIGHBORHOODS:START -->
   <url><loc>https://sanmateolocal.com/downtown.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sanmateolocal.com/hayward-park.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://sanmateolocal.com/hillsdale.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://sanmateolocal.com/bay-meadows.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sanmateolocal.com/baywood.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sanmateolocal.com/north-central.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sanmateolocal.com/shoreview.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sanmateolocal.com/laurelwood.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://sanmateolocal.com/25th-avenue-san-mateo.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sanmateolocal.com/los-prados.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sanmateolocal.com/el-camino-real.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sanmateolocal.com/west-san-mateo.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sanmateolocal.com/sunnybrae.html</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <!-- NEIGHBORHOODS:END -->
   <url><loc>https://sanmateolocal.com/local-buzz.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://sanmateolocal.com/open-late-in-san-mateo.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
