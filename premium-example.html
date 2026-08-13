@@ -130,6 +130,16 @@
     .rev-stars{color:var(--accent);letter-spacing:3px;font-size:18px}
     .rev-count{color:var(--muted);font-size:14px;margin-top:.2rem}
     .rev-link{margin-left:auto;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
+    .revcards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:1.4rem}
+    .revcard{border:1px solid var(--line);background:#fff;padding:1.5rem 1.6rem}
+    .revcard .rc-stars{color:var(--accent);letter-spacing:2px;font-size:14px}
+    .revcard .rc-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.42;color:var(--primary);margin:.7rem 0 1rem}
+    .revcard .rc-who{font-size:12.5px;font-weight:600;color:var(--muted)}
+    .revcard .rc-who span{display:block;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-size:10.5px;margin-top:.15rem}
+    .rev-note{color:var(--muted);font-size:13px;margin-top:1rem;font-style:italic}
+    .menu-cat{margin-top:2.5rem}
+    .menu-cat-h{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--primary);padding-bottom:.45rem;border-bottom:2px solid var(--accent);display:inline-block}
+    .menu-cat-h span{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-left:.6rem}
 
     /* deal */
     .deal{margin-top:2rem;border:1px solid var(--accent);border-left:4px solid var(--accent);background:var(--cream);padding:1.8rem 2rem;max-width:44rem}
@@ -174,6 +184,7 @@
       .split{grid-template-columns:1fr;gap:2.2rem}
       .split-img{aspect-ratio:16/10}
       .cards3{grid-template-columns:1fr}
+      .revcards{grid-template-columns:1fr}
       .menu{grid-template-columns:1fr;gap:0}
       .visit-grid{grid-template-columns:1fr}
       .gal{grid-template-columns:repeat(2,1fr)}
@@ -265,13 +276,36 @@
     <div class="wrap reveal">
       <span class="eyebrow">The Menu</span>
       <h2 class="sec-h">What we're known for</h2>
+      <div class="menu-cat"><h3 class="menu-cat-h">Coffee &amp; Espresso</h3></div>
       <div class="menu">
         <div class="mrow"><div><div class="mn">Cardamom latte</div><div class="md">House single-origin, real cardamom</div></div><div class="mp">$5.5</div></div>
-        <div class="mrow"><div><div class="mn">Marlowe breakfast plate</div><div class="md">Two eggs, sourdough, potatoes, greens</div></div><div class="mp">$15</div></div>
-        <div class="mrow"><div><div class="mn">Lemon-ricotta pancakes</div><div class="md">Weekend favorite</div></div><div class="mp">$14</div></div>
-        <div class="mrow"><div><div class="mn">Avocado toast</div><div class="md">Chili crisp, soft egg</div></div><div class="mp">$13</div></div>
+        <div class="mrow"><div><div class="mn">Cortado</div><div class="md">Double shot, steamed milk</div></div><div class="mp">$4.25</div></div>
+        <div class="mrow"><div><div class="mn">Pour-over</div><div class="md">Rotating single origin</div></div><div class="mp">$5</div></div>
         <div class="mrow"><div><div class="mn">Cold brew flight</div><div class="md">Three roasts, tasting size</div></div><div class="mp">$8</div></div>
+        <div class="mrow"><div><div class="mn">Mocha</div><div class="md">Dark or white chocolate</div></div><div class="mp">$5.5</div></div>
+        <div class="mrow"><div><div class="mn">Matcha latte</div><div class="md">Ceremonial grade, oat milk on request</div></div><div class="mp">$5.75</div></div>
+        <div class="mrow"><div><div class="mn">House-spiced chai</div><div class="md">Hot or iced</div></div><div class="mp">$5</div></div>
+        <div class="mrow"><div><div class="mn">Bottomless drip</div><div class="md">Locally roasted, all morning</div></div><div class="mp">$3.5</div></div>
+      </div>
+
+      <div class="menu-cat"><h3 class="menu-cat-h">Breakfast <span>served all day</span></h3></div>
+      <div class="menu">
+        <div class="mrow"><div><div class="mn">Marlowe breakfast plate</div><div class="md">Two eggs, sourdough, potatoes, greens</div></div><div class="mp">$15</div></div>
+        <div class="mrow"><div><div class="mn">Avocado toast</div><div class="md">Chili crisp, soft egg</div></div><div class="mp">$13</div></div>
+        <div class="mrow"><div><div class="mn">Breakfast sandwich</div><div class="md">Egg, cheddar, herb aioli, brioche</div></div><div class="mp">$11</div></div>
+        <div class="mrow"><div><div class="mn">Steel-cut oats</div><div class="md">Seasonal fruit, brown sugar</div></div><div class="mp">$9</div></div>
+        <div class="mrow"><div><div class="mn">Granola &amp; yogurt</div><div class="md">House granola, local honey</div></div><div class="mp">$8</div></div>
         <div class="mrow"><div><div class="mn">Morning bun</div><div class="md">Baked in-house daily</div></div><div class="mp">$4.5</div></div>
+      </div>
+
+      <div class="menu-cat"><h3 class="menu-cat-h">Brunch <span>weekends, all day</span></h3></div>
+      <div class="menu">
+        <div class="mrow"><div><div class="mn">Lemon-ricotta pancakes</div><div class="md">Weekend favorite</div></div><div class="mp">$14</div></div>
+        <div class="mrow"><div><div class="mn">Croque madame</div><div class="md">Ham, gruy&egrave;re, sunny egg</div></div><div class="mp">$16</div></div>
+        <div class="mrow"><div><div class="mn">Shakshuka</div><div class="md">Warm pita, feta</div></div><div class="mp">$15</div></div>
+        <div class="mrow"><div><div class="mn">Smoked-salmon toast</div><div class="md">Dill cream, capers, red onion</div></div><div class="mp">$16</div></div>
+        <div class="mrow"><div><div class="mn">Buttermilk biscuits &amp; gravy</div><div class="md">Sage sausage gravy</div></div><div class="mp">$13</div></div>
+        <div class="mrow"><div><div class="mn">Chilaquiles</div><div class="md">Two eggs, salsa verde, crema</div></div><div class="mp">$15</div></div>
       </div>
     </div>
   </section>
@@ -319,6 +353,12 @@
         <div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rev-count">Based on 312 Google reviews</div></div>
         <a class="rev-link" href="#">Read on Google &rarr;</a>
       </div>
+      <div class="revcards">
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"The cardamom latte alone is worth the trip. Add a morning bun and I'm a regular for life."</p><div class="rc-who">Priya S.<span>Google review</span></div></div>
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Came for brunch, stayed all afternoon on the back patio. Feels like a friend's backyard."</p><div class="rc-who">Marcus T.<span>Google review</span></div></div>
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Best from-scratch breakfast downtown, and they knew my name by week two."</p><div class="rc-who">Dana R.<span>Google review</span></div></div>
+      </div>
+      <p class="rev-note">On your live page, these are pulled from your real Google reviews, always the genuine ones.</p>
       <div style="margin-top:3.4rem"><span class="eyebrow">Local Perk</span><h2 class="sec-h">A San Mateo Local deal</h2></div>
       <div class="deal">
         <div class="dt">&#127903; Free morning bun with any drink, weekday mornings</div>
