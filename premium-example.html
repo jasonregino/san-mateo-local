@@ -83,16 +83,18 @@
     .inforow .k { color:var(--ink-soft); flex:none; width:74px; font-weight:600; }
 
     /* menu / services */
-    .menu-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.5rem 2rem; margin-top:0.5rem; }
-    .menu-item { display:flex; justify-content:space-between; gap:1rem; padding:0.6rem 0; border-bottom:1px solid var(--line); }
-    .menu-item .mn { font-weight:600; }
-    .menu-item .md { color:var(--ink-soft); font-size:0.88rem; }
-    .menu-item .mp { color:var(--clay-deep); font-weight:700; flex:none; }
+    .menu-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0 2.4rem; margin-top:0.6rem; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:1rem 1.6rem; box-shadow:var(--shadow); }
+    .menu-item { display:flex; justify-content:space-between; gap:1rem; padding:0.85rem 0; border-bottom:1px solid var(--line); }
+    .menu-item:last-child, .menu-item:nth-last-child(2) { border-bottom:none; }
+    .menu-item .mn { font-weight:600; font-size:1.02rem; }
+    .menu-item .md { color:var(--ink-soft); font-size:0.86rem; margin-top:0.1rem; }
+    .menu-item .mp { color:var(--clay-deep); font-weight:700; flex:none; font-family:'Fraunces',Georgia,serif; font-size:1.05rem; }
 
     /* gallery */
-    .gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:0.6rem; margin-top:0.6rem; }
-    .gtile { aspect-ratio:1/1; border-radius:10px; border:1.5px dashed var(--line); background:var(--paper-2); display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-size:0.78rem; text-align:center; padding:0.5rem; }
-    .gtile.filled { background:linear-gradient(135deg, var(--paper-2), var(--card)); border-style:solid; }
+    .gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:0.7rem; margin-top:0.6rem; }
+    .gtile { position:relative; aspect-ratio:4/3; border-radius:12px; border:1px solid var(--line); background:linear-gradient(140deg,#EFE7D6,#E2D5BC); box-shadow:var(--shadow); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.35rem; padding:0.5rem; }
+    .gtile svg { width:26px; height:26px; color:var(--clay-deep); opacity:.65; }
+    .gtile span { font-size:0.78rem; font-weight:600; color:var(--ink-soft); }
 
     /* deal */
     .deal { margin-top:0.6rem; padding:1.2rem 1.4rem; background:#FBE7DC; border:1.5px solid var(--clay); border-radius:12px; }
@@ -101,8 +103,8 @@
     .deal .dm { color:var(--ink-soft); font-style:italic; }
 
     /* reviews */
-    .revhead { display:flex; align-items:center; gap:1rem; flex-wrap:wrap; margin-top:0.4rem; }
-    .revscore { font-family:'Fraunces',serif; font-size:2.6rem; font-weight:700; line-height:1; }
+    .revhead { display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap; margin-top:0.4rem; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:1.35rem 1.6rem; box-shadow:var(--shadow); }
+    .revscore { font-family:'Fraunces',Georgia,serif; font-size:3rem; font-weight:700; line-height:1; color:var(--clay-deep); }
     .revlink { color:var(--clay-deep); font-weight:700; font-size:0.92rem; }
 
     /* FAQ */
@@ -182,6 +184,7 @@
   <main class="wrap">
     <!-- ABOUT -->
     <section class="blk">
+      <div class="eyebrow">The Story</div>
       <h2>About Marlowe's</h2>
       <p class="lead">A neighborhood coffee house and all-day breakfast spot in the heart of Downtown San Mateo. Marlowe's has been pouring single-origin espresso and serving from-scratch brunch since 2018, the kind of place regulars treat like a second kitchen.</p>
       <div class="highlights">
@@ -196,6 +199,7 @@
 
     <!-- MAP + INFO -->
     <section class="blk" id="map">
+      <div class="eyebrow">Visit</div>
       <h2>Find &amp; visit</h2>
       <div class="mapgrid">
         <div class="mapframe">
@@ -214,6 +218,7 @@
 
     <!-- MENU -->
     <section class="blk">
+      <div class="eyebrow">The Menu</div>
       <h2>What they're known for</h2>
       <div class="menu-grid">
         <div class="menu-item"><div><div class="mn">Cardamom latte</div><div class="md">House single-origin, real cardamom</div></div><div class="mp">$5.5</div></div>
@@ -227,18 +232,20 @@
 
     <!-- GALLERY -->
     <section class="blk">
+      <div class="eyebrow">Gallery</div>
       <h2>Photos</h2>
       <div class="gallery">
-        <div class="gtile filled">Storefront</div>
-        <div class="gtile filled">Latte art</div>
-        <div class="gtile filled">Brunch plate</div>
-        <div class="gtile filled">Patio</div>
+        <div class="gtile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Storefront</span></div>
+        <div class="gtile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Latte art</span></div>
+        <div class="gtile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Brunch plate</span></div>
+        <div class="gtile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Patio</span></div>
       </div>
       <p style="color:var(--ink-soft); font-size:0.85rem; margin-top:0.6rem;">On a real Premium page these are the business's own photos. We collect them at onboarding and keep them current.</p>
     </section>
 
     <!-- DEAL -->
     <section class="blk">
+      <div class="eyebrow">Local Perk</div>
       <h2>Local deal</h2>
       <div class="deal">
         <div class="dt">&#127903; Free morning bun with any drink, weekday mornings.</div>
@@ -248,6 +255,7 @@
 
     <!-- REVIEWS -->
     <section class="blk">
+      <div class="eyebrow">Reputation</div>
       <h2>Reviews</h2>
       <div class="revhead">
         <div class="revscore">4.7</div>
@@ -262,6 +270,7 @@
 
     <!-- FAQ -->
     <section class="blk faq">
+      <div class="eyebrow">Good to Know</div>
       <h2>Frequently asked</h2>
       <details open><summary>Do you take reservations?</summary><p>Walk-ins only for parties under six. Larger groups can call ahead and we'll do our best to seat you together.</p></details>
       <details><summary>Do you have vegetarian and vegan options?</summary><p>Yes. Most of the breakfast menu can be made vegetarian, and we always have a vegan plate and oat-milk drinks.</p></details>
@@ -271,6 +280,7 @@
 
     <!-- ASK -->
     <section class="blk">
+      <div class="eyebrow">Ask AI</div>
       <h2>Ask about this business</h2>
       <div class="ask">
         <h3>Have a question for Marlowe's?</h3>
