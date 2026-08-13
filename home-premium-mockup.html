@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>San Mateo Local — Homepage (Premium-Standard Mockup)</title>
+  <meta name="description" content="A mockup of the San Mateo Local homepage rebuilt to the premium website standard." />
+  <meta name="theme-color" content="#20302A" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* SML homepage — premium website standard, SML's OWN warm palette in the standard's roles */
+    :root{
+      --primary:#20302A; --primary-deep:#152219; --accent:#B5502F; --accent-light:#E0A277;
+      --ink:#221D16; --muted:#6E6353; --bg:#FAF6EC; --line:#E3D6BC; --panel:#F1E8D5; --cream:#F6EEDF;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100%}
+    h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.06;letter-spacing:-.5px}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+    .eyebrow{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.7rem}
+    .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block}
+    .eyebrow.center{justify-content:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:15px 30px;border-radius:0;border:1px solid transparent;transition:background .25s,transform .2s,color .25s;cursor:pointer}
+    .btn-clay{background:var(--accent);color:#fff}
+    .btn-clay:hover{background:#9c4526;transform:translateY(-2px)}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.55);color:#fff}
+    .btn-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+    section{padding:118px 0}
+    .sec-h{font-size:clamp(30px,4.6vw,52px);font-weight:600;color:var(--ink);margin:.5rem 0 0}
+    .sec-lead{color:var(--muted);font-size:18px;max-width:44rem;margin-top:1rem}
+    .dark{background:var(--primary);color:#E9DEC9}
+    .dark .sec-h{color:#fff}.dark .sec-lead{color:#C7BCA3}
+    .panel{background:var(--panel)}
+    .reveal{opacity:0;transform:translateY(30px)}
+    .reveal.in{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+    @media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important}}
+
+    .banner{background:#152219;color:#D9C9A6;font-size:12.5px;text-align:center;padding:.55rem 1.2rem}
+    .banner b{color:#F0E2BF}
+
+    .nav{position:absolute;top:0;left:0;right:0;z-index:30;padding:1.5rem 0}
+    .nav-in{max-width:1180px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+    .nav-brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:25px;color:#fff}
+    .nav-right{display:flex;gap:1.7rem;align-items:center}
+    .nav-link{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.82)}
+    .nav-link:hover{color:#fff}
+
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+    .hero-slides{position:absolute;inset:0;z-index:0}
+    .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center 48%;opacity:0;transition:opacity 1s ease}
+    .hero-slide.active{opacity:1}
+    .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,22,17,.8) 0%,rgba(15,22,17,.5) 48%,rgba(15,22,17,.25) 100%),linear-gradient(0deg,rgba(15,22,17,.55),transparent 55%)}
+    .hero-in{position:relative;z-index:2;color:#fff;max-width:780px}
+    .hero .eyebrow{color:var(--accent-light)}.hero .eyebrow::before{background:var(--accent-light)}
+    .hero h1{font-size:clamp(48px,8vw,92px);font-weight:600;line-height:1.02;letter-spacing:-1px;margin:1.3rem 0 1rem}
+    .hero h1 em{font-style:italic;color:var(--accent-light)}
+    .hero-sub{font-size:19px;color:rgba(255,255,255,.9);max-width:36rem;line-height:1.6}
+    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+    .hero-stat{margin-top:1.4rem;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:600}
+    .scrollcue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.7);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+
+    .statement{text-align:center}
+    .statement p{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,3.6vw,40px);line-height:1.28;color:var(--ink);max-width:52rem;margin:1rem auto 0}
+    .statement em{font-style:italic;color:var(--accent)}
+
+    /* guide grid — radius-0 editorial cards */
+    .guide{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:2.6rem}
+    .gcell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:2rem 1.7rem 2.1rem;background:transparent;transition:background .2s;display:block}
+    .gcell:hover{background:#fff}
+    .gcell .gnum{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--accent)}
+    .gcell h3{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;color:var(--ink);margin:.5rem 0 .35rem}
+    .gcell p{color:var(--muted);font-size:14px;line-height:1.55}
+    .gcell .go{margin-top:.9rem;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);opacity:0;transition:opacity .25s}
+    .gcell:hover .go{opacity:1}
+    @media(hover:none){.gcell .go{opacity:1}}
+
+    /* two-col feature */
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+    .split-img{min-height:440px;background-size:cover;background-position:center}
+    .split-txt{padding:5rem 4.5rem}
+    .dark .split-txt .sec-lead{color:#C7BCA3}
+
+    /* ask cta */
+    .askcta{text-align:center}
+    .askbar{display:flex;gap:.6rem;max-width:38rem;margin:1.8rem auto 0;flex-wrap:wrap}
+    .askbar input{flex:1 1 240px;padding:15px 18px;border:1px solid rgba(255,255,255,.3);border-radius:0;background:rgba(255,255,255,.06);color:#fff;font:inherit;font-size:15px}
+    .askbar input::placeholder{color:rgba(255,255,255,.5)}
+    .askbar button{background:var(--accent);color:#fff;border:none;border-radius:0;padding:15px 26px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+
+    /* newsletter */
+    .news{text-align:center}
+    .news form{display:flex;gap:.6rem;max-width:34rem;margin:1.6rem auto 0;flex-wrap:wrap}
+    .news input{flex:1 1 220px;padding:15px 18px;border:1px solid var(--line);border-radius:0;background:#fff;color:var(--ink);font:inherit}
+    .news button{background:var(--primary);color:#fff;border:none;border-radius:0;padding:15px 26px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+
+    footer{background:var(--primary-deep);color:#C4B69B;padding:70px 0 46px}
+    footer .fb{font-family:'Cormorant Garamond',serif;font-size:30px;color:#fff;font-weight:600}
+    footer .fnav{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:1.3rem}
+    footer .fnav a{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#C4B69B;font-weight:600}
+    footer .fcopy{font-size:11.5px;color:#7F715B;margin-top:1.8rem;border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem}
+
+    @media(max-width:900px){
+      .wrap,.nav-in{padding-left:20px;padding-right:20px}
+      section{padding:64px 0}
+      .guide{grid-template-columns:repeat(2,1fr)}
+      .split{grid-template-columns:1fr}
+      .split-img{min-height:280px}
+      .split-txt{padding:3rem 1.5rem}
+      .nav .nav-link{display:none}
+      .nav-brand{font-size:21px}
+    }
+  </style>
+  <script>document.documentElement.setAttribute('data-theme','light');</script>
+</head>
+<body>
+  <div class="banner"><b>Mockup:</b> San Mateo Local's homepage rebuilt to the premium website standard. Compare it to the live site.</div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('/images/central-park-japanese-garden.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/hero-reservoir.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/hero-tea-house.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/hero-park-lawn.jpg')"></div>
+    </div>
+    <div class="hero-scrim"></div>
+    <nav class="nav"><div class="nav-in">
+      <span class="nav-brand">San Mateo Local</span>
+      <div class="nav-right"><a class="nav-link" href="#guide">The Guide</a><a class="nav-link" href="#ask">Ask a Local</a><a class="nav-link" href="/for-business-owners.html">For Owners</a></div>
+    </div></nav>
+    <div class="wrap">
+      <div class="hero-in">
+        <span class="eyebrow">San Mateo, California</span>
+        <h1>The best of San Mateo,<br>hand-picked by a <em>local</em>.</h1>
+        <p class="hero-sub">Where to eat, what to do, who to call. Every spot chosen by a born-and-raised local, with no paid placement, ever.</p>
+        <div class="hero-cta">
+          <a class="btn btn-clay" href="#guide">Explore the guide</a>
+          <a class="btn btn-outline" href="#ask">Ask a Local</a>
+        </div>
+        <div class="hero-stat">880+ local spots &middot; hand-picked &middot; no paid placement</div>
+      </div>
+    </div>
+    <span class="scrollcue">Scroll</span>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="wrap reveal">
+      <span class="eyebrow center">Why we're different</span>
+      <p>Not an algorithm. Not an ad platform. Just a real local telling you <em>where to go</em>.</p>
+    </div>
+  </section>
+
+  <!-- THE GUIDE -->
+  <section class="panel" id="guide">
+    <div class="wrap reveal">
+      <span class="eyebrow">The whole guide</span>
+      <h2 class="sec-h">Everything worth knowing in San Mateo</h2>
+      <div class="guide">
+        <a class="gcell" href="/eat-drink.html"><div class="gnum">01</div><h3>Eat &amp; Drink</h3><p>Restaurants, cafes, bakeries, and bars.</p><div class="go">Explore &rarr;</div></a>
+        <a class="gcell" href="/things-to-do.html"><div class="gnum">02</div><h3>Things To Do</h3><p>Parks, trails, museums, and activities.</p><div class="go">Explore &rarr;</div></a>
+        <a class="gcell" href="/shopping.html"><div class="gnum">03</div><h3>Shopping</h3><p>Boutiques, record stores, and markets.</p><div class="go">Explore &rarr;</div></a>
+        <a class="gcell" href="/local-services.html"><div class="gnum">04</div><h3>Local Services</h3><p>Salons, barbers, dentists, auto, and more.</p><div class="go">Explore &rarr;</div></a>
+        <a class="gcell" href="/home-services.html"><div class="gnum">05</div><h3>Home Services</h3><p>Plumbers, electricians, roofers, trades.</p><div class="go">Explore &rarr;</div></a>
+        <a class="gcell" href="/legacies.html"><div class="gnum">06</div><h3>Legacies</h3><p>The spots that have been here for decades.</p><div class="go">Explore &rarr;</div></a>
+        <a class="gcell" href="/neighborhoods.html"><div class="gnum">07</div><h3>Neighborhoods</h3><p>San Mateo block by block.</p><div class="go">Explore &rarr;</div></a>
+        <a class="gcell" href="#ask"><div class="gnum">08</div><h3>Ask a Local</h3><p>Tell us what you need, get a real pick.</p><div class="go">Explore &rarr;</div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE (dark, two-col) -->
+  <section class="dark" style="padding:0">
+    <div class="split">
+      <div class="split-img" style="background-image:url('/images/hero-tea-house.jpg')"></div>
+      <div class="split-txt reveal" style="display:flex;flex-direction:column;justify-content:center">
+        <span class="eyebrow">San Mateo Legacies</span>
+        <h2 class="sec-h">The places that made this town</h2>
+        <p class="sec-lead">Family bakeries, old-school diners, and shops that have watched the city grow up. We keep their stories, so the next generation of locals knows where to go too.</p>
+        <div style="margin-top:1.8rem"><a class="btn btn-clay" href="/legacies.html">See the Legacies</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASK (accent-ish dark) -->
+  <section id="ask" style="background:var(--ink);color:#EFE6D6">
+    <div class="wrap reveal askcta">
+      <span class="eyebrow center">Ask a Local</span>
+      <h2 class="sec-h" style="color:#fff">Not sure where to go? Just ask.</h2>
+      <p class="sec-lead" style="color:#C9BEA9;margin:1rem auto 0">Tell our local guide what you're after, "good tacos near downtown," "an emergency plumber," "a rainy-day spot with kids," and get a real recommendation, not an ad.</p>
+      <div class="askbar"><input type="text" placeholder="What are you looking for in San Mateo?" aria-label="Ask a Local" /><button type="button">Ask</button></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="panel news">
+    <div class="wrap reveal">
+      <span class="eyebrow center">The weekly note</span>
+      <h2 class="sec-h">New spots, worth your weekend</h2>
+      <p class="sec-lead" style="margin:1rem auto 0">A short local note on what's new and worth your time around San Mateo. No spam, unsubscribe anytime.</p>
+      <form onsubmit="return false"><input type="email" placeholder="your@email.com" /><button type="submit">Subscribe</button></form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="fb">San Mateo Local</div>
+      <div class="fnav"><a href="/eat-drink.html">Eat &amp; Drink</a><a href="/things-to-do.html">Things To Do</a><a href="/blog.html">Guides</a><a href="/legacies.html">Legacies</a><a href="/for-business-owners.html">For Owners</a></div>
+      <div class="fcopy">A born-and-raised local's guide to the best of San Mateo, California. &copy; 2026 San Mateo Local. &middot; This is a design mockup.</div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    try{ var s=document.querySelectorAll('.hero-slide'); if(s.length>1 && !(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)){ var i=0; setInterval(function(){ s[i].classList.remove('active'); i=(i+1)%s.length; s[i].classList.add('active'); },4800);} }catch(e){}
+    try{ if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; var els=document.querySelectorAll('.reveal'); var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'}); els.forEach(function(el){io.observe(el);}); }catch(e){}
+  })();
+  </script>
+</body>
+</html>
