@@ -34,7 +34,7 @@
 
     /* hero */
     .hero { position:relative; }
-    .hero-cover { position:relative; overflow:hidden; height:200px; background:radial-gradient(circle at 24% 22%, rgba(255,242,224,.14), transparent 58%), linear-gradient(120deg,#2B2017 0%,#49341F 48%,#6A4A2F 100%); }
+    .hero-cover { position:relative; overflow:hidden; height:300px; background:#2B2017 url('/images/marlowes-hero.jpg') center 36% / cover no-repeat; }
     .cover-mono { position:absolute; right:30px; bottom:-46px; font-family:'Fraunces',Georgia,serif; font-weight:700; font-size:230px; line-height:1; color:#F5E8D2; opacity:.08; user-select:none; pointer-events:none; }
     .cover-badge { position:absolute; top:15px; right:18px; display:inline-flex; align-items:center; gap:0.35rem; font-size:0.72rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#4A3211; background:linear-gradient(90deg,#EBCE85,var(--gold)); padding:0.34rem 0.8rem; border-radius:999px; box-shadow:0 2px 8px -2px rgba(0,0,0,.35); }
     .hero-body { max-width:1000px; margin:0 auto; padding:0 1.3rem; }
@@ -144,6 +144,7 @@
       .menu-grid { grid-template-columns:1fr; gap:0 1rem; }
       .gallery { grid-template-columns:repeat(2,1fr); }
       .hero-logo { width:84px; height:84px; font-size:2rem; }
+      .hero-cover { height:210px; }
     }
   </style>
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
@@ -154,37 +155,7 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-cover">
-      <svg class="cover-scene" viewBox="0 0 1000 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7D5B4"/><stop offset="1" stop-color="#CBB086"/></linearGradient>
-          <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#37514F"/><stop offset="1" stop-color="#26332E"/></linearGradient>
-          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B2017"/><stop offset="1" stop-color="#5A3E28"/></linearGradient>
-        </defs>
-        <rect width="1000" height="260" fill="url(#sky)"/>
-        <rect x="0" y="70" width="1000" height="190" fill="url(#wall)"/>
-        <rect x="0" y="70" width="1000" height="14" fill="rgba(60,40,22,.18)"/>
-        <rect x="120" y="120" width="380" height="120" rx="6" fill="#241A12"/>
-        <rect x="132" y="132" width="356" height="96" rx="3" fill="url(#glass)"/>
-        <ellipse cx="230" cy="182" rx="72" ry="40" fill="#F0CE82" opacity=".22"/>
-        <ellipse cx="392" cy="184" rx="60" ry="36" fill="#F0CE82" opacity=".18"/>
-        <g stroke="#17110B" stroke-width="3"><line x1="230" y1="132" x2="230" y2="150"/><line x1="392" y1="132" x2="392" y2="150"/></g>
-        <circle cx="230" cy="156" r="8" fill="#F4D387"/><circle cx="392" cy="156" r="8" fill="#F4D387"/>
-        <line x1="310" y1="132" x2="310" y2="228" stroke="#241A12" stroke-width="4"/>
-        <rect x="520" y="120" width="96" height="120" rx="5" fill="#33241A"/>
-        <rect x="532" y="134" width="72" height="70" rx="3" fill="url(#glass)"/>
-        <circle cx="596" cy="182" r="4" fill="#C6A35E"/>
-        <path d="M104 116 L632 116 L612 72 L124 72 Z" fill="#A2492B"/>
-        <rect x="104" y="116" width="528" height="12" fill="#8E3E24"/>
-        <g fill="#EEDFC3"><path d="M168 116 L184 72 L224 72 L208 116 Z"/><path d="M264 116 L280 72 L320 72 L304 116 Z"/><path d="M360 116 L376 72 L416 72 L400 116 Z"/><path d="M456 116 L472 72 L512 72 L496 116 Z"/><path d="M552 116 L568 72 L608 72 L592 116 Z"/></g>
-        <rect x="680" y="96" width="250" height="96" rx="10" fill="#241811"/>
-        <rect x="680" y="96" width="250" height="96" rx="10" fill="none" stroke="#C6A35E" stroke-width="2"/>
-        <g transform="translate(805,120)" stroke="#EBCE85" stroke-width="2.4" fill="none" stroke-linecap="round"><path d="M-9 -4 h18 v8 a9 9 0 0 1 -18 0 z"/><path d="M9 -2 h4 a4 4 0 0 1 0 8 h-3"/><line x1="-5" y1="-10" x2="-5" y2="-14"/><line x1="0" y1="-10" x2="0" y2="-14"/><line x1="5" y1="-10" x2="5" y2="-14"/></g>
-        <text x="805" y="158" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-weight="700" font-size="30" fill="#EFD79A">Marlowe's</text>
-        <text x="805" y="178" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="600" font-size="11" letter-spacing="3.5" fill="#CDB279">COFFEE &amp; KITCHEN</text>
-        <rect x="70" y="214" width="40" height="34" rx="4" fill="#9A5A33"/>
-        <g stroke="#5E7A4E" stroke-width="6" fill="none" stroke-linecap="round"><path d="M90 214 q-16 -26 -6 -46"/><path d="M90 214 q16 -24 8 -48"/><path d="M90 214 q0 -30 0 -50"/></g>
-      </svg>
-      <span class="cover-photocap">Your storefront photo goes here, kept updated by us</span>
+      <span class="cover-photocap">Your storefront photo, kept current by us</span>
       <div class="hero-nav"><div class="hero-nav-in">
         <a class="brand" href="/index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#E8B79C"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#9BBBA0"/></svg><span class="brand-name">San Mateo Local</span></a>
         <a class="hnav-link" href="/for-business-owners.html">For business owners &rarr;</a>
@@ -212,9 +183,9 @@
     <!-- ABOUT -->
     <section class="blk">
       <h2>About Marlowe's</h2>
-      <p class="lead">A neighborhood coffee house and all-day breakfast spot in the heart of Downtown San Mateo. Marlowe's has been pouring single-origin espresso and serving from-scratch brunch since 2016, the kind of place regulars treat like a second kitchen.</p>
+      <p class="lead">A neighborhood coffee house and all-day breakfast spot in the heart of Downtown San Mateo. Marlowe's has been pouring single-origin espresso and serving from-scratch brunch since 2018, the kind of place regulars treat like a second kitchen.</p>
       <div class="highlights">
-        <span class="chip">Est. 2016</span>
+        <span class="chip">Est. 2018</span>
         <span class="chip">Family-owned</span>
         <span class="chip">Outdoor seating</span>
         <span class="chip">Locally roasted coffee</span>
