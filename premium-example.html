@@ -34,14 +34,22 @@
 
     /* hero */
     .hero { position:relative; }
-    .hero-cover { position:relative; overflow:hidden; height:212px; background:radial-gradient(circle at 22% 26%, rgba(255,240,220,.13), transparent 56%), linear-gradient(120deg,#2C1E15 0%,#4A3423 44%,#7B5636 100%); }
-    .cover-art { position:absolute; right:-18px; top:50%; transform:translateY(-50%) rotate(-6deg); width:214px; height:214px; color:#F4E6CF; opacity:.16; }
-    .cover-art.two { right:auto; left:-46px; top:34%; width:120px; height:120px; opacity:.09; transform:rotate(10deg); }
+    .hero-cover { position:relative; overflow:hidden; height:200px; background:radial-gradient(circle at 24% 22%, rgba(255,242,224,.14), transparent 58%), linear-gradient(120deg,#2B2017 0%,#49341F 48%,#6A4A2F 100%); }
+    .cover-mono { position:absolute; right:30px; bottom:-46px; font-family:'Fraunces',Georgia,serif; font-weight:700; font-size:230px; line-height:1; color:#F5E8D2; opacity:.08; user-select:none; pointer-events:none; }
     .cover-badge { position:absolute; top:15px; right:18px; display:inline-flex; align-items:center; gap:0.35rem; font-size:0.72rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#4A3211; background:linear-gradient(90deg,#EBCE85,var(--gold)); padding:0.34rem 0.8rem; border-radius:999px; box-shadow:0 2px 8px -2px rgba(0,0,0,.35); }
     .hero-body { max-width:1000px; margin:0 auto; padding:0 1.3rem; }
     .hero-card { position:relative; display:flex; gap:1.3rem; align-items:flex-start; flex-wrap:wrap; padding-top:1.15rem; }
-    .hero-logo { margin-top:-54px; width:106px; height:106px; border-radius:18px; border:4px solid var(--paper); background:var(--clay-deep); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; font-size:2.6rem; flex:none; box-shadow:var(--shadow); }
+    .hero-logo { margin-top:-40px; width:106px; height:106px; border-radius:18px; border:4px solid var(--paper); background:var(--clay-deep); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; font-size:2.6rem; flex:none; box-shadow:var(--shadow); }
     .hero-headline { flex:1 1 300px; padding-top:0.15rem; }
+    .prem-pill { display:inline-flex; align-items:center; gap:0.4rem; margin:0.55rem 0 0.15rem; font-size:0.8rem; font-weight:800; letter-spacing:0.09em; text-transform:uppercase; color:#4A3211; background:linear-gradient(90deg,#EFD79A,var(--gold)); padding:0.42rem 0.95rem; border-radius:999px; box-shadow:0 3px 10px -3px rgba(184,147,78,.55); }
+    .hero-nav { position:absolute; top:0; left:0; right:0; z-index:6; opacity:0; transition:opacity 0.28s ease; padding:0.7rem 0; background:linear-gradient(180deg, rgba(15,10,6,.45), transparent); }
+    .hero:hover .hero-nav { opacity:1; }
+    .hero-nav-in { max-width:1000px; margin:0 auto; padding:0 1.3rem; display:flex; align-items:center; justify-content:space-between; }
+    .hero-nav .brand svg { width:24px; height:24px; }
+    .hero-nav .brand-name { color:#F5E8D2; font-size:1.15rem; }
+    .hero-nav .hnav-link { font-size:0.85rem; font-weight:600; color:#F5E8D2; }
+    .hero-nav .hnav-link:hover, .hero-nav .brand:hover .brand-name { color:#fff; }
+    @media (hover:none){ .hero-nav { opacity:1; } }
     .prem-badge { display:inline-flex; align-items:center; gap:0.35rem; font-size:0.7rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#5A3B14; background:linear-gradient(90deg, #E8C877, var(--gold)); padding:0.28rem 0.7rem; border-radius:999px; }
     .hero-headline h1 { font-size:clamp(1.9rem,5vw,2.7rem); font-weight:600; margin:0.5rem 0 0.2rem; }
     .hero-meta { color:var(--ink-soft); font-size:0.98rem; }
@@ -137,23 +145,21 @@
 <body>
   <div class="sample-banner"><strong>This is a sample Premium Business Page.</strong> Marlowe's Coffee &amp; Kitchen is a made-up business, shown to demonstrate what your page would look like.</div>
 
-  <header class="masthead"><div class="masthead-top">
-    <a class="brand" href="/index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg><span class="brand-name">San Mateo Local</span></a>
-    <a class="back" href="/for-business-owners.html">For business owners &rarr;</a>
-  </div></header>
-
   <!-- HERO -->
   <div class="hero">
     <div class="hero-cover">
-      <svg class="cover-art" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
-      <svg class="cover-art two" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
-      <span class="cover-badge">&#9733; Premium</span>
+      <span class="cover-mono">M</span>
+      <div class="hero-nav"><div class="hero-nav-in">
+        <a class="brand" href="/index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#E8B79C"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#9BBBA0"/></svg><span class="brand-name">San Mateo Local</span></a>
+        <a class="hnav-link" href="/for-business-owners.html">For business owners &rarr;</a>
+      </div></div>
     </div>
     <div class="hero-body">
       <div class="hero-card">
         <div class="hero-logo">M</div>
         <div class="hero-headline">
           <h1>Marlowe's Coffee &amp; Kitchen</h1>
+          <div><span class="prem-pill">&#9733; Premium</span></div>
           <div class="hero-meta"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.7 &middot; 312 reviews &nbsp;&bull;&nbsp; Café &amp; Brunch &nbsp;&bull;&nbsp; Downtown San Mateo &nbsp;&bull;&nbsp; $$</div>
         </div>
       </div>
