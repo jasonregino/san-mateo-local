@@ -92,9 +92,8 @@
 
     /* gallery */
     .gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:0.7rem; margin-top:0.6rem; }
-    .gtile { position:relative; aspect-ratio:4/3; border-radius:12px; border:1px solid var(--line); background:linear-gradient(140deg,#EFE7D6,#E2D5BC); box-shadow:var(--shadow); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.35rem; padding:0.5rem; }
-    .gtile svg { width:26px; height:26px; color:var(--clay-deep); opacity:.65; }
-    .gtile span { font-size:0.78rem; font-weight:600; color:var(--ink-soft); }
+    .gallery img { width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px; box-shadow:var(--shadow); display:block; }
+    .gallery .g-feature { grid-column:span 2; grid-row:span 2; }
 
     /* deal */
     .deal { margin-top:0.6rem; padding:1.2rem 1.4rem; background:#FBE7DC; border:1.5px solid var(--clay); border-radius:12px; }
@@ -145,6 +144,7 @@
       .mapgrid { grid-template-columns:1fr; }
       .menu-grid { grid-template-columns:1fr; gap:0 1rem; }
       .gallery { grid-template-columns:repeat(2,1fr); }
+      .gallery .g-feature { grid-column:span 2; grid-row:span 1; aspect-ratio:16/9; }
       .hero-logo { width:84px; height:84px; font-size:2rem; }
       .hero-cover { height:210px; }
     }
@@ -235,10 +235,11 @@
       <div class="eyebrow">Gallery</div>
       <h2>Photos</h2>
       <div class="gallery">
-        <div class="gtile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Storefront</span></div>
-        <div class="gtile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Latte art</span></div>
-        <div class="gtile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Brunch plate</span></div>
-        <div class="gtile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Patio</span></div>
+        <img class="g-feature" src="/images/marlowes-hero.jpg" alt="Marlowe's storefront" loading="lazy" />
+        <img src="/images/marlowes-latte.jpg" alt="Latte art at Marlowe's" loading="lazy" />
+        <img src="/images/marlowes-brunch.jpg" alt="Brunch plate at Marlowe's" loading="lazy" />
+        <img src="/images/marlowes-patio.jpg" alt="Patio seating at Marlowe's" loading="lazy" />
+        <img src="/images/marlowes-backpatio.jpg" alt="Back patio at Marlowe's" loading="lazy" />
       </div>
       <p style="color:var(--ink-soft); font-size:0.85rem; margin-top:0.6rem;">On a real Premium page these are the business's own photos. We collect them at onboarding and keep them current.</p>
     </section>
