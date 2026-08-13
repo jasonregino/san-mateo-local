@@ -14,9 +14,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Marlowe's Coffee & Kitchen","image":"https://sanmateolocal.com/images/central-park-japanese-garden.jpg","address":{"@type":"PostalAddress","streetAddress":"225 B Street","addressLocality":"San Mateo","addressRegion":"CA","postalCode":"94401","addressCountry":"US"},"telephone":"+1-650-555-0148","url":"https://sanmateolocal.com/premium-example.html","servesCuisine":"Coffee, Breakfast & Brunch","priceRange":"$$","openingHours":["Mo-Fr 07:00-15:00","Sa-Su 08:00-16:00"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"312"}}</script>
   <style>
-    :root { --paper:#FAF6EC; --paper-2:#F2E9D4; --card:#FFFDF7; --ink:#221D16; --ink-soft:#5E5446; --clay:#C25B3A; --clay-deep:#A5492B; --sage:#41614B; --sage-deep:#324C3A; --line:#E3D6BC; --gold:#C6A35E; }
-    :root:not([data-theme="light"]) { }
-    [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --card:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage:#88AC8F; --sage-deep:#6E9077; --line:#3A2E24; --gold:#D9BE86; }
+    :root { --paper:#F6F4EF; --paper-2:#EFECE4; --card:#FFFFFF; --ink:#26282C; --ink-soft:#5C6068; --clay:#C25B3A; --clay-deep:#A5492B; --sage:#41614B; --sage-deep:#3A5140; --line:#E7E3DA; --gold:#B8934E; --shadow:0 2px 14px -6px rgba(28,28,30,.12); }
+    [data-theme="dark"] { --paper:#15161A; --paper-2:#1E2024; --card:#1E2024; --ink:#ECEBE7; --ink-soft:#A6A9AF; --clay:#E27D50; --clay-deep:#CB6336; --sage:#88AC8F; --sage-deep:#6E9077; --line:#33353B; --gold:#D9BE86; --shadow:0 2px 14px -6px rgba(0,0,0,.4); }
     * { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:smooth; overflow-x:hidden; }
     body { font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; max-width:100%; }
@@ -37,9 +36,9 @@
     .hero { position:relative; }
     .hero-cover { height:230px; background:linear-gradient(120deg, rgba(34,40,32,.55), rgba(34,40,32,.30)), url('/images/central-park-japanese-garden.jpg'); background-size:cover; background-position:center; }
     .hero-body { max-width:1000px; margin:0 auto; padding:0 1.3rem; }
-    .hero-card { margin-top:-58px; position:relative; display:flex; gap:1.2rem; align-items:flex-end; flex-wrap:wrap; }
-    .hero-logo { width:104px; height:104px; border-radius:16px; border:3px solid var(--paper); background:var(--clay-deep); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; font-size:2.6rem; flex:none; box-shadow:0 8px 20px -10px rgba(0,0,0,.4); }
-    .hero-headline { flex:1 1 300px; padding-bottom:0.3rem; }
+    .hero-card { position:relative; display:flex; gap:1.3rem; align-items:flex-start; flex-wrap:wrap; padding-top:1.15rem; }
+    .hero-logo { margin-top:-54px; width:106px; height:106px; border-radius:18px; border:4px solid var(--paper); background:var(--clay-deep); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; font-size:2.6rem; flex:none; box-shadow:var(--shadow); }
+    .hero-headline { flex:1 1 300px; padding-top:0.15rem; }
     .prem-badge { display:inline-flex; align-items:center; gap:0.35rem; font-size:0.7rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#5A3B14; background:linear-gradient(90deg, #E8C877, var(--gold)); padding:0.28rem 0.7rem; border-radius:999px; }
     .hero-headline h1 { font-size:clamp(1.9rem,5vw,2.7rem); font-weight:600; margin:0.5rem 0 0.2rem; }
     .hero-meta { color:var(--ink-soft); font-size:0.98rem; }
@@ -58,9 +57,9 @@
 
     /* map + info */
     .mapgrid { display:grid; grid-template-columns:1.4fr 1fr; gap:1.2rem; margin-top:0.6rem; }
-    .mapframe { border:1.5px solid var(--ink); border-radius:12px; overflow:hidden; min-height:300px; }
+    .mapframe { border:1px solid var(--line); border-radius:14px; overflow:hidden; min-height:300px; box-shadow:var(--shadow); }
     .mapframe iframe { width:100%; height:100%; min-height:300px; border:0; display:block; }
-    .infocard { border:1.5px solid var(--ink); border-radius:12px; padding:1.2rem 1.3rem; background:var(--card); }
+    .infocard { border:1px solid var(--line); border-radius:14px; padding:1.3rem 1.4rem; background:var(--card); box-shadow:var(--shadow); }
     .infocard h3 { font-size:1.1rem; margin-bottom:0.6rem; }
     .inforow { display:flex; gap:0.6rem; padding:0.45rem 0; border-bottom:1px solid var(--line); font-size:0.94rem; }
     .inforow:last-child { border-bottom:none; }
@@ -95,7 +94,7 @@
     .faq p { margin-top:0.5rem; color:var(--ink-soft); }
 
     /* ask */
-    .ask { margin-top:0.6rem; border:1.5px solid var(--ink); border-radius:14px; padding:1.4rem 1.5rem; background:var(--card); }
+    .ask { margin-top:0.6rem; border:1px solid var(--line); border-radius:16px; padding:1.5rem 1.6rem; background:var(--card); box-shadow:var(--shadow); }
     .ask h3 { font-size:1.25rem; }
     .ask .askbar { display:flex; gap:0.5rem; margin-top:0.9rem; flex-wrap:wrap; }
     .ask input { flex:1 1 240px; padding:0.75rem 1rem; border:1.5px solid var(--line); border-radius:8px; background:var(--paper); color:var(--ink); font-family:inherit; font-size:0.95rem; }
@@ -111,7 +110,7 @@
     .searchval .tags span { font-size:0.8rem; font-weight:700; letter-spacing:0.04em; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.2); border-radius:999px; padding:0.35rem 0.8rem; }
 
     /* owner CTA */
-    .ownercta { margin:2.6rem 0 1rem; text-align:center; padding:2rem 1.4rem; border:1.5px solid var(--ink); border-radius:16px; background:var(--paper-2); }
+    .ownercta { margin:2.6rem 0 1rem; text-align:center; padding:2.2rem 1.5rem; border:1px solid var(--line); border-radius:18px; background:var(--card); box-shadow:var(--shadow); }
     .ownercta h2 { font-size:1.7rem; margin-bottom:0.4rem; }
     .ownercta p { color:var(--ink-soft); max-width:38rem; margin:0 auto 1.2rem; }
     .ownercta .go { display:inline-block; background:var(--clay); color:#fff; font-weight:800; padding:0.85rem 1.8rem; border-radius:10px; font-size:1.02rem; }
@@ -276,6 +275,7 @@
     <div class="ownercta">
       <h2>Want a page like this for your business?</h2>
       <p>A professionally built secondary web presence on San Mateo Local. Your photos, services, reviews, map, offers, and FAQs, built for modern local search and maintained by us.</p>
+      <p style="color:var(--ink-soft); max-width:38rem; margin:0 auto 1.2rem; font-size:0.96rem;">Barely any work on your end. We build a first draft from your existing website and what's already online, then you just confirm the details. We keep it accurate, always.</p>
       <a class="go" href="/for-business-owners.html">Get your Premium page &rarr;</a>
       <div class="fine">Premium Business Page · $59/month · Setup waived for our first 10 founding businesses · No long-term contract.</div>
     </div>
