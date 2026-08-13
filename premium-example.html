@@ -5,319 +5,396 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Marlowe's Coffee &amp; Kitchen — Premium Business Page (Sample) | San Mateo Local</title>
-  <meta name="description" content="A sample Premium Business Page on San Mateo Local. Marlowe's is a demo business showing what your maintained business page looks like." />
-  <meta name="theme-color" content="#221D16" />
+  <meta name="description" content="A sample Premium Business Page on San Mateo Local, built to our premium website standard. Marlowe's is a demo business showing what your maintained page looks like." />
+  <meta name="theme-color" content="#2A1C10" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Marlowe's Coffee & Kitchen","image":"https://sanmateolocal.com/images/central-park-japanese-garden.jpg","address":{"@type":"PostalAddress","streetAddress":"225 B Street","addressLocality":"San Mateo","addressRegion":"CA","postalCode":"94401","addressCountry":"US"},"telephone":"+1-650-555-0148","url":"https://sanmateolocal.com/premium-example.html","servesCuisine":"Coffee, Breakfast & Brunch","priceRange":"$$","openingHours":["Mo-Fr 07:00-15:00","Sa-Su 08:00-16:00"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"312"}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Marlowe's Coffee & Kitchen","image":"https://sanmateolocal.com/images/marlowes-hero.jpg","address":{"@type":"PostalAddress","streetAddress":"225 B Street","addressLocality":"San Mateo","addressRegion":"CA","postalCode":"94401","addressCountry":"US"},"telephone":"+1-650-555-0148","servesCuisine":"Coffee, Breakfast & Brunch","priceRange":"$$","openingHours":["Mo-Fr 07:00-15:00","Sa-Su 08:00-16:00"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"312"}}</script>
   <style>
-    :root { --paper:#F6F4EF; --paper-2:#EFECE4; --card:#FFFFFF; --ink:#26282C; --ink-soft:#5C6068; --clay:#C25B3A; --clay-deep:#A5492B; --sage:#41614B; --sage-deep:#3A5140; --line:#E7E3DA; --gold:#B8934E; --shadow:0 2px 14px -6px rgba(28,28,30,.12); }
-    [data-theme="dark"] { --paper:#15161A; --paper-2:#1E2024; --card:#1E2024; --ink:#ECEBE7; --ink-soft:#A6A9AF; --clay:#E27D50; --clay-deep:#CB6336; --sage:#88AC8F; --sage-deep:#6E9077; --line:#33353B; --gold:#D9BE86; --shadow:0 2px 14px -6px rgba(0,0,0,.4); }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; overflow-x:hidden; }
-    body { font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; max-width:100%; }
-    h1,h2,h3,h4 { font-family:'Fraunces',Georgia,serif; line-height:1.15; letter-spacing:-0.01em; }
-    a { color:inherit; text-decoration:none; }
-    .wrap { max-width:1000px; margin:0 auto; padding:0 1.3rem; }
-    .sample-banner { background:#FBE7DC; color:#6E2F17; border-bottom:1.5px solid var(--clay); font-size:0.9rem; text-align:center; padding:0.6rem 1.2rem; font-weight:500; }
-    [data-theme="dark"] .sample-banner { background:#3A2A1C; color:#E8B79C; }
-    .sample-banner strong { font-weight:700; }
-    .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); }
-    .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:0.8rem 1.3rem; max-width:1000px; margin:0 auto; }
-    .brand { display:flex; align-items:center; gap:0.55rem; }
-    .brand svg { width:26px; height:26px; }
-    .brand-name { font-family:'Fraunces',serif; font-weight:700; font-size:1.25rem; }
-    .masthead .back { font-size:0.85rem; font-weight:600; color:var(--clay-deep); }
+    /* ===== Marlowe's — built to the Premium Website Standard (Cormorant + Inter, crossfade hero,
+       radius-0 border cards, accent used sparingly, alternating sections). Palette = the client's
+       own warm coffee brand, in the standard's roles. ===== */
+    :root{
+      --primary:#2A1C10; --primary-deep:#1B1108; --accent:#C0883A; --accent-light:#E6C588;
+      --ink:#2B2017; --muted:#7C6C58; --bg:#FAF6EE; --line:#E7DDCC; --panel:#F2EADB; --panel-2:#EDE3D0; --cream:#F6EEDF;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100%}
+    h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.06;letter-spacing:-.5px}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+    .eyebrow{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.7rem}
+    .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block}
+    .eyebrow.center{justify-content:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:15px 30px;border-radius:0;border:1px solid transparent;transition:background .25s ease,transform .2s ease,color .25s ease;cursor:pointer}
+    .btn-gold{background:var(--accent);color:#241708}
+    .btn-gold:hover{background:var(--accent-light);transform:translateY(-2px)}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.55);color:#fff}
+    .btn-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+    .btn-dark{background:var(--primary);color:#F4E9D6}
+    .btn-dark:hover{background:var(--primary-deep);transform:translateY(-2px)}
+    section{padding:118px 0}
+    .sec-h{font-size:clamp(30px,4.6vw,52px);font-weight:600;color:var(--primary);margin:.5rem 0 0}
+    .sec-lead{color:var(--muted);font-size:18px;max-width:44rem;margin-top:1rem}
+    .dark{background:var(--primary);color:#EFE3CF}
+    .dark .sec-h{color:#fff}
+    .dark .sec-lead{color:#CBBBA2}
+    .panel{background:var(--panel)}
 
-    /* hero */
-    .hero { position:relative; }
-    .hero-cover { position:relative; overflow:hidden; height:300px; background:#2B2017 url('/images/marlowes-hero.jpg') center 36% / cover no-repeat; }
-    .cover-mono { position:absolute; right:30px; bottom:-46px; font-family:'Fraunces',Georgia,serif; font-weight:700; font-size:230px; line-height:1; color:#F5E8D2; opacity:.08; user-select:none; pointer-events:none; }
-    .cover-badge { position:absolute; top:15px; right:18px; display:inline-flex; align-items:center; gap:0.35rem; font-size:0.72rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#4A3211; background:linear-gradient(90deg,#EBCE85,var(--gold)); padding:0.34rem 0.8rem; border-radius:999px; box-shadow:0 2px 8px -2px rgba(0,0,0,.35); }
-    .hero-body { max-width:1000px; margin:0 auto; padding:0 1.3rem; }
-    .hero-card { position:relative; display:flex; gap:1.3rem; align-items:flex-start; flex-wrap:wrap; padding-top:1.15rem; }
-    .hero-logo { margin-top:-40px; width:106px; height:106px; border-radius:18px; border:4px solid var(--paper); background:var(--clay-deep); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; font-size:2.6rem; flex:none; box-shadow:var(--shadow); }
-    .hero-headline { flex:1 1 300px; padding-top:0.15rem; }
-    .prem-pill { display:inline-flex; align-items:center; gap:0.4rem; margin:0.55rem 0 0.15rem; font-size:0.8rem; font-weight:800; letter-spacing:0.09em; text-transform:uppercase; color:#4A3211; background:linear-gradient(90deg,#EFD79A,var(--gold)); padding:0.42rem 0.95rem; border-radius:999px; box-shadow:0 3px 10px -3px rgba(184,147,78,.55); }
-    .hero-nav { position:absolute; top:0; left:0; right:0; z-index:6; opacity:0; transition:opacity 0.28s ease; padding:0.7rem 0; background:linear-gradient(180deg, rgba(15,10,6,.45), transparent); }
-    .hero:hover .hero-nav { opacity:1; }
-    .hero-nav-in { max-width:1000px; margin:0 auto; padding:0 1.3rem; display:flex; align-items:center; justify-content:space-between; }
-    .hero-nav .brand svg { width:24px; height:24px; }
-    .hero-nav .brand-name { color:#F5E8D2; font-size:1.15rem; }
-    .hero-nav .hnav-link { font-size:0.85rem; font-weight:600; color:#F5E8D2; }
-    .hero-nav .hnav-link:hover, .hero-nav .brand:hover .brand-name { color:#fff; }
-    @media (hover:none){ .hero-nav { opacity:1; } }
-    .prem-badge { display:inline-flex; align-items:center; gap:0.35rem; font-size:0.7rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#5A3B14; background:linear-gradient(90deg, #E8C877, var(--gold)); padding:0.28rem 0.7rem; border-radius:999px; }
-    .hero-headline h1 { font-size:clamp(1.9rem,5vw,2.7rem); font-weight:600; margin:0.5rem 0 0.2rem; }
-    .hero-meta { color:var(--ink-soft); font-size:0.98rem; }
-    .stars { color:var(--gold); letter-spacing:1px; }
-    .hero-actions { display:flex; flex-wrap:wrap; gap:0.6rem; margin:1.3rem 0 0; }
-    .act { display:inline-flex; align-items:center; gap:0.4rem; font-weight:700; font-size:0.92rem; padding:0.6rem 1.1rem; border-radius:8px; border:1.5px solid var(--ink); color:var(--ink); background:var(--card); }
-    .act.primary { background:var(--clay); border-color:var(--clay); color:#fff; }
-    .act:hover { border-color:var(--clay); color:var(--clay-deep); }
-    .act.primary:hover { background:var(--clay-deep); color:#fff; }
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(30px)}
+    .reveal.in{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+    @media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important}}
 
-    section.blk { padding:3.1rem 0 0.5rem; }
-    .eyebrow { font-size:0.72rem; font-weight:800; letter-spacing:0.16em; text-transform:uppercase; color:var(--clay-deep); margin-bottom:0.4rem; }
-    section.blk h2 { font-size:1.8rem; margin-bottom:0.75rem; letter-spacing:-0.015em; }
-    .lead { color:var(--ink-soft); font-size:1.12rem; max-width:52rem; }
-    .cover-scene { position:absolute; inset:0; width:100%; height:100%; display:block; }
-    .cover-photocap { position:absolute; right:14px; bottom:12px; z-index:4; display:inline-flex; align-items:center; gap:0.35rem; font-size:0.7rem; font-weight:600; color:#F5E8D2; background:rgba(20,14,9,.55); padding:0.32rem 0.75rem; border-radius:999px; }
-    .reveal-init { opacity:0; transform:translateY(20px); }
-    .reveal-in { opacity:1; transform:none; transition:opacity 0.65s cubic-bezier(.2,.7,.2,1), transform 0.65s cubic-bezier(.2,.7,.2,1); }
-    @media (prefers-reduced-motion: reduce){ .reveal-init { opacity:1 !important; transform:none !important; } }
-    .highlights { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
-    .chip { font-size:0.82rem; font-weight:600; color:var(--sage-deep); background:var(--paper-2); border:1px solid var(--line); border-radius:999px; padding:0.4rem 0.85rem; }
+    /* sample banner */
+    .sample-banner{position:relative;z-index:40;background:#241708;color:#E7C98C;font-size:12.5px;text-align:center;padding:.55rem 1.2rem;letter-spacing:.3px}
+    .sample-banner b{color:#F4E4BF}
 
-    /* map + info */
-    .mapgrid { display:grid; grid-template-columns:1.4fr 1fr; gap:1.2rem; margin-top:0.6rem; }
-    .mapframe { border:1px solid var(--line); border-radius:14px; overflow:hidden; min-height:300px; box-shadow:var(--shadow); }
-    .mapframe iframe { width:100%; height:100%; min-height:300px; border:0; display:block; }
-    .infocard { border:1px solid var(--line); border-radius:14px; padding:1.3rem 1.4rem; background:var(--card); box-shadow:var(--shadow); }
-    .infocard h3 { font-size:1.1rem; margin-bottom:0.6rem; }
-    .inforow { display:flex; gap:0.6rem; padding:0.45rem 0; border-bottom:1px solid var(--line); font-size:0.94rem; }
-    .inforow:last-child { border-bottom:none; }
-    .inforow .k { color:var(--ink-soft); flex:none; width:74px; font-weight:600; }
+    /* nav */
+    .nav{position:absolute;top:0;left:0;right:0;z-index:30;padding:1.5rem 0}
+    .nav-in{max-width:1180px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+    .nav-brand{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#fff;letter-spacing:.5px}
+    .nav-right{display:flex;align-items:center;gap:1.6rem}
+    .nav-link{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.82)}
+    .nav-link:hover{color:#fff}
 
-    /* menu / services */
-    .menu-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0 2.4rem; margin-top:0.6rem; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:1rem 1.6rem; box-shadow:var(--shadow); }
-    .menu-item { display:flex; justify-content:space-between; gap:1rem; padding:0.85rem 0; border-bottom:1px solid var(--line); }
-    .menu-item:last-child, .menu-item:nth-last-child(2) { border-bottom:none; }
-    .menu-item .mn { font-weight:600; font-size:1.02rem; }
-    .menu-item .md { color:var(--ink-soft); font-size:0.86rem; margin-top:0.1rem; }
-    .menu-item .mp { color:var(--clay-deep); font-weight:700; flex:none; font-family:'Fraunces',Georgia,serif; font-size:1.05rem; }
+    /* HERO — full-viewport crossfade */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+    .hero-slides{position:absolute;inset:0;z-index:0}
+    .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center 46%;opacity:0;transition:opacity 1s ease}
+    .hero-slide.active{opacity:1}
+    .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(20,12,6,.82) 0%,rgba(20,12,6,.55) 45%,rgba(20,12,6,.28) 100%),linear-gradient(0deg,rgba(20,12,6,.55),transparent 55%)}
+    .hero-in{position:relative;z-index:2;color:#fff;max-width:760px}
+    .hero .eyebrow{color:var(--accent-light)}
+    .hero .eyebrow::before{background:var(--accent-light)}
+    .hero h1{font-size:clamp(48px,8vw,92px);font-weight:600;line-height:1.02;letter-spacing:-1px;margin:1.3rem 0 1rem}
+    .hero h1 em{font-style:italic;color:var(--accent-light)}
+    .hero-sub{font-size:19px;color:rgba(255,255,255,.9);max-width:34rem;line-height:1.6}
+    .hero-rate{margin-top:1.1rem;font-size:14px;color:var(--accent-light);font-weight:600;letter-spacing:.5px}
+    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+    .prem-badge{position:absolute;top:6.2rem;right:32px;z-index:3;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#241708;background:var(--accent);padding:.5rem 1rem}
+    .scrollcue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.7);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+
+    /* statement */
+    .statement{text-align:center}
+    .statement p{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,3.6vw,40px);line-height:1.28;color:var(--primary);max-width:52rem;margin:1rem auto 0}
+    .statement em{font-style:italic;color:var(--accent)}
+
+    /* two-column about */
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+    .split-img{aspect-ratio:4/5;background-size:cover;background-position:center;border:1px solid var(--line)}
+    .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}
+    .chip{font-size:12px;font-weight:600;letter-spacing:.4px;color:var(--primary);border:1px solid var(--line);padding:.45rem .95rem;background:#fff}
+
+    /* hover-zoom highlight cards */
+    .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.6rem}
+    .hcard{position:relative;overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line);display:block}
+    .hcard-img{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1);transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+    .hcard:hover .hcard-img{transform:scale(1.07)}
+    .hcard-ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,12,6,.8) 0%,rgba(20,12,6,.05) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+    .hcard-label{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#fff}
+    .hcard-more{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent-light);opacity:0;transition:opacity .3s ease;margin-top:.25rem}
+    .hcard:hover .hcard-more{opacity:1}
+    @media(hover:none){.hcard-more{opacity:1}}
+
+    /* menu */
+    .menu{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 4rem;margin-top:2rem}
+    .mrow{display:flex;justify-content:space-between;gap:1.2rem;align-items:baseline;padding:1rem 0;border-bottom:1px solid var(--line)}
+    .mrow .mn{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--primary)}
+    .mrow .md{color:var(--muted);font-size:13.5px}
+    .mrow .mp{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--accent);white-space:nowrap}
+
+    /* visit */
+    .visit-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2.4rem;margin-top:2.4rem}
+    .mapframe{border:1px solid var(--line);overflow:hidden;min-height:360px}
+    .mapframe iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+    .infocol .irow{display:flex;gap:.9rem;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:15px}
+    .infocol .irow .ik{color:var(--accent-light);font-weight:600;flex:none;width:84px;letter-spacing:.5px;text-transform:uppercase;font-size:12px;padding-top:2px}
 
     /* gallery */
-    .gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:0.7rem; margin-top:0.6rem; }
-    .gallery img { width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px; box-shadow:var(--shadow); display:block; }
-    .gallery .g-feature { grid-column:span 2; grid-row:span 2; }
-
-    /* deal */
-    .deal { margin-top:0.6rem; padding:1.2rem 1.4rem; background:#FBE7DC; border:1.5px solid var(--clay); border-radius:12px; }
-    [data-theme="dark"] .deal { background:#3A2A1C; }
-    .deal .dt { font-weight:700; font-size:1.1rem; margin-bottom:0.2rem; }
-    .deal .dm { color:var(--ink-soft); font-style:italic; }
+    .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
+    .gitem{overflow:hidden;border:1px solid var(--line)}
+    .gitem.big{grid-column:span 2;grid-row:span 2}
+    .gitem img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;transform:scale(1);transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+    .gitem.big img{aspect-ratio:1/1}
+    .gitem:hover img{transform:scale(1.06)}
 
     /* reviews */
-    .revhead { display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap; margin-top:0.4rem; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:1.35rem 1.6rem; box-shadow:var(--shadow); }
-    .revscore { font-family:'Fraunces',Georgia,serif; font-size:3rem; font-weight:700; line-height:1; color:var(--clay-deep); }
-    .revlink { color:var(--clay-deep); font-weight:700; font-size:0.92rem; }
+    .rev{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-top:2rem;border:1px solid var(--line);background:#fff;padding:2rem 2.2rem}
+    .rev-score{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:var(--accent);line-height:1}
+    .rev-stars{color:var(--accent);letter-spacing:3px;font-size:18px}
+    .rev-count{color:var(--muted);font-size:14px;margin-top:.2rem}
+    .rev-link{margin-left:auto;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
 
-    /* FAQ */
-    .faq details { border-bottom:1px solid var(--line); padding:0.85rem 0; }
-    .faq summary { font-weight:600; font-size:1.02rem; cursor:pointer; }
-    .faq p { margin-top:0.5rem; color:var(--ink-soft); }
+    /* deal */
+    .deal{margin-top:2rem;border:1px solid var(--accent);border-left:4px solid var(--accent);background:var(--cream);padding:1.8rem 2rem;max-width:44rem}
+    .deal .dt{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--primary)}
+    .deal .dm{color:var(--muted);font-style:italic;margin-top:.2rem}
+
+    /* faq */
+    .faq{margin-top:2rem;max-width:48rem}
+    .faq details{border-bottom:1px solid var(--line);padding:1.1rem 0}
+    .faq summary{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--primary);cursor:pointer;list-style:none}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{color:var(--muted);margin-top:.6rem}
 
     /* ask */
-    .ask { margin-top:0.6rem; border:1px solid var(--line); border-radius:16px; padding:1.5rem 1.6rem; background:var(--card); box-shadow:var(--shadow); }
-    .ask h3 { font-size:1.25rem; }
-    .ask .askbar { display:flex; gap:0.5rem; margin-top:0.9rem; flex-wrap:wrap; }
-    .ask input { flex:1 1 240px; padding:0.75rem 1rem; border:1.5px solid var(--line); border-radius:8px; background:var(--paper); color:var(--ink); font-family:inherit; font-size:0.95rem; }
-    .ask .askbtn { background:var(--sage-deep); color:#fff; border:none; border-radius:8px; padding:0.75rem 1.3rem; font-weight:700; cursor:pointer; }
-    .ask .suggest { display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.8rem; }
-    .ask .suggest span { font-size:0.82rem; color:var(--ink-soft); border:1px solid var(--line); border-radius:999px; padding:0.35rem 0.75rem; }
+    .ask{margin-top:2rem;border:1px solid var(--line);background:#fff;padding:2rem 2.2rem;max-width:48rem}
+    .askbar{display:flex;gap:.6rem;margin-top:1.1rem;flex-wrap:wrap}
+    .askbar input{flex:1 1 240px;padding:14px 16px;border:1px solid var(--line);border-radius:0;background:var(--bg);color:var(--ink);font:inherit;font-size:15px}
+    .askbar button{background:var(--primary);color:#F4E9D6;border:none;border-radius:0;padding:14px 24px;font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+    .suggest{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+    .suggest span{font-size:12.5px;color:var(--muted);border:1px solid var(--line);padding:.4rem .85rem}
 
-    /* search-value strip */
-    .searchval { margin-top:2.6rem; background:var(--sage-deep); color:#F3EFE2; border-radius:16px; padding:1.8rem 1.6rem; }
-    .searchval h2 { color:#fff; font-size:1.5rem; margin-bottom:0.5rem; }
-    .searchval p { color:#DCE6DB; max-width:48rem; }
-    .searchval .tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
-    .searchval .tags span { font-size:0.8rem; font-weight:700; letter-spacing:0.04em; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.2); border-radius:999px; padding:0.35rem 0.8rem; }
+    /* search tags */
+    .tags{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+    .tags span{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent-light);border:1px solid rgba(230,197,136,.4);padding:.5rem 1rem}
 
-    /* owner CTA */
-    .ownercta { margin:2.6rem 0 1rem; text-align:center; padding:2.2rem 1.5rem; border:1px solid var(--line); border-radius:18px; background:var(--card); box-shadow:var(--shadow); }
-    .ownercta h2 { font-size:1.7rem; margin-bottom:0.4rem; }
-    .ownercta p { color:var(--ink-soft); max-width:38rem; margin:0 auto 1.2rem; }
-    .ownercta .go { display:inline-block; background:var(--clay); color:#fff; font-weight:800; padding:0.85rem 1.8rem; border-radius:10px; font-size:1.02rem; }
-    .ownercta .fine { font-size:0.85rem; color:var(--ink-soft); margin-top:0.9rem; }
+    /* owner cta */
+    .owner{text-align:center}
+    .owner .price{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--accent-light);margin-top:1.2rem}
 
-    footer.site { padding:2.5rem 0; border-top:1.5px solid var(--ink); margin-top:2rem; }
-    .maint { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.82rem; font-weight:700; color:var(--sage-deep); }
-    .social a { color:var(--ink-soft); font-weight:600; margin-right:1rem; }
-    .f-copy { font-size:0.8rem; color:var(--ink-soft); margin-top:1rem; }
+    /* footer */
+    footer{background:var(--primary-deep);color:#CDBBA0;padding:70px 0 46px}
+    footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:30px;color:#fff;font-weight:600}
+    footer .maint{display:inline-flex;align-items:center;gap:.4rem;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-light);margin-top:1rem}
+    footer .fmeta{font-size:13.5px;color:#A2917B;margin-top:1rem;line-height:1.9}
+    footer .fsoc{margin-top:1rem;display:flex;gap:1.4rem}
+    footer .fsoc a{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#CDBBA0;font-weight:600}
+    footer .fcopy{font-size:11.5px;color:#7C6B57;margin-top:1.8rem;border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem}
 
-    @media (max-width:760px){
-      body { font-size:17px; }
-      .mapgrid { grid-template-columns:1fr; }
-      .menu-grid { grid-template-columns:1fr; gap:0 1rem; }
-      .gallery { grid-template-columns:repeat(2,1fr); }
-      .gallery .g-feature { grid-column:span 2; grid-row:span 1; aspect-ratio:16/9; }
-      .hero-logo { width:84px; height:84px; font-size:2rem; }
-      .hero-cover { height:210px; }
+    @media(max-width:900px){
+      .wrap,.nav-in{padding-left:20px;padding-right:20px}
+      section{padding:64px 0}
+      .split{grid-template-columns:1fr;gap:2.2rem}
+      .split-img{aspect-ratio:16/10}
+      .cards3{grid-template-columns:1fr}
+      .menu{grid-template-columns:1fr;gap:0}
+      .visit-grid{grid-template-columns:1fr}
+      .gal{grid-template-columns:repeat(2,1fr)}
+      .gitem.big{grid-column:span 2;grid-row:span 1}
+      .prem-badge{top:5.2rem;right:20px}
+      .nav-brand{font-size:20px}
+      .nav .nav-link{display:none}
+      .hero-cta{gap:.7rem}
     }
+    @media(prefers-reduced-motion:reduce){.hero-slide{transition:none}}
   </style>
-  <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <script>(function(){try{document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 </head>
 <body>
-  <div class="sample-banner"><strong>This is a sample Premium Business Page.</strong> Marlowe's Coffee &amp; Kitchen is a made-up business, shown to demonstrate what your page would look like.</div>
+  <div class="sample-banner"><b>This is a sample Premium Business Page,</b> built to our premium website standard. Marlowe's Coffee &amp; Kitchen is a made-up business.</div>
 
   <!-- HERO -->
-  <div class="hero">
-    <div class="hero-cover">
-      <span class="cover-photocap">Your storefront photo, kept current by us</span>
-      <div class="hero-nav"><div class="hero-nav-in">
-        <a class="brand" href="/index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#E8B79C"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#9BBBA0"/></svg><span class="brand-name">San Mateo Local</span></a>
-        <a class="hnav-link" href="/for-business-owners.html">For business owners &rarr;</a>
-      </div></div>
+  <section class="hero">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('/images/marlowes-hero.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/marlowes-backpatio.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/marlowes-patio.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/marlowes-latte.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/marlowes-brunch.jpg')"></div>
     </div>
-    <div class="hero-body">
-      <div class="hero-card">
-        <div class="hero-logo">M</div>
-        <div class="hero-headline">
-          <h1>Marlowe's Coffee &amp; Kitchen</h1>
-          <div><span class="prem-pill">&#9733; Premium</span></div>
-          <div class="hero-meta"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.7 &middot; 312 reviews &nbsp;&bull;&nbsp; Café &amp; Brunch &nbsp;&bull;&nbsp; Downtown San Mateo &nbsp;&bull;&nbsp; $$</div>
-        </div>
+    <div class="hero-scrim"></div>
+    <span class="prem-badge">&#9733; Premium</span>
+    <nav class="nav"><div class="nav-in">
+      <span class="nav-brand">Marlowe's</span>
+      <div class="nav-right">
+        <a class="nav-link" href="#visit">Visit</a>
+        <a class="nav-link" href="#menu">Menu</a>
+        <a class="nav-link" href="tel:+16505550148">(650) 555-0148</a>
       </div>
-      <div class="hero-actions">
-        <a class="act primary" href="tel:+16505550148">Call</a>
-        <a class="act" href="#map">Directions</a>
-        <a class="act" href="#">Website</a>
-        <a class="act" href="#">Order online</a>
+    </div></nav>
+    <div class="wrap">
+      <div class="hero-in">
+        <span class="eyebrow">Downtown San Mateo &middot; Est. 2018</span>
+        <h1>Marlowe's Coffee<br>&amp; <em>Kitchen</em></h1>
+        <p class="hero-sub">A neighborhood coffee house and an all-day, from-scratch kitchen. Single-origin espresso, real brunch, and a back patio that feels like a secret.</p>
+        <div class="hero-rate">&#9733;&#9733;&#9733;&#9733;&#9733; &nbsp;4.7 &middot; 312 Google reviews</div>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="tel:+16505550148">Call the shop</a>
+          <a class="btn btn-outline" href="#visit">Get directions</a>
+        </div>
       </div>
     </div>
-  </div>
+    <span class="scrollcue">Scroll</span>
+  </section>
 
-  <main class="wrap">
-    <!-- ABOUT -->
-    <section class="blk">
-      <div class="eyebrow">The Story</div>
-      <h2>About Marlowe's</h2>
-      <p class="lead">A neighborhood coffee house and all-day breakfast spot in the heart of Downtown San Mateo. Marlowe's has been pouring single-origin espresso and serving from-scratch brunch since 2018, the kind of place regulars treat like a second kitchen.</p>
-      <div class="highlights">
-        <span class="chip">Est. 2018</span>
-        <span class="chip">Family-owned</span>
-        <span class="chip">Outdoor seating</span>
-        <span class="chip">Locally roasted coffee</span>
-        <span class="chip">Vegetarian-friendly</span>
-        <span class="chip">Dog-friendly patio</span>
-      </div>
-    </section>
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="wrap reveal">
+      <span class="eyebrow center">Since 2018</span>
+      <p>The kind of place regulars treat like a <em>second kitchen</em> — good coffee, an honest plate, and a table that's always yours.</p>
+    </div>
+  </section>
 
-    <!-- MAP + INFO -->
-    <section class="blk" id="map">
-      <div class="eyebrow">Visit</div>
-      <h2>Find &amp; visit</h2>
-      <div class="mapgrid">
-        <div class="mapframe">
-          <iframe loading="lazy" title="Map to Marlowe's Coffee & Kitchen" src="https://www.google.com/maps?q=225%20B%20Street%2C%20San%20Mateo%2C%20CA%2094401&output=embed"></iframe>
-        </div>
-        <div class="infocard">
-          <h3>Marlowe's Coffee &amp; Kitchen</h3>
-          <div class="inforow"><span class="k">Address</span><span>225 B Street, San Mateo, CA 94401</span></div>
-          <div class="inforow"><span class="k">Phone</span><span>(650) 555-0148</span></div>
-          <div class="inforow"><span class="k">Hours</span><span>Mon–Fri 7a–3p · Sat–Sun 8a–4p</span></div>
-          <div class="inforow"><span class="k">Area</span><span>Downtown San Mateo</span></div>
-          <div class="inforow"><span class="k">Price</span><span>$$ · Coffee, Breakfast &amp; Brunch</span></div>
+  <!-- ABOUT -->
+  <section class="panel">
+    <div class="wrap split">
+      <div class="split-img reveal" style="background-image:url('/images/marlowes-backpatio.jpg')"></div>
+      <div class="reveal">
+        <span class="eyebrow">The Story</span>
+        <h2 class="sec-h">About Marlowe's</h2>
+        <p class="sec-lead">A neighborhood coffee house and all-day breakfast spot in the heart of Downtown San Mateo. We've been pouring single-origin espresso and serving from-scratch brunch since 2018, with a leafy back patio that's become the regulars' favorite corner.</p>
+        <div class="chips">
+          <span class="chip">Est. 2018</span><span class="chip">Family-owned</span><span class="chip">Outdoor seating</span><span class="chip">Locally roasted</span><span class="chip">Vegetarian-friendly</span><span class="chip">Dog-friendly patio</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- MENU -->
-    <section class="blk">
-      <div class="eyebrow">The Menu</div>
-      <h2>What they're known for</h2>
-      <div class="menu-grid">
-        <div class="menu-item"><div><div class="mn">Cardamom latte</div><div class="md">House single-origin, real cardamom</div></div><div class="mp">$5.5</div></div>
-        <div class="menu-item"><div><div class="mn">Marlowe breakfast plate</div><div class="md">Two eggs, sourdough, potatoes, greens</div></div><div class="mp">$15</div></div>
-        <div class="menu-item"><div><div class="mn">Lemon-ricotta pancakes</div><div class="md">Weekend favorite</div></div><div class="mp">$14</div></div>
-        <div class="menu-item"><div><div class="mn">Avocado toast</div><div class="md">Chili crisp, soft egg</div></div><div class="mp">$13</div></div>
-        <div class="menu-item"><div><div class="mn">Cold brew flight</div><div class="md">Three roasts, tasting size</div></div><div class="mp">$8</div></div>
-        <div class="menu-item"><div><div class="mn">Morning bun</div><div class="md">Baked in-house daily</div></div><div class="mp">$4.5</div></div>
+  <!-- HIGHLIGHTS (hover-zoom cards) -->
+  <section>
+    <div class="wrap reveal">
+      <span class="eyebrow">What we do</span>
+      <h2 class="sec-h">A few of our favorites</h2>
+      <div class="cards3">
+        <a class="hcard" href="#menu"><div class="hcard-img" style="background-image:url('/images/marlowes-latte.jpg')"></div><div class="hcard-ov"><span class="hcard-label">The Coffee</span><span class="hcard-more">See the menu &rarr;</span></div></a>
+        <a class="hcard" href="#menu"><div class="hcard-img" style="background-image:url('/images/marlowes-brunch.jpg')"></div><div class="hcard-ov"><span class="hcard-label">The Kitchen</span><span class="hcard-more">See the menu &rarr;</span></div></a>
+        <a class="hcard" href="#visit"><div class="hcard-img" style="background-image:url('/images/marlowes-patio.jpg')"></div><div class="hcard-ov"><span class="hcard-label">The Patio</span><span class="hcard-more">Come by &rarr;</span></div></a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- GALLERY -->
-    <section class="blk">
-      <div class="eyebrow">Gallery</div>
-      <h2>Photos</h2>
-      <div class="gallery">
-        <img class="g-feature" src="/images/marlowes-hero.jpg" alt="Marlowe's storefront" loading="lazy" />
-        <img src="/images/marlowes-latte.jpg" alt="Latte art at Marlowe's" loading="lazy" />
-        <img src="/images/marlowes-brunch.jpg" alt="Brunch plate at Marlowe's" loading="lazy" />
-        <img src="/images/marlowes-patio.jpg" alt="Patio seating at Marlowe's" loading="lazy" />
-        <img src="/images/marlowes-backpatio.jpg" alt="Back patio at Marlowe's" loading="lazy" />
+  <!-- MENU -->
+  <section class="panel" id="menu">
+    <div class="wrap reveal">
+      <span class="eyebrow">The Menu</span>
+      <h2 class="sec-h">What we're known for</h2>
+      <div class="menu">
+        <div class="mrow"><div><div class="mn">Cardamom latte</div><div class="md">House single-origin, real cardamom</div></div><div class="mp">$5.5</div></div>
+        <div class="mrow"><div><div class="mn">Marlowe breakfast plate</div><div class="md">Two eggs, sourdough, potatoes, greens</div></div><div class="mp">$15</div></div>
+        <div class="mrow"><div><div class="mn">Lemon-ricotta pancakes</div><div class="md">Weekend favorite</div></div><div class="mp">$14</div></div>
+        <div class="mrow"><div><div class="mn">Avocado toast</div><div class="md">Chili crisp, soft egg</div></div><div class="mp">$13</div></div>
+        <div class="mrow"><div><div class="mn">Cold brew flight</div><div class="md">Three roasts, tasting size</div></div><div class="mp">$8</div></div>
+        <div class="mrow"><div><div class="mn">Morning bun</div><div class="md">Baked in-house daily</div></div><div class="mp">$4.5</div></div>
       </div>
-      <p style="color:var(--ink-soft); font-size:0.85rem; margin-top:0.6rem;">On a real Premium page these are the business's own photos. We collect them at onboarding and keep them current.</p>
-    </section>
+    </div>
+  </section>
 
-    <!-- DEAL -->
-    <section class="blk">
-      <div class="eyebrow">Local Perk</div>
-      <h2>Local deal</h2>
+  <!-- VISIT (dark) -->
+  <section class="dark" id="visit">
+    <div class="wrap reveal">
+      <span class="eyebrow">Visit</span>
+      <h2 class="sec-h">Find us</h2>
+      <div class="visit-grid">
+        <div class="mapframe"><iframe loading="lazy" title="Map to Marlowe's" src="https://www.google.com/maps?q=225%20B%20Street%2C%20San%20Mateo%2C%20CA%2094401&output=embed"></iframe></div>
+        <div class="infocol">
+          <div class="irow"><span class="ik">Address</span><span>225 B Street, San Mateo, CA 94401</span></div>
+          <div class="irow"><span class="ik">Phone</span><span>(650) 555-0148</span></div>
+          <div class="irow"><span class="ik">Hours</span><span>Mon&ndash;Fri 7a&ndash;3p<br>Sat&ndash;Sun 8a&ndash;4p</span></div>
+          <div class="irow"><span class="ik">Area</span><span>Downtown San Mateo</span></div>
+          <div style="margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn btn-gold" href="tel:+16505550148">Call</a><a class="btn btn-outline" href="https://www.google.com/maps?q=225+B+Street,+San+Mateo,+CA" target="_blank" rel="noopener">Directions</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section>
+    <div class="wrap reveal">
+      <span class="eyebrow">Gallery</span>
+      <h2 class="sec-h">A look inside</h2>
+      <div class="gal">
+        <div class="gitem big"><img src="/images/marlowes-hero.jpg" alt="Marlowe's storefront" loading="lazy" /></div>
+        <div class="gitem"><img src="/images/marlowes-latte.jpg" alt="Latte art" loading="lazy" /></div>
+        <div class="gitem"><img src="/images/marlowes-brunch.jpg" alt="Brunch plate" loading="lazy" /></div>
+        <div class="gitem"><img src="/images/marlowes-patio.jpg" alt="Patio seating" loading="lazy" /></div>
+        <div class="gitem"><img src="/images/marlowes-backpatio.jpg" alt="Back patio" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS + DEAL -->
+  <section class="panel">
+    <div class="wrap reveal">
+      <span class="eyebrow">Reputation</span>
+      <h2 class="sec-h">Loved by locals</h2>
+      <div class="rev">
+        <div class="rev-score">4.7</div>
+        <div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rev-count">Based on 312 Google reviews</div></div>
+        <a class="rev-link" href="#">Read on Google &rarr;</a>
+      </div>
+      <div style="margin-top:3.4rem"><span class="eyebrow">Local Perk</span><h2 class="sec-h">A San Mateo Local deal</h2></div>
       <div class="deal">
-        <div class="dt">&#127903; Free morning bun with any drink, weekday mornings.</div>
+        <div class="dt">&#127903; Free morning bun with any drink, weekday mornings</div>
         <div class="dm">Just mention San Mateo Local.</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- REVIEWS -->
-    <section class="blk">
-      <div class="eyebrow">Reputation</div>
-      <h2>Reviews</h2>
-      <div class="revhead">
-        <div class="revscore">4.7</div>
-        <div>
-          <div class="stars" style="font-size:1.2rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <div style="color:var(--ink-soft); font-size:0.9rem;">Based on 312 Google reviews</div>
-        </div>
-        <a class="revlink" href="#" style="margin-left:auto;">Read reviews on Google &rarr;</a>
+  <!-- FAQ + ASK -->
+  <section>
+    <div class="wrap reveal">
+      <span class="eyebrow">Good to Know</span>
+      <h2 class="sec-h">Frequently asked</h2>
+      <div class="faq">
+        <details open><summary>Do you take reservations?</summary><p>Walk-ins only for parties under six. Larger groups can call ahead and we'll do our best to seat you together.</p></details>
+        <details><summary>Do you have vegetarian and vegan options?</summary><p>Yes. Most of the breakfast menu can be made vegetarian, and we always have a vegan plate and oat-milk drinks.</p></details>
+        <details><summary>Is there parking?</summary><p>Street parking on B Street and the city garage one block over on 2nd Avenue.</p></details>
+        <details><summary>Are you dog-friendly?</summary><p>Dogs are welcome on the back patio.</p></details>
       </div>
-      <p style="color:var(--ink-soft); font-size:0.85rem; margin-top:0.7rem;">We show the live Google rating and count and link out to the reviews, no invented quotes, always the real number.</p>
-    </section>
-
-    <!-- FAQ -->
-    <section class="blk faq">
-      <div class="eyebrow">Good to Know</div>
-      <h2>Frequently asked</h2>
-      <details open><summary>Do you take reservations?</summary><p>Walk-ins only for parties under six. Larger groups can call ahead and we'll do our best to seat you together.</p></details>
-      <details><summary>Do you have vegetarian and vegan options?</summary><p>Yes. Most of the breakfast menu can be made vegetarian, and we always have a vegan plate and oat-milk drinks.</p></details>
-      <details><summary>Is there parking?</summary><p>Street parking on B Street and the city garage one block over on 2nd Avenue.</p></details>
-      <details><summary>Are you dog-friendly?</summary><p>Dogs are welcome on the back patio.</p></details>
-    </section>
-
-    <!-- ASK -->
-    <section class="blk">
-      <div class="eyebrow">Ask AI</div>
-      <h2>Ask about this business</h2>
+      <div style="margin-top:3.4rem"><span class="eyebrow">Ask</span><h2 class="sec-h">Ask about Marlowe's</h2></div>
       <div class="ask">
-        <h3>Have a question for Marlowe's?</h3>
-        <p style="color:var(--ink-soft); margin-top:0.3rem;">Ask and get an answer from the business's verified information, hours, menu, services, and location.</p>
-        <div class="askbar">
-          <input type="text" placeholder="e.g. Are you open on Sunday morning?" aria-label="Ask about this business" />
-          <button class="askbtn" type="button">Ask</button>
-        </div>
-        <div class="suggest"><span>What are your hours?</span><span>Do you have vegan options?</span><span>Is there parking?</span><span>Do you take reservations?</span></div>
+        <p style="color:var(--muted)">Ask and get an answer from the business's verified information, hours, menu, services, and location.</p>
+        <div class="askbar"><input type="text" placeholder="e.g. Are you open Sunday morning?" aria-label="Ask about this business" /><button type="button">Ask</button></div>
+        <div class="suggest"><span>What are your hours?</span><span>Do you have vegan options?</span><span>Is there parking?</span></div>
       </div>
-    </section>
-
-    <!-- SEARCH VALUE (jargon-last) -->
-    <div class="searchval">
-      <h2>Built for the way people search now</h2>
-      <p>People don't just search Google anymore. They ask "where's a good brunch in San Mateo?" or "is this café open Sunday?", on Maps, and more and more on AI tools. This page gives search engines and AI systems a rich, structured, up-to-date source of truth about the business, so they understand who it is, what it offers, and where to find it.</p>
-      <div class="tags"><span>SEO</span><span>Local SEO</span><span>AEO</span><span>GEO</span><span>San Mateo Local AI Guide</span></div>
     </div>
+  </section>
 
-    <!-- OWNER CTA -->
-    <div class="ownercta">
-      <h2>Want a page like this for your business?</h2>
-      <p>A professionally built secondary web presence on San Mateo Local. Your photos, services, reviews, map, offers, and FAQs, built for modern local search and maintained by us.</p>
-      <p style="color:var(--ink-soft); max-width:38rem; margin:0 auto 1.2rem; font-size:0.96rem;">Barely any work on your end. We build a first draft from your existing website and what's already online, then you just confirm the details. We keep it accurate, always.</p>
-      <a class="go" href="/for-business-owners.html">Get your Premium page &rarr;</a>
-      <div class="fine">Premium Business Page · $59/month · Setup waived for our first 10 founding businesses · No long-term contract.</div>
+  <!-- SEARCH VALUE (dark) -->
+  <section class="dark">
+    <div class="wrap reveal" style="max-width:52rem;text-align:center;margin:0 auto">
+      <span class="eyebrow center">Built for how people search now</span>
+      <h2 class="sec-h">Found on Google, Maps, and AI</h2>
+      <p class="sec-lead" style="margin:1.2rem auto 0">People don't just search Google anymore. They ask "where's a good brunch in San Mateo?" on Maps, and more and more on AI tools. Your page gives search engines and AI systems a rich, structured, up-to-date source of truth about your business, so they understand who you are, what you offer, and where to find you.</p>
+      <div class="tags" style="justify-content:center"><span>SEO</span><span>Local SEO</span><span>AEO</span><span>GEO</span><span>San Mateo Local AI Guide</span></div>
     </div>
-  </main>
+  </section>
 
-  <footer class="site"><div class="wrap">
-    <span class="maint">&#10003; Maintained by San Mateo Local</span>
-    <div class="social" style="margin-top:0.9rem;"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">Website</a></div>
-    <p class="f-copy">This is a sample page. Marlowe's Coffee &amp; Kitchen is not a real business. &copy; 2026 San Mateo Local.</p>
-  </div></footer>
+  <!-- OWNER CTA -->
+  <section class="panel owner">
+    <div class="wrap reveal" style="max-width:44rem;margin:0 auto">
+      <span class="eyebrow center">For business owners</span>
+      <h2 class="sec-h">Want a page like this for your business?</h2>
+      <p class="sec-lead" style="margin:1.1rem auto 0">A professionally built web presence on San Mateo Local, built for modern local search and maintained by us. We build the first draft from your existing site and what's already online, then you just confirm. Barely any work on your end.</p>
+      <div class="price">Premium Business Page &middot; $59/month &middot; setup waived for our first 10 businesses</div>
+      <div style="margin-top:1.8rem"><a class="btn btn-dark" href="/for-business-owners.html">Get your Premium page</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="fbrand">Marlowe's Coffee &amp; Kitchen</div>
+      <div class="maint">&#10003; Maintained by San Mateo Local</div>
+      <div class="fmeta">225 B Street, Downtown San Mateo &middot; (650) 555-0148<br>Mon&ndash;Fri 7a&ndash;3p &middot; Sat&ndash;Sun 8a&ndash;4p</div>
+      <div class="fsoc"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">Website</a></div>
+      <div class="fcopy">This is a sample page. Marlowe's Coffee &amp; Kitchen is not a real business. &copy; 2026 San Mateo Local.</div>
+    </div>
+  </footer>
+
   <script>
-  (function(){try{ if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return; var els=document.querySelectorAll('main > section, main > div'); els.forEach(function(el){el.classList.add('reveal-init');}); var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('reveal-in');io.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'}); els.forEach(function(el){io.observe(el);}); }catch(e){}})();
+  (function(){
+    // hero crossfade
+    try{
+      var slides=document.querySelectorAll('.hero-slide');
+      if(slides.length>1 && !(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)){
+        var i=0; setInterval(function(){ slides[i].classList.remove('active'); i=(i+1)%slides.length; slides[i].classList.add('active'); },4800);
+      }
+    }catch(e){}
+    // reveal on scroll
+    try{
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els=document.querySelectorAll('.reveal');
+      var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+      els.forEach(function(el){io.observe(el);});
+    }catch(e){}
+  })();
   </script>
 </body>
 </html>
