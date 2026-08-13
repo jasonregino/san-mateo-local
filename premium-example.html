@@ -34,7 +34,10 @@
 
     /* hero */
     .hero { position:relative; }
-    .hero-cover { height:230px; background:linear-gradient(120deg, rgba(34,40,32,.55), rgba(34,40,32,.30)), url('/images/central-park-japanese-garden.jpg'); background-size:cover; background-position:center; }
+    .hero-cover { position:relative; overflow:hidden; height:212px; background:radial-gradient(circle at 22% 26%, rgba(255,240,220,.13), transparent 56%), linear-gradient(120deg,#2C1E15 0%,#4A3423 44%,#7B5636 100%); }
+    .cover-art { position:absolute; right:-18px; top:50%; transform:translateY(-50%) rotate(-6deg); width:214px; height:214px; color:#F4E6CF; opacity:.16; }
+    .cover-art.two { right:auto; left:-46px; top:34%; width:120px; height:120px; opacity:.09; transform:rotate(10deg); }
+    .cover-badge { position:absolute; top:15px; right:18px; display:inline-flex; align-items:center; gap:0.35rem; font-size:0.72rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#4A3211; background:linear-gradient(90deg,#EBCE85,var(--gold)); padding:0.34rem 0.8rem; border-radius:999px; box-shadow:0 2px 8px -2px rgba(0,0,0,.35); }
     .hero-body { max-width:1000px; margin:0 auto; padding:0 1.3rem; }
     .hero-card { position:relative; display:flex; gap:1.3rem; align-items:flex-start; flex-wrap:wrap; padding-top:1.15rem; }
     .hero-logo { margin-top:-54px; width:106px; height:106px; border-radius:18px; border:4px solid var(--paper); background:var(--clay-deep); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; font-size:2.6rem; flex:none; box-shadow:var(--shadow); }
@@ -141,12 +144,15 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-cover"></div>
+    <div class="hero-cover">
+      <svg class="cover-art" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+      <svg class="cover-art two" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+      <span class="cover-badge">&#9733; Premium</span>
+    </div>
     <div class="hero-body">
       <div class="hero-card">
         <div class="hero-logo">M</div>
         <div class="hero-headline">
-          <span class="prem-badge">&#9733; Premium</span>
           <h1>Marlowe's Coffee &amp; Kitchen</h1>
           <div class="hero-meta"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.7 &middot; 312 reviews &nbsp;&bull;&nbsp; Café &amp; Brunch &nbsp;&bull;&nbsp; Downtown San Mateo &nbsp;&bull;&nbsp; $$</div>
         </div>
