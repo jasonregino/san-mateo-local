@@ -21,26 +21,26 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
   :root { --paper:#FAF6EC; --paper-2:#F2E9D4; --ink:#221D16; --ink-soft:#5E5446; --clay:#C25B3A; --clay-deep:#A5492B; --sage:#41614B; --sage-deep:#324C3A; --line:#E3D6BC; --line-soft:#ECE1CB; --card:#FFFDF7; }
   [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage:#6E9077; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; --card:#221B14; }
   * { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
   body { overflow-x: hidden; max-width: 100%; font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased; }
-  h1,h2,h3 { font-family:'Fraunces',Georgia,serif; line-height:1.12; font-weight:600; letter-spacing:-0.01em; }
+  h1,h2,h3 { font-family:'Cormorant Garamond',Georgia,serif; line-height:1.08; font-weight:600; letter-spacing:-0.01em; }
   a { color:inherit; text-decoration:none; }
   .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
   .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
   /* masthead (matches the guide) */
-  .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:50; }
+  .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:50; box-shadow:0 6px 24px -18px rgba(0,0,0,0.4); }
   .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1.5rem; max-width:1140px; margin:0 auto; }
   .brand { display:flex; align-items:center; gap:0.6rem; }
   .brand svg { width:30px; height:30px; flex:none; }
-  .brand-name { font-family:'Fraunces',serif; font-weight:700; font-size:1.45rem; letter-spacing:-0.02em; }
+  .brand-name { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.6rem; letter-spacing:-0.01em; }
   .masthead-right { display:flex; align-items:center; gap:1.25rem; }
   .masthead-nav { display:flex; gap:1.4rem; align-items:center; }
-  .masthead-nav a { font-size:0.9rem; font-weight:500; color:var(--ink-soft); }
+  .masthead-nav a { font-size:0.74rem; font-weight:600; letter-spacing:0.13em; text-transform:uppercase; color:var(--ink-soft); }
   .masthead-nav a:hover { color:var(--clay-deep); }
   .masthead-nav a.on { color:var(--clay-deep); font-weight:600; }
   .theme-toggle { background:none; border:1.5px solid var(--line); border-radius:999px; width:36px; height:36px; cursor:pointer; color:var(--ink); font-size:1rem; display:inline-flex; align-items:center; justify-content:center; flex:none; }
@@ -300,7 +300,7 @@
           <span class="go">Take a look &rarr;</span>
         </a>
         <a class="bcard" href="downtown.html" data-type="Event" style="--tc:#3B5BA0; animation-delay:0.6s;">
-          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</span><span class="fresh">New</span></div>
+          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</span><span class="fresh">Added Aug 10</span></div>
           <h3>Live music &amp; trivia this week</h3>
           <p class="meta">Downtown · Aug 11 to 14</p>
           <p class="d">Trivia and karaoke kick off the week at McGovern's, O'Neill's, and Blue Moon Bar, then Friday brings a full downtown live-music lineup: jazz at B Street &amp; Vine and A2 Wine Bar, Latin Night at Motion Arts Center, and Sean Daly &amp; the Shams at O'Neill's.</p>

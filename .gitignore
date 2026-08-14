@@ -1,5 +1,8 @@
 # Internal business docs — NEVER deploy or publish these.
 # Only index.html (the public site) should ship to Vercel.
+SML_REDDIT_ENGAGEMENT_PLAN.md
+SML_INSTAGRAM_COWORK_JOB.md
+SML_REDDIT_LOG.md
 OPERATIONS.md
 STRATEGY.md
 MONETIZATION.md
@@ -7,6 +10,7 @@ COWORK_PROJECT_BRIEF.md
 _cowork-original-build-prompt.md
 data/
 scripts/
+.scripts-backup-preskin/
 .DS_Store
 *-preview.html
 photos-staging/
