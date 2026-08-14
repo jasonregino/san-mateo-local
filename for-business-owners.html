@@ -98,6 +98,27 @@
     footer a{color:var(--ink-soft);text-decoration:none}
     footer a:hover{color:var(--clay-deep)}
     footer .fnav a{margin-right:1rem}
+    /* two-path orienter + bucket separation */
+    .paths{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.4rem}
+    @media(max-width:640px){.paths{grid-template-columns:1fr}}
+    .path{display:flex;flex-direction:column;background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:1.5rem 1.5rem 1.35rem;text-decoration:none;color:var(--ink);transition:transform .16s ease,box-shadow .16s ease}
+    .path:hover{transform:translateY(-3px);box-shadow:0 16px 34px -20px rgba(34,29,22,.45)}
+    .path-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:999px;font-weight:800;font-size:.95rem;color:#fff;margin-bottom:.55rem}
+    .path h3{font-size:1.35rem;margin:0 0 .35rem}
+    .path p{color:var(--ink-soft);font-size:.94rem;flex:1}
+    .path-go{margin-top:.9rem;font-weight:700;font-size:.9rem}
+    .path-green{border-top:5px solid var(--sage-deep)}
+    .path-green .path-num{background:var(--sage-deep)}
+    .path-green .path-go{color:var(--sage-deep)}
+    .path-clay{border-top:5px solid var(--clay-deep)}
+    .path-clay .path-num{background:var(--clay-deep)}
+    .path-clay .path-go{color:var(--clay-deep)}
+    .band-green{background:#EDF3ED;border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line)}
+    .band-green .svc{border-top-color:var(--sage-deep)}
+    .bucket-tag{display:inline-flex;align-items:center;gap:.45rem;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;padding:.34rem .85rem;border-radius:999px;color:#fff}
+    .bucket-tag .bn{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:999px;background:rgba(255,255,255,.3);font-size:.7rem}
+    .bucket-green{background:var(--sage-deep)}
+    .bucket-clay{background:var(--clay-deep)}
   </style>
 </head>
 <body>
@@ -131,11 +152,36 @@
     </div>
   </div>
 
-  <!-- ===== SERVICES (primary) ===== -->
+  <!-- ===== TWO PATHS (orienter) ===== -->
+  <div class="wrap">
+    <section style="padding:2.4rem 0 0.4rem;">
+      <p class="sec-label">Two ways we help you get more customers</p>
+      <h2 class="sec-h" style="margin-bottom:1.1rem;">Pick the one that fits, or do both</h2>
+      <div class="paths">
+        <a class="path path-green" href="#services">
+          <span class="path-num">1</span>
+          <h3>Build your own presence</h3>
+          <p style="flex:none;font-weight:600;color:var(--ink);margin-bottom:.4rem;">Build the digital tools your business needs.</p>
+          <p>Your own website, more Google reviews, and the phone and chat systems that turn calls and clicks into paying customers. This is your online home, off our guide. Start with just what you need, or bundle it all together.</p>
+          <span class="path-go">See what we do &rarr;</span>
+        </a>
+        <a class="path path-clay" href="#feature">
+          <span class="path-num">2</span>
+          <h3>Get seen on San Mateo Local</h3>
+          <p style="flex:none;font-weight:600;color:var(--ink);margin-bottom:.4rem;">Get your business in front of locals already looking.</p>
+          <p>Get onto the guide locals already browse. Your basic listing is always free, with paid options to get more visibility or build a richer business presence on San Mateo Local.</p>
+          <span class="path-go">See your options &rarr;</span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== SERVICES (primary) — bucket 1: your own presence ===== -->
+  <div class="band-green">
   <div class="wrap">
     <section id="services" style="padding-top:2.4rem;">
-      <p class="sec-label">What we do for local businesses</p>
-      <h2 class="sec-h">Get found, and keep the calls coming</h2>
+      <p style="text-align:center;margin-bottom:.55rem;"><span class="bucket-tag bucket-green"><span class="bn">1</span>&nbsp;Build your own presence</span></p>
+      <h2 class="sec-h" style="margin-top:0;">Get found, and keep the calls coming</h2>
       <p style="text-align:center; color:var(--ink-soft); max-width:600px; margin:-.7rem auto 1.9rem;">All of it done for you by locals who live here. Month to month, no contracts, and a free preview before you decide anything.</p>
 
       <p class="sec-label" style="text-align:left; color:var(--sage-deep);">Get online, done right</p>
@@ -232,14 +278,16 @@
       </div>
     </section>
   </div>
+  </div>
 
-  <!-- ===== DIRECTORY (secondary) ===== -->
+  <!-- ===== DIRECTORY (secondary) — bucket 2: on the guide ===== -->
   <div class="wrap">
-    <section style="padding:1.6rem 0 0;">
+    <section style="padding:1.9rem 0 0;">
       <div style="border-top:1.5px solid var(--line); padding-top:1.9rem;">
-        <p class="sec-label" style="text-align:left; color:var(--sage-deep);">And get on the guide</p>
+        <p style="margin-bottom:.55rem;"><span class="bucket-tag bucket-clay"><span class="bn">2</span>&nbsp;Get seen on San Mateo Local</span></p>
         <h2 style="text-align:left; font-size:1.6rem; margin:.3rem 0 .35rem;">Show up where locals are already looking</h2>
-        <p style="color:var(--ink-soft);">Separate from the services above, and a free place to start: get your business onto the San Mateo guide residents actually browse. A basic listing is always free, with a few ways to stand out.</p>
+        <p style="color:var(--ink-soft);">A completely separate offer from the services above, and a free place to start: get your business onto the San Mateo guide residents actually browse. A basic listing is always free, with a few ways to stand out.</p>
+        <p style="margin-top:.8rem;"><a href="list-your-business.html" style="color:var(--clay-deep); font-weight:700; font-size:.95rem;">New to this? Why list on San Mateo Local &rarr;</a></p>
       </div>
     </section>
   </div>
@@ -319,6 +367,8 @@
           .tier-relief { color:var(--ink-soft); font-size:.9rem; font-style:italic; margin-bottom:.95rem; }
           .tier-cta { display:inline-block; background:var(--clay); color:#fff; font-weight:700; padding:.7rem 1.4rem; border:none; border-radius:8px; cursor:pointer; font-size:.95rem; text-decoration:none; }
           .tier-cta.ghost { background:transparent; color:var(--clay-deep); border:1.5px solid var(--line); }
+          .tier-cta.sample-cta { background:#fff; color:var(--clay-deep); border:2px solid var(--clay); box-shadow:0 5px 18px -6px rgba(194,91,58,.45); }
+          .tier-cta.sample-cta:hover { background:var(--clay); color:#fff; }
           .tier-pop-tag { display:inline-block; font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:#fff; background:var(--clay); border-radius:999px; padding:.2rem .6rem; font-weight:800; margin-bottom:.5rem; }
           .tier-new { font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--sage-deep); font-weight:800; border:1px solid var(--sage-deep); border-radius:999px; padding:.12rem .48rem; vertical-align:middle; margin-left:.4rem; }
           .tier-where { font-size:.85rem; color:var(--ink); background:var(--paper-2); border:1px solid var(--line); border-radius:8px; padding:.5rem .7rem; margin:.15rem 0 .95rem; line-height:1.5; }
@@ -362,11 +412,12 @@
           <p class="tier-win">Your own professionally built web presence on San Mateo Local, built for modern local search and maintained by us.</p>
           <p class="tier-relief">Your photos, services, map, reviews, offer, and FAQs on one page. We build the first draft from your existing site and what's already online, then you just confirm. Barely any work on your end.</p>
           <div class="tier-where"><b>What you get</b>A dedicated business page with a hero photo, an interactive map, your menu or services, a photo gallery, your Google rating, your deal, an "ask about this business" helper, and structured info built to help Google and AI search understand your business, hosted and kept current by us.</div>
-          <div style="display:flex; align-items:center; gap:1.1rem; flex-wrap:wrap;">
+          <div style="display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;">
             <a class="tier-cta" href="#start">Get my Premium page &rarr;</a>
-            <a href="premium-example.html" style="color:var(--clay-deep); font-weight:700; font-size:.9rem;">See a sample &rarr;</a>
+            <a class="tier-cta sample-cta" href="premium-example.html" target="_blank" rel="noopener">&#128064;&nbsp;See a live sample &rarr;</a>
           </div>
-          <p style="color:var(--sage-deep); font-weight:700; font-size:.85rem; margin:.75rem 0 0;">&#9733; Founding offer: setup waived for our first 10 businesses.</p>
+          <p style="color:var(--ink-soft); font-size:.86rem; margin:.65rem 0 0;">Take a real Premium page for a spin before you decide, this is exactly what yours would look like.</p>
+          <p style="color:var(--sage-deep); font-weight:700; font-size:.85rem; margin:.55rem 0 0;">&#9733; Founding offer: setup waived for our first 10 businesses.</p>
         </div>
 
         <div class="tier">
@@ -580,6 +631,7 @@
         </div>
         <div class="row">
           <label class="fld">What are you interested in?</label>
+          <p style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--sage-deep);margin:.1rem 0 .35rem;">1 &middot; Build your own presence</p>
           <div class="checks">
             <label class="chk"><input type="checkbox" name="interest[]" value="Founding Business Program (first 5)"> Founding Business Program (first 5)</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="A website"> A website</label>
@@ -588,11 +640,18 @@
             <label class="chk"><input type="checkbox" name="interest[]" value="24/7 Receptionist"> 24/7 Receptionist</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="Online booking &amp; reminders"> Online booking &amp; reminders</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="The full more-customers system"> The full "more customers" system</label>
+          </div>
+          <p style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--clay-deep);margin:1rem 0 .35rem;">2 &middot; Get seen on San Mateo Local</p>
+          <div class="checks">
             <label class="chk"><input type="checkbox" name="interest[]" value="Featured Listing"> Featured Listing</label>
+            <label class="chk"><input type="checkbox" name="interest[]" value="Premium Business Page"> Premium Business Page</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="Business Spotlight (feature story)"> Business Spotlight (story)</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="Local Buzz (specials & events)"> Local Buzz (specials &amp; events)</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="Best-Of guide sponsorship"> Best-Of guide sponsorship</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="Not sure yet"> Not sure yet</label>
+          </div>
+          <p style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--ink-soft);margin:1rem 0 .35rem;">Still deciding?</p>
+          <div class="checks">
+            <label class="chk"><input type="checkbox" name="interest[]" value="Not sure yet"> Not sure yet, help me pick</label>
           </div>
         </div>
         <div class="row">
