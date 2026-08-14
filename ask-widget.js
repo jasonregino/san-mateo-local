@@ -136,3 +136,17 @@
     }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
   });
 })();
+
+/* get_listed_click — fires a GA4 event when someone clicks a "Get listed / For Business Owners"
+   CTA. Delegated, so it catches every such link on the page. Mark it as a key event in GA4. */
+(function () {
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="list-your-business"], a[href*="for-business-owners"]') : null;
+    if (!a || typeof window.gtag !== 'function') return;
+    window.gtag('event', 'get_listed_click', {
+      link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80),
+      link_url: a.getAttribute('href') || '',
+      page_path: location.pathname
+    });
+  }, true);
+})();
