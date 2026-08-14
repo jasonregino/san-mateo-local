@@ -119,6 +119,15 @@
     .bucket-tag .bn{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:999px;background:rgba(255,255,255,.3);font-size:.7rem}
     .bucket-green{background:var(--sage-deep)}
     .bucket-clay{background:var(--clay-deep)}
+    /* sticky mobile CTA bar */
+    .sticky-cta{display:none}
+    @media(max-width:720px){
+      .sticky-cta{display:flex; gap:.5rem; position:fixed; left:0; right:0; bottom:0; z-index:60; padding:.55rem .7rem; background:var(--paper); border-top:1.5px solid var(--ink); box-shadow:0 -6px 20px -12px rgba(0,0,0,.4);}
+      .sticky-cta a{text-align:center; font-weight:800; font-size:.95rem; padding:.75rem; border-radius:8px; text-decoration:none;}
+      .sticky-cta a.s-list{flex:1; background:var(--clay); color:#fff;}
+      .sticky-cta a.s-call{flex:0 0 32%; background:#fff; color:var(--clay-deep); border:2px solid var(--clay);}
+      body{padding-bottom:4.6rem;}
+    }
   </style>
 </head>
 <body>
@@ -140,15 +149,19 @@
     <div class="hero">
       <p class="kick">For business owners</p>
       <h1>More customers for your San Mateo business</h1>
-      <p>We build the website, grow your Google reviews, and set up the systems that turn calls and clicks into customers. Done for you by locals, month to month, no contracts. See a free preview before you decide.</p>
-      <a class="cta" href="growth-review.html">Get your free Growth Review</a>
-      <p style="margin-top:1rem;font-size:.95rem;"><a href="#services" style="color:var(--clay-deep);font-weight:700;text-decoration:none;">Or see everything we do &rarr;</a></p>
+      <p>Two ways we help: <strong>build your own online presence</strong> (website, Google reviews, phone and chat systems), or <strong>get seen on the San Mateo guide</strong> locals already read. Do one, or both. By a local, month to month, no contracts.</p>
+      <div style="display:flex; gap:.7rem; flex-wrap:wrap; justify-content:center; margin-top:1.6rem;">
+        <a class="cta" href="growth-review.html" style="margin-top:0;">Get your free Growth Review</a>
+        <a class="cta" href="#getlisted" style="margin-top:0; background:#fff; color:var(--clay-deep); border:2px solid var(--clay);">Get listed free</a>
+      </div>
+      <p style="margin-top:1rem;font-size:.92rem; color:var(--ink-soft);">A <strong>Growth Review</strong> is a free, no-pressure look at how your business shows up online right now, with honest suggestions. <a href="#services" style="color:var(--clay-deep);font-weight:700;text-decoration:none;">Or see everything we do &rarr;</a></p>
     </div>
   </div>
 
   <div class="trust">
     <div class="wrap">
       <p>You're looking at the proof. We built this whole guide, hundreds of local spots, from scratch. The same care goes into everything we do for local businesses.</p>
+      <p style="margin-top:.9rem; font-family:'Inter',sans-serif; font-style:normal; font-size:.98rem; color:var(--ink-soft);"><strong style="color:var(--ink);">Jason here</strong> &mdash; born and raised in San Mateo, a real person, not an agency or a call center. Questions? Call or text me at <a href="tel:+16502608084" style="color:var(--clay-deep); font-weight:800; white-space:nowrap;">(650) 260-8084</a>.</p>
     </div>
   </div>
 
@@ -184,18 +197,45 @@
       <h2 class="sec-h" style="margin-top:0;">Get found, and keep the calls coming</h2>
       <p style="text-align:center; color:var(--ink-soft); max-width:600px; margin:-.7rem auto 1.9rem;">All of it done for you by locals who live here. Month to month, no contracts, and a free preview before you decide anything.</p>
 
-      <p class="sec-label" style="text-align:left; color:var(--sage-deep);">Get online, done right</p>
+      <!-- FOUNDING BUSINESS PROGRAM (first 10; website + 24/7 AI Chat only; BCM owns delivery/billing) -->
+      <style>
+        @keyframes foundGlow { 0%,100%{ box-shadow:0 12px 32px -16px rgba(224,169,46,.5); } 50%{ box-shadow:0 18px 46px -14px rgba(224,169,46,.85); } }
+        .found-box { background:linear-gradient(160deg,#FFFDF7 0%,#FBF0D6 100%); border:2px solid #F2C94C; border-top:6px solid #E0A92E; border-radius:14px; padding:1.8rem 1.9rem; margin:.2rem 0 2rem; box-shadow:0 12px 34px -14px rgba(224,169,46,.55); animation:foundGlow 3.2s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce){ .found-box{ animation:none; } }
+      </style>
+      <p class="sec-label" style="text-align:left; color:var(--clay-deep);">The deal I'm running right now</p>
+      <div class="found-box">
+        <span style="display:inline-block; background:#F2C94C; color:#221D16; font-size:.66rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:.32rem .8rem; border-radius:999px;">&#9733; Founding offer &middot; First 10 businesses only</span>
+        <h3 style="font-size:1.6rem; margin:.75rem 0 .4rem;">A free website plus 24/7 AI Chat, for $149/mo</h3>
+        <p style="color:var(--sage-deep); font-weight:700; font-size:1.02rem; margin:0 0 .7rem;">Capture leads day and night, even when you're closed.</p>
+        <p style="color:var(--ink-soft); margin-bottom:1rem;">I'm looking for ten local businesses to launch this with. You get a free professionally built website plus our 24/7 AI Chat (missed-call text-back included), at a founding price that never goes up as long as you stay.</p>
+        <div style="display:grid; gap:.42rem; margin-bottom:1.05rem; font-size:.98rem; color:var(--ink);">
+          <div>&#10004; Free professional website</div>
+          <div>&#10004; 24/7 AI Chat, with missed-call text-back built in</div>
+          <div>&#10004; No setup fee, nothing upfront</div>
+          <div style="color:var(--ink-soft);">&#9642;&nbsp; Review management is <strong>not</strong> included, that's a separate service</div>
+        </div>
+        <p style="color:var(--ink-soft); font-size:.9rem; margin:0 0 .1rem;"><s>$298/mo if bought separately ($99 website + $199 AI Chat), plus a $300 build</s></p>
+        <p style="font-weight:800; color:var(--clay-deep); font-size:1.75rem; margin:0 0 .3rem;">$149<span style="font-weight:600; font-size:.82rem; color:var(--ink-soft);">/month, nothing upfront</span></p>
+        <p style="color:var(--sage-deep); font-weight:700; font-size:.92rem; margin:0 0 .25rem;">Your founding price is locked in for as long as you stay a customer.</p>
+        <p style="color:var(--ink-soft); font-size:.78rem; margin:0 0 1.1rem;">Website + 24/7 AI Chat only. First 10 businesses. Regular pricing is below.</p>
+        <a href="#start" data-intent="Founding Business Program (first 10)" style="display:inline-block; background:#F2C94C; color:#221D16; text-decoration:none; font-weight:800; padding:.8rem 1.7rem; border-radius:6px;">Claim a founding spot &rarr;</a>
+      </div>
+
+      <p class="sec-label" style="text-align:left; color:var(--sage-deep);">Or, the regular pricing if you'd rather</p>
       <div class="cards" style="margin:.55rem 0 1.6rem;">
         <div class="svc">
           <div class="ico">&#128187;</div>
           <h3>A website that works</h3>
           <p>Custom, fast, and built for a phone, where locals actually find you. We build it, host it, and keep it updated. You see a free preview before you pay a cent.</p>
+          <p style="font-size:.82rem; color:var(--clay-deep); margin-top:.45rem;">Just want a page on our guide, no domain to manage? See the <a href="#feature" style="color:var(--clay-deep); font-weight:700;">Premium Business Page</a>.</p>
           <p class="svc-price">from $99<span>/mo + $300 one-time build</span></p>
         </div>
         <div class="svc">
           <div class="ico">&#11088;</div>
           <h3>Google Review Management</h3>
           <p>We wake up your past customers, ask every new one the right way, and reply to every review as your business, so your rating reflects the work you're actually doing.</p>
+          <p style="font-size:.85rem; color:var(--ink-soft); margin-top:.5rem;"><strong>We never write reviews.</strong> We only ask your real customers, the way Google allows.</p>
           <p class="svc-price">from $79<span>/mo + $199 one-time setup</span></p>
         </div>
         <div class="svc" style="border-top-color:var(--sage-deep); background:var(--paper-2);">
@@ -208,29 +248,6 @@
 
       <p class="sec-label" style="text-align:left; color:var(--sage-deep);">Never miss a customer</p>
 
-      <!-- FOUNDING BUSINESS PROGRAM (temporary founding offer, first 5; BCM owns delivery/billing/tracking) -->
-      <style>
-        @keyframes foundGlow { 0%,100%{ box-shadow:0 12px 32px -16px rgba(224,169,46,.5); } 50%{ box-shadow:0 18px 46px -14px rgba(224,169,46,.85); } }
-        .found-box { background:linear-gradient(160deg,#FFFDF7 0%,#FBF0D6 100%); border:2px solid #F2C94C; border-top:6px solid #E0A92E; border-radius:14px; padding:1.8rem 1.9rem; margin:.5rem 0 1.6rem; box-shadow:0 12px 34px -14px rgba(224,169,46,.55); animation:foundGlow 3.2s ease-in-out infinite; }
-        @media (prefers-reduced-motion: reduce){ .found-box{ animation:none; } }
-      </style>
-      <div class="found-box">
-        <span style="display:inline-block; background:#F2C94C; color:#221D16; font-size:.66rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; padding:.32rem .8rem; border-radius:999px;">&#9733; Founding Business Program &middot; First 5 only</span>
-        <h3 style="font-size:1.6rem; margin:.75rem 0 .4rem;">Free website, plus our Never Miss a Customer system</h3>
-        <p style="color:var(--sage-deep); font-weight:700; font-size:1.02rem; margin:0 0 .7rem;">Capture leads day and night, even when you're closed.</p>
-        <p style="color:var(--ink-soft); margin-bottom:1rem;">I'm looking for five local businesses to help launch our Never Miss a Customer system. In return, you'll get a free professionally built website plus our 24/7 AI Chat (missed-call text-back included) at a founding price that never increases as long as you remain a customer.</p>
-        <div style="display:grid; gap:.42rem; margin-bottom:1.05rem; font-size:.98rem; color:var(--ink);">
-          <div>&#10004; Free professional website</div>
-          <div>&#10004; 24/7 AI Chat, with missed-call text-back built in</div>
-          <div>&#10004; No setup fee</div>
-        </div>
-        <p style="color:var(--ink-soft); font-size:.9rem; margin:0 0 .1rem;"><s>$298/mo if bought separately ($99 website + $199 AI Chat), plus a $300 build</s></p>
-        <p style="font-weight:800; color:var(--clay-deep); font-size:1.75rem; margin:0 0 .3rem;">$149<span style="font-weight:600; font-size:.82rem; color:var(--ink-soft);">/month, nothing upfront</span></p>
-        <p style="color:var(--sage-deep); font-weight:700; font-size:.92rem; margin:0 0 .25rem;">Your founding price is locked in for as long as you remain a customer.</p>
-        <p style="color:var(--ink-soft); font-size:.78rem; margin:0 0 1.1rem;">Applies to this service tier.</p>
-        <a href="#start" style="display:inline-block; background:#F2C94C; color:#221D16; text-decoration:none; font-weight:800; padding:.8rem 1.7rem; border-radius:6px;">Claim a founding spot &rarr;</a>
-      </div>
-
       <p style="color:var(--ink-soft); font-size:.94rem; margin:.25rem 0 .95rem;">The systems that catch every call, text, and click, even when you're slammed or closed. Our business texting is fully approved and compliant.</p>
 
       <div style="background:var(--card); border:1.5px solid var(--sage-deep); border-top:5px solid var(--sage-deep); border-radius:14px; padding:1.6rem 1.7rem; margin:.3rem 0 1.3rem;">
@@ -240,7 +257,8 @@
         <p style="color:var(--ink-soft); font-size:.95rem; margin-bottom:.85rem;">A natural-sounding receptionist answers every call, day or night. It figures out whether it's an emergency or a routine job, takes down the caller's name, number, and address and what they need, offers your real open appointment times, and books the job right on your calendar. Then it saves everything and emails you the whole call, so you wake up to booked work instead of missed voicemails.</p>
         <p style="color:var(--ink); font-weight:600; margin-bottom:.6rem;">Our premium spot for trades. Month to month, no contract, and we'll show you exactly how it handles a real call on a free demo first, so you can hear it before you decide.</p>
         <p style="font-weight:800; color:var(--clay-deep); font-size:1.15rem; margin:0 0 1rem;">$299<span style="font-weight:600; font-size:.8rem; color:var(--ink-soft);">/mo + $249 one-time setup</span></p>
-        <a href="#start" style="display:inline-block; background:var(--sage-deep); color:#fff; text-decoration:none; font-weight:700; padding:.75rem 1.5rem; border-radius:6px;">Get your free demo &rarr;</a>
+        <a href="#start" data-intent="24/7 Receptionist" style="display:inline-block; background:var(--sage-deep); color:#fff; text-decoration:none; font-weight:700; padding:.75rem 1.5rem; border-radius:6px;">Request setup call &rarr;</a>
+        <p style="color:var(--ink-soft); font-size:.85rem; margin:.6rem 0 0;">We set this one up together, and you'll hear it handle a real call on a free demo before you decide. No online checkout.</p>
       </div>
 
       <div class="cards" style="margin-bottom:1.1rem;">
@@ -269,7 +287,7 @@
           <p class="svc-price">Part of the system</p>
         </div>
       </div>
-      <p style="color:var(--ink-soft); font-size:.94rem; margin-bottom:1.5rem;">Want the whole thing working together? The full <strong>More Customers system</strong> bundles reviews, AI Chat, booking, and follow-up into one done-for-you engine we set up, run, and keep optimized for you. We quote it after a free look at your business, since every setup is a little different. Already a website or reviews client? Add missed-call text-back for <strong>$49/mo</strong>.</p>
+      <p style="color:var(--ink-soft); font-size:.94rem; margin-bottom:1.5rem;">Already a website or reviews client? Add <strong>Missed-Call Text-Back for $49/mo</strong>. Not sure what fits your business? <a href="growth-review.html" style="color:var(--clay-deep); font-weight:700;">Start with a free Growth Review</a> and we'll point you the right way, no pressure.</p>
 
       <div style="text-align:center; background:var(--paper-2); border:1.5px solid var(--ink); border-radius:14px; padding:1.6rem;">
         <p style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; margin-bottom:.3rem;">Not sure where to start?</p>
@@ -332,22 +350,28 @@
           <input type="hidden" name="from_name" value="San Mateo Local — Get Listed" />
           <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="row"><label class="fld" for="lbiz">Business name</label><input type="text" id="lbiz" name="business_name" required /></div>
-          <div class="row"><label class="fld" for="lcat">Category</label>
-            <select id="lcat" name="category" style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.75rem; font:inherit; background:#fff; color:var(--ink);">
-              <option>Eat &amp; Drink</option><option>Shopping / Market</option><option>Things to Do</option><option>Local Service</option><option>Other</option>
-            </select></div>
           <div class="row"><label class="fld" for="laddr">Address</label><input type="text" id="laddr" name="address" placeholder="Street, San Mateo" /></div>
-          <div class="row"><label class="fld" for="lknown">What are you known for?</label><input type="text" id="lknown" name="known_for" placeholder="In a sentence" /></div>
-          <div class="row"><label class="fld" for="lweb">Website (optional)</label><input type="text" id="lweb" name="website" placeholder="yoursite.com" /></div>
-          <div class="row"><label class="fld" for="linsta">Instagram (optional)</label><input type="text" id="linsta" name="instagram" placeholder="@yourhandle" /></div>
-          <div class="row"><label class="fld" for="lfb">Facebook (optional)</label><input type="text" id="lfb" name="facebook" placeholder="facebook.com/yourpage" /></div>
-          <div class="row"><label class="fld" for="lphoto">Cover photo <span style="font-weight:400;color:var(--ink-soft)">(optional, a nice one of your spot)</span></label><input type="file" id="lphoto" name="photo" accept="image/*" style="width:100%; font:inherit; font-size:.9rem; color:var(--ink-soft);" /></div>
-          <div class="row" style="background:var(--paper-2); border-radius:10px; padding:.8rem 1rem;">
-            <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer; margin-bottom:.55rem;"><input type="checkbox" name="photo_permission" value="Yes, may use a photo I own from my site or Google" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">No photo handy? You may use a photo of my business that I own, from my website or Google profile. I confirm it's mine to share.</span></label>
-            <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer;"><input type="checkbox" name="photo_shoot" value="Yes, OK to come take a photo" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">I don't have a good photo. You're welcome to swing by and take one.</span></label>
-          </div>
-          <div class="row"><label class="fld" for="lname">Your name</label><input type="text" id="lname" name="name" /></div>
           <div class="row"><label class="fld" for="lemail">Email</label><input type="email" id="lemail" name="email" placeholder="So we can follow up" required /></div>
+          <p style="font-size:.85rem; color:var(--ink-soft); margin:-.35rem 0 .85rem;">That's all we need to add you. Want your listing to shine? Add a few details (optional).</p>
+          <details style="margin-bottom:1rem;">
+            <summary style="cursor:pointer; font-weight:700; color:var(--clay-deep); font-size:.95rem; padding:.35rem 0;">&#43; Add photos &amp; details (optional)</summary>
+            <div style="margin-top:.8rem;">
+              <div class="row"><label class="fld" for="lcat">Category</label>
+                <select id="lcat" name="category" style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.75rem; font:inherit; background:#fff; color:var(--ink);">
+                  <option>Eat &amp; Drink</option><option>Shopping / Market</option><option>Things to Do</option><option>Local Service</option><option>Other</option>
+                </select></div>
+              <div class="row"><label class="fld" for="lknown">What are you known for?</label><input type="text" id="lknown" name="known_for" placeholder="In a sentence" /></div>
+              <div class="row"><label class="fld" for="lweb">Website (optional)</label><input type="text" id="lweb" name="website" placeholder="yoursite.com" /></div>
+              <div class="row"><label class="fld" for="linsta">Instagram (optional)</label><input type="text" id="linsta" name="instagram" placeholder="@yourhandle" /></div>
+              <div class="row"><label class="fld" for="lfb">Facebook (optional)</label><input type="text" id="lfb" name="facebook" placeholder="facebook.com/yourpage" /></div>
+              <div class="row"><label class="fld" for="lphoto">Cover photo <span style="font-weight:400;color:var(--ink-soft)">(optional, a nice one of your spot)</span></label><input type="file" id="lphoto" name="photo" accept="image/*" style="width:100%; font:inherit; font-size:.9rem; color:var(--ink-soft);" /></div>
+              <div class="row" style="background:var(--paper-2); border-radius:10px; padding:.8rem 1rem;">
+                <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer; margin-bottom:.55rem;"><input type="checkbox" name="photo_permission" value="Yes, may use a photo I own from my site or Google" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">No photo handy? You may use a photo of my business that I own, from my website or Google profile. I confirm it's mine to share.</span></label>
+                <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer;"><input type="checkbox" name="photo_shoot" value="Yes, OK to come take a photo" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">I don't have a good photo. You're welcome to swing by and take one.</span></label>
+              </div>
+              <div class="row"><label class="fld" for="lname">Your name</label><input type="text" id="lname" name="name" /></div>
+            </div>
+          </details>
           <button type="button" id="lsend" style="background:var(--clay);">Add my business</button>
         </form>
       </div>
@@ -400,7 +424,7 @@
           <p style="color:var(--ink-soft); font-size:.93rem; margin-bottom:.75rem;">San Mateo Local now has an AI guide that answers locals asking where to eat, who to call, and what to do. When someone nearby asks for what you offer, it names you first, with your real details, marked Featured so it stays honest. Here is exactly how it works:</p>
           <div style="display:grid; gap:.6rem; font-size:.92rem; color:var(--ink); line-height:1.55;">
             <div><strong style="color:var(--sage-deep);">By category, and by who's closest.</strong> <span style="color:var(--ink-soft);">You're the top pick in your category for the locals nearest you. A featured taco spot downtown is the top pick for downtown, not for someone across town. Real distance, honest picks.</span></div>
-            <div><strong style="color:var(--sage-deep);">Your verified info, stated as fact.</strong> <span style="color:var(--ink-soft);">Give us your menu and hours once, and the guide recommends you by name with real details, instead of telling people to call and check.</span></div>
+            <div><strong style="color:var(--sage-deep);">Your real details, not "call to check."</strong> <span style="color:var(--ink-soft);">Give us the hours and menu you want shown, and the guide recommends you by name with those details, instead of telling people to call and find out.</span></div>
             <div><strong style="color:var(--sage-deep);">A fair turn at the top.</strong> <span style="color:var(--ink-soft);">When more than one Featured business is right by a customer, the top spot rotates evenly between you, so everyone who's in gets a fair share.</span></div>
             <div><strong style="color:var(--sage-deep);">Always honest.</strong> <span style="color:var(--ink-soft);">Featured picks are labeled Featured, and the guide never sends anyone to a spot that isn't genuinely close. That honesty is exactly why the top spot is worth having.</span></div>
           </div>
@@ -410,13 +434,14 @@
           <span class="tier-pop-tag">&#9733; Our flagship</span>
           <div class="tier-top"><h3>Premium Business Page<span class="tier-new">New</span></h3><span class="tier-price">$59<span>/mo + $199 setup</span></span></div>
           <p class="tier-win">Your own professionally built web presence on San Mateo Local, built for modern local search and maintained by us.</p>
+          <p style="font-size:.85rem; color:var(--sage-deep); background:#EDF3ED; border:1px solid #CFE0CF; border-radius:8px; padding:.55rem .8rem; margin:.15rem 0 .7rem;"><strong>This lives on San Mateo Local, not your own domain.</strong> Want a real website at yourbusiness dot com instead? That's the <a href="#services" style="color:var(--sage-deep); font-weight:800;">Website service up top</a>.</p>
           <p class="tier-relief">Your photos, services, map, reviews, offer, and FAQs on one page. We build the first draft from your existing site and what's already online, then you just confirm. Barely any work on your end.</p>
           <div class="tier-where"><b>What you get</b>A dedicated business page with a hero photo, an interactive map, your menu or services, a photo gallery, your Google rating, your deal, an "ask about this business" helper, and structured info built to help Google and AI search understand your business, hosted and kept current by us.</div>
           <div style="display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;">
-            <a class="tier-cta" href="#start">Get my Premium page &rarr;</a>
+            <a class="tier-cta" href="#start" data-intent="Premium Business Page">Request setup call &rarr;</a>
             <a class="tier-cta sample-cta" href="premium-example.html" target="_blank" rel="noopener">&#128064;&nbsp;See a live sample &rarr;</a>
           </div>
-          <p style="color:var(--ink-soft); font-size:.86rem; margin:.65rem 0 0;">Take a real Premium page for a spin before you decide, this is exactly what yours would look like.</p>
+          <p style="color:var(--ink-soft); font-size:.86rem; margin:.65rem 0 0;">We build this one with you, so it starts with a quick call, no online checkout. Take a real Premium page for a spin first, this is exactly what yours would look like.</p>
           <p style="color:var(--sage-deep); font-weight:700; font-size:.85rem; margin:.55rem 0 0;">&#9733; Founding offer: setup waived for our first 10 businesses.</p>
         </div>
 
@@ -428,12 +453,11 @@
           <button type="button" id="tierBuzz" class="tier-cta">Get Local Buzz &rarr;</button>
         </div>
 
-        <div class="tier pop">
-          <span class="tier-pop-tag">Most popular</span>
+        <div class="tier">
           <div class="tier-top"><h3>Business Spotlight</h3><span class="tier-price">$149<span> one time</span></span></div>
           <p class="tier-win">A real story that helps a stranger choose you, and keeps working in Google long after.</p>
           <p class="tier-relief">We interview you or take your notes and write the whole thing. You never touch a keyboard.</p>
-          <div class="tier-where"><b>Where you show up</b>Your own permanent story page (built to rank in Google), plus 30 days featured in the Business Spotlight section on the homepage.</div>
+          <div class="tier-where"><b>Where you show up</b>Your own permanent story page (built the way Google likes), plus 30 days featured in the Business Spotlight section on the homepage.</div>
           <div style="display:flex; align-items:center; gap:1.1rem; flex-wrap:wrap;">
             <button type="button" id="spotStart" class="tier-cta">Feature my story &rarr;</button>
             <a href="sample-business-spotlight.html" style="color:var(--clay-deep); font-weight:700; font-size:.9rem;">See a sample &rarr;</a>
@@ -450,7 +474,7 @@
           <a class="tier-cta ghost" href="#start">Ask about a sponsorship &rarr;</a>
         </div>
 
-        <p style="color:var(--ink-soft); font-size:.9rem; margin-top:1.3rem;">Want more customers, not just more visibility? We also set up <strong>Google reviews</strong> and build <strong>websites</strong>, more on those just below.</p>
+        <p style="color:var(--ink-soft); font-size:.9rem; margin-top:1.3rem;">Want more customers, not just more visibility? We also build <strong>websites</strong> and set up <strong>Google reviews</strong>, see <a href="#services" style="color:var(--clay-deep); font-weight:700;">Build your own presence</a> up top.</p>
       </div>
     </section>
 
@@ -633,13 +657,13 @@
           <label class="fld">What are you interested in?</label>
           <p style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--sage-deep);margin:.1rem 0 .35rem;">1 &middot; Build your own presence</p>
           <div class="checks">
-            <label class="chk"><input type="checkbox" name="interest[]" value="Founding Business Program (first 5)"> Founding Business Program (first 5)</label>
+            <label class="chk"><input type="checkbox" name="interest[]" value="Founding Business Program (first 10)"> Founding offer (free website + AI Chat)</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="A website"> A website</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="More Google reviews"> More Google reviews</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="24/7 AI Chat (text-back included)"> 24/7 AI Chat (text-back included)</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="24/7 Receptionist"> 24/7 Receptionist</label>
+            <label class="chk"><input type="checkbox" name="interest[]" value="24/7 AI Chat (text-back included)"> 24/7 AI Chat ($199)</label>
+            <label class="chk"><input type="checkbox" name="interest[]" value="24/7 Receptionist"> 24/7 Receptionist ($299)</label>
+            <label class="chk"><input type="checkbox" name="interest[]" value="Missed-Call Text-Back"> Missed-Call Text-Back ($99)</label>
             <label class="chk"><input type="checkbox" name="interest[]" value="Online booking &amp; reminders"> Online booking &amp; reminders</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="The full more-customers system"> The full "more customers" system</label>
           </div>
           <p style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--clay-deep);margin:1rem 0 .35rem;">2 &middot; Get seen on San Mateo Local</p>
           <div class="checks">
@@ -691,6 +715,7 @@
       <div class="faq">
         <details><summary>Do I have to sign a contract?</summary><p>No. Everything is month to month, and you can cancel anytime. We'd rather earn your business every month than lock you in.</p></details>
         <details><summary>Can I see the website before I pay?</summary><p>Yes. We build you a free preview first, and you only move forward if you love it. No deposit, no risk just to look.</p></details>
+        <details><summary>If I stop paying, do I lose everything?</summary><p>No. Your domain is registered in your own name from day one, so you always own that. Everything is month to month with no contract, so you're never locked in and you can cancel anytime.</p></details>
         <details><summary>Are you an agency?</summary><p>No, and that's the point. We're locals who live here, so there's no retainer, no jargon, and no account manager you can never reach. You work with us directly, and we keep it affordable.</p></details>
         <details><summary>Is getting listed really free?</summary><p>Yes. A basic listing is free, no strings. If you run a real San Mateo business, we want you on the guide. Send it to us with the form above and we&#39;ll add it.</p></details>
         <details><summary>What&#39;s the difference between a free listing and a Featured Listing?</summary><p>A free listing puts you in the guide where locals can find you. A Featured Listing makes you stand out: the orange Featured badge, the top of your category, and a place in the Featured strip on our homepage.</p></details>
@@ -704,6 +729,11 @@
         <details><summary>Can I fix a mistake in my listing?</summary><p>Yes. Use the &quot;Is this your business?&quot; link on your listing or just email us, and we&#39;ll update it. Free listings included.</p></details>
       </div>
     </section>
+  </div>
+
+  <div class="sticky-cta">
+    <a class="s-list" href="#getlisted">Get listed free</a>
+    <a class="s-call" href="tel:+16502608084">&#128222; Call</a>
   </div>
 
   <footer>
@@ -863,6 +893,18 @@
       else if(h === '#getspotlight') openSpotlight();
     })();
   })();
+  </script>
+  <script>
+    // Pre-select the interest checkbox from whichever product CTA was clicked (data-intent)
+    (function(){
+      document.querySelectorAll('a[data-intent]').forEach(function(a){
+        a.addEventListener('click', function(){
+          var v = a.getAttribute('data-intent');
+          var box = document.querySelector('#bizForm input[name="interest[]"][value="' + v + '"]');
+          if (box) box.checked = true;
+        });
+      });
+    })();
   </script>
   <!-- BCM lead-capture chat (GHL) — business pages only -->
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a7a99e7e427c78bb5f65491"></script>
