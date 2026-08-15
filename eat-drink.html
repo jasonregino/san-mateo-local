@@ -80,6 +80,12 @@
     .chip { font-family:inherit; font-size:0.85rem; font-weight:600; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all 0.15s; }
     .chip:hover { border-color:var(--clay); color:var(--clay-deep); }
     .chip.is-on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+    .bestof-row { display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem; margin-top:0.85rem; }
+    .bestof-label { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:800; color:var(--clay-deep); }
+    .bestof-link { font-family:inherit; font-size:0.85rem; font-weight:700; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--clay); color:var(--clay-deep); background:transparent; text-decoration:none; transition:all 0.15s; }
+    .bestof-link:hover { background:var(--clay); color:#fff; }
+    .subfilter { display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem; margin-top:0.7rem; }
+    .subfilter-label { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:800; color:var(--ink-soft); }
     .listing-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.3rem; padding:2.5rem 0 1rem; }
     .listing { border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); background:var(--card); box-shadow:0 2px 6px -3px rgba(34,29,22,0.16); padding:1.4rem 1.4rem 1.5rem; display:flex; flex-direction:column; transition:transform 0.18s ease, box-shadow 0.18s ease; }
     .listing:hover { transform:translateY(-4px); box-shadow:0 16px 34px -20px rgba(34,29,22,0.45); }
@@ -97,6 +103,9 @@
     .preview-banner { background:#7A6A55; color:#fff; text-align:center; padding:0.6rem 1rem; font-size:0.88rem; font-weight:600; }
     @media (prefers-reduced-motion: reduce) { .js .reveal { opacity:1; transform:none; } }
     .l-pick { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#2A1E0E; background:#E6A828; border:1px solid #E6A828; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; }
+    .l-picknote { margin:0.15rem 0 0.2rem; padding:0.6rem 0.8rem; border-left:3px solid #E6A828; background:rgba(230,168,40,0.09); border-radius:0 6px 6px 0; font-size:0.9rem; line-height:1.5; color:var(--ink); }
+    .l-picknote strong { color:var(--clay-deep); font-weight:700; }
+    [data-theme="dark"] .l-picknote { background:rgba(230,168,40,0.14); }
     .l-chain { display:inline-block; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:var(--ink-soft); border:1px solid var(--line); border-radius:999px; padding:0.15rem 0.55rem; margin-bottom:0.55rem; }
     .l-closing { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#fff; background:#B0402F; border:1px solid #B0402F; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; margin-right:0.4rem; }
     .listing .l-type { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
@@ -185,11 +194,13 @@
       <a class="back" href="index.html">&larr; San Mateo Local</a>
       <span class="page-eyebrow">San Mateo, California</span>
       <h1>Eat &amp; Drink in San Mateo</h1>
-      <p>Coffee, restaurants, brunch, bakeries, and bars. Every one hand-picked, none of it paid placement. Tap to call or get directions.</p>
+      <p>Coffee, restaurants, brunch, bakeries, and bars. Tap to call or get directions.</p>
       <p class="cat-quickanswer">San Mateo Local lists 279 hand-picked restaurants, cafés, bakeries, and bars across San Mateo, chosen by a born-and-raised local, with no paid placement. Browse below, or ask a local for a pick.</p>
       <a href="ask.html" class="ask-hero"><span class="ask-hero-ico">&#128172;</span><span class="ask-hero-txt"><strong>Ask a Local</strong><span>Not sure where to start? Tell it what you need and get real local picks in seconds.</span></span><span class="ask-hero-go">&rarr;</span></a>
       <input type="search" class="search" id="listingSearch" placeholder="Search eat &amp; drink&hellip;" aria-label="Search Eat &amp; Drink" autocomplete="off" />
-      <div class="chips"><button class="chip is-on" data-filter="all">All</button><button class="chip" data-filter="coffee-caf-s">Coffee &amp; Cafés</button><button class="chip" data-filter="restaurants">Restaurants</button><button class="chip" data-filter="taco-food-trucks">Taco &amp; Food Trucks</button><button class="chip" data-filter="brunch">Brunch</button><button class="chip" data-filter="bakeries-sweets">Bakeries &amp; Sweets</button><button class="chip" data-filter="bars-nightlife">Bars &amp; Nightlife</button><button class="chip" data-filter="more">More</button><a class="chip" href="/open-late-in-san-mateo.html" style="border-color:var(--clay); color:var(--clay-deep); font-weight:700;">Open Late &rarr;</a></div>
+      <div class="chips"><button class="chip is-on" data-filter="all">All</button><button class="chip" data-filter="restaurants">Restaurants</button><button class="chip" data-filter="coffee-caf-s">Coffee &amp; Cafés</button><button class="chip" data-filter="taco-food-trucks">Taco &amp; Food Trucks</button><button class="chip" data-filter="brunch">Brunch</button><button class="chip" data-filter="bakeries-sweets">Bakeries &amp; Sweets</button><button class="chip" data-filter="bars-nightlife">Bars &amp; Nightlife</button></div>
+      <div class="subfilter"><span class="subfilter-label">Cuisine</span><button class="chip" data-filter="chinese">Chinese</button><button class="chip" data-filter="mexican">Mexican</button><button class="chip" data-filter="japanese">Japanese</button><button class="chip" data-filter="pizza">Pizza</button><button class="chip" data-filter="italian">Italian</button><button class="chip" data-filter="thai">Thai</button><button class="chip" data-filter="vietnamese">Vietnamese</button><button class="chip" data-filter="korean">Korean</button><button class="chip" data-filter="indian">Indian</button></div>
+      <div class="bestof-row"><span class="bestof-label">&#9733; Best Of</span><a class="bestof-link" href="/best-pizza-in-san-mateo.html">Best Pizza</a><a class="bestof-link" href="/best-sushi-in-san-mateo.html">Best Sushi</a><a class="bestof-link" href="/best-tacos-in-san-mateo.html">Best Tacos</a><a class="bestof-link" href="/best-breakfast-in-san-mateo.html">Best Breakfast</a><a class="bestof-link" href="/best-coffee-in-san-mateo.html">Best Coffee</a><a class="bestof-link" href="/best-happy-hour-in-san-mateo.html">Best Happy Hour</a><a class="bestof-link" href="/open-late-in-san-mateo.html">Open Late</a></div>
     </div>
   </section>
 
@@ -197,19 +208,23 @@
     <div class="listing-grid">
       <article class="listing reveal featured" data-bucket="restaurants">
         <span class="l-featured">&#9733; Featured</span>
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Restaurant</span>
         <h3>Porterhouse</h3>
         <p class="l-meta">Downtown (B St) &middot; $$$</p>
         <p class="l-desc">The Peninsula's in-house dry-aging steakhouse, with the meat locker visible at the entry.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> Where we go for a birthday or an anniversary. The tomahawk is a good deal if you split it between two people, and being downtown means you can walk somewhere for a drink after.</p>
         <div class="l-acts"><a class="act" href="/business/porterhouse.html">Details</a><a class="act" href="tel:+16505795911">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Porterhouse%20164%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.porterhousesanmateo.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Porterhouse&amp;state=CA&amp;phone=%2B16505795911&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fwww.porterhousesanmateo.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
       <article class="listing reveal featured" data-bucket="restaurants">
         <span class="l-featured">&#9733; Featured</span>
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Restaurant</span>
         <h3>Espetus Churrascaria</h3>
         <p class="l-meta">Downtown (B St) &middot; $$$</p>
         <p class="l-desc">All-you-can-eat rodizio with tableside skewered meats carved to order.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> Another birthday and special occasion place. You can stretch it out for an hour and a half working through the meats, and it is good value if you can actually eat.</p>
         <div class="l-acts"><a class="act" href="/business/espetus-churrascaria.html">Details</a><a class="act" href="tel:+16503428700">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Espetus%20Churrascaria%20710%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://espetus.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Espetus%20Churrascaria&amp;state=CA&amp;phone=%2B16503428700&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fespetus.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -220,6 +235,7 @@
         <h3>O'Neill's Irish Pub</h3>
         <p class="l-meta">Downtown (B St) &middot; $$</p>
         <p class="l-desc">A longtime downtown Irish pub since 1998, steps from the Caltrain station, with a full bar, sports on the screens, and live music, trivia, and karaoke through the week.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> This is where we end up after a big dinner downtown. Park by Espetus, eat too much, then walk the length of B Street to work it off and finish the night here. Half the people I went to high school with turn up eventually, and it pulls a younger crowd too. The bartenders and the door guys are good people.</p>
         <div class="l-acts"><a class="act" href="/business/oneills-irish-pub.html">Details</a><a class="act" href="tel:+16503471544">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=O'Neill's%20Irish%20Pub%2034%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=O'Neill's%20Irish%20Pub&amp;state=CA&amp;phone=%2B16503471544&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fwww.oneillssanmateo.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Pub" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -231,7 +247,7 @@
         <div class="l-acts"><a class="act" href="/business/3-bees-coffee.html">Details</a><a class="act" href="tel:+16503442339">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=3%20Bees%20Coffee%20224%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=3%20Bees%20Coffee&amp;state=CA&amp;phone=%2B16503442339&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fwww.3beescoffee.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Coffee" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants italian">
         <span class="l-type">Restaurant</span>
         <h3>Pausa Bar &amp; Cookery</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$$</p>
@@ -239,7 +255,7 @@
         <div class="l-acts"><a class="act" href="/business/pausa-bar-cookery.html">Details</a><a class="act" href="tel:+16503750818">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Pausa%20Bar%20%26%20Cookery%20223%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.pausasanmateo.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Pausa%20Bar%20%26%20Cookery&amp;state=CA&amp;phone=%2B16503750818&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fwww.pausasanmateo.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Flores</h3>
         <p class="l-meta">Hillsdale &middot; $$$</p>
@@ -247,7 +263,7 @@
         <div class="l-acts"><a class="act" href="/business/flores-san-mateo.html">Details</a><a class="act" href="tel:+16504189742">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Flores%204%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://floressf.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Flores&amp;state=CA&amp;phone=%2B16504189742&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Ffloressf.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Palette Tea Garden &amp; Dim Sum</h3>
         <p class="l-meta">Hillsdale &middot; $$$</p>
@@ -263,7 +279,7 @@
         <div class="l-acts"><a class="act" href="/business/bahche-mezzehouse.html">Details</a><a class="act" href="tel:+16503152197">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Bahche%20Mezzehouse%20%26%20Wine%20Bar%203081%20S%20Delaware%20St%2C%20Ste%20C%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://bahchesf.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Bahche%20Mezzehouse%20%26%20Wine%20Bar&amp;state=CA&amp;phone=%2B16503152197&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fbahchesf.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>El Sinaloense</h3>
         <p class="l-meta">Hayward Park &middot; $$</p>
@@ -271,7 +287,7 @@
         <div class="l-acts"><a class="act" href="/business/el-sinaloense.html">Details</a><a class="act" href="tel:+16503451180">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=El%20Sinaloense%201622%20Palm%20Ave%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://el-sinaloense.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=El%20Sinaloense&amp;state=CA&amp;phone=%2B16503451180&amp;city=San%20Mateo&amp;postal_code=94402&amp;website=https%3A%2F%2Fel-sinaloense.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Sushi Edomata</h3>
         <p class="l-meta">25th Avenue &middot; $$$</p>
@@ -279,15 +295,17 @@
         <div class="l-acts"><a class="act" href="/business/sushi-edomata.html">Details</a><a class="act" href="tel:+16503440888">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sushi%20Edomata%2038%20E%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://sushiedomata.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Sushi%20Edomata&amp;state=CA&amp;phone=%2B16503440888&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fsushiedomata.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Restaurant</span>
         <h3>Joy Sushi</h3>
         <p class="l-meta">Downtown (B St) &middot; $$</p>
         <p class="l-desc">Generous rolls and traditional sushi in a casual room with a strong catering side.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> Been around for years. I have not been in a while, but I have never had a bad meal there.</p>
         <div class="l-acts"><a class="act" href="/business/joy-sushi.html">Details</a><a class="act" href="tel:+16503408974">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Joy%20Sushi%2030%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://joy-sushi.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Joy%20Sushi&amp;state=CA&amp;phone=%2B16503408974&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fjoy-sushi.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Oceanic Restaurant</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -295,15 +313,17 @@
         <div class="l-acts"><a class="act" href="/business/oceanic-restaurant.html">Details</a><a class="act" href="tel:+16505704234">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Oceanic%20Restaurant%202507%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Oceanic%20Restaurant&amp;state=CA&amp;phone=%2B16505704234&amp;city=San%20Mateo&amp;postal_code=94403&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants thai">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Restaurant</span>
         <h3>Thonglor Thai Bistro</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
         <p class="l-desc">Modern-leaning Thai with curries, pad see ew, and customizable spice levels.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> Not the fanciest room downtown, and that is fine. It is the homiest, and the Thai is good and cheap.</p>
         <div class="l-acts"><a class="act" href="/business/thonglor-thai.html">Details</a><a class="act" href="tel:+16503426451">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Thonglor%20Thai%20Bistro%20173%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://thonglorthaibistro.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Thonglor%20Thai%20Bistro&amp;state=CA&amp;phone=%2B16503426451&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fthonglorthaibistro.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants italian">
         <span class="l-type">Restaurant</span>
         <h3>Sole Ristorante Italiano</h3>
         <p class="l-meta">Hillsdale (37th Ave) &middot; $$</p>
@@ -319,7 +339,7 @@
         <div class="l-acts"><a class="act" href="/business/tannourine.html">Details</a><a class="act" href="tel:+16504588696">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Tannourine%20Lebanese%20%26%20Mediterranean%20120%20W%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://tannourinecuisine.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Tannourine%20Lebanese%20%26%20Mediterranean&amp;state=CA&amp;phone=%2B16504588696&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Ftannourinecuisine.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Champagne Seafood Restaurant</h3>
         <p class="l-meta">Baywood &middot; $$</p>
@@ -376,10 +396,12 @@
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Taste%20%26%20Glory&amp;state=CA&amp;phone=%2B16503934951&amp;city=San%20Mateo&amp;postal_code=94402&amp;category=Eat%20%26%20Drink&amp;directory_type=Brunch" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
       <article class="listing reveal" data-bucket="brunch">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Brunch</span>
         <h3>Apple Fritter</h3>
         <p class="l-meta">Lakeshore &middot; $$</p>
         <p class="l-desc">Casual all-American breakfast and lunch spot with hearty portions and its namesake apple fritters.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> Go early or you will stand in line. Worth it either way.</p>
         <div class="l-acts"><a class="act" href="/business/apple-fritter.html">Details</a><a class="act" href="tel:+16505259125">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Apple%20Fritter%201901%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.applefrittereatery.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Apple%20Fritter&amp;state=CA&amp;phone=%2B16505259125&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=http%3A%2F%2Fwww.applefrittereatery.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Brunch" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -461,6 +483,7 @@
         <h3>Fieldwork Brewing Co.</h3>
         <p class="l-meta">Bay Meadows &middot; $$</p>
         <p class="l-desc">More than 20 rotating fresh taps and Detroit-style pizzas on an industrial-style patio near the Hillsdale Caltrain stop.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> My friends are there constantly. It is outdoors, so it is best when the weather is good, and it is one of the few spots where people bring the kids and nobody minds.</p>
         <div class="l-acts"><a class="act" href="/business/fieldwork-brewing.html">Details</a><a class="act" href="tel:+16502421280">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Fieldwork%20Brewing%20Co.%203030%20S%20Delaware%20St%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://fieldworkbrewing.com/san-mateo" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Fieldwork%20Brewing%20Co.&amp;state=CA&amp;phone=%2B16502421280&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Ffieldworkbrewing.com%2Fsan-mateo&amp;category=Eat%20%26%20Drink&amp;directory_type=Brewery" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -502,6 +525,7 @@
         <h3>The Swingin' Door</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
         <p class="l-desc">Long-running British pub open until 2am with karaoke four nights a week, trivia, live bands, and award-winning fish and chips.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> My friends swear by this place and have for years. The habanero burger is the famous one, it ended up on Heat Seekers, and people come in specifically to try it.</p>
         <div class="l-acts"><a class="act" href="/business/swingin-door.html">Details</a><a class="act" href="tel:+16505229800">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=The%20Swingin'%20Door%20106%20E%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=The%20Swingin'%20Door&amp;state=CA&amp;phone=%2B16505229800&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fwww.theswingindoor.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Bar" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -516,7 +540,7 @@
       <article class="listing reveal" data-bucket="bars-nightlife">
         <span class="l-type">Bar</span>
         <h3>Route 92 Cocktail Lounge</h3>
-        <p class="l-meta">Beresford Park &middot; $</p>
+        <p class="l-meta">El Camino Real &middot; $</p>
         <p class="l-desc">No-frills neighborhood bar with daily happy hour, a pool table, darts, and a back smoking area.</p>
         <div class="l-acts"><a class="act" href="/business/route-92-lounge.html">Details</a><a class="act" href="tel:+16503459911">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Route%2092%20Cocktail%20Lounge%202128%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Route%2092%20Cocktail%20Lounge&amp;state=CA&amp;phone=%2B16503459911&amp;city=San%20Mateo&amp;postal_code=94403&amp;category=Eat%20%26%20Drink&amp;directory_type=Bar" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
@@ -543,11 +567,11 @@
         <h3>Harry's Shoreview Deli</h3>
         <p class="l-meta">Shoreview &middot; $</p>
         <p class="l-desc">An old-school Shoreview deli known for classic build-your-own sandwiches, roast beef, pastrami, and turkey, piled with all the fixings.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> Everybody comes here for the sandwiches, and they are big and they are good. I come for the lamb curry with the yuca. One order feeds three or four people, so plan for that.</p>
         <div class="l-acts"><a class="act" href="/business/harrys-shoreview-deli.html">Details</a><a class="act" href="tel:+16503484009">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Harry's%20Shoreview%20Deli%201446%20Cary%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Harry's%20Shoreview%20Deli&amp;state=CA&amp;phone=%2B16503484009&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Deli" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
       <article class="listing reveal" data-bucket="bakeries-sweets">
-        <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Frozen Yogurt</span>
         <h3>Yumi Yogurt</h3>
         <p class="l-meta">Hillsdale &middot; $</p>
@@ -564,10 +588,9 @@
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Avenida%20Restaurant&amp;state=CA&amp;phone=%2B16507813641&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Favenidarestaurant.net&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
       <article class="listing reveal" data-bucket="taco-food-trucks">
-        <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Taco Truck</span>
         <h3>Leo's Tacos Truck</h3>
-        <p class="l-meta">Beresford Park &middot; $</p>
+        <p class="l-meta">El Camino Real &middot; $</p>
         <p class="l-desc">Al pastor tacos carved off a vertical trompo, a family Mexican-food operation that started in LA and now parks on El Camino, open late.</p>
         <div class="l-acts"><a class="act" href="/business/leos-tacos.html">Details</a><a class="act" href="tel:+13233462001">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Leo's%20Tacos%20Truck%201990%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.leostacostruck.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Leo's%20Tacos%20Truck&amp;state=CA&amp;phone=%2B13233462001&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fwww.leostacostruck.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Taco%20Truck" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
@@ -624,8 +647,9 @@
         <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Diner</span>
         <h3>Heidi's Pies</h3>
-        <p class="l-meta">Beresford Park &middot; $$</p>
+        <p class="l-meta">El Camino Real &middot; $$</p>
         <p class="l-desc">A San Mateo classic since 1970, famous for dozens of house-made-from-scratch pies served alongside all-day American diner fare.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> I have been coming here since I was a kid. Baseball at Trinta Park, then my parents would bring me here after, and I would get a burger while they picked up dinner to take home. The pies are still the reason: banana cream, chocolate cream, and the sour cream and blueberry, which sounds wrong and is not. They almost closed in 2025 over the rent and got three more years, so go while you can.</p>
         <div class="l-acts"><a class="act" href="/business/heidis-pies.html">Details</a><a class="act" href="tel:+16505740505">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Heidi's%20Pies%201941%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.heidipies.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Heidi's%20Pies&amp;state=CA&amp;phone=%2B16505740505&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fwww.heidipies.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Diner" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -635,6 +659,7 @@
         <h3>The Pantry</h3>
         <p class="l-meta">Hayward Park &middot; $</p>
         <p class="l-desc">A longtime family-run kitchen serving hearty American breakfast and lunch alongside Filipino classics, a Hayward Park favorite for decades.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> Portions are big and the teriyaki chicken is what I get. Last I looked they even had lumpia. It is a family place in the truest sense: my sister met her husband here in the early nineties, when the room was so full the staff asked the two of them to share a table. They are still married.</p>
         <div class="l-acts"><a class="act" href="/business/the-pantry.html">Details</a><a class="act" href="tel:+16503454544">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=The%20Pantry%201855%20S%20Delaware%20St%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=The%20Pantry&amp;state=CA&amp;phone=%2B16503454544&amp;city=San%20Mateo&amp;postal_code=94402&amp;category=Eat%20%26%20Drink&amp;directory_type=Diner" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -654,16 +679,17 @@
         <div class="l-acts"><a class="act" href="/business/penelopes-coffee.html">Details</a><a class="act" href="tel:+16503934035">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Penelope's%20Coffee%20%26%20Tea%201326%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://penelopescoffee.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Penelope's%20Coffee%20%26%20Tea&amp;state=CA&amp;phone=%2B16503934035&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fpenelopescoffee.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Coffee" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Restaurant</span>
         <h3>Kaz Teriyaki Grill</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $</p>
         <p class="l-desc">A tiny downtown Japanese takeout counter, no seating, just fresh teriyaki with homemade sauces that locals have leaned on for years.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> I have been eating here since the nineties and I still go about four times a month. Chicken teriyaki bowl after the gym, or the bento if you are actually hungry. Take it to the benches on the corner, or walk it across to Central Park.</p>
         <div class="l-acts"><a class="act" href="/business/kaz-teriyaki-grill.html">Details</a><a class="act" href="tel:+16503475777">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Kaz%20Teriyaki%20Grill%2071%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Kaz%20Teriyaki%20Grill&amp;state=CA&amp;phone=%2B16503475777&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Amigos Grill Cocina Mexicana</h3>
         <p class="l-meta">Los Prados &middot; $$</p>
@@ -671,7 +697,7 @@
         <div class="l-acts"><a class="act" href="/business/amigos-grill.html">Details</a><a class="act" href="tel:+16505718679">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Amigos%20Grill%20Cocina%20Mexicana%202974%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Amigos%20Grill%20Cocina%20Mexicana&amp;state=CA&amp;phone=%2B16505718679&amp;city=San%20Mateo&amp;postal_code=94403&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Taqueria Los Primos</h3>
         <p class="l-meta">Downtown (N B St) &middot; $</p>
@@ -679,7 +705,7 @@
         <div class="l-acts"><a class="act" href="/business/los-primos.html">Details</a><a class="act" href="tel:+16503478760">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Taqueria%20Los%20Primos%2085%20N%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Taqueria%20Los%20Primos&amp;state=CA&amp;phone=%2B16503478760&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>La Piñata Mexicatesen</h3>
         <p class="l-meta">Downtown (N B St) &middot; $$</p>
@@ -687,7 +713,7 @@
         <div class="l-acts"><a class="act" href="/business/la-pinata.html">Details</a><a class="act" href="tel:+16503445722">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=La%20Pi%C3%B1ata%20Mexicatesen%20120%20N%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=La%20Pi%C3%B1ata%20Mexicatesen&amp;state=CA&amp;phone=%2B16503445722&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Suavecito Birria &amp; Tacos</h3>
         <p class="l-meta">Amphlett / Hayward Park &middot; $$</p>
@@ -695,8 +721,7 @@
         <div class="l-acts"><a class="act" href="/business/suavecito-birria-tacos.html">Details</a><a class="act" href="tel:+16505811284">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Suavecito%20Birria%20%26%20Tacos%201100%20S%20Amphlett%20Blvd%2C%20Ste%20B%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.suavecitosm.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Suavecito%20Birria%20%26%20Tacos&amp;state=CA&amp;phone=%2B16505811284&amp;city=San%20Mateo&amp;postal_code=94402&amp;website=https%3A%2F%2Fwww.suavecitosm.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
-        <span class="l-pick">&#9733; Local&#39;s pick</span>
+      <article class="listing reveal" data-bucket="restaurants pizza">
         <span class="l-type">Pizza</span>
         <h3>Aldo's Pizza</h3>
         <p class="l-meta">Shoreview &middot; $$</p>
@@ -704,12 +729,13 @@
         <div class="l-acts"><a class="act" href="/business/aldos-pizza.html">Details</a><a class="act" href="tel:+16503445051">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Aldo's%20Pizza%20600%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.aldospizza.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Aldo's%20Pizza&amp;state=CA&amp;phone=%2B16503445051&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fwww.aldospizza.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Pizza" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants pizza">
         <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Pizza</span>
         <h3>Rainbow Pizza</h3>
         <p class="l-meta">Crystal Springs &middot; $$</p>
         <p class="l-desc">A Crystal Springs plaza institution since 1983, serving pizza and Greek favorites to generations of regulars.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> Top three pizza in town for me, and worth the drive up 92. The lamb and beef gyro is as good as the pizza, and the pastas hold up too.</p>
         <div class="l-acts"><a class="act" href="/business/rainbow-pizza.html">Details</a><a class="act" href="tel:+16505711848">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Rainbow%20Pizza%20112%20De%20Anza%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://rainbowpizza.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Rainbow%20Pizza&amp;state=CA&amp;phone=%2B16505711848&amp;city=San%20Mateo&amp;postal_code=94402&amp;website=https%3A%2F%2Frainbowpizza.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Pizza" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -745,7 +771,7 @@
         <div class="l-acts"><a class="act" href="/business/sky-lounge.html">Details</a><a class="act" href="tel:+16503426623">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sky%20Lounge%2076%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Sky%20Lounge&amp;state=CA&amp;phone=%2B16503426623&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Cocktail%20Lounge" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants indian">
         <span class="l-type">Restaurant</span>
         <h3>All Spice</h3>
         <p class="l-meta">Baywood &middot; $$</p>
@@ -753,7 +779,7 @@
         <div class="l-acts"><a class="act" href="/business/all-spice.html">Details</a><a class="act" href="tel:+16506274303">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=All%20Spice%201602%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://allspicerestaurant.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=All%20Spice&amp;state=CA&amp;phone=%2B16506274303&amp;city=San%20Mateo&amp;postal_code=94402&amp;website=https%3A%2F%2Fallspicerestaurant.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>La Fonda de</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -761,7 +787,7 @@
         <div class="l-acts"><a class="act" href="/business/la-fonda-de-san-mateo.html">Details</a><a class="act" href="tel:+16505749699">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=La%20Fonda%20de%202310%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.lafondasanmateo.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=La%20Fonda%20de&amp;state=CA&amp;phone=%2B16505749699&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fwww.lafondasanmateo.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants vietnamese">
         <span class="l-type">Restaurant</span>
         <h3>Pho Element</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -769,7 +795,7 @@
         <div class="l-acts"><a class="act" href="/business/pho-element.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Pho%20Element%202216%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Pho%20Element&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94403&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants pizza">
         <span class="l-type">Pizza</span>
         <h3>Seniore's Pizza</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -785,7 +811,7 @@
         <div class="l-acts"><a class="act" href="/business/truffle-poke-bar.html">Details</a><a class="act" href="tel:+16505736425">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Truffle%20Poke%20Bar%201234%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.trufflepokebar.com/san-mateo-location/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Truffle%20Poke%20Bar&amp;state=CA&amp;phone=%2B16505736425&amp;city=San%20Mateo&amp;postal_code=94402&amp;website=https%3A%2F%2Fwww.trufflepokebar.com%2Fsan-mateo-location%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants italian">
         <span class="l-type">Restaurant</span>
         <h3>Luceti's on 25th</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -793,7 +819,7 @@
         <div class="l-acts"><a class="act" href="/business/luceti-s-on-25th.html">Details</a><a class="act" href="tel:+16505741256">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Luceti's%20on%2025th%20109%20W%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.lucetison25thave.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Luceti's%20on%2025th&amp;state=CA&amp;phone=%2B16505741256&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fwww.lucetison25thave.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants italian">
         <span class="l-type">Restaurant</span>
         <h3>La Lanterna Ristorante</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -929,7 +955,7 @@
         <div class="l-acts"><a class="act" href="/business/munguia-s-bakery.html">Details</a><a class="act" href="tel:+16505131543">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Munguia's%20Bakery%20602%20E%204th%20Ave%20Suite%20F%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Munguia's%20Bakery&amp;state=CA&amp;phone=%2B16505131543&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Bakery" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants indian">
         <span class="l-type">Restaurant</span>
         <h3>Tabla Indian Restaurant</h3>
         <p class="l-meta">Shoreview &middot; $$</p>
@@ -937,7 +963,7 @@
         <div class="l-acts"><a class="act" href="/business/tabla-indian-restaurant.html">Details</a><a class="act" href="tel:+16503934338">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Tabla%20Indian%20Restaurant%20450%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://tablasanmateo.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Tabla%20Indian%20Restaurant&amp;state=CA&amp;phone=%2B16503934338&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Ftablasanmateo.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Ay Caray Taqueria</h3>
         <p class="l-meta">Shoreview &middot; $</p>
@@ -945,7 +971,7 @@
         <div class="l-acts"><a class="act" href="/business/ay-caray-taqueria.html">Details</a><a class="act" href="tel:+16503441622">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Ay%20Caray%20Taqueria%20478%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://aycaraytaqueriaca.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Ay%20Caray%20Taqueria&amp;state=CA&amp;phone=%2B16503441622&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Faycaraytaqueriaca.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Golden Wok Bistro</h3>
         <p class="l-meta">Shoreview &middot; $$</p>
@@ -953,7 +979,7 @@
         <div class="l-acts"><a class="act" href="/business/golden-wok-bistro.html">Details</a><a class="act" href="tel:+16503471228">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Golden%20Wok%20Bistro%20570%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://goldenwokbistro.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Golden%20Wok%20Bistro&amp;state=CA&amp;phone=%2B16503471228&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fgoldenwokbistro.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants vietnamese">
         <span class="l-type">Restaurant</span>
         <h3>Pho Little Saigon</h3>
         <p class="l-meta">Los Prados &middot; $</p>
@@ -969,7 +995,7 @@
         <div class="l-acts"><a class="act" href="/business/mr-green-bubble.html">Details</a><a class="act" href="tel:+16503580352">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Mr.%20Green%20Bubble%202986%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Mr.%20Green%20Bubble&amp;state=CA&amp;phone=%2B16503580352&amp;city=San%20Mateo&amp;postal_code=94403&amp;category=Eat%20%26%20Drink&amp;directory_type=Caf%C3%A9" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Hot Wok Cafe</h3>
         <p class="l-meta">Los Prados &middot; $</p>
@@ -993,7 +1019,7 @@
         <div class="l-acts"><a class="act" href="/business/la-ronda.html">Details</a><a class="act" href="tel:+16503897495">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=La%20Ronda%20Restaurant%20224%20E%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.larondamarina.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=La%20Ronda%20Restaurant&amp;state=CA&amp;phone=%2B16503897495&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fwww.larondamarina.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Wakuriya</h3>
         <p class="l-meta">Crystal Springs &middot; $$$$</p>
@@ -1025,7 +1051,7 @@
         <div class="l-acts"><a class="act" href="/business/sourdough-and-co.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sourdough%20%26%20Co.%20119A%20De%20Anza%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Sourdough%20%26%20Co.&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94402&amp;category=Eat%20%26%20Drink&amp;directory_type=Caf%C3%A9" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Shiki Japanese Restaurant</h3>
         <p class="l-meta">Laurelwood &middot; $$</p>
@@ -1033,7 +1059,7 @@
         <div class="l-acts"><a class="act" href="/business/shiki-japanese.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Shiki%20Japanese%20Restaurant%201332%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Shiki%20Japanese%20Restaurant&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94403&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Guadalajara Grill</h3>
         <p class="l-meta">Laurie Meadows &middot; $$</p>
@@ -1041,7 +1067,7 @@
         <div class="l-acts"><a class="act" href="/business/guadalajara-grill.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Guadalajara%20Grill%2019%20Laurie%20Meadows%20Dr%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Guadalajara%20Grill&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94403&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Town of Dumpling</h3>
         <p class="l-meta">Laurie Meadows &middot; $$</p>
@@ -1057,7 +1083,7 @@
         <div class="l-acts"><a class="act" href="/business/golden-9th-deli-market.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Golden%209th%20Deli%20%26%20Market%20500%209th%20Ave%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Golden%209th%20Deli%20%26%20Market&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94402&amp;category=Eat%20%26%20Drink&amp;directory_type=Deli" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>El Palenque Taqueria</h3>
         <p class="l-meta">North Shoreview &middot; $</p>
@@ -1065,7 +1091,7 @@
         <div class="l-acts"><a class="act" href="/business/el-palenque-taqueria.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=El%20Palenque%20Taqueria%2015%20N%20Kingston%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=El%20Palenque%20Taqueria&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Mariscos El Ajoyano</h3>
         <p class="l-meta">North Shoreview &middot; $$</p>
@@ -1097,7 +1123,7 @@
         <div class="l-acts"><a class="act" href="/business/little-late-bird.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Little%20Late%20Bird%20777%20Mariners%20Island%20Blvd%2C%20Ste%20170%2C%20San%20Mateo%2C%20CA%2094404" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Little%20Late%20Bird&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94404&amp;category=Eat%20%26%20Drink&amp;directory_type=Caf%C3%A9" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Celias Mexican Restaurant Peninsula Ave</h3>
         <p class="l-meta">North Central &middot; $$</p>
@@ -1105,7 +1131,7 @@
         <div class="l-acts"><a class="act" href="/business/celias-mexican-restaurant-peninsula-ave-san-mateo.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Celias%20Mexican%20Restaurant%20Peninsula%20Ave%20504%20Peninsula%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Celias%20Mexican%20Restaurant%20Peninsula%20Ave&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Celias Mexican Restaurant Campus Dr</h3>
         <p class="l-meta">Laurelwood &middot; $$</p>
@@ -1153,7 +1179,7 @@
         <div class="l-acts"><a class="act" href="/business/donut-delite.html">Details</a><a class="act" href="tel:+16503481318">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Donut%20Delite%2057%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Donut%20Delite&amp;state=CA&amp;phone=%2B16503481318&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Bakery" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Ramen Parlor</h3>
         <p class="l-meta">Downtown (B St) &middot; $$</p>
@@ -1161,7 +1187,7 @@
         <div class="l-acts"><a class="act" href="/business/ramen-parlor.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Ramen%20Parlor%20901%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Ramen%20Parlor&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Kajiken</h3>
         <p class="l-meta">Downtown (B St) &middot; $$</p>
@@ -1185,7 +1211,7 @@
         <div class="l-acts"><a class="act" href="/business/dessert-republic.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Dessert%20Republic%20138%20Main%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Dessert%20Republic&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Caf%C3%A9" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants pizza">
         <span class="l-type">Pizza</span>
         <h3>Mr. Pizza Man</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $</p>
@@ -1193,7 +1219,7 @@
         <div class="l-acts"><a class="act" href="/business/mr-pizza-man.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Mr.%20Pizza%20Man%20201%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Mr.%20Pizza%20Man&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Pizza" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Zhangliang Malatang</h3>
         <p class="l-meta">Downtown (B St) &middot; $$</p>
@@ -1201,16 +1227,17 @@
         <div class="l-acts"><a class="act" href="/business/zhangliang-malatang.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Zhangliang%20Malatang%20139%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Zhangliang%20Malatang&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Restaurant</span>
         <h3>Furagu Sushi</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
         <p class="l-desc">Neighborhood sushi spot on the 25th Avenue strip for nigiri, rolls, and Japanese plates. A local favorite.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> There is no shortage of sushi on 25th Avenue, but this is the one I keep coming back to. The dragon roll, the Lion King, or the dynamite.</p>
         <div class="l-acts"><a class="act" href="/business/furagu-sushi.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Furagu%20Sushi%20116%20W%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Furagu%20Sushi&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94403&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Kobeya</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -1218,7 +1245,7 @@
         <div class="l-acts"><a class="act" href="/business/kobeya.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Kobeya%20140%20W%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.kobeyasanmateo.us/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Kobeya&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fwww.kobeyasanmateo.us%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Prime BBQ</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -1226,7 +1253,7 @@
         <div class="l-acts"><a class="act" href="/business/prime-bbq.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Prime%20BBQ%2033%20W%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.primebbqsm.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Prime%20BBQ&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fwww.primebbqsm.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Miss Shang</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -1234,7 +1261,7 @@
         <div class="l-acts"><a class="act" href="/business/miss-shang.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Miss%20Shang%20123%20W%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Miss%20Shang&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94403&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Fortune Star</h3>
         <p class="l-meta">25th Avenue &middot; $</p>
@@ -1242,7 +1269,7 @@
         <div class="l-acts"><a class="act" href="/business/fortune-star.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Fortune%20Star%20173%20W%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.fortunestarchineseca.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Fortune%20Star&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fwww.fortunestarchineseca.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Little Shanghai Restaurant</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -1250,7 +1277,7 @@
         <div class="l-acts"><a class="act" href="/business/little-shanghai.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Little%20Shanghai%20Restaurant%2017%20E%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Directions</a><a class="act" href="https://lshfood.wixsite.com/lshfood" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Little%20Shanghai%20Restaurant&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Flshfood.wixsite.com%2Flshfood&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants thai">
         <span class="l-type">Restaurant</span>
         <h3>Mahasan</h3>
         <p class="l-meta">Downtown &middot; $$</p>
@@ -1274,7 +1301,7 @@
         <div class="l-acts"><a class="act" href="/business/eterna-primavera.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Eterna%20Primavera%20615%20E%203rd%20Ave%20Suite%20D%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener">Directions</a><a class="act" href="https://eternaprimaveraca.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Eterna%20Primavera&amp;state=CA&amp;city=San%20Mateo&amp;website=https%3A%2F%2Feternaprimaveraca.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Bao Express</h3>
         <p class="l-meta">San Mateo &middot; $</p>
@@ -1290,7 +1317,7 @@
         <div class="l-acts"><a class="act" href="/business/o2-valley.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=O2%20Valley%2041%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener">Directions</a><a class="act" href="https://order.o2-valley.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=O2%20Valley&amp;state=CA&amp;city=San%20Mateo&amp;website=https%3A%2F%2Forder.o2-valley.com&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants korean">
         <span class="l-type">korean</span>
         <h3>Whisper</h3>
         <p class="l-meta">Downtown &middot; $$</p>
@@ -1298,7 +1325,7 @@
         <div class="l-acts"><a class="act" href="/business/whisper.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Whisper%20310%20Baldwin%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Whisper&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=korean" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">mexican</span>
         <h3>Reposado</h3>
         <p class="l-meta">Downtown &middot; $$$</p>
@@ -1306,7 +1333,7 @@
         <div class="l-acts"><a class="act" href="/business/reposado.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Reposado%20311%20Baldwin%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Reposado&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=mexican" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">mexican</span>
         <h3>Palmita</h3>
         <p class="l-meta">Beresford Park &middot; $$</p>
@@ -1322,7 +1349,7 @@
         <div class="l-acts"><a class="act" href="/business/anton-sv-patisserie.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Anton%20SV%20Patisserie%20390%201st%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Anton%20SV%20Patisserie&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Bakery" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">ramen</span>
         <h3>Ramen Dojo</h3>
         <p class="l-meta">Downtown (B St) &middot; $$</p>
@@ -1330,7 +1357,7 @@
         <div class="l-acts"><a class="act" href="/business/ramen-dojo.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Ramen%20Dojo%20805%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Ramen%20Dojo&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=ramen" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">sushi</span>
         <h3>Sushi Yoshizumi</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$$$</p>
@@ -1338,7 +1365,7 @@
         <div class="l-acts"><a class="act" href="/business/sushi-yoshizumi.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sushi%20Yoshizumi%20325%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Sushi%20Yoshizumi&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=sushi" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">japanese</span>
         <h3>Yakitori Kokko</h3>
         <p class="l-meta">Downtown (2nd Ave) &middot; $$</p>
@@ -1346,7 +1373,7 @@
         <div class="l-acts"><a class="act" href="/business/yakitori-kokko.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Yakitori%20Kokko%20509%202nd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Yakitori%20Kokko&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=japanese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants chinese japanese">
         <span class="l-type">japanese</span>
         <h3>Fuji Sukiyaki</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -1354,7 +1381,7 @@
         <div class="l-acts"><a class="act" href="/business/fuji-sukiyaki.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Fuji%20Sukiyaki%20428%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Fuji%20Sukiyaki&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=japanese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">sushi</span>
         <h3>Sushi Maruyama</h3>
         <p class="l-meta">Downtown &middot; $$</p>
@@ -1362,7 +1389,7 @@
         <div class="l-acts"><a class="act" href="/business/sushi-maruyama.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sushi%20Maruyama%20279%20Baldwin%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Sushi%20Maruyama&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=sushi" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">japanese</span>
         <h3>Izakaya Ginji</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
@@ -1370,7 +1397,7 @@
         <div class="l-acts"><a class="act" href="/business/izakaya-ginji.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Izakaya%20Ginji%20301%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Izakaya%20Ginji&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=japanese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">japanese</span>
         <h3>Izakaya Mai</h3>
         <p class="l-meta">Downtown (2nd Ave) &middot; $$</p>
@@ -1378,7 +1405,7 @@
         <div class="l-acts"><a class="act" href="/business/izakaya-mai.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Izakaya%20Mai%20212%202nd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Izakaya%20Mai&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=japanese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">ramen</span>
         <h3>Taishoken</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
@@ -1386,7 +1413,7 @@
         <div class="l-acts"><a class="act" href="/business/taishoken.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Taishoken%2047%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Taishoken&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=ramen" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">sushi</span>
         <h3>Ultra Sushi</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -1394,7 +1421,7 @@
         <div class="l-acts"><a class="act" href="/business/ultra-sushi.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Ultra%20Sushi%20210%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Ultra%20Sushi&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=sushi" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">japanese</span>
         <h3>Udon Mugizo</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -1402,7 +1429,7 @@
         <div class="l-acts"><a class="act" href="/business/udon-mugizo.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Udon%20Mugizo%2073%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Udon%20Mugizo&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=japanese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">japanese</span>
         <h3>Hotaru</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -1410,7 +1437,7 @@
         <div class="l-acts"><a class="act" href="/business/hotaru.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Hotaru%2033%20E%203rd%20Ave%20%234010%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Hotaru&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=japanese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">japanese</span>
         <h3>DASH Japanese Tapas &amp; Sushi</h3>
         <p class="l-meta">Downtown (2nd Ave) &middot; $$</p>
@@ -1418,7 +1445,7 @@
         <div class="l-acts"><a class="act" href="/business/dash-japanese-tapas-sushi.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=DASH%20Japanese%20Tapas%20%26%20Sushi%20204A%202nd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=DASH%20Japanese%20Tapas%20%26%20Sushi&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=japanese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">japanese</span>
         <h3>Tokie's</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
@@ -1426,7 +1453,7 @@
         <div class="l-acts"><a class="act" href="/business/tokie-s.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Tokie's%2034%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Tokie's&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=japanese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">ramen</span>
         <h3>Himawari</h3>
         <p class="l-meta">Downtown (2nd Ave) &middot; $$</p>
@@ -1466,7 +1493,7 @@
         <div class="l-acts"><a class="act" href="/business/avocado-toast.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Avocado%20Toast%20226%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Avocado%20Toast&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Caf%C3%A9" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants thai">
         <span class="l-type">thai</span>
         <h3>New Thai Elephant</h3>
         <p class="l-meta">Downtown (B St) &middot; $$</p>
@@ -1474,7 +1501,7 @@
         <div class="l-acts"><a class="act" href="/business/new-thai-elephant.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=New%20Thai%20Elephant%20200%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=New%20Thai%20Elephant&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=thai" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">chinese</span>
         <h3>Ox 9 Lanzhou Handpulled Noodles</h3>
         <p class="l-meta">Downtown (B St) &middot; $$</p>
@@ -1482,7 +1509,7 @@
         <div class="l-acts"><a class="act" href="/business/ox-9-lanzhou-handpulled-noodles.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Ox%209%20Lanzhou%20Handpulled%20Noodles%2011%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Ox%209%20Lanzhou%20Handpulled%20Noodles&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=chinese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">chinese</span>
         <h3>New Wing Fat Chinese Restaurant</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -1490,7 +1517,7 @@
         <div class="l-acts"><a class="act" href="/business/new-wing-fat-chinese-restaurant.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=New%20Wing%20Fat%20Chinese%20Restaurant%20640%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=New%20Wing%20Fat%20Chinese%20Restaurant&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=chinese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">chinese</span>
         <h3>Zen Noodle Bar</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -1498,7 +1525,7 @@
         <div class="l-acts"><a class="act" href="/business/zen-noodle-bar.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Zen%20Noodle%20Bar%20668%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Zen%20Noodle%20Bar&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=chinese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">chinese</span>
         <h3>Fish with You</h3>
         <p class="l-meta">Downtown (B St) &middot; $$</p>
@@ -1506,7 +1533,7 @@
         <div class="l-acts"><a class="act" href="/business/fish-with-you.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Fish%20with%20You%20150%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Fish%20with%20You&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=chinese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">dumplings</span>
         <h3>MY Dumpling</h3>
         <p class="l-meta">Downtown (B St) &middot; $$</p>
@@ -1514,7 +1541,7 @@
         <div class="l-acts"><a class="act" href="/business/my-dumpling.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=MY%20Dumpling%20100%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=MY%20Dumpling&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=dumplings" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">dumplings</span>
         <h3>Shang Dumpling</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -1522,7 +1549,7 @@
         <div class="l-acts"><a class="act" href="/business/shang-dumpling.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Shang%20Dumpling%20213%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Shang%20Dumpling&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=dumplings" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">chinese</span>
         <h3>Superstar Dim Sum and Seafood</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
@@ -1530,7 +1557,7 @@
         <div class="l-acts"><a class="act" href="/business/superstar-dim-sum-and-seafood.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Superstar%20Dim%20Sum%20and%20Seafood%2088%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Superstar%20Dim%20Sum%20and%20Seafood&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=chinese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">taqueria</span>
         <h3>Fletch's Taqueria</h3>
         <p class="l-meta">Downtown (2nd Ave) &middot; $</p>
@@ -1538,7 +1565,7 @@
         <div class="l-acts"><a class="act" href="/business/fletch-s-taqueria.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Fletch's%20Taqueria%20385%202nd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Fletch's%20Taqueria&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=taqueria" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">taqueria</span>
         <h3>Las Palomas Taqueria</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $</p>
@@ -1546,7 +1573,7 @@
         <div class="l-acts"><a class="act" href="/business/las-palomas-taqueria.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Las%20Palomas%20Taqueria%2092%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Las%20Palomas%20Taqueria&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=taqueria" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">taqueria</span>
         <h3>Charlie's Taqueria</h3>
         <p class="l-meta">Downtown (B St) &middot; $</p>
@@ -1554,7 +1581,7 @@
         <div class="l-acts"><a class="act" href="/business/charlie-s-taqueria.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Charlie's%20Taqueria%20725%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Charlie's%20Taqueria&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=taqueria" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">taqueria</span>
         <h3>Tacos Al Vapor</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $</p>
@@ -1562,7 +1589,7 @@
         <div class="l-acts"><a class="act" href="/business/tacos-al-vapor.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Tacos%20Al%20Vapor%20602%20E%204th%20Ave%20Ste%20B%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Tacos%20Al%20Vapor&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=taqueria" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">taqueria</span>
         <h3>Taqueria Las Pencas 2</h3>
         <p class="l-meta">Downtown (B St) &middot; $</p>
@@ -1570,7 +1597,7 @@
         <div class="l-acts"><a class="act" href="/business/taqueria-las-pencas-2.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Taqueria%20Las%20Pencas%202%2045%20N%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Taqueria%20Las%20Pencas%202&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=taqueria" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">mexican</span>
         <h3>Snacks Antojitos Mexicanos</h3>
         <p class="l-meta">Downtown (B St) &middot; $</p>
@@ -1578,7 +1605,7 @@
         <div class="l-acts"><a class="act" href="/business/snacks-antojitos-mexicanos.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Snacks%20Antojitos%20Mexicanos%2031%20N%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Snacks%20Antojitos%20Mexicanos&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=mexican" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">latin</span>
         <h3>Pupuseria El Salvador</h3>
         <p class="l-meta">Downtown (B St) &middot; $</p>
@@ -1586,7 +1613,7 @@
         <div class="l-acts"><a class="act" href="/business/pupuseria-el-salvador.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Pupuseria%20El%20Salvador%2085%20N%20B%20St%20%232%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Pupuseria%20El%20Salvador&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=latin" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants">
         <span class="l-type">mediterranean</span>
         <h3>Hummus Mediterranean Kitchen</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
@@ -1594,7 +1621,7 @@
         <div class="l-acts"><a class="act" href="/business/hummus-mediterranean-kitchen.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Hummus%20Mediterranean%20Kitchen%20150%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Hummus%20Mediterranean%20Kitchen&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=mediterranean" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants">
         <span class="l-type">taiwanese</span>
         <h3>Chopstix &amp; Taiwanese Bentos</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -1602,7 +1629,7 @@
         <div class="l-acts"><a class="act" href="/business/chopstix-taiwanese-bentos.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Chopstix%20%26%20Taiwanese%20Bentos%20142%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Chopstix%20%26%20Taiwanese%20Bentos&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=taiwanese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants">
         <span class="l-type">himalayan</span>
         <h3>Samikcha MoMo</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -1610,7 +1637,7 @@
         <div class="l-acts"><a class="act" href="/business/samikcha-momo.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Samikcha%20MoMo%20146%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Samikcha%20MoMo&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=himalayan" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants">
         <span class="l-type">himalayan</span>
         <h3>Urban Momo</h3>
         <p class="l-meta">Downtown (B St) &middot; $$</p>
@@ -1618,7 +1645,7 @@
         <div class="l-acts"><a class="act" href="/business/urban-momo.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Urban%20Momo%20254%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Urban%20Momo&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=himalayan" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants korean">
         <span class="l-type">korean</span>
         <h3>Chingu</h3>
         <p class="l-meta">Downtown &middot; $$</p>
@@ -1626,7 +1653,7 @@
         <div class="l-acts"><a class="act" href="/business/chingu.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Chingu%20211%20S%20San%20Mateo%20Dr%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Chingu&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=korean" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants vietnamese">
         <span class="l-type">vietnamese</span>
         <h3>Gao Viet Kitchen</h3>
         <p class="l-meta">Downtown &middot; $$</p>
@@ -1634,7 +1661,7 @@
         <div class="l-acts"><a class="act" href="/business/gao-viet-kitchen.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Gao%20Viet%20Kitchen%20313%20S%20San%20Mateo%20Dr%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Gao%20Viet%20Kitchen&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=vietnamese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants vietnamese">
         <span class="l-type">vietnamese</span>
         <h3>M Sandwiches Cafe</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $</p>
@@ -1642,7 +1669,7 @@
         <div class="l-acts"><a class="act" href="/business/m-sandwiches-cafe.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=M%20Sandwiches%20Cafe%20205%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=M%20Sandwiches%20Cafe&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=vietnamese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants vietnamese">
         <span class="l-type">vietnamese</span>
         <h3>Saigon City</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -1650,7 +1677,7 @@
         <div class="l-acts"><a class="act" href="/business/saigon-city.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Saigon%20City%20418%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Saigon%20City&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=vietnamese" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants italian">
         <span class="l-type">italian</span>
         <h3>Sapore Express</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
@@ -1658,7 +1685,7 @@
         <div class="l-acts"><a class="act" href="/business/sapore-express.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sapore%20Express%20125%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Sapore%20Express&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=italian" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants">
         <span class="l-type">american</span>
         <h3>Central Park Bistro</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$$</p>
@@ -1666,7 +1693,7 @@
         <div class="l-acts"><a class="act" href="/business/central-park-bistro.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Central%20Park%20Bistro%20181%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Central%20Park%20Bistro&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=american" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
+      <article class="listing reveal" data-bucket="restaurants">
         <span class="l-type">steakhouse</span>
         <h3>Prime</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$$</p>
@@ -1682,53 +1709,53 @@
         <div class="l-acts"><a class="act" href="/business/panaderia-guatemalteca.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Panaderia%20Guatemalteca%20602%20E%204th%20Ave%20Suite%20G%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Panaderia%20Guatemalteca&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Bakery" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
-        <span class="l-type">dessert</span>
+      <article class="listing reveal" data-bucket="bakeries-sweets">
+        <span class="l-type">Dessert</span>
         <h3>Icicles</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $</p>
         <p class="l-desc">Rolled ice cream and sweet treats made to order.</p>
         <div class="l-acts"><a class="act" href="/business/icicles.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Icicles%20222%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
-        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Icicles&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=dessert" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
+        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Icicles&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Dessert" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
-        <span class="l-type">dessert</span>
+      <article class="listing reveal" data-bucket="bakeries-sweets">
+        <span class="l-type">Dessert</span>
         <h3>LuluYum</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $</p>
         <p class="l-desc">Dessert shop for sweet cravings downtown.</p>
         <div class="l-acts"><a class="act" href="/business/luluyum.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=LuluYum%2030%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
-        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=LuluYum&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=dessert" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
+        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=LuluYum&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Dessert" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
-        <span class="l-type">dessert</span>
+      <article class="listing reveal" data-bucket="bakeries-sweets">
+        <span class="l-type">Dessert</span>
         <h3>Tong Sui</h3>
         <p class="l-meta">Downtown (B St) &middot; $</p>
         <p class="l-desc">Chinese sweet dessert soups and drinks, served warm or cold.</p>
         <div class="l-acts"><a class="act" href="/business/tong-sui.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Tong%20Sui%20250%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
-        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Tong%20Sui&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=dessert" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
+        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Tong%20Sui&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Dessert" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
-        <span class="l-type">dessert</span>
+      <article class="listing reveal" data-bucket="bakeries-sweets">
+        <span class="l-type">Dessert</span>
         <h3>Sweet Moment</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $</p>
         <p class="l-desc">Asian desserts and boba, from taiyaki to milk tea.</p>
         <div class="l-acts"><a class="act" href="/business/sweet-moment.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sweet%20Moment%20137%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
-        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Sweet%20Moment&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=dessert" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
+        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Sweet%20Moment&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Dessert" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
-        <span class="l-type">boba</span>
+      <article class="listing reveal" data-bucket="coffee-caf-s">
+        <span class="l-type">Boba</span>
         <h3>Tiger Tea &amp; Juice</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $</p>
         <p class="l-desc">Fresh tea and juice, from fruit teas to boba.</p>
         <div class="l-acts"><a class="act" href="/business/tiger-tea-juice.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Tiger%20Tea%20%26%20Juice%20212%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
-        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Tiger%20Tea%20%26%20Juice&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=boba" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
+        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Tiger%20Tea%20%26%20Juice&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Boba" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="more">
-        <span class="l-type">boba</span>
+      <article class="listing reveal" data-bucket="coffee-caf-s">
+        <span class="l-type">Boba</span>
         <h3>Molly Tea</h3>
         <p class="l-meta">Downtown (B St) &middot; $</p>
         <p class="l-desc">Boba tea shop serving milk teas and fruit teas.</p>
         <div class="l-acts"><a class="act" href="/business/molly-tea.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Molly%20Tea%20153%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
-        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Molly%20Tea&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=boba" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
+        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Molly%20Tea&amp;state=CA&amp;postal_code=94401&amp;category=Eat%20%26%20Drink&amp;directory_type=Boba" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
       <article class="listing reveal" data-bucket="taco-food-trucks">
         <span class="l-type">Taco Truck</span>
@@ -1802,7 +1829,7 @@
         <div class="l-acts"><a class="act" href="/business/el-sipote-food-truck-san-mateo.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=El%20Sipote%20Food%20Truck%20341%20E%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=El%20Sipote%20Food%20Truck&amp;state=CA&amp;city=San%20Mateo&amp;category=Eat%20%26%20Drink&amp;directory_type=Food%20Truck" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants pizza">
         <span class="l-type">Pizza</span>
         <h3>Bizza</h3>
         <p class="l-meta">25th Avenue &middot; $</p>
@@ -1810,7 +1837,7 @@
         <div class="l-acts"><a class="act" href="/business/bizza-san-mateo.html">Details</a><a class="act" href="tel:+16503892160">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Bizza%20116%20E%2025th%20Ave%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.getbizza.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Bizza&amp;state=CA&amp;phone=%2B16503892160&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.getbizza.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Pizza" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants pizza">
         <span class="l-type">Pizza</span>
         <h3>PJ's Pizza Co.</h3>
         <p class="l-meta">25th Avenue &middot; $</p>
@@ -1818,7 +1845,7 @@
         <div class="l-acts"><a class="act" href="/business/pjs-pizza-co-san-mateo.html">Details</a><a class="act" href="tel:+16502688100">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=PJ's%20Pizza%20Co.%20168%20W%2025th%20Ave%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener">Directions</a><a class="act" href="https://pjspizza.co/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=PJ's%20Pizza%20Co.&amp;state=CA&amp;phone=%2B16502688100&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fpjspizza.co%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Pizza" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants pizza">
         <span class="l-type">Pizza</span>
         <h3>Mateo Pizza Restaurant</h3>
         <p class="l-meta">North San Mateo Drive &middot; $</p>
@@ -1826,7 +1853,7 @@
         <div class="l-acts"><a class="act" href="/business/mateo-pizza-restaurant-san-mateo.html">Details</a><a class="act" href="tel:+16502107616">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Mateo%20Pizza%20Restaurant%20851%20N%20San%20Mateo%20Dr%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://mateopizza.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Mateo%20Pizza%20Restaurant&amp;state=CA&amp;phone=%2B16502107616&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fmateopizza.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Pizza" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants pizza">
         <span class="l-type">Pizza</span>
         <h3>New York Pizza</h3>
         <p class="l-meta">Downtown (B Street) &middot; $</p>
@@ -1834,7 +1861,7 @@
         <div class="l-acts"><a class="act" href="/business/new-york-pizza-san-mateo.html">Details</a><a class="act" href="tel:+16503443444">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=New%20York%20Pizza%20219%20S%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.newyorkpizza.biz/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=New%20York%20Pizza&amp;state=CA&amp;phone=%2B16503443444&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=http%3A%2F%2Fwww.newyorkpizza.biz%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Pizza" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants pizza">
         <span class="l-type">Pizza</span>
         <h3>Nob Hill Pizza and Popcorn</h3>
         <p class="l-meta">Hayward Park &middot; $</p>
@@ -1842,7 +1869,7 @@
         <div class="l-acts"><a class="act" href="/business/nob-hill-pizza-and-popcorn-san-mateo.html">Details</a><a class="act" href="tel:+14156650500">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Nob%20Hill%20Pizza%20and%20Popcorn%20155%20South%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.nobhillpizza.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Nob%20Hill%20Pizza%20and%20Popcorn&amp;state=CA&amp;phone=%2B14156650500&amp;city=San%20Mateo&amp;postal_code=94402&amp;website=http%3A%2F%2Fwww.nobhillpizza.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Pizza" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants pizza">
         <span class="l-type">Pizza</span>
         <h3>Pizza My Heart</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $</p>
@@ -1850,7 +1877,7 @@
         <div class="l-acts"><a class="act" href="/business/pizza-my-heart-san-mateo.html">Details</a><a class="act" href="tel:+16503449800">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Pizza%20My%20Heart%20140%20E%204th%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.pizzamyheart.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Pizza%20My%20Heart&amp;state=CA&amp;phone=%2B16503449800&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fwww.pizzamyheart.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Pizza" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants pizza">
         <span class="l-type">Pizza</span>
         <h3>North Beach Pizza</h3>
         <p class="l-meta">Downtown (B St) &middot; $</p>
@@ -1858,7 +1885,7 @@
         <div class="l-acts"><a class="act" href="/business/north-beach-pizza-san-mateo.html">Details</a><a class="act" href="tel:+16503445000">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=North%20Beach%20Pizza%20240%20E%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://northbeachpizza.com/northbeachpizzasanmateo?utm_source=google" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=North%20Beach%20Pizza&amp;state=CA&amp;phone=%2B16503445000&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fnorthbeachpizza.com%2Fnorthbeachpizzasanmateo%3Futm_source%3Dgoogle&amp;category=Eat%20%26%20Drink&amp;directory_type=Pizza" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants pizza">
         <span class="l-type">Pizza</span>
         <h3>Golden Boy Pizza</h3>
         <p class="l-meta">Bayfront &middot; $</p>
@@ -1866,7 +1893,7 @@
         <div class="l-acts"><a class="act" href="/business/golden-boy-pizza-san-mateo.html">Details</a><a class="act" href="tel:+16503152988">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Golden%20Boy%20Pizza%201119%20N%20Amphlett%20Blvd%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.goldenboypizza.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Golden%20Boy%20Pizza&amp;state=CA&amp;phone=%2B16503152988&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=http%3A%2F%2Fwww.goldenboypizza.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Pizza" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Chef Zhao Bistro</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -1874,7 +1901,7 @@
         <div class="l-acts"><a class="act" href="/business/chef-zhao-bistro-san-mateo.html">Details</a><a class="act" href="tel:+16503456288">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Chef%20Zhao%20Bistro%202450%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.chefzhaobistroca.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Chef%20Zhao%20Bistro&amp;state=CA&amp;phone=%2B16503456288&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.chefzhaobistroca.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Cheung Hing</h3>
         <p class="l-meta">Fashion Island area &middot; $$</p>
@@ -1882,7 +1909,7 @@
         <div class="l-acts"><a class="act" href="/business/cheung-hing-san-mateo.html">Details</a><a class="act" href="tel:+16505727989">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Cheung%20Hing%2040%2042nd%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://cheunghingtogo.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Cheung%20Hing&amp;state=CA&amp;phone=%2B16505727989&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fcheunghingtogo.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Happy Lamb Hot Pot</h3>
         <p class="l-meta">Downtown (2nd Ave) &middot; $$</p>
@@ -1890,7 +1917,7 @@
         <div class="l-acts"><a class="act" href="/business/happy-lamb-hot-pot-san-mateo.html">Details</a><a class="act" href="tel:+16503432566">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Happy%20Lamb%20Hot%20Pot%20215%20S%20Ellsworth%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://happylambhotpot.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Happy%20Lamb%20Hot%20Pot&amp;state=CA&amp;phone=%2B16503432566&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fhappylambhotpot.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Kai Kai Dim Sum</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
@@ -1898,7 +1925,7 @@
         <div class="l-acts"><a class="act" href="/business/kai-kai-dim-sum-san-mateo.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Kai%20Kai%20Dim%20Sum%2088%20E%204th%20Ave" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Kai%20Kai%20Dim%20Sum&amp;state=CA&amp;city=San%20Mateo&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Little Hunan Restaurant</h3>
         <p class="l-meta">Crystal Springs &middot; $$</p>
@@ -1906,7 +1933,7 @@
         <div class="l-acts"><a class="act" href="/business/little-hunan-restaurant-san-mateo.html">Details</a><a class="act" href="tel:+16505711575">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Little%20Hunan%20Restaurant%20120%20De%20Anza%20Blvd" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.smorefood.com/order-online/little-hunan-restaurant-san-mateo-94402-vjldbl35?utm_source=gmb&amp;utm_medium=website" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Little%20Hunan%20Restaurant&amp;state=CA&amp;phone=%2B16505711575&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.smorefood.com%2Forder-online%2Flittle-hunan-restaurant-san-mateo-94402-vjldbl35%3Futm_source%3Dgmb%26utm_medium%3Dwebsite&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Liuyishou Hotpot</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -1914,7 +1941,7 @@
         <div class="l-acts"><a class="act" href="/business/liuyishou-hotpot-san-mateo.html">Details</a><a class="act" href="tel:+16502421245">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Liuyishou%20Hotpot%2098%20E%203rd%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="http://liuyishouna.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Liuyishou%20Hotpot&amp;state=CA&amp;phone=%2B16502421245&amp;city=San%20Mateo&amp;website=http%3A%2F%2Fliuyishouna.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Mala Town Express</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -1930,7 +1957,7 @@
         <div class="l-acts"><a class="act" href="/business/no-5-house-san-mateo.html">Details</a><a class="act" href="tel:+16507273142">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=No.5%20House%205%20S%20Ellsworth%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.no5house.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=No.5%20House&amp;state=CA&amp;phone=%2B16507273142&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.no5house.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Peking Alley</h3>
         <p class="l-meta">Hillsdale &middot; $$</p>
@@ -1938,7 +1965,7 @@
         <div class="l-acts"><a class="act" href="/business/peking-alley-san-mateo.html">Details</a><a class="act" href="tel:+16503490298">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Peking%20Alley%204300%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.pekingalley.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Peking%20Alley&amp;state=CA&amp;phone=%2B16503490298&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.pekingalley.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Ping‘s Bistro</h3>
         <p class="l-meta">Los Prados &middot; $$</p>
@@ -1954,15 +1981,15 @@
         <div class="l-acts"><a class="act" href="/business/rin-tei-san-mateo.html">Details</a><a class="act" href="tel:+16505588239">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Rin-Tei%20104%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://rin-tei.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Rin-Tei&amp;state=CA&amp;phone=%2B16505588239&amp;city=San%20Mateo&amp;website=https%3A%2F%2Frin-tei.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Seapot Hot Pot &amp; Korean BBQ</h3>
-        <p class="l-meta">Beresford Park &middot; $$</p>
+        <p class="l-meta">El Camino Real &middot; $$</p>
         <p class="l-desc">A Hot Pot restaurant on South El Camino Real.</p>
         <div class="l-acts"><a class="act" href="/business/seapot-hot-pot-korean-bbq-san-mateo.html">Details</a><a class="act" href="tel:+16504594426">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Seapot%20Hot%20Pot%20%26%20Korean%20BBQ%201952%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.seapotusa.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Seapot%20Hot%20Pot%20%26%20Korean%20BBQ&amp;state=CA&amp;phone=%2B16504594426&amp;city=San%20Mateo&amp;website=http%3A%2F%2Fwww.seapotusa.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Silver House</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -1970,7 +1997,7 @@
         <div class="l-acts"><a class="act" href="/business/silver-house-san-mateo.html">Details</a><a class="act" href="tel:+16505711298">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Silver%20House%202224%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.silverhouserestaurant.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Silver%20House&amp;state=CA&amp;phone=%2B16505711298&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.silverhouserestaurant.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Silver Lake Seafood Restaurant</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -1978,7 +2005,7 @@
         <div class="l-acts"><a class="act" href="/business/silver-lake-seafood-restaurant-san-mateo.html">Details</a><a class="act" href="tel:+16505781678">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Silver%20Lake%20Seafood%20Restaurant%202291%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Silver%20Lake%20Seafood%20Restaurant&amp;state=CA&amp;phone=%2B16505781678&amp;city=San%20Mateo&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Tai Er Sichuan Cuisine</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
@@ -1986,7 +2013,7 @@
         <div class="l-acts"><a class="act" href="/business/tai-er-sichuan-cuisine-san-mateo.html">Details</a><a class="act" href="tel:+16503982222">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Tai%20Er%20Sichuan%20Cuisine%2098%20E%204th%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.taierusa.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Tai%20Er%20Sichuan%20Cuisine&amp;state=CA&amp;phone=%2B16503982222&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.taierusa.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Taste of Shaxian</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
@@ -1994,7 +2021,7 @@
         <div class="l-acts"><a class="act" href="/business/taste-of-shaxian-san-mateo.html">Details</a><a class="act" href="tel:+16503934715">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Taste%20of%20Shaxian%2038%20E%204th%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="http://tasteofshaxian.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Taste%20of%20Shaxian&amp;state=CA&amp;phone=%2B16503934715&amp;city=San%20Mateo&amp;website=http%3A%2F%2Ftasteofshaxian.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Ten Seconds Yunnan Rice Noodle</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -2002,7 +2029,7 @@
         <div class="l-acts"><a class="act" href="/business/ten-seconds-yunnan-rice-noodle-san-mateo.html">Details</a><a class="act" href="tel:+16503152316">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Ten%20Seconds%20Yunnan%20Rice%20Noodle%20215%20E%203rd%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://tensecondssanmateo.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Ten%20Seconds%20Yunnan%20Rice%20Noodle&amp;state=CA&amp;phone=%2B16503152316&amp;city=San%20Mateo&amp;website=https%3A%2F%2Ftensecondssanmateo.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>The Noodle Shop</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -2010,7 +2037,7 @@
         <div class="l-acts"><a class="act" href="/business/the-noodle-shop-san-mateo.html">Details</a><a class="act" href="tel:+16503451277">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=The%20Noodle%20Shop%20164%20W%2025th%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://thenoodleshopsm.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=The%20Noodle%20Shop&amp;state=CA&amp;phone=%2B16503451277&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fthenoodleshopsm.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Toa Yuen Restaurant</h3>
         <p class="l-meta">Laurelwood &middot; $$</p>
@@ -2018,7 +2045,7 @@
         <div class="l-acts"><a class="act" href="/business/toa-yuen-restaurant-san-mateo.html">Details</a><a class="act" href="tel:+16503490414">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Toa%20Yuen%20Restaurant%203170%20Campus%20Dr" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.smorefood.com/order-online/toa-yuen-restaurant-san-mateo-94403-wqm8u2jd?utm_source=gmb&amp;utm_medium=website" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Toa%20Yuen%20Restaurant&amp;state=CA&amp;phone=%2B16503490414&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.smorefood.com%2Forder-online%2Ftoa-yuen-restaurant-san-mateo-94403-wqm8u2jd%3Futm_source%3Dgmb%26utm_medium%3Dwebsite&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Li's Knife Cut Noodle</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -2026,7 +2053,7 @@
         <div class="l-acts"><a class="act" href="/business/li-s-knife-cut-noodle-san-mateo.html">Details</a><a class="act" href="tel:+16504583020">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Li's%20Knife%20Cut%20Noodle%20121%20W%2025th%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="http://lisnoodle.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Li's%20Knife%20Cut%20Noodle&amp;state=CA&amp;phone=%2B16504583020&amp;city=San%20Mateo&amp;website=http%3A%2F%2Flisnoodle.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants chinese">
         <span class="l-type">Restaurant</span>
         <h3>Dynasty BBQ</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -2034,15 +2061,15 @@
         <div class="l-acts"><a class="act" href="/business/dynasty-bbq-san-mateo.html">Details</a><a class="act" href="tel:+16503934819">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Dynasty%20BBQ%20105%20W%2025th%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://pos.chowbus.com/online-ordering/store/restaurant/14843" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Dynasty%20BBQ&amp;state=CA&amp;phone=%2B16503934819&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fpos.chowbus.com%2Fonline-ordering%2Fstore%2Frestaurant%2F14843&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Daiki Sushi</h3>
-        <p class="l-meta">Beresford Park &middot; $$</p>
+        <p class="l-meta">El Camino Real &middot; $$</p>
         <p class="l-desc">A Sushi restaurant on South El Camino Real.</p>
         <div class="l-acts"><a class="act" href="/business/daiki-sushi-san-mateo.html">Details</a><a class="act" href="tel:+16505229698">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Daiki%20Sushi%202075%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.sanmateodaikisushi.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Daiki%20Sushi&amp;state=CA&amp;phone=%2B16505229698&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.sanmateodaikisushi.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Kodawari Japanese Cuisine</h3>
         <p class="l-meta">Fashion Island area &middot; $$</p>
@@ -2050,7 +2077,7 @@
         <div class="l-acts"><a class="act" href="/business/kodawari-japanese-cuisine-san-mateo.html">Details</a><a class="act" href="tel:+16503152023">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Kodawari%20Japanese%20Cuisine%2032%2042nd%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://kodawarisushi.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Kodawari%20Japanese%20Cuisine&amp;state=CA&amp;phone=%2B16503152023&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fkodawarisushi.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Minako Organic-ish Japanese Cuisine</h3>
         <p class="l-meta">North Central &middot; $$</p>
@@ -2058,7 +2085,7 @@
         <div class="l-acts"><a class="act" href="/business/minako-organic-ish-japanese-cuisine-san-mateo.html">Details</a><a class="act" href="tel:+16503440188">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Minako%20Organic-ish%20Japanese%20Cuisine%20360%20Peninsula%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.facebook.com/Minako.Organicish/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Minako%20Organic-ish%20Japanese%20Cuisine&amp;state=CA&amp;phone=%2B16503440188&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.facebook.com%2FMinako.Organicish%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Noma Sushi</h3>
         <p class="l-meta">Hayward Park &middot; $$</p>
@@ -2066,15 +2093,15 @@
         <div class="l-acts"><a class="act" href="/business/noma-sushi-san-mateo.html">Details</a><a class="act" href="tel:+16503934651">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Noma%20Sushi%20152%20South%20Blvd" target="_blank" rel="noopener">Directions</a><a class="act" href="http://nomasushi.kwickmenu.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Noma%20Sushi&amp;state=CA&amp;phone=%2B16503934651&amp;city=San%20Mateo&amp;website=http%3A%2F%2Fnomasushi.kwickmenu.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Santa Ramen</h3>
-        <p class="l-meta">Beresford Park &middot; $$</p>
+        <p class="l-meta">El Camino Real &middot; $$</p>
         <p class="l-desc">A Ramen restaurant on South El Camino Real.</p>
         <div class="l-acts"><a class="act" href="/business/santa-ramen-san-mateo.html">Details</a><a class="act" href="tel:+16503445918">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Santa%20Ramen%201944%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://santaramen.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Santa%20Ramen&amp;state=CA&amp;phone=%2B16503445918&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fsantaramen.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Sapporo Rock &amp; Roll Sushi</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -2082,7 +2109,7 @@
         <div class="l-acts"><a class="act" href="/business/sapporo-rock-roll-sushi-san-mateo.html">Details</a><a class="act" href="tel:+16506991999">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sapporo%20Rock%20%26%20Roll%20Sushi%202456%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.eatsapporosushi.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Sapporo%20Rock%20%26%20Roll%20Sushi&amp;state=CA&amp;phone=%2B16506991999&amp;city=San%20Mateo&amp;website=http%3A%2F%2Fwww.eatsapporosushi.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Taki Nori Hand Roll Bar</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -2090,7 +2117,7 @@
         <div class="l-acts"><a class="act" href="/business/taki-nori-hand-roll-bar-san-mateo.html">Details</a><a class="act" href="tel:+16505811269">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Taki%20Nori%20Hand%20Roll%20Bar%20144%20E%203rd%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.takinoribar.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Taki%20Nori%20Hand%20Roll%20Bar&amp;state=CA&amp;phone=%2B16505811269&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.takinoribar.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Totoro Ramen</h3>
         <p class="l-meta">North Central &middot; $$</p>
@@ -2098,7 +2125,7 @@
         <div class="l-acts"><a class="act" href="/business/totoro-ramen-san-mateo.html">Details</a><a class="act" href="tel:+16507813137">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Totoro%20Ramen%20856%20N%20Delaware%20St" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.totororamen.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Totoro%20Ramen&amp;state=CA&amp;phone=%2B16507813137&amp;city=San%20Mateo&amp;website=http%3A%2F%2Fwww.totororamen.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>Yuzu</h3>
         <p class="l-meta">Hillsdale (37th Ave) &middot; $$</p>
@@ -2106,7 +2133,7 @@
         <div class="l-acts"><a class="act" href="/business/yuzu-san-mateo.html">Details</a><a class="act" href="tel:+16503580298">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Yuzu%2054%2037th%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.yuzusushisanmateo.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Yuzu&amp;state=CA&amp;phone=%2B16503580298&amp;city=San%20Mateo&amp;website=http%3A%2F%2Fwww.yuzusushisanmateo.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants japanese">
         <span class="l-type">Restaurant</span>
         <h3>KEITAN Binchotan Yakitori</h3>
         <p class="l-meta">Downtown &middot; $$</p>
@@ -2114,7 +2141,7 @@
         <div class="l-acts"><a class="act" href="/business/keitan-binchotan-yakitori-san-mateo.html">Details</a><a class="act" href="tel:+16505202300">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=KEITAN%20Binchotan%20Yakitori%2035%20E%203rd%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://qrcode.chowbus.com/?code=UZNzey" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=KEITAN%20Binchotan%20Yakitori&amp;state=CA&amp;phone=%2B16505202300&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fqrcode.chowbus.com%2F%3Fcode%3DUZNzey&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants korean">
         <span class="l-type">Restaurant</span>
         <h3>Daeho kalbijjim &amp; beef soup</h3>
         <p class="l-meta">Downtown &middot; $$</p>
@@ -2122,7 +2149,7 @@
         <div class="l-acts"><a class="act" href="/business/daeho-kalbijjim-beef-soup-san-mateo.html">Details</a><a class="act" href="tel:+16503896689">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Daeho%20kalbijjim%20%26%20beef%20soup%20213%202nd%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.daeho-kalbijjim.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Daeho%20kalbijjim%20%26%20beef%20soup&amp;state=CA&amp;phone=%2B16503896689&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.daeho-kalbijjim.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants korean">
         <span class="l-type">Restaurant</span>
         <h3>OLHSO Korean BBQ House</h3>
         <p class="l-meta">Downtown San Mateo &middot; $$</p>
@@ -2130,7 +2157,7 @@
         <div class="l-acts"><a class="act" href="/business/olhso-korean-bbq-house-san-mateo.html">Details</a><a class="act" href="tel:+16507813190">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=OLHSO%20Korean%20BBQ%20House%20236%20S%20B%20St" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.olhsohouse.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=OLHSO%20Korean%20BBQ%20House&amp;state=CA&amp;phone=%2B16507813190&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.olhsohouse.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants korean">
         <span class="l-type">Restaurant</span>
         <h3>Myung Dong Tofu Cabin</h3>
         <p class="l-meta">Los Prados &middot; $$</p>
@@ -2138,7 +2165,7 @@
         <div class="l-acts"><a class="act" href="/business/myung-dong-tofu-cabin-san-mateo.html">Details</a><a class="act" href="tel:+16505251484">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Myung%20Dong%20Tofu%20Cabin%202968%20S%20Norfolk%20St" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.tofucabin.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Myung%20Dong%20Tofu%20Cabin&amp;state=CA&amp;phone=%2B16505251484&amp;city=San%20Mateo&amp;website=http%3A%2F%2Fwww.tofucabin.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants indian">
         <span class="l-type">Restaurant</span>
         <h3>Clay Oven Cuisine of India</h3>
         <p class="l-meta">Downtown (3rd Ave) &middot; $$</p>
@@ -2146,7 +2173,7 @@
         <div class="l-acts"><a class="act" href="/business/clay-oven-cuisine-of-india-san-mateo.html">Details</a><a class="act" href="tel:+16503429194">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Clay%20Oven%20Cuisine%20of%20India%2078%20E%203rd%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.beyondmenu.com/23303/san-mateo/clay-oven-cuisine-of-india-san-mateo-94401.aspx" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Clay%20Oven%20Cuisine%20of%20India&amp;state=CA&amp;phone=%2B16503429194&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.beyondmenu.com%2F23303%2Fsan-mateo%2Fclay-oven-cuisine-of-india-san-mateo-94401.aspx&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants indian">
         <span class="l-type">Restaurant</span>
         <h3>Lajawab Indian Cuisine</h3>
         <p class="l-meta">North Central &middot; $$</p>
@@ -2154,7 +2181,7 @@
         <div class="l-acts"><a class="act" href="/business/lajawab-indian-cuisine-san-mateo.html">Details</a><a class="act" href="tel:+16503897690">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Lajawab%20Indian%20Cuisine%20514%20Peninsula%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://lajawabca.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Lajawab%20Indian%20Cuisine&amp;state=CA&amp;phone=%2B16503897690&amp;city=San%20Mateo&amp;website=https%3A%2F%2Flajawabca.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants indian">
         <span class="l-type">Restaurant</span>
         <h3>Shah Restaurant</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -2162,7 +2189,7 @@
         <div class="l-acts"><a class="act" href="/business/shah-restaurant-san-mateo.html">Details</a><a class="act" href="tel:+16505142400">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Shah%20Restaurant%202299%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://shahrestaurantsanmateo.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Shah%20Restaurant&amp;state=CA&amp;phone=%2B16505142400&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fshahrestaurantsanmateo.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants italian">
         <span class="l-type">Restaurant</span>
         <h3>Peninsula Italian American Social Club</h3>
         <p class="l-meta">Downtown (N B St) &middot; $$</p>
@@ -2173,12 +2200,12 @@
       <article class="listing reveal" data-bucket="restaurants">
         <span class="l-type">Restaurant</span>
         <h3>Jack's Restaurant &amp; Bar</h3>
-        <p class="l-meta">Beresford Park &middot; $$</p>
+        <p class="l-meta">El Camino Real &middot; $$</p>
         <p class="l-desc">A American restaurant on South El Camino Real.</p>
         <div class="l-acts"><a class="act" href="/business/jack-s-restaurant-bar-san-mateo.html">Details</a><a class="act" href="tel:+16503501077">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Jack's%20Restaurant%20%26%20Bar%201750%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.ilovejacks.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Jack's%20Restaurant%20%26%20Bar&amp;state=CA&amp;phone=%2B16503501077&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.ilovejacks.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants italian">
         <span class="l-type">Restaurant</span>
         <h3>The Pasta Affair</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
@@ -2186,15 +2213,15 @@
         <div class="l-acts"><a class="act" href="/business/the-pasta-affair-san-mateo.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=The%20Pasta%20Affair%20201%20E%204th%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://thepastaaffair.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=The%20Pasta%20Affair&amp;state=CA&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fthepastaaffair.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants thai">
         <span class="l-type">Restaurant</span>
         <h3>Chai Yo Thai Cuisine</h3>
-        <p class="l-meta">Beresford Park &middot; $$</p>
+        <p class="l-meta">El Camino Real &middot; $$</p>
         <p class="l-desc">A Thai restaurant on South El Camino Real.</p>
         <div class="l-acts"><a class="act" href="/business/chai-yo-thai-cuisine-san-mateo.html">Details</a><a class="act" href="tel:+16503152545">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Chai%20Yo%20Thai%20Cuisine%202116%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.chaiyothaicuisine.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Chai%20Yo%20Thai%20Cuisine&amp;state=CA&amp;phone=%2B16503152545&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.chaiyothaicuisine.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants thai">
         <span class="l-type">Restaurant</span>
         <h3>Charm Thai Eatery</h3>
         <p class="l-meta">Baywood &middot; $$</p>
@@ -2202,7 +2229,7 @@
         <div class="l-acts"><a class="act" href="/business/charm-thai-eatery-san-mateo.html">Details</a><a class="act" href="tel:+16502123444">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Charm%20Thai%20Eatery%201428%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://charmthaica.smiledining.com/?2025102401" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Charm%20Thai%20Eatery&amp;state=CA&amp;phone=%2B16502123444&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fcharmthaica.smiledining.com%2F%3F2025102401&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Fernando's Mexican Restaurant</h3>
         <p class="l-meta">Hillsdale (37th Ave) &middot; $$</p>
@@ -2210,7 +2237,7 @@
         <div class="l-acts"><a class="act" href="/business/fernando-s-mexican-restaurant-san-mateo.html">Details</a><a class="act" href="tel:+16503459042">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Fernando's%20Mexican%20Restaurant%2063%2037th%20Ave" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Fernando's%20Mexican%20Restaurant&amp;state=CA&amp;phone=%2B16503459042&amp;city=San%20Mateo&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Hermedia Restaurant</h3>
         <p class="l-meta">Shoreview &middot; $$</p>
@@ -2218,10 +2245,10 @@
         <div class="l-acts"><a class="act" href="/business/hermedia-restaurant-san-mateo.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Hermedia%20Restaurant%201424%20Cary%20Ave" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Hermedia%20Restaurant&amp;state=CA&amp;city=San%20Mateo&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Jayli’s Cocina</h3>
-        <p class="l-meta">Downtown &middot; $$</p>
+        <p class="l-meta">El Camino Real &middot; $$</p>
         <p class="l-desc">A Mexican restaurant on 28th Avenue.</p>
         <div class="l-acts"><a class="act" href="/business/jayli-s-cocina-san-mateo.html">Details</a><a class="act" href="tel:+16503155459">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Jayli%E2%80%99s%20Cocina%2028th%20Ave%2C%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Jayli%E2%80%99s%20Cocina&amp;state=CA&amp;phone=%2B16503155459&amp;city=San%20Mateo&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
@@ -2234,7 +2261,7 @@
         <div class="l-acts"><a class="act" href="/business/la-chapina-restaurant-san-mateo.html">Details</a><a class="act" href="tel:+16503638903">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=La%20Chapina%20Restaurant%20215%20S%20Delaware%20St" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=La%20Chapina%20Restaurant&amp;state=CA&amp;phone=%2B16503638903&amp;city=San%20Mateo&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>La Cumbre Taqueria</h3>
         <p class="l-meta">Downtown (B St) &middot; $$</p>
@@ -2242,7 +2269,7 @@
         <div class="l-acts"><a class="act" href="/business/la-cumbre-taqueria-san-mateo.html">Details</a><a class="act" href="tel:+16503448989">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=La%20Cumbre%20Taqueria%2028%20N%20B%20St" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.tlctaco.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=La%20Cumbre%20Taqueria&amp;state=CA&amp;phone=%2B16503448989&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.tlctaco.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Maria's Restaurant</h3>
         <p class="l-meta">Shoreview &middot; $$</p>
@@ -2250,7 +2277,7 @@
         <div class="l-acts"><a class="act" href="/business/maria-s-restaurant-san-mateo.html">Details</a><a class="act" href="tel:+16503438930">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Maria's%20Restaurant%201452%20Cary%20Ave" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Maria's%20Restaurant&amp;state=CA&amp;phone=%2B16503438930&amp;city=San%20Mateo&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Monchi's Red Tacos</h3>
         <p class="l-meta">Baywood &middot; $$</p>
@@ -2258,7 +2285,7 @@
         <div class="l-acts"><a class="act" href="/business/monchi-s-red-tacos-san-mateo.html">Details</a><a class="act" href="tel:+16505348697">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Monchi's%20Red%20Tacos%201300%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.facebook.com/monchis_redtacos" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Monchi's%20Red%20Tacos&amp;state=CA&amp;phone=%2B16505348697&amp;city=San%20Mateo&amp;website=http%3A%2F%2Fwww.facebook.com%2Fmonchis_redtacos&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Mr. Taco Man</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
@@ -2266,7 +2293,7 @@
         <div class="l-acts"><a class="act" href="/business/mr-taco-man-san-mateo.html">Details</a><a class="act" href="tel:+16503427084">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Mr.%20Taco%20Man%20203%20E%204th%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://mrtacomansanmateo.com/?utm_source=google" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Mr.%20Taco%20Man&amp;state=CA&amp;phone=%2B16503427084&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fmrtacomansanmateo.com%2F%3Futm_source%3Dgoogle&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>S El Camino Taqueria</h3>
         <p class="l-meta">25th Avenue &middot; $$</p>
@@ -2274,7 +2301,7 @@
         <div class="l-acts"><a class="act" href="/business/s-el-camino-taqueria-san-mateo.html">Details</a><a class="act" href="tel:+16503152500">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=S%20El%20Camino%20Taqueria%202317%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="http://orderselcaminotaqueria.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=S%20El%20Camino%20Taqueria&amp;state=CA&amp;phone=%2B16503152500&amp;city=San%20Mateo&amp;website=http%3A%2F%2Forderselcaminotaqueria.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Tacos El Grullense C&amp;D</h3>
         <p class="l-meta">Hillsdale &middot; $$</p>
@@ -2282,7 +2309,7 @@
         <div class="l-acts"><a class="act" href="/business/tacos-el-grullense-c-d-san-mateo.html">Details</a><a class="act" href="tel:+16504583057">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Tacos%20El%20Grullense%20C%26D%2060%2031st%20Ave" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Tacos%20El%20Grullense%20C%26D&amp;state=CA&amp;phone=%2B16504583057&amp;city=San%20Mateo&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Taquería Los Moreno</h3>
         <p class="l-meta">Borel &middot; $$</p>
@@ -2290,7 +2317,7 @@
         <div class="l-acts"><a class="act" href="/business/taqueria-los-moreno-san-mateo.html">Details</a><a class="act" href="tel:+16503121161">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Taquer%C3%ADa%20Los%20Moreno%2037%2043rd%20Ave" target="_blank" rel="noopener">Directions</a><a class="act" href="https://taquerialosmorenoca.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Taquer%C3%ADa%20Los%20Moreno&amp;state=CA&amp;phone=%2B16503121161&amp;city=San%20Mateo&amp;website=https%3A%2F%2Ftaquerialosmorenoca.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Taqueria Pancho Villa</h3>
         <p class="l-meta">Downtown (4th Ave) &middot; $$</p>
@@ -2298,7 +2325,7 @@
         <div class="l-acts"><a class="act" href="/business/taqueria-pancho-villa-san-mateo.html">Details</a><a class="act" href="tel:+16503434123">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Taqueria%20Pancho%20Villa%20365%20S%20B%20St" target="_blank" rel="noopener">Directions</a><a class="act" href="https://smpanchovilla.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Taqueria%20Pancho%20Villa&amp;state=CA&amp;phone=%2B16503434123&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fsmpanchovilla.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Mariscos el pariente #2</h3>
         <p class="l-meta">Baywood &middot; $$</p>
@@ -2306,7 +2333,7 @@
         <div class="l-acts"><a class="act" href="/business/mariscos-el-pariente-2-san-mateo.html">Details</a><a class="act" href="tel:+16503929803">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Mariscos%20el%20pariente%20%232%20908%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Mariscos%20el%20pariente%20%232&amp;state=CA&amp;phone=%2B16503929803&amp;city=San%20Mateo&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="restaurants">
+      <article class="listing reveal" data-bucket="restaurants mexican">
         <span class="l-type">Restaurant</span>
         <h3>Taqueria El Tigre</h3>
         <p class="l-meta">Downtown (Tilton Ave) &middot; $$</p>
@@ -2486,7 +2513,7 @@
       function apply(){
         var q = searchQ.trim().toLowerCase(), shown = 0;
         cards.forEach(function(l){
-          var okB = activeBucket === 'all' || l.getAttribute('data-bucket') === activeBucket;
+          var okB = activeBucket === 'all' || (' ' + l.getAttribute('data-bucket') + ' ').indexOf(' ' + activeBucket + ' ') !== -1;
           var okS = !q || l.textContent.toLowerCase().indexOf(q) !== -1;
           var vis = okB && okS;
           l.style.display = vis ? '' : 'none';

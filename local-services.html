@@ -80,6 +80,12 @@
     .chip { font-family:inherit; font-size:0.85rem; font-weight:600; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all 0.15s; }
     .chip:hover { border-color:var(--clay); color:var(--clay-deep); }
     .chip.is-on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+    .bestof-row { display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem; margin-top:0.85rem; }
+    .bestof-label { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:800; color:var(--clay-deep); }
+    .bestof-link { font-family:inherit; font-size:0.85rem; font-weight:700; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--clay); color:var(--clay-deep); background:transparent; text-decoration:none; transition:all 0.15s; }
+    .bestof-link:hover { background:var(--clay); color:#fff; }
+    .subfilter { display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem; margin-top:0.7rem; }
+    .subfilter-label { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:800; color:var(--ink-soft); }
     .listing-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.3rem; padding:2.5rem 0 1rem; }
     .listing { border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); background:var(--card); box-shadow:0 2px 6px -3px rgba(34,29,22,0.16); padding:1.4rem 1.4rem 1.5rem; display:flex; flex-direction:column; transition:transform 0.18s ease, box-shadow 0.18s ease; }
     .listing:hover { transform:translateY(-4px); box-shadow:0 16px 34px -20px rgba(34,29,22,0.45); }
@@ -97,6 +103,9 @@
     .preview-banner { background:#7A6A55; color:#fff; text-align:center; padding:0.6rem 1rem; font-size:0.88rem; font-weight:600; }
     @media (prefers-reduced-motion: reduce) { .js .reveal { opacity:1; transform:none; } }
     .l-pick { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#2A1E0E; background:#E6A828; border:1px solid #E6A828; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; }
+    .l-picknote { margin:0.15rem 0 0.2rem; padding:0.6rem 0.8rem; border-left:3px solid #E6A828; background:rgba(230,168,40,0.09); border-radius:0 6px 6px 0; font-size:0.9rem; line-height:1.5; color:var(--ink); }
+    .l-picknote strong { color:var(--clay-deep); font-weight:700; }
+    [data-theme="dark"] .l-picknote { background:rgba(230,168,40,0.14); }
     .l-chain { display:inline-block; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:var(--ink-soft); border:1px solid var(--line); border-radius:999px; padding:0.15rem 0.55rem; margin-bottom:0.55rem; }
     .l-closing { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#fff; background:#B0402F; border:1px solid #B0402F; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; margin-right:0.4rem; }
     .listing .l-type { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
@@ -190,6 +199,8 @@
       <a href="ask.html" class="ask-hero"><span class="ask-hero-ico">&#128172;</span><span class="ask-hero-txt"><strong>Ask a Local</strong><span>Not sure where to start? Tell it what you need and get real local picks in seconds.</span></span><span class="ask-hero-go">&rarr;</span></a>
       <input type="search" class="search" id="listingSearch" placeholder="Search local services&hellip;" aria-label="Search Local Services" autocomplete="off" />
       <div class="chips"><button class="chip is-on" data-filter="all">All</button><button class="chip" data-filter="hair-grooming">Hair &amp; Grooming</button><button class="chip" data-filter="health-fitness">Health &amp; Fitness</button><button class="chip" data-filter="health-wellness">Health &amp; Wellness</button><button class="chip" data-filter="spa-massage">Spa &amp; Massage</button><button class="chip" data-filter="senior-care">Senior Care</button><button class="chip" data-filter="pets">Pets</button><button class="chip" data-filter="cleaners-tailors">Cleaners &amp; Tailors</button><button class="chip" data-filter="auto">Auto</button><button class="chip" data-filter="professional-services">Professional Services</button></div>
+      
+      
     </div>
   </section>
 
@@ -210,6 +221,7 @@
         <h3>Rose Cleaners</h3>
         <p class="l-meta">Shoreview &middot; $$</p>
         <p class="l-desc">A longtime Shoreview Shopping Center dry cleaner and alterations shop with a loyal neighborhood following.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> I'm in here all the time, suits tailored and dry cleaned, pants tapered and hemmed. Close enough that I can just walk over. They're always nice, they ask when you need it by, and if it's a rush they'll work with you as long as it's reasonable.</p>
         <div class="l-acts"><a class="act" href="/business/rose-cleaners.html">Details</a><a class="act" href="tel:+16503446105">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Rose%20Cleaners%20550%20S%20Norfolk%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Rose%20Cleaners&amp;state=CA&amp;phone=%2B16503446105&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Local%20Services&amp;directory_type=Dry%20Cleaner" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -331,6 +343,7 @@
         <h3>Aragon Veterinary Clinic</h3>
         <p class="l-meta">Aragon &middot; $$</p>
         <p class="l-desc">A small family-owned full-service vet clinic offering exams, vaccines, surgery, dentals, and in-house lab work.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> This is where we've always taken our dogs, the regular visits to keep them healthy and the hard ones at the end too. They've been here forever. It's just our spot.</p>
         <div class="l-acts"><a class="act" href="/business/aragon-vet.html">Details</a><a class="act" href="tel:+16503427282">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Aragon%20Veterinary%20Clinic%20819%20South%20B%20St%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Aragon%20Veterinary%20Clinic&amp;state=CA&amp;phone=%2B16503427282&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=http%3A%2F%2Fwww.aragonvet.com&amp;category=Local%20Services&amp;directory_type=Vet" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -340,6 +353,7 @@
         <h3>Bundy Opticians</h3>
         <p class="l-meta">Downtown &middot; $$$</p>
         <p class="l-desc">A family-owned optician since 1958 with a curated selection of Japanese and European frames and an in-house lens lab.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> Straight up, I don't wear glasses, so I'm not a customer myself. But this place goes back, it was owned by a family friend and I'm still close with them. It's changed hands since, and plenty of my friends still go here for their glasses.</p>
         <div class="l-acts"><a class="act" href="/business/bundy-opticians.html">Details</a><a class="act" href="tel:+16503444232">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Bundy%20Opticians%20201%20S%20San%20Mateo%20Dr%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://bundyopticians.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Bundy%20Opticians&amp;state=CA&amp;phone=%2B16503444232&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fbundyopticians.com&amp;category=Local%20Services&amp;directory_type=Optician" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -746,7 +760,7 @@
       <article class="listing reveal" data-bucket="health-wellness">
         <span class="l-type">Dentist</span>
         <h3>Sonrisas Dental Health, Inc.</h3>
-        <p class="l-meta">Downtown</p>
+        <p class="l-meta">North Central</p>
         <p class="l-desc">Community dental health clinic</p>
         <div class="l-acts"><a class="act" href="/business/sonrisas-dental-health-inc.html">Details</a><a class="act" href="tel:+16507273480">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Sonrisas%20Dental%20Health%2C%20Inc.%20430%20N.%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Sonrisas%20Dental%20Health%2C%20Inc.&amp;state=CA&amp;phone=%2B16507273480&amp;city=San%20Mateo&amp;postal_code=94401&amp;category=Local%20Services&amp;directory_type=Dentist" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
@@ -1682,7 +1696,7 @@
       <article class="listing reveal" data-bucket="spa-massage">
         <span class="l-type">Massage</span>
         <h3>LABO SPA</h3>
-        <p class="l-meta">Beresford Park</p>
+        <p class="l-meta">El Camino Real</p>
         <p class="l-desc">A massage studio on South El Camino Real.</p>
         <div class="l-acts"><a class="act" href="/business/labo-spa-san-mateo.html">Details</a><a class="act" href="tel:+16507883172">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=LABO%20SPA%202140%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=LABO%20SPA&amp;state=CA&amp;phone=%2B16507883172&amp;city=San%20Mateo&amp;category=Local%20Services&amp;directory_type=Massage" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
@@ -1898,7 +1912,7 @@
       <article class="listing reveal" data-bucket="health-wellness">
         <span class="l-type">Acupuncture</span>
         <h3>Yuanyi Acupuncture</h3>
-        <p class="l-meta">Downtown</p>
+        <p class="l-meta">North Central</p>
         <p class="l-desc">An acupuncture clinic on North El Camino Real.</p>
         <div class="l-acts"><a class="act" href="/business/yuanyi-acupuncture-san-mateo.html">Details</a><a class="act" href="tel:+16503428880">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Yuanyi%20Acupuncture%20101%20N%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.yuanyiacupuncture.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Yuanyi%20Acupuncture&amp;state=CA&amp;phone=%2B16503428880&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.yuanyiacupuncture.com%2F&amp;category=Local%20Services&amp;directory_type=Acupuncture" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
@@ -2026,7 +2040,7 @@
       <article class="listing reveal" data-bucket="spa-massage">
         <span class="l-type">Med Spa</span>
         <h3>The Dermal Formula</h3>
-        <p class="l-meta">Downtown</p>
+        <p class="l-meta">North Central</p>
         <p class="l-desc">A med spa on North El Camino Real.</p>
         <div class="l-acts"><a class="act" href="/business/the-dermal-formula-san-mateo.html">Details</a><a class="act" href="tel:+14155315799">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=The%20Dermal%20Formula%2070%20N%20El%20Camino%20Real%20Ste%20B" target="_blank" rel="noopener">Directions</a><a class="act" href="https://thedermalformula.glossgenius.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=The%20Dermal%20Formula&amp;state=CA&amp;phone=%2B14155315799&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fthedermalformula.glossgenius.com%2F&amp;category=Local%20Services&amp;directory_type=Med%20Spa" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
@@ -2442,7 +2456,7 @@
       <article class="listing reveal" data-bucket="health-wellness">
         <span class="l-type">Dentist</span>
         <h3>Ben Yount DDS</h3>
-        <p class="l-meta">Baywood</p>
+        <p class="l-meta">North Central</p>
         <p class="l-desc">A dentist on North El Camino Real.</p>
         <div class="l-acts"><a class="act" href="/business/ben-yount-dds-san-mateo.html">Details</a><a class="act" href="tel:+16503447888">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Ben%20Yount%20DDS%20720%20N%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="http://www.benyountdds.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Ben%20Yount%20DDS&amp;state=CA&amp;phone=%2B16503447888&amp;city=San%20Mateo&amp;website=http%3A%2F%2Fwww.benyountdds.com%2F&amp;category=Local%20Services&amp;directory_type=Dentist" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
@@ -2994,7 +3008,7 @@
       <article class="listing reveal" data-bucket="hair-grooming">
         <span class="l-type">Salon</span>
         <h3>Binh's Family Hair Care</h3>
-        <p class="l-meta">Beresford Park</p>
+        <p class="l-meta">El Camino Real</p>
         <p class="l-desc">A hair salon on South El Camino Real.</p>
         <div class="l-acts"><a class="act" href="/business/binh-s-family-hair-care-san-mateo.html">Details</a><a class="act" href="tel:+16505778100">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Binh's%20Family%20Hair%20Care%202140%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Binh's%20Family%20Hair%20Care&amp;state=CA&amp;phone=%2B16505778100&amp;city=San%20Mateo&amp;category=Local%20Services&amp;directory_type=Salon" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
@@ -3034,7 +3048,7 @@
       <article class="listing reveal" data-bucket="hair-grooming">
         <span class="l-type">Salon</span>
         <h3>Beauty Deluxe Salon</h3>
-        <p class="l-meta">Beresford Park</p>
+        <p class="l-meta">El Camino Real</p>
         <p class="l-desc">A beauty salon on South El Camino Real.</p>
         <div class="l-acts"><a class="act" href="/business/beauty-deluxe-salon-san-mateo.html">Details</a><a class="act" href="tel:+16506381676">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Beauty%20Deluxe%20Salon%201933%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Beauty%20Deluxe%20Salon&amp;state=CA&amp;phone=%2B16506381676&amp;city=San%20Mateo&amp;category=Local%20Services&amp;directory_type=Salon" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
@@ -3506,7 +3520,7 @@
       <article class="listing reveal" data-bucket="auto">
         <span class="l-type">Auto</span>
         <h3>Clarity Auto Care</h3>
-        <p class="l-meta">Beresford Park</p>
+        <p class="l-meta">El Camino Real</p>
         <p class="l-desc">An auto repair shop on South El Camino Real.</p>
         <div class="l-acts"><a class="act" href="/business/clarity-auto-care-san-mateo.html">Details</a><a class="act" href="tel:+16506367664">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Clarity%20Auto%20Care%202160%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.clarityautocare.com/?utm_medium=company_profile&amp;utm_source=google_my_business&amp;utm_campaign=domain_click" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Clarity%20Auto%20Care&amp;state=CA&amp;phone=%2B16506367664&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.clarityautocare.com%2F%3Futm_medium%3Dcompany_profile%26utm_source%3Dgoogle_my_business%26utm_campaign%3Ddomain_click&amp;category=Local%20Services&amp;directory_type=Auto" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
@@ -3971,7 +3985,7 @@
       function apply(){
         var q = searchQ.trim().toLowerCase(), shown = 0;
         cards.forEach(function(l){
-          var okB = activeBucket === 'all' || l.getAttribute('data-bucket') === activeBucket;
+          var okB = activeBucket === 'all' || (' ' + l.getAttribute('data-bucket') + ' ').indexOf(' ' + activeBucket + ' ') !== -1;
           var okS = !q || l.textContent.toLowerCase().indexOf(q) !== -1;
           var vis = okB && okS;
           l.style.display = vis ? '' : 'none';

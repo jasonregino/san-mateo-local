@@ -80,6 +80,12 @@
     .chip { font-family:inherit; font-size:0.85rem; font-weight:600; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all 0.15s; }
     .chip:hover { border-color:var(--clay); color:var(--clay-deep); }
     .chip.is-on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+    .bestof-row { display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem; margin-top:0.85rem; }
+    .bestof-label { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:800; color:var(--clay-deep); }
+    .bestof-link { font-family:inherit; font-size:0.85rem; font-weight:700; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--clay); color:var(--clay-deep); background:transparent; text-decoration:none; transition:all 0.15s; }
+    .bestof-link:hover { background:var(--clay); color:#fff; }
+    .subfilter { display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem; margin-top:0.7rem; }
+    .subfilter-label { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:800; color:var(--ink-soft); }
     .listing-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.3rem; padding:2.5rem 0 1rem; }
     .listing { border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); background:var(--card); box-shadow:0 2px 6px -3px rgba(34,29,22,0.16); padding:1.4rem 1.4rem 1.5rem; display:flex; flex-direction:column; transition:transform 0.18s ease, box-shadow 0.18s ease; }
     .listing:hover { transform:translateY(-4px); box-shadow:0 16px 34px -20px rgba(34,29,22,0.45); }
@@ -97,6 +103,9 @@
     .preview-banner { background:#7A6A55; color:#fff; text-align:center; padding:0.6rem 1rem; font-size:0.88rem; font-weight:600; }
     @media (prefers-reduced-motion: reduce) { .js .reveal { opacity:1; transform:none; } }
     .l-pick { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#2A1E0E; background:#E6A828; border:1px solid #E6A828; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; }
+    .l-picknote { margin:0.15rem 0 0.2rem; padding:0.6rem 0.8rem; border-left:3px solid #E6A828; background:rgba(230,168,40,0.09); border-radius:0 6px 6px 0; font-size:0.9rem; line-height:1.5; color:var(--ink); }
+    .l-picknote strong { color:var(--clay-deep); font-weight:700; }
+    [data-theme="dark"] .l-picknote { background:rgba(230,168,40,0.14); }
     .l-chain { display:inline-block; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:var(--ink-soft); border:1px solid var(--line); border-radius:999px; padding:0.15rem 0.55rem; margin-bottom:0.55rem; }
     .l-closing { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#fff; background:#B0402F; border:1px solid #B0402F; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; margin-right:0.4rem; }
     .listing .l-type { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
@@ -190,6 +199,8 @@
       <a href="ask.html" class="ask-hero"><span class="ask-hero-ico">&#128172;</span><span class="ask-hero-txt"><strong>Ask a Local</strong><span>Not sure where to start? Tell it what you need and get real local picks in seconds.</span></span><span class="ask-hero-go">&rarr;</span></a>
       <input type="search" class="search" id="listingSearch" placeholder="Search home services&hellip;" aria-label="Search Home Services" autocomplete="off" />
       <div class="chips"><button class="chip is-on" data-filter="all">All</button><button class="chip" data-filter="plumbing">Plumbing</button><button class="chip" data-filter="heating-cooling">Heating &amp; Cooling</button><button class="chip" data-filter="electrical">Electrical</button><button class="chip" data-filter="roofing">Roofing</button><button class="chip" data-filter="landscaping">Landscaping</button><button class="chip" data-filter="handyman-repair">Handyman &amp; Repair</button><button class="chip" data-filter="house-cleaning">House Cleaning</button><button class="chip" data-filter="painting">Painting</button><button class="chip" data-filter="garage-doors">Garage Doors</button></div>
+      
+      
     </div>
   </section>
 
@@ -447,7 +458,7 @@
       function apply(){
         var q = searchQ.trim().toLowerCase(), shown = 0;
         cards.forEach(function(l){
-          var okB = activeBucket === 'all' || l.getAttribute('data-bucket') === activeBucket;
+          var okB = activeBucket === 'all' || (' ' + l.getAttribute('data-bucket') + ' ').indexOf(' ' + activeBucket + ' ') !== -1;
           var okS = !q || l.textContent.toLowerCase().indexOf(q) !== -1;
           var vis = okB && okS;
           l.style.display = vis ? '' : 'none';

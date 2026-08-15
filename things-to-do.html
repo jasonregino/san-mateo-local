@@ -80,6 +80,12 @@
     .chip { font-family:inherit; font-size:0.85rem; font-weight:600; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all 0.15s; }
     .chip:hover { border-color:var(--clay); color:var(--clay-deep); }
     .chip.is-on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+    .bestof-row { display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem; margin-top:0.85rem; }
+    .bestof-label { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:800; color:var(--clay-deep); }
+    .bestof-link { font-family:inherit; font-size:0.85rem; font-weight:700; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--clay); color:var(--clay-deep); background:transparent; text-decoration:none; transition:all 0.15s; }
+    .bestof-link:hover { background:var(--clay); color:#fff; }
+    .subfilter { display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem; margin-top:0.7rem; }
+    .subfilter-label { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:800; color:var(--ink-soft); }
     .listing-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.3rem; padding:2.5rem 0 1rem; }
     .listing { border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); background:var(--card); box-shadow:0 2px 6px -3px rgba(34,29,22,0.16); padding:1.4rem 1.4rem 1.5rem; display:flex; flex-direction:column; transition:transform 0.18s ease, box-shadow 0.18s ease; }
     .listing:hover { transform:translateY(-4px); box-shadow:0 16px 34px -20px rgba(34,29,22,0.45); }
@@ -97,6 +103,9 @@
     .preview-banner { background:#7A6A55; color:#fff; text-align:center; padding:0.6rem 1rem; font-size:0.88rem; font-weight:600; }
     @media (prefers-reduced-motion: reduce) { .js .reveal { opacity:1; transform:none; } }
     .l-pick { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#2A1E0E; background:#E6A828; border:1px solid #E6A828; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; }
+    .l-picknote { margin:0.15rem 0 0.2rem; padding:0.6rem 0.8rem; border-left:3px solid #E6A828; background:rgba(230,168,40,0.09); border-radius:0 6px 6px 0; font-size:0.9rem; line-height:1.5; color:var(--ink); }
+    .l-picknote strong { color:var(--clay-deep); font-weight:700; }
+    [data-theme="dark"] .l-picknote { background:rgba(230,168,40,0.14); }
     .l-chain { display:inline-block; font-size:0.64rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:var(--ink-soft); border:1px solid var(--line); border-radius:999px; padding:0.15rem 0.55rem; margin-bottom:0.55rem; }
     .l-closing { display:inline-block; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:800; color:#fff; background:#B0402F; border:1px solid #B0402F; border-radius:999px; padding:0.2rem 0.6rem; margin-bottom:0.55rem; margin-right:0.4rem; }
     .listing .l-type { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
@@ -190,6 +199,8 @@
       <a href="ask.html" class="ask-hero"><span class="ask-hero-ico">&#128172;</span><span class="ask-hero-txt"><strong>Ask a Local</strong><span>Not sure where to start? Tell it what you need and get real local picks in seconds.</span></span><span class="ask-hero-go">&rarr;</span></a>
       <input type="search" class="search" id="listingSearch" placeholder="Search things to do&hellip;" aria-label="Search Things To Do" autocomplete="off" />
       <div class="chips"><button class="chip is-on" data-filter="all">All</button><button class="chip" data-filter="parks-trails">Parks &amp; Trails</button><button class="chip" data-filter="family-culture">Family &amp; Culture</button><button class="chip" data-filter="entertainment">Entertainment</button><button class="chip" data-filter="more">More</button></div>
+      
+      
     </div>
   </section>
 
@@ -201,6 +212,7 @@
         <h3>San Francisco Bay Trail (Coyote Point to the Bridge)</h3>
         <p class="l-meta">Bayfront &middot; Free</p>
         <p class="l-desc">The San Mateo stretch of the Bay Trail runs the shoreline from Coyote Point south to the San Mateo Bridge and on toward Foster City, with jets dropping into SFO across the water, sailboats and kiteboarders on the bay, and wide-open views the whole way. Walk it, run it, bike it, or fish along it.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> One of my go-to walks when I want to get my steps in. Wide open view of the Bay the whole way, that's the reason to do it.</p>
         <div class="l-acts"><a class="act" href="/business/bay-trail-san-mateo.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=San%20Francisco%20Bay%20Trail%20(Coyote%20Point%20to%20the%20Bridge)%20Coyote%20Point%20Recreation%20Area%20trailhead%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.cityofsanmateo.org/577/Trails" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=San%20Francisco%20Bay%20Trail%20(Coyote%20Point%20to%20the%20Bridge)&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fwww.cityofsanmateo.org%2F577%2FTrails&amp;category=Things%20To%20Do&amp;directory_type=Trail" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -210,6 +222,7 @@
         <h3>Seal Point Park</h3>
         <p class="l-meta">Bayfront &middot; Free</p>
         <p class="l-desc">The old San Mateo landfill, reborn as a grassy hill with 360-degree bay views, public art, a 3-acre dog park, and a windsurf and kite launch. Climb the mound near sunset for the best free view in town.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> Another of my walking spots, right on the water with a great Bay view. It ties right into the Bay Trail if you want to keep going.</p>
         <div class="l-acts"><a class="act" href="/business/seal-point-park.html">Details</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Seal%20Point%20Park%201901%20J.%20Hart%20Clinton%20Dr%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.cityofsanmateo.org/3384/Seal-Point-Park" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Seal%20Point%20Park&amp;state=CA&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fwww.cityofsanmateo.org%2F3384%2FSeal-Point-Park&amp;category=Things%20To%20Do&amp;directory_type=Park" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -227,6 +240,7 @@
         <h3>The Kite School (Tony Parsons)</h3>
         <p class="l-meta">Bayfront &middot; $$$</p>
         <p class="l-desc">Kiteboarding lessons run by Tony Parsons, with 20-plus years on the water, teaching beginners through advanced riders on San Mateo's reliable summer bay winds.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> During COVID this was our escape. We'd head over just to take in the atmosphere, and it was a totally different world, everyone's friends out there. I don't kite surf myself, but we spent enough time that we got to know all the regulars, and a lot of them are still friends. Tony's a legend out there, him and his dog Ryder. Good guy, and he's out on his jet ski pulling people in when they get stranded.</p>
         <div class="l-acts"><a class="act" href="/business/the-kite-school.html">Details</a><a class="act" href="tel:+16506861179">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=The%20Kite%20School%20(Tony%20Parsons)%20Baywinds%20Park%2C%2030%20Lakeside%20Dr%2C%20San%20Mateo%2C%20CA%2094404" target="_blank" rel="noopener">Directions</a><a class="act" href="https://thekiteschool.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=The%20Kite%20School%20(Tony%20Parsons)&amp;state=CA&amp;phone=%2B16506861179&amp;city=San%20Mateo&amp;postal_code=94404&amp;website=https%3A%2F%2Fthekiteschool.com&amp;category=Things%20To%20Do&amp;directory_type=Activity" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -343,7 +357,6 @@
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=San%20Mateo%20County%20Event%20Center&amp;state=CA&amp;phone=%2B16505743247&amp;city=San%20Mateo&amp;postal_code=94403&amp;website=https%3A%2F%2Fwww.smeventcenter.com&amp;category=Things%20To%20Do&amp;directory_type=Venue" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
       <article class="listing reveal" data-bucket="entertainment">
-        <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Event</span>
         <h3>Central Park Music Series</h3>
         <p class="l-meta">Downtown &middot; Free</p>
@@ -384,6 +397,7 @@
         <h3>Safari Run</h3>
         <p class="l-meta">North Central &middot; $$</p>
         <p class="l-desc">A jungle-themed indoor play structure with slides, climbing, arcade games, open-play sessions, and birthday party rooms for young kids.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> I used to bring my kids here when they were little. Nothing fancy, just an easy go-to because it was so close by.</p>
         <div class="l-acts"><a class="act" href="/business/safari-run.html">Details</a><a class="act" href="tel:+16503421977">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Safari%20Run%20341%20N%20Amphlett%20Blvd%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.safarirun.com" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Safari%20Run&amp;state=CA&amp;phone=%2B16503421977&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fwww.safarirun.com&amp;category=Things%20To%20Do&amp;directory_type=Family" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -689,7 +703,7 @@
       function apply(){
         var q = searchQ.trim().toLowerCase(), shown = 0;
         cards.forEach(function(l){
-          var okB = activeBucket === 'all' || l.getAttribute('data-bucket') === activeBucket;
+          var okB = activeBucket === 'all' || (' ' + l.getAttribute('data-bucket') + ' ').indexOf(' ' + activeBucket + ' ') !== -1;
           var okS = !q || l.textContent.toLowerCase().indexOf(q) !== -1;
           var vis = okB && okS;
           l.style.display = vis ? '' : 'none';
