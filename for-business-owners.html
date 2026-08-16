@@ -810,7 +810,7 @@
         if(!j.success)throw new Error();
         if(after){ after(); return; }
         if(redirect){window.location=redirect;return;}
-        up.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'});
+        f.style.display='none'; up.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'});
       }catch(err){ if(btn){btn.disabled=false;} alert("Sorry, that didn't go through. Email hello@sanmateolocal.com instead."); }
     }
     function val(id){ var el=document.getElementById(id); return el?el.value:''; }
