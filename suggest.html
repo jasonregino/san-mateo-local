@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help Build the Guide | San Mateo Local</title>
+  <meta name="description" content="Tell San Mateo Local your favorite local spots. We build our Best Of guides from what real locals actually go to. Pick a topic and send us your picks." />
+  <link rel="canonical" href="https://sanmateolocal.com/suggest.html" />
+  <meta name="theme-color" content="#221D16" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="San Mateo Local" />
+  <meta property="og:title" content="Help Build the Guide | San Mateo Local" />
+  <meta property="og:description" content="What does San Mateo actually love? Tell us your favorite spots and we'll fold the good ones into the guides." />
+  <meta property="og:url" content="https://sanmateolocal.com/suggest.html" />
+  <meta property="og:image" content="https://sanmateolocal.com/images/central-park-japanese-garden.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--paper:#FAF6EC;--paper-2:#F2E9D4;--ink:#221D16;--ink-soft:#5E5446;--clay:#C25B3A;--clay-deep:#A5492B;--green:#41614B;--sage-deep:#324C3A;--line:#E3D6BC;--card:#FFFDF7}
+    body{overflow-x:hidden;max-width:100%;font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.12;font-weight:600;letter-spacing:-0.01em}
+    a{color:inherit}
+    .wrap{max-width:720px;margin:0 auto;padding:0 1.25rem}
+    header.site{border-bottom:1.5px solid var(--ink);background:var(--paper)}
+    header.site .bar{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:62px;padding:0 1.25rem}
+    .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--ink)}
+    .brand span{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.25rem;letter-spacing:-0.02em}
+    header nav a{color:var(--ink-soft);text-decoration:none;font-size:.9rem;margin-left:1.2rem}
+    header nav a:hover{color:var(--clay-deep)}
+    .hero{padding:3.2rem 0 1.6rem;text-align:center}
+    .hero .kick{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--clay-deep);font-weight:700}
+    .hero h1{font-size:clamp(2.1rem,6vw,3rem);margin:.7rem 0 .8rem}
+    .hero p{font-size:1.08rem;color:var(--ink-soft);max-width:560px;margin:0 auto .9rem}
+    .hero p:last-child{margin-bottom:0}
+    .formwrap{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:1.8rem;margin:1.4rem 0 2.4rem}
+    .row{margin-bottom:1.05rem}
+    label.fld{display:block;font-weight:600;font-size:.9rem;margin-bottom:.35rem}
+    label.fld .opt{font-weight:500;color:var(--ink-soft);font-size:.82rem}
+    input[type=text],input[type=email],textarea,select{width:100%;border:1.5px solid var(--line);border-radius:8px;padding:.75rem;font:inherit;background:#fff;color:var(--ink)}
+    input:focus,textarea:focus,select:focus{outline:2px solid var(--clay);border-color:transparent}
+    textarea{min-height:88px;resize:vertical}
+    label.chk{display:flex;gap:.6rem;align-items:flex-start;font-size:.94rem;cursor:pointer;padding:.6rem 0;color:var(--ink-soft)}
+    label.chk input{width:22px;height:22px;accent-color:var(--green);flex:none;margin-top:.1rem}
+    button{background:var(--clay);color:#fff;border:none;border-radius:9px;padding:.9rem 1.6rem;font-weight:700;font-size:1rem;cursor:pointer;width:100%;margin-top:.4rem}
+    button:hover{background:var(--clay-deep)}
+    button:disabled{opacity:.6;cursor:default}
+    .promise{font-size:.9rem;color:var(--ink-soft);background:var(--paper-2);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:.85rem 1.1rem;margin-bottom:1.3rem}
+    #ok{display:none;background:#EAF3EA;border:1px solid #B9D7B9;color:#2A4A2A;border-radius:12px;padding:1.6rem;text-align:center}
+    #ok h2{font-size:1.5rem;margin-bottom:.4rem}
+    footer{border-top:1.5px solid var(--ink);margin-top:1rem;padding:2rem 0;color:var(--ink-soft);font-size:.85rem}
+    footer .wrap{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;justify-content:space-between}
+    footer a{color:var(--ink-soft);text-decoration:none}
+    footer a:hover{color:var(--clay-deep)}
+    footer .fnav a{margin-right:1rem}
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="bar">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 32 32" width="24" height="24" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
+        <span>San Mateo Local</span>
+      </a>
+      <nav>
+        <a href="index.html">The Guide</a>
+        <a href="guides.html">Guides</a>
+        <a href="ask.html">Ask a Local</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="hero">
+      <p class="kick">Help build the guide</p>
+      <h1>What does San Mateo actually love?</h1>
+      <p>San Mateo Local is built on where real locals actually go, not what ranks highest on some review site. The best way to keep it honest is to ask the people who live and eat here. That's you.</p>
+      <p>Tell us your favorite spots, the ones you'd send a friend to, and the ones that don't get enough credit. Pick a topic, drop your picks, and we'll fold the good ones into the guides.</p>
+    </div>
+
+    <div class="formwrap">
+      <div class="promise">A real person reads every single one. Nothing you send posts automatically, and no business can pay its way onto a list. We just want to know where the town actually goes.</div>
+      <form id="suggestForm">
+        <input type="hidden" name="access_key" value="54743f1e-b34e-4d1a-aca8-6ff2554e06a0" />
+        <input type="hidden" name="subject" value="Best Of Submission" />
+        <input type="hidden" name="from_name" value="San Mateo Local: Best Of Submission" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <div class="row">
+          <label class="fld" for="topic">Which Best Of are you helping with?</label>
+          <select id="topic" name="topic" required>
+            <option value="" disabled selected>Pick a topic</option>
+            <option>Best Burgers</option>
+            <option>Best Burritos</option>
+            <option>Best Tacos</option>
+            <option>Best Breakfast</option>
+            <option>Best Pizza</option>
+            <option>Best Coffee</option>
+            <option>Best Ramen</option>
+            <option>Best Mexican Food</option>
+            <option>Best Date Night</option>
+            <option>Something else</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label class="fld" for="pick">Your number one spot</label>
+          <input type="text" id="pick" name="top_pick" required placeholder="Where do you go?" />
+        </div>
+
+        <div class="row">
+          <label class="fld" for="order">What do you order? <span class="opt">(optional)</span></label>
+          <input type="text" id="order" name="what_you_order" placeholder="The thing to get" />
+        </div>
+
+        <div class="row">
+          <label class="fld" for="why">Why do you love it? <span class="opt">(optional)</span></label>
+          <textarea id="why" name="why" placeholder="What makes it worth it"></textarea>
+        </div>
+
+        <div class="row">
+          <label class="fld" for="another">Another spot you'd recommend <span class="opt">(optional)</span></label>
+          <input type="text" id="another" name="another_pick" />
+        </div>
+
+        <div class="row">
+          <label class="fld" for="underrated">One that doesn't get enough credit <span class="opt">(optional)</span></label>
+          <input type="text" id="underrated" name="underrated_pick" />
+        </div>
+
+        <div class="row">
+          <label class="fld" for="notes">Anything else we should know? <span class="opt">(optional)</span></label>
+          <textarea id="notes" name="anything_else"></textarea>
+        </div>
+
+        <div class="row">
+          <label class="fld" for="name">Your name <span class="opt">(optional)</span></label>
+          <input type="text" id="name" name="name" />
+        </div>
+
+        <div class="row">
+          <label class="fld" for="email">Email <span class="opt">(optional, only if you want the occasional heads-up when a new guide drops)</span></label>
+          <input type="email" id="email" name="email" />
+        </div>
+
+        <div class="row">
+          <label class="chk"><input type="checkbox" name="consent" value="Yes" /> I'm okay with San Mateo Local using my recommendation in its local guides.</label>
+        </div>
+
+        <button id="send" type="submit">Send my picks</button>
+      </form>
+
+      <div id="ok">
+        <h2>Got it. Thank you.</h2>
+        <p>A real local reads every one of these. If your spot is the real deal, you might just see it show up in a guide. Want to add another? <a href="suggest.html" style="color:var(--clay-deep);font-weight:700;">Send one more &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="fnav">
+        <a href="index.html">The Guide</a>
+        <a href="guides.html">Guides</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:hello@sanmateolocal.com">Contact</a>
+      </div>
+      <div>&copy; 2026 San Mateo Local &middot; Made by a local, for locals</div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var form = document.getElementById('suggestForm');
+      var btn = document.getElementById('send');
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        btn.textContent = 'Sending...'; btn.disabled = true;
+        var data = new FormData(form);
+        // Topic-tag the email subject so submissions filter/sort cleanly in the inbox.
+        var topic = (document.getElementById('topic') || {}).value || 'General';
+        data.set('subject', 'Best Of Submission: ' + topic);
+        try {
+          var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:data });
+          var j = await res.json();
+          if (j.success) { form.style.display='none'; document.getElementById('ok').style.display='block'; document.getElementById('ok').scrollIntoView({behavior:'smooth',block:'center'}); }
+          else throw new Error(j.message||'error');
+        } catch(err) {
+          btn.textContent = 'Send my picks'; btn.disabled = false;
+          var box = form.querySelector('.subErr');
+          if(!box){ box=document.createElement('p'); box.className='subErr'; box.setAttribute('role','alert'); box.style.cssText='color:#B23324;font-size:.9rem;margin-top:.7rem;text-align:center;'; form.appendChild(box); }
+          box.textContent = "That didn't go through. Try again, or email your pick to hello@sanmateolocal.com.";
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
