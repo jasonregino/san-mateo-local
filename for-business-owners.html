@@ -376,6 +376,7 @@
             </div>
           </details>
           <button type="button" id="lsend" style="background:var(--clay);">Add my business</button>
+          <p id="lerr" role="alert" style="display:none; color:#B23324; font-size:.9rem; margin-top:.7rem; text-align:center;"></p>
         </form>
         <p style="text-align:center; margin-top:.9rem; color:var(--ink-soft); font-size:.9rem;">Free listing is all most businesses need. <a href="for-business-owners.html#feature" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Curious what else the guide can do? &rarr;</a></p>
       </div>
@@ -801,6 +802,7 @@
       if(intro)intro.style.display='none';
       finish(null,this);
     });
+    f.addEventListener('input',function(){ var er=document.getElementById('lerr'); if(er) er.style.display='none'; });
     async function finish(redirect, btn, after){
       if(!f.checkValidity()){ up.style.display='none'; if(intro)intro.style.display=''; f.style.display=''; f.reportValidity(); return; }
       if(btn){ btn.textContent = 'Saving...'; btn.disabled=true; }
@@ -811,7 +813,7 @@
         if(after){ after(); return; }
         if(redirect){window.location=redirect;return;}
         f.style.display='none'; up.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'});
-      }catch(err){ if(btn){btn.disabled=false;} alert("Sorry, that didn't go through. Email hello@sanmateolocal.com instead."); }
+      }catch(err){ if(btn){btn.disabled=false; btn.textContent='Add my business';} var er=document.getElementById('lerr'); if(er){ er.textContent="That didn't go through. Try again, or email hello@sanmateolocal.com and I'll add you by hand."; er.style.display='block'; er.scrollIntoView({behavior:'smooth',block:'center'}); } }
     }
     function val(id){ var el=document.getElementById(id); return el?el.value:''; }
     function setVal(id,v){ if(v){ var el=document.getElementById(id); if(el) el.value=v; } }
