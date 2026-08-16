@@ -76,7 +76,9 @@
     .ask-hero-txt strong { font-family:'Cormorant Garamond',Georgia,serif; font-size:1.3rem; font-weight:600; display:block; margin-bottom:.1rem; }
     .ask-hero-txt span { font-size:.92rem; opacity:.93; }
     .ask-hero-go { flex:none; font-size:1.5rem; font-weight:700; }
-    .no-results { text-align:center; color:var(--ink-soft); font-size:1rem; padding:2.5rem 0 0.5rem; display:none; }
+    .no-results { text-align:center; color:var(--ink-soft); font-size:0.98rem; padding:0.6rem 0 0.9rem; display:none; }
+    .no-results a { color:var(--clay-deep); font-weight:700; text-decoration:none; }
+    .no-results a:hover { text-decoration:underline; }
     .chip { font-family:inherit; font-size:0.85rem; font-weight:600; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all 0.15s; }
     .chip:hover { border-color:var(--clay); color:var(--clay-deep); }
     .chip.is-on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
@@ -171,7 +173,7 @@
           <a href="local-buzz.html">Local Buzz</a>
           <a href="blog.html">Guides</a>
           <a href="legacies.html">Legacies</a>
-          <a href="list-your-business.html">For Businesses</a>
+          <a href="for-business-owners.html">For Businesses</a>
           <a href="index.html#newsletter" class="sub">Subscribe</a>
         </nav>
         <button class="theme-toggle" type="button" aria-label="Switch between day and night mode" onclick="(function(d){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('sml-theme',t)}catch(e){}})(document.documentElement)"><span class="moon" aria-hidden="true">&#9790;</span><span class="sun" aria-hidden="true">&#9728;</span></button>
@@ -188,7 +190,7 @@
       <a href="local-buzz.html">Local Buzz</a>
       <a href="blog.html">Guides</a>
       <a href="legacies.html">Legacies</a>
-      <a href="list-your-business.html">For Businesses</a>
+      <a href="for-business-owners.html">For Businesses</a>
       <a href="index.html#newsletter" class="sub">Subscribe</a>
     </nav>
     <div class="dateline">Eat &amp; Drink &nbsp;&middot;&nbsp; 279 local picks and counting</div>
@@ -210,6 +212,7 @@
   </section>
 
   <main class="wrap">
+    <p class="no-results" id="noResults"></p>
     <div class="listing-grid">
       <article class="listing reveal featured" data-bucket="restaurants" data-h="990~1260|2430~2700|3870~4140|5310~5580|6750~7020|8190~8505|9630~9945">
         <span class="l-pick">&#9733; Local&#39;s pick</span>
@@ -2324,11 +2327,13 @@
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Noma%20Sushi&amp;state=CA&amp;phone=%2B16503934651&amp;city=San%20Mateo&amp;website=http%3A%2F%2Fnomasushi.kwickmenu.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
       <article class="listing reveal" data-bucket="restaurants japanese" data-h="660~840|1020~1200|2100~2280|2460~2640|4980~5160|5340~5520|6420~6600|6780~6960|7860~8040|8220~8430|9300~9480|9660~9870">
+        <span class="l-pick">&#9733; Local&#39;s pick</span>
         <span class="l-type">Restaurant</span>
         <h3>Santa Ramen</h3>
         <p class="l-meta">El Camino Real &middot; $$</p>
         <span class="l-open" aria-hidden="true"></span>
         <p class="l-desc">A Ramen restaurant on South El Camino Real.</p>
+        <p class="l-picknote"><strong>Why it&#39;s a Local&#39;s pick:</strong> The only ramen spot I've been to, and it's a good one. It gets packed, so time it right or you're standing in line, though a few more ramen places have opened up lately and it's eased off a bit. Still worth the trip.</p>
         <div class="l-acts"><a class="act" href="/business/santa-ramen-san-mateo.html">Details</a><a class="act" href="tel:+16503445918">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Santa%20Ramen%201944%20S%20El%20Camino%20Real" target="_blank" rel="noopener">Directions</a><a class="act" href="https://santaramen.com/" target="_blank" rel="noopener">Website</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Santa%20Ramen&amp;state=CA&amp;phone=%2B16503445918&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fsantaramen.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
@@ -2746,7 +2751,6 @@
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Inshou%20DimDim%20Noodle&amp;state=CA&amp;phone=%2B16505762559&amp;city=San%20Mateo&amp;website=https%3A%2F%2Fwww.inshoudimdimnoodle.com%2F&amp;category=Eat%20%26%20Drink&amp;directory_type=Restaurant" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
     </div>
-    <p class="no-results" id="noResults">No matches. Try another word, or clear the search.</p>
     <section class="cat-faq">
       <h2>Frequently asked</h2>
       <details><summary>How many places to eat and drink are on San Mateo Local?</summary><p>San Mateo Local features 279 local, independent restaurants, cafés, bakeries, and bars across San Mateo, and the list grows every week.</p></details>
@@ -2770,7 +2774,7 @@
         <a href="things-to-do.html">Things To Do</a>
         <a href="blog.html">Guides</a>
         <a href="local-buzz.html">Local Buzz</a>
-        <a href="for-business-owners.html">For Business Owners</a>
+        <a href="for-business-owners.html">For Businesses</a>
         <a href="legacies.html">Legacies</a>
         <a href="gone-but-not-forgotten.html">Gone But Not Forgotten</a>
         <a href="index.html#newsletter">Subscribe</a>
@@ -2801,7 +2805,23 @@
           l.style.display = vis ? '' : 'none';
           if (vis) shown++;
         });
-        if (noRes) noRes.style.display = shown === 0 ? 'block' : 'none';
+        if (noRes) {
+          var scoped = activeBucket !== 'all';
+          var onChip = document.querySelector('.chip.is-on');
+          var chipLabel = (scoped && onChip) ? onChip.textContent : '';
+          var qc = searchQ.replace(/[<>&]/g, '');
+          var ask = 'ask.html' + (qc ? '?q=' + encodeURIComponent(qc) : '');
+          var html = '';
+          if (shown === 0) {
+            html = 'No matches' + (qc ? ' for “' + qc + '”' : '') + (scoped ? ' in ' + chipLabel : '') + '. ' + (scoped ? '<a href="#" class="sn-all">Search all &rarr;</a> &middot; ' : '') + '<a href="' + ask + '">Ask a local &rarr;</a>';
+          } else if (q && scoped) {
+            html = 'Showing ' + shown + ' in ' + chipLabel + '. <a href="#" class="sn-all">Search all ' + cards.length + ' &rarr;</a>';
+          } else if (shown < 5 && (q || scoped)) {
+            html = 'Only ' + shown + ' here. <a href="' + ask + '">Ask a local for a pick &rarr;</a>';
+          }
+          noRes.innerHTML = html;
+          noRes.style.display = html ? 'block' : 'none';
+        }
       }
       document.querySelectorAll('.chip').forEach(function(c){
         c.addEventListener('click', function(){
@@ -2810,6 +2830,14 @@
           activeBucket = c.getAttribute('data-filter');
           apply();
         });
+      });
+      if (noRes) noRes.addEventListener('click', function(e){
+        var a = e.target && e.target.closest ? e.target.closest('.sn-all') : null; if (!a) return;
+        e.preventDefault();
+        var allChip = document.querySelector('.chip[data-filter="all"]');
+        document.querySelectorAll('.chip').forEach(function(x){ x.classList.remove('is-on'); });
+        if (allChip) allChip.classList.add('is-on');
+        activeBucket = 'all'; apply();
       });
       var si = document.getElementById('listingSearch');
       if (si) si.addEventListener('input', function(){ searchQ = si.value; apply(); });

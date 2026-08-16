@@ -76,7 +76,9 @@
     .ask-hero-txt strong { font-family:'Cormorant Garamond',Georgia,serif; font-size:1.3rem; font-weight:600; display:block; margin-bottom:.1rem; }
     .ask-hero-txt span { font-size:.92rem; opacity:.93; }
     .ask-hero-go { flex:none; font-size:1.5rem; font-weight:700; }
-    .no-results { text-align:center; color:var(--ink-soft); font-size:1rem; padding:2.5rem 0 0.5rem; display:none; }
+    .no-results { text-align:center; color:var(--ink-soft); font-size:0.98rem; padding:0.6rem 0 0.9rem; display:none; }
+    .no-results a { color:var(--clay-deep); font-weight:700; text-decoration:none; }
+    .no-results a:hover { text-decoration:underline; }
     .chip { font-family:inherit; font-size:0.85rem; font-weight:600; padding:0.5rem 1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all 0.15s; }
     .chip:hover { border-color:var(--clay); color:var(--clay-deep); }
     .chip.is-on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
@@ -171,7 +173,7 @@
           <a href="local-buzz.html">Local Buzz</a>
           <a href="blog.html">Guides</a>
           <a href="legacies.html">Legacies</a>
-          <a href="list-your-business.html">For Businesses</a>
+          <a href="for-business-owners.html">For Businesses</a>
           <a href="index.html#newsletter" class="sub">Subscribe</a>
         </nav>
         <button class="theme-toggle" type="button" aria-label="Switch between day and night mode" onclick="(function(d){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('sml-theme',t)}catch(e){}})(document.documentElement)"><span class="moon" aria-hidden="true">&#9790;</span><span class="sun" aria-hidden="true">&#9728;</span></button>
@@ -188,7 +190,7 @@
       <a href="local-buzz.html">Local Buzz</a>
       <a href="blog.html">Guides</a>
       <a href="legacies.html">Legacies</a>
-      <a href="list-your-business.html">For Businesses</a>
+      <a href="for-business-owners.html">For Businesses</a>
       <a href="index.html#newsletter" class="sub">Subscribe</a>
     </nav>
     <div class="dateline">Home Services &nbsp;&middot;&nbsp; 26 local picks and counting</div>
@@ -210,6 +212,7 @@
   </section>
 
   <main class="wrap">
+    <p class="no-results" id="noResults"></p>
     <div class="listing-grid">
       <article class="listing reveal" data-bucket="plumbing" data-h="">
         <span class="l-type">Plumber</span>
@@ -443,7 +446,6 @@
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Sand%20Hill%20Plumbing&amp;state=CA&amp;phone=%2B14159138941&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fsandhillplumbing.com%2F&amp;category=Home%20Services&amp;directory_type=Plumber" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
     </div>
-    <p class="no-results" id="noResults">No matches. Try another word, or clear the search.</p>
     <section class="cat-faq">
       <h2>Frequently asked</h2>
       <details><summary>How many home service pros are on San Mateo Local?</summary><p>San Mateo Local features 26 local, independent plumbers, electricians, roofers, landscapers, and other trades across San Mateo, and the list grows every week.</p></details>
@@ -467,7 +469,7 @@
         <a href="things-to-do.html">Things To Do</a>
         <a href="blog.html">Guides</a>
         <a href="local-buzz.html">Local Buzz</a>
-        <a href="for-business-owners.html">For Business Owners</a>
+        <a href="for-business-owners.html">For Businesses</a>
         <a href="legacies.html">Legacies</a>
         <a href="gone-but-not-forgotten.html">Gone But Not Forgotten</a>
         <a href="index.html#newsletter">Subscribe</a>
@@ -498,7 +500,23 @@
           l.style.display = vis ? '' : 'none';
           if (vis) shown++;
         });
-        if (noRes) noRes.style.display = shown === 0 ? 'block' : 'none';
+        if (noRes) {
+          var scoped = activeBucket !== 'all';
+          var onChip = document.querySelector('.chip.is-on');
+          var chipLabel = (scoped && onChip) ? onChip.textContent : '';
+          var qc = searchQ.replace(/[<>&]/g, '');
+          var ask = 'ask.html' + (qc ? '?q=' + encodeURIComponent(qc) : '');
+          var html = '';
+          if (shown === 0) {
+            html = 'No matches' + (qc ? ' for “' + qc + '”' : '') + (scoped ? ' in ' + chipLabel : '') + '. ' + (scoped ? '<a href="#" class="sn-all">Search all &rarr;</a> &middot; ' : '') + '<a href="' + ask + '">Ask a local &rarr;</a>';
+          } else if (q && scoped) {
+            html = 'Showing ' + shown + ' in ' + chipLabel + '. <a href="#" class="sn-all">Search all ' + cards.length + ' &rarr;</a>';
+          } else if (shown < 5 && (q || scoped)) {
+            html = 'Only ' + shown + ' here. <a href="' + ask + '">Ask a local for a pick &rarr;</a>';
+          }
+          noRes.innerHTML = html;
+          noRes.style.display = html ? 'block' : 'none';
+        }
       }
       document.querySelectorAll('.chip').forEach(function(c){
         c.addEventListener('click', function(){
@@ -507,6 +525,14 @@
           activeBucket = c.getAttribute('data-filter');
           apply();
         });
+      });
+      if (noRes) noRes.addEventListener('click', function(e){
+        var a = e.target && e.target.closest ? e.target.closest('.sn-all') : null; if (!a) return;
+        e.preventDefault();
+        var allChip = document.querySelector('.chip[data-filter="all"]');
+        document.querySelectorAll('.chip').forEach(function(x){ x.classList.remove('is-on'); });
+        if (allChip) allChip.classList.add('is-on');
+        activeBucket = 'all'; apply();
       });
       var si = document.getElementById('listingSearch');
       if (si) si.addEventListener('input', function(){ searchQ = si.value; apply(); });
