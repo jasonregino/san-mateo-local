@@ -319,7 +319,7 @@
     /* Set day/night before paint: saved choice first, otherwise match the phone's setting. */
     (function(){ try { document.documentElement.classList.add('js'); var s = localStorage.getItem('sml-theme'); var t = s || 'light'; document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
   </script>
-  <!-- LATESTBG:START --><style>.hoods{background:#21514E;color:#FAF6EC;}</style><!-- LATESTBG:END -->
+  <!-- LATESTBG:START --><style>.hoods{background:#4A2A3C;color:#FAF6EC;}</style><!-- LATESTBG:END -->
 </head>
 <body id="top">
 
@@ -400,7 +400,7 @@
   <div class="hoods" id="latest">
     <div class="wrap">
       <!-- LATEST:START -->
-      <a class="latest-lead" href="this-weekend.html"><span class="ll-kick">This Weekend</span><span class="ll-title">Free Back-to-School Haircuts, Jazz Nights, and the Saturday Market</span><span aria-hidden="true">&rarr;</span></a>
+      <a class="latest-lead" data-tw-date="2026-08-18" href="this-weekend.html"><span class="ll-kick">This Weekend</span><span class="ll-title">Weekend Jazz, the Saturday Market, and a Sunday Adoption Pop-Up</span><span aria-hidden="true">&rarr;</span></a>
       <div class="latest-side">
         <span class="side-label">Also new</span>
         <a href="best-burgers-in-san-mateo.html">The Best Burgers in San Mateo, According to Locals</a>
@@ -896,5 +896,19 @@
     })();
   </script>
   <script src="/ask-widget.js" defer></script>
+  <!-- This Weekend freshness guard: if the front-page "This Weekend" lead is more than 7
+       days old, hide it so a stale post never shows as current, even if we forget to refresh.
+       Runs in the visitor's browser on every load. Pairs with the weekly this-weekend-freshness
+       GitHub Action that opens an Issue when the post goes stale. -->
+  <script>
+  (function(){
+    var STALE_DAYS = 7;
+    var lead = document.querySelector('.latest-lead[data-tw-date]');
+    if (!lead) return;
+    var t = Date.parse(lead.getAttribute('data-tw-date') + 'T00:00:00');
+    if (isNaN(t)) return;
+    if ((Date.now() - t) / 86400000 > STALE_DAYS) { lead.remove(); }
+  })();
+  </script>
 </body>
 </html>
