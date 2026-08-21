@@ -141,6 +141,11 @@
     .mem .mem-now a { color:var(--clay-deep); font-weight:600; }
     .mem .mem-add { display:inline-block; margin-top:0.9rem; font-size:0.72rem; letter-spacing:0.02em; color:var(--ink-soft); opacity:0.6; text-decoration:none; }
     .mem .mem-add:hover { opacity:1; color:var(--clay-deep); }
+    .mem-search { max-width:760px; margin:0 auto 1.6rem; }
+    .mem-search input { width:100%; box-sizing:border-box; padding:0.8rem 1rem; font-size:1rem; font-family:inherit; border:1.5px solid var(--line); border-radius:10px; background:var(--paper); color:var(--ink); }
+    .mem-search input:focus { outline:none; border-color:var(--clay-deep); }
+    .mem-count { font-size:0.8rem; color:var(--ink-soft); margin:0.55rem 0 0; min-height:1em; }
+    .mem-none { display:none; color:var(--ink-soft); font-size:1rem; text-align:center; padding:1.5rem 0; }
     footer.site { padding:3rem 0 2.5rem; border-top:1.5px solid var(--ink); margin-top:2rem; }
     footer.site .wrap { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
     footer .brand { display:flex; align-items:center; gap:0.5rem; }
@@ -220,6 +225,10 @@
   </section>
 
   <main class="wrap">
+    <div class="mem-search">
+      <input type="search" id="memSearch" placeholder="Search 84 places by name..." aria-label="Search closed businesses by name" autocomplete="off" />
+      <p class="mem-count" id="memCount" aria-live="polite"></p>
+    </div>
     <div class="mem-list">
       <article class="mem">
         <p class="mem-era">A downtown favorite, now closed</p>
@@ -871,8 +880,32 @@
         <a class="mem-add" href="mailto:hello@sanmateolocal.com?subject=Memory%3A%20231%20Ellsworth">Have a memory to add? &rarr;</a>
       </article>
     </div>
+    <p class="mem-none" id="memNone">No closed places match that. Try another name.</p>
     <p class="more-note">More added every week. Got a favorite? <a href="suggest.html">Vote on the Best Of.</a> &nbsp;&middot;&nbsp; Own a business we&#39;re missing? <a href="for-business-owners.html#getlisted">Get listed, free.</a></p>
   </main>
+  <script>
+  (function(){
+    var input=document.getElementById('memSearch');
+    var count=document.getElementById('memCount');
+    var none=document.getElementById('memNone');
+    if(!input)return;
+    var cards=[].slice.call(document.querySelectorAll('.mem-list .mem'));
+    var total=cards.length;
+    cards.forEach(function(c){ c.setAttribute('data-s',(c.textContent||'').toLowerCase()); });
+    function apply(){
+      var q=input.value.trim().toLowerCase();
+      var shown=0;
+      cards.forEach(function(c){
+        var hit=!q||c.getAttribute('data-s').indexOf(q)>-1;
+        c.style.display=hit?'':'none';
+        if(hit)shown++;
+      });
+      none.style.display=(q&&shown===0)?'block':'none';
+      count.textContent=q?(shown+' of '+total+(shown===1?' place':' places')):'';
+    }
+    input.addEventListener('input',apply);
+  })();
+  </script>
 
   <footer class="site">
     <div class="wrap">

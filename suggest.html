@@ -191,7 +191,7 @@
         try {
           var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:data });
           var j = await res.json();
-          if (j.success) { form.style.display='none'; document.getElementById('ok').style.display='block'; document.getElementById('ok').scrollIntoView({behavior:'smooth',block:'center'}); }
+          if (j.success) { btn.textContent='Send my picks'; btn.disabled=false; form.style.display='none'; document.getElementById('ok').style.display='block'; document.getElementById('ok').scrollIntoView({behavior:'smooth',block:'center'}); }
           else throw new Error(j.message||'error');
         } catch(err) {
           btn.textContent = 'Send my picks'; btn.disabled = false;
