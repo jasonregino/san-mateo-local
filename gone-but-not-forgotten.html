@@ -226,7 +226,7 @@
 
   <main class="wrap">
     <div class="mem-search">
-      <input type="search" id="memSearch" placeholder="Search 84 places by name..." aria-label="Search closed businesses by name" autocomplete="off" />
+      <input type="search" id="memSearch" placeholder="Search 84 places..." aria-label="Search closed San Mateo businesses" autocomplete="off" />
       <p class="mem-count" id="memCount" aria-live="polite"></p>
     </div>
     <div class="mem-list">
@@ -891,7 +891,10 @@
     if(!input)return;
     var cards=[].slice.call(document.querySelectorAll('.mem-list .mem'));
     var total=cards.length;
-    cards.forEach(function(c){ c.setAttribute('data-s',(c.textContent||'').toLowerCase()); });
+    cards.forEach(function(c){
+      var parts=[].slice.call(c.children).filter(function(el){ return !el.classList.contains('mem-add'); }).map(function(el){ return el.textContent||''; }).join(' ');
+      c.setAttribute('data-s',parts.toLowerCase());
+    });
     function apply(){
       var q=input.value.trim().toLowerCase();
       var shown=0;
@@ -901,7 +904,7 @@
         if(hit)shown++;
       });
       none.style.display=(q&&shown===0)?'block':'none';
-      count.textContent=q?(shown+' of '+total+(shown===1?' place':' places')):'';
+      count.textContent=q?(shown+' of '+total+(total===1?' place':' places')):'';
     }
     input.addEventListener('input',apply);
   })();
