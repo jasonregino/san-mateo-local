@@ -42,7 +42,7 @@ const CATS = ['EAT & DRINK', 'HOME SERVICES', 'LOCAL SERVICES', 'SHOPPING', 'THI
 const safeMaps = m => String(m || '').replace(/\(/g, '%28').replace(/\)/g, '%29');
 const LIST = CATS.map(cat => {
   const rows = places.filter(p => p.cat === cat)
-    .map(p => `- ${p.name} | ${p.type} | ${p.area} | ${p.addr} | ${p.phone} | ${p.price} | ${p.about}${p.offer ? ` | DEAL: ${p.offer}` : ''} | MAPS: ${safeMaps(p.maps)}`)
+    .map(p => `- ${p.name} | ${p.type} | ${p.area} | ${p.addr} | ${p.phone} | ${p.price} | ${p.about}${p.offer ? ` | DEAL: ${p.offer}` : ''} | PAGE: ${p.detail} | MAPS: ${safeMaps(p.maps)}`)
     .join('\n');
   return `## ${cat}\n${rows}`;
 }).join('\n\n');
@@ -71,9 +71,9 @@ STRICT RULES:
 - You can only chat here. Never offer to call a business, book a table, check hours, or do anything outside this conversation. When someone needs hours, a quote, wait times, or a reservation, give them the listed phone number and tell them to contact the place directly. Only give a phone number that appears in THE GUIDE. If a place has NO phone in the guide, do not write a call line at all and never write a placeholder like "call them at (no phone listed)"; instead give the address and say to stop by, or suggest looking them up on Google.
 - If the request is vague, ask ONE short clarifying question first (what kind of place, which neighborhood, or the vibe).
 - Warm, local, and concise, like a friend who knows the town. Short sentences. No em-dashes. No hype or marketing buzzwords.
-- Format each place as a markdown link to its map: [Name] followed by the exact MAPS url shown for that place in THE GUIDE, in parentheses, then its Neighborhood, one short reason, and the phone number for a service someone will call. Format a section as [Page title] then its /url in parentheses. ALWAYS use the real MAPS url copied from the data. NEVER write a placeholder like "https://maps-url", and NEVER narrate a correction or your own process to the visitor (no "wait, let me use the real one", no "let me fix that"); just write the finished, clean answer.
+- Format each place with its NAME linked to its on-site San Mateo Local page: [Name] followed by the exact PAGE url shown for that place in THE GUIDE, in parentheses. Then its Neighborhood, one short reason, the phone number for a service someone will call, and a Directions link written as [Directions] followed by that same place's exact MAPS url in parentheses. Link the NAME to the PAGE url, NEVER to the MAPS url; use the MAPS url only for the [Directions] link. Format a guide section as [Page title] then its /url in parentheses. ALWAYS use the real PAGE and MAPS urls copied from the data. NEVER write a placeholder like "https://maps-url" or a literal "/business/...", and NEVER narrate a correction or your own process to the visitor (no "wait, let me use the real one", no "let me fix that"); just write the finished, clean answer.
 
-THE GUIDE (name | type | area | address | phone | price | about | optional DEAL (a free perk, only if shown) | MAPS url to use for the link):
+THE GUIDE (name | type | area | address | phone | price | about | optional DEAL (a free perk, only if shown) | PAGE (the on-site profile page; link the NAME to this) | MAPS url (only for the Directions link)):
 ${LIST}
 
 SECTIONS (guide pages you may link as [title](/url)):
@@ -328,7 +328,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-20'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-21'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
