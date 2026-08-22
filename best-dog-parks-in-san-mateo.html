@@ -98,6 +98,7 @@
   .spot { padding:1.1rem 0; border-bottom:1px solid var(--line); }
   .spot:last-child { border-bottom:none; }
   .spot h3 { font-size:1.3rem; margin-bottom:0.2rem; }
+  .spot h3 a { display:inline-block; padding:0.6rem 0; margin:-0.6rem 0; }
   .spot h3 a:hover { color:var(--clay-deep); }
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.4rem; }
   .spot p { color:var(--ink-soft); }
@@ -125,7 +126,7 @@
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"ItemList","name":"The Best Dog Parks in San Mateo, With Off-Leash Hours","description":"Where can your dog actually run off-leash in San Mateo? Here is every official off-leash park and area in the city, split by all-day parks and early-morning fields, with the exact hours for each.","itemListElement":[{"@type":"ListItem","position":1,"name":"Seal Point Park"},{"@type":"ListItem","position":2,"name":"Laurie Meadows Park"},{"@type":"ListItem","position":3,"name":"Bayside-Joinville Park"},{"@type":"ListItem","position":4,"name":"Los Prados Park"},{"@type":"ListItem","position":5,"name":"Beresford Park"},{"@type":"ListItem","position":6,"name":"Central Park"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best dog park in San Mateo?","acceptedAnswer":{"@type":"Answer","text":"Local favorites include Seal Point Park, Laurie Meadows Park, Bayside-Joinville Park. Browse the full guide above. Nobody pays to be on it."}},{"@type":"Question","name":"How many off-leash spots does San Mateo Local recommend?","acceptedAnswer":{"@type":"Answer","text":"6, all added by hand and refreshed regularly."}},{"@type":"Question","name":"Is San Mateo Local a paid directory?","acceptedAnswer":{"@type":"Answer","text":"No. Nobody pays to be listed here, and nothing was scraped or bought. A business can sponsor a guide, and if one does, it is clearly marked as a sponsor."}}]}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"ItemList","name":"The Best Dog Parks in San Mateo, With Off-Leash Hours","description":"Where can your dog actually run off-leash in San Mateo? Here is every official off-leash park and area in the city, split by all-day parks and early-morning fields, with the exact hours for each.","itemListElement":[{"@type":"ListItem","position":1,"name":"Seal Point Park"},{"@type":"ListItem","position":2,"name":"Laurie Meadows Park"},{"@type":"ListItem","position":3,"name":"Bayside-Joinville Park"},{"@type":"ListItem","position":4,"name":"Los Prados Park"},{"@type":"ListItem","position":5,"name":"Beresford Park"},{"@type":"ListItem","position":6,"name":"Central Park"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best dog park in San Mateo?","acceptedAnswer":{"@type":"Answer","text":"Local favorites include Seal Point Park, Laurie Meadows Park, Bayside-Joinville Park. Browse the full guide above."}},{"@type":"Question","name":"How many off-leash spots does San Mateo Local recommend?","acceptedAnswer":{"@type":"Answer","text":"6, all added by hand and refreshed regularly."}},{"@type":"Question","name":"Is San Mateo Local a paid directory?","acceptedAnswer":{"@type":"Answer","text":"No. Nobody pays to be listed here, and nothing was scraped or bought. A business can sponsor a guide, and if one does, it is clearly marked as a sponsor."}}]}]</script>
   <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--clay-deep);">Get on the guide &rarr;</strong></a></div>
   <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--clay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
   <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
@@ -168,7 +169,7 @@
 
     <p class="intro">San Mateo is a good dog town, but the off-leash rules trip people up. Some parks are fully fenced and open all day. Others are regular fields that only go off-leash for a short window first thing in the morning, and if you show up at the wrong hour you are right back on the leash. Here is where your dog can run, split into the all-day fenced parks and the early-morning fields, with the hours for each. One rule applies everywhere: no more than three dogs per person.</p>
     <p style="margin:1.4rem 0 0.5rem; font-size:1.06rem; line-height:1.55; color:var(--ink); background:var(--paper-2); border-left:3px solid var(--clay); padding:0.9rem 1.15rem; border-radius:0 8px 8px 0;">Every off-leash dog park and area in San Mateo, pulled from the city's official list and checked against what is actually open, with the exact hours for each.</p>
-      <h2>The fenced parks, open all day</h2>
+      <h2>The fenced dog parks</h2>
       <div class="spot">
         <h3><a href="https://www.google.com/maps/search/?api=1&query=Seal%20Point%20Park%20San%20Mateo" target="_blank" rel="noopener">Seal Point Park</a></h3>
         <div class="m">The big one · By the Bay</div>
@@ -189,7 +190,7 @@
         <div class="m">North San Mateo · Los Prados</div>
         <p>A fenced off-leash area at the southwest end of Los Prados Park, over by the south ball diamond. A solid, low-key neighborhood option on the north side of town. Open daily, six in the morning to ten at night.</p>
       </div>
-      <h2>The early-morning fields (off-leash 6 to 8 a.m. only)</h2>
+      <h2>The off-leash grass fields (hours vary)</h2>
       <div class="spot">
         <h3><a href="https://www.google.com/maps/search/?api=1&query=Beresford%20Park%20San%20Mateo" target="_blank" rel="noopener">Beresford Park</a></h3>
         <div class="m">Chanteloup Field · Alameda de las Pulgas</div>
@@ -202,7 +203,7 @@
       </div>
     <section style="margin:2.5rem 0 0.5rem;">
       <h2>Frequently asked</h2>
-      <details style="border-bottom:1px solid var(--line); padding:0.85rem 0;"><summary style="font-weight:600; font-size:1.02rem; cursor:pointer; color:var(--ink);">What is the best dog park in San Mateo?</summary><p style="margin-top:0.5rem; color:var(--ink-soft);">Local favorites include Seal Point Park, Laurie Meadows Park, Bayside-Joinville Park. Browse the full guide above. Nobody pays to be on it.</p></details>
+      <details style="border-bottom:1px solid var(--line); padding:0.85rem 0;"><summary style="font-weight:600; font-size:1.02rem; cursor:pointer; color:var(--ink);">What is the best dog park in San Mateo?</summary><p style="margin-top:0.5rem; color:var(--ink-soft);">Local favorites include Seal Point Park, Laurie Meadows Park, Bayside-Joinville Park. Browse the full guide above.</p></details>
       <details style="border-bottom:1px solid var(--line); padding:0.85rem 0;"><summary style="font-weight:600; font-size:1.02rem; cursor:pointer; color:var(--ink);">How many off-leash spots does San Mateo Local recommend?</summary><p style="margin-top:0.5rem; color:var(--ink-soft);">6, all added by hand and refreshed regularly.</p></details>
       <details style="border-bottom:1px solid var(--line); padding:0.85rem 0;"><summary style="font-weight:600; font-size:1.02rem; cursor:pointer; color:var(--ink);">Is San Mateo Local a paid directory?</summary><p style="margin-top:0.5rem; color:var(--ink-soft);">No. Nobody pays to be listed here, and nothing was scraped or bought. A business can sponsor a guide, and if one does, it is clearly marked as a sponsor.</p></details>
     </section>
