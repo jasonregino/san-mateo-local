@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>The Standard Barber Co. &middot; Premium Business Page (Sample) | San Mateo Local</title>
+  <meta name="description" content="A sample Premium Business Page for a service business on San Mateo Local. The Standard Barber Co. is a demo showing what a maintained page looks like for a barber, salon, or trade." />
+  <meta name="theme-color" content="#1E232B" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HairSalon","name":"The Standard Barber Co.","address":{"@type":"PostalAddress","streetAddress":"88 E 3rd Avenue","addressLocality":"San Mateo","addressRegion":"CA","postalCode":"94401","addressCountry":"US"},"telephone":"+1-650-555-0172","priceRange":"$$","openingHours":["Tu-Fr 10:00-19:00","Sa 09:00-17:00"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"268"}}</script>
+  <style>
+    /* Same Premium skeleton as the Eat & Drink sample, in a barber's palette. The only
+       structural swap is the middle: a services + trust module instead of a food menu. */
+    :root{
+      --primary:#1E232B; --primary-deep:#141820; --accent:#B08D57; --accent-light:#D9BC8C;
+      --ink:#23272E; --muted:#6E7681; --bg:#F5F4F1; --line:#DEDBD4; --panel:#ECEAE5; --panel-2:#E5E2DB; --cream:#F1EDE4;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100%}
+    h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.06;letter-spacing:-.5px}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+    .eyebrow{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.7rem}
+    .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block}
+    .eyebrow.center{justify-content:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:15px 30px;border-radius:0;border:1px solid transparent;transition:background .25s ease,transform .2s ease,color .25s ease;cursor:pointer}
+    .btn-gold{background:var(--accent);color:#241708}
+    .btn-gold:hover{background:var(--accent-light);transform:translateY(-2px)}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.55);color:#fff}
+    .btn-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+    .btn-dark{background:var(--primary);color:#F4E9D6}
+    .btn-dark:hover{background:var(--primary-deep);transform:translateY(-2px)}
+    section{padding:118px 0}
+    .sec-h{font-size:clamp(30px,4.6vw,52px);font-weight:600;color:var(--primary);margin:.5rem 0 0}
+    .sec-lead{color:var(--muted);font-size:18px;max-width:44rem;margin-top:1rem}
+    .dark{background:var(--primary);color:#E7E3DA}
+    .dark .sec-h{color:#fff}
+    .dark .sec-lead{color:#C3BEB4}
+    .panel{background:var(--panel)}
+    .reveal{opacity:0;transform:translateY(30px)}
+    .reveal.in{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+    @media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important}}
+    .sample-banner{position:relative;z-index:40;background:#141820;color:#D9BC8C;font-size:12.5px;text-align:center;padding:.55rem 1.2rem;letter-spacing:.3px}
+    .sample-banner b{color:#F0E2C6}
+    .nav{position:absolute;top:0;left:0;right:0;z-index:30;padding:1.5rem 0}
+    .nav-in{max-width:1180px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+    .nav-brand{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#fff;letter-spacing:.5px}
+    .nav-right{display:flex;align-items:center;gap:1.6rem}
+    .nav-link{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.82)}
+    .nav-link:hover{color:#fff}
+    /* HERO, gradient instead of a photo (real page uses the shop's own photos) */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:radial-gradient(1200px 600px at 75% 20%,rgba(176,141,87,.22),transparent 60%),linear-gradient(160deg,#232935 0%,#161B22 55%,#0F131A 100%)}
+    .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(15,19,26,.5),transparent 55%)}
+    .hero-in{position:relative;z-index:2;color:#fff;max-width:760px}
+    .hero .eyebrow{color:var(--accent-light)}
+    .hero .eyebrow::before{background:var(--accent-light)}
+    .hero h1{font-size:clamp(48px,8vw,92px);font-weight:600;line-height:1.02;letter-spacing:-1px;margin:1.3rem 0 1rem}
+    .hero h1 em{font-style:italic;color:var(--accent-light)}
+    .hero-sub{font-size:19px;color:rgba(255,255,255,.9);max-width:34rem;line-height:1.6}
+    .hero-rate{margin-top:1.1rem;font-size:14px;color:var(--accent-light);font-weight:600;letter-spacing:.5px}
+    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+    .prem-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#241708;background:var(--accent);padding:.3rem .65rem;border-radius:3px;vertical-align:middle}
+    .scrollcue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.7);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+    .statement{text-align:center}
+    .statement p{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,3.6vw,40px);line-height:1.28;color:var(--primary);max-width:52rem;margin:1rem auto 0}
+    .statement em{font-style:italic;color:var(--accent)}
+    /* services (reuses the menu row structure) */
+    .menu{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 4rem;margin-top:2rem}
+    .mrow{display:flex;justify-content:space-between;gap:1.2rem;align-items:baseline;padding:1rem 0;border-bottom:1px solid var(--line)}
+    .mrow .mn{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--primary)}
+    .mrow .md{color:var(--muted);font-size:13.5px}
+    .mrow .mp{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--accent);white-space:nowrap}
+    .menu-cat{margin-top:2.5rem}
+    .menu-cat-h{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--primary);padding-bottom:.45rem;border-bottom:2px solid var(--accent);display:inline-block}
+    .menu-cat-h span{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-left:.6rem}
+    .price-note{color:var(--muted);font-size:13.5px;margin-top:1rem;font-style:italic}
+    /* trust block, the service-sale closer */
+    .trust{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.4rem}
+    .tcard{border:1px solid var(--line);background:#fff;padding:1.7rem 1.8rem}
+    .tcard .th{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--primary)}
+    .tcard .tp{color:var(--muted);font-size:15px;margin-top:.4rem}
+    .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}
+    .chip{font-size:12px;font-weight:600;letter-spacing:.4px;color:var(--primary);border:1px solid var(--line);padding:.45rem .95rem;background:#fff}
+    /* visit */
+    .visit-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2.4rem;margin-top:2.4rem}
+    .mapframe{border:1px solid var(--line);overflow:hidden;min-height:360px}
+    .mapframe iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+    .infocol .irow{display:flex;gap:.9rem;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:15px}
+    .infocol .irow .ik{color:var(--accent-light);font-weight:600;flex:none;width:84px;letter-spacing:.5px;text-transform:uppercase;font-size:12px;padding-top:2px}
+    /* reviews */
+    .rev{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-top:2rem;border:1px solid var(--line);background:#fff;padding:2rem 2.2rem}
+    .rev-score{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:var(--accent);line-height:1}
+    .rev-stars{color:var(--accent);letter-spacing:3px;font-size:18px}
+    .rev-count{color:var(--muted);font-size:14px;margin-top:.2rem}
+    .rev-link{margin-left:auto;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
+    .revcards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:1.4rem}
+    .revcard{border:1px solid var(--line);background:#fff;padding:1.5rem 1.6rem}
+    .revcard .rc-stars{color:var(--accent);letter-spacing:2px;font-size:14px}
+    .revcard .rc-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.42;color:var(--primary);margin:.7rem 0 1rem}
+    .revcard .rc-who{font-size:12.5px;font-weight:600;color:var(--muted)}
+    .revcard .rc-who span{display:block;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-size:10.5px;margin-top:.15rem}
+    .rev-note{color:var(--muted);font-size:13px;margin-top:1rem;font-style:italic}
+    .deal{margin-top:2rem;border:1px solid var(--accent);border-left:4px solid var(--accent);background:var(--cream);padding:1.8rem 2rem;max-width:44rem}
+    .deal .dt{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--primary)}
+    .deal .dm{color:var(--muted);font-style:italic;margin-top:.2rem}
+    .faq{margin-top:2rem;max-width:48rem}
+    .faq details{border-bottom:1px solid var(--line);padding:1.1rem 0}
+    .faq summary{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--primary);cursor:pointer;list-style:none}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{color:var(--muted);margin-top:.6rem}
+    .ask{margin-top:2rem;border:1px solid var(--line);background:#fff;padding:2rem 2.2rem;max-width:48rem}
+    .askbar{display:flex;gap:.6rem;margin-top:1.1rem;flex-wrap:wrap}
+    .askbar input{flex:1 1 240px;padding:14px 16px;border:1px solid var(--line);border-radius:0;background:var(--bg);color:var(--ink);font:inherit;font-size:15px}
+    .askbar button{background:var(--primary);color:#F4E9D6;border:none;border-radius:0;padding:14px 24px;font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+    .suggest{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+    .suggest span{font-size:12.5px;color:var(--muted);border:1px solid var(--line);padding:.4rem .85rem}
+    .tags{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+    .tags span{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent-light);border:1px solid rgba(217,188,140,.4);padding:.5rem 1rem}
+    .owner{text-align:center}
+    .owner .price{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--accent);margin-top:1.2rem}
+    footer{background:var(--primary-deep);color:#C7C2B8;padding:70px 0 46px}
+    footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:30px;color:#fff;font-weight:600}
+    footer .maint{display:inline-flex;align-items:center;gap:.4rem;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-light);margin-top:1rem}
+    footer .fmeta{font-size:13.5px;color:#9A928A;margin-top:1rem;line-height:1.9}
+    footer .fsoc{margin-top:1rem;display:flex;gap:1.4rem}
+    footer .fsoc a{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#C7C2B8;font-weight:600}
+    footer .fcopy{font-size:11.5px;color:#786F64;margin-top:1.8rem;border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem}
+    @media(max-width:900px){
+      .wrap,.nav-in{padding-left:20px;padding-right:20px}
+      section{padding:64px 0}
+      .menu{grid-template-columns:1fr;gap:0}
+      .trust{grid-template-columns:1fr}
+      .visit-grid{grid-template-columns:1fr}
+      .revcards{grid-template-columns:1fr}
+      .nav-brand{font-size:20px}
+      .nav .nav-link{display:none}
+      .hero-cta{gap:.7rem}
+    }
+  </style>
+  <script>(function(){try{document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
+</head>
+<body>
+  <div class="sample-banner"><b>This is a sample Premium Business Page for a service business,</b> built to our premium standard. The Standard Barber Co. is a made-up business.</div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-scrim"></div>
+    <nav class="nav"><div class="nav-in">
+      <span style="display:flex;align-items:center;gap:.55rem"><span class="nav-brand">The Standard</span><span class="prem-badge">&#9733; Premium</span></span>
+      <div class="nav-right">
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#visit">Visit</a>
+        <a class="nav-link" href="tel:+16505550172">(650) 555-0172</a>
+      </div>
+    </div></nav>
+    <div class="wrap">
+      <div class="hero-in">
+        <span class="eyebrow">Downtown San Mateo &middot; Est. 2011</span>
+        <h1>The Standard<br>Barber <em>Co.</em></h1>
+        <p class="hero-sub">A proper barbershop for a clean fade, a sharp beard, and a straight-razor shave. Walk in, or book online in about thirty seconds.</p>
+        <div class="hero-rate">&#9733;&#9733;&#9733;&#9733;&#9733; &nbsp;4.9 &middot; 268 Google reviews</div>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#services">Book a chair</a>
+          <a class="btn btn-outline" href="#visit">Get directions</a>
+        </div>
+      </div>
+    </div>
+    <span class="scrollcue">Scroll</span>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="wrap reveal">
+      <span class="eyebrow center">Since 2011</span>
+      <p>The kind of shop where they <em>remember your cut</em>, take walk-ins, and never rush you out of the chair.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES + PRICES -->
+  <section id="services">
+    <div class="wrap reveal">
+      <span class="eyebrow">Services</span>
+      <h2 class="sec-h">Cuts, beards, and shaves</h2>
+      <div class="menu-cat"><h3 class="menu-cat-h">The chair</h3></div>
+      <div class="menu">
+        <div class="mrow"><div><div class="mn">Signature cut</div><div class="md">Consultation, cut, hot-towel finish</div></div><div class="mp">$45</div></div>
+        <div class="mrow"><div><div class="mn">Skin fade</div><div class="md">Precision fade, blended to any length</div></div><div class="mp">$40</div></div>
+        <div class="mrow"><div><div class="mn">Buzz &amp; clean-up</div><div class="md">One length, sharp neckline</div></div><div class="mp">$28</div></div>
+        <div class="mrow"><div><div class="mn">Kids cut</div><div class="md">Twelve and under</div></div><div class="mp">$30</div></div>
+        <div class="mrow"><div><div class="mn">Gray blending</div><div class="md">Natural, subtle, never obvious</div></div><div class="mp">$35</div></div>
+        <div class="mrow"><div><div class="mn">Senior cut</div><div class="md">Sixty-five and up</div></div><div class="mp">$32</div></div>
+      </div>
+      <div class="menu-cat"><h3 class="menu-cat-h">Beard &amp; shave</h3></div>
+      <div class="menu">
+        <div class="mrow"><div><div class="mn">Beard trim &amp; line-up</div><div class="md">Shaped, hot towel, finishing oil</div></div><div class="mp">$25</div></div>
+        <div class="mrow"><div><div class="mn">Straight-razor shave</div><div class="md">The full hot-towel ritual</div></div><div class="mp">$45</div></div>
+        <div class="mrow"><div><div class="mn">Cut &amp; beard combo</div><div class="md">Best value, done together</div></div><div class="mp">$60</div></div>
+        <div class="mrow"><div><div class="mn">Neck &amp; line-up</div><div class="md">Quick tidy between cuts</div></div><div class="mp">$18</div></div>
+      </div>
+      <p class="price-note">Starting prices. Final quote depends on length and detail, and we tell you before we start, never after.</p>
+    </div>
+  </section>
+
+  <!-- TRUST (the service-sale closer) -->
+  <section class="panel">
+    <div class="wrap reveal">
+      <span class="eyebrow">Why locals stay</span>
+      <h2 class="sec-h">What you can count on</h2>
+      <div class="trust">
+        <div class="tcard"><div class="th">Honest chair</div><div class="tp">We tell you what actually suits your hair and your week, not whatever costs the most. If a quick line-up is all you need, that's what you'll get.</div></div>
+        <div class="tcard"><div class="th">Master barbers</div><div class="tp">Every barber here has years behind the chair, and the same hands cut your hair each time if you want them to.</div></div>
+        <div class="tcard"><div class="th">Clean and licensed</div><div class="tp">California-licensed barbers, a fresh blade and a sanitized station for every client, every time.</div></div>
+        <div class="tcard"><div class="th">Walk in or book ahead</div><div class="tp">Walk-ins are always welcome. Or book a specific barber and time online in about thirty seconds.</div></div>
+      </div>
+      <div class="chips">
+        <span class="chip">Est. 2011</span><span class="chip">Walk-ins welcome</span><span class="chip">Online booking</span><span class="chip">Licensed barbers</span><span class="chip">Cash &amp; card</span><span class="chip">Parking nearby</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS + DEAL -->
+  <section>
+    <div class="wrap reveal">
+      <span class="eyebrow">Reputation</span>
+      <h2 class="sec-h">Loved by locals</h2>
+      <div class="rev">
+        <div class="rev-score">4.9</div>
+        <div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rev-count">Based on 268 Google reviews</div></div>
+        <a class="rev-link" href="#" onclick="return false">Read on Google &rarr;</a>
+      </div>
+      <div class="revcards">
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Best fade I've had in San Mateo, and they actually listen. Been going for three years."</p><div class="rc-who">Andre M.<span>Google review</span></div></div>
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Took my son for his first real haircut. Patient, kind, and it looked great."</p><div class="rc-who">Rosa L.<span>Google review</span></div></div>
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"The straight-razor shave is the best twenty minutes of my week. Old-school in the best way."</p><div class="rc-who">Kevin T.<span>Google review</span></div></div>
+      </div>
+      <p class="rev-note">On your live page, these are pulled from your real Google reviews, always the genuine ones.</p>
+      <div style="margin-top:3.4rem"><span class="eyebrow">Local Perk</span><h2 class="sec-h">A San Mateo Local deal</h2></div>
+      <div class="deal">
+        <div class="dt">&#9986; Free beard line-up with your first cut</div>
+        <div class="dm">Just mention San Mateo Local.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="dark" id="visit">
+    <div class="wrap reveal">
+      <span class="eyebrow">Visit</span>
+      <h2 class="sec-h">Find us</h2>
+      <div class="visit-grid">
+        <div class="mapframe"><iframe loading="lazy" title="Map to The Standard Barber Co." src="https://www.google.com/maps?q=88%20E%203rd%20Avenue%2C%20San%20Mateo%2C%20CA%2094401&output=embed"></iframe></div>
+        <div class="infocol">
+          <div class="irow"><span class="ik">Address</span><span>88 E 3rd Avenue, San Mateo, CA 94401</span></div>
+          <div class="irow"><span class="ik">Phone</span><span>(650) 555-0172</span></div>
+          <div class="irow"><span class="ik">Hours</span><span>Tue&ndash;Fri 10a&ndash;7p<br>Sat 9a&ndash;5p &middot; Sun&ndash;Mon closed</span></div>
+          <div class="irow"><span class="ik">Area</span><span>Downtown San Mateo</span></div>
+          <div style="margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn btn-gold" href="tel:+16505550172">Call</a><a class="btn btn-outline" href="https://www.google.com/maps?q=88+E+3rd+Avenue,+San+Mateo,+CA" target="_blank" rel="noopener">Directions</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ + ASK -->
+  <section>
+    <div class="wrap reveal">
+      <span class="eyebrow">Good to Know</span>
+      <h2 class="sec-h">Frequently asked</h2>
+      <div class="faq">
+        <details open><summary>Do you take walk-ins?</summary><p>Always. Walk in any time we're open and we'll get you in the next open chair. If you want a specific barber or time, booking online guarantees it.</p></details>
+        <details><summary>How do I book a specific barber?</summary><p>Book online and pick your barber and time, about thirty seconds. Or call the shop and we'll set it up.</p></details>
+        <details><summary>Do you cut kids' hair?</summary><p>Yes, twelve and under is a kids cut. We're patient with first haircuts.</p></details>
+        <details><summary>Is there parking?</summary><p>Street parking on 3rd Avenue and the city garage a block over on 2nd.</p></details>
+      </div>
+      <div style="margin-top:3.4rem"><span class="eyebrow">Ask</span><h2 class="sec-h">Ask about The Standard</h2></div>
+      <div class="ask">
+        <p style="color:var(--muted)">Ask and get an answer from the business's verified information, hours, services, and location.</p>
+        <div class="askbar"><input type="text" placeholder="e.g. Do you take walk-ins on Saturday?" aria-label="Ask about this business" /><button type="button">Ask</button></div>
+        <div class="suggest"><span>What are your hours?</span><span>How much is a fade?</span><span>Do you take walk-ins?</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH VALUE -->
+  <section class="dark">
+    <div class="wrap reveal" style="max-width:52rem;text-align:center;margin:0 auto">
+      <span class="eyebrow center">Built for how people search now</span>
+      <h2 class="sec-h">Found on Google, Maps, and AI</h2>
+      <p class="sec-lead" style="margin:1.2rem auto 0">People don't just search Google anymore. They ask "where's a good barber in San Mateo?" on Maps, and more and more on AI tools. Your page gives search engines and AI systems a rich, structured, up-to-date source of truth about your shop, so they understand who you are, what you offer, and where to find you.</p>
+      <div class="tags" style="justify-content:center"><span>SEO</span><span>Local SEO</span><span>AEO</span><span>GEO</span><span>San Mateo Local AI Guide</span></div>
+    </div>
+  </section>
+
+  <!-- OWNER CTA -->
+  <section class="panel owner">
+    <div class="wrap reveal" style="max-width:44rem;margin:0 auto">
+      <span class="eyebrow center">For business owners</span>
+      <h2 class="sec-h">Want a page like this for your business?</h2>
+      <p class="sec-lead" style="margin:1.1rem auto 0">A professionally built web presence on San Mateo Local, built for modern local search and maintained by us. We build the first draft from your existing site and what's already online, then you just confirm. Barely any work on your end.</p>
+      <div class="price">Premium Business Page &middot; $59/month &middot; setup waived for our first 10 businesses</div>
+      <div style="margin-top:1.8rem"><a class="btn btn-dark" href="/for-business-owners.html">Get your Premium page</a></div>
+      <p style="margin-top:1.1rem;font-size:16px;color:var(--muted)">Run a restaurant or cafe instead? <a href="/premium-example.html" style="color:var(--accent);font-weight:600">See the Eat &amp; Drink example &rarr;</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="fbrand">The Standard Barber Co.</div>
+      <div class="maint">&#10003; Maintained by San Mateo Local</div>
+      <div class="fmeta">88 E 3rd Avenue, Downtown San Mateo &middot; (650) 555-0172<br>Tue&ndash;Fri 10a&ndash;7p &middot; Sat 9a&ndash;5p</div>
+      <div class="fsoc"><a href="#" onclick="return false">Instagram</a><a href="#" onclick="return false">Book online</a></div>
+      <div class="fcopy">This is a sample page. The Standard Barber Co. is not a real business. &copy; 2026 San Mateo Local.</div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    try{
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els=document.querySelectorAll('.reveal');
+      var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+      els.forEach(function(el){io.observe(el);});
+    }catch(e){}
+  })();
+  </script>
+</body>
+</html>
