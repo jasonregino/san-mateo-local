@@ -73,7 +73,7 @@
   function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
   function render(t){
     var h = esc(t);
-    h = h.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    h = h.replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/)[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
     h = h.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
     h = h.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
     return h.replace(/\n/g, '<br>');
