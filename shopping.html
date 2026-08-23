@@ -811,11 +811,26 @@
         function openNow(h){ if(!h) return null; var ps=h.split('|'); for(var i=0;i<ps.length;i++){ var ab=ps[i].split('~'), o=+ab[0], c=+ab[1]; if(c===-1) return true; if(c<=o) c+=10080; if((now>=o&&now<c)||(now+10080>=o&&now+10080<c)) return true; } return false; }
         cards.forEach(function(l){ var h=l.getAttribute('data-h'); if(!h) return; var open=openNow(h); l.classList.add(open?'open-now':'closed-now'); var el=l.querySelector('.l-open'); if(el){ el.textContent=(open?'● Open now':'● Closed'); el.className='l-open '+(open?'is-open':'is-closed'); } });
       })();
+      // Synonym-aware search: a local typing "boba" should still find a shop
+      // whose description says "bubble tea", and "ice cream" should find "gelato".
+      // When a plain substring miss happens, expand the query to its synonym group.
+      var SYN = [
+        ['ice cream','gelato','frozen yogurt','froyo','soft serve','sorbet','custard'],
+        ['boba','bubble tea','milk tea','pearl tea','tapioca'],
+        ['taco','taqueria','birria','burrito','al pastor'],
+        ['coffee','espresso','latte','cappuccino','cafe','café'],
+        ['pizza','pizzeria','slice'],
+        ['sandwich','deli','sub','hoagie'],
+        ['bakery','pastry','pastries','croissant'],
+        ['bar','cocktail','pub','brewery','taproom']
+      ];
+      function synGroup(q){ if (q.length < 3) return null; for (var i=0;i<SYN.length;i++){ var g=SYN[i]; for (var j=0;j<g.length;j++){ if (g[j].indexOf(q)!==-1 || q.indexOf(g[j])!==-1) return g; } } return null; }
+      function matchText(text,q){ if (!q) return true; if (text.indexOf(q)!==-1) return true; var g=synGroup(q); if (g){ for (var k=0;k<g.length;k++){ if (text.indexOf(g[k])!==-1) return true; } } return false; }
       function apply(){
         var q = searchQ.trim().toLowerCase(), shown = 0;
         cards.forEach(function(l){
           var okB = activeBucket === 'all' || (activeBucket === 'open-now' ? l.classList.contains('open-now') : (' ' + l.getAttribute('data-bucket') + ' ').indexOf(' ' + activeBucket + ' ') !== -1);
-          var okS = !q || l.textContent.toLowerCase().indexOf(q) !== -1;
+          var okS = matchText(l.textContent.toLowerCase(), q);
           var vis = okB && okS;
           l.style.display = vis ? '' : 'none';
           if (vis) shown++;
