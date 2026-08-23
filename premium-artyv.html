@@ -82,6 +82,9 @@
     .tcard .tp{color:var(--muted);font-size:15px;margin-top:.4rem}
     .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}
     .chip{font-size:12px;font-weight:600;letter-spacing:.4px;color:var(--primary);border:1px solid var(--line);padding:.45rem .95rem;background:#fff}
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
+    .gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--line);display:block}
+    @media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
     .visit-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2.4rem;margin-top:2.4rem}
     .mapframe{border:1px solid var(--line);overflow:hidden;min-height:360px}
     .mapframe iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
@@ -187,7 +190,7 @@
       <h2 class="sec-h">What you can count on</h2>
       <div class="trust">
         <div class="tcard"><div class="th">One-on-one attention</div><div class="tp">Private and duet sessions only, so every hour is built around you, never a crowded class floor.</div></div>
-        <div class="tcard"><div class="th">The STOTT Pilates method</div><div class="tp">A contemporary approach to Pilates grounded in modern biomechanics, taught with care.</div></div>
+        <div class="tcard"><div class="th">The STOTT Pilates method</div><div class="tp">A contemporary approach to Pilates grounded in modern biomechanics, taught on professional Merrithew equipment.</div></div>
         <div class="tcard"><div class="th">Pre- and postnatal specialist</div><div class="tp">Training designed for during and after pregnancy, from a certified specialist.</div></div>
         <div class="tcard"><div class="th">A perfect rating</div><div class="tp">A 5.0 on Google from the clients who have trained at the studio.</div></div>
       </div>
@@ -197,13 +200,30 @@
     </div>
   </section>
 
-  <!-- THE STUDIO -->
+  <!-- MEET CHLOE -->
   <section>
     <div class="wrap reveal">
-      <span class="eyebrow">The studio</span>
-      <h2 class="sec-h">Inside ARTYV</h2>
-      <p class="sec-lead">ARTYV is a boutique Pilates studio on 25th Avenue, built around private and duet training on the reformer. Sessions follow the STOTT Pilates method, a contemporary approach grounded in modern biomechanics, and the studio specializes in pre- and postnatal work.</p>
-      <p class="edit-note">Your instructor bios and studio photos drop in here once confirmed.</p>
+      <span class="eyebrow">The instructor</span>
+      <h2 class="sec-h">Meet Chloe</h2>
+      <p class="sec-lead">ARTYV is led by Chloe Sohyun Jo, a STOTT Pilates certified instructor and YogaWorks RYT200 with a pre- and postnatal specialty. Before San Mateo, she ran her own boutique studio in Korea for more than four years. She opened ARTYV in 2026 and teaches every session herself, one-on-one or duet, never a group class.</p>
+      <div class="chips">
+        <span class="chip">STOTT Pilates certified</span><span class="chip">YogaWorks RYT200</span><span class="chip">Pre &amp; postnatal specialist</span><span class="chip">Professional Merrithew equipment</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="panel">
+    <div class="wrap reveal">
+      <span class="eyebrow">The space</span>
+      <h2 class="sec-h">Inside the studio</h2>
+      <div class="gallery">
+        <img src="/images/artyv-g1.jpg" alt="ARTYV Studio, trapeze table by the window" loading="lazy" />
+        <img src="/images/artyv-g2.jpg" alt="ARTYV Studio, bright glass-walled space" loading="lazy" />
+        <img src="/images/artyv-g3.jpg" alt="ARTYV Studio, Merrithew Cadillac trapeze table" loading="lazy" />
+        <img src="/images/artyv-g4.jpg" alt="ARTYV Studio, interior detail with a portrait of Joseph Pilates" loading="lazy" />
+      </div>
+      <p class="rev-note">Real photos from the San Mateo studio. On your live page these become a full gallery, professionally arranged.</p>
     </div>
   </section>
 
@@ -233,7 +253,7 @@
           <div class="irow"><span class="ik">Phone</span><span>(650) 654-8550</span></div>
           <div class="irow"><span class="ik">Hours</span><span>By appointment</span></div>
           <div class="irow"><span class="ik">Booking</span><span>Call or message on Instagram</span></div>
-          <div style="margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn btn-gold" href="tel:+16506548550">Call</a><a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=ARTYV+Studio+San+Mateo" target="_blank" rel="noopener">Directions</a></div>
+          <div style="margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn btn-gold" href="tel:+16506548550">Call</a><a class="btn btn-outline" href="https://www.instagram.com/artyv_studio" target="_blank" rel="noopener">Instagram</a><a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=ARTYV+Studio+San+Mateo" target="_blank" rel="noopener">Directions</a></div>
         </div>
       </div>
     </div>
