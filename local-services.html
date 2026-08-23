@@ -4995,7 +4995,9 @@
         activeBucket = 'all'; apply();
       });
       var si = document.getElementById('listingSearch');
-      if (si) si.addEventListener('input', function(){ searchQ = si.value; apply(); });
+      // Debounce input so fast typing across hundreds of cards (Local Services has 528)
+      // doesn't re-filter the whole DOM on every keystroke and stutter on mobile.
+      var _sd; if (si) si.addEventListener('input', function(){ searchQ = si.value; clearTimeout(_sd); _sd = setTimeout(apply, 20); });
     })();
     (function () {
       var els = [].slice.call(document.querySelectorAll('.reveal'));
