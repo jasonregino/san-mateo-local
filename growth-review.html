@@ -99,6 +99,24 @@
     button:disabled{opacity:.6;cursor:default}
     #ok{display:none;background:#EAF3EA;border:1px solid #B9D7B9;color:#2A4A2A;border-radius:12px;padding:1.5rem;text-align:center}
     .fineprint{text-align:center;color:var(--ink-soft);font-size:.85rem;margin-top:.9rem}
+    /* conversational growth review chat */
+    .gr-chat{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:1.2rem;margin-top:1.4rem;display:flex;flex-direction:column}
+    .gr-msgs{display:flex;flex-direction:column;gap:.6rem;max-height:440px;overflow-y:auto;padding:.2rem}
+    .gr-msg{max-width:85%;padding:.7rem .95rem;border-radius:14px;font-size:.98rem;line-height:1.5;word-wrap:break-word;overflow-wrap:anywhere}
+    .gr-msg.bot{align-self:flex-start;background:var(--paper-2);color:var(--ink);border-bottom-left-radius:4px}
+    .gr-msg.user{align-self:flex-end;background:var(--clay);color:#fff;border-bottom-right-radius:4px}
+    .gr-msg a{color:inherit;text-decoration:underline}
+    .gr-typing{align-self:flex-start;color:var(--ink-soft);font-size:.9rem;font-style:italic;padding:.2rem .4rem}
+    .gr-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
+    .gr-chip{background:#fff;border:1.5px solid var(--clay);color:var(--clay-deep);border-radius:999px;padding:.45rem .9rem;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;width:auto}
+    .gr-chip:hover{background:var(--clay);color:#fff}
+    .gr-bar{display:flex;gap:.5rem;margin-top:.9rem}
+    .gr-bar input{flex:1;border:1.5px solid var(--line);border-radius:9px;padding:.75rem;font:inherit;background:#fff;color:var(--ink)}
+    .gr-bar input:focus{outline:2px solid var(--clay);border-color:transparent}
+    .gr-bar button{width:auto;flex:none;padding:.75rem 1.3rem}
+    .gr-fallback{text-align:center;margin-top:1rem;font-size:.9rem;color:var(--ink-soft)}
+    .gr-fallback a{color:var(--clay-deep);font-weight:700;cursor:pointer;text-decoration:underline}
+    #formFallback{display:none;margin-top:1.2rem}
     /* footer */
     footer{border-top:1.5px solid var(--ink);margin-top:1rem;padding:2rem 0;color:var(--ink-soft);font-size:.85rem}
     footer .wrap{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;justify-content:space-between}
@@ -196,7 +214,7 @@
       <p class="sec-label">How it works</p>
       <h2 class="sec-h">Three steps, then it's in your inbox</h2>
       <div class="steps">
-        <div class="step"><div class="n">1</div><div><h3>Tell us about your business</h3><p>The short form below takes about thirty seconds.</p></div></div>
+        <div class="step"><div class="n">1</div><div><h3>Have a quick chat below</h3><p>Answer a few short questions, about a minute. We even take a first look while you do.</p></div></div>
         <div class="step"><div class="n">2</div><div><h3>A local reviews how you show up online</h3><p>We do the digging, not you. No call required, no software to install.</p></div></div>
         <div class="step"><div class="n">3</div><div><h3>You get your personalized Growth Review</h3><p>We send it within about five business days. Free, and no obligation to do anything with it.</p></div></div>
       </div>
@@ -205,22 +223,35 @@
       </div>
     </section>
 
-    <!-- ===== REQUEST FORM ===== -->
+    <!-- ===== REQUEST: CONVERSATIONAL GROWTH REVIEW ===== -->
     <section id="request" style="padding-top:0.5rem;">
-      <div class="formwrap">
-        <h2>Request your free Growth Review</h2>
-        <p class="sub">Tell us where to look, and where to send it.</p>
-        <iframe
-            src="https://api.leadconnectorhq.com/widget/form/aRPdopwYRW2h4H9vndno"
-            style="width:100%;min-height:820px;border:none;border-radius:8px"
-            id="inline-aRPdopwYRW2h4H9vndno"
-            data-layout="{'id':'INLINE'}"
-            data-form-name="Free Growth Review Request"
-            data-height="786"
-            data-form-id="aRPdopwYRW2h4H9vndno"
-            title="Free Growth Review Request">
-        </iframe>
-        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+      <p class="sec-label">Start here</p>
+      <h2 class="sec-h">Let's take a quick look at your business</h2>
+      <div class="gr-chat">
+        <div class="gr-msgs" id="grMsgs" aria-live="polite"></div>
+        <div class="gr-chips" id="grChips"></div>
+        <form class="gr-bar" id="grBar">
+          <input id="grInput" type="text" autocomplete="off" placeholder="Type your answer..." aria-label="Your message" />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <p class="gr-fallback">Prefer to fill out a form instead? <a id="showForm">Open the form</a></p>
+      <div id="formFallback">
+        <div class="formwrap">
+          <h2>Request your free Growth Review</h2>
+          <p class="sub">Tell us where to look, and where to send it.</p>
+          <iframe
+              src="https://api.leadconnectorhq.com/widget/form/aRPdopwYRW2h4H9vndno"
+              style="width:100%;min-height:820px;border:none;border-radius:8px"
+              id="inline-aRPdopwYRW2h4H9vndno"
+              data-layout="{'id':'INLINE'}"
+              data-form-name="Free Growth Review Request"
+              data-height="786"
+              data-form-id="aRPdopwYRW2h4H9vndno"
+              title="Free Growth Review Request">
+          </iframe>
+          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        </div>
       </div>
     </section>
   </div>
@@ -251,7 +282,38 @@
       } catch(e){}
     })();
   </script>
-  <!-- BCM lead-capture chat (GHL) — business pages only -->
-  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a7a99e7e427c78bb5f65491"></script>
+  <!-- Conversational Growth Review chat (SML brain -> BCM webhook) -->
+  <script>
+    (function(){
+      var msgs=document.getElementById('grMsgs'), chipsEl=document.getElementById('grChips'),
+          bar=document.getElementById('grBar'), input=document.getElementById('grInput');
+      if(!msgs||!bar) return;
+      var history=[], busy=false, done=false;
+      var OPENER="Hi, I'm the San Mateo Local growth guide. I can take a quick, honest look at how your business shows up online, then point you to a free Growth Review if it would help. To start, what kind of business do you run?";
+      function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+      function linkify(s){return esc(s).replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/)[^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>').replace(/\n/g,'<br>');}
+      function add(role,text){var d=document.createElement('div');d.className='gr-msg '+(role==='user'?'user':'bot');d.innerHTML=linkify(text);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+      function setChips(chips){chipsEl.innerHTML='';if(!chips||!chips.length)return;chips.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='gr-chip';b.textContent=c;b.onclick=function(){send(c);};chipsEl.appendChild(b);});}
+      function typing(on){var t=document.getElementById('grTyping');if(on){if(!t){t=document.createElement('div');t.id='grTyping';t.className='gr-typing';t.textContent='typing...';msgs.appendChild(t);msgs.scrollTop=msgs.scrollHeight;}}else if(t){t.remove();}}
+      async function send(text){
+        if(busy||done)return; text=(text||input.value).trim(); if(!text)return;
+        input.value=''; setChips([]); add('user',text); history.push({role:'user',content:text}); busy=true; typing(true);
+        try{
+          var res=await fetch('/api/growth-review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({messages:history})});
+          var j=await res.json(); typing(false);
+          if(j&&j.reply){add('bot',j.reply); history.push({role:'assistant',content:j.reply}); setChips(j.chips);
+            if(j.done){done=true; input.disabled=true; input.placeholder='Sent. Thank you!'; var sb=bar.querySelector('button'); if(sb)sb.disabled=true;}}
+          else{add('bot','Sorry, something glitched on my end. You can also use the form just below.');}
+        }catch(e){typing(false); add('bot','Sorry, something glitched on my end. You can also use the form just below.');}
+        busy=false;
+      }
+      bar.addEventListener('submit',function(e){e.preventDefault();send();});
+      add('bot',OPENER); history.push({role:'assistant',content:OPENER});
+      var sf=document.getElementById('showForm'); if(sf){sf.onclick=function(){var f=document.getElementById('formFallback'); if(f){f.style.display='block'; var p=sf.closest('.gr-fallback'); if(p)p.style.display='none'; f.scrollIntoView({behavior:'smooth',block:'start'});}};}
+    })();
+  </script>
+  <!-- NOTE: the floating BCM GHL chat widget is intentionally NOT on this page.
+       The Conversational Growth Review above IS this page's chat; a second floating
+       chat would confuse visitors and split leads away from the diagnostic. -->
 </body>
 </html>
