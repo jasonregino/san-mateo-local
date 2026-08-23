@@ -118,6 +118,14 @@
     .gr-fallback a{color:var(--clay-deep);font-weight:700;cursor:pointer;text-decoration:underline}
     #formFallback{display:none;margin-top:1.2rem}
     .gr-done{margin-top:1rem;background:#EAF3EA;border:1px solid #B9D7B9;color:#2A4A2A;border-radius:12px;padding:1rem 1.2rem;text-align:center;font-weight:600;font-size:.98rem}
+    .gr-stage{margin-top:1rem}
+    .gr-row{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+    .gr-row input{flex:1 1 240px;border:1.5px solid var(--line);border-radius:9px;padding:.8rem;font:inherit;font-size:1rem;background:#fff;color:var(--ink)}
+    .gr-row input:focus{outline:2px solid var(--clay);border-color:transparent}
+    .gr-next{background:var(--clay);color:#fff;border:none;border-radius:9px;padding:.8rem 1.5rem;font-weight:700;font-size:1rem;cursor:pointer;width:auto}
+    .gr-next:hover{background:var(--clay-deep)}
+    .gr-skip{display:inline-block;margin-top:.6rem;background:none;border:none;color:var(--ink-soft);text-decoration:underline;cursor:pointer;font:inherit;font-size:.9rem;width:auto;padding:.3rem 0}
+    .gr-loading{color:var(--ink-soft);font-style:italic;padding:.5rem .2rem}
     /* footer */
     footer{border-top:1.5px solid var(--ink);margin-top:1rem;padding:2rem 0;color:var(--ink-soft);font-size:.85rem}
     footer .wrap{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;justify-content:space-between}
@@ -215,7 +223,7 @@
       <p class="sec-label">How it works</p>
       <h2 class="sec-h">Three steps, then it's in your inbox</h2>
       <div class="steps">
-        <div class="step"><div class="n">1</div><div><h3>Have a quick chat below</h3><p>Answer a few short questions, about a minute. We even take a first look while you do.</p></div></div>
+        <div class="step"><div class="n">1</div><div><h3>Answer three quick questions</h3><p>Just your business name, site, and what you want to improve. Then we take a real look and show you what we find, right here.</p></div></div>
         <div class="step"><div class="n">2</div><div><h3>A local reviews how you show up online</h3><p>We do the digging, not you. No call required, no software to install.</p></div></div>
         <div class="step"><div class="n">3</div><div><h3>You get your personalized Growth Review</h3><p>We send it within about five business days. Free, and no obligation to do anything with it.</p></div></div>
       </div>
@@ -230,11 +238,7 @@
       <h2 class="sec-h">Let's take a quick look at your business</h2>
       <div class="gr-chat">
         <div class="gr-msgs" id="grMsgs" aria-live="polite"></div>
-        <div class="gr-chips" id="grChips"></div>
-        <form class="gr-bar" id="grBar">
-          <input id="grInput" type="text" autocomplete="off" placeholder="Type your answer..." aria-label="Your message" />
-          <button type="submit">Send</button>
-        </form>
+        <div class="gr-stage" id="grStage"></div>
       </div>
       <p class="gr-fallback">Prefer to fill out a form instead? <a id="showForm">Open the form</a></p>
       <div id="formFallback">
@@ -283,33 +287,74 @@
       } catch(e){}
     })();
   </script>
-  <!-- Conversational Growth Review chat (SML brain -> BCM webhook) -->
+  <!-- Conversational Growth Review wizard: one question at a time -> live investigation -> value -> capture -->
   <script>
     (function(){
-      var msgs=document.getElementById('grMsgs'), chipsEl=document.getElementById('grChips'),
-          bar=document.getElementById('grBar'), input=document.getElementById('grInput');
-      if(!msgs||!bar) return;
-      var history=[], busy=false, done=false;
-      var OPENER="Hi, I'm the San Mateo Local growth guide. I can take a quick, honest look at how your business shows up online, then point you to a free Growth Review if it would help. To start, what kind of business do you run?";
+      var msgs=document.getElementById('grMsgs'), stage=document.getElementById('grStage');
+      if(!msgs||!stage) return;
+      var S={business_name:'',website:'',goal:'',notes:'',first_name:'',email:''};
       function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
-      function linkify(s){return esc(s).replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/)[^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>').replace(/\n/g,'<br>');}
-      function add(role,text){var d=document.createElement('div');d.className='gr-msg '+(role==='user'?'user':'bot');d.innerHTML=linkify(text);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
-      function setChips(chips){chipsEl.innerHTML='';if(!chips||!chips.length)return;chips.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='gr-chip';b.textContent=c;b.onclick=function(){send(c);};chipsEl.appendChild(b);});}
-      function typing(on){var t=document.getElementById('grTyping');if(on){if(!t){t=document.createElement('div');t.id='grTyping';t.className='gr-typing';t.textContent='typing...';msgs.appendChild(t);msgs.scrollTop=msgs.scrollHeight;}}else if(t){t.remove();}}
-      async function send(text){
-        if(busy||done)return; text=(text||input.value).trim(); if(!text)return;
-        input.value=''; setChips([]); add('user',text); history.push({role:'user',content:text}); busy=true; typing(true);
-        try{
-          var res=await fetch('/api/growth-review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({messages:history})});
-          var j=await res.json(); typing(false);
-          if(j&&j.reply){add('bot',j.reply); history.push({role:'assistant',content:j.reply}); setChips(j.chips);
-            if(j.done){done=true; bar.style.display='none'; chipsEl.style.display='none'; var db=document.createElement('div'); db.className='gr-done'; db.innerHTML='&#10003; All set. Your free Growth Review is on its way, look for it in your inbox within about five business days.'; msgs.parentNode.appendChild(db); db.scrollIntoView({behavior:'smooth',block:'nearest'});}}
-          else{add('bot','Sorry, something glitched on my end. You can also use the form just below.');}
-        }catch(e){typing(false); add('bot','Sorry, something glitched on my end. You can also use the form just below.');}
-        busy=false;
+      function fmt(s){return esc(s).replace(/\n/g,'<br>');}
+      function bot(t){var d=document.createElement('div');d.className='gr-msg bot';d.innerHTML=fmt(t);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d;}
+      function user(t){var d=document.createElement('div');d.className='gr-msg user';d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+      function clearStage(){stage.innerHTML='';}
+      function ask(ph,onNext,opts){
+        opts=opts||{}; clearStage();
+        var row=document.createElement('div'); row.className='gr-row';
+        var inp=document.createElement('input'); inp.type=opts.type||'text'; inp.placeholder=ph||''; inp.setAttribute('aria-label',ph||'Your answer');
+        var btn=document.createElement('button'); btn.type='button'; btn.className='gr-next'; btn.textContent=opts.btn||'Next';
+        function go(){var v=inp.value.trim(); if(!v && !opts.allowEmpty){inp.focus();return;} onNext(v);}
+        btn.onclick=go; inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();go();}});
+        row.appendChild(inp); row.appendChild(btn); stage.appendChild(row);
+        if(opts.skip){var sk=document.createElement('button');sk.type='button';sk.className='gr-skip';sk.textContent=opts.skip;sk.onclick=function(){onNext(opts.skipValue||'');};stage.appendChild(sk);}
+        inp.focus();
       }
-      bar.addEventListener('submit',function(e){e.preventDefault();send();});
-      add('bot',OPENER); history.push({role:'assistant',content:OPENER});
+      function loading(t){clearStage();var d=document.createElement('div');d.className='gr-loading';d.textContent=t;stage.appendChild(d);}
+      function action(label,onClick){clearStage();var b=document.createElement('button');b.type='button';b.className='gr-next';b.textContent=label;b.onclick=onClick;stage.appendChild(b);}
+      function finish(){clearStage();var d=document.createElement('div');d.className='gr-done';d.innerHTML='&#10003; All set. Your free Growth Review is on its way, look for it in your inbox within about five business days.';stage.appendChild(d);}
+
+      bot("Let's take a quick look at your business. What's your business name?");
+      ask('e.g. Marlowe Coffee', function(v){ S.business_name=v; user(v); stepWebsite(); });
+
+      function stepWebsite(){
+        bot("Nice. What's your website?");
+        ask('yourbusiness.com', function(v){ S.website=v; user(v||"I don't have one"); stepGoal(); }, {allowEmpty:true, skip:"I don't have a website", skipValue:'none'});
+      }
+      function stepGoal(){
+        bot("Got it. What would you most like to improve right now?");
+        ask('e.g. getting found by more local customers', function(v){ S.goal=v; user(v); analyze(); });
+      }
+      async function analyze(){
+        bot('Let me take a look at how '+(S.business_name||'your business')+' is showing up online...');
+        loading('Looking...');
+        try{
+          var res=await fetch('/api/growth-review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({step:'analyze',business_name:S.business_name,website:S.website,goal:S.goal})});
+          var j=await res.json();
+          if(j&&j.findings){ S.notes=j.notes||''; bot(j.findings); offer(); }
+          else{ clearStage(); bot("I had trouble pulling your details just now. You can still get the full review with the form just below."); }
+        }catch(e){ clearStage(); bot("I had trouble pulling your details just now. You can still get the full review with the form just below."); }
+      }
+      function offer(){
+        bot("Want the full free Growth Review? A local writes up the specific fixes, in priority order, and emails it to you. No cost, no obligation.");
+        action('Yes, send me the full review', function(){ user('Yes, send it'); stepName(); });
+      }
+      function stepName(){
+        bot("Great. What's your first name?");
+        ask('First name', function(v){ S.first_name=v; user(v); stepEmail(); });
+      }
+      function stepEmail(){
+        bot("And the best email to send it to?");
+        ask('you@business.com', function(v){ if(!/.+@.+\..+/.test(v)){ bot("Hmm, that email does not look quite right. Mind trying again?"); stepEmail(); return; } S.email=v; user(v); submit(); }, {type:'email', btn:'Send my Growth Review'});
+      }
+      async function submit(){
+        loading('Sending...');
+        try{
+          await fetch('/api/growth-review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({step:'submit',business_name:S.business_name,first_name:S.first_name,email:S.email,goal:S.goal,notes:S.notes})});
+          bot("You're all set, "+S.first_name+". Your free Growth Review is submitted. A local will take a look and email it to you within about five business days. Nothing more you need to do right now.");
+          finish();
+        }catch(e){ clearStage(); bot("Something glitched sending that. You can also use the form just below and we'll still get it."); }
+      }
+
       var sf=document.getElementById('showForm'); if(sf){sf.onclick=function(){var f=document.getElementById('formFallback'); if(f){f.style.display='block'; var p=sf.closest('.gr-fallback'); if(p)p.style.display='none'; f.scrollIntoView({behavior:'smooth',block:'start'});}};}
     })();
   </script>
