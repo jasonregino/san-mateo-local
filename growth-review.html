@@ -153,9 +153,38 @@
       <p class="kick">Free for San Mateo businesses</p>
       <h1>See how your business shows up online, and the one thing to fix first</h1>
       <p><strong style="color:var(--ink);">A local</strong> takes a real look at your Google profile, your reviews, your website, and how customers find and reach you. Then we send you a short, personalized write-up. What is working, what is not, and the single highest-value fix to start with.</p>
-      <a class="cta" href="#request">Get my free Growth Review</a>
       <p class="free-note">Free, no obligation, and useful even if you handle everything yourself.</p>
     </div>
+  </div>
+
+  <!-- ===== REQUEST: CONVERSATIONAL GROWTH REVIEW (front door, top of page) ===== -->
+  <div class="wrap">
+    <section id="request" style="padding-top:0.5rem;">
+      <p class="sec-label">Start here</p>
+      <h2 class="sec-h">Let's take a quick look at your business</h2>
+      <div class="gr-chat">
+        <div class="gr-msgs" id="grMsgs" aria-live="polite"></div>
+        <div class="gr-stage" id="grStage"></div>
+      </div>
+      <p class="gr-fallback">Prefer to fill out a form instead? <a id="showForm">Open the form</a></p>
+      <div id="formFallback">
+        <div class="formwrap">
+          <h2>Request your free Growth Review</h2>
+          <p class="sub">Tell us where to look, and where to send it.</p>
+          <iframe
+              src="https://api.leadconnectorhq.com/widget/form/aRPdopwYRW2h4H9vndno"
+              style="width:100%;min-height:820px;border:none;border-radius:8px"
+              id="inline-aRPdopwYRW2h4H9vndno"
+              data-layout="{'id':'INLINE'}"
+              data-form-name="Free Growth Review Request"
+              data-height="786"
+              data-form-id="aRPdopwYRW2h4H9vndno"
+              title="Free Growth Review Request">
+          </iframe>
+          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        </div>
+      </div>
+    </section>
   </div>
 
   <div class="trust">
@@ -231,34 +260,6 @@
         <strong>A quick, honest note:</strong> we personally review a limited number of San Mateo businesses each month, so each one stays genuinely useful. If we're at capacity, we'll let you know and keep you updated on the next available opening.
       </div>
     </section>
-
-    <!-- ===== REQUEST: CONVERSATIONAL GROWTH REVIEW ===== -->
-    <section id="request" style="padding-top:0.5rem;">
-      <p class="sec-label">Start here</p>
-      <h2 class="sec-h">Let's take a quick look at your business</h2>
-      <div class="gr-chat">
-        <div class="gr-msgs" id="grMsgs" aria-live="polite"></div>
-        <div class="gr-stage" id="grStage"></div>
-      </div>
-      <p class="gr-fallback">Prefer to fill out a form instead? <a id="showForm">Open the form</a></p>
-      <div id="formFallback">
-        <div class="formwrap">
-          <h2>Request your free Growth Review</h2>
-          <p class="sub">Tell us where to look, and where to send it.</p>
-          <iframe
-              src="https://api.leadconnectorhq.com/widget/form/aRPdopwYRW2h4H9vndno"
-              style="width:100%;min-height:820px;border:none;border-radius:8px"
-              id="inline-aRPdopwYRW2h4H9vndno"
-              data-layout="{'id':'INLINE'}"
-              data-form-name="Free Growth Review Request"
-              data-height="786"
-              data-form-id="aRPdopwYRW2h4H9vndno"
-              title="Free Growth Review Request">
-          </iframe>
-          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-        </div>
-      </div>
-    </section>
   </div>
 
   <footer>
@@ -307,7 +308,7 @@
         btn.onclick=go; inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();go();}});
         row.appendChild(inp); row.appendChild(btn); stage.appendChild(row);
         if(opts.skip){var sk=document.createElement('button');sk.type='button';sk.className='gr-skip';sk.textContent=opts.skip;sk.onclick=function(){onNext(opts.skipValue||'');};stage.appendChild(sk);}
-        inp.focus();
+        try{inp.focus({preventScroll:true});}catch(e){}
       }
       function loading(t){clearStage();var d=document.createElement('div');d.className='gr-loading';d.textContent=t;stage.appendChild(d);}
       function action(label,onClick){clearStage();var b=document.createElement('button');b.type='button';b.className='gr-next';b.textContent=label;b.onclick=onClick;stage.appendChild(b);}
