@@ -694,7 +694,7 @@
         <div class="l-acts"><a class="act" href="/business/edis-quesabirrias.html">Details</a><a class="act" href="tel:+16507669884">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=Edi's%20Quesabirrias%20and%20Tacos%20500%20E%20Third%20Ave%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener">Directions</a></div>
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Edi's%20Quesabirrias%20and%20Tacos&amp;state=CA&amp;phone=%2B16507669884&amp;city=San%20Mateo&amp;category=Eat%20%26%20Drink&amp;directory_type=Taco%20Truck" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
-      <article class="listing reveal" data-bucket="taco-food-trucks" data-h="2100~2700|3540~4140|4980~5580|6420~7020|7860~8460">
+      <article class="listing reveal" data-bucket="taco-food-trucks" data-h="2100~2700|3540~4140|4980~5580|6420~7020|7860~8460" data-kw="tacos taqueria">
         <span class="l-type">Taco Truck</span>
         <h3>El Sabor de Mi Pueblo</h3>
         <p class="l-meta">North Central &middot; $</p>
@@ -2857,7 +2857,7 @@
         var q = searchQ.trim().toLowerCase(), shown = 0;
         cards.forEach(function(l){
           var okB = activeBucket === 'all' || (activeBucket === 'open-now' ? l.classList.contains('open-now') : (' ' + l.getAttribute('data-bucket') + ' ').indexOf(' ' + activeBucket + ' ') !== -1);
-          var okS = matchText(l.textContent.toLowerCase(), q);
+          var okS = matchText((l.textContent + ' ' + (l.getAttribute('data-kw') || '')).toLowerCase(), q);
           var vis = okB && okS;
           l.style.display = vis ? '' : 'none';
           if (vis) shown++;

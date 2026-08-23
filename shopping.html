@@ -830,7 +830,7 @@
         var q = searchQ.trim().toLowerCase(), shown = 0;
         cards.forEach(function(l){
           var okB = activeBucket === 'all' || (activeBucket === 'open-now' ? l.classList.contains('open-now') : (' ' + l.getAttribute('data-bucket') + ' ').indexOf(' ' + activeBucket + ' ') !== -1);
-          var okS = matchText(l.textContent.toLowerCase(), q);
+          var okS = matchText((l.textContent + ' ' + (l.getAttribute('data-kw') || '')).toLowerCase(), q);
           var vis = okB && okS;
           l.style.display = vis ? '' : 'none';
           if (vis) shown++;

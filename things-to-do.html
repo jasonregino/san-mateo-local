@@ -368,13 +368,13 @@
         <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Kiddo%20Adventure%20Indoor%20Playground&amp;state=CA&amp;phone=%2B16504367488&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fkiddo-adventure.com&amp;category=Things%20To%20Do&amp;directory_type=Family" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
       <article class="listing reveal" data-bucket="family-culture" data-h="660~1020|2040~2640|3480~4080|4920~5520|6360~6960|7800~8220|9240~9660">
-        <span class="l-type">Attraction</span>
+        <span class="l-type">Library</span>
         <h3>San Mateo Public Library (Main)</h3>
         <p class="l-meta">Downtown &middot; Free</p>
         <span class="l-open" aria-hidden="true"></span>
         <p class="l-desc">The city's main library branch with a big children's area, story times, and free community programs near downtown.</p>
         <div class="l-acts"><a class="act" href="/business/sm-public-library.html">Details</a><a class="act" href="tel:+16505227800">Call</a><a class="act" href="https://www.google.com/maps/search/?api=1&query=San%20Mateo%20Public%20Library%20(Main)%2055%20W%203rd%20Ave%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener">Directions</a><a class="act" href="https://www.cityofsanmateo.org/516/Main-Library" target="_blank" rel="noopener">Website</a></div>
-        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=San%20Mateo%20Public%20Library%20(Main)&amp;state=CA&amp;phone=%2B16505227800&amp;city=San%20Mateo&amp;postal_code=94402&amp;website=https%3A%2F%2Fwww.cityofsanmateo.org%2F516%2FMain-Library&amp;category=Things%20To%20Do&amp;directory_type=Attraction" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
+        <a class="l-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=San%20Mateo%20Public%20Library%20(Main)&amp;state=CA&amp;phone=%2B16505227800&amp;city=San%20Mateo&amp;postal_code=94402&amp;website=https%3A%2F%2Fwww.cityofsanmateo.org%2F516%2FMain-Library&amp;category=Things%20To%20Do&amp;directory_type=Library" target="_blank" rel="noopener">Is this your business? Verify your information &rsaquo;</a>
       </article>
       <article class="listing reveal" data-bucket="entertainment" data-h="">
         <span class="l-type">Venue</span>
@@ -919,7 +919,7 @@
         var q = searchQ.trim().toLowerCase(), shown = 0;
         cards.forEach(function(l){
           var okB = activeBucket === 'all' || (activeBucket === 'open-now' ? l.classList.contains('open-now') : (' ' + l.getAttribute('data-bucket') + ' ').indexOf(' ' + activeBucket + ' ') !== -1);
-          var okS = matchText(l.textContent.toLowerCase(), q);
+          var okS = matchText((l.textContent + ' ' + (l.getAttribute('data-kw') || '')).toLowerCase(), q);
           var vis = okB && okS;
           l.style.display = vis ? '' : 'none';
           if (vis) shown++;
