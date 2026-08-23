@@ -82,9 +82,9 @@
     .tcard .tp{color:var(--muted);font-size:15px;margin-top:.4rem}
     .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}
     .chip{font-size:12px;font-weight:600;letter-spacing:.4px;color:var(--primary);border:1px solid var(--line);padding:.45rem .95rem;background:#fff}
-    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
-    .gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--line);display:block}
-    @media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .gallery{column-count:4;column-gap:1rem;margin-top:2.4rem}
+    .gallery img{width:100%;height:auto;margin:0 0 1rem;border:1px solid var(--line);display:block;break-inside:avoid}
+    @media(max-width:900px){.gallery{column-count:2}}
     .visit-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2.4rem;margin-top:2.4rem}
     .mapframe{border:1px solid var(--line);overflow:hidden;min-height:360px}
     .mapframe iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
@@ -94,7 +94,7 @@
     .rev-score{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:var(--accent);line-height:1}
     .rev-stars{color:var(--accent);letter-spacing:3px;font-size:18px}
     .rev-count{color:var(--muted);font-size:14px;margin-top:.2rem}
-    .rev-link{margin-left:auto;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
+    .rev-link{margin-left:auto;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);padding:.5rem 0;display:inline-block}
     .rev-note{color:var(--muted);font-size:13px;margin-top:1rem;font-style:italic}
     .faq{margin-top:2rem;max-width:48rem}
     .faq details{border-bottom:1px solid var(--line);padding:1.1rem 0}
@@ -115,7 +115,7 @@
     footer .maint{display:inline-flex;align-items:center;gap:.4rem;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-light);margin-top:1rem}
     footer .fmeta{font-size:13.5px;color:#9A928A;margin-top:1rem;line-height:1.9}
     footer .fsoc{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.7rem 1.4rem}
-    footer .fsoc a{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#C7C2B8;font-weight:600}
+    footer .fsoc a{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#C7C2B8;font-weight:600;padding:.6rem 0;display:inline-block}
     footer .fcopy{font-size:11.5px;color:#786F64;margin-top:1.8rem;border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem}
     @media(max-width:900px){
       .wrap,.nav-in{padding-left:20px;padding-right:20px}
@@ -131,7 +131,7 @@
   <script>(function(){try{document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 </head>
 <body>
-  <div class="sample-banner"><b>Draft preview for ARTYV Studio,</b> built by San Mateo Local. Real photos and studio details drop in once you confirm.</div>
+  <div class="sample-banner"><b>Draft preview for ARTYV Studio,</b> built by San Mateo Local. The header image is a placeholder; the gallery is the studio's own public photos, shown privately pending your OK.</div>
 
   <!-- HERO -->
   <section class="hero">
@@ -140,6 +140,7 @@
       <span style="display:flex;align-items:center;gap:.55rem"><span class="nav-brand">ARTYV</span><a class="prem-badge" href="/list-your-business.html" target="_blank" rel="noopener" title="What is a Premium page? See why businesses list on San Mateo Local.">&#9733; Premium</a></span>
       <div class="nav-right">
         <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#chloe">Instructor</a>
         <a class="nav-link" href="#visit">Visit</a>
         <a class="nav-link" href="tel:+16506548550">(650) 654-8550</a>
       </div>
@@ -148,7 +149,7 @@
       <div class="hero-in">
         <span class="eyebrow">Boutique Pilates &middot; 25th Avenue, San Mateo</span>
         <h1>ARTYV<br><em>Studio</em></h1>
-        <p class="hero-sub">A boutique Pilates studio built around private and duet sessions. STOTT Pilates, pre- and postnatal training, and full one-on-one attention, by appointment.</p>
+        <p class="hero-sub">A boutique Pilates studio focused on private and duet sessions. STOTT Pilates, pre- and postnatal training, and full one-on-one attention, by appointment.</p>
         <div class="hero-rate">&#9733; 5.0 on Google</div>
         <div class="hero-cta">
           <a class="btn btn-gold" href="tel:+16506548550">Call to book</a>
@@ -201,11 +202,11 @@
   </section>
 
   <!-- MEET CHLOE -->
-  <section>
+  <section id="chloe">
     <div class="wrap reveal">
       <span class="eyebrow">The instructor</span>
       <h2 class="sec-h">Meet Chloe</h2>
-      <p class="sec-lead">ARTYV is led by Chloe Sohyun Jo, a STOTT Pilates certified instructor and YogaWorks RYT200 with a pre- and postnatal specialty. Before San Mateo, she ran her own boutique studio in Korea for more than four years. She opened ARTYV in 2026 and teaches every session herself, one-on-one or duet, never a group class.</p>
+      <p class="sec-lead">ARTYV is led by Chloe Sohyun Jo, a STOTT Pilates certified instructor and YogaWorks RYT200 with a pre- and postnatal specialty. Before San Mateo, she ran her own private studio in Korea for more than four years. She opened ARTYV in 2026 and teaches every session herself, one-on-one or duet, never a group class.</p>
       <div class="chips">
         <span class="chip">STOTT Pilates certified</span><span class="chip">YogaWorks RYT200</span><span class="chip">Pre &amp; postnatal specialist</span><span class="chip">Professional Merrithew equipment</span>
       </div>
@@ -234,7 +235,7 @@
       <h2 class="sec-h">Loved by clients</h2>
       <div class="rev">
         <div class="rev-score">5.0</div>
-        <div><div class="rev-count" style="color:var(--primary);font-weight:700;font-size:15px">on Google</div><div class="rev-count">From verified client reviews</div></div>
+        <div><div class="rev-count" style="color:var(--primary);font-weight:700;font-size:15px">on Google</div><div class="rev-count">From client reviews</div></div>
         <a class="rev-link" href="https://www.google.com/maps/search/?api=1&query=ARTYV+Studio+San+Mateo" target="_blank" rel="noopener">Read reviews &rarr;</a>
       </div>
       <p class="rev-note">On your live page, this section pulls in your real Google reviews automatically, always the genuine ones.</p>
@@ -253,7 +254,7 @@
           <div class="irow"><span class="ik">Phone</span><span>(650) 654-8550</span></div>
           <div class="irow"><span class="ik">Hours</span><span>By appointment</span></div>
           <div class="irow"><span class="ik">Booking</span><span>Call or message on Instagram</span></div>
-          <div style="margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn btn-gold" href="tel:+16506548550">Call</a><a class="btn btn-outline" href="https://www.instagram.com/artyv_studio" target="_blank" rel="noopener">Instagram</a><a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=ARTYV+Studio+San+Mateo" target="_blank" rel="noopener">Directions</a></div>
+          <div style="margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn btn-gold" href="tel:+16506548550">Call</a><a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=ARTYV+Studio+San+Mateo" target="_blank" rel="noopener">Directions</a><a class="btn btn-outline" href="https://www.instagram.com/artyv_studio" target="_blank" rel="noopener">Instagram</a><a class="btn btn-outline" href="https://sanmateolocal.com" target="_blank" rel="noopener">San Mateo Local</a></div>
         </div>
       </div>
     </div>
@@ -287,6 +288,8 @@
       <h2 class="sec-h">Found on Google, Maps, and AI</h2>
       <p class="sec-lead" style="margin:1.2rem auto 0">People don't just search Google anymore. They ask "where's a good Pilates studio in San Mateo?" on Maps, and more and more on AI tools. This page gives search engines and AI systems a rich, structured, up-to-date source of truth about ARTYV, so they understand who you are, what you offer, and where to find you.</p>
       <div class="tags" style="justify-content:center"><span>SEO</span><span>Local SEO</span><span>AEO</span><span>GEO</span><a href="https://sanmateolocal.com" target="_blank" rel="noopener">San Mateo Local AI Guide</a></div>
+      <div style="margin-top:2.2rem"><a class="btn btn-gold" href="https://sanmateolocal.com" target="_blank" rel="noopener">Explore San Mateo Local</a></div>
+      <p class="sec-lead" style="margin:1.4rem auto 0;font-size:15px">A hand-built guide to the best of San Mateo, from someone who actually lives here.</p>
     </div>
   </section>
 
@@ -296,7 +299,7 @@
       <a class="maint" href="https://sanmateolocal.com" target="_blank" rel="noopener" style="text-decoration:none"><svg viewBox="0 0 32 32" width="18" height="18" aria-hidden="true" style="vertical-align:middle"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg> Part of San Mateo Local</a>
       <div class="fmeta">161 W 25th Ave, Ste 106, San Mateo, CA 94403 &middot; (650) 654-8550<br>By appointment</div>
       <div class="fsoc"><a href="https://www.instagram.com/artyv_studio" target="_blank" rel="noopener">Instagram</a><a href="https://www.google.com/maps/search/?api=1&query=ARTYV+Studio+San+Mateo" target="_blank" rel="noopener">Directions</a><a href="tel:+16506548550">Call</a></div>
-      <div class="fcopy">Draft preview built by San Mateo Local for ARTYV Studio. Photos and studio details are placeholders until confirmed. &copy; 2026 San Mateo Local.</div>
+      <div class="fcopy">Draft preview built by San Mateo Local for ARTYV Studio. The header image is a placeholder; gallery photos are from the studio's own public posts, shown in this private draft pending your OK. &copy; 2026 San Mateo Local.</div>
     </div>
   </footer>
 
