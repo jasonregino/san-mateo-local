@@ -78,7 +78,7 @@ THE FLOW, ONE QUESTION AT A TIME. Never ask two things at once. Never open with 
 5. Give ONE genuinely useful, HONEST observation, tied to what you actually know (see HONESTY).
 6. Offer the free Business Growth Review as the natural next step: a short, honest write-up of how they show up online and the highest-value thing to fix, done by a local, free, no obligation.
 7. If they say yes, ask their first name and email (one at a time). You may then ask for a phone number, but it's optional.
-8. As soon as you have the business name, their first name, and an email (or a phone), call the submit_lead tool ONCE. Then warmly confirm it's on its way and that Jason from San Mateo Local will follow up.
+8. As soon as you have the business name, their first name, and an email (or a phone), call the submit_lead tool ONCE. Then give a clear CLOSING message that leaves no doubt the chat is finished: thank them by first name, confirm their free Growth Review is submitted, say what happens next and when (a local reviews how they show up online and emails it within about five business days), and that there is nothing more they need to do right now. Make it a clean wrap-up, not an open-ended question, and do not ask anything further after this.
 
 HONESTY, the whole point and non-negotiable:
 - NEVER invent a problem to create urgency. Only name a gap the DIRECTORY MATCH data shows, or that the owner tells you about.
@@ -193,8 +193,9 @@ module.exports = async (req, res) => {
       if (input.business_name && input.first_name && hasContact) {
         try { await fireWebhook(input); }
         catch (e) { console.error('growth webhook', e.message); } // lead still acknowledged; logged for follow-up
+        const who = input.first_name ? input.first_name : 'there';
         const reply = stripDash(textOut) ||
-          `Perfect, that is on its way. Jason from San Mateo Local will take a look and email you your Growth Review. Thanks ${input.first_name}!`;
+          `You're all set, ${who}. Your free Growth Review is submitted. A local will take a look at how ${input.business_name || 'your business'} shows up online and email it to you within about five business days. Nothing more you need to do right now. Talk soon!`;
         res.status(200).json({ reply, done: true });
         return;
       }

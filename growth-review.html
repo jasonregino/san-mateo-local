@@ -117,6 +117,7 @@
     .gr-fallback{text-align:center;margin-top:1rem;font-size:.9rem;color:var(--ink-soft)}
     .gr-fallback a{color:var(--clay-deep);font-weight:700;cursor:pointer;text-decoration:underline}
     #formFallback{display:none;margin-top:1.2rem}
+    .gr-done{margin-top:1rem;background:#EAF3EA;border:1px solid #B9D7B9;color:#2A4A2A;border-radius:12px;padding:1rem 1.2rem;text-align:center;font-weight:600;font-size:.98rem}
     /* footer */
     footer{border-top:1.5px solid var(--ink);margin-top:1rem;padding:2rem 0;color:var(--ink-soft);font-size:.85rem}
     footer .wrap{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;justify-content:space-between}
@@ -302,7 +303,7 @@
           var res=await fetch('/api/growth-review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({messages:history})});
           var j=await res.json(); typing(false);
           if(j&&j.reply){add('bot',j.reply); history.push({role:'assistant',content:j.reply}); setChips(j.chips);
-            if(j.done){done=true; input.disabled=true; input.placeholder='Sent. Thank you!'; var sb=bar.querySelector('button'); if(sb)sb.disabled=true;}}
+            if(j.done){done=true; bar.style.display='none'; chipsEl.style.display='none'; var db=document.createElement('div'); db.className='gr-done'; db.innerHTML='&#10003; All set. Your free Growth Review is on its way, look for it in your inbox within about five business days.'; msgs.parentNode.appendChild(db); db.scrollIntoView({behavior:'smooth',block:'nearest'});}}
           else{add('bot','Sorry, something glitched on my end. You can also use the form just below.');}
         }catch(e){typing(false); add('bot','Sorry, something glitched on my end. You can also use the form just below.');}
         busy=false;
