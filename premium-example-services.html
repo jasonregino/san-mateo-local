@@ -58,8 +58,11 @@
     .nav-link{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.82)}
     .nav-link:hover{color:#fff}
     /* HERO, gradient instead of a photo (real page uses the shop's own photos) */
-    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:radial-gradient(1200px 600px at 75% 20%,rgba(176,141,87,.22),transparent 60%),linear-gradient(160deg,#232935 0%,#161B22 55%,#0F131A 100%)}
-    .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(15,19,26,.5),transparent 55%)}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:url('/images/standard-barber-hero.jpg') center/cover no-repeat, #1E232B}
+    .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,19,22,.84) 0%,rgba(15,19,22,.52) 45%,rgba(15,19,22,.12) 100%),linear-gradient(0deg,rgba(15,19,22,.5),transparent 55%)}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem}
+    .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);display:block}
+    @media(max-width:900px){.gallery{grid-template-columns:1fr}}
     .hero-in{position:relative;z-index:2;color:#fff;max-width:760px}
     .hero .eyebrow{color:var(--accent-light)}
     .hero .eyebrow::before{background:var(--accent-light)}
@@ -182,6 +185,19 @@
     <div class="wrap reveal">
       <span class="eyebrow center">Since 2011</span>
       <p>The kind of shop where they <em>remember your cut</em>, take walk-ins, and never rush you out of the chair.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="panel">
+    <div class="wrap reveal">
+      <span class="eyebrow">Step inside</span>
+      <h2 class="sec-h">The shop</h2>
+      <div class="gallery">
+        <img src="/images/standard-barber-1.jpg" alt="Barber chair and mirror at The Standard Barber Co." loading="lazy" />
+        <img src="/images/standard-barber-2.jpg" alt="Grooming station with combs, clippers, and grooming products" loading="lazy" />
+        <img src="/images/standard-barber-3.jpg" alt="The Standard Barber Co. interior with barber chairs and mirrors" loading="lazy" />
+      </div>
     </div>
   </section>
 
