@@ -63,6 +63,13 @@
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem}
     .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);display:block}
     @media(max-width:900px){.gallery{grid-template-columns:1fr}}
+    .team{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.4rem}
+    .tmember{border:1px solid var(--line);background:#fff}
+    .tphoto{aspect-ratio:4/5;background-size:cover;background-position:center 28%}
+    .tmember .tname{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--primary);margin:1rem 1.2rem 0}
+    .tmember .trole{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:700;margin:.25rem 1.2rem 0}
+    .tmember .tspec{color:var(--muted);font-size:14.5px;margin:.5rem 1.2rem 1.3rem}
+    @media(max-width:760px){.team{grid-template-columns:1fr}}
     .hero-in{position:relative;z-index:2;color:#fff;max-width:760px}
     .hero .eyebrow{color:var(--accent-light)}
     .hero .eyebrow::before{background:var(--accent-light)}
@@ -239,6 +246,34 @@
       </div>
       <div class="chips">
         <span class="chip">Est. 2011</span><span class="chip">Walk-ins welcome</span><span class="chip">Online booking</span><span class="chip">Licensed barbers</span><span class="chip">Cash &amp; card</span><span class="chip">Parking nearby</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE BARBERS -->
+  <section>
+    <div class="wrap reveal">
+      <span class="eyebrow">The chairs</span>
+      <h2 class="sec-h">Meet the barbers</h2>
+      <div class="team">
+        <div class="tmember">
+          <div class="tphoto" style="background-image:url('/images/standard-barber-team-1.jpg')"></div>
+          <div class="tname">Cole Mercer</div>
+          <div class="trole">Owner &amp; Master Barber</div>
+          <div class="tspec">Fifteen years behind the chair. Known for a clean skin fade and a beard shaped right to the jawline.</div>
+        </div>
+        <div class="tmember">
+          <div class="tphoto" style="background-image:url('/images/standard-barber-team-2.jpg')"></div>
+          <div class="tname">Danny Tran</div>
+          <div class="trole">Barber</div>
+          <div class="tspec">Sharp scissor work and classic tapers, and the one you want for a kid's first cut.</div>
+        </div>
+        <div class="tmember">
+          <div class="tphoto" style="background-image:url('/images/standard-barber-team-3.jpg')"></div>
+          <div class="tname">Rae Solis</div>
+          <div class="trole">Barber</div>
+          <div class="tspec">Textured crops, modern styles, and a straight-razor shave worth the extra ten minutes.</div>
+        </div>
       </div>
     </div>
   </section>
