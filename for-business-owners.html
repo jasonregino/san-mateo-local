@@ -787,7 +787,7 @@
       try {
         var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:data });
         var j = await res.json();
-        if (j.success) { form.style.display='none'; document.getElementById('ok').style.display='block'; document.getElementById('ok').scrollIntoView({behavior:'smooth',block:'center'}); }
+        if (j.success) { try{gtag('event','lead_submit',{form_name:'services_interest'});}catch(e){} form.style.display='none'; document.getElementById('ok').style.display='block'; document.getElementById('ok').scrollIntoView({behavior:'smooth',block:'center'}); }
         else throw new Error(j.message||'error');
       } catch(err) {
         btn.textContent = 'Send it in'; btn.disabled = false;
@@ -798,6 +798,7 @@
   <script>
   (function(){
     var f=document.getElementById('listForm');if(!f)return;
+    function lead(n){try{gtag('event','lead_submit',{form_name:n});}catch(e){}}
     var up=document.getElementById('upsell'), ok=document.getElementById('listOk'), intro=document.getElementById('listIntro');
     document.getElementById('lsend').addEventListener('click',function(){
       if(!f.reportValidity())return;
@@ -812,6 +813,7 @@
         var res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)});
         var j=await res.json();
         if(!j.success)throw new Error();
+        lead('add_my_business');
         if(after){ after(); return; }
         if(redirect){window.location=redirect;return;}
         f.style.display='none'; up.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'});
@@ -839,6 +841,7 @@
         var res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(form)});
         var j=await res.json();
         if(!j.success)throw new Error();
+        lead({featForm:'featured',spotForm:'spotlight',buzzForm:'buzz'}[form.id]||'paid_intake');
         window.location=url; return;
       }catch(err){ btn.disabled=false; btn.textContent=resetLabel; (function(b){var f=b&&(b.form||b.closest('form'));if(!f)return;var e=f.querySelector('.paidErr');if(!e){e=document.createElement('p');e.className='paidErr';e.setAttribute('role','alert');e.style.cssText='color:#B23324;font-size:.9rem;margin-top:.7rem;text-align:center;';f.appendChild(e);}e.textContent="That didn't go through. Try again, or email hello@sanmateolocal.com.";e.style.display='block';})(btn); }
     }
@@ -891,6 +894,7 @@
       btn.textContent='Saving...'; btn.disabled=true;
       fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(bf)}).then(function(r){return r.json();}).then(function(j){
         if(!j.success)throw new Error();
+        lead('buzz');
         bf.style.display='none'; bok.style.display='block'; bok.scrollIntoView({behavior:'smooth',block:'center'});
       }).catch(function(){ btn.disabled=false; btn.textContent='Continue, $35/mo →'; (function(b){var f=b&&(b.form||b.closest('form'));if(!f)return;var e=f.querySelector('.paidErr');if(!e){e=document.createElement('p');e.className='paidErr';e.setAttribute('role','alert');e.style.cssText='color:#B23324;font-size:.9rem;margin-top:.7rem;text-align:center;';f.appendChild(e);}e.textContent="That didn't go through. Try again, or email hello@sanmateolocal.com.";e.style.display='block';})(btn); });
     });
