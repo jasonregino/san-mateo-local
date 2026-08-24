@@ -13,6 +13,8 @@
     gtag('config', 'G-ZBBC09ZJZQ');
   </script>
   <title>Free Business Growth Review | San Mateo Local</title>
+  <meta name="x-smc-build" content="gr-6" />
+  <!-- growth-review build: gr-6 -->
   <meta name="description" content="A free, personalized review of how your San Mateo business shows up online. A local checks your Google profile, reviews, website, and how customers find and reach you, then sends you the one thing to fix first. No cost, no obligation." />
   <link rel="canonical" href="https://sanmateolocal.com/growth-review.html" />
   <meta name="theme-color" content="#221D16" />
@@ -44,7 +46,7 @@
     header.site .bar{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:62px;padding:0 1.25rem}
     .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--ink)}
     .brand span{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.25rem;letter-spacing:-0.02em}
-    header nav a{display:inline-block;color:var(--ink-soft);text-decoration:none;font-size:.9rem;margin-left:1.2rem;padding:.6rem 0}
+    header nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink-soft);text-decoration:none;font-size:.9rem;margin-left:1.2rem}
     header nav a:hover{color:var(--clay-deep)}
     /* hero */
     .hero{padding:3.4rem 0 2rem;text-align:center}
@@ -131,7 +133,7 @@
     footer .wrap{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;justify-content:space-between}
     footer a{color:var(--ink-soft);text-decoration:none}
     footer a:hover{color:var(--clay-deep)}
-    footer .fnav a{display:inline-block;margin-right:1rem;padding:.4rem 0}
+    footer .fnav a{display:inline-flex;align-items:center;min-height:44px;margin-right:1rem}
   </style>
 </head>
 <body>
@@ -299,6 +301,8 @@
       function bot(t){var d=document.createElement('div');d.className='gr-msg bot';d.innerHTML=fmt(t);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d;}
       function user(t){var d=document.createElement('div');d.className='gr-msg user';d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
       function clearStage(){stage.innerHTML='';}
+      function clip(s,n){s=String(s||'');return s.length<=n?s:s.slice(0,n).replace(/\s+\S*$/,'')+'…';}
+      function revealForm(scroll){var f=document.getElementById('formFallback');if(f){f.style.display='block';var fb=document.querySelector('.gr-fallback');if(fb)fb.style.display='none';if(scroll)f.scrollIntoView({behavior:'smooth',block:'start'});}}
       function ask(ph,onNext,opts){
         opts=opts||{}; clearStage();
         var row=document.createElement('div'); row.className='gr-row';
@@ -326,15 +330,22 @@
         ask('e.g. getting found by more local customers', function(v){ S.goal=v; user(v); analyze(); }, {maxlength:120});
       }
       async function analyze(confirmed){
-        bot('Let me take a look at how '+((S.business_name||'your business').slice(0,50))+' is showing up online...');
+        bot('Let me take a look at how '+clip(S.business_name||'your business',50)+' is showing up online...');
         loading('Looking...');
         try{
           var res=await fetch('/api/growth-review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({step:'analyze',business_name:S.business_name,website:S.website,goal:S.goal,confirmed:!!confirmed})});
+          if(!res.ok) throw new Error('bad');
           var j=await res.json();
           if(j&&j.needsConfirm){ confirmIdentity(j.resolvedName); return; }
-          if(j&&j.findings){ S.notes=j.notes||''; bot(j.findings); offer(); }
-          else{ clearStage(); bot("I had trouble pulling your details just now. You can still get the full review with the form just below."); }
-        }catch(e){ clearStage(); bot("I had trouble pulling your details just now. You can still get the full review with the form just below."); }
+          if(j&&j.findings){ S.notes=j.notes||''; bot(j.findings); offer(); return; }
+          analyzeFailed(confirmed);
+        }catch(e){ analyzeFailed(confirmed); }
+      }
+      function analyzeFailed(confirmed){
+        clearStage();
+        bot("I had trouble taking a look just now. Tap to try again, or use the form just below.");
+        action('Try again', function(){ analyze(confirmed); });
+        revealForm();
       }
       function confirmIdentity(resolved){
         clearStage();
@@ -355,7 +366,7 @@
         bot("Great. What's your first name?");
         ask('First name', function(v){ S.first_name=v; user(v); stepEmail(); }, {maxlength:60});
       }
-      var EMAIL=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      var EMAIL=/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]{2,}$/;
       function stepEmail(reask){
         bot(reask ? "That did not look like a full email. Could you type it once more, like you@business.com?" : "And the best email to send it to?");
         ask('you@business.com', function(v){ user(v.slice(0,80)); if(v.length>120 || !EMAIL.test(v)){ stepEmail(true); return; } S.email=v; submit(); }, {type:'email', btn:'Send my Growth Review', maxlength:120});
@@ -363,13 +374,20 @@
       async function submit(){
         loading('Sending...');
         try{
-          await fetch('/api/growth-review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({step:'submit',business_name:S.business_name,first_name:S.first_name,email:S.email,goal:S.goal,notes:S.notes})});
+          var res=await fetch('/api/growth-review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({step:'submit',business_name:S.business_name,first_name:S.first_name,email:S.email,goal:S.goal,notes:S.notes})});
+          if(!res.ok) throw new Error('bad');
           bot("You're all set, "+S.first_name+". Your free Growth Review is submitted. A local will take a look and email it to you within about five business days. Nothing more you need to do right now.");
-          finish();
-        }catch(e){ clearStage(); bot("Something glitched sending that. You can also use the form just below and we'll still get it."); }
+          finish(); return;
+        }catch(e){ submitFailed(); }
+      }
+      function submitFailed(){
+        clearStage();
+        bot("That did not go through. Tap to try again, or use the form just below.");
+        action('Try again', submit);
+        revealForm();
       }
 
-      var sf=document.getElementById('showForm'); if(sf){sf.onclick=function(){var f=document.getElementById('formFallback'); if(f){f.style.display='block'; var p=sf.closest('.gr-fallback'); if(p)p.style.display='none'; f.scrollIntoView({behavior:'smooth',block:'start'});}};}
+      var sf=document.getElementById('showForm'); if(sf){sf.onclick=function(){revealForm(true);};}
     })();
   </script>
   <!-- NOTE: the floating BCM GHL chat widget is intentionally NOT on this page.

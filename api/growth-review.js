@@ -47,14 +47,18 @@ function matchBusiness(name) {
   return best;
 }
 
-// Does the name Google resolved to plausibly match what the owner typed? Used to gate
-// against asserting a stranger's data ("qqzzwx blorp" -> "San Mateo Zoo") as theirs.
-function nameLooksLikeMatch(a, b) {
-  const da = distinctive(a), db = distinctive(b);
-  if (!da.length || !db.length) return false;
-  for (const w of da) for (const x of db) {
-    if (w === x || (w.length >= 4 && x.indexOf(w) !== -1) || (x.length >= 4 && w.indexOf(x) !== -1)) return true;
-  }
+// Is what Google resolved ESSENTIALLY the same name the owner typed? We confirm on any
+// real difference, not just distant ones, so "Yum yogurt" -> "Yumi Yogurt" still asks
+// first. A one-tap confirm on a correct match costs nothing; a silent near-miss costs
+// all trust (it would state a stranger's or a near-miss's rating as theirs).
+function essentiallySame(a, b) {
+  const n = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  a = n(a); b = n(b);
+  if (!a || !b) return false;
+  if (a === b) return true;
+  // they typed a distinctive chunk of the real name ("Ironwood" -> "Ironwood Hair Company")
+  if (a.length >= 6 && b.indexOf(a) === 0) return true;
+  if (b.length >= 6 && a.indexOf(b) === 0) return true;
   return false;
 }
 const titleCase = s => String(s || '').replace(/\b\w/g, c => c.toUpperCase());
@@ -129,8 +133,10 @@ const FINDINGS_SYSTEM = `You are the San Mateo Local growth guide. You have just
 
 WRITE:
 - 2 to 4 short observations, each on its own line, each prefixed with a plain checkmark and a space: "✓ ". Do NOT use decorative or colorful emoji (no star, globe, pin, lightbulb); keep it clean and professional.
-- Then one final line prefixed with "→ " that begins "The biggest opportunity: " and names the SINGLE highest-impact move, chosen by likely REVENUE impact (what brings more customers or gets them found by people ready to buy), NOT by what San Mateo Local can offer.
-- Do NOT make claiming or updating the San Mateo Local listing the biggest opportunity for a business that is already strong on Google (a solid rating with real review volume). If a strong business has no larger gap, say so plainly ("You are in good shape online") and name only a small next step. Claiming the SML listing is at most a minor secondary point, never the headline for a strong business.
+- Then one final line prefixed with "→ " that begins "The biggest opportunity: " and names the SINGLE highest-impact GROWTH move, chosen by likely REVENUE impact (what brings more customers or gets them found by people ready to buy).
+- ABSOLUTE RULE: the "→ The biggest opportunity" line must NEVER be a San Mateo Local action (never "claim", "complete", "get on", or "get listed on" San Mateo Local), for ANY business. That is off-limits for this line. A San Mateo Local action may appear only as a small "✓" observation, and if they are not listed yet, phrase it "get listed on San Mateo Local" (never "get on your listing").
+- If after the facts the only thing left is a San Mateo Local action, there is NO major growth gap: for the opportunity line, say plainly they are in strong shape and name the most real non-SML next step, however small (for example "→ The biggest opportunity: you are in good shape online, so the main thing is keeping fresh reviews coming in").
+- If this is clearly a national or regional CHAIN (a brand with many locations, like Trader Joe's, Starbucks, McDonald's), do not treat the visitor as running the brand's website or web presence and do not push a San Mateo Local listing; keep it brief and note the Growth Review is really built for independent, locally owned businesses.
 - Keep the whole thing tight: a few lines, plain language, no fluff.
 
 HONESTY (this is the entire point, non-negotiable):
@@ -169,7 +175,7 @@ async function readBody(req) {
 const stripDash = s => String(s).replace(/\s*[—―]\s*/g, ', ');
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gr-5');
+  res.setHeader('x-smc-build', 'gr-6');
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
 
   let body;
@@ -180,8 +186,9 @@ module.exports = async (req, res) => {
   if (body.step === 'submit') {
     const business_name = String(body.business_name || '').slice(0, 80).trim();
     const first_name = String(body.first_name || '').slice(0, 60).trim();
-    const email = String(body.email || '').slice(0, 120).trim();
+    const email = String(body.email || '').slice(0, 254).trim();
     if (!business_name || !first_name || !email) { res.status(400).json({ error: 'missing business_name, first_name, or email' }); return; }
+    if (/[<>]/.test(email) || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]{2,}$/.test(email)) { res.status(400).json({ error: 'invalid email' }); return; }
     const dir = matchBusiness(business_name);
     try {
       await fireWebhook({
@@ -209,10 +216,10 @@ module.exports = async (req, res) => {
   // still resolves to the real "Yumi Yogurt" listing.
   const dir = dirInput || (g && g.status === 'OK' && g.name ? matchBusiness(g.name) : null);
 
-  // Identity gate: if Google resolved to a business that does NOT match what they typed,
-  // and we have no directory match on their input, never assert a stranger's data as
-  // theirs ("qqzzwx blorp" -> "San Mateo Zoo"). Ask them to confirm first.
-  if (!confirmed && !dirInput && g && g.status === 'OK' && g.name && !nameLooksLikeMatch(name, g.name)) {
+  // Identity gate: confirm before findings whenever Google resolved to a name that is not
+  // ESSENTIALLY what they typed. Fires on near-misses too ("Yum yogurt" -> "Yumi Yogurt"),
+  // so a stranger's or a near-miss's numbers are never asserted as theirs without a nod.
+  if (!confirmed && g && g.status === 'OK' && g.name && !essentiallySame(name, g.name)) {
     res.status(200).json({ needsConfirm: true, resolvedName: g.name });
     return;
   }
