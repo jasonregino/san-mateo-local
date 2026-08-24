@@ -124,6 +124,7 @@ HONESTY (this is the entire point, non-negotiable):
 - State ONLY what the FACTS say. Never invent a problem, a number, a rating, or a gap to manufacture urgency.
 - If something is strong, SAY SO plainly ("your Google rating is excellent"). Balance praise with the real opportunity.
 - If Google data is missing or the business was not found, do NOT claim anything about their Google profile.
+- If what the owner told you conflicts with what you find (for example they said they have no website but one is linked on their Google listing), reconcile it gently as a question or an opportunity ("I see a site linked on your Google, is that one current? If it is outdated or hard to find, that is worth fixing"). Never bluntly contradict the owner or imply they were wrong.
 - Do not claim a specific search ranking. You may note that having (or missing) a San Mateo Local page affects local discovery.
 - You are giving a quick first look, not the full review. Do not ask for their email or any contact info; the page handles that next.
 
@@ -153,7 +154,7 @@ async function readBody(req) {
 const stripDash = s => String(s).replace(/\s*[—―]\s*/g, ', ');
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gr-2');
+  res.setHeader('x-smc-build', 'gr-3');
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
 
   let body;
@@ -186,8 +187,11 @@ module.exports = async (req, res) => {
   const goal = String(body.goal || '').slice(0, 200).trim();
   if (!name) { res.status(400).json({ error: 'no business name' }); return; }
 
-  const dir = matchBusiness(name);
   const g = await googleLookup(name);
+  // Match our directory on the owner's input AND on Google's corrected name, so a
+  // typo like "Yum yogurt" still resolves to the real "Yumi Yogurt" listing instead
+  // of falsely reporting "not on the San Mateo Local guide".
+  const dir = matchBusiness(name) || (g && g.status === 'OK' && g.name ? matchBusiness(g.name) : null);
   const facts = buildFacts(name, website, goal, dir, g);
   const notes = buildNotes(name, goal, dir, g);
 
