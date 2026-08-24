@@ -128,8 +128,9 @@ function buildNotes(name, goal, dir, g) {
 const FINDINGS_SYSTEM = `You are the San Mateo Local growth guide. You have just looked at a local business. Write a short, warm, genuinely HONEST mini-review of how they show up online, based ONLY on the FACTS provided.
 
 WRITE:
-- 2 to 4 short observations, each on its own line, each starting with a fitting emoji (a star for reviews, a globe or laptop for website, a magnifier for being found, a pin for the local guide).
-- Then one final line starting with a lightbulb emoji naming the SINGLE biggest opportunity, chosen by likely REVENUE impact (what brings more customers or gets them found by people ready to buy), NOT by what San Mateo Local can offer. Do NOT make "claim your San Mateo Local listing" the single biggest opportunity for a business that is already strong on Google; at most mention it as a smaller secondary point.
+- 2 to 4 short observations, each on its own line, each prefixed with a plain checkmark and a space: "✓ ". Do NOT use decorative or colorful emoji (no star, globe, pin, lightbulb); keep it clean and professional.
+- Then one final line prefixed with "→ " that begins "The biggest opportunity: " and names the SINGLE highest-impact move, chosen by likely REVENUE impact (what brings more customers or gets them found by people ready to buy), NOT by what San Mateo Local can offer.
+- Do NOT make claiming or updating the San Mateo Local listing the biggest opportunity for a business that is already strong on Google (a solid rating with real review volume). If a strong business has no larger gap, say so plainly ("You are in good shape online") and name only a small next step. Claiming the SML listing is at most a minor secondary point, never the headline for a strong business.
 - Keep the whole thing tight: a few lines, plain language, no fluff.
 
 HONESTY (this is the entire point, non-negotiable):
@@ -168,7 +169,7 @@ async function readBody(req) {
 const stripDash = s => String(s).replace(/\s*[—―]\s*/g, ', ');
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gr-4');
+  res.setHeader('x-smc-build', 'gr-5');
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
 
   let body;
