@@ -47,6 +47,18 @@ function matchBusiness(name) {
   return best;
 }
 
+// Does the name Google resolved to plausibly match what the owner typed? Used to gate
+// against asserting a stranger's data ("qqzzwx blorp" -> "San Mateo Zoo") as theirs.
+function nameLooksLikeMatch(a, b) {
+  const da = distinctive(a), db = distinctive(b);
+  if (!da.length || !db.length) return false;
+  for (const w of da) for (const x of db) {
+    if (w === x || (w.length >= 4 && x.indexOf(w) !== -1) || (x.length >= 4 && w.indexOf(x) !== -1)) return true;
+  }
+  return false;
+}
+const titleCase = s => String(s || '').replace(/\b\w/g, c => c.toUpperCase());
+
 // ---- Live Google lookup (best-effort; graceful fallback if key/API unavailable) ----
 async function googleLookup(name) {
   if (!MAPS_KEY) return { status: 'NO_KEY' };
@@ -93,10 +105,10 @@ function buildFacts(name, ownerWebsite, goal, dir, g) {
   }
 
   if (dir) {
-    L.push(`SAN MATEO LOCAL: they ARE listed on our guide as ${dir.cat}${dir.type ? ' / ' + dir.type : ''}${dir.area ? ' in ' + dir.area : ''} (page ${dir.detail}).`);
+    L.push(`SAN MATEO LOCAL: they ARE listed on our guide as ${dir.cat}${dir.type ? ' / ' + titleCase(dir.type) : ''}${dir.area ? ' in ' + dir.area : ''} (page ${dir.detail}).`);
     L.push(`- Website on file with San Mateo Local: ${dir.website ? 'yes' : 'no'}.`);
-    L.push(`- Listing claimed by the owner: ${dir.claimed ? 'yes' : 'no'}.`);
-    if (dir.reviews) L.push(`- Review signal on file: ${dir.reviews}.`);
+    L.push(`- Claimed by the owner on SAN MATEO LOCAL (not their Google profile): ${dir.claimed ? 'yes' : 'no'}.`);
+    if (dir.reviews) L.push(`- Separate review signal on file (its own source, do not merge with Google's count): ${dir.reviews}.`);
     L.push(`Note: having a San Mateo Local page helps people who search locally find them, but do NOT claim a specific Google search ranking (we do not measure that).`);
   } else {
     L.push(`SAN MATEO LOCAL: they are NOT currently listed on our guide. That is a real, honest visibility gap you may raise gently (they are missing from the local guide people read).`);
@@ -116,15 +128,17 @@ function buildNotes(name, goal, dir, g) {
 const FINDINGS_SYSTEM = `You are the San Mateo Local growth guide. You have just looked at a local business. Write a short, warm, genuinely HONEST mini-review of how they show up online, based ONLY on the FACTS provided.
 
 WRITE:
-- 2 to 4 short observations, each on its own line, each starting with a fitting emoji (for example a star for reviews, a globe or laptop for website, a magnifier for being found, a pin for the local guide).
-- Then one final line starting with a lightbulb emoji naming the SINGLE biggest opportunity you see.
+- 2 to 4 short observations, each on its own line, each starting with a fitting emoji (a star for reviews, a globe or laptop for website, a magnifier for being found, a pin for the local guide).
+- Then one final line starting with a lightbulb emoji naming the SINGLE biggest opportunity, chosen by likely REVENUE impact (what brings more customers or gets them found by people ready to buy), NOT by what San Mateo Local can offer. Do NOT make "claim your San Mateo Local listing" the single biggest opportunity for a business that is already strong on Google; at most mention it as a smaller secondary point.
 - Keep the whole thing tight: a few lines, plain language, no fluff.
 
 HONESTY (this is the entire point, non-negotiable):
 - State ONLY what the FACTS say. Never invent a problem, a number, a rating, or a gap to manufacture urgency.
-- If something is strong, SAY SO plainly ("your Google rating is excellent"). Balance praise with the real opportunity.
+- If something is strong, SAY SO plainly. Balance praise with the real opportunity.
 - If Google data is missing or the business was not found, do NOT claim anything about their Google profile.
-- If what the owner told you conflicts with what you find (for example they said they have no website but one is linked on their Google listing), reconcile it gently as a question or an opportunity ("I see a site linked on your Google, is that one current? If it is outdated or hard to find, that is worth fixing"). Never bluntly contradict the owner or imply they were wrong.
+- Attribute every number to ONE named source and keep it consistent within your reply: a Google review count is Google's, a Yelp signal is Yelp's. Never merge them into one total or restate the same count as if it came from several places.
+- Never ASK the owner a question; this step has no reply box, so state everything. If what the owner told you conflicts with what you find (they said no website but one is linked on Google), reconcile it as a gentle STATEMENT, not a question: for example "Your Google listing points to a website; if that is outdated or hard to find, it is worth a look." Never bluntly contradict them.
+- When a listing is unclaimed, always say "your San Mateo Local listing" so it is not confused with their Google profile.
 - Do not claim a specific search ranking. You may note that having (or missing) a San Mateo Local page affects local discovery.
 - You are giving a quick first look, not the full review. Do not ask for their email or any contact info; the page handles that next.
 
@@ -154,7 +168,7 @@ async function readBody(req) {
 const stripDash = s => String(s).replace(/\s*[—―]\s*/g, ', ');
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gr-3');
+  res.setHeader('x-smc-build', 'gr-4');
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
 
   let body;
@@ -163,7 +177,7 @@ module.exports = async (req, res) => {
 
   // ---- STEP: submit the earned lead ----
   if (body.step === 'submit') {
-    const business_name = String(body.business_name || '').slice(0, 120).trim();
+    const business_name = String(body.business_name || '').slice(0, 80).trim();
     const first_name = String(body.first_name || '').slice(0, 60).trim();
     const email = String(body.email || '').slice(0, 120).trim();
     if (!business_name || !first_name || !email) { res.status(400).json({ error: 'missing business_name, first_name, or email' }); return; }
@@ -182,16 +196,26 @@ module.exports = async (req, res) => {
 
   // ---- STEP: analyze the business, return honest findings (value before capture) ----
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The growth guide is not switched on yet.' }); return; }
-  const name = String(body.business_name || '').slice(0, 120).trim();
+  const confirmed = body.confirmed === true;
+  const name = String(body.business_name || '').slice(0, 80).trim();
   const website = String(body.website || '').slice(0, 200).trim();
   const goal = String(body.goal || '').slice(0, 200).trim();
   if (!name) { res.status(400).json({ error: 'no business name' }); return; }
 
   const g = await googleLookup(name);
-  // Match our directory on the owner's input AND on Google's corrected name, so a
-  // typo like "Yum yogurt" still resolves to the real "Yumi Yogurt" listing instead
-  // of falsely reporting "not on the San Mateo Local guide".
-  const dir = matchBusiness(name) || (g && g.status === 'OK' && g.name ? matchBusiness(g.name) : null);
+  const dirInput = matchBusiness(name);
+  // Also match the directory on Google's corrected name, so a typo like "Yum yogurt"
+  // still resolves to the real "Yumi Yogurt" listing.
+  const dir = dirInput || (g && g.status === 'OK' && g.name ? matchBusiness(g.name) : null);
+
+  // Identity gate: if Google resolved to a business that does NOT match what they typed,
+  // and we have no directory match on their input, never assert a stranger's data as
+  // theirs ("qqzzwx blorp" -> "San Mateo Zoo"). Ask them to confirm first.
+  if (!confirmed && !dirInput && g && g.status === 'OK' && g.name && !nameLooksLikeMatch(name, g.name)) {
+    res.status(200).json({ needsConfirm: true, resolvedName: g.name });
+    return;
+  }
+
   const facts = buildFacts(name, website, goal, dir, g);
   const notes = buildNotes(name, goal, dir, g);
 

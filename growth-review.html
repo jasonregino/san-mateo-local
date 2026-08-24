@@ -44,7 +44,7 @@
     header.site .bar{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:62px;padding:0 1.25rem}
     .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--ink)}
     .brand span{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.25rem;letter-spacing:-0.02em}
-    header nav a{color:var(--ink-soft);text-decoration:none;font-size:.9rem;margin-left:1.2rem}
+    header nav a{display:inline-block;color:var(--ink-soft);text-decoration:none;font-size:.9rem;margin-left:1.2rem;padding:.6rem 0}
     header nav a:hover{color:var(--clay-deep)}
     /* hero */
     .hero{padding:3.4rem 0 2rem;text-align:center}
@@ -101,7 +101,7 @@
     .fineprint{text-align:center;color:var(--ink-soft);font-size:.85rem;margin-top:.9rem}
     /* conversational growth review chat */
     .gr-chat{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:1.2rem;margin-top:1.4rem;display:flex;flex-direction:column}
-    .gr-msgs{display:flex;flex-direction:column;gap:.6rem;max-height:440px;overflow-y:auto;padding:.2rem}
+    .gr-msgs{display:flex;flex-direction:column;gap:.6rem;padding:.2rem}
     .gr-msg{max-width:85%;padding:.7rem .95rem;border-radius:14px;font-size:.98rem;line-height:1.5;word-wrap:break-word;overflow-wrap:anywhere}
     .gr-msg.bot{align-self:flex-start;background:var(--paper-2);color:var(--ink);border-bottom-left-radius:4px}
     .gr-msg.user{align-self:flex-end;background:var(--clay);color:#fff;border-bottom-right-radius:4px}
@@ -115,7 +115,7 @@
     .gr-bar input:focus{outline:2px solid var(--clay);border-color:transparent}
     .gr-bar button{width:auto;flex:none;padding:.75rem 1.3rem}
     .gr-fallback{text-align:center;margin-top:1rem;font-size:.9rem;color:var(--ink-soft)}
-    .gr-fallback a{color:var(--clay-deep);font-weight:700;cursor:pointer;text-decoration:underline}
+    .gr-fallback a{display:inline-block;color:var(--clay-deep);font-weight:700;cursor:pointer;text-decoration:underline;padding:.7rem .3rem;min-height:44px}
     #formFallback{display:none;margin-top:1.2rem}
     .gr-done{margin-top:1rem;background:#EAF3EA;border:1px solid #B9D7B9;color:#2A4A2A;border-radius:12px;padding:1rem 1.2rem;text-align:center;font-weight:600;font-size:.98rem}
     .gr-stage{margin-top:1rem}
@@ -131,7 +131,7 @@
     footer .wrap{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;justify-content:space-between}
     footer a{color:var(--ink-soft);text-decoration:none}
     footer a:hover{color:var(--clay-deep)}
-    footer .fnav a{margin-right:1rem}
+    footer .fnav a{display:inline-block;margin-right:1rem;padding:.4rem 0}
   </style>
 </head>
 <body>
@@ -302,7 +302,7 @@
       function ask(ph,onNext,opts){
         opts=opts||{}; clearStage();
         var row=document.createElement('div'); row.className='gr-row';
-        var inp=document.createElement('input'); inp.type=opts.type||'text'; inp.placeholder=ph||''; inp.setAttribute('aria-label',ph||'Your answer');
+        var inp=document.createElement('input'); inp.type=opts.type||'text'; inp.placeholder=ph||''; inp.setAttribute('aria-label',ph||'Your answer'); if(opts.maxlength)inp.maxLength=opts.maxlength;
         var btn=document.createElement('button'); btn.type='button'; btn.className='gr-next'; btn.textContent=opts.btn||'Next';
         function go(){var v=inp.value.trim(); if(!v && !opts.allowEmpty){inp.focus();return;} onNext(v);}
         btn.onclick=go; inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();go();}});
@@ -312,28 +312,40 @@
       }
       function loading(t){clearStage();var d=document.createElement('div');d.className='gr-loading';d.textContent=t;stage.appendChild(d);}
       function action(label,onClick){clearStage();var b=document.createElement('button');b.type='button';b.className='gr-next';b.textContent=label;b.onclick=onClick;stage.appendChild(b);}
-      function finish(){clearStage();var d=document.createElement('div');d.className='gr-done';d.innerHTML='&#10003; All set. Your free Growth Review is on its way, look for it in your inbox within about five business days.';stage.appendChild(d);}
+      function finish(){clearStage();var d=document.createElement('div');d.className='gr-done';d.innerHTML='&#10003; All set. Your free Growth Review is on its way.';stage.appendChild(d);}
 
       bot("Let's take a quick look at your business. What's your business name?");
-      ask('e.g. Marlowe Coffee', function(v){ S.business_name=v; user(v); stepWebsite(); });
+      ask('e.g. Marlowe Coffee', function(v){ S.business_name=v; user(v); stepWebsite(); }, {maxlength:80});
 
       function stepWebsite(){
         bot("Nice. What's your website?");
-        ask('yourbusiness.com', function(v){ S.website=v; user(v||"I don't have one"); stepGoal(); }, {allowEmpty:true, skip:"I don't have a website", skipValue:'none'});
+        ask('yourbusiness.com', function(v){ S.website=v; user(v && v!=='none' ? v : "I don't have one"); stepGoal(); }, {allowEmpty:true, maxlength:200, skip:"I don't have a website", skipValue:'none'});
       }
       function stepGoal(){
         bot("Got it. What would you most like to improve right now?");
-        ask('e.g. getting found by more local customers', function(v){ S.goal=v; user(v); analyze(); });
+        ask('e.g. getting found by more local customers', function(v){ S.goal=v; user(v); analyze(); }, {maxlength:120});
       }
-      async function analyze(){
-        bot('Let me take a look at how '+(S.business_name||'your business')+' is showing up online...');
+      async function analyze(confirmed){
+        bot('Let me take a look at how '+((S.business_name||'your business').slice(0,50))+' is showing up online...');
         loading('Looking...');
         try{
-          var res=await fetch('/api/growth-review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({step:'analyze',business_name:S.business_name,website:S.website,goal:S.goal})});
+          var res=await fetch('/api/growth-review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({step:'analyze',business_name:S.business_name,website:S.website,goal:S.goal,confirmed:!!confirmed})});
           var j=await res.json();
+          if(j&&j.needsConfirm){ confirmIdentity(j.resolvedName); return; }
           if(j&&j.findings){ S.notes=j.notes||''; bot(j.findings); offer(); }
           else{ clearStage(); bot("I had trouble pulling your details just now. You can still get the full review with the form just below."); }
         }catch(e){ clearStage(); bot("I had trouble pulling your details just now. You can still get the full review with the form just below."); }
+      }
+      function confirmIdentity(resolved){
+        clearStage();
+        bot('I found a business called "'+resolved+'" nearby. Is that yours?');
+        var row=document.createElement('div'); row.className='gr-row';
+        var yes=document.createElement('button'); yes.type='button'; yes.className='gr-next'; yes.textContent='Yes, that is me';
+        yes.onclick=function(){ S.business_name=resolved; user('Yes, that is me'); analyze(true); };
+        row.appendChild(yes); stage.appendChild(row);
+        var no=document.createElement('button'); no.type='button'; no.className='gr-skip'; no.textContent='No, let me retype the name';
+        no.onclick=function(){ user('No, let me retype'); bot("No problem. What is the exact name of your business?"); ask('Business name', function(v){ S.business_name=v; user(v); analyze(); }, {maxlength:80}); };
+        stage.appendChild(no);
       }
       function offer(){
         bot("Want the full free Growth Review? A local writes up the specific fixes, in priority order, and emails it to you. No cost, no obligation.");
@@ -341,11 +353,12 @@
       }
       function stepName(){
         bot("Great. What's your first name?");
-        ask('First name', function(v){ S.first_name=v; user(v); stepEmail(); });
+        ask('First name', function(v){ S.first_name=v; user(v); stepEmail(); }, {maxlength:60});
       }
-      function stepEmail(){
-        bot("And the best email to send it to?");
-        ask('you@business.com', function(v){ if(!/.+@.+\..+/.test(v)){ bot("Hmm, that email does not look quite right. Mind trying again?"); stepEmail(); return; } S.email=v; user(v); submit(); }, {type:'email', btn:'Send my Growth Review'});
+      var EMAIL=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      function stepEmail(reask){
+        bot(reask ? "That did not look like a full email. Could you type it once more, like you@business.com?" : "And the best email to send it to?");
+        ask('you@business.com', function(v){ user(v.slice(0,80)); if(v.length>120 || !EMAIL.test(v)){ stepEmail(true); return; } S.email=v; submit(); }, {type:'email', btn:'Send my Growth Review', maxlength:120});
       }
       async function submit(){
         loading('Sending...');
