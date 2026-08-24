@@ -13,8 +13,8 @@
     gtag('config', 'G-ZBBC09ZJZQ');
   </script>
   <title>Free Business Growth Review | San Mateo Local</title>
-  <meta name="x-smc-build" content="gr-6" />
-  <!-- growth-review build: gr-6 -->
+  <meta name="x-smc-build" content="gr-7" />
+  <!-- growth-review build: gr-7 -->
   <meta name="description" content="A free, personalized review of how your San Mateo business shows up online. A local checks your Google profile, reviews, website, and how customers find and reach you, then sends you the one thing to fix first. No cost, no obligation." />
   <link rel="canonical" href="https://sanmateolocal.com/growth-review.html" />
   <meta name="theme-color" content="#221D16" />
@@ -376,6 +376,7 @@
         try{
           var res=await fetch('/api/growth-review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({step:'submit',business_name:S.business_name,first_name:S.first_name,email:S.email,goal:S.goal,notes:S.notes})});
           if(!res.ok) throw new Error('bad');
+          try{gtag('event','lead_submit',{form_name:'growth_review_chat'});}catch(e){}
           bot("You're all set, "+S.first_name+". Your free Growth Review is submitted. A local will take a look and email it to you within about five business days. Nothing more you need to do right now.");
           finish(); return;
         }catch(e){ submitFailed(); }

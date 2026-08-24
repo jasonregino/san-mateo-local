@@ -1,4 +1,4 @@
-// San Mateo Local — Conversational Growth Review (owner diagnostic), v2.
+// San Mateo Local - Conversational Growth Review (owner diagnostic), v2.
 //
 // A Vercel serverless function at /api/growth-review. Two steps, value BEFORE capture:
 //   step "analyze": given a business name (+ optional website + goal), it actually
@@ -175,7 +175,7 @@ async function readBody(req) {
 const stripDash = s => String(s).replace(/\s*[—―]\s*/g, ', ');
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gr-6');
+  res.setHeader('x-smc-build', 'gr-7');
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
 
   let body;
@@ -240,7 +240,17 @@ module.exports = async (req, res) => {
     if (!r.ok) { console.error('anthropic', r.status, await r.text()); res.status(502).json({ error: 'The growth guide had a hiccup. Try again in a moment.' }); return; }
     const data = await r.json();
     const blocks = Array.isArray(data.content) ? data.content : [];
-    const findings = stripDash(blocks.filter(b => b && b.type === 'text' && b.text).map(b => b.text).join('\n').trim());
+    let findings = stripDash(blocks.filter(b => b && b.type === 'text' && b.text).map(b => b.text).join('\n').trim());
+    // H4 guard: the "->" biggest-opportunity line must NEVER pitch San Mateo Local. The
+    // model games the prompt by pairing it in ("claim your SML listing AND fix X"), so we
+    // deterministically swap any -> line that mentions San Mateo Local for an honest one
+    // built from the real data (a website if they lack one, else "you are in good shape").
+    const noSiteRe = /^(no|none|n\/a|i don'?t|dont|nope)/i;
+    const hasSite = !!(g && g.status === 'OK' && g.website) || !!(dir && dir.website) || (!!website && !noSiteRe.test(website));
+    const oppFallback = hasSite
+      ? '→ The biggest opportunity: you are in good shape online. Keep fresh reviews coming in and reply to the ones you get, that is what keeps you ahead with local customers.'
+      : '→ The biggest opportunity: a simple website, so the people who find you on Google have somewhere to learn more and book.';
+    findings = findings.split('\n').map(l => (l.trim().charAt(0) === '→' && /san mateo local/i.test(l)) ? oppFallback : l).join('\n');
     res.status(200).json({ findings: findings || 'I took a look but could not pull much just yet. The full Growth Review will dig in properly.', notes });
   } catch (e) {
     console.error('growth-review error', e.message);
