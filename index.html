@@ -36,16 +36,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --paper: #FAF6EC;
-      --paper-2: #F2E9D4;
-      --ink: #221D16;
-      --ink-soft: #5E5446;
-      --clay: #C25B3A;
+      --paper: #F6F0E4;
+      --paper-2: #EFE7D5;
+      --ink: #17323A;
+      --ink-soft: #47595C;
+      --clay: #C85A38;
       --clay-deep: #A5492B;
-      --sage: #41614B;
-      --sage-deep: #324C3A;
-      --bay: #2E5A6B;
-      --line: #E3D6BC;
+      --sage: #3C5A43;
+      --sage-deep: #2E4A38;
+      --bay: #10717A;
+      --bay-deep: #0C5B62;
+      --line: #E1D9C6;
       --line-soft: #ECE1CB;
       --card: #FFFDF7;
       --hero-accent: #2C9298;
@@ -61,6 +62,8 @@
       --clay-deep: #CB6336;
       --sage: #88AC8F;
       --sage-deep: #6E9077;
+      --bay: #3FA3AA;
+      --bay-deep: #2E8A90;
       --line: #3A2E24;
       --line-soft: #2C231B;
       --card: #241D17;
@@ -80,7 +83,7 @@
     .theme-toggle { background: none; border: 1.5px solid rgba(255,255,255,0.5); border-radius: 999px; width: 36px; height: 36px; cursor: pointer; color: #fff; font-size: 1rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; flex: none; transition: border-color 0.2s, color 0.2s; }
     .theme-toggle:hover { border-color: #fff; }
     .masthead.solid .theme-toggle, .masthead.nav-open .theme-toggle { border-color: var(--line); color: var(--ink); }
-    .masthead.solid .theme-toggle:hover, .masthead.nav-open .theme-toggle:hover { border-color: var(--clay); color: var(--clay-deep); }
+    .masthead.solid .theme-toggle:hover, .masthead.nav-open .theme-toggle:hover { border-color: var(--bay); color: var(--bay); }
     .theme-toggle .sun { display: none; }
     [data-theme="dark"] .theme-toggle .moon { display: none; }
     [data-theme="dark"] .theme-toggle .sun { display: inline; }
@@ -93,13 +96,17 @@
     .serif-it { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; }
 
     /* eyebrow / editorial labels */
-    .label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--clay-deep); }
+    .label { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--bay); }
 
     /* buttons */
     .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 4px; font-weight: 600; font-size: 0.98rem; border: 1.5px solid transparent; cursor: pointer; transition: background 0.15s, color 0.15s, transform 0.1s; }
     .btn:active { transform: translateY(1px); }
     .btn-clay { background: var(--clay-deep); color: #fff; }
     .btn-clay:hover { background: #8f3d22; }
+    .btn-bay { background: var(--bay); color: #fff; }
+    .btn-bay:hover { background: var(--bay-deep); }
+    .btn-sun { background: var(--clay); color: #fff; }
+    .btn-sun:hover { background: var(--clay-deep); }
     .btn-outline { background: transparent; border-color: var(--ink); color: var(--ink); }
     .btn-outline:hover { background: var(--ink); color: var(--paper); }
 
@@ -118,8 +125,8 @@
     .masthead.solid { background: var(--paper); border-bottom-color: var(--ink); box-shadow: 0 6px 24px -18px rgba(0,0,0,0.45); }
     .masthead.solid .brand-name { color: var(--ink); }
     .masthead.solid .masthead-nav a { color: var(--ink-soft); }
-    .masthead.solid .masthead-nav a:hover { color: var(--clay-deep); }
-    .masthead.solid .masthead-nav .sub { color: var(--clay-deep); }
+    .masthead.solid .masthead-nav a:hover { color: var(--bay); }
+    .masthead.solid .masthead-nav .sub { color: var(--bay); }
     .menu-btn { display: none; background: none; border: 1.5px solid rgba(255,255,255,0.5); border-radius: 8px; width: 38px; height: 38px; cursor: pointer; color: #fff; align-items: center; justify-content: center; padding: 0; flex: none; }
     .menu-btn svg { width: 20px; height: 20px; }
     .masthead.solid .menu-btn, .masthead.nav-open .menu-btn { border-color: var(--line); color: var(--ink); }
@@ -133,7 +140,7 @@
       .masthead.nav-open .mobile-nav { display: flex; flex-direction: column; padding: 0.2rem 1.5rem 0.9rem; }
       .mobile-nav a { padding: 0.85rem 0.2rem; font-size: 1.05rem; font-weight: 600; color: var(--ink); border-top: 1px solid var(--line-soft); }
       .mobile-nav a:first-child { border-top: none; }
-      .mobile-nav a.sub { color: var(--clay-deep); }
+      .mobile-nav a.sub { color: var(--bay); }
     }
 
     /* ===== Hero (full-viewport crossfade) ===== */
@@ -191,17 +198,17 @@
     .sec { padding: 4.5rem 0; }
     .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; border-bottom: 1.5px solid var(--ink); padding-bottom: 1rem; margin-bottom: 2.5rem; }
     .sec-head h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); }
-    .sec-head .link { font-size: 0.9rem; font-weight: 600; color: var(--clay-deep); white-space: nowrap; }
+    .sec-head .link { font-size: 0.9rem; font-weight: 600; color: var(--bay); white-space: nowrap; }
 
     /* ===== Favorites (auto-scrolling marquee) ===== */
     .fav-scroll { overflow: hidden; position: relative; padding: 0.4rem 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
     .fav-track { display: flex; gap: 1.25rem; width: max-content; animation: fav-marquee 100s linear infinite; }
     .fav-scroll:hover .fav-track { animation-play-state: paused; }
     @keyframes fav-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .fav { flex: 0 0 370px; border: 1.5px solid var(--ink); border-top: 4px solid var(--clay-deep); background: var(--card); box-shadow: 0 2px 6px -3px rgba(34,29,22,0.16); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+    .fav { flex: 0 0 370px; border: 1.5px solid var(--ink); border-top: 4px solid var(--bay); background: var(--card); box-shadow: 0 2px 6px -3px rgba(34,29,22,0.16); transition: transform 0.18s ease, box-shadow 0.18s ease; }
     .fav a { display: flex; flex-direction: column; height: 100%; padding: 1.7rem 1.7rem 1.8rem; }
     .fav:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -20px rgba(34,29,22,0.45); }
-    .fav .fav-kicker { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--clay-deep); }
+    .fav .fav-kicker { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--bay); }
     .fav h3 { font-size: 1.55rem; margin: 0.5rem 0 0.4rem; }
     .fav .meta { font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage-deep); font-weight: 600; margin-bottom: 0.6rem; }
     .fav p { color: var(--ink-soft); font-size: 0.97rem; flex: 1; }
@@ -217,28 +224,28 @@
     .guide-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1.5px solid var(--ink); }
     .guide-cell { padding: 1.6rem 1.5rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background 0.15s; }
     .guide-cell:hover { background: var(--paper-2); }
-    .guide-cell .num { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--clay-deep); }
+    .guide-cell .num { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--bay); }
     .guide-cell h3 { font-size: 1.35rem; margin: 0.3rem 0 0.4rem; }
     .guide-cell p { font-size: 0.92rem; color: var(--ink-soft); }
     .guide-cell.feature { background: var(--sage); color: var(--paper); }
     .guide-cell.feature .num, .guide-cell.feature p { color: rgba(250,246,236,0.82); }
     .guide-cell.feature:hover { background: var(--sage-deep); }
-    .guide-cell.feature-clay { background: var(--clay-deep); color: var(--paper); }
+    .guide-cell.feature-clay { background: var(--clay); color: var(--paper); }
     .guide-cell.feature-clay .num, .guide-cell.feature-clay p { color: rgba(250,246,236,0.85); }
-    .guide-cell.feature-clay:hover { background: #8f3d22; }
+    .guide-cell.feature-clay:hover { background: var(--clay-deep); }
     .guide-cell.feature-gold { background: #FBEBA6; color: #221D16; }
     .guide-cell.feature-gold p { color: rgba(34,29,22,0.74); }
-    .guide-cell.feature-gold .num { color: var(--clay-deep); font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; }
+    .guide-cell.feature-gold .num { color: var(--bay); font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; }
     .guide-cell.feature-gold:hover { background: #F6E293; }
     @media (max-width: 620px) { .guide-grid { grid-template-columns: 1fr; } }
 
     /* ===== Legacies ===== */
     .legacies { background: var(--paper-2); border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
     .legacies .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-    .legacies .lg-mark { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--clay-deep); }
+    .legacies .lg-mark { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--bay); }
     .legacies h2 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0.8rem 0 1.2rem; }
     .legacies p { font-size: 1.1rem; color: var(--ink-soft); margin-bottom: 1.8rem; }
-    .legacies .pull { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; line-height: 1.4; color: var(--ink); border-left: 3px solid var(--clay); padding-left: 1.5rem; }
+    .legacies .pull { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; line-height: 1.4; color: var(--ink); border-left: 3px solid var(--bay); padding-left: 1.5rem; }
     @media (max-width: 880px) { .legacies .wrap { grid-template-columns: 1fr; gap: 1.5rem; } }
 
     /* ===== San Mateo tech heritage ===== */
@@ -273,9 +280,9 @@
     /* ===== Newsletter ===== */
     .news { background: var(--ink); color: var(--paper); padding: 4rem 0; }
     .news .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
-    .news .label { color: var(--clay); }
+    .news .label { color: #EBB489; }
     .news h2 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); margin: 0.8rem 0 0.6rem; color: var(--paper); }
-    .news p { color: rgba(250,246,236,0.7); }
+    .news p { color: rgba(250,246,236,0.85); }
     .news-form { display: flex; gap: 0.6rem; flex-wrap: wrap; }
     .news-form input { flex: 1; min-width: 200px; padding: 0.85rem 1rem; border: 1.5px solid rgba(250,246,236,0.3); background: transparent; color: var(--paper); font-size: 1rem; font-family: inherit; border-radius: 4px; }
     .news-form input::placeholder { color: rgba(250,246,236,0.45); }
@@ -285,7 +292,7 @@
     /* Get involved (business + locals) */
     .involve { padding: 3.5rem 0; border-top: 1px solid var(--line); }
     .involve .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .involve-card { border: 1.5px solid var(--ink); border-top: 4px solid var(--clay-deep); padding: 1.7rem 1.6rem; }
+    .involve-card { border: 1.5px solid var(--ink); border-top: 4px solid var(--bay); padding: 1.7rem 1.6rem; }
     .involve-card h3 { font-size: 1.45rem; margin-bottom: 0.5rem; }
     .involve-card p { color: var(--ink-soft); margin-bottom: 1.3rem; }
     @media (max-width: 760px) { .involve .wrap { grid-template-columns: 1fr; } }
@@ -294,11 +301,11 @@
     /* ===== Footer ===== */
     footer.site { padding: 3rem 0 2.5rem; border-top: 1.5px solid var(--ink); }
     footer.site .wrap { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; align-items: flex-start; }
-    footer .brand-name { font-size: 1.3rem; }
+    footer .brand-name { font-size: 1.3rem; color: var(--ink); }
     footer .f-tag { color: var(--ink-soft); font-size: 0.9rem; margin-top: 0.4rem; max-width: 18rem; }
     .f-nav { display: flex; flex-direction: column; gap: 0.4rem; }
     .f-nav a { font-size: 0.92rem; color: var(--ink-soft); }
-    .f-nav a:hover { color: var(--clay-deep); }
+    .f-nav a:hover { color: var(--bay); }
     .f-copy { width: 100%; border-top: 1px solid var(--line); margin-top: 1.5rem; padding-top: 1.5rem; font-size: 0.8rem; color: var(--ink-soft); }
 
     /* ===== Scroll reveal ===== */
@@ -321,7 +328,7 @@
     /* Set day/night before paint: saved choice first, otherwise match the phone's setting. */
     (function(){ try { document.documentElement.classList.add('js'); var s = localStorage.getItem('sml-theme'); var t = s || 'light'; document.documentElement.setAttribute('data-theme', t); } catch(e){} })();
   </script>
-  <!-- LATESTBG:START --><style>.hoods{background:#4A2A3C;color:#FAF6EC;}</style><!-- LATESTBG:END -->
+  <!-- LATESTBG:START --><style>.hoods{background:#123C42;color:#F6F0E4;}</style><!-- LATESTBG:END -->
 </head>
 <body id="top">
 
@@ -418,8 +425,8 @@
   <section style="border-top:1.5px solid var(--ink); padding:1.5rem 0;">
     <style>
       .bo-chip{display:inline-block; padding:.42rem .95rem; border:1.5px solid var(--line); border-radius:999px; font-size:.94rem; font-weight:600; color:var(--ink); background:var(--card); text-decoration:none; transition:border-color .15s ease, color .15s ease;}
-      .bo-chip:hover{border-color:var(--clay); color:var(--clay-deep);}
-      .bo-chip-more{border-color:var(--clay); color:var(--clay-deep);}
+      .bo-chip:hover{border-color:var(--clay); color:var(--bay);}
+      .bo-chip-more{border-color:var(--clay); color:var(--bay);}
     </style>
     <div class="wrap" style="display:flex; align-items:center; gap:.6rem .9rem; flex-wrap:wrap;">
       <span style="font-family:'Inter',sans-serif; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--sage-deep); flex:none;">Best-of guides</span>
@@ -449,7 +456,7 @@
         .spot-card:hover{transform:translateY(-4px); box-shadow:0 16px 34px -20px rgba(34,29,22,.45);}
       </style>
       <div id="spotTrack" style="margin-top:.6rem; display:flex; flex-wrap:wrap; gap:1.2rem;">
-        <div class="spot-card" style="flex:1 1 320px; background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.9rem;">
+        <div class="spot-card" style="flex:1 1 320px; background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--bay); border-radius:14px; padding:1.7rem 1.9rem;">
           <h2 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; margin-bottom:.2rem;">Takahashi Market</h2>
           <p style="font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--sage-deep); font-weight:700; margin-bottom:.6rem;">Since 1906 &middot; Downtown San Mateo</p>
           <p style="color:var(--ink-soft);">A San Mateo treasure for well over a century. This family-run market is where locals go for Hawaiian and Japanese groceries, fresh poke, and Spam musubi, plus the hard-to-find pantry staples worth a special trip. If you haven't been, go hungry.</p>
@@ -458,11 +465,11 @@
             <div><strong style="color:var(--ink);">Where</strong> &middot; 221 S Claremont St, Downtown</div>
           </div>
           <div style="margin-top:1rem;">
-            <a href="spotlight-takahashi-market.html" style="color:var(--clay-deep); font-weight:700;">Read their story &rarr;</a> <span style="color:var(--ink-soft);">&middot;</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Takahashi%20Market%20San%20Mateo" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Map &rarr;</a> <span style="color:var(--ink-soft);">&middot;</span> <a href="https://takahashimarket.com/" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Visit &rarr;</a>
+            <a href="spotlight-takahashi-market.html" style="color:var(--bay); font-weight:700;">Read their story &rarr;</a> <span style="color:var(--ink-soft);">&middot;</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Takahashi%20Market%20San%20Mateo" target="_blank" rel="noopener" style="color:var(--bay); font-weight:700;">Map &rarr;</a> <span style="color:var(--ink-soft);">&middot;</span> <a href="https://takahashimarket.com/" target="_blank" rel="noopener" style="color:var(--bay); font-weight:700;">Visit &rarr;</a>
           </div>
         </div>
         <!-- Aldo's support feature: shown Aug 7 – Sep 7, 2026 (~1 month), then rotate out -->
-        <div class="spot-card" style="flex:1 1 320px; background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.9rem;">
+        <div class="spot-card" style="flex:1 1 320px; background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--bay); border-radius:14px; padding:1.7rem 1.9rem;">
           <h2 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; margin-bottom:.2rem;">Aldo's Pizza</h2>
           <p style="font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--sage-deep); font-weight:700; margin-bottom:.6rem;">Since 1958 &middot; Shoreview</p>
           <p style="color:var(--ink-soft);">San Mateo's oldest pizzeria has fed Shoreview families since 1958. This summer it came close to closing, and the neighborhood is the reason it's still open. Go grab a pie, order the Star of India or Manny's Favorite, and help keep a 68-year institution alive.</p>
@@ -471,10 +478,10 @@
             <div><strong style="color:var(--ink);">Where</strong> &middot; 600 S Norfolk St, Shoreview</div>
           </div>
           <div style="margin-top:1rem;">
-            <a href="aldos-pizza-san-mateo.html" style="color:var(--clay-deep); font-weight:700;">Read their story &rarr;</a> <span style="color:var(--ink-soft);">&middot;</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Aldo%27s%20Pizza%20San%20Mateo" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Map &rarr;</a> <span style="color:var(--ink-soft);">&middot;</span> <a href="https://www.aldospizza.com" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Order &rarr;</a>
+            <a href="aldos-pizza-san-mateo.html" style="color:var(--bay); font-weight:700;">Read their story &rarr;</a> <span style="color:var(--ink-soft);">&middot;</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=Aldo%27s%20Pizza%20San%20Mateo" target="_blank" rel="noopener" style="color:var(--bay); font-weight:700;">Map &rarr;</a> <span style="color:var(--ink-soft);">&middot;</span> <a href="https://www.aldospizza.com" target="_blank" rel="noopener" style="color:var(--bay); font-weight:700;">Order &rarr;</a>
           </div>
         </div>
-        <div class="spot-card" style="flex:1 1 320px; background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:14px; padding:1.7rem 1.9rem;">
+        <div class="spot-card" style="flex:1 1 320px; background:var(--card); border:1.5px solid var(--ink); border-top:4px solid var(--bay); border-radius:14px; padding:1.7rem 1.9rem;">
           <h2 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; margin-bottom:.2rem;">Espetus Churrascaria</h2>
           <p style="font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--sage-deep); font-weight:700; margin-bottom:.6rem;">Brazilian Steakhouse &middot; Downtown B Street</p>
           <p style="color:var(--ink-soft);">A proper Brazilian churrascaria on B Street, where servers move table to table carving skewered meats right onto your plate. It's all-you-can-eat rodizio, from picanha to garlic sirloin, with a big salad bar alongside. Come hungry and pace yourself.</p>
@@ -483,7 +490,7 @@
             <div><strong style="color:var(--ink);">Where</strong> &middot; 710 S B St, Downtown</div>
           </div>
           <div style="margin-top:1rem;">
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=Espetus%20Churrascaria%20San%20Mateo" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Map &rarr;</a> <span style="color:var(--ink-soft);">&middot;</span> <a href="https://espetus.com" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Visit &rarr;</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Espetus%20Churrascaria%20San%20Mateo" target="_blank" rel="noopener" style="color:var(--bay); font-weight:700;">Map &rarr;</a> <span style="color:var(--ink-soft);">&middot;</span> <a href="https://espetus.com" target="_blank" rel="noopener" style="color:var(--bay); font-weight:700;">Visit &rarr;</a>
           </div>
         </div>
       </div>
@@ -500,7 +507,7 @@
         })();
       </script>
       <!-- SPOTLIGHT:END -->
-      <p style="margin-top:.9rem; color:var(--ink-soft); font-size:.92rem;">Own a San Mateo spot? <a href="for-business-owners.html#getlisted" style="color:var(--clay-deep); font-weight:700;">Get listed, free &rarr;</a></p>
+      <p style="margin-top:.9rem; color:var(--ink-soft); font-size:.92rem;">Own a San Mateo spot? <a href="for-business-owners.html#getlisted" style="color:var(--bay); font-weight:700;">Get listed, free &rarr;</a></p>
     </div>
   </section>
 
@@ -511,7 +518,7 @@
         <h2>Local Buzz</h2>
         <a class="link" href="local-buzz.html">See all the buzz →</a>
       </div>
-      <p style="color:var(--ink-soft); margin:0.1rem 0 1.1rem; font-size:1rem;">Deals, happy hours, new openings, and what's on around town right now. <a href="for-business-owners.html#localbuzz" style="color:var(--clay-deep); font-weight:600;">Own a spot? Add to the buzz &rarr;</a></p>
+      <p style="color:var(--ink-soft); margin:0.1rem 0 1.1rem; font-size:1rem;">Deals, happy hours, new openings, and what's on around town right now. <a href="for-business-owners.html#localbuzz" style="color:var(--bay); font-weight:600;">Own a spot? Add to the buzz &rarr;</a></p>
       <div class="fav-scroll">
         <div class="fav-track">
           <!-- BUZZ:START -->
@@ -586,19 +593,19 @@
   <!-- ===== Quiz callout ===== -->
   <section class="sec" style="text-align:center; padding:2.2rem 0; background:var(--paper-2); border-top:1.5px solid var(--ink);">
     <div class="wrap">
-      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--clay-deep); font-size:1.05rem; margin-bottom:.6rem;">Think you know your hometown?</p>
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--bay); font-size:1.05rem; margin-bottom:.6rem;">Think you know your hometown?</p>
       <div style="display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center;">
-        <a href="quiz.html" style="display:inline-block; background:var(--clay); color:#fff; font-weight:700; font-size:1.1rem; padding:.9rem 1.6rem; border-radius:12px; text-decoration:none;">🤔 How San Mateo are you? Take the quiz &rarr;</a>
-        <a href="bucket-list.html" style="display:inline-block; background:var(--sage-deep); color:#fff; font-weight:700; font-size:1.1rem; padding:.9rem 1.6rem; border-radius:12px; text-decoration:none;">🪣 The San Mateo Bucket List &rarr;</a>
+        <a href="quiz.html" style="display:inline-block; background:var(--bay); color:#fff; font-weight:700; font-size:1.1rem; padding:.9rem 1.6rem; border-radius:12px; text-decoration:none;">🤔 How San Mateo are you? Take the quiz &rarr;</a>
+        <a href="bucket-list.html" style="display:inline-block; background:var(--clay); color:#fff; font-weight:700; font-size:1.1rem; padding:.9rem 1.6rem; border-radius:12px; text-decoration:none;">🪣 The San Mateo Bucket List &rarr;</a>
       </div>
     </div>
   </section>
 
   <!-- ===== Explore by neighborhood ===== -->
   <section class="sec" style="padding:2.6rem 0; border-top:1.5px solid var(--ink);">
-    <style>.hood-links a{border:1.5px solid var(--line);border-radius:999px;padding:.55rem 1.15rem;font-weight:600;font-size:.95rem;color:var(--ink);text-decoration:none;transition:border-color .15s,color .15s;white-space:nowrap}.hood-links a:hover{border-color:var(--clay);color:var(--clay-deep)}</style>
+    <style>.hood-links a{border:1.5px solid var(--line);border-radius:999px;padding:.55rem 1.15rem;font-weight:600;font-size:.95rem;color:var(--ink);text-decoration:none;transition:border-color .15s,color .15s;white-space:nowrap}.hood-links a:hover{border-color:var(--bay);color:var(--bay)}</style>
     <div class="wrap">
-      <p class="label" style="color:var(--clay-deep); font-weight:700; letter-spacing:.16em; text-transform:uppercase; font-size:.74rem;">Explore by neighborhood</p>
+      <p class="label" style="color:var(--bay); font-weight:700; letter-spacing:.16em; text-transform:uppercase; font-size:.74rem;">Explore by neighborhood</p>
       <h2 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; margin:.4rem 0 .4rem;">San Mateo, block by block</h2>
       <p style="color:var(--ink-soft); max-width:40rem;">A local's guide to each corner of town, the spots and the stories behind them.</p>
       <div class="hood-links" style="display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.1rem;">
@@ -625,14 +632,14 @@
   <!-- ===== What is San Mateo Local ===== -->
   <section class="sec" id="whatis" style="border-top:1.5px solid var(--ink); background:var(--paper);">
     <div class="wrap" style="max-width:720px;">
-      <span style="font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--clay-deep); font-size:1.1rem;">What is San Mateo Local</span>
+      <span style="font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--bay); font-size:1.1rem;">What is San Mateo Local</span>
       <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem); margin:.6rem 0 1.3rem; line-height:1.05;">The real San Mateo, in one place.</h2>
       <div style="font-size:1.08rem; color:var(--ink-soft); line-height:1.7;">
         <p style="margin-bottom:1rem;">A guide to the independent restaurants, the family-run shops, the barber who's been on the same corner for twenty years, the taco truck locals swear by. Not the chains you'll find in any city. The places that make this town feel like home. Every spot is checked by a person, not scraped by a machine.</p>
-        <p style="margin-bottom:1.2rem;">There's even an <a href="ask.html" style="color:var(--clay-deep); font-weight:600;">Ask a Local</a> guide you can talk to like a friend who knows the town. Tell it you need alterations, a plumber, or tacos near where you're standing, and it points you to the genuinely closest real spot.</p>
+        <p style="margin-bottom:1.2rem;">There's even an <a href="ask.html" style="color:var(--bay); font-weight:600;">Ask a Local</a> guide you can talk to like a friend who knows the town. Tell it you need alterations, a plumber, or tacos near where you're standing, and it points you to the genuinely closest real spot.</p>
         <p style="margin-bottom:.5rem;"><strong style="color:var(--ink);">Live here?</strong> A shortcut to the best of your own town, and a way to put your money into businesses run by your neighbors.</p>
         <p style="margin-bottom:.5rem;"><strong style="color:var(--ink);">Just visiting?</strong> Skip the tourist traps and get the recommendations a local would actually give you.</p>
-        <p style="margin-bottom:0;"><strong style="color:var(--ink);">Run a local business?</strong> This is where your neighbors come looking. <a href="list-your-business.html" style="color:var(--clay-deep); font-weight:600;">See why to list &rarr;</a></p>
+        <p style="margin-bottom:0;"><strong style="color:var(--ink);">Run a local business?</strong> This is where your neighbors come looking. <a href="list-your-business.html" style="color:var(--bay); font-weight:600;">See why to list &rarr;</a></p>
       </div>
     </div>
   </section>
@@ -640,7 +647,7 @@
   <!-- ===== Meet the local ===== -->
   <section class="sec" id="about" style="border-top:1.5px solid var(--ink); background:var(--paper);">
     <div class="wrap" style="max-width:720px;">
-      <span style="font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--clay-deep); font-size:1.1rem;">Meet the local</span>
+      <span style="font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--bay); font-size:1.1rem;">Meet the local</span>
       <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem); margin:.6rem 0 1.3rem; line-height:1.05;">Not an agency. An actual local.</h2>
       <div style="font-size:1.08rem; color:var(--ink-soft); line-height:1.7;">
         <p style="margin-bottom:1rem;">I'm Jason, born and raised in San Mateo. My parents got their start in a small house on Idaho Street, and once my older siblings came along and the family needed more room, we settled on the Westside, in the last house on the block, the one that shared the corner with the 7-Eleven and the plumbing supply. I was born at Mills, went to Sunnybrae for kindergarten, then St. Matthew's from first through eighth (my first job, at fourteen, was answering their phones while I did my homework). We moved over to Shoreview in sixth grade, and I graduated from Aragon.</p>
@@ -658,8 +665,8 @@
         <span class="lg-mark">✦ The series</span>
         <h2>San Mateo Legacies</h2>
         <p>A tribute to the diners, the shops, and the family-run spots that have been part of San Mateo since the 1980s and before. The ones that outlasted every trend. No other guide is doing this.</p>
-        <a href="legacies.html" style="display:inline-block; background:var(--ink); color:var(--paper); font-weight:700; font-size:1.12rem; padding:.8rem 1.45rem; border-radius:10px; text-decoration:none; margin:.3rem 0 1.4rem;">🏛️ See the legacy spots still standing &rarr;</a>
-        <a class="btn btn-clay" href="mailto:hello@sanmateolocal.com?subject=Legacy%20nomination">Nominate a legacy spot</a>
+        <a href="legacies.html" style="display:inline-block; background:var(--bay); color:var(--paper); font-weight:700; font-size:1.12rem; padding:.8rem 1.45rem; border-radius:10px; text-decoration:none; margin:.3rem 0 1.4rem;">🏛️ See the legacy spots still standing &rarr;</a>
+        <a class="btn btn-outline" href="mailto:hello@sanmateolocal.com?subject=Legacy%20nomination">Nominate a legacy spot</a>
         <a href="gone-but-not-forgotten.html" style="display:block; margin-top:1.6rem; padding:1.15rem 1.35rem; border:1.5px solid var(--ink); border-radius:12px; text-decoration:none; background:var(--paper);">
           <span style="display:block; font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600; color:var(--ink);">Gone But Not Forgotten &rarr;</span>
           <span style="color:var(--ink-soft); font-size:.98rem;">70 beloved San Mateo places that closed their doors but never left. Our tribute to the ones we lost.</span>
@@ -748,14 +755,14 @@
         <p class="label">For business owners</p>
         <h3>Own a San Mateo business?</h3>
         <p>Want more Google reviews, or a website that actually works? That's what we do for local businesses here. You can also grab a featured spot on the guide. We're local, and we'd love to help.</p>
-        <a class="btn btn-clay" href="for-business-owners.html">Let's talk</a>
+        <a class="btn btn-bay" href="for-business-owners.html">Let's talk</a>
         <a class="btn btn-outline" href="list-your-business.html" style="margin-left:.5rem;">Why list?</a>
       </div>
       <div class="involve-card reveal">
         <p class="label">For locals</p>
         <h3>What's your favorite spot?</h3>
-        <p>Locals run this guide. <a href="suggest.html" style="color:var(--clay-deep); font-weight:600;">Got a favorite? Vote on the Best Of &rarr;</a> Or snap a photo at one of your favorite spots, tag it and @sanmateolocal on Instagram, and we'll feature you in our locals' gallery.</p>
-        <a class="btn btn-outline" href="suggest.html">Vote on the Best Of</a>
+        <p>Locals run this guide. <a href="suggest.html" style="color:var(--bay); font-weight:600;">Got a favorite? Vote on the Best Of &rarr;</a> Or snap a photo at one of your favorite spots, tag it and @sanmateolocal on Instagram, and we'll feature you in our locals' gallery.</p>
+        <a class="btn btn-sun" href="suggest.html">Vote on the Best Of</a>
       </div>
     </div>
   </section>
@@ -850,16 +857,16 @@
   <style>
     .sm-modal { position:fixed; inset:0; background:rgba(34,29,22,.55); display:none; align-items:center; justify-content:center; z-index:200; padding:1.5rem; }
     .sm-modal.on { display:flex; }
-    .sm-card { background:var(--paper); border:1.5px solid var(--ink); border-top:5px solid var(--clay-deep); border-radius:8px; max-width:24rem; width:100%; padding:1.7rem 1.6rem 1.5rem; box-shadow:0 24px 60px -14px rgba(0,0,0,.55); position:relative; }
+    .sm-card { background:var(--paper); border:1.5px solid var(--ink); border-top:5px solid var(--bay); border-radius:8px; max-width:24rem; width:100%; padding:1.7rem 1.6rem 1.5rem; box-shadow:0 24px 60px -14px rgba(0,0,0,.55); position:relative; }
     .sm-close { position:absolute; top:.5rem; right:.7rem; background:none; border:none; font-size:1.5rem; line-height:1; cursor:pointer; color:var(--ink-soft); }
-    .sm-kick { font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+    .sm-kick { font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--bay); }
     .sm-name { font-family:'Cormorant Garamond',Georgia,serif; font-size:1.55rem; font-weight:600; line-height:1.15; margin:.35rem 0 .2rem; }
     .sm-meta { font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft); font-weight:600; margin-bottom:.7rem; }
     .sm-about { color:var(--ink-soft); font-size:.98rem; line-height:1.55; margin-bottom:1.15rem; min-height:1.4rem; }
     .sm-acts { display:flex; gap:.5rem; flex-wrap:wrap; }
     .sm-acts a { font-size:.84rem; font-weight:600; padding:.5rem .9rem; border-radius:999px; border:1.5px solid var(--line); color:var(--ink); text-decoration:none; }
-    .sm-acts a:hover { border-color:var(--clay); color:var(--clay-deep); }
-    .sm-again { margin-top:.9rem; font-size:.84rem; font-weight:600; padding:.5rem .9rem; border-radius:999px; border:1.5px solid var(--clay); color:var(--clay-deep); background:none; cursor:pointer; }
+    .sm-acts a:hover { border-color:var(--clay); color:var(--bay); }
+    .sm-again { margin-top:.9rem; font-size:.84rem; font-weight:600; padding:.5rem .9rem; border-radius:999px; border:1.5px solid var(--clay); color:var(--bay); background:none; cursor:pointer; }
   </style>
   <div class="sm-modal" id="smModal" role="dialog" aria-modal="true" aria-label="A local surprise">
     <div class="sm-card">
