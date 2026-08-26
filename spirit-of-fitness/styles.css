@@ -103,7 +103,7 @@ section p{max-width:660px}
 .g3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:880px){.g3{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.g2,.g3{grid-template-columns:1fr}}
-.card{background:var(--paper); border:1px solid var(--rule); border-radius:9px; padding:26px 26px 28px; box-shadow:var(--shadow)}
+.card{background:var(--paper); border:1px solid var(--rule); border-radius:9px; padding:30px 32px 34px; box-shadow:var(--shadow)}
 .card h3{margin-bottom:10px}
 .card p{font-size:17.5px; color:var(--ink-2); max-width:none}
 .card .k{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.13em;
@@ -158,7 +158,7 @@ input:focus,textarea:focus{outline:3px solid var(--accent); outline-offset:1px; 
 .gear{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
 @media(max-width:880px){.gear{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.gear{grid-template-columns:1fr}}
-.item{background:var(--paper); border:1px solid var(--rule); border-radius:9px; padding:22px; box-shadow:var(--shadow);
+.item{background:var(--paper); border:1px solid var(--rule); border-radius:9px; padding:26px 24px; box-shadow:var(--shadow);
   display:flex; flex-direction:column}
 .item h3{font-size:19px; margin-bottom:8px}
 .item p{font-size:16.5px; color:var(--ink-2); flex:1; max-width:none}
@@ -183,7 +183,7 @@ footer.site li{margin-bottom:9px; font-size:17px}
 .skip:focus{position:static; display:inline-block; padding:10px 16px; background:var(--accent); color:#fff}
 
 /* ---------- logo: show only when the real file is present (no broken icon) ---------- */
-.brand .logo{width:44px; height:44px; flex:none; background:url("assets/logo.png") center/contain no-repeat}
+.brand .logo{width:55px; height:42px; flex:none; background:url("assets/logo.png") center/contain no-repeat}
 
 /* ---------- real QR image ---------- */
 .qrslot .qrimg{width:100%; max-width:200px; margin:0 auto; display:block; border-radius:6px}
@@ -200,7 +200,7 @@ footer.site li{margin-bottom:9px; font-size:17px}
 .vid .thumb img{width:100%; height:100%; object-fit:cover; display:block}
 .vid .thumb .play{position:absolute; inset:0; display:grid; place-content:center}
 .vid .thumb .play svg{width:56px; height:56px; filter:drop-shadow(0 2px 8px rgba(0,0,0,.4))}
-.vid .vmeta{padding:15px 17px 17px}
+.vid .vmeta{padding:18px 22px 22px}
 .vid .vmeta .k{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.12em;
   text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px}
 .vid .vmeta b{font-family:"Archivo",sans-serif; font-weight:700; font-size:17px; line-height:1.28; display:block}
