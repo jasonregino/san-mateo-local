@@ -89,6 +89,40 @@ async function googleLookup(name) {
 }
 
 // ---- Assemble the real, honest facts for the model + a deterministic reviewer note ----
+// ---- Live website health check (best-effort). Catches the class of finding a stale
+// directory flag misses: a site that fails over HTTPS (bad/missing cert), only loads
+// over insecure http, is down, or errors. Modern Chrome/Safari try https first, so a
+// cert failure shows visitors a full-page "Your connection is not private" warning. ----
+async function checkSite(rawUrl) {
+  if (!rawUrl) return null;
+  const host = String(rawUrl).replace(/^https?:\/\//i, '').replace(/\/.*$/, '').replace(/\s+/g, '').toLowerCase();
+  if (!host || !host.includes('.')) return null;
+  const get = async (u) => {
+    const ac = new AbortController();
+    const t = setTimeout(() => ac.abort(), 6500);
+    try {
+      const r = await fetch(u, { method: 'GET', redirect: 'follow', signal: ac.signal, headers: { 'user-agent': 'Mozilla/5.0 (compatible; SanMateoLocalBot/1.0)' } });
+      clearTimeout(t);
+      return { ok: r.status < 400, status: r.status };
+    } catch (e) {
+      clearTimeout(t);
+      const code = String((e && e.cause && e.cause.code) || (e && e.code) || '');
+      const msg = String((e && e.cause && e.cause.message) || (e && e.message) || '');
+      return { error: true, code, msg, aborted: e && e.name === 'AbortError' };
+    }
+  };
+  const https = await get('https://' + host);
+  if (https.ok) return { state: 'ok', host };
+  const certRe = /CERT|TLS|SSL|ALTNAME|self[-\s]?signed|certificate|handshake/i;
+  const isCert = https.error && (certRe.test(https.code) || certRe.test(https.msg));
+  const http = await get('http://' + host);
+  if (isCert) return { state: 'cert', host };
+  if (!https.ok && http.ok) return { state: 'insecure', host };
+  if (https.error && http.error) return (https.aborted || http.aborted) ? { state: 'slow', host } : { state: 'down', host };
+  if (https.status) return { state: 'httperror', host, status: https.status };
+  return null; // inconclusive: assert nothing
+}
+
 function buildFacts(name, ownerWebsite, goal, dir, g) {
   const L = [];
   L.push(`Business the owner named: ${name}`);
@@ -175,7 +209,7 @@ async function readBody(req) {
 const stripDash = s => String(s).replace(/\s*[—―]\s*/g, ', ');
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gr-7');
+  res.setHeader('x-smc-build', 'gr-8');
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
 
   let body;
@@ -224,7 +258,26 @@ module.exports = async (req, res) => {
     return;
   }
 
-  const facts = buildFacts(name, website, goal, dir, g);
+  // Live website health: check the real site (Google's linked URL, else the directory's URL,
+  // else what the owner typed). Catches broken/insecure/down sites a stale directory flag misses.
+  const ownerNoSite = /^(no|none|n\/a|i don'?t|dont|nope)/i.test(website);
+  const siteUrl = (g && g.status === 'OK' && g.website) || (dir && dir.websiteUrl) || (website && !ownerNoSite ? website : '');
+  const site = await checkSite(siteUrl);
+
+  let facts = buildFacts(name, website, goal, dir, g);
+  if (site) {
+    const line = {
+      ok: 'WEBSITE HEALTH (checked live just now): their website loads fine over a secure (https) connection.',
+      cert: `WEBSITE HEALTH (checked live just now): their website (${site.host}) has NO valid HTTPS security certificate. It answers over insecure http but FAILS over https, and modern Chrome/Safari try https first by default, so most visitors get a full-page "Your connection is not private" warning instead of the site. This is a REAL, high-impact problem and SHOULD be named as the biggest opportunity.`,
+      insecure: `WEBSITE HEALTH (checked live just now): their website (${site.host}) only loads over an insecure (http) connection, so modern browsers warn visitors away before they see it. A real, high-impact problem worth naming as the biggest opportunity.`,
+      down: `WEBSITE HEALTH (checked live just now): their website (${site.host}) does not load at all right now, so people who click through from Google hit a dead end. A real, high-impact problem.`,
+      httperror: `WEBSITE HEALTH (checked live just now): their website (${site.host}) returns an error (HTTP ${site.status}), so visitors who click through from Google cannot reach it. A real, high-impact problem.`,
+      slow: 'WEBSITE HEALTH: their website was too slow to answer a quick check; do not claim it is broken, just note it is worth confirming it loads promptly.',
+    }[site.state];
+    if (line) facts += '\n' + line;
+  } else if (dir && (dir.websiteCondition === 'broken' || dir.websiteCondition === 'none')) {
+    facts += `\nWEBSITE HEALTH (from our directory notes, not re-checked live): their website is flagged as ${dir.websiteCondition === 'none' ? 'missing or not working' : 'broken'}. Worth raising as a likely opportunity, phrased as something to confirm.`;
+  }
   const notes = buildNotes(name, goal, dir, g);
 
   try {
@@ -246,11 +299,24 @@ module.exports = async (req, res) => {
     // deterministically swap any -> line that mentions San Mateo Local for an honest one
     // built from the real data (a website if they lack one, else "you are in good shape").
     const noSiteRe = /^(no|none|n\/a|i don'?t|dont|nope)/i;
-    const hasSite = !!(g && g.status === 'OK' && g.website) || !!(dir && dir.website) || (!!website && !noSiteRe.test(website));
+    const hasSite = (site && site.state === 'ok') || (!site && (!!(g && g.status === 'OK' && g.website) || !!(dir && dir.website) || (!!website && !noSiteRe.test(website))));
+    const siteBad = site && ['cert', 'insecure', 'down', 'httperror'].includes(site.state);
+    const siteOpp = siteBad ? {
+      cert: '→ The biggest opportunity: your website has no valid security certificate, so most browsers show visitors a security warning instead of your site. Getting a certificate installed (most hosts include one free) changes the first thing a new customer sees.',
+      insecure: '→ The biggest opportunity: your website only loads over an insecure connection, so modern browsers warn people away before they reach it. Getting HTTPS set up fixes it.',
+      down: '→ The biggest opportunity: your website is not loading right now, so people who find you on Google hit a dead end. Getting it back up comes first.',
+      httperror: '→ The biggest opportunity: your website is returning an error, so people who click through from Google cannot reach it. Getting it working again comes first.',
+    }[site.state] : null;
     const oppFallback = hasSite
       ? '→ The biggest opportunity: you are in good shape online. Keep fresh reviews coming in and reply to the ones you get, that is what keeps you ahead with local customers.'
       : '→ The biggest opportunity: a simple website, so the people who find you on Google have somewhere to learn more and book.';
-    findings = findings.split('\n').map(l => (l.trim().charAt(0) === '→' && /san mateo local/i.test(l)) ? oppFallback : l).join('\n');
+    findings = findings.split('\n').map(l => {
+      if (l.trim().charAt(0) === '→') {
+        if (siteOpp) return siteOpp;                        // a broken site always wins the opportunity line
+        if (/san mateo local/i.test(l)) return oppFallback; // never let San Mateo Local be the pitch
+      }
+      return l;
+    }).join('\n');
     res.status(200).json({ findings: findings || 'I took a look but could not pull much just yet. The full Growth Review will dig in properly.', notes });
   } catch (e) {
     console.error('growth-review error', e.message);
