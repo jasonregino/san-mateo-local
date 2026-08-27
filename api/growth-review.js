@@ -142,15 +142,11 @@ function buildFacts(name, ownerWebsite, goal, dir, g) {
     L.push(`GOOGLE: live lookup unavailable this time. Do NOT claim anything about their Google profile, rating, or reviews.`);
   }
 
-  if (dir) {
-    L.push(`SAN MATEO LOCAL: they ARE listed on our guide as ${dir.cat}${dir.type ? ' / ' + titleCase(dir.type) : ''}${dir.area ? ' in ' + dir.area : ''} (page ${dir.detail}).`);
-    L.push(`- Website on file with San Mateo Local: ${dir.website ? 'yes' : 'no'}.`);
-    L.push(`- Claimed by the owner on SAN MATEO LOCAL (not their Google profile): ${dir.claimed ? 'yes' : 'no'}.`);
-    if (dir.reviews) L.push(`- Separate review signal on file (its own source, do not merge with Google's count): ${dir.reviews}.`);
-    L.push(`Note: having a San Mateo Local page helps people who search locally find them, but do NOT claim a specific Google search ranking (we do not measure that).`);
-  } else {
-    L.push(`SAN MATEO LOCAL: they are NOT currently listed on our guide. That is a real, honest visibility gap you may raise gently (they are missing from the local guide people read).`);
-  }
+  // San Mateo Local is deliberately withheld as a finding-able fact. This is an impartial
+  // diagnostic of the owner's OWN presence, so the directory relationship (listed/claimed)
+  // must never surface as an observation or opportunity. `dir` is still used elsewhere for
+  // the website URL/condition and the CRM notes, just never fed to the model as a finding.
+  L.push(`SAN MATEO LOCAL: off-limits for this reply. Do not mention San Mateo Local, our guide, or claiming/getting listed anywhere in the findings or the opportunity. Focus only on their own Google presence, website, and reviews.`);
   return 'FACTS ABOUT THIS BUSINESS (state ONLY these; never invent beyond them):\n' + L.join('\n');
 }
 
@@ -168,8 +164,8 @@ const FINDINGS_SYSTEM = `You are the San Mateo Local growth guide. You have just
 WRITE:
 - 2 to 4 short observations, each on its own line, each prefixed with a plain checkmark and a space: "✓ ". Do NOT use decorative or colorful emoji (no star, globe, pin, lightbulb); keep it clean and professional.
 - Then one final line prefixed with "→ " that begins "The biggest opportunity: " and names the SINGLE highest-impact GROWTH move, chosen by likely REVENUE impact (what brings more customers or gets them found by people ready to buy).
-- ABSOLUTE RULE: the "→ The biggest opportunity" line must NEVER be a San Mateo Local action (never "claim", "complete", "get on", or "get listed on" San Mateo Local), for ANY business. That is off-limits for this line. A San Mateo Local action may appear only as a small "✓" observation, and if they are not listed yet, phrase it "get listed on San Mateo Local" (never "get on your listing").
-- If after the facts the only thing left is a San Mateo Local action, there is NO major growth gap: for the opportunity line, say plainly they are in strong shape and name the most real non-SML next step, however small (for example "→ The biggest opportunity: you are in good shape online, so the main thing is keeping fresh reviews coming in").
+- ABSOLUTE RULE: San Mateo Local must NEVER appear anywhere in your reply, in ANY form, for ANY business. Do not mention San Mateo Local, "our guide" or "the local guide", claiming a listing, completing a listing, or getting listed, in a "✓" observation OR the "→" opportunity line. This is an impartial diagnostic of the business's OWN online presence, so San Mateo Local is off-limits as an observation, a recommendation, an opportunity, or a suggested action. Every line must be about their own Google presence, website, or reviews.
+- If the business is already in strong shape with no major gap, SAY SO plainly and, for the opportunity line, name the most real next step however small (for example "→ The biggest opportunity: you are in good shape online, so the main thing is keeping fresh reviews coming in and replying to them").
 - If this is clearly a national or regional CHAIN (a brand with many locations, like Trader Joe's, Starbucks, McDonald's), do not treat the visitor as running the brand's website or web presence and do not push a San Mateo Local listing; keep it brief and note the Growth Review is really built for independent, locally owned businesses.
 - Keep the whole thing tight: a few lines, plain language, no fluff.
 
@@ -179,8 +175,7 @@ HONESTY (this is the entire point, non-negotiable):
 - If Google data is missing or the business was not found, do NOT claim anything about their Google profile.
 - Attribute every number to ONE named source and keep it consistent within your reply: a Google review count is Google's, a Yelp signal is Yelp's. Never merge them into one total or restate the same count as if it came from several places.
 - Never ASK the owner a question; this step has no reply box, so state everything. If what the owner told you conflicts with what you find (they said no website but one is linked on Google), reconcile it as a gentle STATEMENT, not a question: for example "Your Google listing points to a website; if that is outdated or hard to find, it is worth a look." Never bluntly contradict them.
-- When a listing is unclaimed, always say "your San Mateo Local listing" so it is not confused with their Google profile.
-- Do not claim a specific search ranking. You may note that having (or missing) a San Mateo Local page affects local discovery.
+- Do not claim a specific search ranking.
 - You are giving a quick first look, not the full review. Do not ask for their email or any contact info; the page handles that next.
 
 STYLE: warm, local, concrete. No em-dashes. No hype or buzzwords. Speak to the owner directly ("you", "your").`;
@@ -209,7 +204,7 @@ async function readBody(req) {
 const stripDash = s => String(s).replace(/\s*[—―]\s*/g, ', ');
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gr-8');
+  res.setHeader('x-smc-build', 'gr-9');
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
 
   let body;
@@ -294,10 +289,11 @@ module.exports = async (req, res) => {
     const data = await r.json();
     const blocks = Array.isArray(data.content) ? data.content : [];
     let findings = stripDash(blocks.filter(b => b && b.type === 'text' && b.text).map(b => b.text).join('\n').trim());
-    // H4 guard: the "->" biggest-opportunity line must NEVER pitch San Mateo Local. The
-    // model games the prompt by pairing it in ("claim your SML listing AND fix X"), so we
-    // deterministically swap any -> line that mentions San Mateo Local for an honest one
-    // built from the real data (a website if they lack one, else "you are in good shape").
+    // SML guard (both lines, gr-9): San Mateo Local must never surface as a "✓" finding OR
+    // as the "→" biggest opportunity. The model games the prompt by slipping it into an
+    // observation or pairing it into the opportunity line, so we deterministically DROP any
+    // "✓" line that mentions San Mateo Local and rewrite any "→" line that does into an
+    // honest opportunity built from the real data (a website if they lack one, else strong shape).
     const noSiteRe = /^(no|none|n\/a|i don'?t|dont|nope)/i;
     const hasSite = (site && site.state === 'ok') || (!site && (!!(g && g.status === 'OK' && g.website) || !!(dir && dir.website) || (!!website && !noSiteRe.test(website))));
     const siteBad = site && ['cert', 'insecure', 'down', 'httperror'].includes(site.state);
@@ -310,13 +306,17 @@ module.exports = async (req, res) => {
     const oppFallback = hasSite
       ? '→ The biggest opportunity: you are in good shape online. Keep fresh reviews coming in and reply to the ones you get, that is what keeps you ahead with local customers.'
       : '→ The biggest opportunity: a simple website, so the people who find you on Google have somewhere to learn more and book.';
-    findings = findings.split('\n').map(l => {
-      if (l.trim().charAt(0) === '→') {
-        if (siteOpp) return siteOpp;                        // a broken site always wins the opportunity line
-        if (/san mateo local/i.test(l)) return oppFallback; // never let San Mateo Local be the pitch
-      }
-      return l;
-    }).join('\n');
+    findings = findings.split('\n')
+      // never let a "✓" finding pitch San Mateo Local; keep an SML "→" line only long
+      // enough for the map below to rewrite it (drop any other line that mentions SML).
+      .filter(l => /san mateo local/i.test(l) ? l.trim().charAt(0) === '→' : true)
+      .map(l => {
+        if (l.trim().charAt(0) === '→') {
+          if (siteOpp) return siteOpp;                        // a broken site always wins the opportunity line
+          if (/san mateo local/i.test(l)) return oppFallback; // never let San Mateo Local be the pitch
+        }
+        return l;
+      }).join('\n');
     res.status(200).json({ findings: findings || 'I took a look but could not pull much just yet. The full Growth Review will dig in properly.', notes });
   } catch (e) {
     console.error('growth-review error', e.message);
