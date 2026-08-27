@@ -163,6 +163,7 @@ const FINDINGS_SYSTEM = `You are the San Mateo Local growth guide. You have just
 
 WRITE:
 - 2 to 4 short observations, each on its own line, each prefixed with a plain checkmark and a space: "✓ ". Do NOT use decorative or colorful emoji (no star, globe, pin, lightbulb); keep it clean and professional.
+- Each observation must cover a DIFFERENT aspect of how they show up (for example: their Google rating and reviews, their website's presence and health, whether Google links to their site). Do NOT repeat the same point in two observations, and do NOT let an observation simply restate the "→ biggest opportunity". If you only have TWO genuinely distinct, real things to say, write just two strong observations; two real observations beat three where the third is padding. Never invent a point about something you cannot see (local search rank, phone handling, lead forms) just to reach a third line.
 - Then one final line prefixed with "→ " that begins "The biggest opportunity: " and names the SINGLE highest-impact GROWTH move, chosen by likely REVENUE impact (what brings more customers or gets them found by people ready to buy).
 - ABSOLUTE RULE: San Mateo Local must NEVER appear anywhere in your reply, in ANY form, for ANY business. Do not mention San Mateo Local, "our guide" or "the local guide", claiming a listing, completing a listing, or getting listed, in a "✓" observation OR the "→" opportunity line. This is an impartial diagnostic of the business's OWN online presence, so San Mateo Local is off-limits as an observation, a recommendation, an opportunity, or a suggested action. Every line must be about their own Google presence, website, or reviews.
 - If the business is already in strong shape with no major gap, SAY SO plainly and, for the opportunity line, name the most real next step however small (for example "→ The biggest opportunity: you are in good shape online, so the main thing is keeping fresh reviews coming in and replying to them").
@@ -170,7 +171,7 @@ WRITE:
 - Keep the whole thing tight: a few lines, plain language, no fluff.
 
 HONESTY (this is the entire point, non-negotiable):
-- State ONLY what the FACTS say. Never invent a problem, a number, a rating, or a gap to manufacture urgency.
+- State ONLY what the FACTS say. Never invent a problem, a number, a rating, or a gap to manufacture urgency. This includes GENERAL claims: do NOT cite industry statistics, benchmarks, thresholds, or "studies show" style numbers you cannot see in the FACTS (for example never say "businesses with 50+ reviews get more bookings" or "most customers read reviews first"). Speak only to what THIS business's real data shows. You may suggest a plain next step ("asking recent customers for a review helps"), but never attach an unsourced statistic or a made-up number to it.
 - If something is strong, SAY SO plainly. Balance praise with the real opportunity.
 - If Google data is missing or the business was not found, do NOT claim anything about their Google profile.
 - Attribute every number to ONE named source and keep it consistent within your reply: a Google review count is Google's, a Yelp signal is Yelp's. Never merge them into one total or restate the same count as if it came from several places.
@@ -204,7 +205,7 @@ async function readBody(req) {
 const stripDash = s => String(s).replace(/\s*[—―]\s*/g, ', ');
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gr-9');
+  res.setHeader('x-smc-build', 'gr-10');
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
 
   let body;
