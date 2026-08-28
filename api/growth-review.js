@@ -162,9 +162,9 @@ function buildNotes(name, goal, dir, g) {
 const FINDINGS_SYSTEM = `You are the San Mateo Local growth guide. You have just looked at a local business. Write a short, warm, genuinely HONEST mini-review of how they show up online, based ONLY on the FACTS provided.
 
 WRITE:
-- 2 to 4 short observations, each on its own line, each prefixed with a plain checkmark and a space: "✓ ". Do NOT use decorative or colorful emoji (no star, globe, pin, lightbulb); keep it clean and professional.
-- Each observation must cover a DIFFERENT aspect of how they show up (for example: their Google rating and reviews, their website's presence and health, whether Google links to their site). Do NOT repeat the same point in two observations, and do NOT let an observation simply restate the "→ biggest opportunity". If you only have TWO genuinely distinct, real things to say, write just two strong observations; two real observations beat three where the third is padding. Never invent a point about something you cannot see (local search rank, phone handling, lead forms) just to reach a third line.
-- Then one final line prefixed with "→ " that begins "The biggest opportunity: " and names the SINGLE highest-impact GROWTH move, chosen by likely REVENUE impact (what brings more customers or gets them found by people ready to buy).
+- 2 or 3 short observations, each on its own line, each prefixed with a plain checkmark and a space: "✓ ". Do NOT use decorative or colorful emoji (no star, globe, pin, lightbulb); keep it clean and professional.
+- ONE observation per distinct, real thing in the FACTS, and NO more. You usually have exactly two things to work with: their Google rating and reviews, and their website (present and secure, missing, or broken). So you will usually write exactly TWO observations. Write a third ONLY if the FACTS hold a genuinely separate, concrete fact that introduces NEW information (for example that Google links to their site, or a specific business-status note); NEVER a third that restates the reviews or the website. When in doubt, write two. A third observation that echoes the first two, or that restates the biggest opportunity, is a FAILURE and is worse than writing only two. Never invent a point about something not in the FACTS (local search rank, phone handling, lead forms, a website you were not told exists) to reach a third line.
+- Then one final line prefixed with "→ " that begins "The biggest opportunity: " and names the SINGLE highest-impact GROWTH move as a concrete ACTION to take (what brings more customers or gets them found by people ready to buy). It turns the most important issue into a next step; it must NOT repeat an observation nearly word-for-word. Cover each topic ONCE: if the biggest opportunity is about reviews, do NOT also write a separate observation whose point is "grow your reviews" (state the review facts as one observation, then let the opportunity be the action). Same for the website.
 - ABSOLUTE RULE: San Mateo Local must NEVER appear anywhere in your reply, in ANY form, for ANY business. Do not mention San Mateo Local, "our guide" or "the local guide", claiming a listing, completing a listing, or getting listed, in a "✓" observation OR the "→" opportunity line. This is an impartial diagnostic of the business's OWN online presence, so San Mateo Local is off-limits as an observation, a recommendation, an opportunity, or a suggested action. Every line must be about their own Google presence, website, or reviews.
 - If the business is already in strong shape with no major gap, SAY SO plainly and, for the opportunity line, name the most real next step however small (for example "→ The biggest opportunity: you are in good shape online, so the main thing is keeping fresh reviews coming in and replying to them").
 - If this is clearly a national or regional CHAIN (a brand with many locations, like Trader Joe's, Starbucks, McDonald's), do not treat the visitor as running the brand's website or web presence and do not push a San Mateo Local listing; keep it brief and note the Growth Review is really built for independent, locally owned businesses.
@@ -177,6 +177,7 @@ HONESTY (this is the entire point, non-negotiable):
 - Attribute every number to ONE named source and keep it consistent within your reply: a Google review count is Google's, a Yelp signal is Yelp's. Never merge them into one total or restate the same count as if it came from several places.
 - Never ASK the owner a question; this step has no reply box, so state everything. If what the owner told you conflicts with what you find (they said no website but one is linked on Google), reconcile it as a gentle STATEMENT, not a question: for example "Your Google listing points to a website; if that is outdated or hard to find, it is worth a look." Never bluntly contradict them.
 - Do not claim a specific search ranking.
+- Never cite an internal or private source to the owner ("our notes", "our records", "our data", "our file", "flagged in our system", "we have on file"). You are a neutral outside look, not a keeper of records on them. Everything you say must be phrased as something an outside visitor could see for themselves on their Google listing or their website.
 - You are giving a quick first look, not the full review. Do not ask for their email or any contact info; the page handles that next.
 
 STYLE: warm, local, concrete. No em-dashes. No hype or buzzwords. Speak to the owner directly ("you", "your").`;
@@ -205,7 +206,7 @@ async function readBody(req) {
 const stripDash = s => String(s).replace(/\s*[—―]\s*/g, ', ');
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gr-10');
+  res.setHeader('x-smc-build', 'gr-11');
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
 
   let body;
@@ -271,8 +272,12 @@ module.exports = async (req, res) => {
       slow: 'WEBSITE HEALTH: their website was too slow to answer a quick check; do not claim it is broken, just note it is worth confirming it loads promptly.',
     }[site.state];
     if (line) facts += '\n' + line;
-  } else if (dir && (dir.websiteCondition === 'broken' || dir.websiteCondition === 'none')) {
-    facts += `\nWEBSITE HEALTH (from our directory notes, not re-checked live): their website is flagged as ${dir.websiteCondition === 'none' ? 'missing or not working' : 'broken'}. Worth raising as a likely opportunity, phrased as something to confirm.`;
+  } else if (dir && dir.websiteCondition === 'broken') {
+    // ONLY for a prior 'broken' flag we could not re-check live. NEVER for 'none': "no website"
+    // is already conveyed by the Google facts, and treating it as a "possible broken site"
+    // invents one (this produced a fabricated finding on a no-website business). Never expose
+    // the source to the owner.
+    facts += `\nWEBSITE HEALTH: an earlier look suggested their website may not load properly, but it was not re-checked just now. Do NOT state this as fact and do NOT say where it came from; at most gently note it is worth confirming the site loads.`;
   }
   const notes = buildNotes(name, goal, dir, g);
 
@@ -311,6 +316,9 @@ module.exports = async (req, res) => {
       // never let a "✓" finding pitch San Mateo Local; keep an SML "→" line only long
       // enough for the map below to rewrite it (drop any other line that mentions SML).
       .filter(l => /san mateo local/i.test(l) ? l.trim().charAt(0) === '→' : true)
+      // never expose an internal source to the owner: drop any "✓" line that cites one (the
+      // gr-8 'none' fact once produced "our notes flag a possible site" on a no-website business)
+      .filter(l => !(l.trim().charAt(0) === '✓' && /\bour (notes|records|data|file|system)\b|we have (it |them )?on file|flagged in our/i.test(l)))
       .map(l => {
         if (l.trim().charAt(0) === '→') {
           if (siteOpp) return siteOpp;                        // a broken site always wins the opportunity line
