@@ -348,38 +348,12 @@
           <p style="text-align:center; font-size:.82rem; color:var(--ink-soft); margin:0 0 .55rem;">Keep it free, no problem. You can always add a boost later.</p>
           <button type="button" id="upsellFree" style="width:100%; background:transparent; color:var(--ink-soft); font-weight:700; padding:.7rem; border:1.5px solid var(--line); border-radius:8px; cursor:pointer; font-size:.92rem;">Just add my free listing &rarr;</button>
         </div>
-        <form id="listForm">
-          <input type="hidden" name="access_key" value="54743f1e-b34e-4d1a-aca8-6ff2554e06a0" />
-          <input type="hidden" name="subject" value="San Mateo Local: Add my business (free listing)" />
-          <input type="hidden" name="from_name" value="San Mateo Local: Get Listed" />
-          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
-          <div class="row"><label class="fld" for="lbiz">Business name</label><input type="text" id="lbiz" name="business_name" required /></div>
-          <div class="row"><label class="fld" for="laddr">Address</label><input type="text" id="laddr" name="address" placeholder="Street, San Mateo" /></div>
-          <div class="row"><label class="fld" for="lemail">Email</label><input type="email" id="lemail" name="email" placeholder="So we can follow up" required /></div>
-          <div class="row"><label class="fld" for="lphone">Phone <span style="font-weight:400;color:var(--ink-soft)">(optional)</span></label><input type="tel" id="lphone" name="phone" placeholder="Often the easiest way to reach you" /></div>
-          <p style="font-size:.85rem; color:var(--ink-soft); margin:-.35rem 0 .85rem;">That's all we need to add you. Want your listing to shine? Add a few details (optional).</p>
-          <details style="margin-bottom:1rem;">
-            <summary style="cursor:pointer; font-weight:700; color:var(--clay-deep); font-size:.95rem; padding:.35rem 0;">&#43; Add photos &amp; details (optional)</summary>
-            <div style="margin-top:.8rem;">
-              <div class="row"><label class="fld" for="lcat">Category</label>
-                <select id="lcat" name="category" style="width:100%; border:1.5px solid var(--line); border-radius:8px; padding:.75rem; font:inherit; background:#fff; color:var(--ink);">
-                  <option>Eat &amp; Drink</option><option>Shopping / Market</option><option>Things to Do</option><option>Local Service</option><option>Other</option>
-                </select></div>
-              <div class="row"><label class="fld" for="lknown">What are you known for?</label><input type="text" id="lknown" name="known_for" placeholder="In a sentence" /></div>
-              <div class="row"><label class="fld" for="lweb">Website (optional)</label><input type="text" id="lweb" name="website" placeholder="yoursite.com" /></div>
-              <div class="row"><label class="fld" for="linsta">Instagram (optional)</label><input type="text" id="linsta" name="instagram" placeholder="@yourhandle" /></div>
-              <div class="row"><label class="fld" for="lfb">Facebook (optional)</label><input type="text" id="lfb" name="facebook" placeholder="facebook.com/yourpage" /></div>
-              <div class="row"><label class="fld" for="lphoto">Cover photo <span style="font-weight:400;color:var(--ink-soft)">(optional, a nice one of your spot)</span></label><input type="file" id="lphoto" name="photo" accept="image/*" style="width:100%; font:inherit; font-size:.9rem; color:var(--ink-soft);" /></div>
-              <div class="row" style="background:var(--paper-2); border-radius:10px; padding:.8rem 1rem;">
-                <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer; margin-bottom:.55rem;"><input type="checkbox" name="photo_permission" value="Yes, may use a photo I own from my site or Google" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">No photo handy? You may use a photo of my business that I own, from my website or Google profile. I confirm it's mine to share.</span></label>
-                <label class="chk" style="display:flex; align-items:flex-start; gap:.55rem; cursor:pointer;"><input type="checkbox" name="photo_shoot" value="Yes, OK to come take a photo" style="margin-top:.2rem;"> <span style="font-size:.9rem; color:var(--ink-soft);">I don't have a good photo. You're welcome to swing by and take one.</span></label>
-              </div>
-              <div class="row"><label class="fld" for="lname">Your name</label><input type="text" id="lname" name="name" /></div>
-            </div>
-          </details>
-          <button type="button" id="lsend" style="background:var(--clay);">Add my business</button>
-          <p id="lerr" role="alert" style="display:none; color:#B23324; font-size:.9rem; margin-top:.7rem; text-align:center;"></p>
-        </form>
+        <div style="margin-top:1.2rem;">
+          <iframe src="https://api.leadconnectorhq.com/widget/form/OU906kLSNvVRj3rtE4dy?request_type=get-listed"
+            style="width:100%; min-height:640px; border:none; border-radius:12px; background:#fff;"
+            id="ghl-get-listed" data-form-id="OU906kLSNvVRj3rtE4dy"
+            title="Add your business to San Mateo Local"></iframe>
+        </div>
         <p style="text-align:center; margin-top:.9rem; color:var(--ink-soft); font-size:.9rem;">Free listing is all most businesses need. <a href="for-business-owners.html#feature" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Curious what else the guide can do? &rarr;</a></p>
       </div>
     </section>
@@ -648,62 +622,14 @@
         <strong>Got it, thank you.</strong><br>We'll take a look at your business and get back to you personally, usually within a day or two. Talk soon.
       </div>
 
-      <form class="formwrap" id="bizForm">
-        <input type="hidden" name="access_key" value="54743f1e-b34e-4d1a-aca8-6ff2554e06a0" />
-        <input type="hidden" name="subject" value="San Mateo Local: Business owner inquiry" />
-        <input type="hidden" name="from_name" value="San Mateo Local: For Business Owners" />
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
-
-        <h2>Tell us about your business</h2>
-        <p class="sub">Takes a minute. We read every one.</p>
-
-        <div class="row">
-          <label class="fld" for="biz">Business name</label>
-          <input type="text" id="biz" name="business_name" placeholder="Your business" />
-        </div>
-        <div class="row">
-          <label class="fld">What are you interested in?</label>
-          <p style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--sage-deep);margin:.1rem 0 .35rem;">1 &middot; Build your own presence</p>
-          <div class="checks">
-            <label class="chk"><input type="checkbox" name="interest[]" value="Founding Business Program (first 10)"> Founding offer (free website + AI Chat)</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="A website"> A website</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="More Google reviews"> More Google reviews</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="24/7 AI Chat (text-back included)"> 24/7 AI Chat ($199)</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="24/7 Receptionist"> 24/7 Receptionist ($299)</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="Missed-Call Text-Back"> Missed-Call Text-Back ($99)</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="Online booking &amp; reminders"> Online booking &amp; reminders</label>
-          </div>
-          <p style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--clay-deep);margin:1rem 0 .35rem;">2 &middot; Get seen on San Mateo Local</p>
-          <div class="checks">
-            <label class="chk"><input type="checkbox" name="interest[]" value="Featured Listing"> Featured Listing</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="Premium Business Page"> Premium Business Page</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="Business Spotlight (feature story)"> Business Spotlight (story)</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="Local Buzz (specials & events)"> Local Buzz (specials &amp; events)</label>
-            <label class="chk"><input type="checkbox" name="interest[]" value="Best-Of guide sponsorship"> Best-Of guide sponsorship</label>
-          </div>
-          <p style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--ink-soft);margin:1rem 0 .35rem;">Still deciding?</p>
-          <div class="checks">
-            <label class="chk"><input type="checkbox" name="interest[]" value="Not sure yet"> Not sure yet, help me pick</label>
-          </div>
-        </div>
-        <div class="row">
-          <label class="fld" for="name">Your name</label>
-          <input type="text" id="name" name="name" placeholder="First name is fine" />
-        </div>
-        <div class="row">
-          <label class="fld" for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Where we can reach you" required />
-        </div>
-        <div class="row">
-          <label class="fld" for="phone">Phone <span style="font-weight:400;color:var(--ink-soft)">(optional)</span></label>
-          <input type="tel" id="phone" name="phone" placeholder="If you'd rather we call" />
-        </div>
-        <div class="row">
-          <label class="fld" for="msg">Anything else? <span style="font-weight:400;color:var(--ink-soft)">(optional)</span></label>
-          <textarea id="msg" name="message" placeholder="Tell us what's on your mind."></textarea>
-        </div>
-        <button type="submit" id="send">Send it in</button>
-      </form>
+      <h2 style="text-align:center;">Tell us about your business</h2>
+      <p class="sub" style="text-align:center;">Takes a minute. We read every one.</p>
+      <div style="margin-top:1rem;">
+        <iframe src="https://api.leadconnectorhq.com/widget/form/OU906kLSNvVRj3rtE4dy"
+          style="width:100%; min-height:760px; border:none; border-radius:12px; background:#fff;"
+          id="ghl-combined" data-form-id="OU906kLSNvVRj3rtE4dy"
+          title="Work with San Mateo Local"></iframe>
+      </div>
 
       <p class="or">Prefer email? Write us at <a href="mailto:hello@sanmateolocal.com?subject=Working%20with%20San%20Mateo%20Local">hello@sanmateolocal.com</a>.</p>
     </section>
@@ -764,7 +690,7 @@
         var b = new URLSearchParams(location.search).get('b');
         if (b) {
           var f = document.getElementById('biz');
-          f.value = b;
+          if (f) f.value = b;
           var kick = document.querySelector('.hero .kick');
           if (kick) kick.textContent = 'Claiming your listing';
           var h = document.querySelector('.hero h1');
@@ -775,63 +701,18 @@
       } catch(e){}
     })();
 
-    var form = document.getElementById('bizForm');
-    form.addEventListener('submit', async function(e){
-      e.preventDefault();
-      var btn = document.getElementById('send');
-      btn.textContent = 'Sending...'; btn.disabled = true;
-      var data = new FormData(form);
-      var picks = [].slice.call(form.querySelectorAll('input[name="interest[]"]:checked')).map(function(c){return c.value;});
-      data.set('interest', picks.join(', '));
-      data.delete('interest[]');
-      try {
-        var res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:data });
-        var j = await res.json();
-        if (j.success) { try{gtag('event','lead_submit',{form_name:'services_interest'});}catch(e){} form.style.display='none'; document.getElementById('ok').style.display='block'; document.getElementById('ok').scrollIntoView({behavior:'smooth',block:'center'}); }
-        else throw new Error(j.message||'error');
-      } catch(err) {
-        btn.textContent = 'Send it in'; btn.disabled = false;
-        (function(b){var f=b&&(b.form||b.closest('form'));if(!f)return;var e=f.querySelector('.paidErr');if(!e){e=document.createElement('p');e.className='paidErr';e.setAttribute('role','alert');e.style.cssText='color:#B23324;font-size:.9rem;margin-top:.7rem;text-align:center;';f.appendChild(e);}e.textContent="That didn't go through. Try again, or email hello@sanmateolocal.com.";e.style.display='block';})(btn);
-      }
-    });
+    // Combined "Tell us about your business" form (bizForm) moved to a GHL iframe
+    // 2026-08-31; its Web3Forms handler was removed.
   </script>
   <script>
   (function(){
-    var f=document.getElementById('listForm');if(!f)return;
+    // Get-listed (free) + combined forms moved to GHL iframes 2026-08-31; the
+    // Web3Forms handlers for them were removed. The PAID intake handlers below
+    // (Featured/Spotlight/Local Buzz -> Stripe) are kept and no longer gated on
+    // the removed listForm. lead() + setVal() are retained because the paid
+    // handlers use them.
     function lead(n){try{gtag('event','lead_submit',{form_name:n});}catch(e){}}
-    var up=document.getElementById('upsell'), ok=document.getElementById('listOk'), intro=document.getElementById('listIntro');
-    document.getElementById('lsend').addEventListener('click',function(){
-      if(!f.reportValidity())return;
-      if(intro)intro.style.display='none';
-      finish(null,this);
-    });
-    f.addEventListener('input',function(){ var er=document.getElementById('lerr'); if(er) er.style.display='none'; });
-    async function finish(redirect, btn, after){
-      if(!f.checkValidity()){ up.style.display='none'; if(intro)intro.style.display=''; f.style.display=''; f.reportValidity(); return; }
-      if(btn){ btn.textContent = 'Saving...'; btn.disabled=true; }
-      try{
-        var res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)});
-        var j=await res.json();
-        if(!j.success)throw new Error();
-        lead('add_my_business');
-        if(after){ after(); return; }
-        if(redirect){window.location=redirect;return;}
-        f.style.display='none'; up.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'});
-      }catch(err){ if(btn){btn.disabled=false; btn.textContent='Add my business';} var er=document.getElementById('lerr'); if(er){ er.textContent="That didn't go through. Try again, or email hello@sanmateolocal.com and I'll add you by hand."; er.style.display='block'; er.scrollIntoView({behavior:'smooth',block:'center'}); } }
-    }
-    function val(id){ var el=document.getElementById(id); return el?el.value:''; }
     function setVal(id,v){ if(v){ var el=document.getElementById(id); if(el) el.value=v; } }
-    function freeVals(){ return { biz:val('lbiz'), cat:val('lcat'), addr:val('laddr'), known:val('lknown'), web:val('lweb'), insta:val('linsta'), fb:val('lfb'), name:val('lname'), email:val('lemail') }; }
-
-    document.getElementById('upsellFree').addEventListener('click',function(){finish(null,this);});
-    document.getElementById('upsellFeatured').addEventListener('click',function(){
-      var pre=freeVals();
-      finish(null,this,function(){ up.style.display='none'; openFeatured(pre); });
-    });
-    document.getElementById('upsellSpotlight').addEventListener('click',function(){
-      var pre=freeVals();
-      finish(null,this,function(){ up.style.display='none'; openSpotlight(pre); });
-    });
 
     // ---- shared: submit a paid intake form, then send to checkout ----
     async function payAfter(form, url, btn, resetLabel){
@@ -922,5 +803,7 @@
   </script>
   <!-- BCM lead-capture chat (GHL) — business pages only -->
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a7a99e7e427c78bb5f65491"></script>
+  <!-- GHL form auto-resize for the get-listed + combined iframes -->
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
 </html>
