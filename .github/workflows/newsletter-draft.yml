@@ -1,0 +1,31 @@
+name: Weekly newsletter draft
+
+# Runs on GitHub's servers every Thursday morning — nothing needs to be open on Jason's
+# end. It assembles the week's items (new site posts + Downtown San Mateo events + city
+# news and upcoming City Council meetings, all from public sources), creates a Buttondown
+# DRAFT, and emails Jason a preview of it. It NEVER sends to subscribers — Jason reviews
+# the preview and clicks Send in Buttondown himself. Do nothing = nothing goes out.
+#
+# Until BUTTONDOWN_API_KEY is set as a repo secret, the job simply prints the assembled
+# issue (a safe dry run) and exits — no draft, no email.
+
+on:
+  schedule:
+    - cron: '30 15 * * 4'   # Thursdays 15:30 UTC (~8:30am Pacific)
+  workflow_dispatch: {}       # lets Jason run it on demand from the Actions tab
+
+permissions:
+  contents: read
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Build newsletter draft + email Jason a preview
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+        run: node .github/newsletter-draft.mjs
