@@ -185,7 +185,7 @@
         '<a href="gone-but-not-forgotten.html">Gone But Not Forgotten</a>' +
       '</div>';
     document.getElementById('shareBtn').onclick = function(){
-      var text = "I scored " + score + "/10 on the How San Mateo Are You? quiz. Think you can beat me?";
+      var text = "I scored " + score + "/" + QUESTIONS.length + " on the How San Mateo Are You? quiz. Think you can beat me?";
       var url = "https://sanmateolocal.com/quiz.html";
       if (navigator.share){ navigator.share({title:"How San Mateo Are You?", text:text, url:url}).catch(function(){}); }
       else {
