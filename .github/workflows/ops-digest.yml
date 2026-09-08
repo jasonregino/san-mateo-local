@@ -1,0 +1,32 @@
+name: Weekly Ops Digest
+
+# Runs on GitHub's servers every Monday morning, just after the three scans, and emails
+# Jason ONE digest of what they found plus his standing weekly to-do list. Replaces the
+# "GitHub issues nobody reads" reminders with a single email he actually sees. It never
+# edits the site and never sends anything to subscribers.
+#
+# Reuses BUTTONDOWN_API_KEY (creates a throwaway draft, previews it to Jason, deletes it).
+# Until that secret exists it just prints the digest (a safe dry run).
+
+on:
+  schedule:
+    - cron: '15 16 * * 1'   # Mondays 16:15 UTC (~9:15am Pacific), after the 8:37-8:45 scans
+  workflow_dispatch: {}       # lets Jason run it on demand from the Actions tab
+
+permissions:
+  issues: read
+  contents: read
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Build ops digest + email Jason
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/ops-digest.mjs
