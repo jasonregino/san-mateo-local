@@ -322,32 +322,12 @@
           <h2 style="text-align:left; font-size:1.7rem; margin:.3rem 0 .4rem;">Not on the guide yet?</h2>
           <p style="color:var(--ink-soft); margin-bottom:1.2rem;">If you run a San Mateo spot we're missing, tell us about it and we'll add it. <strong>Free, no strings.</strong> We genuinely love finding places we didn't know about.</p>
         </div>
-        <div id="listOk" style="display:none; background:#EAF3EA; border:1px solid #B9D7B9; color:#2A4A2A; border-radius:12px; padding:1.4rem;">
-          <strong>Thank you, you're in.</strong> We'll get your spot added to the guide, usually within a day or two. If you'd like to stand out later, <a href="#feature" style="color:#2A4A2A; font-weight:700;">here are the ways to boost your listing &rarr;</a>
-        </div>
-        <div id="upsell" style="display:none;">
-          <p class="sec-label" style="text-align:left; color:var(--clay-deep);">One quick thing before we add you</p>
-          <h3 style="font-size:1.4rem; margin:.2rem 0 .3rem;">Want to stand out?</h3>
-          <p style="color:var(--ink-soft); font-size:.92rem; margin-bottom:1.1rem;">Your listing is free either way. If you'd like more of the locals already browsing to find you, add a boost now, or just continue with your free listing.</p>
-          <div style="display:flex; flex-wrap:wrap; gap:.8rem;">
-            <div style="flex:1 1 210px; background:#fff; border:1.5px solid var(--line); border-top:3px solid var(--clay-deep); border-radius:10px; padding:1rem 1.1rem; display:flex; flex-direction:column;">
-              <p style="font-weight:700; color:var(--ink);">Featured Listing</p>
-              <p style="font-size:.85rem; color:var(--ink-soft); margin:.25rem 0 .6rem;">Top of your category, plus the top pick in our new AI guide.</p>
-              <p style="font-weight:800; color:var(--clay-deep); margin:auto 0 .6rem;">$39<span style="font-weight:600; font-size:.8rem; color:var(--ink-soft);">/mo, or $49 once</span></p>
-              <button type="button" id="upsellFeatured" style="width:100%; background:var(--clay); color:#fff; font-weight:700; padding:.6rem; border:none; border-radius:7px; cursor:pointer; font-size:.9rem;">Get featured &rarr;</button>
-            </div>
-            <div style="flex:1 1 210px; background:#fff; border:1.5px solid var(--ink); border-top:3px solid var(--clay-deep); border-radius:10px; padding:1rem 1.1rem; display:flex; flex-direction:column;">
-              <p style="font-weight:700; color:var(--ink);">Business Spotlight</p>
-              <p style="font-size:.85rem; color:var(--ink-soft); margin:.25rem 0 .45rem;">A 30-day homepage feature, plus a story page that stays for good.</p>
-              <p style="margin:0 0 .55rem;"><a href="sample-business-spotlight.html" style="color:var(--clay-deep); font-weight:700; font-size:.82rem;">See a sample &rarr;</a></p>
-              <p style="font-weight:800; color:var(--clay-deep); margin:auto 0 .6rem;">$149 <span style="font-weight:600; font-size:.8rem; color:var(--ink-soft);">one time</span></p>
-              <button type="button" id="upsellSpotlight" style="width:100%; background:var(--clay); color:#fff; font-weight:700; padding:.6rem; border:none; border-radius:7px; cursor:pointer; font-size:.9rem;">Get the Spotlight &rarr;</button>
-            </div>
-          </div>
-          <p class="sec-label" style="text-align:center; color:var(--clay-deep); margin:1.4rem 0 .15rem;">Not ready for a boost?</p>
-          <p style="text-align:center; font-size:.82rem; color:var(--ink-soft); margin:0 0 .55rem;">Keep it free, no problem. You can always add a boost later.</p>
-          <button type="button" id="upsellFree" style="width:100%; background:transparent; color:var(--ink-soft); font-weight:700; padding:.7rem; border:1.5px solid var(--line); border-radius:8px; cursor:pointer; font-size:.92rem;">Just add my free listing &rarr;</button>
-        </div>
+        <!-- Removed 2026-09-07: orphaned #listOk (thank-you) + #upsell (post-submit boost offer with
+             upsellFeatured / upsellSpotlight / upsellFree buttons). The free-listing form moved to the
+             GHL iframe below on 2026-08-31, and the JS that used to reveal these blocks on submit was
+             deleted with it, leaving them permanently hidden with dead buttons. The featured/spotlight
+             offers remain fully reachable via the pricing tiers above (featStart etc.). If we want a
+             post-signup upsell again, rebuild it inside the GHL form's own confirmation/redirect. -->
         <div style="margin-top:1.2rem;">
           <iframe src="https://api.leadconnectorhq.com/widget/form/OU906kLSNvVRj3rtE4dy?request_type=Get+listed"
             style="width:100%; min-height:640px; border:none; border-radius:12px; background:#fff;"
