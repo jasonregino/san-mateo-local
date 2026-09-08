@@ -714,7 +714,8 @@
     function openFeatured(pre){
       if(pre){ setVal('fbiz',pre.biz); setVal('fcat',pre.cat); setVal('faddr',pre.addr); setVal('fknown',pre.known); setVal('fweb',pre.web); setVal('finsta',pre.insta); setVal('ffb',pre.fb); setVal('fname',pre.name); setVal('femail',pre.email); }
       ff.style.display=''; if(fok)fok.style.display='none';
-      fi.style.display='block'; fi.scrollIntoView({behavior:'smooth',block:'start'});
+      fi.style.display='block';
+      requestAnimationFrame(function(){ fi.scrollIntoView({behavior:'smooth',block:'start'}); });
     }
     var fstart=document.getElementById('featStart');
     if(fstart) fstart.addEventListener('click',function(){ openFeatured(); });
@@ -728,7 +729,8 @@
     function openSpotlight(pre){
       if(pre){ setVal('sbiz',pre.biz); setVal('scat',pre.cat); setVal('saddr',pre.addr); setVal('sknown',pre.known); setVal('sweb',pre.web); setVal('sinsta',pre.insta); setVal('sfb',pre.fb); setVal('sname',pre.name); setVal('semail',pre.email); }
       sf.style.display=''; if(sok)sok.style.display='none';
-      si.style.display='block'; si.scrollIntoView({behavior:'smooth',block:'start'});
+      si.style.display='block';
+      requestAnimationFrame(function(){ si.scrollIntoView({behavior:'smooth',block:'start'}); });
     }
     var ss=document.getElementById('spotStart');
     if(ss) ss.addEventListener('click',function(){ openSpotlight(); });
@@ -741,7 +743,8 @@
     function openBuzz(pre){
       if(pre){ setVal('bbiz',pre.biz); setVal('bcat',pre.cat); setVal('baddr',pre.addr); setVal('bknown',pre.known); setVal('bweb',pre.web); setVal('binsta',pre.insta); setVal('bfb',pre.fb); setVal('bname',pre.name); setVal('bemail',pre.email); }
       bf.style.display=''; if(bok)bok.style.display='none';
-      bi.style.display='block'; bi.scrollIntoView({behavior:'smooth',block:'start'});
+      bi.style.display='block';
+      requestAnimationFrame(function(){ bi.scrollIntoView({behavior:'smooth',block:'start'}); });
     }
     var bstart=document.getElementById('tierBuzz');
     if(bstart) bstart.addEventListener('click',function(){ openBuzz(); });
@@ -756,7 +759,8 @@
       fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(bf)}).then(function(r){return r.json();}).then(function(j){
         if(!j.success)throw new Error();
         lead('buzz');
-        bf.style.display='none'; bok.style.display='block'; bok.scrollIntoView({behavior:'smooth',block:'center'});
+        bf.style.display='none'; bok.style.display='block';
+        requestAnimationFrame(function(){ bok.scrollIntoView({behavior:'smooth',block:'center'}); });
       }).catch(function(){ btn.disabled=false; btn.textContent='Continue, $35/mo →'; (function(b){var f=b&&(b.form||b.closest('form'));if(!f)return;var e=f.querySelector('.paidErr');if(!e){e=document.createElement('p');e.className='paidErr';e.setAttribute('role','alert');e.style.cssText='color:#B23324;font-size:.9rem;margin-top:.7rem;text-align:center;';f.appendChild(e);}e.textContent="That didn't go through. Try again, or email hello@sanmateolocal.com.";e.style.display='block';})(btn); });
     });
 
