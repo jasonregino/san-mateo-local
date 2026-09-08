@@ -1,5 +1,6 @@
 {
   "redirects": [
-    { "source": "/blog.html", "destination": "/guides.html", "permanent": true }
+    { "source": "/blog.html", "destination": "/guides.html", "permanent": true },
+    { "source": "/open-late.html", "destination": "/open-late-in-san-mateo.html", "permanent": true }
   ]
 }
