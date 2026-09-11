@@ -74,6 +74,8 @@
   function render(t){
     var h = esc(t);
     h = h.replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/)[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    // make phone numbers tappable (formatted numbers only, so digit runs inside URLs are left alone)
+    h = h.replace(/(\(\d{3}\)\s*\d{3}[\s.-]\d{4}|\b\d{3}[\s.-]\d{3}[\s.-]\d{4}\b)/g, function(m){ var d=m.replace(/\D/g,''); return d.length===10 ? '<a href="tel:+1'+d+'">'+m+'</a>' : m; });
     h = h.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
     h = h.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
     return h.replace(/\n/g, '<br>');
