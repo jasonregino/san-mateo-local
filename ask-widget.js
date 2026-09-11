@@ -73,7 +73,7 @@
   function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
   function render(t){
     var h = esc(t);
-    h = h.replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/)[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    h = h.replace(/\[([^\]]+)\]\s*\(((?:https?:\/\/|\/)[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
     // make phone numbers tappable (formatted numbers only, so digit runs inside URLs are left alone)
     h = h.replace(/(\(\d{3}\)\s*\d{3}[\s.-]\d{4}|\b\d{3}[\s.-]\d{3}[\s.-]\d{4}\b)/g, function(m){ var d=m.replace(/\D/g,''); return d.length===10 ? '<a href="tel:+1'+d+'">'+m+'</a>' : m; });
     h = h.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
@@ -146,6 +146,21 @@
     var a = e.target && e.target.closest ? e.target.closest('a[href*="list-your-business"], a[href*="for-business-owners"]') : null;
     if (!a || typeof window.gtag !== 'function') return;
     window.gtag('event', 'get_listed_click', {
+      link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80),
+      link_url: a.getAttribute('href') || '',
+      page_path: location.pathname
+    });
+  }, true);
+})();
+
+/* claim_click — fires a GA4 event when someone clicks a "Claim this business / Verify your
+   information" CTA (the GHL claim form). Delegated, catches every such link on the page.
+   Mark it as a key event in GA4. */
+(function () {
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="leadconnectorhq"]') : null;
+    if (!a || typeof window.gtag !== 'function') return;
+    window.gtag('event', 'claim_click', {
       link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80),
       link_url: a.getAttribute('href') || '',
       page_path: location.pathname

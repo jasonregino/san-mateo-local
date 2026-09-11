@@ -61,6 +61,22 @@ function essentiallySame(a, b) {
   if (b.length >= 6 && a.indexOf(b) === 0) return true;
   return false;
 }
+// Is the resolved name at least PLAUSIBLY the typed one (shares a distinctive word, or one
+// contains the other ignoring spaces)? Distinguishes a real near-miss worth confirming
+// ("Yum yogurt" -> "Yumi Yogurt") from a location-biased mismatch that should be ignored
+// ("ZZTEST" surfacing "Cottage Grove Elementary" just because it is nearby).
+function plausiblyRelated(a, b) {
+  const norm = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const na = norm(a), nb = norm(b);
+  if (!na || !nb) return false;
+  const naz = na.replace(/ /g, ''), nbz = nb.replace(/ /g, '');
+  if (nbz.indexOf(naz) >= 0 || naz.indexOf(nbz) >= 0) return true; // one contains the other, ignoring spaces
+  const GEN = new Set(['the','and','of','san','mateo','ca','california','inc','llc','co','company','shop','store','center','group','services','service']);
+  const toks = s => new Set(norm(s).split(' ').filter(w => w.length >= 3 && !GEN.has(w)));
+  const tb = toks(b);
+  for (const w of toks(a)) if (tb.has(w)) return true; // share a meaningful word
+  return false;
+}
 const titleCase = s => String(s || '').replace(/\b\w/g, c => c.toUpperCase());
 
 // ---- Live Google lookup (best-effort; graceful fallback if key/API unavailable) ----
@@ -241,7 +257,13 @@ module.exports = async (req, res) => {
   const goal = String(body.goal || '').slice(0, 200).trim();
   if (!name) { res.status(400).json({ error: 'no business name' }); return; }
 
-  const g = await googleLookup(name);
+  let g = await googleLookup(name);
+  // If Google's location-biased search returned a business with no plausible relation to what
+  // they typed (an unfindable or badly mistyped name surfaces the nearest business instead),
+  // discard it so we neither force a confirm of a wrong business nor use its data.
+  if (g && g.status === 'OK' && g.name && !essentiallySame(name, g.name) && !plausiblyRelated(name, g.name)) {
+    g = { status: 'NO_MATCH' };
+  }
   const dirInput = matchBusiness(name);
   // Also match the directory on Google's corrected name, so a typo like "Yum yogurt"
   // still resolves to the real "Yumi Yogurt" listing.
