@@ -70,6 +70,11 @@ STRICT RULES:
 - Recommend 2 to 3 options at most, each with a short reason it fits and its neighborhood. For a broad ask (best tacos, what to do this weekend), you may also add the matching SECTION page link.
 - You do NOT have live hours or open/closed status. Never say a place is "open now", "closed", "open late", or state any hours as fact, even if a listing blurb hints at it. Instead say something like "check their hours before you go". If someone asks what is open right now, explain you cannot see live hours and suggest they call the place or check the map.
 - You can only chat here. Never offer to call a business, book a table, check hours, or do anything outside this conversation. When someone needs hours, a quote, wait times, or a reservation, give them the listed phone number and tell them to contact the place directly. Only give a phone number that appears in THE GUIDE. If a place has NO phone in the guide, do not write a call line at all and never write a placeholder like "call them at (no phone listed)"; instead give the address and say to stop by, or suggest looking them up on Google.
+- NEVER write a phone number for a place that has no phone in THE GUIDE. Do not guess one, do not reuse another business's number, do not invent one. Only ever write the exact phone shown for THAT place; if it has none, give the address or suggest looking them up online, with no phone at all.
+- NO COMPASS DIRECTIONS: you do not know which way (north, south, east, west) one place is from another. Never say a place is "north", "south", "to the east", "up the road", or give any bearing. Use distance and neighborhood only.
+- A NAMED AREA OR LANDMARK IS NOT A PINPOINT. When the visitor names a mall, park, shopping center, or a long street, treat it as that general area: never say they are "at" a specific business there, never anchor to one storefront's exact location, and never state which neighborhood they are in as a fact. If the places you recommend all sit in a different neighborhood than the area they named, do not label their neighborhood at all, just give the options.
+- DO NOT INVENT WHAT A PLACE SERVES OR OFFERS. Credit a place with a meal type or offering (breakfast, brunch, lunch, coffee, a bar menu) ONLY when its type or description says so. Never claim an Italian restaurant or a bar "does brunch" or "has good coffee and morning plates" unless the listing says it. When asked for a meal type, LEAD with the places actually typed or described for it (a "Breakfast & brunch Cafe" is a top breakfast pick, never a "farther out" afterthought), and never rank a genuine match below a place whose fit you had to invent.
+- NEVER list a business under a heading its category contradicts. A copy or print shop, an antiques or home-goods store, a hardware store, or a salon is not a food option and must never appear under a "Food & Drink", "lunch", or "sandwich" list. Every item under a food heading must be a real food place.
 - If the request is vague, ask ONE short clarifying question first (what kind of place, which neighborhood, or the vibe).
 - Warm, local, and concise, like a friend who knows the town. Short sentences. No em-dashes. No hype or marketing buzzwords.
 - Format each place with its NAME linked to its on-site San Mateo Local page: [Name] followed by the exact PAGE url shown for that place in THE GUIDE, in parentheses. Then its Neighborhood, one short reason, the phone number for a service someone will call, and a Directions link written as [Directions] followed by that same place's exact MAPS url in parentheses. Link the NAME to the PAGE url, NEVER to the MAPS url; use the MAPS url only for the [Directions] link. Format a guide section as [Page title] then its /url in parentheses. ALWAYS use the real PAGE and MAPS urls copied from the data. NEVER write a placeholder like "https://maps-url" or a literal "/business/...", and NEVER narrate a correction or your own process to the visitor (no "wait, let me use the real one", no "let me fix that"); just write the finished, clean answer.
@@ -333,8 +338,29 @@ async function readBody(req) {
   return Buffer.concat(chunks).toString('utf8');
 }
 
+// Deterministic phone guard. The model gave a no-phone place a number it invented, and
+// worse, a DIFFERENT real business's line (a visitor calling "Foreigner Cafe" reached
+// Cajun Bowl). A simple "is it a real number" check misses that, because the misattributed
+// number IS real. So every business is written as [Name](/business/<id>.html), and each
+// phone in the reply is attributed to the business whose page-link most recently preceded
+// it, then kept ONLY if it is that exact business's phone. Invented, misattributed, and
+// no-phone cases are all stripped before the visitor sees them.
+const PAGE_PHONE = new Map();
+for (const p of places) { if (p.phone && p.detail) PAGE_PHONE.set(p.detail, String(p.phone).replace(/\D/g, '').slice(-10)); }
+const PHONE_TOKEN = /(?:call(?:\s+\w+){0,3}\s+at\s+)?(?:\[[^\]]*\]\(tel:[^)]*\)|\(?\d{3}\)?[\s.\-]?\d{3}[\s.\-]?\d{4})/gi;
+function stripBadPhones(text) {
+  const out = text.replace(PHONE_TOKEN, (match, offset) => {
+    const links = text.slice(0, offset).match(/\]\(\/business\/[a-z0-9-]+\.html\)/gi);
+    const page = links ? links[links.length - 1].slice(2, -1) : null; // the business this phone belongs to
+    const allowed = page ? PAGE_PHONE.get(page) : null;               // that business's real phone (undefined = it has none)
+    const num = (match.match(/\d/g) || []).join('').slice(-10);
+    return (allowed && num === allowed) ? match : '';                 // keep only the right number for the right business
+  });
+  return out.replace(/\(\s*\)/g, '').replace(/[ \t]{2,}/g, ' ').replace(/[ \t]+([.,;])/g, '$1').replace(/([.,;])[.,;]+/g, '$1').replace(/\n{3,}/g, '\n\n').trim();
+}
+
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-24'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-25'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
@@ -399,6 +425,7 @@ module.exports = async (req, res) => {
     const textBlocks = Array.isArray(data.content) ? data.content.filter(b => b && b.type === 'text' && b.text) : [];
     let reply = textBlocks.map(b => b.text).join('\n').trim() || 'Sorry, I did not catch that. What are you looking for?';
     reply = reply.replace(/\s*[—―]\s*/g, ', '); // strip em-dashes (U+2014/2015): the voice rule, enforced even when the model ignores it
+    reply = stripBadPhones(reply); // never let an invented or misattributed phone number reach the visitor
     res.status(200).json({ reply });
   } catch (e) {
     console.error('concierge error', e.message);
