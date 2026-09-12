@@ -64,6 +64,7 @@
   .bcard { border:1.5px solid var(--ink); border-top:5px solid var(--tc,#C25B3A); background:var(--card); border-radius:12px; padding:1.5rem 1.5rem 1.6rem; display:flex; flex-direction:column; box-shadow:0 2px 8px -4px rgba(34,29,22,0.2); transition:transform 0.18s ease, box-shadow 0.18s ease; opacity:0; transform:translateY(14px); animation:rise 0.5s ease forwards; }
   .bcard:hover { transform:translateY(-5px); box-shadow:0 18px 36px -18px rgba(34,29,22,0.5); }
   .bcard-img { width:100%; aspect-ratio:940/574; object-fit:cover; border-radius:8px; margin-bottom:1rem; display:block; border:1px solid var(--line); }
+  .bcard-logo { width:72px; height:72px; object-fit:contain; display:block; margin:0.2rem 0 0.7rem; }
   @keyframes rise { to { opacity:1; transform:translateY(0); } }
   @media (prefers-reduced-motion: reduce) { .bcard { animation:none; opacity:1; transform:none; } }
   .bcard-top { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; margin-bottom:0.85rem; }
@@ -143,6 +144,7 @@
         <a class="bcard" href="https://www.eventbrite.com/e/hiptwist-fitness-grand-opening-tickets-1998517704252" data-type="Event" style="--tc:#3B5BA0; animation-delay:0s;">
           <img class="bcard-img" src="/images/buzz/hiptwist-grand-opening.jpg" alt="Hiptwist Fitness" loading="eager">
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</span><span class="fresh">New</span></div>
+          
           <h3>Hiptwist Fitness</h3>
           <p class="meta">West San Mateo · Thu Sep 17</p>
           <p class="d">Hiptwist Fitness celebrates its grand opening on Thursday, September 17. Free to attend, just RSVP. Reformer and mat Pilates, plus infrared and red light therapy.</p>
@@ -151,6 +153,7 @@
         <a class="bcard" href="business/simple-delights.html" data-type="Support Local" style="--tc:#A5492B; animation-delay:0.05s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Support Local</span></div>
+          <img class="bcard-logo" src="/images/logos/simple-delights-logo.png" alt="Simple Delights" style="border-radius:50%;" loading="lazy">
           <h3>Simple Delights</h3>
           <p class="meta">1226 W Hillsdale Blvd</p>
           <p class="d">A family-run sweets shop scooping ice cream, frozen yogurt, and custom cakes. Now on the guide.</p>
@@ -159,6 +162,7 @@
         <a class="bcard" href="eat-drink.html" data-type="Featured" style="--tc:#C25B3A; animation-delay:0.1s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Featured</span></div>
+          
           <h3>Porterhouse</h3>
           <p class="meta">Downtown · B Street</p>
           <p class="d">The Peninsula's in-house dry-aging steakhouse.</p>
@@ -167,6 +171,7 @@
         <a class="bcard" href="eat-drink.html" data-type="Featured" style="--tc:#C25B3A; animation-delay:0.15000000000000002s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Featured</span></div>
+          
           <h3>Espetus Churrascaria</h3>
           <p class="meta">B Street</p>
           <p class="d">All-you-can-eat rodizio, carved tableside.</p>
@@ -175,6 +180,7 @@
         <a class="bcard" href="spotlight-takahashi-market.html" data-type="Featured" style="--tc:#C25B3A; animation-delay:0.2s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Featured</span></div>
+          
           <h3>Takahashi Market</h3>
           <p class="meta">Downtown</p>
           <p class="d">Hawaiian and Japanese groceries, and Spam musubi worth the trip.</p>
@@ -183,6 +189,7 @@
         <a class="bcard" href="shopping.html" data-type="Featured" style="--tc:#C25B3A; animation-delay:0.25s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Featured</span></div>
+          
           <h3>Ah Sam Floral</h3>
           <p class="meta">El Camino · since 1933</p>
           <p class="d">A family florist that has bloomed in San Mateo since 1933.</p>
@@ -191,6 +198,7 @@
         <a class="bcard" href="aldos-pizza-san-mateo.html" data-type="Support Local" style="--tc:#A5492B; animation-delay:0.30000000000000004s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Support Local</span></div>
+          
           <h3>Aldo's Pizza</h3>
           <p class="meta">600 S Norfolk St</p>
           <p class="d">San Mateo's oldest pizzeria nearly closed this summer. The neighborhood is keeping it open, so go grab a pie. Read their story.</p>
@@ -199,6 +207,7 @@
         <a class="bcard" href="things-to-do.html" data-type="Event" style="--tc:#3B5BA0; animation-delay:0.35000000000000003s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</span></div>
+          
           <h3>September Nights on B Street</h3>
           <p class="meta">Downtown · B Street · Sept 10 &amp; 17</p>
           <p class="d">Live music, food, and family fun on B Street between 1st and 3rd, 6 to 8pm. Pure Ecstasy (Motown &amp; R&amp;B) on Sept 10, Neon Velvet (Top 40) on Sept 17, plus a kids zone.</p>
@@ -207,6 +216,7 @@
         <a class="bcard" href="things-to-do.html" data-type="Event" style="--tc:#3B5BA0; animation-delay:0.4s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</span></div>
+          
           <h3>September Arts &amp; Culture Fest</h3>
           <p class="meta">Downtown · Sat Sept 26</p>
           <p class="d">A free day-long downtown celebration of art, music, dance, poetry, and food, with live mural painting, cultural performances, and local artists.</p>
@@ -215,6 +225,7 @@
         <a class="bcard" href="eat-drink.html" data-type="Live Music" style="--tc:#2E7D8A; animation-delay:0.45s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Live Music</span></div>
+          
           <h3>Luceti's on 25th</h3>
           <p class="meta">25th Avenue</p>
           <p class="d">Old-school Italian with live jazz several nights a week.</p>
@@ -223,6 +234,7 @@
         <a class="bcard" href="eat-drink.html" data-type="Featured" style="--tc:#C25B3A; animation-delay:0.5s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Featured</span></div>
+          
           <h3>Pausa Bar &amp; Cookery</h3>
           <p class="meta">Downtown · B Street</p>
           <p class="d">Earned its 9th Michelin Bib Gourmand in 2026. Scratch-made Northern-Italian pastas and an all-Italian wine list.</p>
@@ -231,6 +243,7 @@
         <a class="bcard" href="downtown-walking-tour.html" data-type="Arts" style="--tc:#B07D2B; animation-delay:0.55s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Arts</span></div>
+          
           <h3>New Hope Mural</h3>
           <p class="meta">Behind Mi Rancho Supermarket</p>
           <p class="d">A vibrant new mural by Leysar Garcia, winner of last year's Mural Madness live-painting competition, funded by the county and downtown partners.</p>
@@ -239,6 +252,7 @@
         <a class="bcard" href="local-services.html" data-type="Deal" style="--tc:#C0392B; animation-delay:0.6s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Deal</span></div>
+          
           <h3>Y Salon Spa</h3>
           <p class="meta">Downtown · S San Mateo Dr</p>
           <p class="d">Weekly happy-hour specials on services at this downtown salon.</p>
@@ -247,6 +261,7 @@
         <a class="bcard" href="eat-drink.html" data-type="Happy Hour" style="--tc:#D98A2B; animation-delay:0.6s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Happy Hour</span></div>
+          
           <h3>Taqueria La Cumbre</h3>
           <p class="meta">28 N B St</p>
           <p class="d">Downtown happy hour with drinks and Mexican plates.</p>
