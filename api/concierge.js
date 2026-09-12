@@ -81,7 +81,12 @@ SECTIONS (guide pages you may link as [title](/url)):
 ${SECTIONS}`;
 
 // ---- Proximity: rank by REAL distance when we can tell where the visitor is ----
-const coordPlaces = places.filter(p => typeof p.lat === 'number' && typeof p.lng === 'number');
+// Guard against bad geocodes: a handful of listings carry coordinates in the wrong
+// state entirely (same street name matched elsewhere). One such point in a
+// neighborhood group threw that whole centroid ~74 miles off, garbling every
+// distance. Only ever trust a coordinate that is actually inside the San Mateo box.
+const IN_SM = p => p.lat >= 37.40 && p.lat <= 37.70 && p.lng >= -122.45 && p.lng <= -122.15;
+const coordPlaces = places.filter(p => typeof p.lat === 'number' && typeof p.lng === 'number' && IN_SM(p));
 
 function haversineMi(aLat, aLng, bLat, bLng) {
   const R = 3958.8, toRad = d => d * Math.PI / 180;
@@ -329,7 +334,7 @@ async function readBody(req) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-23'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-24'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
