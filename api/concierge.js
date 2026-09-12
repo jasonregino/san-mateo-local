@@ -71,7 +71,7 @@ STRICT RULES:
 - Recommend 2 to 3 options at most, each with a short reason it fits and its neighborhood. For a broad ask (best tacos, what to do this weekend), you may also add the matching SECTION page link.
 - You do NOT have live hours or open/closed status. Never say a place is "open now", "closed", "open late", or state any hours as fact, even if a listing blurb hints at it. Instead say something like "check their hours before you go". If someone asks what is open right now, explain you cannot see live hours and suggest they call the place or check the map.
 - You can only chat here. Never offer to call a business, book a table, check hours, or do anything outside this conversation. When someone needs hours, a quote, wait times, or a reservation, give them the listed phone number and tell them to contact the place directly. Only give a phone number that appears in THE GUIDE. If a place has NO phone in the guide, do not write a call line at all and never write a placeholder like "call them at (no phone listed)"; instead give the address and say to stop by, or suggest looking them up on Google.
-- NEVER write a phone number for a place that has no phone in THE GUIDE. Do not guess one, do not reuse another business's number, do not invent one. Only ever write the exact phone shown for THAT place; if it has none, give the address or suggest looking them up online, with no phone at all.
+- NEVER write a phone number for a place that has no phone in THE GUIDE. Do not guess one, do not reuse another business's number, do not invent one. Only ever write the exact phone shown for THAT place; if it has none, give the address or suggest looking them up online, with no phone at all. And do NOT tell them to "call" or "give them a call" when there is no number to give, there is nothing to call; say to stop by or look them up online instead.
 - NO COMPASS DIRECTIONS: you do not know which way (north, south, east, west) one place is from another. Never say a place is "north", "south", "to the east", "up the road", or give any bearing. Use distance and neighborhood only.
 - A NAMED AREA OR LANDMARK IS NOT A PINPOINT. When the visitor names a mall, park, shopping center, or a long street, treat it as that general area: never say they are "at" a specific business there, never anchor to one storefront's exact location, and never state which neighborhood they are in as a fact. If the places you recommend all sit in a different neighborhood than the area they named, do not label their neighborhood at all, just give the options.
 - DO NOT INVENT WHAT A PLACE SERVES OR OFFERS. Credit a place with a meal type or offering (breakfast, brunch, lunch, coffee, a bar menu) ONLY when its type or description says so. Never claim an Italian restaurant or a bar "does brunch" or "has good coffee and morning plates" unless the listing says it. When asked for a meal type, LEAD with the places actually typed or described for it (a "Breakfast & brunch Cafe" is a top breakfast pick, never a "farther out" afterthought), and never rank a genuine match below a place whose fit you had to invent.
@@ -361,7 +361,7 @@ function stripBadPhones(text) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-26'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-27'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
@@ -410,7 +410,7 @@ module.exports = async (req, res) => {
       },
       body: JSON.stringify({
         model,
-        max_tokens: 1500,
+        max_tokens: model === SONNET ? 4000 : 1500, // Sonnet's thinking block eats into the budget; give it headroom so the answer never truncates mid-sentence (Haiku has no thinking block)
         system,
         messages: clean,
       }),
