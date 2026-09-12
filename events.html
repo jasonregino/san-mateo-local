@@ -55,7 +55,8 @@
   .ev-hero p { color:rgba(255,255,255,0.94); font-size:1.12rem; max-width:40rem; margin:0 auto; }
   /* events list */
   .ev-list { display:flex; flex-direction:column; gap:1.1rem; padding:2rem 0 1.5rem; }
-  .ev { display:flex; gap:1.3rem; border:1.5px solid var(--ink); border-left:5px solid var(--tc,#41614B); background:var(--card); border-radius:12px; padding:1.4rem 1.5rem; box-shadow:0 2px 8px -4px rgba(34,29,22,0.2); }
+  .ev { display:flex; gap:1.3rem; border:1.5px solid var(--ink); border-left:5px solid var(--tc,#41614B); background:var(--card); border-radius:12px; padding:1.4rem 1.5rem; box-shadow:0 2px 8px -4px rgba(34,29,22,0.2); transition:transform 0.18s ease, box-shadow 0.18s ease; }
+  .ev:hover { transform:translateY(-3px); box-shadow:0 16px 34px -18px rgba(34,29,22,0.45); }
   .ev-date { flex:none; width:66px; text-align:center; border-right:1px solid var(--line); padding-right:1.1rem; display:flex; flex-direction:column; justify-content:center; }
   .ev-mon { font-size:0.8rem; letter-spacing:0.12em; font-weight:800; color:var(--tc,#41614B); }
   .ev-day { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:700; line-height:1; }
@@ -65,7 +66,8 @@
   .ev-meta { font-size:0.82rem; letter-spacing:0.02em; color:var(--sage-deep); font-weight:700; margin-bottom:0.5rem; }
   .ev-desc { color:var(--ink-soft); font-size:0.98rem; }
   .ev-img { width:100%; max-width:520px; height:auto; border-radius:8px; border:1px solid var(--line); margin-top:0.9rem; display:block; }
-  .ev-link { display:inline-flex; align-items:center; min-height:40px; margin-top:0.9rem; font-weight:700; color:var(--clay-deep); font-size:0.92rem; }
+  .ev-cta { display:inline-flex; align-items:center; min-height:44px; margin-top:1rem; padding:0.6rem 1.35rem; background:var(--clay); color:#fff; font-weight:700; border-radius:8px; font-size:0.95rem; }
+  .ev:hover .ev-cta { background:var(--clay-deep); }
   @media (max-width:560px){ .ev { flex-direction:column; gap:0.6rem; } .ev-date { flex-direction:row; gap:0.5rem; width:auto; border-right:none; border-bottom:1px solid var(--line); padding:0 0 0.6rem; justify-content:flex-start; align-items:baseline; } .ev-day { font-size:1.8rem; } }
   /* submit */
   .ev-submit { text-align:center; background:var(--paper-2); border:1.5px solid var(--line); border-radius:14px; padding:2rem 1.5rem; margin:1rem 0 3rem; }
@@ -121,7 +123,7 @@
   </section>
   <div class="wrap">
     <div class="ev-list">
-      <article class="ev" style="--tc:#A5492B;">
+      <a class="ev" href="https://www.eventbrite.com/e/hiptwist-fitness-grand-opening-tickets-1998517704252" target="_blank" rel="noopener" style="--tc:#A5492B;">
         <div class="ev-date"><span class="ev-mon">SEP</span><span class="ev-day">17</span></div>
         <div class="ev-body">
           <span class="ev-tag">Grand Opening</span>
@@ -129,10 +131,10 @@
           <p class="ev-meta">Thursday, September 17 &middot; 740 Polhemus Rd, San Mateo &middot; Hiptwist Fitness</p>
           <p class="ev-desc">A local Pilates studio celebrates its grand opening. Free to attend, just RSVP. Reformer and mat Pilates, plus infrared and red light therapy.</p>
           <img class="ev-img" src="/images/buzz/hiptwist-grand-opening.jpg" alt="Hiptwist Fitness Grand Opening" loading="lazy">
-          <a class="ev-link" href="https://www.eventbrite.com/e/hiptwist-fitness-grand-opening-tickets-1998517704252" target="_blank" rel="noopener">RSVP &rarr;</a>
+          <span class="ev-cta">RSVP &rarr;</span>
         </div>
-      </article>
-      <article class="ev" style="--tc:#2E7D8A;">
+      </a>
+      <a class="ev" href="https://www.cityofsanmateo.org/4095/75386/September-Nights-on-B-Street" target="_blank" rel="noopener" style="--tc:#2E7D8A;">
         <div class="ev-date"><span class="ev-mon">SEP</span><span class="ev-day">17</span></div>
         <div class="ev-body">
           <span class="ev-tag">Live Music</span>
@@ -140,10 +142,10 @@
           <p class="ev-meta">6:00 to 8:00 PM &middot; B Street between 1st and 3rd, Downtown San Mateo &middot; City of San Mateo</p>
           <p class="ev-desc">Live music, food, and family fun on B Street, with Neon Velvet playing Top 40 and a kids zone.</p>
           
-          <a class="ev-link" href="https://www.cityofsanmateo.org/4095/75386/September-Nights-on-B-Street" target="_blank" rel="noopener">Details &rarr;</a>
+          <span class="ev-cta">Details &rarr;</span>
         </div>
-      </article>
-      <article class="ev" style="--tc:#8A6D3B;">
+      </a>
+      <a class="ev" href="https://sanmateopublic.libcal.com/event/17521312" target="_blank" rel="noopener" style="--tc:#8A6D3B;">
         <div class="ev-date"><span class="ev-mon">SEP</span><span class="ev-day">18</span></div>
         <div class="ev-body">
           <span class="ev-tag">Community</span>
@@ -151,10 +153,10 @@
           <p class="ev-meta">10:00 AM to 4:30 PM &middot; San Mateo Public Library &middot; San Mateo Public Library</p>
           <p class="ev-desc">The library's Fall Book Sale. Stock up on books for a good cause.</p>
           
-          <a class="ev-link" href="https://sanmateopublic.libcal.com/event/17521312" target="_blank" rel="noopener">Details &rarr;</a>
+          <span class="ev-cta">Details &rarr;</span>
         </div>
-      </article>
-      <article class="ev" style="--tc:#41614B;">
+      </a>
+      <a class="ev" href="https://www.cityofsanmateo.org/Calendar.aspx?EID=16542" target="_blank" rel="noopener" style="--tc:#41614B;">
         <div class="ev-date"><span class="ev-mon">SEP</span><span class="ev-day">18</span></div>
         <div class="ev-body">
           <span class="ev-tag">Family</span>
@@ -162,10 +164,10 @@
           <p class="ev-meta">Games at 6 PM, movie at dusk (~7:30 PM) &middot; Laurie Meadows Park, 111 Laurie Meadows Dr, San Mateo &middot; San Mateo Parks &amp; Recreation</p>
           <p class="ev-desc">A free movie night under the stars. Bring a blanket and a chair. Mobile Rec games and crafts start at 6 PM.</p>
           
-          <a class="ev-link" href="https://www.cityofsanmateo.org/Calendar.aspx?EID=16542" target="_blank" rel="noopener">Details &rarr;</a>
+          <span class="ev-cta">Details &rarr;</span>
         </div>
-      </article>
-      <article class="ev" style="--tc:#8A6D3B;">
+      </a>
+      <a class="ev" href="https://www.cityofsanmateo.org/CCD" target="_blank" rel="noopener" style="--tc:#8A6D3B;">
         <div class="ev-date"><span class="ev-mon">SEP</span><span class="ev-day">19</span></div>
         <div class="ev-body">
           <span class="ev-tag">Community</span>
@@ -173,10 +175,10 @@
           <p class="ev-meta">9:00 AM to 12:00 PM &middot; San Mateo &middot; City of San Mateo</p>
           <p class="ev-desc">Join neighbors for the annual community clean-up. A good morning of doing something for the place we all share.</p>
           
-          <a class="ev-link" href="https://www.cityofsanmateo.org/CCD" target="_blank" rel="noopener">Details &rarr;</a>
+          <span class="ev-cta">Details &rarr;</span>
         </div>
-      </article>
-      <article class="ev" style="--tc:#41614B;">
+      </a>
+      <a class="ev" href="https://www.cityofsanmateo.org/Calendar.aspx?EID=16543" target="_blank" rel="noopener" style="--tc:#41614B;">
         <div class="ev-date"><span class="ev-mon">SEP</span><span class="ev-day">25</span></div>
         <div class="ev-body">
           <span class="ev-tag">Family</span>
@@ -184,10 +186,10 @@
           <p class="ev-meta">Games at 6 PM, movie at dusk (~7:30 PM) &middot; Beresford Park, 2720 Alameda de las Pulgas, San Mateo &middot; San Mateo Parks &amp; Recreation</p>
           <p class="ev-desc">The last free movie night of the September series. Bring a blanket and a chair. Games and crafts start at 6 PM.</p>
           
-          <a class="ev-link" href="https://www.cityofsanmateo.org/Calendar.aspx?EID=16543" target="_blank" rel="noopener">Details &rarr;</a>
+          <span class="ev-cta">Details &rarr;</span>
         </div>
-      </article>
-      <article class="ev" style="--tc:#B07D2B;">
+      </a>
+      <a class="ev" href="https://www.cityofsanmateo.org/calendar" target="_blank" rel="noopener" style="--tc:#B07D2B;">
         <div class="ev-date"><span class="ev-mon">SEP</span><span class="ev-day">26</span></div>
         <div class="ev-body">
           <span class="ev-tag">Arts</span>
@@ -195,9 +197,9 @@
           <p class="ev-meta">Daytime, downtown &middot; Downtown San Mateo &middot; City of San Mateo</p>
           <p class="ev-desc">A free day-long downtown celebration of art, music, dance, poetry, and food, with live mural painting and local artists.</p>
           
-          <a class="ev-link" href="https://www.cityofsanmateo.org/calendar" target="_blank" rel="noopener">Details &rarr;</a>
+          <span class="ev-cta">Details &rarr;</span>
         </div>
-      </article>
+      </a>
     </div>
     <div class="ev-submit">
       <h2>Have an event?</h2>
