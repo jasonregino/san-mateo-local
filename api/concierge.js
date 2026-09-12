@@ -11,17 +11,18 @@
 // Needs one Vercel env var (Jason sets it; never in the code):
 //   ANTHROPIC_API_KEY  - an Anthropic API key
 //
-// No dependencies: global fetch only. Model is a HYBRID: fast Haiku by default, Sonnet
-// only when a Featured partner is nearby (Sonnet emits a leading thinking block, so the
-// text is extracted by block type). The big grounding block is prompt-cached.
+// No dependencies: global fetch only. Model is a HYBRID: Sonnet for location/proximity asks,
+// fast Haiku for general asks (Sonnet emits a leading thinking block, so the text is
+// extracted by block type). The big grounding block is prompt-cached.
 
 const { places, sections } = require('../concierge-data.json');
 
-// Model (hybrid, Jason 2026-08-09): Haiku is fast (~2.5s) and handles everyday ranking
-// well now that the rules are explicit. Upgrade to Sonnet ONLY when a Featured partner is
-// among the nearby options, because that is the one case Haiku fumbles (it drops the honest
-// "even closer option" note that makes the paid top-slot trustworthy). Fast for everyone,
-// precise where revenue + trust are on the line.
+// Model (hybrid, updated 2026-09-12): Sonnet handles any LOCATION/proximity question (whenever
+// we can place the visitor), because a live re-test showed Haiku slipping on distance ranking
+// and honesty even with very explicit rules (naming a farther place "closest", inconsistent
+// distances, inventing offerings). Haiku stays for general asks with no location, where it is
+// fast and reliable. The concierge is the front door, so trust wins over speed on the
+// proximity path. (featuredNear is kept below for reference but the anchor check now subsumes it.)
 const HAIKU = 'claude-haiku-4-5-20251001';
 const SONNET = 'claude-sonnet-5';
 
@@ -360,7 +361,7 @@ function stripBadPhones(text) {
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-25'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-26'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
@@ -397,7 +398,7 @@ module.exports = async (req, res) => {
   else anchor = (await detectAnchor(clean)) || gpsAnchor;
   const system = [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }];
   system.push({ type: 'text', text: anchor ? proximityBlock(anchor) : NO_LOCATION });
-  const model = featuredNear(anchor) ? SONNET : HAIKU; // fast Haiku by default, precise Sonnet only near a Featured partner
+  const model = anchor ? SONNET : HAIKU; // Sonnet whenever we can place the visitor (proximity ranking + honesty is where Haiku slipped in the live re-test); fast Haiku only for general asks with no location
 
   try {
     const r = await fetch('https://api.anthropic.com/v1/messages', {
