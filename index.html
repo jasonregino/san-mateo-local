@@ -207,6 +207,9 @@
     @keyframes fav-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .fav { flex: 0 0 370px; border: 1.5px solid var(--ink); border-top: 4px solid var(--bay); background: var(--card); box-shadow: 0 2px 6px -3px rgba(34,29,22,0.16); transition: transform 0.18s ease, box-shadow 0.18s ease; }
     .fav a { display: flex; flex-direction: column; height: 100%; padding: 1.7rem 1.7rem 1.8rem; }
+    .fav-has-img a { flex-direction: row; padding: 0; align-items: stretch; }
+    .fav-thumb { flex: 0 0 122px; width: 122px; object-fit: cover; object-position: center; display: block; align-self: stretch; background: #111; }
+    .fav-body { display: flex; flex-direction: column; padding: 1.4rem 1.5rem 1.5rem; min-width: 0; flex: 1; }
     .fav:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -20px rgba(34,29,22,0.45); }
     .fav .fav-kicker { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--bay); }
     .fav h3 { font-size: 1.55rem; margin: 0.5rem 0 0.4rem; }
@@ -524,7 +527,7 @@
       <div class="fav-scroll">
         <div class="fav-track">
           <!-- BUZZ:START -->
-          <article class="fav"><a href="https://www.eventbrite.com/e/hiptwist-fitness-grand-opening-tickets-1998517704252"><span class="fav-kicker">Pilates studio</span><h3>Hiptwist Fitness</h3><p class="meta">West San Mateo · Thu Sep 17</p><p>Hiptwist Fitness celebrates its grand opening on Thursday, September 17. Free to attend, just RSVP. Reformer and mat Pilates, plus infrared and red light therapy.</p></a></article>
+          <article class="fav fav-has-img"><a href="https://www.eventbrite.com/e/hiptwist-fitness-grand-opening-tickets-1998517704252"><img class="fav-thumb" src="/images/buzz/hiptwist-grand-opening.jpg" alt="Hiptwist Fitness" loading="lazy" /><span class="fav-body"><span class="fav-kicker">Pilates studio</span><h3>Hiptwist Fitness</h3><p class="meta">West San Mateo · Thu Sep 17</p><p>Hiptwist Fitness celebrates its grand opening on Thursday, September 17. Free to attend, just RSVP. Reformer and mat Pilates, plus infrared and red light therapy.</p></span></a></article>
           <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Steakhouse</span><h3>Porterhouse</h3><p class="meta">Downtown · B Street</p><p>The Peninsula's in-house dry-aging steakhouse.</p></a></article>
           <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Brazilian</span><h3>Espetus Churrascaria</h3><p class="meta">B Street</p><p>All-you-can-eat rodizio, carved tableside.</p></a></article>
           <article class="fav"><a href="spotlight-takahashi-market.html"><span class="fav-kicker">Market</span><h3>Takahashi Market</h3><p class="meta">Downtown</p><p>Hawaiian and Japanese groceries, and Spam musubi worth the trip.</p></a></article>
@@ -543,7 +546,7 @@
           <article class="fav"><a href="local-services.html"><span class="fav-kicker">Salon</span><h3>Y Salon Spa</h3><p class="meta">Downtown · S San Mateo Dr</p><p>Weekly happy-hour specials on services at this downtown salon.</p></a></article>
           <article class="fav"><a href="eat-drink.html"><span class="fav-kicker">Mexican · Downtown</span><h3>Taqueria La Cumbre</h3><p class="meta">28 N B St</p><p>Downtown happy hour with drinks and Mexican plates.</p></a></article>
           <article class="fav"><a href="things-to-do.html"><span class="fav-kicker">Dance Studio</span><h3>How About Dance</h3><p class="meta">Downtown · B Street</p><p>Celebrating two years downtown with anniversary class specials.</p></a></article>
-          <article aria-hidden="true" class="fav"><a href="https://www.eventbrite.com/e/hiptwist-fitness-grand-opening-tickets-1998517704252"><span class="fav-kicker">Pilates studio</span><h3>Hiptwist Fitness</h3><p class="meta">West San Mateo · Thu Sep 17</p><p>Hiptwist Fitness celebrates its grand opening on Thursday, September 17. Free to attend, just RSVP. Reformer and mat Pilates, plus infrared and red light therapy.</p></a></article>
+          <article aria-hidden="true" class="fav fav-has-img"><a href="https://www.eventbrite.com/e/hiptwist-fitness-grand-opening-tickets-1998517704252"><img class="fav-thumb" src="/images/buzz/hiptwist-grand-opening.jpg" alt="Hiptwist Fitness" loading="lazy" /><span class="fav-body"><span class="fav-kicker">Pilates studio</span><h3>Hiptwist Fitness</h3><p class="meta">West San Mateo · Thu Sep 17</p><p>Hiptwist Fitness celebrates its grand opening on Thursday, September 17. Free to attend, just RSVP. Reformer and mat Pilates, plus infrared and red light therapy.</p></span></a></article>
           <article aria-hidden="true" class="fav"><a href="eat-drink.html"><span class="fav-kicker">Steakhouse</span><h3>Porterhouse</h3><p class="meta">Downtown · B Street</p><p>The Peninsula's in-house dry-aging steakhouse.</p></a></article>
           <article aria-hidden="true" class="fav"><a href="eat-drink.html"><span class="fav-kicker">Brazilian</span><h3>Espetus Churrascaria</h3><p class="meta">B Street</p><p>All-you-can-eat rodizio, carved tableside.</p></a></article>
           <article aria-hidden="true" class="fav"><a href="spotlight-takahashi-market.html"><span class="fav-kicker">Market</span><h3>Takahashi Market</h3><p class="meta">Downtown</p><p>Hawaiian and Japanese groceries, and Spam musubi worth the trip.</p></a></article>
