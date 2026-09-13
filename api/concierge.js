@@ -57,7 +57,7 @@ STRICT RULES:
 - CATEGORY IS THE FIRST, NON-NEGOTIABLE FILTER. Only recommend a place whose category actually matches the need. For a plumber, recommend ONLY plumbers. Never recommend a business from a different category (a dry cleaner, a restaurant, a shop) just because it sits in the right neighborhood. Matching the service always beats matching the location. If nothing in the right category fits, say so; never substitute a wrong-category place.
 - Route the need to the right category. Plumber, electrician, roofer, landscaper, painter, handyman: HOME SERVICES. Auto or tire, barber, salon, dentist, chiropractor, dry cleaner: LOCAL SERVICES. Food, coffee, drinks: EAT & DRINK. A shop or gift: SHOPPING. Something to do, a park, a trail: THINGS TO DO.
 - MENU OVERLAP: a place's category is its headline, not its whole menu. When a listing's about text or menu tag names an item, state it as fact. Beyond that you may SUGGEST a likely option when the closest spot is a type that commonly serves it (many taquerias make tortas, a deli or market makes sandwiches, a bakery has pastries), but frame it as a maybe to confirm, for example "a taqueria like this often has tortas, worth a quick call", never as a certainty. Not every taqueria makes tortas. Never state a specific dish as fact for a place whose data does not support it, and never invent one.
-- SPECIFIC DISHES AND DIETARY: you do NOT have menus, prices, or dietary information beyond what a listing's description explicitly says. If someone asks whether a place has a specific dish (a chicken banh mi) or accommodates a diet (vegetarian, gluten-free, vegan) and the description does not say so, do NOT answer from the cuisine type ("Mexican places usually have veggie options", "delis very likely have that"). Say plainly you do not have their menu or dietary details and give the phone number to check. You may still point them to a type of place that tends to fit ("a taqueria is usually a safe bet for vegetarian, call to confirm"), but never assert what a specific place offers. The same goes for SHOPS and MARKETS and any product: do not state that a store carries a specific item (pet food, a brand, a particular product) unless its description says so. You may suggest the kind of store that might have it ("a Latin market like this may carry pet food, worth a quick call"), but never state it as fact.
+- SPECIFIC DISHES AND DIETARY: you do NOT have menus, prices, or dietary information beyond what a listing's description explicitly says. If someone asks whether a place has a specific dish (a chicken banh mi) or accommodates a diet (vegetarian, gluten-free, vegan) and the description does not say so, do NOT answer from the cuisine type ("Mexican places usually have veggie options", "delis very likely have that"). Say plainly you do not have their menu or dietary details and give the phone number to check. You may still point them to a type of place that tends to fit ("a taqueria is usually a safe bet for vegetarian, call to confirm"), but never assert what a specific place offers. The same goes for SHOPS and MARKETS and any product: do not state that a store carries a specific item (pet food, a brand, a particular product) unless its description says so. You may suggest the kind of store that might have it ("a Latin market like this may carry pet food, worth a quick call"), but never state it as fact. Softer wording is the SAME invention: never say a place "typically carries", "usually has", "always has", "standardly serves", or "offers X as a standard option" for a specific dish or product its description does not name.
 - NEVER invent reputation, popularity, or word of mouth. Do not write things like "regulars call it the best espresso in the county", "known as the best X around", "a local favorite", or "people rave about it", and do not attribute any praise, ranking, award, review, or testimonial to anyone, unless the listing's description literally says so. If the description makes a claim you may repeat it; otherwise describe a place only from its listed facts. Inventing buzz is as damaging as inventing an address.
 - If a visitor names a place that is not an exact match but plausibly refers to a listing in THE GUIDE (a local nickname, a shortening, a partial name, or the same name spaced, punctuated, or capitalized differently, like "The Fritter" for Apple Fritter, "guadalajara" for Guadalajara Grill, or "hip twist" for Hiptwist Fitness; ALWAYS ignore spaces, punctuation, and case when matching a typed name to a listing, so "hip twist", "hiptwist", and "Hip-Twist" all match "Hiptwist Fitness"): when exactly ONE listing plausibly matches, do NOT make them retype it, go ahead and answer with that listing and its map link right away, worded so they can correct you if wrong (for example "Sounds like you mean Guadalajara Grill, here it is: [link], and if you meant something else just say so"). Only ask a plain clarifying question first when TWO OR MORE listings plausibly match, or the reference is too vague to pin to one place. Only say a place is not in the guide when nothing in THE GUIDE plausibly matches.
 - San Mateo Local covers LOCAL, INDEPENDENT businesses, not chains. If someone asks about a chain or a place not in THE GUIDE, do not endorse it. Warmly say the guide is about local independents and offer a real listed option if one fits. ONE NARROW EXCEPTION, the practical-fallback list below: for a few everyday needs where the local independents are genuinely thin, you MAY add one approved regional option as a helpful aside, but ONLY after you have offered the local listed options first, and ALWAYS say plainly that it is a regional chain and not on the guide, the way a local would ("not on our guide since it is a chain, but most people around here grab the budget stuff at ..."). Never mention any chain outside this approved list, and never invent one. APPROVED PRACTICAL FALLBACKS: Pet Club (affordable pet food and supplies, in the South Norfolk area) is a Northern California regional chain, fine to mention for pet-supply questions when the local options are thin.
@@ -75,10 +75,10 @@ STRICT RULES:
 - NO COMPASS DIRECTIONS: you do not know which way (north, south, east, west) one place is from another. Never say a place is "north", "south", "to the east", "up the road", or give any bearing. Use distance and neighborhood only.
 - A NAMED AREA OR LANDMARK IS NOT A PINPOINT. When the visitor names a mall, park, shopping center, or a long street, treat it as that general area: never say they are "at" a specific business there, never anchor to one storefront's exact location, and never state which neighborhood they are in as a fact. If the places you recommend all sit in a different neighborhood than the area they named, do not label their neighborhood at all, just give the options.
 - DO NOT INVENT WHAT A PLACE SERVES OR OFFERS. Credit a place with a meal type or offering (breakfast, brunch, lunch, coffee, a bar menu) ONLY when its type or description says so. Never claim an Italian restaurant or a bar "does brunch" or "has good coffee and morning plates" unless the listing says it. When asked for a meal type, LEAD with the places actually typed or described for it (a "Breakfast & brunch Cafe" is a top breakfast pick, never a "farther out" afterthought), and never rank a genuine match below a place whose fit you had to invent.
-- NEVER list a business under a heading its category contradicts. A copy or print shop, an antiques or home-goods store, a hardware store, or a salon is not a food option and must never appear under a "Food & Drink", "lunch", or "sandwich" list. Every item under a food heading must be a real food place.
+- NEVER list a business under a heading its category contradicts. A copy or print shop, an antiques or home-goods store, a hardware store, or a salon is not a food option and must never appear under a "Food & Drink", "lunch", or "sandwich" list. Every item under a food heading must be a real food place. Describe each place by its OWN listed type; never relabel it as a different kind of business (do not call a Vietnamese banh mi cafe "a taqueria", do not call a bakery "a deli"). And NEVER show the visitor an internal category tag in parentheses like (SHOPPING), (EAT & DRINK), or (LOCAL SERVICES); those are for internal routing only, never for the reader.
 - If the request is vague, ask ONE short clarifying question first (what kind of place, which neighborhood, or the vibe).
 - Warm, local, and concise, like a friend who knows the town. Short sentences. No em-dashes. No hype or marketing buzzwords.
-- Format each place with its NAME linked to its on-site San Mateo Local page: [Name] followed by the exact PAGE url shown for that place in THE GUIDE, in parentheses. Then its Neighborhood, one short reason, the phone number for a service someone will call, and a Directions link written as [Directions] followed by that same place's exact MAPS url in parentheses. Link the NAME to the PAGE url, NEVER to the MAPS url; use the MAPS url only for the [Directions] link. Format a guide section as [Page title] then its /url in parentheses. ALWAYS use the real PAGE and MAPS urls copied from the data. NEVER write a placeholder like "https://maps-url" or a literal "/business/...", and NEVER narrate a correction or your own process to the visitor (no "wait, let me use the real one", no "let me fix that"); just write the finished, clean answer.
+- Format each place with its NAME linked to its on-site San Mateo Local page: [Name] followed by the exact PAGE url shown for that place in THE GUIDE, in parentheses. Then its Neighborhood, one short reason, the phone number for a service someone will call, and a Directions link written as [Directions] followed by that same place's exact MAPS url in parentheses. Link the NAME to the PAGE url, NEVER to the MAPS url; use the MAPS url only for the [Directions] link. Format a guide section as [Page title] then its /url in parentheses. ALWAYS use the real PAGE and MAPS urls copied from the data. NEVER write a placeholder like "https://maps-url" or a literal "/business/...", and NEVER narrate a correction or your own process to the visitor (no "wait, let me use the real one", no "let me fix that"); just write the finished, clean answer. This applies in flowing PROSE exactly as in a bulleted list: even inside a sentence, write the name as [Name] then its PAGE url in parentheses, and directions as [Directions] then its MAPS url in parentheses. NEVER write a bare url on its own, NEVER write the literal token "MAPS:" followed by a url, and NEVER write a bare "/business/..." path; each of those renders to the visitor as a broken, unreadable raw link.
 
 THE GUIDE (name | type | area | address | phone | price | about | optional DEAL (a free perk, only if shown) | PAGE (the on-site profile page; link the NAME to this) | MAPS url (only for the Directions link)):
 ${LIST}
@@ -316,8 +316,22 @@ function proximityBlock(anchor) {
   const ranked = coordPlaces
     .map(p => ({ p, mi: haversineMi(anchor.lat, anchor.lng, p.lat, p.lng) }))
     .sort((a, b) => a.mi - b.mi);
-  let near = ranked.filter(r => r.mi <= 1.5).slice(0, 24);
-  if (near.length < 8) near = ranked.slice(0, 12); // sparse area: just take the nearest dozen
+  // Build the NEARBY set so the model has a REAL distance for anything it might name:
+  // the immediate cluster, PLUS the nearest few in EACH category. Without the per-category
+  // floor, a category whose closest members sit just past the cluster (dog parks, one
+  // cuisine, a barber) arrived with NO distance, so the model fell back to "check the map
+  // for the exact distance" (bug 8). Now every category the visitor could ask about carries
+  // its nearest options with true distances, however far out they are.
+  const picked = new Map();
+  const add = r => { if (!picked.has(r.p.name)) picked.set(r.p.name, r); };
+  ranked.filter(r => r.mi <= 1.5).slice(0, 28).forEach(add); // the immediate walkable cluster
+  const perCat = {};
+  for (const r of ranked) {                                  // nearest 6 in each category, however far
+    const n = perCat[r.p.cat] || 0;
+    if (n < 6) { add(r); perCat[r.p.cat] = n + 1; }
+  }
+  if (picked.size < 10) ranked.slice(0, 12).forEach(add);    // sparse area: just take the nearest dozen
+  const near = [...picked.values()].sort((a, b) => a.mi - b.mi); // always distance-sorted so line 1 = closest
   const lines = near.map((r, i) => `${i + 1}. ${isFeatured(r.p) ? '[FEATURED PARTNER] ' : ''}${r.p.name} | ${r.p.cat} | ${r.p.type || r.p.cat} | ${r.mi.toFixed(2)} mi | ${(r.p.about || '').replace(/\s+/g, ' ').trim()}`).join('\n');
   return `NEARBY LIST (internal, from ${anchor.label}; each line is: number. name | category | type | REAL distance in miles | description). It is ALREADY SORTED closest-first: line 1 is the closest place, and distance only increases down the list. This is the ONLY source of truth for anything about close, nearby, near me, walking distance, or "closest". Never mention this list or name any internal data; just speak like a local who knows the town. You ALREADY know where the visitor is (${anchor.label}); do NOT ask them for their neighborhood or nearest cross street again, just give the closest options with confidence. IMPORTANT: even if EARLIER in this same conversation you said you could not place them or could not calculate distance, that is no longer true, you CAN now. Do not repeat that you cannot judge distance, do not tell them to check the map themselves, and do not apologize for not knowing, just answer with the real distances below.
 
@@ -357,11 +371,59 @@ function stripBadPhones(text) {
     const num = (match.match(/\d/g) || []).join('').slice(-10);
     return (allowed && num === allowed) ? match : '';                 // keep only the right number for the right business
   });
-  return out.replace(/\(\s*\)/g, '').replace(/[ \t]{2,}/g, ' ').replace(/[ \t]+([.,;])/g, '$1').replace(/([.,;])[.,;]+/g, '$1').replace(/\n{3,}/g, '\n\n').trim();
+  return out.replace(/\(\s*\)/g, '')
+    .replace(/[ \t]{2,}/g, ' ').replace(/[ \t]+([.,;])/g, '$1').replace(/([.,;])[.,;]+/g, '$1')
+    .replace(/\s*\|\s*(?=\n|$)/g, '').replace(/\|\s*\|/g, '|').replace(/\s*\|\s*([.,;])/g, '$1') // no dangling pipe where a phone was removed
+    .replace(/\n{3,}/g, '\n\n').trim();
+}
+
+// On-site pages -> their business name / guide-section title, so any bare link the model
+// leaks is rewritten into a proper markdown link before the visitor sees it. A bare url
+// renders as raw text with the business name %20-encoded in the query string; wrapping it
+// fixes the DISPLAY without changing where it points. (Cowork round-4: the model emits
+// "Name (MAPS: <url>)" and bare "/business/x.html" paths in flowing prose; the widget only
+// renders markdown links, so those landed on screen raw.)
+const DETAIL_NAME = new Map();
+for (const p of places) { if (p.detail && p.name) DETAIL_NAME.set(p.detail, p.name); }
+const SECTION_TITLE = new Map();
+for (const s of sections) { if (s.url && s.title) SECTION_TITLE.set(s.url, s.title); }
+function normalizeLinks(text) {
+  let t = text;
+  // 1) "(MAPS: <url>)" / "MAPS: <url>" copied straight from the guide data -> Directions link
+  t = t.replace(/\(?\s*MAPS:\s*(https?:\/\/[^\s)]+)\s*\)?/gi, '[Directions]($1)');
+  // 2) a bare Google Maps url -> Directions link. Matching a whole existing [text](url) FIRST
+  //    consumes any url already inside a link, so it is never double-wrapped, whatever the spacing.
+  t = t.replace(/\[[^\]]*\]\s*\([^)]*\)|(https?:\/\/(?:[\w.-]*google\.[^\s)]*\/maps|maps\.google\.[^\s)]*|maps\.app\.goo\.gl)[^\s)]*)/gi,
+    (m, bare) => bare ? `[Directions](${bare})` : m);
+  // 3) a bare "/business/<id>.html" path -> its business name, linked
+  t = t.replace(/\[[^\]]*\]\s*\([^)]*\)|(\/business\/[a-z0-9-]+\.html)/gi,
+    (m, bare) => { if (!bare) return m; const n = DETAIL_NAME.get(bare); return n ? `[${n}](${bare})` : m; });
+  // 4) a bare guide-section path ("/eat-drink.html") -> its title, linked (business paths already linked above)
+  t = t.replace(/\[[^\]]*\]\s*\([^)]*\)|(\/(?!business\/)[a-z0-9-]+\.html)/gi,
+    (m, bare) => { if (!bare) return m; const title = SECTION_TITLE.get(bare); return title ? `[${title}](${bare})` : m; });
+  return t;
+}
+
+// Internal category tags ("(SHOPPING)", "(EAT & DRINK)") sometimes leak into the reply;
+// they are for our routing, not for the reader.
+const CAT_LABELS = /\s*\((?:EAT & DRINK|HOME SERVICES|LOCAL SERVICES|SHOPPING|THINGS TO DO)\)/gi;
+
+// After a no-phone place has its number stripped, a sentence can still say "reach them at
+// that number" with nothing to reach. On any line left without a phone-shaped number, drop
+// the dangling call-a-number clause so we never point at a number that is not there.
+function scrubDeadPhoneRefs(text) {
+  return text.split('\n').map(line => {
+    if (/\d{3}[\s.\-]?\d{4}/.test(line)) return line; // a real number survived here, leave it alone
+    return line
+      .replace(/\b(?:you can |please )?(?:call|reach|contact|phone|ring)\s+(?:them|the (?:shop|store|place|business|owner|staff|team|restaurant|cafe|office))?\s*(?:at|on)?\s*(?:that|the)\s+number\b\.?/gi, '')
+      .replace(/\b(?:at|on)\s+(?:that|the)\s+number\b\.?/gi, '')
+      .replace(/\bgive\s+(?:them|the \w+)\s+a\s+call\b\.?/gi, '')
+      .replace(/[ \t]{2,}/g, ' ').replace(/\s+([.,;])/g, '$1').trim();
+  }).join('\n');
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('x-smc-build', 'gaz-27'); // lightweight deploy marker for quick "which build is live" checks
+  res.setHeader('x-smc-build', 'gaz-28'); // lightweight deploy marker for quick "which build is live" checks
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'The concierge is not switched on yet.' }); return; }
 
@@ -426,10 +488,15 @@ module.exports = async (req, res) => {
     const textBlocks = Array.isArray(data.content) ? data.content.filter(b => b && b.type === 'text' && b.text) : [];
     let reply = textBlocks.map(b => b.text).join('\n').trim() || 'Sorry, I did not catch that. What are you looking for?';
     reply = reply.replace(/\s*[—―]\s*/g, ', '); // strip em-dashes (U+2014/2015): the voice rule, enforced even when the model ignores it
+    reply = normalizeLinks(reply); // rewrite any bare url / "MAPS:" token / bare path into a proper link (no raw %20 links reach the visitor)
+    reply = reply.replace(CAT_LABELS, ''); // never show the internal (SHOPPING)-style category tag
     reply = stripBadPhones(reply); // never let an invented or misattributed phone number reach the visitor
+    reply = scrubDeadPhoneRefs(reply); // drop a "reach them at that number" left dangling after a phone strip
     res.status(200).json({ reply });
   } catch (e) {
     console.error('concierge error', e.message);
     res.status(500).json({ error: 'The concierge is having a moment. Try again shortly.' });
   }
 };
+
+
