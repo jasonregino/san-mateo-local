@@ -8,7 +8,7 @@
   <title>Bob's Barber Stylist &middot; Barber shop in San Mateo | San Mateo Local</title>
   <meta name="description" content="A neighborhood barber offering classic cuts and styling six days a week." />
   <link rel="canonical" href="https://sanmateolocal.com/business/bob-s-barber-stylist.html" />
-  <meta name="theme-color" content="#221D16" />
+  <meta name="theme-color" content="#0C5B62" />
   <meta property="og:type" content="business.business" />
   <meta property="og:title" content="Bob's Barber Stylist &middot; San Mateo Local" />
   <meta property="og:description" content="A neighborhood barber offering classic cuts and styling six days a week." />
@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root { --paper:#FAF6EC; --paper-2:#F2E9D4; --card:#FFFDF7; --ink:#221D16; --ink-soft:#5E5446; --clay:#C25B3A; --clay-deep:#A5492B; --sage:#41614B; --sage-deep:#324C3A; --line:#E3D6BC; }
-    [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --card:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage:#88AC8F; --sage-deep:#6E9077; --line:#3A2E24; }
+    :root { --paper:#F6F0E4; --paper-2:#EFE7D5; --card:#FFFDF7; --ink:#17323A; --ink-soft:#47595C; --clay:#C85A38; --clay-deep:#A5492B; --sage:#3C5A43; --sage-deep:#2E4A38; --teal:#10717A; --teal-deep:#0C5B62; --gold:#E6A828; --line:#E1D9C6; }
+    [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --card:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage:#88AC8F; --sage-deep:#6E9077; --teal:#3FA3AA; --teal-deep:#2E8A90; --gold:#E6A828; --line:#3A2E24; }
     * { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:smooth; }
     body { overflow-x: hidden; max-width: 100%; font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased; }
@@ -37,42 +37,51 @@
     .brand-name { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.6rem; letter-spacing:-0.01em; }
     .masthead-nav { display:flex; gap:1.3rem; align-items:center; }
     .masthead-nav a { font-size:0.74rem; font-weight:600; letter-spacing:0.13em; text-transform:uppercase; color:var(--ink-soft); }
-    .masthead-nav a:hover { color:var(--clay-deep); }
-    .masthead-nav .sub { color:var(--clay-deep); font-weight:600; }
+    .masthead-nav a:hover { color:var(--teal-deep); }
+    .masthead-nav .sub { color:var(--teal-deep); font-weight:700; }
     @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } }
-    .biz-hero { position:relative; border-bottom:1.5px solid var(--ink); background:linear-gradient(120deg,rgba(34,40,32,.86),rgba(34,40,32,.58)), url('/images/central-park-japanese-garden.jpg'); background-size:cover; background-position:center; }
-    .biz-hero .article { min-height:118px; display:flex; flex-direction:column; justify-content:center; padding-top:1.2rem; padding-bottom:1.2rem; }
-    .biz-hero-brand { font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:1.2rem; color:#FAF6EC; letter-spacing:-0.01em; text-shadow:0 1px 6px rgba(0,0,0,.45); }
-    .biz-hero-loc { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; color:#EBDFC4; margin-top:0.32rem; text-shadow:0 1px 6px rgba(0,0,0,.45); }
-    .biz-head { padding:1.4rem 0 1.4rem; border-bottom:1.5px solid var(--ink); }
-    .biz-back { font-size:0.85rem; font-weight:600; color:var(--clay-deep); }
-    .biz-kicker { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); margin-top:0.7rem; }
-    .biz-head h1 { font-size:clamp(2rem,5vw,2.9rem); font-weight:600; margin:0.3rem 0 0.5rem; }
-    .biz-sub { color:var(--sage-deep); font-weight:600; font-size:0.82rem; letter-spacing:0.05em; text-transform:uppercase; }
-    .biz-acts { display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.2rem; }
-    .biz-acts a { display:inline-flex; align-items:center; justify-content:center; min-height:44px; font-size:0.9rem; font-weight:600; padding:0.6rem 1.1rem; border-radius:999px; border:1.5px solid var(--ink); color:var(--ink); }
-    .biz-acts a.primary { background:var(--clay-deep); color:#fff; border-color:var(--clay-deep); }
-    .biz-acts a:hover { border-color:var(--clay); color:var(--clay-deep); }
-    .biz-acts a.primary:hover { background:#8f3d22; color:#fff; }
+    .hero { position:relative; overflow:hidden; background:linear-gradient(135deg, var(--teal-deep) 0%, var(--teal) 55%, var(--sage) 100%); border-bottom:1.5px solid var(--ink); }
+    .hero::after { content:''; position:absolute; right:-70px; top:-70px; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle, rgba(255,255,255,.15), transparent 70%); pointer-events:none; }
+    .hero-inner { position:relative; max-width:44rem; margin:0 auto; padding:1.2rem 1.5rem 1.8rem; z-index:1; }
+    .hero-back { display:inline-flex; align-items:center; min-height:40px; font-size:0.82rem; font-weight:700; letter-spacing:.02em; color:#EAF6F2; opacity:.92; }
+    .hero-back:hover { opacity:1; }
+    .hero-logo { width:96px; height:96px; object-fit:cover; background:#fff; padding:6px; box-shadow:0 8px 20px -8px rgba(0,0,0,.55); margin:0.5rem 0 0.8rem; display:block; border-radius:14px; }
+    .hero-logo.round { border-radius:50%; }
+    .hero-mark { display:inline-flex; align-items:center; justify-content:center; width:72px; height:72px; border-radius:18px; background:rgba(255,255,255,.16); border:1.5px solid rgba(255,255,255,.4); font-size:2.1rem; margin:0.5rem 0 0.8rem; }
+    .hero-kicker { font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:700; color:#CFF0E8; }
+    .hero-chain { display:inline-block; margin-left:0.5rem; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:#EAF6F2; border:1px solid rgba(255,255,255,.5); border-radius:999px; padding:0.1rem 0.5rem; vertical-align:middle; }
+    .hero h1 { color:#fff; font-size:clamp(2.2rem,6vw,3.2rem); margin:0.15rem 0 0.4rem; text-shadow:0 2px 14px rgba(0,0,0,.3); }
+    .hero-loc { font-size:0.92rem; font-weight:600; color:#EAF6F2; letter-spacing:.02em; }
+    .hero-verified { display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.8rem; font-size:0.74rem; font-weight:700; letter-spacing:0.03em; color:#0C5B62; background:#EAFBF6; border:1px solid #B7E7DC; border-radius:999px; padding:0.32rem 0.85rem; }
+    .hero-claim { display:inline-flex; align-items:center; min-height:40px; margin-top:0.7rem; font-size:0.9rem; font-weight:700; color:#fff; border-bottom:2px solid rgba(255,255,255,.55); }
+    .hero-acts { display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.2rem; }
+    .hero-acts a { display:inline-flex; align-items:center; justify-content:center; min-height:44px; font-size:0.9rem; font-weight:700; padding:0.6rem 1.2rem; border-radius:999px; background:rgba(255,255,255,.14); border:1.5px solid rgba(255,255,255,.5); color:#fff; }
+    .hero-acts a:hover { background:rgba(255,255,255,.26); }
+    .hero-acts a.primary { background:#fff; color:var(--teal-deep); border-color:#fff; }
+    .hero-acts a.primary:hover { background:#EAFBF6; }
+    .hero-extra { max-width:44rem; margin:0 auto; padding:0 1.5rem; }
+    .hero-photo { width:100%; height:auto; max-height:440px; object-fit:cover; border-radius:14px; margin-top:1.3rem; display:block; }
     .offer { margin-top:1.1rem; padding:0.85rem 1.1rem; background:#FBE7DC; border:1.5px solid var(--clay); border-radius:10px; font-size:0.96rem; color:var(--ink); }
     [data-theme="dark"] .offer { background:#3A2A1C; }
     section.blk { padding:2rem 0; border-bottom:1px solid var(--line); }
-    section.blk h2 { font-size:1.35rem; font-weight:600; margin-bottom:0.9rem; }
+    section.blk h2 { font-size:1.5rem; font-weight:600; margin-bottom:0.9rem; position:relative; padding-left:0.95rem; }
+    section.blk h2::before { content:''; position:absolute; left:0; top:0.2em; bottom:0.2em; width:4px; border-radius:3px; background:var(--teal); }
     .blk p { color:var(--ink-soft); font-size:1.05rem; }
     .blk p + p { margin-top:0.9rem; }
     .biz-picknote { padding:1rem 1.2rem; border-left:4px solid #E6A828; background:rgba(230,168,40,0.10); border-radius:0 8px 8px 0; color:var(--ink) !important; font-size:1.08rem; line-height:1.6; }
     [data-theme="dark"] .biz-picknote { background:rgba(230,168,40,0.15); }
     .chips { display:flex; flex-wrap:wrap; gap:0.5rem; }
-    .chip { font-size:0.85rem; font-weight:600; padding:0.4rem 0.9rem; border-radius:999px; border:1.5px solid var(--line); color:var(--ink-soft); }
-    .details { list-style:none; display:grid; gap:0.7rem; }
+    .chip { font-size:0.85rem; font-weight:600; padding:0.44rem 0.95rem; border-radius:999px; border:1.5px solid var(--teal); color:var(--teal-deep); background:rgba(16,113,122,.06); }
+    .card { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:12px; padding:1.2rem 1.35rem; box-shadow:0 12px 30px -22px rgba(0,0,0,.4); }
+    .details { list-style:none; display:grid; gap:0.85rem; }
     .details li { display:flex; gap:0.8rem; font-size:1rem; color:var(--ink); }
-    .details .k { flex:none; width:6.5rem; color:var(--ink-soft); font-weight:600; font-size:0.82rem; letter-spacing:0.03em; text-transform:uppercase; padding-top:0.1rem; }
+    .details .k { flex:none; width:5.5rem; color:var(--teal-deep); font-weight:700; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; padding-top:0.2rem; }
     .details a { color:var(--clay-deep); font-weight:600; overflow-wrap:anywhere; display:inline-block; padding:0.6rem 0; margin:-0.6rem 0; }
     .hours-list { list-style:none; display:grid; gap:0.25rem; margin-top:0.2rem; }
     .hours-list li { font-size:0.96rem; color:var(--ink-soft); }
     .nearby { display:flex; flex-wrap:wrap; gap:0.6rem; }
-    .nearby a { font-size:0.92rem; font-weight:600; padding:0.55rem 1rem; border-radius:8px; border:1.5px solid var(--line); color:var(--ink); background:var(--card); }
-    .nearby a:hover { border-color:var(--clay); color:var(--clay-deep); }
+    .nearby a { font-size:0.92rem; font-weight:700; padding:0.6rem 1.1rem; border-radius:999px; border:1.5px solid var(--teal); color:var(--teal-deep); background:transparent; }
+    .nearby a:hover { background:var(--teal); color:#fff; }
     .ask-box { margin-top:0.4rem; padding:1.15rem 1.3rem; background:linear-gradient(135deg,var(--clay),var(--clay-deep)); border-radius:12px; color:#fff; display:flex; align-items:center; gap:1rem; }
     .ask-box .i { font-size:1.7rem; }
     .ask-box strong { font-family:'Cormorant Garamond',serif; font-size:1.2rem; display:block; }
@@ -85,21 +94,22 @@
     .claim { margin:0.5rem 0; padding:1.5rem 1.4rem; background:var(--paper-2); border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); border-radius:10px; }
     .claim h2 { margin-bottom:0.4rem; }
     .claim ul { margin:0.7rem 0 1.1rem 1.1rem; color:var(--ink-soft); font-size:0.98rem; }
-    .claim a.btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; background:var(--clay-deep); color:#fff; font-weight:700; padding:0.7rem 1.4rem; border-radius:8px; }
+    .claim a.btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; background:var(--clay); color:#fff; font-weight:700; padding:0.7rem 1.4rem; border-radius:8px; transition:background .15s; }
+    .claim a.btn:hover { background:var(--clay-deep); }
     .biz-claimhint { margin:0.35rem 0 0.1rem; font-size:0.92rem; }
     .biz-claimhint a { display:inline-flex; align-items:center; min-height:44px; color:var(--clay-deep); font-weight:600; text-decoration:none; }
     .biz-claimhint a:hover { text-decoration:underline; }
     .claim-premium { margin-top:1.3rem; padding:1.1rem 1.2rem; background:var(--paper); border:1px solid var(--line); border-radius:10px; font-size:0.92rem; color:var(--ink-soft); }
     .claim-premium p { margin:0 0 0.85rem; }
     .claim-fine { margin-top:0.5rem; font-size:0.82rem; color:var(--ink-soft); }
-    .claim.claimed { background:var(--paper-2); border:1.5px solid var(--ink); border-top:4px solid var(--clay); }
+    .claim.claimed { background:var(--paper-2); border:1.5px solid var(--ink); border-top:4px solid var(--teal); }
     .claim.claimed p { color:var(--ink-soft); font-size:0.98rem; margin-bottom:0; }
     .claim.claimed .premium-cta { background:var(--clay); color:#fff; border-color:var(--clay); }
     .claim.claimed .premium-cta:hover { background:var(--clay-deep); border-color:var(--clay-deep); color:#fff; }
-    .premium-cta { display:inline-flex; align-items:center; min-height:44px; margin-top:1.1rem; padding:0.65rem 1.3rem; border:1.5px solid var(--clay-deep); color:var(--clay-deep); background:transparent; font-weight:700; border-radius:8px; text-decoration:none; transition:background .15s, color .15s; }
-    .premium-cta:hover { background:var(--clay-deep); color:#fff; }
-    .biz-cta { display:inline-flex; align-items:center; min-height:44px; margin-top:1.1rem; margin-left:0.6rem; padding:0.65rem 1.3rem; border:1.5px solid var(--sage-deep); color:var(--sage-deep); background:transparent; font-weight:700; border-radius:8px; text-decoration:none; transition:background .15s, color .15s; }
-    .biz-cta:hover { background:var(--sage-deep); color:#fff; }
+    .premium-cta { display:inline-flex; align-items:center; min-height:44px; margin-top:1.1rem; padding:0.65rem 1.3rem; border:1.5px solid var(--teal-deep); color:var(--teal-deep); background:transparent; font-weight:700; border-radius:8px; text-decoration:none; transition:background .15s, color .15s; }
+    .premium-cta:hover { background:var(--teal-deep); color:#fff; }
+    .biz-cta { display:inline-flex; align-items:center; min-height:44px; margin-top:1.1rem; margin-left:0.6rem; padding:0.65rem 1.3rem; border:1.5px solid var(--teal-deep); color:var(--teal-deep); background:transparent; font-weight:700; border-radius:8px; text-decoration:none; transition:background .15s, color .15s; }
+    .biz-cta:hover { background:var(--teal-deep); color:#fff; }
     @media (max-width:480px) { .biz-cta { margin-left:0; } }
     footer.site { padding:2.5rem 0; border-top:1.5px solid var(--ink); margin-top:1.5rem; }
     footer.site .wrap { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
@@ -127,25 +137,21 @@
       </nav>
     </div>
   </header>
-  <div class="biz-hero"><div class="article">
-    <span class="biz-hero-brand">San Mateo Local</span>
-    <span class="biz-hero-loc">25th Avenue &middot; San Mateo, California</span>
-  </div></div>
-  <section class="biz-head">
-    <div class="article">
-      <a class="biz-back" href="/local-services.html">&larr; Local Services</a>
-      <div class="biz-kicker">Barber shop</div>
+  <div class="hero">
+    <div class="hero-inner">
+      <a class="hero-back" href="/local-services.html">&larr; Local Services</a>
+      <div class="hero-mark" aria-hidden="true">💈</div>
+      <div class="hero-kicker">Barber shop</div>
       <h1>Bob's Barber Stylist</h1>
-      <p class="biz-claimhint"><a href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Bob's%20Barber%20Stylist&amp;state=CA&amp;phone=%2B16509245477&amp;city=San%20Mateo&amp;postal_code=94403&amp;category=Local%20Services" target="_blank" rel="noopener">Own this business? Claim it free &rsaquo;</a></p>
-      <div class="biz-acts">
+      <div class="hero-loc">25th Avenue &middot; San Mateo, California</div>
+      <a class="hero-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Bob's%20Barber%20Stylist&amp;state=CA&amp;phone=%2B16509245477&amp;city=San%20Mateo&amp;postal_code=94403&amp;category=Local%20Services" target="_blank" rel="noopener">Own this business? Claim it free &rsaquo;</a>
+      <div class="hero-acts">
         <a class="primary" href="tel:+16509245477">Call</a>
         <a href="https://www.google.com/maps/search/?api=1&query=Bob's%20Barber%20Stylist%20114%20W%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">Get Directions</a>
         
       </div>
-      
-      
     </div>
-  </section>
+  </div>
 
   <main class="article">
     <section class="blk">
@@ -157,14 +163,14 @@
 
     <section class="blk">
       <h2>Details</h2>
-      <ul class="details">
+      <div class="card"><ul class="details">
         <li><span class="k">Address</span><span><a href="https://www.google.com/maps/search/?api=1&query=Bob's%20Barber%20Stylist%20114%20W%2025th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener">114 W 25th Ave, San Mateo, CA 94403</a></span></li>
         <li><span class="k">Area</span><span>25th Avenue</span></li>
         <li><span class="k">Phone</span><span><a href="tel:+16509245477">(650) 924-5477</a></span></li>
         
         
         <li><span class="k">Hours</span><ul class="hours-list"><li>Monday: Closed</li><li>Tuesday: 8:30 AM – 5:30 PM</li><li>Wednesday: 8:30 AM – 5:30 PM</li><li>Thursday: 8:30 AM – 5:30 PM</li><li>Friday: 8:30 AM – 5:30 PM</li><li>Saturday: 8:30 AM – 5:30 PM</li><li>Sunday: 8:30 AM – 4:00 PM</li></ul></li>
-      </ul>
+      </ul></div>
     </section>
 
     
