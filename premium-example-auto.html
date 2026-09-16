@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBBC09ZJZQ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());(function(){var _i=false;try{var _p=new URLSearchParams(location.search);if(_p.get('internal')==='1')localStorage.setItem('sml-internal','1');if(_p.get('internal')==='0')localStorage.removeItem('sml-internal');_i=localStorage.getItem('sml-internal')==='1';}catch(e){}if(_i)gtag('set',{traffic_type:'internal'});gtag('config','G-ZBBC09ZJZQ',{});})();</script>
+  <title>Redwood Auto Care &middot; Premium Business Page (Sample) | San Mateo Local</title>
+  <meta name="description" content="A sample Premium Business Page for an auto repair or service shop on San Mateo Local. Redwood Auto Care is a demo showing what a maintained page looks like for a mechanic, auto repair, detailing, or tire shop." />
+  <meta name="theme-color" content="#1D2025" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRepair","name":"Redwood Auto Care","address":{"@type":"PostalAddress","streetAddress":"1220 S Amphlett Blvd","addressLocality":"San Mateo","addressRegion":"CA","postalCode":"94402","addressCountry":"US"},"telephone":"+1-650-555-0188","priceRange":"$$","openingHours":["Mo-Fr 08:00-18:00","Sa 08:00-14:00"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"617"}}</script>
+  <style>
+    /* Same Premium skeleton as the other samples, in a graphite + auto-red palette for
+       an auto repair shop. Photo slots use background-image with a fallback panel color,
+       so the page renders cleanly before the real photos land. */
+    :root{
+      --primary:#2B2F36; --primary-deep:#1D2025; --accent:#CE3B2E; --accent-light:#F2938A;
+      --ink:#23262A; --muted:#6C737B; --bg:#F4F2ED; --line:#E1DCD0; --panel:#EBE6DA; --panel-2:#E3DDD0; --cream:#F1ECDF;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100%}
+    h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.06;letter-spacing:-.5px}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+    .eyebrow{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.7rem}
+    .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block}
+    .eyebrow.center{justify-content:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:15px 30px;border-radius:0;border:1px solid transparent;transition:background .25s ease,transform .2s ease,color .25s ease;cursor:pointer}
+    .btn-gold{background:var(--accent);color:#fff}
+    .btn-gold:hover{background:#A82E23;transform:translateY(-2px)}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.55);color:#fff}
+    .btn-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+    .btn-dark{background:var(--primary);color:#EDEEF0}
+    .btn-dark:hover{background:var(--primary-deep);transform:translateY(-2px)}
+    section{padding:118px 0}
+    .sec-h{font-size:clamp(30px,4.6vw,52px);font-weight:600;color:var(--primary);margin:.5rem 0 0}
+    .sec-lead{color:var(--muted);font-size:18px;max-width:44rem;margin-top:1rem}
+    .dark{background:var(--primary);color:#E4E6E9}
+    .dark .sec-h{color:#fff}
+    .dark .sec-lead{color:#C3C8CE}
+    .panel{background:var(--panel)}
+    .reveal{opacity:0;transform:translateY(30px)}
+    .reveal.in{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+    @media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important}}
+    .sample-banner{position:relative;z-index:40;background:#1D2025;color:#F2938A;font-size:12.5px;text-align:center;padding:.55rem 1.2rem;letter-spacing:.3px}
+    .sample-banner b{color:#F7BDB6}
+    .nav{position:absolute;top:0;left:0;right:0;z-index:30;padding:1.5rem 0}
+    .nav-in{max-width:1180px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+    .nav-brand{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#fff;letter-spacing:.5px}
+    .nav-right{display:flex;align-items:center;gap:1.6rem}
+    .nav-link{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.82)}
+    .nav-link:hover{color:#fff}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:url('/images/redwood-auto-hero.jpg') center/cover no-repeat, #2B2F36}
+    .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(29,32,37,.86) 0%,rgba(29,32,37,.55) 45%,rgba(29,32,37,.12) 100%),linear-gradient(0deg,rgba(29,32,37,.55),transparent 55%)}
+    .gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:2.4rem}
+    .gimg{flex:1 1 300px;max-width:calc(33.333% - .67rem);aspect-ratio:4/3;background-color:var(--panel-2);background-size:cover;background-position:center;border:1px solid var(--line);display:block}
+    @media(max-width:900px){.gimg{max-width:calc(50% - .5rem);flex-basis:calc(50% - .5rem)}}
+    @media(max-width:560px){.gimg{max-width:100%;flex-basis:100%}}
+    .atmo{padding:0;height:58vh;min-height:380px;max-height:620px;background-color:var(--panel-2);background-image:url('/images/redwood-auto-interior.jpg');background-size:cover;background-position:center}
+    .team{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.4rem}
+    .tmember{border:1px solid var(--line);background:#fff}
+    .tphoto{aspect-ratio:4/5;background-color:var(--panel-2);background-size:cover;background-position:center 28%}
+    .tmember .tname{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--primary);margin:1rem 1.2rem 0}
+    .tmember .trole{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:700;margin:.25rem 1.2rem 0}
+    .tmember .tspec{color:var(--muted);font-size:14.5px;margin:.5rem 1.2rem 1.3rem}
+    @media(max-width:760px){.team{grid-template-columns:1fr}}
+    .hero-in{position:relative;z-index:2;color:#fff;max-width:760px}
+    .hero .eyebrow{color:var(--accent-light)}
+    .hero .eyebrow::before{background:var(--accent-light)}
+    .hero h1{font-size:clamp(48px,8vw,92px);font-weight:600;line-height:1.02;letter-spacing:-1px;margin:1.3rem 0 1rem}
+    .hero h1 em{font-style:italic;color:var(--accent-light)}
+    .hero-sub{font-size:19px;color:rgba(255,255,255,.9);max-width:34rem;line-height:1.6}
+    .hero-rate{margin-top:1.1rem;font-size:14px;color:var(--accent-light);font-weight:600;letter-spacing:.5px}
+    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+    .prem-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;background:var(--accent);padding:.3rem .65rem;border-radius:3px;vertical-align:middle}
+    .scrollcue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.7);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+    .statement{text-align:center}
+    .statement p{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,3.6vw,40px);line-height:1.28;color:var(--primary);max-width:52rem;margin:1rem auto 0}
+    .statement em{font-style:italic;color:var(--accent)}
+    .menu{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 4rem;margin-top:2rem}
+    .mrow{display:flex;justify-content:space-between;gap:1.2rem;align-items:baseline;padding:1rem 0;border-bottom:1px solid var(--line)}
+    .mrow .mn{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--primary)}
+    .mrow .md{color:var(--muted);font-size:13.5px}
+    .mrow .mp{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--accent);white-space:nowrap}
+    .menu-cat{margin-top:2.5rem}
+    .menu-cat-h{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--primary);padding-bottom:.45rem;border-bottom:2px solid var(--accent);display:inline-block}
+    .price-note{color:var(--muted);font-size:13.5px;margin-top:1rem;font-style:italic}
+    .trust{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.4rem}
+    .tcard{border:1px solid var(--line);background:#fff;padding:1.7rem 1.8rem}
+    .tcard .th{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--primary)}
+    .tcard .tp{color:var(--muted);font-size:15px;margin-top:.4rem}
+    .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}
+    .chip{font-size:12px;font-weight:600;letter-spacing:.4px;color:var(--primary);border:1px solid var(--line);padding:.45rem .95rem;background:#fff}
+    .visit-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2.4rem;margin-top:2.4rem}
+    .mapframe{border:1px solid var(--line);overflow:hidden;min-height:360px}
+    .mapframe iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+    .infocol .irow{display:flex;gap:.9rem;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:15px}
+    .infocol .irow .ik{color:var(--accent-light);font-weight:600;flex:none;width:84px;letter-spacing:.5px;text-transform:uppercase;font-size:12px;padding-top:2px}
+    .rev{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-top:2rem;border:1px solid var(--line);background:#fff;padding:2rem 2.2rem}
+    .rev-score{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:var(--accent);line-height:1}
+    .rev-stars{color:var(--accent);letter-spacing:3px;font-size:18px}
+    .rev-count{color:var(--muted);font-size:14px;margin-top:.2rem}
+    .rev-link{margin-left:auto;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
+    .revcards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:1.4rem}
+    .revcard{border:1px solid var(--line);background:#fff;padding:1.5rem 1.6rem}
+    .revcard .rc-stars{color:var(--accent);letter-spacing:2px;font-size:14px}
+    .revcard .rc-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.42;color:var(--primary);margin:.7rem 0 1rem}
+    .revcard .rc-who{font-size:12.5px;font-weight:600;color:var(--muted)}
+    .revcard .rc-who span{display:block;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-size:10.5px;margin-top:.15rem}
+    .rev-note{color:var(--muted);font-size:13px;margin-top:1rem;font-style:italic}
+    .deal{margin-top:2rem;border:1px solid var(--accent);border-left:4px solid var(--accent);background:var(--cream);padding:1.8rem 2rem;max-width:44rem}
+    .deal .dt{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--primary)}
+    .deal .dm{color:var(--muted);font-style:italic;margin-top:.2rem}
+    .faq{margin-top:2rem;max-width:48rem}
+    .faq details{border-bottom:1px solid var(--line);padding:1.1rem 0}
+    .faq summary{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--primary);cursor:pointer;list-style:none}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{color:var(--muted);margin-top:.6rem}
+    .ask{margin-top:2rem;border:1px solid var(--line);background:#fff;padding:2rem 2.2rem;max-width:48rem}
+    .askbar{display:flex;gap:.6rem;margin-top:1.1rem;flex-wrap:wrap}
+    .askbar input{flex:1 1 240px;padding:14px 16px;border:1px solid var(--line);border-radius:0;background:var(--bg);color:var(--ink);font:inherit;font-size:15px}
+    .askbar button{background:var(--primary);color:#EDEEF0;border:none;border-radius:0;padding:14px 24px;font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+    .suggest{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+    .suggest span{font-size:12.5px;color:var(--muted);border:1px solid var(--line);padding:.4rem .85rem}
+    .tags{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+    .tags span{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent-light);border:1px solid rgba(242,147,138,.4);padding:.5rem 1rem}
+    .owner{text-align:center}
+    .owner .price{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--accent);margin-top:1.2rem}
+    footer{background:var(--primary-deep);color:#C3C8CE;padding:70px 0 46px}
+    footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:30px;color:#fff;font-weight:600}
+    footer .maint{display:inline-flex;align-items:center;gap:.4rem;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-light);margin-top:1rem}
+    footer .fmeta{font-size:13.5px;color:#8B9298;margin-top:1rem;line-height:1.9}
+    footer .fsoc{margin-top:1rem;display:flex;gap:1.4rem}
+    footer .fsoc a{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#C3C8CE;font-weight:600}
+    footer .fcopy{font-size:11.5px;color:#6C737B;margin-top:1.8rem;border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem}
+    @media(max-width:900px){
+      .wrap,.nav-in{padding-left:20px;padding-right:20px}
+      section{padding:64px 0}
+      .menu{grid-template-columns:1fr;gap:0}
+      .trust{grid-template-columns:1fr}
+      .visit-grid{grid-template-columns:1fr}
+      .revcards{grid-template-columns:1fr}
+      .nav-brand{font-size:20px}
+      .nav .nav-link{display:none}
+      .hero-cta{gap:.7rem}
+    }
+  </style>
+  <script>(function(){try{document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
+</head>
+<body>
+  <div class="sample-banner"><b>This is a sample Premium Business Page for an auto repair shop,</b> built to our premium standard. Redwood Auto Care is a made-up business.</div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-scrim"></div>
+    <nav class="nav"><div class="nav-in">
+      <span style="display:flex;align-items:center;gap:.55rem"><span class="nav-brand">Redwood Auto Care</span><span class="prem-badge">&#9733; Premium</span></span>
+      <div class="nav-right">
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#visit">Visit</a>
+        <a class="nav-link" href="tel:+16505550188">(650) 555-0188</a>
+      </div>
+    </div></nav>
+    <div class="wrap">
+      <div class="hero-in">
+        <span class="eyebrow">San Mateo &middot; ASE Certified &middot; Since 2009</span>
+        <h1>Redwood <em>Auto Care</em></h1>
+        <p class="hero-sub">Honest diagnostics, fair prices, and your car ready when we say. Book online or call in about a minute.</p>
+        <div class="hero-rate">&#9733;&#9733;&#9733;&#9733;&#9733; &nbsp;4.9 &middot; 617 Google reviews</div>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="tel:+16505550188">Call now</a>
+          <a class="btn btn-outline" href="#services">Book service</a>
+        </div>
+      </div>
+    </div>
+    <span class="scrollcue">Scroll</span>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="wrap reveal">
+      <span class="eyebrow center">Family-owned since 2009</span>
+      <p>The kind of shop that tells you what your car <em>actually needs</em>, what can wait, and never sells you a repair you don't.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="panel">
+    <div class="wrap reveal">
+      <span class="eyebrow">The shop</span>
+      <h2 class="sec-h">Inside the shop</h2>
+      <p class="sec-lead">Clean bays, modern equipment, and techs who treat your car like their own.</p>
+      <div class="gallery">
+        <div class="gimg" style="background-image:url('/images/redwood-auto-1.jpg')" role="img" aria-label="A clean service bay with a car on the lift"></div>
+        <div class="gimg" style="background-image:url('/images/redwood-auto-2.jpg')" role="img" aria-label="A technician working on a vehicle"></div>
+        <div class="gimg" style="background-image:url('/images/redwood-auto-3.jpg')" role="img" aria-label="A service advisor going over the work with a customer"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES + PRICES -->
+  <section id="services">
+    <div class="wrap reveal">
+      <span class="eyebrow">Services</span>
+      <h2 class="sec-h">What we handle</h2>
+      <div class="menu-cat"><h3 class="menu-cat-h">Maintenance</h3></div>
+      <div class="menu">
+        <div class="mrow"><div><div class="mn">Oil &amp; filter change</div><div class="md">Full synthetic available</div></div><div class="mp">from $65</div></div>
+        <div class="mrow"><div><div class="mn">Brake service</div><div class="md">Pads and rotors, per axle</div></div><div class="mp">from $180</div></div>
+        <div class="mrow"><div><div class="mn">Tire rotation &amp; balance</div><div class="md">Keep the tread even</div></div><div class="mp">from $40</div></div>
+        <div class="mrow"><div><div class="mn">Battery replacement</div><div class="md">Tested and installed</div></div><div class="mp">from $180</div></div>
+      </div>
+      <div class="menu-cat"><h3 class="menu-cat-h">Repair</h3></div>
+      <div class="menu">
+        <div class="mrow"><div><div class="mn">Diagnostics</div><div class="md">Applied to your repair</div></div><div class="mp">$120</div></div>
+        <div class="mrow"><div><div class="mn">Check-engine light</div><div class="md">We find the real cause</div></div><div class="mp">from $120</div></div>
+        <div class="mrow"><div><div class="mn">A/C service</div><div class="md">Recharge and repair</div></div><div class="mp">from $150</div></div>
+        <div class="mrow"><div><div class="mn">Suspension &amp; alignment</div><div class="md">Rides right, wears even</div></div><div class="mp">by quote</div></div>
+      </div>
+      <div class="menu-cat"><h3 class="menu-cat-h">Inspection</h3></div>
+      <div class="menu">
+        <div class="mrow"><div><div class="mn">Smog check</div><div class="md">Fast, state-certified</div></div><div class="mp">$60</div></div>
+        <div class="mrow"><div><div class="mn">Pre-purchase inspection</div><div class="md">Know before you buy</div></div><div class="mp">$150</div></div>
+        <div class="mrow"><div><div class="mn">Multi-point inspection</div><div class="md">With every visit</div></div><div class="mp">Free</div></div>
+        <div class="mrow"><div><div class="mn">Fleet &amp; commercial</div><div class="md">Keep your vehicles running</div></div><div class="mp">by quote</div></div>
+      </div>
+      <p class="price-note">Starting prices. Every visit includes a free multi-point inspection, and we give you a flat quote before we start, so you approve the price up front, never after.</p>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="panel">
+    <div class="wrap reveal">
+      <span class="eyebrow">Why locals trust us</span>
+      <h2 class="sec-h">What you can count on</h2>
+      <div class="trust">
+        <div class="tcard"><div class="th">ASE-certified techs</div><div class="tp">Factory-level training on all makes and models, foreign and domestic. The right tools and the right diagnosis the first time.</div></div>
+        <div class="tcard"><div class="th">Upfront, flat quotes</div><div class="tp">We quote the whole job before we touch it and you approve it first. No mystery fees, no padded bill at pickup.</div></div>
+        <div class="tcard"><div class="th">Warranty on our work</div><div class="tp">Most repairs are backed by a 24-month, 24,000-mile warranty. If something isn't right, we make it right.</div></div>
+        <div class="tcard"><div class="th">Honest diagnostics</div><div class="tp">We show you the worn part and explain what needs doing now and what can wait. No upselling, ever.</div></div>
+      </div>
+      <div class="chips">
+        <span class="chip">ASE certified</span><span class="chip">24mo / 24k warranty</span><span class="chip">Free estimates</span><span class="chip">All makes &amp; models</span><span class="chip">Loaner &amp; shuttle</span><span class="chip">Family-owned</span><span class="chip">Serving the Peninsula</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE TECHS -->
+  <section>
+    <div class="wrap reveal">
+      <span class="eyebrow">The team</span>
+      <h2 class="sec-h">Meet the techs</h2>
+      <div class="team">
+        <div class="tmember">
+          <div class="tphoto" style="background-image:url('/images/redwood-auto-team-1.jpg')"></div>
+          <div class="tname">Ray Delgado</div>
+          <div class="trole">Owner &amp; Master Tech</div>
+          <div class="tspec">Thirty years under the hood. Known for finding what the dealer missed and quoting it straight.</div>
+        </div>
+        <div class="tmember">
+          <div class="tphoto" style="background-image:url('/images/redwood-auto-team-2.jpg')"></div>
+          <div class="tname">Kevin Ng</div>
+          <div class="trole">Lead Technician</div>
+          <div class="tspec">Diagnostics and electrical, and the one who actually enjoys chasing down a tricky check-engine light.</div>
+        </div>
+        <div class="tmember">
+          <div class="tphoto" style="background-image:url('/images/redwood-auto-team-3.jpg')"></div>
+          <div class="tname">Andre Brooks</div>
+          <div class="trole">Service Advisor</div>
+          <div class="tspec">Your point of contact. Explains the work in plain English and keeps you posted start to finish.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATMOSPHERE BAND -->
+  <section class="atmo" role="img" aria-label="Inside Redwood Auto Care"></section>
+
+  <!-- REVIEWS + DEAL -->
+  <section>
+    <div class="wrap reveal">
+      <span class="eyebrow">Reputation</span>
+      <h2 class="sec-h">Trusted by drivers</h2>
+      <div class="rev">
+        <div class="rev-score">4.9</div>
+        <div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rev-count">Based on 617 Google reviews</div></div>
+        <a class="rev-link" href="#" onclick="return false">Read on Google &rarr;</a>
+      </div>
+      <div class="revcards">
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Diagnosed in an hour what the dealer couldn't in a day, and charged me a third of the price."</p><div class="rc-who">Steve H.<span>Google review</span></div></div>
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Showed me the worn part, quoted it before touching anything, and had it done the same day."</p><div class="rc-who">Marisol A.<span>Google review</span></div></div>
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Finally a shop I trust. They told me a repair another place pushed wasn't even needed."</p><div class="rc-who">Dan K.<span>Google review</span></div></div>
+      </div>
+      <p class="rev-note">On your live page, these are pulled from your real Google reviews, always the genuine ones.</p>
+      <div style="margin-top:3.4rem"><span class="eyebrow">Local Perk</span><h2 class="sec-h">A San Mateo Local deal</h2></div>
+      <div class="deal">
+        <div class="dt">&#128663; Free multi-point inspection + $20 off your first service</div>
+        <div class="dm">Just mention San Mateo Local when you book.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="dark" id="visit">
+    <div class="wrap reveal">
+      <span class="eyebrow">Visit</span>
+      <h2 class="sec-h">Find us</h2>
+      <div class="visit-grid">
+        <div class="mapframe"><iframe loading="lazy" title="Map to Redwood Auto Care" src="https://www.google.com/maps?q=1220%20S%20Amphlett%20Blvd%2C%20San%20Mateo%2C%20CA%2094402&output=embed"></iframe></div>
+        <div class="infocol">
+          <div class="irow"><span class="ik">Address</span><span>1220 S Amphlett Blvd, San Mateo, CA 94402</span></div>
+          <div class="irow"><span class="ik">Phone</span><span>(650) 555-0188</span></div>
+          <div class="irow"><span class="ik">Hours</span><span>Mon&ndash;Fri 8a&ndash;6p<br>Sat 8a&ndash;2p &middot; Sun closed</span></div>
+          <div class="irow"><span class="ik">Area</span><span>Serving San Mateo &amp; the Peninsula</span></div>
+          <div style="margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn btn-gold" href="tel:+16505550188">Call</a><a class="btn btn-outline" href="https://www.google.com/maps?q=1220+S+Amphlett+Blvd,+San+Mateo,+CA" target="_blank" rel="noopener">Directions</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ + ASK -->
+  <section>
+    <div class="wrap reveal">
+      <span class="eyebrow">Good to Know</span>
+      <h2 class="sec-h">Frequently asked</h2>
+      <div class="faq">
+        <details open><summary>Do you work on all makes and models?</summary><p>Yes, foreign and domestic. Our ASE-certified techs have the training and factory-level tools for just about anything on the road.</p></details>
+        <details><summary>Do you offer a warranty?</summary><p>Most repairs are backed by a 24-month, 24,000-mile warranty. If something isn't right, bring it back and we'll make it right.</p></details>
+        <details><summary>Can I get a loaner or a ride?</summary><p>Yes. We have loaner cars and a local shuttle, so you're not stuck waiting. Just ask when you book.</p></details>
+        <details><summary>How do you price repairs?</summary><p>Every visit includes a free multi-point inspection, then a flat quote before any work starts. You approve the price first, so there are no surprises at pickup.</p></details>
+      </div>
+      <div style="margin-top:3.4rem"><span class="eyebrow">Ask</span><h2 class="sec-h">Ask about Redwood</h2></div>
+      <div class="ask">
+        <p style="color:var(--muted)">Ask and get an answer from the shop's verified information, hours, services, and location.</p>
+        <div class="askbar"><input type="text" placeholder="e.g. Do you do smog checks?" aria-label="Ask about this business" /><button type="button">Ask</button></div>
+        <div class="suggest"><span>What are your hours?</span><span>How much is an oil change?</span><span>Do you offer loaner cars?</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH VALUE -->
+  <section class="dark">
+    <div class="wrap reveal" style="max-width:52rem;text-align:center;margin:0 auto">
+      <span class="eyebrow center">Built for how people search now</span>
+      <h2 class="sec-h">Found on Google, Maps, and AI</h2>
+      <p class="sec-lead" style="margin:1.2rem auto 0">People don't just search Google anymore. They ask "who's a good mechanic near me in San Mateo?" on Maps, and more and more on AI tools. Your page gives search engines and AI systems a rich, structured, up-to-date source of truth about your shop, so they understand what you do, where you are, and how to reach you.</p>
+      <div class="tags" style="justify-content:center"><span>SEO</span><span>Local SEO</span><span>AEO</span><span>GEO</span><span>San Mateo Local AI Guide</span></div>
+    </div>
+  </section>
+
+  <!-- OWNER CTA -->
+  <section class="panel owner">
+    <div class="wrap reveal" style="max-width:44rem;margin:0 auto">
+      <span class="eyebrow center">For business owners</span>
+      <h2 class="sec-h">Want a page like this for your business?</h2>
+      <p class="sec-lead" style="margin:1.1rem auto 0">A professionally built web presence on San Mateo Local, built for modern local search and maintained by us. We build the first draft from your existing site and what's already online, then you just confirm. Barely any work on your end.</p>
+      <div class="price">Premium Business Page &middot; $59/month &middot; setup waived for our first 10 businesses</div>
+      <div style="margin-top:1.8rem"><a class="btn btn-dark" href="/for-business-owners.html">Get your Premium page</a></div>
+      <p style="margin-top:1.1rem;font-size:16px;color:var(--muted)">Run a different kind of business? See the <a href="/premium-example-salon.html" style="color:var(--accent);font-weight:600">Salon</a>, <a href="/premium-example-dental.html" style="color:var(--accent);font-weight:600">Dental</a>, <a href="/premium-example-trades.html" style="color:var(--accent);font-weight:600">Trades</a>, <a href="/premium-example-fitness.html" style="color:var(--accent);font-weight:600">Fitness</a>, or <a href="/premium-example.html" style="color:var(--accent);font-weight:600">Eat &amp; Drink</a> examples.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="fbrand">Redwood Auto Care</div>
+      <div class="maint">&#10003; Maintained by San Mateo Local</div>
+      <div class="fmeta">1220 S Amphlett Blvd, San Mateo &middot; (650) 555-0188<br>Mon&ndash;Fri 8a&ndash;6p &middot; Sat 8a&ndash;2p</div>
+      <div class="fsoc"><a href="#" onclick="return false">Book service</a><a href="#" onclick="return false">Google</a></div>
+      <div class="fcopy">This is a sample page. Redwood Auto Care is not a real business. &copy; 2026 San Mateo Local.</div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    try{
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els=document.querySelectorAll('.reveal');
+      var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+      els.forEach(function(el){io.observe(el);});
+    }catch(e){}
+  })();
+  </script>
+</body>
+</html>
