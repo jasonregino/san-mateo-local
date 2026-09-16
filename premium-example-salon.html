@@ -61,9 +61,11 @@
     /* HERO — real page uses the salon's own photos; fallback color renders if the photo is not set yet */
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:url('/images/lumiere-salon-hero.jpg') center/cover no-repeat, #332A31}
     .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(30,24,29,.82) 0%,rgba(30,24,29,.5) 45%,rgba(30,24,29,.1) 100%),linear-gradient(0deg,rgba(30,24,29,.5),transparent 55%)}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem}
-    .gimg{width:100%;aspect-ratio:4/3;background-color:var(--panel-2);background-size:cover;background-position:center;border:1px solid var(--line);display:block}
-    @media(max-width:900px){.gallery{grid-template-columns:1fr}}
+    .gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:2.4rem}
+    .gimg{flex:1 1 300px;max-width:calc(33.333% - .67rem);aspect-ratio:4/3;background-color:var(--panel-2);background-size:cover;background-position:center;border:1px solid var(--line);display:block}
+    @media(max-width:900px){.gimg{max-width:calc(50% - .5rem);flex-basis:calc(50% - .5rem)}}
+    @media(max-width:560px){.gimg{max-width:100%;flex-basis:100%}}
+    .atmo{padding:0;height:58vh;min-height:380px;max-height:620px;background-color:var(--panel-2);background-image:url('/images/lumiere-salon-interior.jpg');background-size:cover;background-position:center}
     .team{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.4rem}
     .tmember{border:1px solid var(--line);background:#fff}
     .tphoto{aspect-ratio:4/5;background-color:var(--panel-2);background-size:cover;background-position:center 28%}
@@ -200,11 +202,10 @@
       <p class="sec-lead">A few recent looks, color, cuts, and styles straight from the chair.</p>
       <div class="gallery">
         <div class="gimg" style="background-image:url('/images/lumiere-salon-1.jpg')" role="img" aria-label="Balayage and lived-in color result"></div>
-        <div class="gimg" style="background-image:url('/images/lumiere-salon-2.jpg')" role="img" aria-label="Fresh cut and blow-out style"></div>
-        <div class="gimg" style="background-image:url('/images/lumiere-salon-3.jpg')" role="img" aria-label="Bold color transformation"></div>
-        <div class="gimg" style="background-image:url('/images/lumiere-salon-4.jpg')" role="img" aria-label="Dimensional blonde highlights"></div>
-        <div class="gimg" style="background-image:url('/images/lumiere-salon-5.jpg')" role="img" aria-label="Textured curly cut"></div>
-        <div class="gimg" style="background-image:url('/images/lumiere-salon-6.jpg')" role="img" aria-label="Special-occasion updo"></div>
+        <div class="gimg" style="background-image:url('/images/lumiere-salon-2.jpg')" role="img" aria-label="Bold copper color result"></div>
+        <div class="gimg" style="background-image:url('/images/lumiere-salon-3.jpg')" role="img" aria-label="Dimensional blonde highlights"></div>
+        <div class="gimg" style="background-image:url('/images/lumiere-salon-4.jpg')" role="img" aria-label="Fresh cut and blow-out style"></div>
+        <div class="gimg" style="background-image:url('/images/lumiere-salon-5.jpg')" role="img" aria-label="Special-occasion updo"></div>
       </div>
     </div>
   </section>
@@ -273,19 +274,22 @@
         </div>
         <div class="tmember">
           <div class="tphoto" style="background-image:url('/images/lumiere-salon-team-2.jpg')"></div>
-          <div class="tname">Priya Nair</div>
-          <div class="trole">Stylist &amp; Color</div>
-          <div class="tspec">Precision cuts and warm, dimensional color, and a genuinely relaxing wash.</div>
+          <div class="tname">Simone Carter</div>
+          <div class="trole">Stylist &amp; Curls</div>
+          <div class="tspec">Curls, texture, and dimensional color. She reads your hair's natural pattern and works with it, not against it.</div>
         </div>
         <div class="tmember">
           <div class="tphoto" style="background-image:url('/images/lumiere-salon-team-3.jpg')"></div>
-          <div class="tname">Jordan Reyes</div>
-          <div class="trole">Stylist</div>
-          <div class="tspec">Textured cuts, curls, and easy everyday styles, and the one you want for a fresh restart.</div>
+          <div class="tname">Dev Kapoor</div>
+          <div class="trole">Stylist &amp; Cuts</div>
+          <div class="tspec">Precision cuts and clean lines, and a genuinely relaxing chair. Great for a fresh restart.</div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ATMOSPHERE BAND -->
+  <section class="atmo" role="img" aria-label="Inside Lumière Salon Studio"></section>
 
   <!-- REVIEWS + DEAL -->
   <section>
