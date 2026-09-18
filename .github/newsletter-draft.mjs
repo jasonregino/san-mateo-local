@@ -165,7 +165,7 @@ function buildBody({ posts, events, news, council }) {
   L.push('## Think you know your hometown?');
   L.push(`Twenty questions, no Googling. [Take the quiz](${SITE}/quiz.html).`, '');
   L.push("That's the week. Thanks for reading, and feel free to reply anytime. I read every one.", '');
-  L.push('Jason', 'San Mateo Local');
+  L.push('Jason', '', 'San Mateo Local');
   return L.join('\n');
 }
 
