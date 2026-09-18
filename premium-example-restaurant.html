@@ -87,15 +87,18 @@
     .hcard-more{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent-light);opacity:0;transition:opacity .3s ease;margin-top:.25rem}
     .hcard:hover .hcard-more{opacity:1}
     @media(hover:none){.hcard-more{opacity:1}}
-    .menu{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 4rem;margin-top:2rem}
-    .mrow{display:flex;justify-content:space-between;gap:1.2rem;align-items:baseline;padding:1rem 0;border-bottom:1px solid var(--line)}
-    .mrow .mn{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--primary)}
-    .mrow .md{color:var(--muted);font-size:13.5px}
-    .mrow .mp{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--accent);white-space:nowrap}
-    .menu-cat{margin-top:2.5rem}
-    .menu-cat-h{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--primary);padding-bottom:.45rem;border-bottom:2px solid var(--accent);display:inline-block}
-    .menu-cat-h span{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-left:.6rem}
-    .price-note{color:var(--muted);font-size:13.5px;margin-top:1rem;font-style:italic}
+    /* PHOTO-DRIVEN COURSE MENU (distinct from the flat text menus on the other samples) */
+    .coursemenu{margin-top:2.8rem;display:flex;flex-direction:column;gap:3.4rem}
+    .course{display:grid;grid-template-columns:1fr 1fr;gap:2.8rem;align-items:center}
+    .course-photo{aspect-ratio:4/3;background-color:var(--panel-2);background-size:cover;background-position:center;border:1px solid var(--line)}
+    .course:nth-child(even) .course-photo{order:2}
+    .course-h{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,34px);font-weight:600;color:var(--primary);padding-bottom:.5rem;margin-bottom:.4rem;border-bottom:2px solid var(--accent);display:inline-block}
+    .course-h span{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-left:.6rem}
+    .citem{display:flex;justify-content:space-between;gap:1.2rem;align-items:baseline;padding:.75rem 0;border-bottom:1px dotted var(--line)}
+    .citem .cn{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--primary)}
+    .citem .cd{color:var(--muted);font-size:13.5px}
+    .citem .cp{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--accent);white-space:nowrap}
+    .price-note{color:var(--muted);font-size:13.5px;margin-top:1.8rem;font-style:italic}
     .visit-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2.4rem;margin-top:2.4rem}
     .mapframe{border:1px solid var(--line);overflow:hidden;min-height:360px}
     .mapframe iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
@@ -150,7 +153,6 @@
       .split-img{aspect-ratio:16/10}
       .cards3{grid-template-columns:1fr}
       .revcards{grid-template-columns:1fr}
-      .menu{grid-template-columns:1fr;gap:0}
       .visit-grid{grid-template-columns:1fr}
       .gal{grid-template-columns:repeat(2,1fr)}
       .gitem.big{grid-column:span 2;grid-row:span 1}
@@ -158,6 +160,7 @@
       .nav .nav-link{display:none}
       .hero-cta{gap:.7rem}
     }
+    @media(max-width:760px){.course{grid-template-columns:1fr;gap:1.4rem}.course:nth-child(even) .course-photo{order:0}}
     @media(prefers-reduced-motion:reduce){.hero-slide{transition:none}}
   </style>
   <script>(function(){try{document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
@@ -169,9 +172,8 @@
   <section class="hero">
     <div class="hero-slides">
       <div class="hero-slide active" style="background-image:url('/images/alder-oak-hero.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/alder-oak-patio.jpg')"></div>
       <div class="hero-slide" style="background-image:url('/images/alder-oak-dining.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('/images/alder-oak-dish1.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('/images/alder-oak-bar.jpg')"></div>
     </div>
     <div class="hero-scrim"></div>
     <nav class="nav"><div class="nav-in">
@@ -186,7 +188,7 @@
       <div class="hero-in">
         <span class="eyebrow">Downtown San Mateo &middot; Dinner nightly</span>
         <h1>Alder &amp; <em>Oak</em></h1>
-        <p class="hero-sub">Seasonal California cooking over a live wood fire. A warm room, a thoughtful wine list, and a table worth lingering at. Reservations recommended.</p>
+        <p class="hero-sub">Seasonal California cooking over a live wood fire. A warm dining room, a heated patio, and a thoughtful wine list. Reservations recommended.</p>
         <div class="hero-rate">&#9733;&#9733;&#9733;&#9733;&#9733; &nbsp;4.8 &middot; 286 Google reviews</div>
         <div class="hero-cta">
           <a class="btn btn-gold" href="#visit">Reserve a table</a>
@@ -205,63 +207,73 @@
     </div>
   </section>
 
-  <!-- HIGHLIGHTS -->
+  <!-- HIGHLIGHTS: the spaces -->
   <section class="panel">
     <div class="wrap reveal">
-      <span class="eyebrow">The experience</span>
-      <h2 class="sec-h">What to expect</h2>
+      <span class="eyebrow">The rooms</span>
+      <h2 class="sec-h">Where you'll sit</h2>
       <div class="cards3">
-        <a class="hcard" href="#menu"><div class="hcard-img" style="background-image:url('/images/alder-oak-dish1.jpg')"></div><div class="hcard-ov"><span class="hcard-label">The Wood Fire</span><span class="hcard-more">See the menu &rarr;</span></div></a>
         <a class="hcard" href="#visit"><div class="hcard-img" style="background-image:url('/images/alder-oak-dining.jpg')"></div><div class="hcard-ov"><span class="hcard-label">The Dining Room</span><span class="hcard-more">Reserve &rarr;</span></div></a>
+        <a class="hcard" href="#visit"><div class="hcard-img" style="background-image:url('/images/alder-oak-patio.jpg')"></div><div class="hcard-ov"><span class="hcard-label">The Heated Patio</span><span class="hcard-more">Weather permitting &rarr;</span></div></a>
         <a class="hcard" href="#menu"><div class="hcard-img" style="background-image:url('/images/alder-oak-bar.jpg')"></div><div class="hcard-ov"><span class="hcard-label">The Bar</span><span class="hcard-more">Walk-ins welcome &rarr;</span></div></a>
       </div>
     </div>
   </section>
 
-  <!-- MENU -->
+  <!-- MENU: photo-driven, by course -->
   <section id="menu">
     <div class="wrap reveal">
       <span class="eyebrow">The Menu</span>
-      <h2 class="sec-h">What we're known for</h2>
-      <div class="menu-cat"><h3 class="menu-cat-h">To Start</h3></div>
-      <div class="menu">
-        <div class="mrow"><div><div class="mn">Wood-fired sourdough</div><div class="md">Cultured butter, sea salt</div></div><div class="mp">$9</div></div>
-        <div class="mrow"><div><div class="mn">Little gem salad</div><div class="md">Buttermilk, herbs, breadcrumb</div></div><div class="mp">$16</div></div>
-        <div class="mrow"><div><div class="mn">Charred octopus</div><div class="md">White bean, salsa verde</div></div><div class="mp">$21</div></div>
-        <div class="mrow"><div><div class="mn">Beef tartare</div><div class="md">Egg yolk, capers, grilled bread</div></div><div class="mp">$19</div></div>
-        <div class="mrow"><div><div class="mn">Roasted beets</div><div class="md">Whipped ricotta, pistachio</div></div><div class="mp">$15</div></div>
-        <div class="mrow"><div><div class="mn">Oysters</div><div class="md">Mignonette, half dozen</div></div><div class="mp">$24</div></div>
+      <h2 class="sec-h">Dinner, by the course</h2>
+      <p class="sec-lead">A seasonal menu that changes with the market. Here's a taste of each course, the full list is on the table when you arrive.</p>
+      <div class="coursemenu">
+        <div class="course reveal">
+          <div class="course-photo" style="background-image:url('/images/alder-oak-starter.jpg')" role="img" aria-label="A starter dish"></div>
+          <div class="course-body">
+            <h3 class="course-h">Starters</h3>
+            <div class="citem"><div><div class="cn">Wood-fired sourdough</div><div class="cd">Cultured butter, sea salt</div></div><div class="cp">$9</div></div>
+            <div class="citem"><div><div class="cn">Little gem salad</div><div class="cd">Buttermilk, herbs, breadcrumb</div></div><div class="cp">$16</div></div>
+            <div class="citem"><div><div class="cn">Charred octopus</div><div class="cd">White bean, salsa verde</div></div><div class="cp">$21</div></div>
+            <div class="citem"><div><div class="cn">Beef tartare</div><div class="cd">Egg yolk, capers, grilled bread</div></div><div class="cp">$19</div></div>
+            <div class="citem"><div><div class="cn">Oysters on the half shell</div><div class="cd">Mignonette, half dozen</div></div><div class="cp">$24</div></div>
+          </div>
+        </div>
+        <div class="course reveal">
+          <div class="course-photo" style="background-image:url('/images/alder-oak-main.jpg')" role="img" aria-label="A wood-fired main course"></div>
+          <div class="course-body">
+            <h3 class="course-h">Mains <span>from the wood fire</span></h3>
+            <div class="citem"><div><div class="cn">Wood-grilled ribeye</div><div class="cd">14 oz, bone marrow butter</div></div><div class="cp">$48</div></div>
+            <div class="citem"><div><div class="cn">Brick chicken</div><div class="cd">Pan jus, charred greens</div></div><div class="cp">$32</div></div>
+            <div class="citem"><div><div class="cn">Line-caught fish</div><div class="cd">Daily catch, brown butter</div></div><div class="cp">market</div></div>
+            <div class="citem"><div><div class="cn">Hand-cut pappardelle</div><div class="cd">Short-rib ragu, parmesan</div></div><div class="cp">$28</div></div>
+            <div class="citem"><div><div class="cn">Cauliflower steak</div><div class="cd">Salsa macha, herbs (vg)</div></div><div class="cp">$24</div></div>
+          </div>
+        </div>
+        <div class="course reveal">
+          <div class="course-photo" style="background-image:url('/images/alder-oak-dessert.jpg')" role="img" aria-label="A dessert"></div>
+          <div class="course-body">
+            <h3 class="course-h">Desserts</h3>
+            <div class="citem"><div><div class="cn">Olive oil cake</div><div class="cd">Whipped cr&egrave;me fra&icirc;che</div></div><div class="cp">$12</div></div>
+            <div class="citem"><div><div class="cn">Chocolate budino</div><div class="cd">Sea salt, olive oil</div></div><div class="cp">$12</div></div>
+            <div class="citem"><div><div class="cn">Seasonal galette</div><div class="cd">Vanilla bean ice cream</div></div><div class="cp">$13</div></div>
+            <div class="citem"><div><div class="cn">Affogato</div><div class="cd">Espresso, gelato</div></div><div class="cp">$9</div></div>
+          </div>
+        </div>
       </div>
-      <div class="menu-cat"><h3 class="menu-cat-h">From the Wood Fire <span>mains</span></h3></div>
-      <div class="menu">
-        <div class="mrow"><div><div class="mn">Wood-grilled ribeye</div><div class="md">14 oz, bone marrow butter</div></div><div class="mp">$48</div></div>
-        <div class="mrow"><div><div class="mn">Half chicken</div><div class="md">Under a brick, pan jus, greens</div></div><div class="mp">$32</div></div>
-        <div class="mrow"><div><div class="mn">Line-caught fish</div><div class="md">Daily catch, brown butter</div></div><div class="mp">market</div></div>
-        <div class="mrow"><div><div class="mn">Hand-cut pappardelle</div><div class="md">Short-rib ragu, parmesan</div></div><div class="mp">$28</div></div>
-        <div class="mrow"><div><div class="mn">Roasted cauliflower steak</div><div class="md">Salsa macha, herbs (vg)</div></div><div class="mp">$24</div></div>
-        <div class="mrow"><div><div class="mn">Pork chop</div><div class="md">Stone fruit mostarda</div></div><div class="mp">$36</div></div>
-      </div>
-      <div class="menu-cat"><h3 class="menu-cat-h">Sides &amp; Sweets</h3></div>
-      <div class="menu">
-        <div class="mrow"><div><div class="mn">Wood-fired potatoes</div><div class="md">Rosemary, garlic</div></div><div class="mp">$11</div></div>
-        <div class="mrow"><div><div class="mn">Blistered green beans</div><div class="md">Almond, lemon</div></div><div class="mp">$12</div></div>
-        <div class="mrow"><div><div class="mn">Olive oil cake</div><div class="md">Whipped cr&egrave;me fra&icirc;che</div></div><div class="mp">$12</div></div>
-        <div class="mrow"><div><div class="mn">Chocolate budino</div><div class="md">Sea salt, olive oil</div></div><div class="mp">$12</div></div>
-      </div>
-      <p class="price-note">Menu changes with the season and the market, so a few dishes rotate. A vegetarian tasting is always available on request.</p>
+      <p class="price-note">The menu changes with the season and the market, so a few dishes rotate. A vegetarian tasting is always available on request, just ask.</p>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section class="panel">
     <div class="wrap split">
-      <div class="split-img reveal" style="background-image:url('/images/alder-oak-interior.jpg')"></div>
+      <div class="split-img reveal" style="background-image:url('/images/alder-oak-booth.jpg')"></div>
       <div class="reveal">
         <span class="eyebrow">The Story</span>
         <h2 class="sec-h">About Alder &amp; Oak</h2>
-        <p class="sec-lead">A wood-fired restaurant in the heart of Downtown San Mateo, serving seasonal California cooking since 2019. The menu changes with the market, the wine list leans local and small-production, and the room was built for long dinners with the people you like most.</p>
+        <p class="sec-lead">A wood-fired restaurant in the heart of Downtown San Mateo, serving seasonal California cooking since 2019. The menu changes with the market, the wine list leans local and small-production, and the room, and the heated patio out front, were built for long dinners with the people you like most.</p>
         <div class="chips">
-          <span class="chip">Est. 2019</span><span class="chip">Reservations</span><span class="chip">Full bar</span><span class="chip">Private dining</span><span class="chip">Local &amp; seasonal</span><span class="chip">Vegetarian tasting</span>
+          <span class="chip">Est. 2019</span><span class="chip">Reservations</span><span class="chip">Heated patio</span><span class="chip">Full bar</span><span class="chip">Private dining</span><span class="chip">Local &amp; seasonal</span><span class="chip">Vegetarian tasting</span>
         </div>
       </div>
     </div>
@@ -274,10 +286,10 @@
       <h2 class="sec-h">A look inside</h2>
       <div class="gal">
         <div class="gitem big"><div class="gz" style="background-image:url('/images/alder-oak-dining.jpg')" role="img" aria-label="The dining room"></div></div>
-        <div class="gitem"><div class="gz" style="background-image:url('/images/alder-oak-dish1.jpg')" role="img" aria-label="A wood-fired dish"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/alder-oak-patio.jpg')" role="img" aria-label="Heated street-side patio at night"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/alder-oak-main2.jpg')" role="img" aria-label="A plated main course"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/alder-oak-booth.jpg')" role="img" aria-label="A booth in the dining room"></div></div>
         <div class="gitem"><div class="gz" style="background-image:url('/images/alder-oak-bar.jpg')" role="img" aria-label="The bar"></div></div>
-        <div class="gitem"><div class="gz" style="background-image:url('/images/alder-oak-dish2.jpg')" role="img" aria-label="A plated main"></div></div>
-        <div class="gitem"><div class="gz" style="background-image:url('/images/alder-oak-interior.jpg')" role="img" aria-label="The room"></div></div>
         <div class="gitem"><div class="gz" style="background-image:url('/images/alder-oak-exterior.jpg')" role="img" aria-label="Alder & Oak storefront in the evening"></div></div>
       </div>
     </div>
@@ -295,7 +307,7 @@
       </div>
       <div class="revcards">
         <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"The ribeye off the wood fire was the best steak I've had on the Peninsula. Booked again before we left."</p><div class="rc-who">Daniel K.<span>Google review</span></div></div>
-        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Our anniversary dinner. Warm room, unhurried service, and a wine pairing that was spot on."</p><div class="rc-who">Renee M.<span>Google review</span></div></div>
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Our anniversary dinner on the heated patio. Warm, unhurried, and a wine pairing that was spot on."</p><div class="rc-who">Renee M.<span>Google review</span></div></div>
         <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Sat at the bar solo, left feeling like a regular. The pappardelle is a must."</p><div class="rc-who">Tomás V.<span>Google review</span></div></div>
       </div>
       <p class="rev-note">On your live page, these are pulled from your real Google reviews, always the genuine ones.</p>
@@ -333,14 +345,15 @@
       <h2 class="sec-h">Frequently asked</h2>
       <div class="faq">
         <details open><summary>Do you take reservations?</summary><p>Yes, and we recommend them, especially Thursday through Saturday. The bar and a few counter seats are kept for walk-ins.</p></details>
-        <details><summary>Can you handle dietary restrictions?</summary><p>Absolutely. There's always a vegetarian option, and a vegetarian tasting menu is available on request. Let us know about allergies when you book.</p></details>
+        <details><summary>Is the patio heated?</summary><p>Yes, the street-side patio is heated and covered, so it's comfortable most evenings year-round. Ask for it when you book.</p></details>
+        <details><summary>Can you handle dietary restrictions?</summary><p>Absolutely. There's always a vegetarian option, and a vegetarian tasting menu is available on request. Tell us about allergies when you book.</p></details>
         <details><summary>Do you do private events?</summary><p>Yes. We have a semi-private space for groups up to 20 and can buy out the room for larger parties. Call or email and we'll plan it with you.</p></details>
         <details><summary>Is there parking?</summary><p>Street parking downtown plus the city garage on 2nd Avenue, a short walk away.</p></details>
       </div>
       <div style="margin-top:3.4rem"><span class="eyebrow">Ask</span><h2 class="sec-h">Ask about Alder &amp; Oak</h2></div>
       <div class="ask">
         <p style="color:var(--muted)">Ask and get an answer from the business's verified information, hours, menu, and location.</p>
-        <div class="askbar"><input type="text" placeholder="e.g. Do you have a vegetarian tasting menu?" aria-label="Ask about this business" /><button type="button">Ask</button></div>
+        <div class="askbar"><input type="text" placeholder="e.g. Is the patio heated?" aria-label="Ask about this business" /><button type="button">Ask</button></div>
         <div class="suggest"><span>Are you open Monday?</span><span>Do you take reservations?</span><span>Do you do private events?</span></div>
       </div>
     </div>
