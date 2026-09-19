@@ -57,11 +57,19 @@
     .menu-btn svg { width:20px; height:20px; }
     .mobile-nav { display:none; }
     @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--clay-deep); } }
-    .page-head { padding:3.6rem 0 2.2rem; border-bottom:1.5px solid var(--ink); }
+    .page-head { padding:2.4rem 0 2.2rem; border-bottom:1.5px solid var(--ink); }
     .back { font-size:0.72rem; font-weight:600; letter-spacing:0.13em; text-transform:uppercase; color:var(--clay-deep); }
     .page-eyebrow { display:block; margin-top:1.1rem; font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; color:var(--clay-deep); }
     .page-head h1 { font-size:clamp(2.6rem,6.5vw,4.2rem); font-weight:600; margin:0.5rem 0 0.8rem; }
     .page-head p { color:var(--ink-soft); font-size:1.12rem; max-width:42rem; }
+    .cat-hero { position:relative; min-height:44vh; display:flex; align-items:flex-end; background-size:cover; background-position:center; background-color:var(--ink); }
+    .cat-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(24,17,12,.88) 0%, rgba(24,17,12,.32) 55%, rgba(24,17,12,.55) 100%); }
+    .cat-hero-in { position:relative; z-index:2; padding:2.6rem 0 2.8rem; color:#fff; }
+    .cat-hero-in .back { color:rgba(255,255,255,.82); }
+    .cat-hero-in .page-eyebrow { color:rgba(255,255,255,.92); }
+    .cat-hero-in h1 { font-size:clamp(2.8rem,6.8vw,4.6rem); font-weight:600; line-height:1.04; margin:0.5rem 0 0.7rem; color:#fff; }
+    .cat-hero-lead { color:rgba(255,255,255,.9); font-size:1.14rem; max-width:42rem; }
+    @media (max-width:880px){ .cat-hero { min-height:40vh; } }
     .chips { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.1rem; }
     .search { width:100%; max-width:440px; margin-top:1.5rem; padding:0.75rem 1rem; border:1.5px solid var(--ink); border-radius:6px; background:var(--paper); color:var(--ink); font-size:1rem; font-family:inherit; }
     .search::placeholder { color:var(--ink-soft); }
@@ -207,10 +215,17 @@
     <div class="dateline">A tribute to the San Mateo we lost</div>
   </header>
 
+  <section class="cat-hero" style="background-image:url('/images/sml-caltrain-architecture.jpg');background-position:center 50%">
+    <div class="wrap cat-hero-in">
+      <a class="back" href="index.html">&larr; San Mateo Local</a>
+      <span class="page-eyebrow">San Mateo, California</span>
+      <h1>Gone But Not Forgotten</h1>
+      <p class="cat-hero-lead">The San Mateo places that closed their doors but never quite left.</p>
+    </div>
+  </section>
+
   <section class="page-head">
     <div class="wrap" style="max-width:760px;">
-      <a class="back" href="index.html">&larr; San Mateo Local</a>
-      <h1>Gone But Not Forgotten</h1>
       <p>San Mateo isn't only what's here now. It's also what we lost. A small tribute to the places that closed their doors but never quite left. Remember one we're missing? <a href="mailto:hello@sanmateolocal.com?subject=Gone%20but%20not%20forgotten" style="color:var(--clay-deep);font-weight:600;">Tell us, and we'll add it.</a></p>
       <p style="margin-top:1.1rem;"><a href="remember.html" style="display:inline-block;background:var(--clay-deep);color:#fff;padding:.7rem 1.3rem;border-radius:10px;text-decoration:none;font-weight:700;">Do you remember these? Help us confirm &rarr;</a></p>
     </div>
