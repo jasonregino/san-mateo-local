@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preload" as="image" href="/images/ember-rye-hero.jpg" fetchpriority="high" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBBC09ZJZQ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());(function(){var _i=false;try{var _p=new URLSearchParams(location.search);if(_p.get('internal')==='1')localStorage.setItem('sml-internal','1');if(_p.get('internal')==='0')localStorage.removeItem('sml-internal');_i=localStorage.getItem('sml-internal')==='1';}catch(e){}if(_i)gtag('set',{traffic_type:'internal'});gtag('config','G-ZBBC09ZJZQ',{});})();</script>
+  <title>Ember &amp; Rye &middot; Premium Business Page (Sample) | San Mateo Local</title>
+  <meta name="description" content="A sample Premium Business Page for a cocktail lounge on San Mateo Local. Ember & Rye is a demo showing what a maintained page looks like for a bar." />
+  <meta name="theme-color" content="#191310" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BarOrPub","name":"Ember & Rye","image":"https://sanmateolocal.com/images/ember-rye-hero.jpg","address":{"@type":"PostalAddress","streetAddress":"212 S B Street","addressLocality":"San Mateo","addressRegion":"CA","postalCode":"94401","addressCountry":"US"},"telephone":"+1-650-555-0182","servesCuisine":"Cocktails","priceRange":"$$","openingHours":["Tu-Su 16:00-00:00"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"214"}}</script>
+  <style>
+    :root{
+      --primary:#2A211A; --primary-deep:#191310; --accent:#C0893B; --accent-light:#E6C480;
+      --ink:#2A241E; --muted:#7A7266; --bg:#F7F4EC; --line:#E6DFD0; --panel:#EFEADD; --panel-2:#E7E0D0; --cream:#F3EDDF;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100%}
+    h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.06;letter-spacing:-.5px}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+    .eyebrow{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.7rem}
+    .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block}
+    .eyebrow.center{justify-content:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:15px 30px;border-radius:0;border:1px solid transparent;transition:background .25s ease,transform .2s ease,color .25s ease;cursor:pointer}
+    .btn-gold{background:var(--accent);color:#221708}
+    .btn-gold:hover{background:var(--accent-light);transform:translateY(-2px)}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.55);color:#fff}
+    .btn-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+    .btn-dark{background:var(--primary);color:#EFE7D6}
+    .btn-dark:hover{background:var(--primary-deep);transform:translateY(-2px)}
+    section{padding:118px 0}
+    .sec-h{font-size:clamp(30px,4.6vw,52px);font-weight:600;color:var(--primary);margin:.5rem 0 0}
+    .sec-lead{color:var(--muted);font-size:18px;max-width:44rem;margin-top:1rem}
+    .dark{background:var(--primary);color:#ece7dd}
+    .dark .sec-h{color:#fff}
+    .dark .sec-lead{color:#cabfb0}
+    .panel{background:var(--panel)}
+    .reveal{opacity:0;transform:translateY(30px)}
+    .reveal.in{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+    @media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important}}
+    .sample-banner{position:relative;z-index:40;background:#191310;color:#E6C480;font-size:12.5px;text-align:center;padding:.55rem 1.2rem;letter-spacing:.3px}
+    .sample-banner b{color:#F2E3B8}
+    .nav{position:absolute;top:0;left:0;right:0;z-index:30;padding:1.5rem 0}
+    .nav-in{max-width:1180px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+    .nav-brand{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#fff;letter-spacing:.5px}
+    .nav-right{display:flex;align-items:center;gap:1.6rem}
+    .nav-link{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.82)}
+    .nav-link:hover{color:#fff}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--primary)}
+    .hero-slides{position:absolute;inset:0;z-index:0}
+    .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center 46%;background-color:var(--primary);opacity:0;transition:opacity 1s ease}
+    .hero-slide.active{opacity:1}
+    .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(20,15,11,.86) 0%,rgba(20,15,11,.58) 45%,rgba(20,15,11,.3) 100%),linear-gradient(0deg,rgba(20,15,11,.58),transparent 55%)}
+    .hero-in{position:relative;z-index:2;color:#fff;max-width:760px}
+    .hero .eyebrow{color:var(--accent-light)}
+    .hero .eyebrow::before{background:var(--accent-light)}
+    .hero h1{font-size:clamp(48px,8vw,92px);font-weight:600;line-height:1.02;letter-spacing:-1px;margin:1.3rem 0 1rem}
+    .hero h1 em{font-style:italic;color:var(--accent-light)}
+    .hero-sub{font-size:19px;color:rgba(255,255,255,.9);max-width:34rem;line-height:1.6}
+    .hero-rate{margin-top:1.1rem;font-size:14px;color:var(--accent-light);font-weight:600;letter-spacing:.5px}
+    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+    .prem-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#221708;background:var(--accent);padding:.3rem .65rem;border-radius:3px;vertical-align:middle}
+    .scrollcue{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.7);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+    .statement{text-align:center}
+    .statement p{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,3.6vw,40px);line-height:1.28;color:var(--primary);max-width:52rem;margin:1rem auto 0}
+    .statement em{font-style:italic;color:var(--accent)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+    .split-img{aspect-ratio:4/5;background-color:var(--panel-2);background-size:cover;background-position:center;border:1px solid var(--line)}
+    .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}
+    .chip{font-size:12px;font-weight:600;letter-spacing:.4px;color:var(--primary);border:1px solid var(--line);padding:.45rem .95rem;background:#fff}
+    .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.6rem}
+    .hcard{position:relative;overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line);display:block;background:var(--panel-2)}
+    .hcard-img{position:absolute;inset:0;background-color:var(--panel-2);background-size:cover;background-position:center;transform:scale(1);transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+    .hcard:hover .hcard-img{transform:scale(1.07)}
+    .hcard-ov{position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,15,11,.84) 0%,rgba(20,15,11,.05) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+    .hcard-label{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#fff}
+    .hcard-more{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent-light);opacity:0;transition:opacity .3s ease;margin-top:.25rem}
+    .hcard:hover .hcard-more{opacity:1}
+    @media(hover:none){.hcard-more{opacity:1}}
+    /* PHOTO-DRIVEN COCKTAIL LIST (distinct from the flat text menus on the other samples) */
+    .coursemenu{margin-top:2.8rem;display:flex;flex-direction:column;gap:3.4rem}
+    .course{display:grid;grid-template-columns:1fr 1fr;gap:2.8rem;align-items:center}
+    .course-photo{aspect-ratio:4/3;background-color:var(--panel-2);background-size:cover;background-position:center;border:1px solid var(--line)}
+    .course:nth-child(even) .course-photo{order:2}
+    .course-h{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,34px);font-weight:600;color:var(--primary);padding-bottom:.5rem;margin-bottom:.4rem;border-bottom:2px solid var(--accent);display:inline-block}
+    .course-h span{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-left:.6rem}
+    .citem{display:flex;justify-content:space-between;gap:1.2rem;align-items:baseline;padding:.75rem 0;border-bottom:1px dotted var(--line)}
+    .citem .cn{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--primary)}
+    .citem .cd{color:var(--muted);font-size:13.5px}
+    .citem .cp{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--accent);white-space:nowrap}
+    .price-note{color:var(--muted);font-size:13.5px;margin-top:1.8rem;font-style:italic}
+    .visit-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:2.4rem;margin-top:2.4rem}
+    .mapframe{border:1px solid var(--line);overflow:hidden;min-height:360px}
+    .mapframe iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+    .infocol .irow{display:flex;gap:.9rem;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:15px}
+    .infocol .irow .ik{color:var(--accent-light);font-weight:600;flex:none;width:84px;letter-spacing:.5px;text-transform:uppercase;font-size:12px;padding-top:2px}
+    .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem}
+    .gitem{position:relative;overflow:hidden;border:1px solid var(--line);aspect-ratio:1/1;background:var(--panel-2)}
+    .gitem.big{grid-column:span 2;grid-row:span 2}
+    .gitem .gz{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+    .gitem:hover .gz{transform:scale(1.06)}
+    .rev{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-top:2rem;border:1px solid var(--line);background:#fff;padding:2rem 2.2rem}
+    .rev-score{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;color:var(--accent);line-height:1}
+    .rev-stars{color:var(--accent);letter-spacing:3px;font-size:18px}
+    .rev-count{color:var(--muted);font-size:14px;margin-top:.2rem}
+    .rev-link{margin-left:auto;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
+    .revcards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:1.4rem}
+    .revcard{border:1px solid var(--line);background:#fff;padding:1.5rem 1.6rem}
+    .revcard .rc-stars{color:var(--accent);letter-spacing:2px;font-size:14px}
+    .revcard .rc-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.42;color:var(--primary);margin:.7rem 0 1rem}
+    .revcard .rc-who{font-size:12.5px;font-weight:600;color:var(--muted)}
+    .revcard .rc-who span{display:block;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-size:10.5px;margin-top:.15rem}
+    .rev-note{color:var(--muted);font-size:13px;margin-top:1rem;font-style:italic}
+    .deal{margin-top:2rem;border:1px solid var(--accent);border-left:4px solid var(--accent);background:var(--cream);padding:1.8rem 2rem;max-width:44rem}
+    .deal .dt{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--primary)}
+    .deal .dm{color:var(--muted);font-style:italic;margin-top:.2rem}
+    .faq{margin-top:2rem;max-width:48rem}
+    .faq details{border-bottom:1px solid var(--line);padding:1.1rem 0}
+    .faq summary{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--primary);cursor:pointer;list-style:none}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq p{color:var(--muted);margin-top:.6rem}
+    .ask{margin-top:2rem;border:1px solid var(--line);background:#fff;padding:2rem 2.2rem;max-width:48rem}
+    .askbar{display:flex;gap:.6rem;margin-top:1.1rem;flex-wrap:wrap}
+    .askbar input{flex:1 1 240px;padding:14px 16px;border:1px solid var(--line);border-radius:0;background:var(--bg);color:var(--ink);font:inherit;font-size:15px}
+    .askbar button{background:var(--primary);color:#EFE7D6;border:none;border-radius:0;padding:14px 24px;font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+    .suggest{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+    .suggest span{font-size:12.5px;color:var(--muted);border:1px solid var(--line);padding:.4rem .85rem}
+    .tags{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+    .tags span{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent-light);border:1px solid rgba(230,196,128,.4);padding:.5rem 1rem}
+    .owner{text-align:center}
+    .owner .price{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--accent);margin-top:1.2rem}
+    footer{background:var(--primary-deep);color:#c9c0b3;padding:70px 0 46px}
+    footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:30px;color:#fff;font-weight:600}
+    footer .maint{display:inline-flex;align-items:center;gap:.4rem;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-light);margin-top:1rem}
+    footer .fmeta{font-size:13.5px;color:#9a8f80;margin-top:1rem;line-height:1.9}
+    footer .fsoc{margin-top:1rem;display:flex;gap:1.4rem}
+    footer .fsoc a{color:#c9c0b3}
+    footer .fcopy{font-size:11.5px;color:#7a7266;margin-top:1.8rem;border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem}
+    @media(max-width:900px){
+      .wrap,.nav-in{padding-left:20px;padding-right:20px}
+      section{padding:64px 0}
+      .split{grid-template-columns:1fr;gap:2.2rem}
+      .split-img{aspect-ratio:16/10}
+      .cards3{grid-template-columns:1fr}
+      .revcards{grid-template-columns:1fr}
+      .visit-grid{grid-template-columns:1fr}
+      .gal{grid-template-columns:repeat(2,1fr)}
+      .gitem.big{grid-column:span 2;grid-row:span 1}
+      .nav-brand{font-size:20px}
+      .nav .nav-link{display:none}
+      .hero-cta{gap:.7rem}
+    }
+    @media(max-width:760px){.course{grid-template-columns:1fr;gap:1.4rem}.course:nth-child(even) .course-photo{order:0}}
+    @media(prefers-reduced-motion:reduce){.hero-slide{transition:none}}
+  </style>
+  <script>(function(){try{document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
+</head>
+<body>
+  <div class="sample-banner"><b>This is a sample Premium Business Page for a cocktail lounge,</b> built to our premium website standard. Ember &amp; Rye is a made-up business.</div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('/images/ember-rye-hero.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/ember-rye-lounge.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/ember-rye-patio.jpg')"></div>
+    </div>
+    <div class="hero-scrim"></div>
+    <nav class="nav"><div class="nav-in">
+      <span style="display:flex;align-items:center;gap:.55rem"><span class="nav-brand">Ember &amp; Rye</span><span class="prem-badge">&#9733; Premium</span></span>
+      <div class="nav-right">
+        <a class="nav-link" href="#menu">Cocktails</a>
+        <a class="nav-link" href="#visit">Visit</a>
+        <a class="nav-link" href="tel:+16505550182">(650) 555-0182</a>
+      </div>
+    </div></nav>
+    <div class="wrap">
+      <div class="hero-in">
+        <span class="eyebrow">Downtown San Mateo &middot; Open nightly</span>
+        <h1>Ember &amp; <em>Rye</em></h1>
+        <p class="hero-sub">A cocktail lounge on B Street. Craft classics, a serious spirits shelf, warm low light, and a heated patio for the after-work hour. Walk-ins always welcome.</p>
+        <div class="hero-rate">&#9733;&#9733;&#9733;&#9733;&#9733; &nbsp;4.9 &middot; 214 Google reviews</div>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#menu">See the cocktails</a>
+          <a class="btn btn-outline" href="#visit">Find us</a>
+        </div>
+      </div>
+    </div>
+    <span class="scrollcue">Scroll</span>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="wrap reveal">
+      <span class="eyebrow center">Since 2016</span>
+      <p>The kind of bar where the bartender remembers your drink, and you never quite plan <em>how long you'll stay</em>.</p>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS: the spaces -->
+  <section class="panel">
+    <div class="wrap reveal">
+      <span class="eyebrow">The room</span>
+      <h2 class="sec-h">Where you'll settle in</h2>
+      <div class="cards3">
+        <a class="hcard" href="#menu"><div class="hcard-img" style="background-image:url('/images/ember-rye-backbar.jpg')"></div><div class="hcard-ov"><span class="hcard-label">The Bar</span><span class="hcard-more">Pull up a stool &rarr;</span></div></a>
+        <a class="hcard" href="#visit"><div class="hcard-img" style="background-image:url('/images/ember-rye-lounge.jpg')"></div><div class="hcard-ov"><span class="hcard-label">The Lounge</span><span class="hcard-more">Book it for your group &rarr;</span></div></a>
+        <a class="hcard" href="#visit"><div class="hcard-img" style="background-image:url('/images/ember-rye-patio.jpg')"></div><div class="hcard-ov"><span class="hcard-label">The Heated Patio</span><span class="hcard-more">Weather permitting &rarr;</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU: photo-driven cocktail list -->
+  <section id="menu">
+    <div class="wrap reveal">
+      <span class="eyebrow">The Cocktail List</span>
+      <h2 class="sec-h">What we're pouring</h2>
+      <p class="sec-lead">Classics done properly and a few of our own, plus a spirits shelf worth exploring. Here's a taste, the full list is at the bar.</p>
+      <div class="coursemenu">
+        <div class="course reveal">
+          <div class="course-photo" style="background-image:url('/images/ember-rye-cocktail1.jpg')" role="img" aria-label="A smoked old fashioned"></div>
+          <div class="course-body">
+            <h3 class="course-h">Signature Cocktails</h3>
+            <div class="citem"><div><div class="cn">Smoked Old Fashioned</div><div class="cd">Rye, demerara, charred orange</div></div><div class="cp">$16</div></div>
+            <div class="citem"><div><div class="cn">The Ember</div><div class="cd">Mezcal, chili, lime, agave</div></div><div class="cp">$16</div></div>
+            <div class="citem"><div><div class="cn">Rye Manhattan</div><div class="cd">Rye, sweet vermouth, bitters</div></div><div class="cp">$16</div></div>
+            <div class="citem"><div><div class="cn">Boulevardier</div><div class="cd">Bourbon, Campari, vermouth</div></div><div class="cp">$15</div></div>
+            <div class="citem"><div><div class="cn">Paper Plane</div><div class="cd">Bourbon, Aperol, amaro, lemon</div></div><div class="cp">$16</div></div>
+            <div class="citem"><div><div class="cn">Penicillin</div><div class="cd">Scotch, honey-ginger, lemon</div></div><div class="cp">$17</div></div>
+          </div>
+        </div>
+        <div class="course reveal">
+          <div class="course-photo" style="background-image:url('/images/ember-rye-cocktail2.jpg')" role="img" aria-label="A French 75"></div>
+          <div class="course-body">
+            <h3 class="course-h">Bubbles &amp; Bright <span>lighter pours</span></h3>
+            <div class="citem"><div><div class="cn">French 75</div><div class="cd">Gin, Champagne, lemon</div></div><div class="cp">$16</div></div>
+            <div class="citem"><div><div class="cn">Negroni</div><div class="cd">Gin, Campari, sweet vermouth</div></div><div class="cp">$15</div></div>
+            <div class="citem"><div><div class="cn">Aperol Spritz</div><div class="cd">Aperol, prosecco, soda</div></div><div class="cp">$14</div></div>
+            <div class="citem"><div><div class="cn">Southside</div><div class="cd">Gin, mint, lime</div></div><div class="cp">$15</div></div>
+            <div class="citem"><div><div class="cn">Margarita</div><div class="cd">Tequila, lime, agave, salt</div></div><div class="cp">$15</div></div>
+            <div class="citem"><div><div class="cn">Daiquiri</div><div class="cd">Rum, lime, cane</div></div><div class="cp">$14</div></div>
+          </div>
+        </div>
+        <div class="course reveal">
+          <div class="course-photo" style="background-image:url('/images/ember-rye-charcuterie.jpg')" role="img" aria-label="A charcuterie and cheese board"></div>
+          <div class="course-body">
+            <h3 class="course-h">Bar Bites</h3>
+            <div class="citem"><div><div class="cn">Truffle parmesan fries</div><div class="cd">Garlic aioli</div></div><div class="cp">$12</div></div>
+            <div class="citem"><div><div class="cn">Charcuterie &amp; cheese</div><div class="cd">Honey, marcona almonds, bread</div></div><div class="cp">$26</div></div>
+            <div class="citem"><div><div class="cn">Oysters on the half shell</div><div class="cd">Mignonette, half dozen</div></div><div class="cp">$22</div></div>
+            <div class="citem"><div><div class="cn">Wagyu sliders</div><div class="cd">Three, house sauce</div></div><div class="cp">$18</div></div>
+            <div class="citem"><div><div class="cn">Olives &amp; almonds</div><div class="cd">Warm, rosemary, sea salt</div></div><div class="cp">$9</div></div>
+            <div class="citem"><div><div class="cn">Spiced bar nuts</div><div class="cd">House blend</div></div><div class="cp">$7</div></div>
+          </div>
+        </div>
+      </div>
+      <p class="price-note">A taste of the list, it's longer than this and rotates with the season. Zero-proof cocktails are always available, just ask.</p>
+      <div style="margin-top:1.7rem"><a class="btn btn-dark" href="#" onclick="return false">See the full cocktail list &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="panel">
+    <div class="wrap split">
+      <div class="split-img reveal" style="background-image:url('/images/ember-rye-lounge.jpg')"></div>
+      <div class="reveal">
+        <span class="eyebrow">The Story</span>
+        <h2 class="sec-h">About Ember &amp; Rye</h2>
+        <p class="sec-lead">A cocktail lounge on B Street in Downtown San Mateo, pouring since 2016. Craft classics and a rotating list of our own, a spirits shelf two hundred deep, and a heated patio out front for the after-work hour. Low light, good company, and no rush to leave.</p>
+        <div class="chips">
+          <span class="chip">Est. 2016</span><span class="chip">Walk-ins welcome</span><span class="chip">Heated patio</span><span class="chip">Craft cocktails</span><span class="chip">200+ spirits</span><span class="chip">Happy hour</span><span class="chip">Private events</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section>
+    <div class="wrap reveal">
+      <span class="eyebrow">Gallery</span>
+      <h2 class="sec-h">A look inside</h2>
+      <div class="gal">
+        <div class="gitem big"><div class="gz" style="background-image:url('/images/ember-rye-lounge.jpg')" role="img" aria-label="The lounge with tufted leather booths"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/ember-rye-backbar.jpg')" role="img" aria-label="The illuminated back bar"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/ember-rye-patio.jpg')" role="img" aria-label="Heated street-side patio at night"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/ember-rye-cocktail1.jpg')" role="img" aria-label="A smoked old fashioned"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/ember-rye-flight.jpg')" role="img" aria-label="Three signature cocktails"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/ember-rye-bartender.jpg')" role="img" aria-label="A bartender shaking a cocktail"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/ember-rye-cocktail2.jpg')" role="img" aria-label="A French 75"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/ember-rye-cocktail3.jpg')" role="img" aria-label="A negroni"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/ember-rye-fries.jpg')" role="img" aria-label="Truffle parmesan fries"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/ember-rye-charcuterie.jpg')" role="img" aria-label="A charcuterie board"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/ember-rye-oysters.jpg')" role="img" aria-label="Fresh oysters on the half shell"></div></div>
+        <div class="gitem"><div class="gz" style="background-image:url('/images/ember-rye-exterior.jpg')" role="img" aria-label="Ember & Rye storefront at night"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS + DEAL -->
+  <section class="panel">
+    <div class="wrap reveal">
+      <span class="eyebrow">Reputation</span>
+      <h2 class="sec-h">Loved by locals</h2>
+      <div class="rev">
+        <div class="rev-score">4.9</div>
+        <div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rev-count">Based on 214 Google reviews</div></div>
+        <a class="rev-link" href="#" onclick="return false">Read on Google &rarr;</a>
+      </div>
+      <div class="revcards">
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Best cocktails in San Mateo, hands down. The smoked old fashioned is worth the trip alone."</p><div class="rc-who">Marcus L.<span>Google review</span></div></div>
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Grabbed the patio on a Friday, heaters on, string lights, perfect. Bartenders actually know their stuff."</p><div class="rc-who">Priya S.<span>Google review</span></div></div>
+        <div class="revcard"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-quote">"Booked the lounge for a birthday. They made it feel special without making it stiff. We'll be back."</p><div class="rc-who">Devon R.<span>Google review</span></div></div>
+      </div>
+      <p class="rev-note">On your live page, these are pulled from your real Google reviews, always the genuine ones.</p>
+      <div style="margin-top:3.4rem"><span class="eyebrow">Local Perk</span><h2 class="sec-h">A San Mateo Local deal</h2></div>
+      <div class="deal">
+        <div class="dt">&#127864; Two dollars off your first cocktail</div>
+        <div class="dm">Just mention San Mateo Local at the bar.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="dark" id="visit">
+    <div class="wrap reveal">
+      <span class="eyebrow">Visit</span>
+      <h2 class="sec-h">Find us on B Street</h2>
+      <div class="visit-grid">
+        <div class="mapframe"><iframe loading="lazy" title="Map to Ember & Rye" src="https://www.google.com/maps?q=212%20S%20B%20Street%2C%20San%20Mateo%2C%20CA%2094401&output=embed"></iframe></div>
+        <div class="infocol">
+          <div class="irow"><span class="ik">Address</span><span>212 S B Street, San Mateo, CA 94401</span></div>
+          <div class="irow"><span class="ik">Phone</span><span>(650) 555-0182</span></div>
+          <div class="irow"><span class="ik">Hours</span><span>Tue&ndash;Sun 4p&ndash;12a<br>Fri&ndash;Sat until 2a &middot; Happy hour 4&ndash;6p &middot; Mon closed</span></div>
+          <div class="irow"><span class="ik">Area</span><span>Downtown San Mateo</span></div>
+          <div class="irow"><span class="ik">Follow</span><span style="display:inline-flex;gap:1.1rem;align-items:center;color:var(--accent-light)"><a href="#" onclick="return false" aria-label="Instagram"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="#" onclick="return false" aria-label="Facebook"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="#" onclick="return false" aria-label="TikTok"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></span></div>
+          <div style="margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn btn-gold" href="tel:+16505550182">Call the bar</a><a class="btn btn-outline" href="https://www.google.com/maps?q=212+S+B+Street,+San+Mateo,+CA" target="_blank" rel="noopener">Directions</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ + ASK -->
+  <section>
+    <div class="wrap reveal">
+      <span class="eyebrow">Good to Know</span>
+      <h2 class="sec-h">Frequently asked</h2>
+      <div class="faq">
+        <details open><summary>Do you take reservations?</summary><p>The bar and most tables are walk-in, first come first served. For groups, the lounge is bookable, call or message us and we'll set it aside.</p></details>
+        <details><summary>Is there a happy hour?</summary><p>Yes, Tuesday through Friday, 4 to 6pm, with a rotating list of cocktails and bar bites at a discount.</p></details>
+        <details><summary>Is the patio heated?</summary><p>Yes, the street-side patio is heated and lit, so it's comfortable most evenings year-round.</p></details>
+        <details><summary>Do you serve food?</summary><p>A full bar-bites menu, fries, charcuterie, oysters, sliders and snacks, served until close.</p></details>
+        <details><summary>Can you host private events?</summary><p>Yes. The lounge holds groups up to 30, and we can buy out the room for larger parties. Reach out and we'll plan it with you.</p></details>
+        <details><summary>Is there a dress code?</summary><p>None. Come as you are, whether that's straight from the office or out for the night.</p></details>
+      </div>
+      <div style="margin-top:3.4rem"><span class="eyebrow">Ask</span><h2 class="sec-h">Ask about Ember &amp; Rye</h2></div>
+      <div class="ask">
+        <p style="color:var(--muted)">Ask and get an answer from the business's verified information, hours, menu, and location.</p>
+        <div class="askbar"><input type="text" placeholder="e.g. What time is happy hour?" aria-label="Ask about this business" /><button type="button">Ask</button></div>
+        <div class="suggest"><span>What time is happy hour?</span><span>Do you take walk-ins?</span><span>Is the patio heated?</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH VALUE -->
+  <section class="dark">
+    <div class="wrap reveal" style="max-width:52rem;text-align:center;margin:0 auto">
+      <span class="eyebrow center">Built for how people search now</span>
+      <h2 class="sec-h">Found on Google, Maps, and AI</h2>
+      <p class="sec-lead" style="margin:1.2rem auto 0">People don't just search Google anymore. They ask "where's a good cocktail bar in San Mateo?" or "best date-night spot near me" on Maps, and more and more on AI tools. Your page gives search engines and AI systems a rich, structured, up-to-date source of truth about your bar, so they understand who you are, what you pour, and where to find you.</p>
+      <div class="tags" style="justify-content:center"><span>SEO</span><span>Local SEO</span><span>AEO</span><span>GEO</span><span>San Mateo Local AI Guide</span></div>
+    </div>
+  </section>
+
+  <!-- OWNER CTA -->
+  <section class="panel owner">
+    <div class="wrap reveal" style="max-width:44rem;margin:0 auto">
+      <span class="eyebrow center">For business owners</span>
+      <h2 class="sec-h">Want a page like this for your business?</h2>
+      <p class="sec-lead" style="margin:1.1rem auto 0">A professionally built web presence on San Mateo Local, built for modern local search and maintained by us. We build the first draft from your existing site and what's already online, then you just confirm. Barely any work on your end.</p>
+      <div class="price">Premium Business Page &middot; $59/month &middot; setup waived for our first 10 businesses</div>
+      <div style="margin-top:1.8rem"><a class="btn btn-dark" href="/for-business-owners.html">Get your Premium page</a></div>
+      <p style="margin-top:1.1rem;font-size:16px;color:var(--muted)">Run a different kind of spot? See the <a href="/premium-example.html" style="color:var(--accent);font-weight:600">Cafe</a>, <a href="/premium-example-restaurant.html" style="color:var(--accent);font-weight:600">Restaurant</a>, or <a href="/premium-example-salon.html" style="color:var(--accent);font-weight:600">Salon</a> examples.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="fbrand">Ember &amp; Rye</div>
+      <div class="maint">&#10003; Maintained by San Mateo Local</div>
+      <div class="fmeta">212 S B Street, Downtown San Mateo &middot; (650) 555-0182<br>Tue&ndash;Sun 4p&ndash;12a &middot; Fri&ndash;Sat until 2a</div>
+      <div class="fsoc"><a href="#" onclick="return false" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="#" onclick="return false" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="#" onclick="return false" aria-label="TikTok"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></div>
+      <div class="fcopy">This is a sample page. Ember &amp; Rye is not a real business. &copy; 2026 San Mateo Local.</div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    try{
+      var slides=document.querySelectorAll('.hero-slide');
+      if(slides.length>1 && !(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)){
+        var i=0; setInterval(function(){ slides[i].classList.remove('active'); i=(i+1)%slides.length; slides[i].classList.add('active'); },4800);
+      }
+    }catch(e){}
+    try{
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els=document.querySelectorAll('.reveal');
+      var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+      els.forEach(function(el){io.observe(el);});
+    }catch(e){}
+  })();
+  </script>
+</body>
+</html>
