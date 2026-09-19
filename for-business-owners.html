@@ -89,7 +89,6 @@
     button{background:var(--clay);color:#fff;border:none;border-radius:9px;padding:.9rem 1.6rem;font-weight:700;font-size:1rem;cursor:pointer;width:100%}
     button:hover{background:var(--clay-deep)}
     button:disabled{opacity:.6;cursor:default}
-    #ok{display:none;background:#EAF3EA;border:1px solid #B9D7B9;color:#2A4A2A;border-radius:12px;padding:1.5rem;text-align:center}
     .or{text-align:center;color:var(--ink-soft);font-size:.92rem;margin-top:1.2rem}
     .or a{color:var(--clay-deep);font-weight:700}
     /* footer */
@@ -221,7 +220,7 @@
         <p style="font-weight:800; color:var(--clay-deep); font-size:1.75rem; margin:0 0 .3rem;">$149<span style="font-weight:600; font-size:.82rem; color:var(--ink-soft);">/month, nothing upfront</span></p>
         <p style="color:var(--sage-deep); font-weight:700; font-size:.92rem; margin:0 0 .25rem;">Your founding price is locked in for as long as you stay a customer.</p>
         <p style="color:var(--ink-soft); font-size:.78rem; margin:0 0 1.1rem;">Website + 24/7 AI Chat only. First 10 businesses. Regular pricing is below.</p>
-        <a href="#start" data-intent="Founding Business Program (first 10)" style="display:inline-block; background:#F2C94C; color:#221D16; text-decoration:none; font-weight:800; padding:.8rem 1.7rem; border-radius:6px;">Claim a founding spot &rarr;</a>
+        <a href="#start" style="display:inline-block; background:#F2C94C; color:#221D16; text-decoration:none; font-weight:800; padding:.8rem 1.7rem; border-radius:6px;">Claim a founding spot &rarr;</a>
       </div>
 
       <h3 style="text-align:left; font-size:1.35rem; margin:.5rem 0 .3rem; color:var(--ink);">Or, the regular pricing if you'd rather</h3>
@@ -261,7 +260,7 @@
         <audio controls preload="none" style="width:100%; margin:.2rem 0 .35rem;"><source src="/audio/ai-receptionist-demo.mp3" type="audio/mpeg">Your browser doesn't support audio playback.</audio>
         <p style="color:var(--ink-soft); font-size:.8rem; margin:0 0 1rem; text-align:center;">Sample call with our AI receptionist, edited for length.</p>
         <p style="font-weight:800; color:var(--clay-deep); font-size:1.15rem; margin:0 0 1rem;">$299<span style="font-weight:600; font-size:.8rem; color:var(--ink-soft);">/mo + $249 one-time setup</span></p>
-        <a href="#start" data-intent="24/7 Receptionist" style="display:inline-block; background:var(--sage-deep); color:#fff; text-decoration:none; font-weight:700; padding:.75rem 1.5rem; border-radius:6px;">Request setup call &rarr;</a>
+        <a href="#start" style="display:inline-block; background:var(--sage-deep); color:#fff; text-decoration:none; font-weight:700; padding:.75rem 1.5rem; border-radius:6px;">Request setup call &rarr;</a>
         <p style="color:var(--ink-soft); font-size:.85rem; margin:.6rem 0 0;">We set this one up together, and you'll hear it handle a real call on a free demo before you decide. No online checkout.</p>
       </div>
 
@@ -420,7 +419,7 @@
           <p class="tier-relief">Your photos, services, map, reviews, offer, and FAQs on one page. We build the first draft from your existing site and what's already online, then you just confirm. Barely any work on your end.</p>
           <div class="tier-where"><b>What you get</b>A dedicated business page with a hero photo, an interactive map, your menu or services, a photo gallery, your Google rating, your deal, an "ask about this business" helper, and structured info built to help Google and AI search understand your business, hosted and kept current by us.</div>
           <div style="display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;">
-            <a class="tier-cta" href="#start" data-intent="Premium Business Page">Request setup call &rarr;</a>
+            <a class="tier-cta" href="#start">Request setup call &rarr;</a>
             <a class="tier-cta sample-cta" href="premium-example.html" target="_blank" rel="noopener">&#128064;&nbsp;See a live sample &rarr;</a>
           </div>
           <p style="color:var(--ink-soft); font-size:.86rem; margin:.65rem 0 0;">We build this one with you, so it starts with a quick call, no online checkout. Take a real Premium page for a spin first, this is exactly what yours would look like.</p>
@@ -453,7 +452,7 @@
           <p style="color:var(--ink-soft); font-size:.92rem; margin:0 0 .6rem;">Because it's a real, curated list people actually trust, not a banner ad, your name gets that trust too. And you're the only sponsor on that guide, so you never share the spotlight with a competitor.</p>
           <p class="tier-relief">We build the page, keep it current, and keep the list honest. You just get the credit, all year.</p>
           <div class="tier-where"><b>Where you show up</b>At the very top of the Best-Of guide you sponsor (like Best Coffee in San Mateo), above the whole list, for a full year.</div>
-          <a class="tier-cta ghost" href="#start" data-intent="Best-Of guide sponsorship">Ask about a sponsorship &rarr;</a>
+          <a class="tier-cta ghost" href="#start">Ask about a sponsorship &rarr;</a>
         </div>
 
         <p style="color:var(--ink-soft); font-size:.9rem; margin-top:1.3rem;">Want more customers, not just more visibility? We also build <strong>websites</strong> and set up <strong>Google reviews</strong>, see <a href="#services" style="color:var(--clay-deep); font-weight:700;">Build your own presence</a> up top.</p>
@@ -618,10 +617,6 @@
     </section>
 
     <section id="start" style="padding-top:0.5rem">
-      <div id="ok">
-        <strong>Got it, thank you.</strong><br>We'll take a look at your business and get back to you personally, usually within a day or two. Talk soon.
-      </div>
-
       <h2 style="text-align:center;">Tell us about your business</h2>
       <p class="sub" style="text-align:center;">Takes a minute. We read every one.</p>
       <div style="margin-top:1.2rem; text-align:center;">
@@ -698,8 +693,8 @@
       } catch(e){}
     })();
 
-    // Combined "Tell us about your business" form (bizForm) moved to a GHL iframe
-    // 2026-08-31; its Web3Forms handler was removed.
+    // The "Tell us about your business" (#start) intake was consolidated 2026-09-18:
+    // its GHL iframe was removed and #start now scrolls up to the single get-listed embed.
   </script>
   <script>
   (function(){
@@ -789,18 +784,6 @@
       else if(h === '#getspotlight') openSpotlight();
     })();
   })();
-  </script>
-  <script>
-    // Pre-select the interest checkbox from whichever product CTA was clicked (data-intent)
-    (function(){
-      document.querySelectorAll('a[data-intent]').forEach(function(a){
-        a.addEventListener('click', function(){
-          var v = a.getAttribute('data-intent');
-          var box = document.querySelector('#bizForm input[name="interest[]"][value="' + v + '"]');
-          if (box) box.checked = true;
-        });
-      });
-    })();
   </script>
   <!-- BCM lead-capture chat (GHL) — business pages only -->
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a7a99e7e427c78bb5f65491"></script>
