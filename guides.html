@@ -159,10 +159,11 @@
     </nav>
     <div class="dateline">A born-and-raised local's guide to San Mateo, California</div>
   </header>
-  <section class="blog-head"><div class="wrap">
+  <section class="cat-hero" style="background-image:url('/images/sml-lagoon-reflection.jpg');background-position:center 50%"><div class="wrap cat-hero-in">
+    <a class="back" href="index.html">&larr; San Mateo Local</a>
     <span class="label">Guides &amp; updates</span>
     <h1>The latest from San Mateo Local</h1>
-    <p>New openings, weekend picks, and honest local guides. Fresh takes on what's worth your time around town.</p>
+    <p class="cat-hero-lead">New openings, weekend picks, and honest local guides. Fresh takes on what's worth your time around town.</p>
   </div></section>
   <style>
     .pinned{display:block;margin:1.6rem auto 0;padding:1.4rem 1.6rem;background:var(--paper-2);border:1.5px solid var(--clay);border-left:5px solid var(--clay);border-radius:12px;text-decoration:none;color:var(--ink);}
@@ -179,6 +180,13 @@
     .bestof-suggest{background:#FBEBA6;color:#221D16;border-color:#E6C158;}
     .bestof-suggest:hover{background:#F6E293;border-color:#E0B94E;color:#221D16;}
     .feed-head{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;margin:2.2rem 0 .2rem;}
+    .cat-hero { position:relative; min-height:44vh; display:flex; align-items:flex-end; background-size:cover; background-position:center; background-color:var(--ink); }
+    .cat-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(24,17,12,.88) 0%, rgba(24,17,12,.32) 55%, rgba(24,17,12,.55) 100%); }
+    .cat-hero-in { position:relative; z-index:2; padding:2.6rem 0 2.8rem; color:#fff; }
+    .cat-hero-in .back { font-size:0.72rem; font-weight:600; letter-spacing:0.13em; text-transform:uppercase; color:rgba(255,255,255,.82); display:inline-block; margin-bottom:0.5rem; }
+    .cat-hero-in .label { display:block; color:rgba(255,255,255,.92); margin-bottom:0.2rem; }
+    .cat-hero-in h1 { font-size:clamp(2.8rem,6.8vw,4.6rem); font-weight:600; line-height:1.04; margin:0.3rem 0 0.7rem; color:#fff; }
+    .cat-hero-lead { color:rgba(255,255,255,.9); font-size:1.14rem; max-width:42rem; margin:0; }
   </style>
   <div class="wrap"><section class="bestof">
       <h2>Local guides</h2>
