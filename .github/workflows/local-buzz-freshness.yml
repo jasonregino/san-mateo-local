@@ -1,0 +1,29 @@
+name: Local Buzz freshness check
+
+# Runs on GitHub's servers every Monday — nothing needs to be open on Jason's end.
+# Reads the deployed Local Buzz page's freshness marker (emitted by build-buzz.mjs) and,
+# if nothing fresh has been added in 12+ days or there are zero live events, opens an
+# Issue so Local Buzz gets refreshed. It NEVER edits the site. Its finding is folded into
+# the Monday Ops Digest email alongside the other scans.
+
+on:
+  schedule:
+    - cron: '47 15 * * 1'   # Mondays 15:47 UTC (~8:47am Pacific), just after the This Weekend check
+  workflow_dispatch: {}       # lets Jason run it on demand from the Actions tab
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check Local Buzz freshness
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/local-buzz-freshness.mjs
