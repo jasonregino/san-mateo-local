@@ -33,8 +33,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-  :root { --paper:#FAF6EC; --paper-2:#F2E9D4; --ink:#221D16; --ink-soft:#5E5446; --clay:#C25B3A; --clay-deep:#A5492B; --sage-deep:#324C3A; --line:#E3D6BC; --line-soft:#ECE1CB; }
-  [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; }
+  :root { --paper:#F6F0E4; --paper-2:#EFE7D5; --ink:#17323A; --ink-soft:#47595C; --clay:#C85A38; --clay-deep:#A5492B; --sage-deep:#2E4A38; --line:#E1D9C6; --line-soft:#ECE1CB; --bay:#10717A; --bay-deep:#0C5B62; }
+  [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; --bay:#3FA3AA; --bay-deep:#2E8A90; }
   * { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
   body { overflow-x: hidden; max-width: 100%; font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased; }
@@ -42,7 +42,7 @@
   a { color:inherit; text-decoration:none; }
   .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
   .article { max-width:46rem; margin:0 auto; padding:0 1.5rem; }
-  .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+  .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--bay-deep); }
   /* per-type kicker colors (dark-mode safe) */
   .k-spotlight { display:inline-block !important; background:#2E5A6B; color:#fff !important; padding:0.3rem 0.7rem; border-radius:999px; letter-spacing:0.13em; }
   [data-theme="dark"] .k-spotlight { background:#4A7E92; color:#fff !important; }
@@ -65,70 +65,70 @@
   .masthead-right { display:flex; align-items:center; gap:1.25rem; }
   .masthead-nav { display:flex; gap:1.4rem; align-items:center; }
   .masthead-nav a { font-size:0.74rem; font-weight:600; letter-spacing:0.13em; text-transform:uppercase; color:var(--ink-soft); }
-  .masthead-nav a:hover { color:var(--clay-deep); }
-  .masthead-nav a.on { color:var(--clay-deep); font-weight:600; }
+  .masthead-nav a:hover { color:var(--bay-deep); }
+  .masthead-nav a.on { color:var(--bay-deep); font-weight:600; }
   .theme-toggle { background:none; border:1.5px solid var(--line); border-radius:999px; width:36px; height:36px; cursor:pointer; color:var(--ink); font-size:1rem; display:inline-flex; align-items:center; justify-content:center; flex:none; }
   .theme-toggle .sun { display:none; } [data-theme="dark"] .theme-toggle .moon { display:none; } [data-theme="dark"] .theme-toggle .sun { display:inline; }
   .menu-btn { display:none; background:none; border:1.5px solid var(--line); border-radius:8px; width:38px; height:38px; cursor:pointer; color:var(--ink); align-items:center; justify-content:center; padding:0; flex:none; }
   .menu-btn svg { width:20px; height:20px; }
   .mobile-nav { display:none; }
   .dateline { border-top:1px solid var(--line); text-align:center; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft); padding:0.4rem 1rem; }
-  @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line-soft); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--clay-deep); } }
+  @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line-soft); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--bay-deep); } }
   /* blog index */
   .blog-head { padding:3.5rem 0 2rem; border-bottom:1.5px solid var(--ink); }
   .blog-head h1 { font-size:clamp(2.2rem,6vw,3.4rem); margin:0.7rem 0 0.6rem; }
   .blog-head p { color:var(--ink-soft); font-size:1.1rem; max-width:40rem; }
   .post-list { display:grid; gap:1.3rem; padding:2.5rem 0 3rem; }
-  .post-card { border:1.5px solid var(--ink); border-top:4px solid var(--clay-deep); background:#fff; padding:1.6rem 1.6rem 1.7rem; transition:transform 0.18s ease, box-shadow 0.18s ease; }
+  .post-card { border:1.5px solid var(--ink); border-top:4px solid var(--bay-deep); background:#fff; padding:1.6rem 1.6rem 1.7rem; transition:transform 0.18s ease, box-shadow 0.18s ease; }
   [data-theme="dark"] .post-card { background:var(--paper-2); }
   .post-card:hover { transform:translateY(-4px); box-shadow:0 16px 34px -20px rgba(34,29,22,0.45); }
-  .post-card .k { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+  .post-card .k { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--bay-deep); }
   .post-card h2 { font-size:1.7rem; margin:0.4rem 0 0.3rem; }
   .post-card .date { font-size:0.78rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.6rem; }
   .post-card p { color:var(--ink-soft); }
-  .post-card .readon { margin-top:0.9rem; font-weight:600; color:var(--clay-deep); font-size:0.92rem; }
+  .post-card .readon { margin-top:0.9rem; font-weight:600; color:var(--bay-deep); font-size:0.92rem; }
   /* article */
   .post { padding:3.2rem 1.5rem 2rem; }
-  .post .back { font-size:0.85rem; font-weight:600; color:var(--clay-deep); }
+  .post .back { font-size:0.85rem; font-weight:600; color:var(--bay-deep); }
   .post h1 { font-size:clamp(2rem,5.5vw,3rem); margin:0.8rem 0 0.5rem; }
   .post .date { font-size:0.8rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.1em; }
   .post .dek { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.3rem; color:var(--ink); margin:1rem 0 0; line-height:1.4; }
   .post .intro { font-size:1.12rem; color:var(--ink-soft); margin:1.6rem 0 0.5rem; }
-  .post h2 { font-size:1.5rem; margin:2.4rem 0 0.3rem; padding-bottom:0.5rem; border-bottom:2px solid var(--clay); }
+  .post h2 { font-size:1.5rem; margin:2.4rem 0 0.3rem; padding-bottom:0.5rem; border-bottom:2px solid var(--bay); }
   .spot { padding:1.1rem 0; border-bottom:1px solid var(--line); }
   .spot:last-child { border-bottom:none; }
   .spot h3 { font-size:1.3rem; margin-bottom:0.2rem; }
   .spot h3 a { display:inline-block; padding:0.6rem 0; margin:-0.6rem 0; }
-  .spot h3 a:hover { color:var(--clay-deep); }
+  .spot h3 a:hover { color:var(--bay-deep); }
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.4rem; }
   .spot p { color:var(--ink-soft); }
-  .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--clay); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; }
-  .post .outro a { color:var(--clay-deep); font-weight:600; font-style:normal; }
+  .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; }
+  .post .outro a { color:var(--bay-deep); font-weight:600; font-style:normal; }
   .post .s-para { font-size:1.08rem; color:var(--ink); margin:1.15rem 0 0; line-height:1.7; }
   .post ul { margin:0.9rem 0 0.9rem 1.2rem; }
   .post li { color:var(--ink-soft); font-size:1.02rem; margin:0.45rem 0; line-height:1.6; }
   .post li strong { color:var(--ink); }
-  .post .article-body a { color:var(--clay-deep); font-weight:600; }
+  .post .article-body a { color:var(--bay-deep); font-weight:600; }
   .qa { padding:1.1rem 0; border-bottom:1px solid var(--line); }
   .qa:last-of-type { border-bottom:none; }
   .qa .q { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.15rem; color:var(--ink); margin-bottom:0.35rem; }
   .qa .a { color:var(--ink-soft); font-size:1.02rem; line-height:1.65; }
   .visit p { color:var(--ink-soft); margin:0.35rem 0; }
-  .visit a { color:var(--clay-deep); font-weight:600; }
+  .visit a { color:var(--bay-deep); font-weight:600; }
   /* footer */
   footer.site { padding:3rem 0 2.5rem; border-top:1.5px solid var(--ink); margin-top:2rem; }
   footer.site .wrap { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; align-items:flex-start; }
   footer .brand-name { font-size:1.3rem; }
   .f-nav { display:flex; flex-direction:column; gap:0.4rem; }
   .f-nav a { font-size:0.92rem; color:var(--ink-soft); }
-  .f-nav a:hover { color:var(--clay-deep); }
+  .f-nav a:hover { color:var(--bay-deep); }
   .f-copy { width:100%; border-top:1px solid var(--line); margin-top:1.5rem; padding-top:1.5rem; font-size:0.8rem; color:var(--ink-soft); }</style>
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
   <script type="application/ld+json">[{"@context":"https://schema.org","@type":"ItemList","name":"The Best Ice Cream in San Mateo","description":"Sicilian cannoli and gelato since 1968, a froyo institution since 1985, rolled ice cream made to order, dairy-free scoops, and house-made Asian flavors. Where to get a cold one in San Mateo.","itemListElement":[{"@type":"ListItem","position":1,"name":"Romolo's Cannoli","url":"/business/romolos-cannoli-san-mateo.html"},{"@type":"ListItem","position":2,"name":"Yumi Yogurt","url":"/business/yumi-yogurt.html"},{"@type":"ListItem","position":3,"name":"Icicles","url":"/business/icicles.html"},{"@type":"ListItem","position":4,"name":"Simple Delights","url":"/business/simple-delights.html"},{"@type":"ListItem","position":5,"name":"Chill Spot Rendezvous","url":"/business/chill-spot-rendezvous.html"},{"@type":"ListItem","position":6,"name":"Cruel Donuts & Ice Cream","url":"/business/cruel-donuts-ice-cream.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best ice cream in San Mateo?","acceptedAnswer":{"@type":"Answer","text":"Local favorites include Romolo's Cannoli, Yumi Yogurt, Icicles. Browse the full guide above. Nobody pays to be on it."}},{"@type":"Question","name":"How many ice cream spots does San Mateo Local recommend?","acceptedAnswer":{"@type":"Answer","text":"6, all added by hand and refreshed regularly."}},{"@type":"Question","name":"Is San Mateo Local a paid directory?","acceptedAnswer":{"@type":"Answer","text":"No. Nobody pays to be listed here, and nothing was scraped or bought. A business can sponsor a guide, and if one does, it is clearly marked as a sponsor."}}]}]</script>
-  <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--clay-deep);">Get on the guide &rarr;</strong></a></div>
-  <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--clay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
+  <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--bay-deep);">Get on the guide &rarr;</strong></a></div>
+  <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--bay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
   <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
   <header class="masthead">
     <div class="masthead-top">
@@ -168,7 +168,7 @@
     <p class="dek">Sicilian cannoli and gelato since 1968, a froyo institution since 1985, rolled ice cream made to order, dairy-free scoops, and house-made Asian flavors. Where to get a cold one in San Mateo.</p>
 
     <p class="intro">San Mateo does ice cream a few different ways, and a lot of the best of it is old and family-run. Here are the local spots worth the calories, from a parlor that has been scooping since the sixties to dairy-free scoops made in-house downtown. All independent, all San Mateo.</p>
-    <p style="margin:1.4rem 0 0.5rem; font-size:1.06rem; line-height:1.55; color:var(--ink); background:var(--paper-2); border-left:3px solid var(--clay); padding:0.9rem 1.15rem; border-radius:0 8px 8px 0;">San Mateo's ice cream spots, from a 1968 Sicilian parlor to dairy-free and rolled ice cream, hand-picked by a local. Nobody pays to be on it.</p>
+    <p style="margin:1.4rem 0 0.5rem; font-size:1.06rem; line-height:1.55; color:var(--ink); background:var(--paper-2); border-left:3px solid var(--bay); padding:0.9rem 1.15rem; border-radius:0 8px 8px 0;">San Mateo's ice cream spots, from a 1968 Sicilian parlor to dairy-free and rolled ice cream, hand-picked by a local. Nobody pays to be on it.</p>
       <h2>The local favorites</h2>
       <div class="spot">
         <h3><a href="/business/romolos-cannoli-san-mateo.html" target="_blank" rel="noopener">Romolo's Cannoli</a></h3>
@@ -210,11 +210,11 @@
 
     <div class="locals-cta" style="margin:2.5rem 0 1.5rem; padding:1.25rem 1.5rem; background:#F2E9D4; border:1px solid #E3D6BC; border-radius:12px; font-size:0.95rem;">
       <strong>Been to one of these spots?</strong> Snap a photo, tag it and <strong>@sanmateolocal</strong> on Instagram, and we'll feature you in our locals' gallery.
-      <div style="margin-top:0.85rem; padding-top:0.85rem; border-top:1px solid #E3D6BC;">Own a San Mateo business? You can sponsor a guide like this one, your name at the top of a page locals already trust, all year. The list stays honest, you just get the credit. <a href="for-business-owners.html#feature" style="color:var(--clay-deep); font-weight:700;">See guide sponsorship &rarr;</a></div>
+      <div style="margin-top:0.85rem; padding-top:0.85rem; border-top:1px solid #E3D6BC;">Own a San Mateo business? You can sponsor a guide like this one, your name at the top of a page locals already trust, all year. The list stays honest, you just get the credit. <a href="for-business-owners.html#feature" style="color:var(--bay-deep); font-weight:700;">See guide sponsorship &rarr;</a></div>
     </div>
     <a class="back" href="guides.html">&larr; All guides</a>
   </article>
-  <p style="text-align:center; color:var(--ink-soft); font-size:0.92rem; padding:1.75rem 1.5rem 0;">More added every week. Got a favorite? <a href="suggest.html" style="color:var(--clay-deep); font-weight:700;">Vote on the Best Of.</a> &nbsp;&middot;&nbsp; Own a business we're missing? <a href="for-business-owners.html#getlisted" style="color:var(--clay-deep); font-weight:700;">Get listed, free.</a></p>
+  <p style="text-align:center; color:var(--ink-soft); font-size:0.92rem; padding:1.75rem 1.5rem 0;">More added every week. Got a favorite? <a href="suggest.html" style="color:var(--bay-deep); font-weight:700;">Vote on the Best Of.</a> &nbsp;&middot;&nbsp; Own a business we're missing? <a href="for-business-owners.html#getlisted" style="color:var(--bay-deep); font-weight:700;">Get listed, free.</a></p>
   <footer class="site">
     <div class="wrap">
       <div>
