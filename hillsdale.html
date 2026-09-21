@@ -32,8 +32,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-  :root { --paper:#FAF6EC; --paper-2:#F2E9D4; --ink:#221D16; --ink-soft:#5E5446; --clay:#C25B3A; --clay-deep:#A5492B; --green:#41614B; --sage-deep:#324C3A; --line:#E3D6BC; --line-soft:#ECE1CB; }
-  [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --green:#88AC8F; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; }
+  :root { --paper:#F6F0E4; --paper-2:#EFE7D5; --ink:#17323A; --ink-soft:#47595C; --clay:#C85A38; --clay-deep:#A5492B; --green:#3C5A43; --sage-deep:#2E4A38; --line:#E1D9C6; --line-soft:#ECE1CB; --bay:#10717A; --bay-deep:#0C5B62; }
+  [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --green:#88AC8F; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; --bay:#3FA3AA; --bay-deep:#2E8A90; }
   * { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
   body { overflow-x: hidden; max-width: 100%; font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased; }
@@ -41,7 +41,7 @@
   a { color:inherit; text-decoration:none; }
   .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
   .article { max-width:48rem; margin:0 auto; padding:0 1.5rem; }
-  .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+  .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--bay-deep); }
   /* masthead */
   .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:50; box-shadow:0 6px 24px -18px rgba(0,0,0,0.4); }
   .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1.5rem; max-width:1140px; margin:0 auto; }
@@ -51,20 +51,20 @@
   .masthead-right { display:flex; align-items:center; gap:1.25rem; }
   .masthead-nav { display:flex; gap:1.4rem; align-items:center; }
   .masthead-nav a { font-size:0.74rem; font-weight:600; letter-spacing:0.13em; text-transform:uppercase; color:var(--ink-soft); }
-  .masthead-nav a:hover { color:var(--clay-deep); }
+  .masthead-nav a:hover { color:var(--bay-deep); }
   .theme-toggle { background:none; border:1.5px solid var(--line); border-radius:999px; width:36px; height:36px; cursor:pointer; color:var(--ink); font-size:1rem; display:inline-flex; align-items:center; justify-content:center; flex:none; }
   .theme-toggle .sun { display:none; } [data-theme="dark"] .theme-toggle .moon { display:none; } [data-theme="dark"] .theme-toggle .sun { display:inline; }
   .menu-btn { display:none; background:none; border:1.5px solid var(--line); border-radius:8px; width:38px; height:38px; cursor:pointer; color:var(--ink); align-items:center; justify-content:center; padding:0; flex:none; }
   .menu-btn svg { width:20px; height:20px; }
   .mobile-nav { display:none; }
   .dateline { border-top:1px solid var(--line); text-align:center; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft); padding:0.4rem 1rem; }
-  @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line-soft); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--clay-deep); } }
+  @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line-soft); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--bay-deep); } }
   /* hero */
   .hood-head { padding:3.2rem 0 2rem; border-bottom:1.5px solid var(--ink); }
-  .hood-head .back { font-size:0.85rem; font-weight:600; color:var(--clay-deep); }
+  .hood-head .back { font-size:0.85rem; font-weight:600; color:var(--bay-deep); }
   .hood-head h1 { font-size:clamp(2.2rem,6vw,3.4rem); margin:0.7rem 0 0.6rem; }
   .hood-head .intro { color:var(--ink); font-size:1.2rem; font-family:'Cormorant Garamond',serif; font-style:italic; max-width:42rem; }
-  .cat-quickanswer { margin-top:1.1rem; font-size:1.05rem; line-height:1.55; color:var(--ink); background:var(--paper-2); border-left:3px solid var(--clay); padding:0.9rem 1.15rem; border-radius:0 8px 8px 0; max-width:42rem; font-family:'Inter',sans-serif; font-style:normal; }
+  .cat-quickanswer { margin-top:1.1rem; font-size:1.05rem; line-height:1.55; color:var(--ink); background:var(--paper-2); border-left:3px solid var(--bay); padding:0.9rem 1.15rem; border-radius:0 8px 8px 0; max-width:42rem; font-family:'Inter',sans-serif; font-style:normal; }
   .cat-faq { padding:1.8rem 0 0.5rem; }
   .cat-faq h2 { font-size:1.4rem; font-weight:600; margin-bottom:0.5rem; }
   .cat-faq details { border-bottom:1px solid var(--line); padding:0.85rem 0; }
@@ -74,18 +74,18 @@
   .history { padding:2.4rem 0 0.5rem; }
   .history h2 { font-size:1.6rem; margin-bottom:0.7rem; }
   .history p { color:var(--ink-soft); font-size:1.05rem; max-width:44rem; }
-  .facts { margin:1.5rem 0 0.5rem; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--clay); border-radius:0 10px 10px 0; max-width:44rem; }
+  .facts { margin:1.5rem 0 0.5rem; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); border-radius:0 10px 10px 0; max-width:44rem; }
   .facts h3 { font-size:1.05rem; margin-bottom:0.6rem; }
   .facts ul { list-style:none; display:grid; gap:0.5rem; }
   .facts li { padding-left:1.4rem; position:relative; color:var(--ink); font-size:0.98rem; }
-  .facts li::before { content:"\2605"; position:absolute; left:0; color:var(--clay-deep); }
+  .facts li::before { content:"\2605"; position:absolute; left:0; color:var(--bay-deep); }
   /* listings */
   .spots { padding:2rem 0 0.5rem; }
-  .spots > h2 { font-size:1.5rem; margin:2rem 0 0.3rem; padding-bottom:0.5rem; border-bottom:2px solid var(--clay); }
+  .spots > h2 { font-size:1.5rem; margin:2rem 0 0.3rem; padding-bottom:0.5rem; border-bottom:2px solid var(--bay); }
   .spot { padding:1.05rem 0; border-bottom:1px solid var(--line); }
   .spot:last-child { border-bottom:none; }
   .spot h3 { font-size:1.25rem; margin-bottom:0.15rem; }
-  .spot h3 a:hover { color:var(--clay-deep); }
+  .spot h3 a:hover { color:var(--bay-deep); }
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.35rem; }
   .spot p { color:var(--ink-soft); }
   .relguide { margin:2.2rem 0 0.5rem; padding:1.2rem 1.4rem; border:1.5px solid var(--ink); border-radius:12px; background:#fff; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
@@ -93,27 +93,27 @@
   .relguide .rg-t { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.15rem; }
   .relguide a.rg-b { background:var(--clay); color:#fff; font-weight:700; padding:0.6rem 1.2rem; border-radius:8px; font-size:0.95rem; white-space:nowrap; }
   .ownline { margin:1.8rem 0; padding:1.1rem 1.4rem; background:var(--paper-2); border-radius:10px; font-size:0.98rem; color:var(--ink-soft); }
-  .ownline a { color:var(--clay-deep); font-weight:700; }
+  .ownline a { color:var(--bay-deep); font-weight:700; }
   .others { margin:2.5rem 0 1rem; }
   .others h2 { font-size:1.3rem; margin-bottom:0.7rem; }
   .others .row { display:flex; flex-wrap:wrap; gap:0.6rem; }
   .others a { border:1.5px solid var(--line); border-radius:999px; padding:0.5rem 1.1rem; font-weight:600; font-size:0.92rem; color:var(--ink); }
-  .others a:hover { border-color:var(--clay); color:var(--clay-deep); }
+  .others a:hover { border-color:var(--bay); color:var(--bay-deep); }
   /* footer */
   footer.site { padding:3rem 0 2.5rem; border-top:1.5px solid var(--ink); margin-top:2rem; }
   footer.site .wrap { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; align-items:flex-start; }
   footer .brand-name { font-size:1.3rem; }
   .f-nav { display:flex; flex-direction:column; gap:0.4rem; }
   .f-nav a { font-size:0.92rem; color:var(--ink-soft); }
-  .f-nav a:hover { color:var(--clay-deep); }
+  .f-nav a:hover { color:var(--bay-deep); }
   .f-copy { width:100%; border-top:1px solid var(--line); margin-top:1.5rem; padding-top:1.5rem; font-size:0.8rem; color:var(--ink-soft); }</style>
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Hillsdale — San Mateo Local","description":"A local's guide to the Hillsdale neighborhood of San Mateo, built around the historic Hillsdale Shopping Center that opened in 1954. Where to eat, shop, and go, plus the story behind it.","itemListElement":[{"@type":"ListItem","position":1,"name":"Flores","address":"4 Hillsdale Mall, San Mateo, CA 94403"},{"@type":"ListItem","position":2,"name":"Palette Tea Garden & Dim Sum","address":"48 Hillsdale Mall, San Mateo, CA 94403"},{"@type":"ListItem","position":3,"name":"Sole Ristorante Italiano","address":"69 W 37th Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":4,"name":"Lolita Artisanal Bakery-Cafe","address":"3790 S El Camino Real, Ste 101, San Mateo, CA 94403"},{"@type":"ListItem","position":5,"name":"Caffeinated Cowboy","address":"3721 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":6,"name":"Antone's Cocktail Lounge","address":"32 37th Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":7,"name":"Yumi Yogurt","address":"3955 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":8,"name":"Red Door Escape Room","address":"90 Hillsdale Mall, San Mateo, CA 94403"},{"@type":"ListItem","position":9,"name":"Hillsdale Shopping Center","address":"60 31st Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":10,"name":"Cinépolis Luxury Cinemas","address":"8 Hillsdale Mall, San Mateo, CA 94403"},{"@type":"ListItem","position":11,"name":"Pinstripes San Mateo","address":"36 Hillsdale Mall, San Mateo, CA 94403"},{"@type":"ListItem","position":12,"name":"Imagination City","address":"448 Hillsdale Shopping Center, San Mateo, CA 94403"},{"@type":"ListItem","position":13,"name":"Dahliana Nail Spa","address":"354 Hillsdale Mall, San Mateo, CA 94403"},{"@type":"ListItem","position":14,"name":"Penelope's Coffee & Tea","address":"1326 W Hillsdale Blvd, San Mateo, CA 94403"},{"@type":"ListItem","position":15,"name":"India Grocery & Spice","address":"218 E Hillsdale Blvd, San Mateo, CA 94403"},{"@type":"ListItem","position":16,"name":"San Mateo Automotive Service","address":"3925 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":17,"name":"Mosaic Market","address":"9 37th Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":18,"name":"Aladdin Gourmet","address":"208 E Hillsdale Blvd, San Mateo, CA 94403"},{"@type":"ListItem","position":19,"name":"Cuban Kitchen","address":"3799 S. El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":20,"name":"CY Danceworks","address":"25 37th Avenue, San Mateo, CA 94403"},{"@type":"ListItem","position":21,"name":"Postcard Buddies","address":"148 Burbank Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":22,"name":"La Ronda Restaurant","address":"224 E Hillsdale Blvd, San Mateo, CA 94403"},{"@type":"ListItem","position":23,"name":"Andersen Bakery & Cafe","address":"198 E Sailer Dr, San Mateo, CA 94403"},{"@type":"ListItem","position":24,"name":"South Hillsdale Animal Hospital","address":"15 37th Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":25,"name":"El Sipote Food Truck","address":"341 E Hillsdale Blvd, San Mateo, CA"},{"@type":"ListItem","position":26,"name":"Kusan Bazaar","address":"2727 S El Camino Real Ste H, San Mateo, CA"},{"@type":"ListItem","position":27,"name":"Peking Alley","address":"4300 S El Camino Real"},{"@type":"ListItem","position":28,"name":"Yuzu","address":"54 37th Ave"},{"@type":"ListItem","position":29,"name":"Fernando's Mexican Restaurant","address":"63 37th Ave"},{"@type":"ListItem","position":30,"name":"Tacos El Grullense C&D","address":"60 31st Ave"},{"@type":"ListItem","position":31,"name":"Maverick Jack's Burgers & Shakes","address":"4000 S El Camino Real"},{"@type":"ListItem","position":32,"name":"Fitness 19","address":"2727 S El Camino Real D-E"},{"@type":"ListItem","position":33,"name":"Optimum Strength and Conditioning","address":"3600 S El Camino Real Suite C"},{"@type":"ListItem","position":34,"name":"Strong Fit & Happy","address":"25 37th Ave Studio C"},{"@type":"ListItem","position":35,"name":"Pilates V San Mateo","address":"4060 S El Camino Real Ste e"},{"@type":"ListItem","position":36,"name":"Symmetra Health and Chiropractic","address":"3600 S El Camino Real"},{"@type":"ListItem","position":37,"name":"Izumi Spa Massage","address":"4060 S El Camino Real"},{"@type":"ListItem","position":38,"name":"Body Central Massage Spa","address":"2833 S El Camino Real"},{"@type":"ListItem","position":39,"name":"Massage Pro","address":"3718 S El Camino Real"},{"@type":"ListItem","position":40,"name":"Wonderful Massage","address":"2477 Flores St"},{"@type":"ListItem","position":41,"name":"Skin Friday Massage & Skincare","address":"4060 S El Camino Real Studio 27"},{"@type":"ListItem","position":42,"name":"Contemporary Dental","address":"105 37th Ave"},{"@type":"ListItem","position":43,"name":"Optical Illusions of San Mateo | An Optometric Practice - Hillsdale Mall","address":"194 Hillsdale Mall"},{"@type":"ListItem","position":44,"name":"Advanced In-Home Care","address":"72 37th Ave"},{"@type":"ListItem","position":45,"name":"Top Image Salon","address":"4060 S El Camino Real"},{"@type":"ListItem","position":46,"name":"After Glo Beauty Collective","address":"2471 Flores St"},{"@type":"ListItem","position":47,"name":"Hitters Barbershop San Mateo","address":"4404, 61 37th Ave"},{"@type":"ListItem","position":48,"name":"Anna Art Nail Studio LLC","address":"4060 S El Camino Real Unit A Studio 20"},{"@type":"ListItem","position":49,"name":"Kim’s Nail Bar","address":"4060 S El Camino Real Ste A Room19"},{"@type":"ListItem","position":50,"name":"Stress-Free Auto Care","address":"3825 S El Camino Real"},{"@type":"ListItem","position":51,"name":"J J Alterations","address":"5 37th Ave"},{"@type":"ListItem","position":52,"name":"A Cut Above Grooming Salon West","address":"83 37th Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":53,"name":"Game Show Studio San Mateo","address":"90 Hillsdale Mall, San Mateo, CA 94403"},{"@type":"ListItem","position":54,"name":"ELM Roofing Contractors","address":"1900 S Norfolk St #394, San Mateo, CA 94403"},{"@type":"ListItem","position":55,"name":"Heavenly Shine Cleaning","address":"55 E 20th Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":56,"name":"ROLLING SEA PAINTING","address":"3603 Colegrove St Apartment 24, San Mateo, CA 94403"},{"@type":"ListItem","position":57,"name":"Pacific Pest Management","address":"3917 Beresford St, San Mateo, CA 94403"},{"@type":"ListItem","position":58,"name":"Romolo's Cannoli","address":"81 W 37th Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":59,"name":"San Mateo Public Library (Hillsdale)","address":"205 W Hillsdale Blvd, San Mateo, CA 94403"},{"@type":"ListItem","position":60,"name":"Boat Feet Shoe Repair","address":"1212 W Hillsdale Blvd, San Mateo, CA 94403"},{"@type":"ListItem","position":61,"name":"Takeout Vintage","address":"60 31st Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":62,"name":"Rare Tea","address":"1330 W Hillsdale Blvd, San Mateo, CA 94403"},{"@type":"ListItem","position":63,"name":"Marlove Flowers","address":"147 Hillsdale Shopping Ctr, San Mateo, CA 94403"},{"@type":"ListItem","position":64,"name":"Brothers Cafe","address":"1338 W Hillsdale Blvd, San Mateo, CA 94403"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many local businesses does San Mateo Local list in Hillsdale?","acceptedAnswer":{"@type":"Answer","text":"64 local, independent spots in Hillsdale, San Mateo, and the list grows every week."}},{"@type":"Question","name":"What kind of businesses are in Hillsdale, San Mateo?","acceptedAnswer":{"@type":"Answer","text":"Hillsdale has a mix of local restaurants, shops, and services. Browse them above, or ask a local for a pick."}},{"@type":"Question","name":"Is San Mateo Local a paid directory?","acceptedAnswer":{"@type":"Answer","text":"No. Nobody pays to be listed, and there are no chains. It's an honest guide, not an ad platform."}}]}</script>
-  <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--clay-deep);">Get on the guide &rarr;</strong></a></div>
-  <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--clay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
+  <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--bay-deep);">Get on the guide &rarr;</strong></a></div>
+  <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--bay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
   <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
   <header class="masthead">
     <div class="masthead-top">
@@ -176,364 +176,364 @@
         <h3><a href="/business/flores-san-mateo.html">Flores</a></h3>
         <div class="m">Modern Mexican &middot; $$$</div>
         <p>A Modern Mexican restaurant on Hillsdale Mall.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Flores%204%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Flores%204%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/palette-tea-garden.html">Palette Tea Garden &amp; Dim Sum</a></h3>
         <div class="m">Cantonese dim sum &middot; $$$</div>
         <p>Modern dim sum, Cantonese roast meats, and Peking duck from the Koi Palace team.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Palette%20Tea%20Garden%20%26%20Dim%20Sum%2048%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Palette%20Tea%20Garden%20%26%20Dim%20Sum%2048%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/sole-ristorante.html">Sole Ristorante Italiano</a></h3>
         <div class="m">Italian &middot; $$</div>
         <p>Family-owned, home-style Italian plates and classic pastas in a neighborhood setting.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Sole%20Ristorante%20Italiano%2069%20W%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Sole%20Ristorante%20Italiano%2069%20W%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/lolita-bakery.html">Lolita Artisanal Bakery-Cafe</a></h3>
         <div class="m">Latin-American bakery &middot; $$</div>
         <p>Latin-American artisan bakery cafe known for alfajores and pastries, with coffee in a cozy setting.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Lolita%20Artisanal%20Bakery-Cafe%203790%20S%20El%20Camino%20Real%2C%20Ste%20101%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Lolita%20Artisanal%20Bakery-Cafe%203790%20S%20El%20Camino%20Real%2C%20Ste%20101%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/caffeinated-cowboy.html">Caffeinated Cowboy</a></h3>
         <div class="m">Coffee &middot; $</div>
         <p>Locally owned shop for customizable coffee, matcha, and energy drinks plus breakfast burritos and pastries.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Caffeinated%20Cowboy%203721%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Caffeinated%20Cowboy%203721%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/antones-cocktail-lounge.html">Antone's Cocktail Lounge</a></h3>
         <div class="m">Dive bar &middot; $</div>
         <p>Family-run neighborhood dive open daily until 2am with pool tables, bumper pool, Pac-Man, and a jukebox.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Antone's%20Cocktail%20Lounge%2032%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Antone's%20Cocktail%20Lounge%2032%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/yumi-yogurt.html">Yumi Yogurt</a></h3>
         <div class="m">Frozen yogurt &amp; ice cream &middot; $</div>
         <p>A family-owned frozen yogurt and ice cream shop serving San Mateo since 1985, open late every night with a wall of self-serve flavors and toppings.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Yumi%20Yogurt%203955%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Yumi%20Yogurt%203955%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/penelopes-coffee.html">Penelope's Coffee &amp; Tea</a></h3>
         <div class="m">Coffee &amp; tea &middot; $</div>
         <p>A neighborhood coffee and tea spot near Hillsdale with espresso drinks, loose-leaf teas, and light bites.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Penelope's%20Coffee%20%26%20Tea%201326%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Penelope's%20Coffee%20%26%20Tea%201326%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/cuban-kitchen.html">Cuban Kitchen</a></h3>
         <div class="m">restaurant</div>
         <p>Family-run authentic Cuban restaurant</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Cuban%20Kitchen%203799%20S.%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Cuban%20Kitchen%203799%20S.%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/la-ronda.html">La Ronda Restaurant</a></h3>
         <div class="m">Peruvian &middot; $$</div>
         <p>Family Peruvian kitchen known for ceviche, seafood, and fried calamari, plus hearty beef and chicken plates.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=La%20Ronda%20Restaurant%20224%20E%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=La%20Ronda%20Restaurant%20224%20E%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/andersen-bakery-cafe.html">Andersen Bakery &amp; Cafe</a></h3>
         <div class="m">Bakery &middot; $</div>
         <p>European-style bakery for fresh pastries, breads, and sandwiches near Hillsdale.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Andersen%20Bakery%20%26%20Cafe%20198%20E%20Sailer%20Dr%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Andersen%20Bakery%20%26%20Cafe%20198%20E%20Sailer%20Dr%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/el-sipote-food-truck-san-mateo.html">El Sipote Food Truck</a></h3>
         <div class="m">food-truck &middot; $</div>
         <p>A neighborhood food truck parked on East Hillsdale Blvd.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=El%20Sipote%20Food%20Truck%20341%20E%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=El%20Sipote%20Food%20Truck%20341%20E%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/peking-alley-san-mateo.html">Peking Alley</a></h3>
         <div class="m">Chinese &middot; $$</div>
         <p>A Chinese restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Peking%20Alley%204300%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Peking%20Alley%204300%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/yuzu-san-mateo.html">Yuzu</a></h3>
         <div class="m">Sushi &middot; $$</div>
         <p>A Sushi restaurant on 37th Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Yuzu%2054%2037th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Yuzu%2054%2037th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/fernando-s-mexican-restaurant-san-mateo.html">Fernando's Mexican Restaurant</a></h3>
         <div class="m">Mexican &middot; $$</div>
         <p>A Mexican restaurant on 37th Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Fernando's%20Mexican%20Restaurant%2063%2037th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Fernando's%20Mexican%20Restaurant%2063%2037th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/tacos-el-grullense-c-d-san-mateo.html">Tacos El Grullense C&amp;D</a></h3>
         <div class="m">Mexican &middot; $$</div>
         <p>A Mexican restaurant on 31st Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Tacos%20El%20Grullense%20C%26D%2060%2031st%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Tacos%20El%20Grullense%20C%26D%2060%2031st%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/maverick-jack-s-burgers-shakes-san-mateo.html">Maverick Jack's Burgers &amp; Shakes</a></h3>
         <div class="m">Burger &middot; $$</div>
         <p>A Burger restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Maverick%20Jack's%20Burgers%20%26%20Shakes%204000%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Maverick%20Jack's%20Burgers%20%26%20Shakes%204000%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/romolos-cannoli-san-mateo.html">Romolo's Cannoli</a></h3>
         <div class="m">Italian &middot; $</div>
         <p>A family-run Sicilian ice cream parlor on 37th Avenue, making ricotta and ice-cream cannoli, gelato, spumoni, and cassata since 1968.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Romolo's%20Cannoli%2081%20W%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Romolo's%20Cannoli%2081%20W%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/rare-tea.html">Rare Tea</a></h3>
         <div class="m">Boba tea</div>
         <p>Boba tea in San Mateo.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Rare%20Tea%201330%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Rare%20Tea%201330%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/brothers-cafe.html">Brothers Cafe</a></h3>
         <div class="m">brunch</div>
         <p>Breakfast and brunch cafe</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Brothers%20Cafe%201338%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Brothers%20Cafe%201338%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
     <h2>Things to Do</h2>
       <div class="spot">
         <h3><a href="/business/red-door-escape.html">Red Door Escape Room</a></h3>
         <div class="m">entertainment &middot; $$</div>
         <p>Themed, story-driven escape rooms at Hillsdale for small groups.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Red%20Door%20Escape%20Room%2090%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Red%20Door%20Escape%20Room%2090%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/cinepolis-hillsdale.html">Cinépolis Luxury Cinemas</a></h3>
         <div class="m">entertainment &middot; $$$</div>
         <p>A dine-in luxury cinema at Hillsdale with reclining seats and full food-and-drink service to your seat.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Cin%C3%A9polis%20Luxury%20Cinemas%208%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Cin%C3%A9polis%20Luxury%20Cinemas%208%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/pinstripes-san-mateo.html">Pinstripes San Mateo</a></h3>
         <div class="m">entertainment &middot; $$$</div>
         <p>A combined bowling-and-bocce venue with an Italian-American bistro and an outdoor fire-pit patio at Hillsdale.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Pinstripes%20San%20Mateo%2036%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Pinstripes%20San%20Mateo%2036%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/imagination-city.html">Imagination City</a></h3>
         <div class="m">family &middot; $$</div>
         <p>A child-sized pretend-play town at Hillsdale where kids ages two to seven take on roles like grocer, firefighter, and doctor.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Imagination%20City%20448%20Hillsdale%20Shopping%20Center%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Imagination%20City%20448%20Hillsdale%20Shopping%20Center%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/cy-danceworks.html">CY Danceworks</a></h3>
         <div class="m">activity</div>
         <p>Dance studio</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=CY%20Danceworks%2025%2037th%20Avenue%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=CY%20Danceworks%2025%2037th%20Avenue%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/game-show-studio.html">Game Show Studio San Mateo</a></h3>
         <div class="m">entertainment</div>
         <p>A live game-show experience at Hillsdale Mall, teams compete through rounds of challenges.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Game%20Show%20Studio%20San%20Mateo%2090%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Game%20Show%20Studio%20San%20Mateo%2090%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/sm-public-library-hillsdale.html">San Mateo Public Library (Hillsdale)</a></h3>
         <div class="m">library &middot; Free</div>
         <p>The Hillsdale branch of the San Mateo Public Library, a neighborhood spot for books, holds pickup, kids programs, and free wifi near West Hillsdale Boulevard.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=San%20Mateo%20Public%20Library%20(Hillsdale)%20205%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=San%20Mateo%20Public%20Library%20(Hillsdale)%20205%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
     <h2>Shopping & Markets</h2>
       <div class="spot">
         <h3><a href="/business/hillsdale-shopping-center.html">Hillsdale Shopping Center</a></h3>
         <div class="m">shopping &middot; $$$</div>
         <p>San Mateo's flagship mall with 130-plus stores, dining, and a luxury cinema, anchored by Nordstrom and Macy's.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Hillsdale%20Shopping%20Center%2060%2031st%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Hillsdale%20Shopping%20Center%2060%2031st%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/india-grocery-spice.html">India Grocery &amp; Spice</a></h3>
         <div class="m">Indian grocery market &middot; $$</div>
         <p>A specialty grocery carrying Indian staples, spices, and South Asian and Middle Eastern goods.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=India%20Grocery%20%26%20Spice%20218%20E%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=India%20Grocery%20%26%20Spice%20218%20E%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/mosaic-market.html">Mosaic Market</a></h3>
         <div class="m">Middle Eastern &amp; Eastern European grocery &middot; $$</div>
         <p>An international grocery stocking Middle Eastern, Eastern European, and Mediterranean staples like olives, tahini, pickles, and imported pantry goods.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Mosaic%20Market%209%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Mosaic%20Market%209%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/aladdin-gourmet.html">Aladdin Gourmet</a></h3>
         <div class="m">Middle Eastern grocery &middot; $$</div>
         <p>A Middle Eastern and Mediterranean market and deli established in 1992, known for halal meat, house-made hummus and falafel, and imported groceries.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Aladdin%20Gourmet%20208%20E%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Aladdin%20Gourmet%20208%20E%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/kusan-bazaar-san-mateo.html">Kusan Bazaar</a></h3>
         <div class="m">Central Asian grocery &amp; cafe</div>
         <p>A Central Asian specialty grocery and cafe on El Camino, with imported goods and a small cafe counter.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kusan%20Bazaar%202727%20S%20El%20Camino%20Real%20Ste%20H%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kusan%20Bazaar%202727%20S%20El%20Camino%20Real%20Ste%20H%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/takeout-vintage.html">Takeout Vintage</a></h3>
         <div class="m">Vintage</div>
         <p>Vintage shop at Hillsdale.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Takeout%20Vintage%2060%2031st%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Takeout%20Vintage%2060%2031st%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/marlove-flowers.html">Marlove Flowers</a></h3>
         <div class="m">shopping</div>
         <p>A florist for bouquets and custom arrangements.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Marlove%20Flowers%20147%20Hillsdale%20Shopping%20Ctr%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Marlove%20Flowers%20147%20Hillsdale%20Shopping%20Ctr%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
     <h2>Local Services</h2>
       <div class="spot">
         <h3><a href="/business/dahliana-nail-spa.html">Dahliana Nail Spa</a></h3>
         <div class="m">nails &middot; $$</div>
         <p>An inside-the-mall nail spa that welcomes walk-ins for manicures, pedicures, and fills with evening hours.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Dahliana%20Nail%20Spa%20354%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Dahliana%20Nail%20Spa%20354%20Hillsdale%20Mall%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/san-mateo-automotive-service.html">San Mateo Automotive Service</a></h3>
         <div class="m">Auto repair &middot; $$</div>
         <p>An independent auto repair shop specializing in European and imported vehicles.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=San%20Mateo%20Automotive%20Service%203925%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=San%20Mateo%20Automotive%20Service%203925%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/postcard-buddies.html">Postcard Buddies</a></h3>
         <div class="m">professional</div>
         <p>Direct mail / postcard marketing service</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Postcard%20Buddies%20148%20Burbank%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Postcard%20Buddies%20148%20Burbank%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/south-hillsdale-animal-hospital.html">South Hillsdale Animal Hospital</a></h3>
         <div class="m">Veterinary clinic &middot; $$</div>
         <p>A full-service independent veterinary clinic.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=South%20Hillsdale%20Animal%20Hospital%2015%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=South%20Hillsdale%20Animal%20Hospital%2015%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/fitness-19-san-mateo.html">Fitness 19</a></h3>
         <div class="m">gym</div>
         <p>A gym on South El Camino Real D-E.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Fitness%2019%202727%20S%20El%20Camino%20Real%20D-E" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Fitness%2019%202727%20S%20El%20Camino%20Real%20D-E" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/optimum-strength-and-conditioning-san-mateo.html">Optimum Strength and Conditioning</a></h3>
         <div class="m">gym</div>
         <p>A gym on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Optimum%20Strength%20and%20Conditioning%203600%20S%20El%20Camino%20Real%20Suite%20C" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Optimum%20Strength%20and%20Conditioning%203600%20S%20El%20Camino%20Real%20Suite%20C" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/strong-fit-happy-san-mateo.html">Strong Fit &amp; Happy</a></h3>
         <div class="m">gym</div>
         <p>A gym on 37th Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Strong%20Fit%20%26%20Happy%2025%2037th%20Ave%20Studio%20C" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Strong%20Fit%20%26%20Happy%2025%2037th%20Ave%20Studio%20C" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/pilates-v-san-mateo-san-mateo.html">Pilates V San Mateo</a></h3>
         <div class="m">pilates</div>
         <p>A Pilates studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Pilates%20V%20San%20Mateo%204060%20S%20El%20Camino%20Real%20Ste%20e" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Pilates%20V%20San%20Mateo%204060%20S%20El%20Camino%20Real%20Ste%20e" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/symmetra-health-and-chiropractic-san-mateo.html">Symmetra Health and Chiropractic</a></h3>
         <div class="m">chiropractor</div>
         <p>A chiropractor on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Symmetra%20Health%20and%20Chiropractic%203600%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Symmetra%20Health%20and%20Chiropractic%203600%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/izumi-spa-massage-san-mateo.html">Izumi Spa Massage</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Izumi%20Spa%20Massage%204060%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Izumi%20Spa%20Massage%204060%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/body-central-massage-spa-san-mateo.html">Body Central Massage Spa</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Body%20Central%20Massage%20Spa%202833%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Body%20Central%20Massage%20Spa%202833%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/massage-pro-san-mateo.html">Massage Pro</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Massage%20Pro%203718%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Massage%20Pro%203718%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/wonderful-massage-san-mateo.html">Wonderful Massage</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on Flores Street.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Wonderful%20Massage%202477%20Flores%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Wonderful%20Massage%202477%20Flores%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/skin-friday-massage-skincare-san-mateo.html">Skin Friday Massage &amp; Skincare</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Skin%20Friday%20Massage%20%26%20Skincare%204060%20S%20El%20Camino%20Real%20Studio%2027" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Skin%20Friday%20Massage%20%26%20Skincare%204060%20S%20El%20Camino%20Real%20Studio%2027" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/contemporary-dental-san-mateo.html">Contemporary Dental</a></h3>
         <div class="m">dentist</div>
         <p>A dentist on 37th Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Contemporary%20Dental%20105%2037th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Contemporary%20Dental%20105%2037th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/optical-illusions-of-san-mateo-an-optometric-practice-hillsdale-mall-san-mateo.html">Optical Illusions of San Mateo | An Optometric Practice - Hillsdale Mall</a></h3>
         <div class="m">optician</div>
         <p>An optometry office on Hillsdale Mall.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Optical%20Illusions%20of%20San%20Mateo%20%7C%20An%20Optometric%20Practice%20-%20Hillsdale%20Mall%20194%20Hillsdale%20Mall" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Optical%20Illusions%20of%20San%20Mateo%20%7C%20An%20Optometric%20Practice%20-%20Hillsdale%20Mall%20194%20Hillsdale%20Mall" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/advanced-in-home-care-san-mateo.html">Advanced In-Home Care</a></h3>
         <div class="m">senior-care</div>
         <p>A senior care provider on 37th Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Advanced%20In-Home%20Care%2072%2037th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Advanced%20In-Home%20Care%2072%2037th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/top-image-salon-san-mateo.html">Top Image Salon</a></h3>
         <div class="m">salon</div>
         <p>A hair salon on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Top%20Image%20Salon%204060%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Top%20Image%20Salon%204060%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/after-glo-beauty-collective-san-mateo.html">After Glo Beauty Collective</a></h3>
         <div class="m">salon</div>
         <p>A beauty salon on Flores Street.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=After%20Glo%20Beauty%20Collective%202471%20Flores%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=After%20Glo%20Beauty%20Collective%202471%20Flores%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/hitters-barbershop-san-mateo-san-mateo.html">Hitters Barbershop San Mateo</a></h3>
         <div class="m">barber</div>
         <p>A barbershop on 4404.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Hitters%20Barbershop%20San%20Mateo%204404%2C%2061%2037th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Hitters%20Barbershop%20San%20Mateo%204404%2C%2061%2037th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/anna-art-nail-studio-llc-san-mateo.html">Anna Art Nail Studio LLC</a></h3>
         <div class="m">nails</div>
         <p>A nail salon on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Anna%20Art%20Nail%20Studio%20LLC%204060%20S%20El%20Camino%20Real%20Unit%20A%20Studio%2020" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Anna%20Art%20Nail%20Studio%20LLC%204060%20S%20El%20Camino%20Real%20Unit%20A%20Studio%2020" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/kim-s-nail-bar-san-mateo.html">Kim’s Nail Bar</a></h3>
         <div class="m">nails</div>
         <p>A nail salon on South El Camino Real Ste A Room19.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kim%E2%80%99s%20Nail%20Bar%204060%20S%20El%20Camino%20Real%20Ste%20A%20Room19" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kim%E2%80%99s%20Nail%20Bar%204060%20S%20El%20Camino%20Real%20Ste%20A%20Room19" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/stress-free-auto-care-san-mateo.html">Stress-Free Auto Care</a></h3>
         <div class="m">auto</div>
         <p>An auto repair shop on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Stress-Free%20Auto%20Care%203825%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Stress-Free%20Auto%20Care%203825%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/j-j-alterations-san-mateo.html">J J Alterations</a></h3>
         <div class="m">tailor</div>
         <p>A tailor and alterations shop on 37th Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=J%20J%20Alterations%205%2037th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=J%20J%20Alterations%205%2037th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/a-cut-above-grooming-west.html">A Cut Above Grooming Salon West</a></h3>
         <div class="m">pet-grooming</div>
         <p>An independent full-service dog and cat grooming salon on 37th Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=A%20Cut%20Above%20Grooming%20Salon%20West%2083%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=A%20Cut%20Above%20Grooming%20Salon%20West%2083%2037th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/boat-feet-shoe-repair.html">Boat Feet Shoe Repair</a></h3>
         <div class="m">Shoe repair</div>
         <p>Shoe repair shop near Hillsdale.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Boat%20Feet%20Shoe%20Repair%201212%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Boat%20Feet%20Shoe%20Repair%201212%20W%20Hillsdale%20Blvd%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
     </section>
 
@@ -547,7 +547,7 @@
       <details><summary>Is San Mateo Local a paid directory?</summary><p>No. Nobody pays to be listed, and there are no chains. It's an honest guide, not an ad platform.</p></details>
     </section>
 
-    <div class="localsline" style="margin:1.7rem 0; padding:1.15rem 1.4rem; background:var(--paper-2); border-left:3px solid var(--clay); border-radius:0 8px 8px 0; line-height:1.55;"><strong>Know Hillsdale better than we do?</strong> We're locals too, and we would rather get it right than get it fast. If a spot is missing, has closed, or is filed in the wrong neighborhood, <a href="mailto:hello@sanmateolocal.com?subject=About%20Hillsdale" style="color:var(--clay-deep); font-weight:700;">tell us</a>. This guide gets better every time a neighbor pitches in.</div>
+    <div class="localsline" style="margin:1.7rem 0; padding:1.15rem 1.4rem; background:var(--paper-2); border-left:3px solid var(--bay); border-radius:0 8px 8px 0; line-height:1.55;"><strong>Know Hillsdale better than we do?</strong> We're locals too, and we would rather get it right than get it fast. If a spot is missing, has closed, or is filed in the wrong neighborhood, <a href="mailto:hello@sanmateolocal.com?subject=About%20Hillsdale" style="color:var(--bay-deep); font-weight:700;">tell us</a>. This guide gets better every time a neighbor pitches in.</div>
 
     <div class="ownline">Own a business in Hillsdale? <a href="for-business-owners.html#getlisted">Get listed free</a>, or <a href="for-business-owners.html">see how we help you show up better</a> &rarr;</div>
 
@@ -570,7 +570,7 @@
       </div>
     </div>
   </div>
-  <p style="text-align:center; color:var(--ink-soft); font-size:0.92rem; padding:1.75rem 1.5rem 0;">More added every week. Got a favorite? <a href="suggest.html" style="color:var(--clay-deep); font-weight:700;">Vote on the Best Of.</a> &nbsp;&middot;&nbsp; Own a business we're missing? <a href="for-business-owners.html#getlisted" style="color:var(--clay-deep); font-weight:700;">Get listed, free.</a></p>
+  <p style="text-align:center; color:var(--ink-soft); font-size:0.92rem; padding:1.75rem 1.5rem 0;">More added every week. Got a favorite? <a href="suggest.html" style="color:var(--bay-deep); font-weight:700;">Vote on the Best Of.</a> &nbsp;&middot;&nbsp; Own a business we're missing? <a href="for-business-owners.html#getlisted" style="color:var(--bay-deep); font-weight:700;">Get listed, free.</a></p>
   <footer class="site">
     <div class="wrap">
       <div><div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg><span class="brand-name">San Mateo Local</span></div></div>

@@ -23,15 +23,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-  :root { --paper:#FAF6EC; --paper-2:#F2E9D4; --ink:#221D16; --ink-soft:#5E5446; --clay:#C25B3A; --clay-deep:#A5492B; --sage:#41614B; --sage-deep:#324C3A; --line:#E3D6BC; --line-soft:#ECE1CB; --card:#FFFDF7; }
-  [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage:#6E9077; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; --card:#221B14; }
+  :root { --paper:#F6F0E4; --paper-2:#EFE7D5; --ink:#17323A; --ink-soft:#47595C; --clay:#C85A38; --clay-deep:#A5492B; --sage:#3C5A43; --sage-deep:#2E4A38; --line:#E1D9C6; --line-soft:#ECE1CB; --card:#FFFDF7; --bay:#10717A; --bay-deep:#0C5B62; }
+  [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --sage:#6E9077; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; --card:#221B14; --bay:#3FA3AA; --bay-deep:#2E8A90; }
   * { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
   body { overflow-x: hidden; max-width: 100%; font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased; }
   h1,h2,h3 { font-family:'Cormorant Garamond',Georgia,serif; line-height:1.08; font-weight:600; letter-spacing:-0.01em; }
   a { color:inherit; text-decoration:none; }
   .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
-  .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+  .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--bay-deep); }
   /* masthead (matches the guide) */
   .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:50; box-shadow:0 6px 24px -18px rgba(0,0,0,0.4); }
   .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1.5rem; max-width:1140px; margin:0 auto; }
@@ -41,14 +41,14 @@
   .masthead-right { display:flex; align-items:center; gap:1.25rem; }
   .masthead-nav { display:flex; gap:1.4rem; align-items:center; }
   .masthead-nav a { font-size:0.74rem; font-weight:600; letter-spacing:0.13em; text-transform:uppercase; color:var(--ink-soft); }
-  .masthead-nav a:hover { color:var(--clay-deep); }
-  .masthead-nav a.on { color:var(--clay-deep); font-weight:600; }
+  .masthead-nav a:hover { color:var(--bay-deep); }
+  .masthead-nav a.on { color:var(--bay-deep); font-weight:600; }
   .theme-toggle { background:none; border:1.5px solid var(--line); border-radius:999px; width:36px; height:36px; cursor:pointer; color:var(--ink); font-size:1rem; display:inline-flex; align-items:center; justify-content:center; flex:none; }
   .theme-toggle .sun { display:none; } [data-theme="dark"] .theme-toggle .moon { display:none; } [data-theme="dark"] .theme-toggle .sun { display:inline; }
   .menu-btn { display:none; background:none; border:1.5px solid var(--line); border-radius:8px; width:38px; height:38px; cursor:pointer; color:var(--ink); align-items:center; justify-content:center; padding:0; flex:none; }
   .menu-btn svg { width:20px; height:20px; }
   .mobile-nav { display:none; }
-  @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line-soft); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--clay-deep); } }
+  @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line-soft); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--bay-deep); } }
   /* lively hero */
   .buzz-hero { background:linear-gradient(rgba(24,17,12,.55),rgba(24,17,12,.62)), url('/images/sml-downtown-life.jpg'); background-size:cover; background-position:center; color:#fff; padding:4.2rem 0 3.8rem; text-align:center; position:relative; overflow:hidden; }
   .buzz-hero .emoji-row { display:flex; justify-content:center; gap:1.4rem; opacity:0.92; margin-bottom:1rem; color:#fff; }
@@ -57,7 +57,7 @@
   /* filter chips */
   .chips { display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; padding:1.6rem 0 0.5rem; }
   .chip { display:inline-flex; align-items:center; gap:0.35rem; border:1.5px solid var(--line); background:var(--card); color:var(--ink); font-weight:600; font-size:0.85rem; padding:0.4rem 0.95rem; border-radius:999px; cursor:pointer; transition:all 0.15s ease; }
-  .chip:hover { border-color:var(--clay); }
+  .chip:hover { border-color:var(--bay); }
   .chip.on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
   /* card grid */
   .buzz-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.25rem; padding:1.6rem 0 3.5rem; align-items:start; grid-auto-flow:dense; }
@@ -74,7 +74,7 @@
   .bcard h3 { font-size:1.5rem; margin:0 0 0.35rem; }
   .bcard .meta { font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--sage-deep); font-weight:700; margin-bottom:0.6rem; }
   .bcard p.d { color:var(--ink-soft); font-size:0.98rem; flex:1; }
-  .bcard .go { margin-top:0.9rem; font-weight:700; color:var(--clay-deep); font-size:0.9rem; }
+  .bcard .go { margin-top:0.9rem; font-weight:700; color:var(--bay-deep); font-size:0.9rem; }
   .buzz-cta { text-align:center; padding:0 0 3.5rem; }
   .buzz-cta a { display:inline-block; background:var(--clay); color:#fff; font-weight:700; padding:0.9rem 1.8rem; border-radius:8px; }
   .buzz-note { text-align:center; color:var(--ink-soft); font-size:0.9rem; padding:0 0 1rem; }
@@ -84,14 +84,14 @@
   footer .brand-name { font-size:1.3rem; }
   .f-nav { display:flex; flex-direction:column; gap:0.4rem; }
   .f-nav a { font-size:0.92rem; color:var(--ink-soft); }
-  .f-nav a:hover { color:var(--clay-deep); }
+  .f-nav a:hover { color:var(--bay-deep); }
   .f-copy { width:100%; border-top:1px solid var(--line); margin-top:1.5rem; padding-top:1.5rem; font-size:0.8rem; color:var(--ink-soft); }</style>
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-<!-- BUZZ-FRESH: added=2026-09-19 events=4 -->
-  <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--clay-deep);">Get on the guide &rarr;</strong></a></div>
-  <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--clay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
+<!-- BUZZ-FRESH: added=2026-09-16 events=2 -->
+  <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--bay-deep);">Get on the guide &rarr;</strong></a></div>
+  <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--bay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
   <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
   <header class="masthead">
     <div class="masthead-top">
@@ -189,16 +189,7 @@
           <p class="d">A family florist that has bloomed in San Mateo since 1933.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="https://www.google.com/maps/search/?api=1&amp;query=B%20Street%20San%20Mateo" data-type="Event" style="--tc:#3B5BA0; animation-delay:0.25s;">
-          
-          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</span><span class="fresh">New</span></div>
-          
-          <h3>Head West Marketplace</h3>
-          <p class="meta">Downtown · Sat Sep 19, 11am–5pm</p>
-          <p class="d">The maker’s market takes over pedestrian-only South B Street, from First to Third. Local makers, crafters, artists, and vintage sellers, plus live music all day. Free, pet and kid friendly.</p>
-          <span class="go">Take a look &rarr;</span>
-        </a>
-        <a class="bcard" href="aldos-pizza-san-mateo.html" data-type="Support Local" style="--tc:#A5492B; animation-delay:0.30000000000000004s;">
+        <a class="bcard" href="aldos-pizza-san-mateo.html" data-type="Support Local" style="--tc:#A5492B; animation-delay:0.25s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Support Local</span></div>
           
@@ -207,7 +198,7 @@
           <p class="d">San Mateo's oldest pizzeria nearly closed this summer. The neighborhood is keeping it open, so go grab a pie. Read their story.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="things-to-do.html" data-type="Event" style="--tc:#3B5BA0; animation-delay:0.35000000000000003s;">
+        <a class="bcard" href="things-to-do.html" data-type="Event" style="--tc:#3B5BA0; animation-delay:0.30000000000000004s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</span></div>
           
@@ -216,7 +207,7 @@
           <p class="d">A free day-long downtown celebration of art, music, dance, poetry, and food, with live mural painting, cultural performances, and local artists.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="eat-drink.html" data-type="Live Music" style="--tc:#2E7D8A; animation-delay:0.4s;">
+        <a class="bcard" href="eat-drink.html" data-type="Live Music" style="--tc:#2E7D8A; animation-delay:0.35000000000000003s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Live Music</span></div>
           
@@ -225,7 +216,7 @@
           <p class="d">Old-school Italian with live jazz several nights a week.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="eat-drink.html" data-type="Featured" style="--tc:#C25B3A; animation-delay:0.45s;">
+        <a class="bcard" href="eat-drink.html" data-type="Featured" style="--tc:#C25B3A; animation-delay:0.4s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Featured</span></div>
           
@@ -234,7 +225,7 @@
           <p class="d">Earned its 9th Michelin Bib Gourmand in 2026. Scratch-made Northern-Italian pastas and an all-Italian wine list.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="downtown-walking-tour.html" data-type="Arts" style="--tc:#B07D2B; animation-delay:0.5s;">
+        <a class="bcard" href="downtown-walking-tour.html" data-type="Arts" style="--tc:#B07D2B; animation-delay:0.45s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Arts</span></div>
           
@@ -243,7 +234,7 @@
           <p class="d">A vibrant new mural by Leysar Garcia, winner of last year's Mural Madness live-painting competition, funded by the county and downtown partners.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="local-services.html" data-type="Deal" style="--tc:#C0392B; animation-delay:0.55s;">
+        <a class="bcard" href="local-services.html" data-type="Deal" style="--tc:#C0392B; animation-delay:0.5s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Deal</span></div>
           
@@ -252,7 +243,7 @@
           <p class="d">Weekly happy-hour specials on services at this downtown salon.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="eat-drink.html" data-type="Happy Hour" style="--tc:#D98A2B; animation-delay:0.6s;">
+        <a class="bcard" href="eat-drink.html" data-type="Happy Hour" style="--tc:#D98A2B; animation-delay:0.55s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Happy Hour</span></div>
           
@@ -297,22 +288,13 @@
           <p class="d">A personal injury and employment law firm on Borel Avenue.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="https://www.google.com/maps/search/?api=1&amp;query=Seal%20Point%20Park%20San%20Mateo" data-type="Event" style="--tc:#3B5BA0; animation-delay:0.6s;">
-          
-          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</span><span class="fresh">New</span></div>
-          
-          <h3>43rd Annual Coastal Cleanup Day</h3>
-          <p class="meta">Seal Point Park · Sat Sep 19, 9am–noon</p>
-          <p class="d">Help clean up the bayfront at Seal Point Park. Bring gloves, a bucket, and sun protection. Good for first timers and longtime volunteers alike.</p>
-          <span class="go">Take a look &rarr;</span>
-        </a>
     </div>
-    <p class="buzz-note">Something worth shouting about at your spot? <a href="for-business-owners.html#localbuzz" style="color:var(--clay-deep); font-weight:700;">Add to the buzz &rarr;</a></p>
+    <p class="buzz-note">Something worth shouting about at your spot? <a href="for-business-owners.html#localbuzz" style="color:var(--bay-deep); font-weight:700;">Add to the buzz &rarr;</a></p>
     <div class="buzz-cta">
       <a href="index.html">&larr; Back to the guide</a>
     </div>
   </div>
-  <p style="text-align:center; color:var(--ink-soft); font-size:0.92rem; padding:1.75rem 1.5rem 0;">More added every week. Got a favorite? <a href="suggest.html" style="color:var(--clay-deep); font-weight:700;">Vote on the Best Of.</a> &nbsp;&middot;&nbsp; Own a business we're missing? <a href="for-business-owners.html#getlisted" style="color:var(--clay-deep); font-weight:700;">Get listed, free.</a></p>
+  <p style="text-align:center; color:var(--ink-soft); font-size:0.92rem; padding:1.75rem 1.5rem 0;">More added every week. Got a favorite? <a href="suggest.html" style="color:var(--bay-deep); font-weight:700;">Vote on the Best Of.</a> &nbsp;&middot;&nbsp; Own a business we're missing? <a href="for-business-owners.html#getlisted" style="color:var(--bay-deep); font-weight:700;">Get listed, free.</a></p>
   <footer class="site">
     <div class="wrap">
       <div><div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg><span class="brand-name">San Mateo Local</span></div></div>

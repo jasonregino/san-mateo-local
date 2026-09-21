@@ -32,8 +32,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-  :root { --paper:#FAF6EC; --paper-2:#F2E9D4; --ink:#221D16; --ink-soft:#5E5446; --clay:#C25B3A; --clay-deep:#A5492B; --green:#41614B; --sage-deep:#324C3A; --line:#E3D6BC; --line-soft:#ECE1CB; }
-  [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --green:#88AC8F; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; }
+  :root { --paper:#F6F0E4; --paper-2:#EFE7D5; --ink:#17323A; --ink-soft:#47595C; --clay:#C85A38; --clay-deep:#A5492B; --green:#3C5A43; --sage-deep:#2E4A38; --line:#E1D9C6; --line-soft:#ECE1CB; --bay:#10717A; --bay-deep:#0C5B62; }
+  [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --green:#88AC8F; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; --bay:#3FA3AA; --bay-deep:#2E8A90; }
   * { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
   body { overflow-x: hidden; max-width: 100%; font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased; }
@@ -41,7 +41,7 @@
   a { color:inherit; text-decoration:none; }
   .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
   .article { max-width:48rem; margin:0 auto; padding:0 1.5rem; }
-  .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+  .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--bay-deep); }
   /* masthead */
   .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:50; box-shadow:0 6px 24px -18px rgba(0,0,0,0.4); }
   .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1.5rem; max-width:1140px; margin:0 auto; }
@@ -51,20 +51,20 @@
   .masthead-right { display:flex; align-items:center; gap:1.25rem; }
   .masthead-nav { display:flex; gap:1.4rem; align-items:center; }
   .masthead-nav a { font-size:0.74rem; font-weight:600; letter-spacing:0.13em; text-transform:uppercase; color:var(--ink-soft); }
-  .masthead-nav a:hover { color:var(--clay-deep); }
+  .masthead-nav a:hover { color:var(--bay-deep); }
   .theme-toggle { background:none; border:1.5px solid var(--line); border-radius:999px; width:36px; height:36px; cursor:pointer; color:var(--ink); font-size:1rem; display:inline-flex; align-items:center; justify-content:center; flex:none; }
   .theme-toggle .sun { display:none; } [data-theme="dark"] .theme-toggle .moon { display:none; } [data-theme="dark"] .theme-toggle .sun { display:inline; }
   .menu-btn { display:none; background:none; border:1.5px solid var(--line); border-radius:8px; width:38px; height:38px; cursor:pointer; color:var(--ink); align-items:center; justify-content:center; padding:0; flex:none; }
   .menu-btn svg { width:20px; height:20px; }
   .mobile-nav { display:none; }
   .dateline { border-top:1px solid var(--line); text-align:center; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft); padding:0.4rem 1rem; }
-  @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line-soft); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--clay-deep); } }
+  @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line-soft); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--bay-deep); } }
   /* hero */
   .hood-head { padding:3.2rem 0 2rem; border-bottom:1.5px solid var(--ink); }
-  .hood-head .back { font-size:0.85rem; font-weight:600; color:var(--clay-deep); }
+  .hood-head .back { font-size:0.85rem; font-weight:600; color:var(--bay-deep); }
   .hood-head h1 { font-size:clamp(2.2rem,6vw,3.4rem); margin:0.7rem 0 0.6rem; }
   .hood-head .intro { color:var(--ink); font-size:1.2rem; font-family:'Cormorant Garamond',serif; font-style:italic; max-width:42rem; }
-  .cat-quickanswer { margin-top:1.1rem; font-size:1.05rem; line-height:1.55; color:var(--ink); background:var(--paper-2); border-left:3px solid var(--clay); padding:0.9rem 1.15rem; border-radius:0 8px 8px 0; max-width:42rem; font-family:'Inter',sans-serif; font-style:normal; }
+  .cat-quickanswer { margin-top:1.1rem; font-size:1.05rem; line-height:1.55; color:var(--ink); background:var(--paper-2); border-left:3px solid var(--bay); padding:0.9rem 1.15rem; border-radius:0 8px 8px 0; max-width:42rem; font-family:'Inter',sans-serif; font-style:normal; }
   .cat-faq { padding:1.8rem 0 0.5rem; }
   .cat-faq h2 { font-size:1.4rem; font-weight:600; margin-bottom:0.5rem; }
   .cat-faq details { border-bottom:1px solid var(--line); padding:0.85rem 0; }
@@ -74,18 +74,18 @@
   .history { padding:2.4rem 0 0.5rem; }
   .history h2 { font-size:1.6rem; margin-bottom:0.7rem; }
   .history p { color:var(--ink-soft); font-size:1.05rem; max-width:44rem; }
-  .facts { margin:1.5rem 0 0.5rem; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--clay); border-radius:0 10px 10px 0; max-width:44rem; }
+  .facts { margin:1.5rem 0 0.5rem; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); border-radius:0 10px 10px 0; max-width:44rem; }
   .facts h3 { font-size:1.05rem; margin-bottom:0.6rem; }
   .facts ul { list-style:none; display:grid; gap:0.5rem; }
   .facts li { padding-left:1.4rem; position:relative; color:var(--ink); font-size:0.98rem; }
-  .facts li::before { content:"\2605"; position:absolute; left:0; color:var(--clay-deep); }
+  .facts li::before { content:"\2605"; position:absolute; left:0; color:var(--bay-deep); }
   /* listings */
   .spots { padding:2rem 0 0.5rem; }
-  .spots > h2 { font-size:1.5rem; margin:2rem 0 0.3rem; padding-bottom:0.5rem; border-bottom:2px solid var(--clay); }
+  .spots > h2 { font-size:1.5rem; margin:2rem 0 0.3rem; padding-bottom:0.5rem; border-bottom:2px solid var(--bay); }
   .spot { padding:1.05rem 0; border-bottom:1px solid var(--line); }
   .spot:last-child { border-bottom:none; }
   .spot h3 { font-size:1.25rem; margin-bottom:0.15rem; }
-  .spot h3 a:hover { color:var(--clay-deep); }
+  .spot h3 a:hover { color:var(--bay-deep); }
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.35rem; }
   .spot p { color:var(--ink-soft); }
   .relguide { margin:2.2rem 0 0.5rem; padding:1.2rem 1.4rem; border:1.5px solid var(--ink); border-radius:12px; background:#fff; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
@@ -93,27 +93,27 @@
   .relguide .rg-t { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.15rem; }
   .relguide a.rg-b { background:var(--clay); color:#fff; font-weight:700; padding:0.6rem 1.2rem; border-radius:8px; font-size:0.95rem; white-space:nowrap; }
   .ownline { margin:1.8rem 0; padding:1.1rem 1.4rem; background:var(--paper-2); border-radius:10px; font-size:0.98rem; color:var(--ink-soft); }
-  .ownline a { color:var(--clay-deep); font-weight:700; }
+  .ownline a { color:var(--bay-deep); font-weight:700; }
   .others { margin:2.5rem 0 1rem; }
   .others h2 { font-size:1.3rem; margin-bottom:0.7rem; }
   .others .row { display:flex; flex-wrap:wrap; gap:0.6rem; }
   .others a { border:1.5px solid var(--line); border-radius:999px; padding:0.5rem 1.1rem; font-weight:600; font-size:0.92rem; color:var(--ink); }
-  .others a:hover { border-color:var(--clay); color:var(--clay-deep); }
+  .others a:hover { border-color:var(--bay); color:var(--bay-deep); }
   /* footer */
   footer.site { padding:3rem 0 2.5rem; border-top:1.5px solid var(--ink); margin-top:2rem; }
   footer.site .wrap { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; align-items:flex-start; }
   footer .brand-name { font-size:1.3rem; }
   .f-nav { display:flex; flex-direction:column; gap:0.4rem; }
   .f-nav a { font-size:0.92rem; color:var(--ink-soft); }
-  .f-nav a:hover { color:var(--clay-deep); }
+  .f-nav a:hover { color:var(--bay-deep); }
   .f-copy { width:100%; border-top:1px solid var(--line); margin-top:1.5rem; padding-top:1.5rem; font-size:0.8rem; color:var(--ink-soft); }</style>
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"El Camino Real — San Mateo Local","description":"A local guide to businesses along El Camino Real in San Mateo, the four-mile strip that runs the length of the city. Restaurants, auto shops, salons, and services from Downtown down to Hillsdale.","itemListElement":[{"@type":"ListItem","position":1,"name":"Oceanic Restaurant","address":"2507 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":2,"name":"Champagne Seafood Restaurant","address":"1325 S El Camino Real, San Mateo, CA 94402"},{"@type":"ListItem","position":3,"name":"Kaizen & Coffee","address":"2337 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":4,"name":"Fiero Caffe","address":"106 S El Camino Real, San Mateo, CA 94401"},{"@type":"ListItem","position":5,"name":"Taste & Glory","address":"1208 S El Camino Real, San Mateo, CA 94402"},{"@type":"ListItem","position":6,"name":"La Casa de los Huevos","address":"1214 S El Camino Real, San Mateo, CA 94402"},{"@type":"ListItem","position":7,"name":"Lolita Artisanal Bakery-Cafe","address":"3790 S El Camino Real, Ste 101, San Mateo, CA 94403"},{"@type":"ListItem","position":8,"name":"Caffeinated Cowboy","address":"3721 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":9,"name":"Route 92 Cocktail Lounge","address":"2128 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":10,"name":"Yumi Yogurt","address":"3955 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":11,"name":"Leo's Tacos Truck","address":"1990 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":12,"name":"Tacos El Flamingo","address":"1021 S El Camino Real, San Mateo, CA"},{"@type":"ListItem","position":13,"name":"Camila's Tacos","address":"1601 S El Camino Real, San Mateo, CA"},{"@type":"ListItem","position":14,"name":"Heidi's Pies","address":"1941 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":15,"name":"Golden Lotus Antiques","address":"2049 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":16,"name":"All Spice","address":"1602 S El Camino Real, San Mateo, CA 94402"},{"@type":"ListItem","position":17,"name":"La Fonda de","address":"2310 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":18,"name":"Pho Element","address":"2216 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":19,"name":"Seniore's Pizza","address":"2210 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":20,"name":"Truffle Poke Bar","address":"1234 S El Camino Real, San Mateo, CA 94402"},{"@type":"ListItem","position":21,"name":"Ah Sam Floral Co.","address":"2645 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":22,"name":"Creative Energy","address":"1917 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":23,"name":"San Mateo Automotive Service","address":"3925 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":24,"name":"All Star Cleaners","address":"2499 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":25,"name":"Borel Eye Doctors","address":"1528 S El Camino Real, San Mateo, CA 94402"},{"@type":"ListItem","position":26,"name":"Nijiya Market","address":"1956 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":27,"name":"Cuban Kitchen","address":"3799 S. El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":28,"name":"Glam Roofing","address":"2283 S El Camino Real, San Mateo, CA 94403"},{"@type":"ListItem","position":29,"name":"Sonrisas Dental Health, Inc.","address":"430 N. El Camino Real, San Mateo, CA 94401"},{"@type":"ListItem","position":30,"name":"Hot Yoga Plus","address":"1528 S El Camino Real #200, San Mateo, CA 94402"},{"@type":"ListItem","position":31,"name":"The Burger Br","address":"1501 S El Camino Real, San Mateo, CA"},{"@type":"ListItem","position":32,"name":"Sushilito Boy","address":"1600 S El Camino Real, San Mateo, CA"},{"@type":"ListItem","position":33,"name":"Kusan Bazaar","address":"2727 S El Camino Real Ste H, San Mateo, CA"},{"@type":"ListItem","position":34,"name":"Chef Zhao Bistro","address":"2450 S El Camino Real"},{"@type":"ListItem","position":35,"name":"Peking Alley","address":"4300 S El Camino Real"},{"@type":"ListItem","position":36,"name":"Rin-Tei","address":"104 S El Camino Real"},{"@type":"ListItem","position":37,"name":"Seapot Hot Pot & Korean BBQ","address":"1952 S El Camino Real"},{"@type":"ListItem","position":38,"name":"Silver House","address":"2224 S El Camino Real"},{"@type":"ListItem","position":39,"name":"Silver Lake Seafood Restaurant","address":"2291 S El Camino Real"},{"@type":"ListItem","position":40,"name":"Daiki Sushi","address":"2075 S El Camino Real"},{"@type":"ListItem","position":41,"name":"Santa Ramen","address":"1944 S El Camino Real"},{"@type":"ListItem","position":42,"name":"Shah Restaurant","address":"2299 S El Camino Real"},{"@type":"ListItem","position":43,"name":"Jack's Restaurant & Bar","address":"1750 S El Camino Real"},{"@type":"ListItem","position":44,"name":"Chai Yo Thai Cuisine","address":"2116 S El Camino Real"},{"@type":"ListItem","position":45,"name":"Charm Thai Eatery","address":"1428 S El Camino Real"},{"@type":"ListItem","position":46,"name":"Jayli’s Cocina","address":"28th Ave, S El Camino Real"},{"@type":"ListItem","position":47,"name":"Monchi's Red Tacos","address":"1300 S El Camino Real, San Mateo, CA 94401"},{"@type":"ListItem","position":48,"name":"S El Camino Taqueria","address":"2317 S El Camino Real"},{"@type":"ListItem","position":49,"name":"Mariscos el pariente #2","address":"908 S El Camino Real"},{"@type":"ListItem","position":50,"name":"Maverick Jack's Burgers & Shakes","address":"4000 S El Camino Real"},{"@type":"ListItem","position":51,"name":"Fitness 19","address":"2727 S El Camino Real D-E"},{"@type":"ListItem","position":52,"name":"Optimum Strength and Conditioning","address":"3600 S El Camino Real Suite C"},{"@type":"ListItem","position":53,"name":"Pilates V San Mateo","address":"4060 S El Camino Real Ste e"},{"@type":"ListItem","position":54,"name":"Symmetra Health and Chiropractic","address":"3600 S El Camino Real"},{"@type":"ListItem","position":55,"name":"Izumi Spa Massage","address":"4060 S El Camino Real"},{"@type":"ListItem","position":56,"name":"Body Central Massage Spa","address":"2833 S El Camino Real"},{"@type":"ListItem","position":57,"name":"Narawadee Massage Therapy","address":"1528 S El Camino Real #200"},{"@type":"ListItem","position":58,"name":"Stress Relief & Beauty Spa","address":"2615 S El Camino Real"},{"@type":"ListItem","position":59,"name":"Crystal Cove","address":"1222 S El Camino Real"},{"@type":"ListItem","position":60,"name":"LABO SPA","address":"2140 S El Camino Real"},{"@type":"ListItem","position":61,"name":"Massage Pro","address":"3718 S El Camino Real"},{"@type":"ListItem","position":62,"name":"Water Lounge Spa in San Mateo","address":"2500 S El Camino Real"},{"@type":"ListItem","position":63,"name":"Skin Friday Massage & Skincare","address":"4060 S El Camino Real Studio 27"},{"@type":"ListItem","position":64,"name":"Harmony Massage","address":"1110 S El Camino Real #3"},{"@type":"ListItem","position":65,"name":"Verona Massage","address":"1528 S El Camino Real"},{"@type":"ListItem","position":66,"name":"Amethyst Thai Massage","address":"1428 S El Camino Real Unit A"},{"@type":"ListItem","position":67,"name":"Yuanyi Acupuncture","address":"101 N El Camino Real"},{"@type":"ListItem","position":68,"name":"Three Lotus Dragon Acupuncture Wellness Center PC","address":"1528 S El Camino Real #200"},{"@type":"ListItem","position":69,"name":"UNION ACUPUNCTURE CENTER","address":"2304 S El Camino Real"},{"@type":"ListItem","position":70,"name":"Wei-I Tien Acupuncture","address":"2311 S El Camino Real"},{"@type":"ListItem","position":71,"name":"Yeung Wai Keung Herbalist Consulting Center 楊伟强跌打療疗中心","address":"2205 S El Camino Real"},{"@type":"ListItem","position":72,"name":"The Dermal Formula","address":"70 N El Camino Real Ste B"},{"@type":"ListItem","position":73,"name":"YES Beauty Spa","address":"1502 S El Camino Real"},{"@type":"ListItem","position":74,"name":"Serenity Day Spa","address":"2285 S El Camino Real"},{"@type":"ListItem","position":75,"name":"Deccan Dental - Samir Nanjapa DDS","address":"1528 S El Camino Real #408"},{"@type":"ListItem","position":76,"name":"Hui Dental Group","address":"901 S El Camino Real"},{"@type":"ListItem","position":77,"name":"Sachdev Deepak K DDS","address":"1415 S El Camino Real #3019"},{"@type":"ListItem","position":78,"name":"Laurel Dental San Mateo","address":"100 S El Camino Real #100A"},{"@type":"ListItem","position":79,"name":"Ben Yount DDS","address":"720 N El Camino Real"},{"@type":"ListItem","position":80,"name":"Sunesy Hair Design","address":"2335 S El Camino Real"},{"@type":"ListItem","position":81,"name":"Artisan Salon- CA","address":"1228 S El Camino Real"},{"@type":"ListItem","position":82,"name":"Studio 2325 Hair & Skin","address":"2325 S El Camino Real"},{"@type":"ListItem","position":83,"name":"Binh's Family Hair Care","address":"2140 S El Camino Real"},{"@type":"ListItem","position":84,"name":"Style n’ Smile","address":"2330 S El Camino Real"},{"@type":"ListItem","position":85,"name":"Beauty Deluxe Salon","address":"1933 S El Camino Real"},{"@type":"ListItem","position":86,"name":"Top Image Salon","address":"4060 S El Camino Real"},{"@type":"ListItem","position":87,"name":"MAYFAIR HAIR & NAILS CARE","address":"2228 S El Camino Real"},{"@type":"ListItem","position":88,"name":"Ironwood hair company","address":"1226 S El Camino Real"},{"@type":"ListItem","position":89,"name":"Anna Art Nail Studio LLC","address":"4060 S El Camino Real Unit A Studio 20"},{"@type":"ListItem","position":90,"name":"Kim’s Nail Bar","address":"4060 S El Camino Real Ste A Room19"},{"@type":"ListItem","position":91,"name":"Kimmy's Nail Salon","address":"1218 S El Camino Real"},{"@type":"ListItem","position":92,"name":"Stress-Free Auto Care","address":"3825 S El Camino Real"},{"@type":"ListItem","position":93,"name":"Clarity Auto Care","address":"2160 S El Camino Real"},{"@type":"ListItem","position":94,"name":"Ma's European Auto Service","address":"2660 S El Camino Real"},{"@type":"ListItem","position":95,"name":"Beacon Auto Care","address":"2300 S El Camino Real"},{"@type":"ListItem","position":96,"name":"Wheel Works","address":"2640 S El Camino Real"},{"@type":"ListItem","position":97,"name":"Sapporo Rock & Roll Sushi","address":"2456 S El Camino Real"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many local businesses does San Mateo Local list in El Camino Real?","acceptedAnswer":{"@type":"Answer","text":"97 local, independent spots in El Camino Real, San Mateo, and the list grows every week."}},{"@type":"Question","name":"What kind of businesses are in El Camino Real, San Mateo?","acceptedAnswer":{"@type":"Answer","text":"El Camino Real has a mix of local restaurants, shops, and services. Browse them above, or ask a local for a pick."}},{"@type":"Question","name":"Is San Mateo Local a paid directory?","acceptedAnswer":{"@type":"Answer","text":"No. Nobody pays to be listed, and there are no chains. It's an honest guide, not an ad platform."}}]}</script>
-  <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--clay-deep);">Get on the guide &rarr;</strong></a></div>
-  <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--clay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
+  <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--bay-deep);">Get on the guide &rarr;</strong></a></div>
+  <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--bay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
   <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
   <header class="masthead">
     <div class="masthead-top">
@@ -162,579 +162,579 @@
         <h3><a href="/business/oceanic-restaurant.html">Oceanic Restaurant</a></h3>
         <div class="m">Chinese (Hunan/Mandarin) &middot; $$</div>
         <p>Hunan and Mandarin home cooking; regulars cite the garlic eggplant, green onion pancake, and crispy noodles.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Oceanic%20Restaurant%202507%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Oceanic%20Restaurant%202507%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/champagne-seafood.html">Champagne Seafood Restaurant</a></h3>
         <div class="m">Cantonese dim sum &middot; $$</div>
         <p>Cantonese dim sum and seafood with a broad traditional menu.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Champagne%20Seafood%20Restaurant%201325%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Champagne%20Seafood%20Restaurant%201325%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/kaizen-and-coffee.html">Kaizen &amp; Coffee</a></h3>
         <div class="m">Coffee &middot; $$</div>
         <p>Specialty coffee bar with Asian-inspired signature drinks like black sesame and miso caramel lattes.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kaizen%20%26%20Coffee%202337%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kaizen%20%26%20Coffee%202337%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/fiero-caffe.html">Fiero Caffe</a></h3>
         <div class="m">Italian cafe / brunch &middot; $$</div>
         <p>Owner-run Italian-style cafe serving espresso plus homemade breakfast and brunch like Sicilian omelette, carbonara, and tiramisu.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Fiero%20Caffe%20106%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Fiero%20Caffe%20106%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/taste-and-glory.html">Taste &amp; Glory</a></h3>
         <div class="m">Asian-American brunch &middot; $$</div>
         <p>Asian-American fusion brunch with creative plates like Thai tea French toast and Tom Yum scramble; weekends are walk-in only.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Taste%20%26%20Glory%201208%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Taste%20%26%20Glory%201208%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/la-casa-de-los-huevos.html">La Casa de los Huevos</a></h3>
         <div class="m">Mexican breakfast &middot; $$</div>
         <p>Sinaloa-style Mexican breakfast and brunch including chilaquiles, huevos rancheros, omelets, and mariscos.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=La%20Casa%20de%20los%20Huevos%201214%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=La%20Casa%20de%20los%20Huevos%201214%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/lolita-bakery.html">Lolita Artisanal Bakery-Cafe</a></h3>
         <div class="m">Latin-American bakery &middot; $$</div>
         <p>Latin-American artisan bakery cafe known for alfajores and pastries, with coffee in a cozy setting.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Lolita%20Artisanal%20Bakery-Cafe%203790%20S%20El%20Camino%20Real%2C%20Ste%20101%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Lolita%20Artisanal%20Bakery-Cafe%203790%20S%20El%20Camino%20Real%2C%20Ste%20101%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/caffeinated-cowboy.html">Caffeinated Cowboy</a></h3>
         <div class="m">Coffee &middot; $</div>
         <p>Locally owned shop for customizable coffee, matcha, and energy drinks plus breakfast burritos and pastries.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Caffeinated%20Cowboy%203721%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Caffeinated%20Cowboy%203721%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/route-92-lounge.html">Route 92 Cocktail Lounge</a></h3>
         <div class="m">Dive bar &middot; $</div>
         <p>No-frills neighborhood bar with daily happy hour, a pool table, darts, and a back smoking area.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Route%2092%20Cocktail%20Lounge%202128%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Route%2092%20Cocktail%20Lounge%202128%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/yumi-yogurt.html">Yumi Yogurt</a></h3>
         <div class="m">Frozen yogurt &amp; ice cream &middot; $</div>
         <p>A family-owned frozen yogurt and ice cream shop serving San Mateo since 1985, open late every night with a wall of self-serve flavors and toppings.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Yumi%20Yogurt%203955%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Yumi%20Yogurt%203955%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/leos-tacos.html">Leo's Tacos Truck</a></h3>
         <div class="m">Tacos &middot; $</div>
         <p>Al pastor tacos carved off a vertical trompo, a family Mexican-food operation that started in LA and now parks on El Camino, open late.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Leo's%20Tacos%20Truck%201990%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Leo's%20Tacos%20Truck%201990%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/tacos-el-flamingo.html">Tacos El Flamingo</a></h3>
         <div class="m">Mexican &middot; $</div>
         <p>A South El Camino stand serving breakfast burritos, tacos, tortas, and quesadillas, open early through mid-afternoon.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Tacos%20El%20Flamingo%201021%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Tacos%20El%20Flamingo%201021%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/camilas-tacos.html">Camila's Tacos</a></h3>
         <div class="m">Mexican &middot; $</div>
         <p>A small South El Camino taqueria doing tacos, burritos, sopes, and quesadillas on weekdays.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Camila's%20Tacos%201601%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Camila's%20Tacos%201601%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/heidis-pies.html">Heidi's Pies</a></h3>
         <div class="m">American diner &middot; $$</div>
         <p>A San Mateo classic since 1970, famous for dozens of house-made-from-scratch pies served alongside all-day American diner fare.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Heidi's%20Pies%201941%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Heidi's%20Pies%201941%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/all-spice.html">All Spice</a></h3>
         <div class="m">Modern Californian / Indian fusion &middot; $$</div>
         <p>A former Michelin-starred fine dining spot serving prix-fixe chef's menus of modern Californian cuisine with Indian influences inside a converted Victorian.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=All%20Spice%201602%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=All%20Spice%201602%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/la-fonda-de-san-mateo.html">La Fonda de</a></h3>
         <div class="m">Mexican &middot; $$</div>
         <p>A Mexican restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=La%20Fonda%20de%202310%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=La%20Fonda%20de%202310%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/pho-element.html">Pho Element</a></h3>
         <div class="m">Vietnamese &middot; $$</div>
         <p>A Vietnamese spot specializing in Northern-style pho served with wide rice noodles, plus vegetarian pho options.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Pho%20Element%202216%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Pho%20Element%202216%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/seniore-s-pizza.html">Seniore's Pizza</a></h3>
         <div class="m">Pizza &middot; $$</div>
         <p>A casual pizzeria open late with a two-slice-and-soda deal available all day and night.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Seniore's%20Pizza%202210%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Seniore's%20Pizza%202210%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/truffle-poke-bar.html">Truffle Poke Bar</a></h3>
         <div class="m">Poke / Hawaiian &middot; $$</div>
         <p>A build-your-own poke shop with a truffle-fusion angle, chef's-pick bowls, and gluten-free options.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Truffle%20Poke%20Bar%201234%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Truffle%20Poke%20Bar%201234%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/cuban-kitchen.html">Cuban Kitchen</a></h3>
         <div class="m">restaurant</div>
         <p>Family-run authentic Cuban restaurant</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Cuban%20Kitchen%203799%20S.%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Cuban%20Kitchen%203799%20S.%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/the-burger-br-san-mateo.html">The Burger Br</a></h3>
         <div class="m">Brazilian burgers &middot; $</div>
         <p>A Brazilian burger truck, open evenings Tuesday through Saturday.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=The%20Burger%20Br%201501%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=The%20Burger%20Br%201501%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/sushilito-boy-san-mateo.html">Sushilito Boy</a></h3>
         <div class="m">Latin fusion sushi &middot; $</div>
         <p>A Latin-fusion sushi and seafood truck, unlike anything else in the guide.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Sushilito%20Boy%201600%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Sushilito%20Boy%201600%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/chef-zhao-bistro-san-mateo.html">Chef Zhao Bistro</a></h3>
         <div class="m">Chinese &middot; $$</div>
         <p>A Chinese restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Chef%20Zhao%20Bistro%202450%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Chef%20Zhao%20Bistro%202450%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/peking-alley-san-mateo.html">Peking Alley</a></h3>
         <div class="m">Chinese &middot; $$</div>
         <p>A Chinese restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Peking%20Alley%204300%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Peking%20Alley%204300%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/rin-tei-san-mateo.html">Rin-Tei</a></h3>
         <div class="m">Asian Fusion &middot; $$</div>
         <p>A Asian Fusion restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Rin-Tei%20104%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Rin-Tei%20104%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/seapot-hot-pot-korean-bbq-san-mateo.html">Seapot Hot Pot &amp; Korean BBQ</a></h3>
         <div class="m">Korean BBQ &amp; Chinese hot pot &middot; $$</div>
         <p>A Hot Pot restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Seapot%20Hot%20Pot%20%26%20Korean%20BBQ%201952%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Seapot%20Hot%20Pot%20%26%20Korean%20BBQ%201952%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/silver-house-san-mateo.html">Silver House</a></h3>
         <div class="m">Chinese &middot; $$</div>
         <p>A Chinese restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Silver%20House%202224%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Silver%20House%202224%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/silver-lake-seafood-restaurant-san-mateo.html">Silver Lake Seafood Restaurant</a></h3>
         <div class="m">Chinese &middot; $$</div>
         <p>A Chinese restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Silver%20Lake%20Seafood%20Restaurant%202291%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Silver%20Lake%20Seafood%20Restaurant%202291%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/daiki-sushi-san-mateo.html">Daiki Sushi</a></h3>
         <div class="m">Sushi &middot; $$</div>
         <p>A Sushi restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Daiki%20Sushi%202075%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Daiki%20Sushi%202075%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/santa-ramen-san-mateo.html">Santa Ramen</a></h3>
         <div class="m">Ramen &middot; $$</div>
         <p>A Ramen restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Santa%20Ramen%201944%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Santa%20Ramen%201944%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/shah-restaurant-san-mateo.html">Shah Restaurant</a></h3>
         <div class="m">Indian &middot; $$</div>
         <p>A Indian restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Shah%20Restaurant%202299%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Shah%20Restaurant%202299%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/jack-s-restaurant-bar-san-mateo.html">Jack's Restaurant &amp; Bar</a></h3>
         <div class="m">American &middot; $$</div>
         <p>A American restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Jack's%20Restaurant%20%26%20Bar%201750%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Jack's%20Restaurant%20%26%20Bar%201750%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/chai-yo-thai-cuisine-san-mateo.html">Chai Yo Thai Cuisine</a></h3>
         <div class="m">Thai &middot; $$</div>
         <p>A Thai restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Chai%20Yo%20Thai%20Cuisine%202116%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Chai%20Yo%20Thai%20Cuisine%202116%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/charm-thai-eatery-san-mateo.html">Charm Thai Eatery</a></h3>
         <div class="m">Thai &middot; $$</div>
         <p>A Thai restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Charm%20Thai%20Eatery%201428%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Charm%20Thai%20Eatery%201428%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/jayli-s-cocina-san-mateo.html">Jayli’s Cocina</a></h3>
         <div class="m">Mexican &middot; $$</div>
         <p>A Mexican restaurant on 28th Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Jayli%E2%80%99s%20Cocina%2028th%20Ave%2C%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Jayli%E2%80%99s%20Cocina%2028th%20Ave%2C%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/monchi-s-red-tacos-san-mateo.html">Monchi's Red Tacos</a></h3>
         <div class="m">Mexican &middot; $$</div>
         <p>A Mexican restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Monchi's%20Red%20Tacos%201300%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Monchi's%20Red%20Tacos%201300%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/s-el-camino-taqueria-san-mateo.html">S El Camino Taqueria</a></h3>
         <div class="m">Mexican &middot; $$</div>
         <p>A Mexican restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=S%20El%20Camino%20Taqueria%202317%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=S%20El%20Camino%20Taqueria%202317%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/mariscos-el-pariente-2-san-mateo.html">Mariscos el pariente #2</a></h3>
         <div class="m">Mexican &middot; $$</div>
         <p>A Mexican restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Mariscos%20el%20pariente%20%232%20908%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Mariscos%20el%20pariente%20%232%20908%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/maverick-jack-s-burgers-shakes-san-mateo.html">Maverick Jack's Burgers &amp; Shakes</a></h3>
         <div class="m">Burger &middot; $$</div>
         <p>A Burger restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Maverick%20Jack's%20Burgers%20%26%20Shakes%204000%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Maverick%20Jack's%20Burgers%20%26%20Shakes%204000%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/sapporo-rock-roll-sushi-san-mateo.html">Sapporo Rock &amp; Roll Sushi</a></h3>
         <div class="m">Sushi &middot; $$</div>
         <p>A Sushi restaurant on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Sapporo%20Rock%20%26%20Roll%20Sushi%202456%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Sapporo%20Rock%20%26%20Roll%20Sushi%202456%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
     <h2>Shopping & Markets</h2>
       <div class="spot">
         <h3><a href="/business/golden-lotus-antiques.html">Golden Lotus Antiques</a></h3>
         <div class="m">Antiques &amp; home decor &middot; $$</div>
         <p>An antiques store carrying Chinese antique furniture, home decor, and gifts, open seven days a week.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Golden%20Lotus%20Antiques%202049%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Golden%20Lotus%20Antiques%202049%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/ah-sam-floral-co.html">Ah Sam Floral Co.</a></h3>
         <div class="m">Florist &middot; $$</div>
         <p>A third-generation family-owned florist operating in San Mateo since 1933.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Ah%20Sam%20Floral%20Co.%202645%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Ah%20Sam%20Floral%20Co.%202645%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/creative-energy.html">Creative Energy</a></h3>
         <div class="m">Hot tub / spa showroom &middot; $$</div>
         <p>An independent Bay Area hot tub and spa dealer with a San Mateo showroom.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Creative%20Energy%201917%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Creative%20Energy%201917%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/nijiya-market.html">Nijiya Market</a></h3>
         <div class="m">Japanese market &middot; $$</div>
         <p>A Japanese grocery carrying fresh sushi-grade fish, prepared bento, produce, and imported Japanese pantry goods.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Nijiya%20Market%201956%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Nijiya%20Market%201956%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/kusan-bazaar-san-mateo.html">Kusan Bazaar</a></h3>
         <div class="m">Central Asian grocery &amp; cafe</div>
         <p>A Central Asian specialty grocery and cafe on El Camino, with imported goods and a small cafe counter.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kusan%20Bazaar%202727%20S%20El%20Camino%20Real%20Ste%20H%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kusan%20Bazaar%202727%20S%20El%20Camino%20Real%20Ste%20H%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
     <h2>Local Services</h2>
       <div class="spot">
         <h3><a href="/business/san-mateo-automotive-service.html">San Mateo Automotive Service</a></h3>
         <div class="m">Auto repair &middot; $$</div>
         <p>An independent auto repair shop specializing in European and imported vehicles.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=San%20Mateo%20Automotive%20Service%203925%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=San%20Mateo%20Automotive%20Service%203925%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/all-star-cleaners.html">All Star Cleaners</a></h3>
         <div class="m">Dry cleaning / alterations &middot; $$</div>
         <p>A dry cleaner offering organic cleaning plus more than thirty years of tailoring and alterations.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=All%20Star%20Cleaners%202499%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=All%20Star%20Cleaners%202499%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/borel-eye-doctors.html">Borel Eye Doctors</a></h3>
         <div class="m">Optometry / eye care &middot; $$</div>
         <p>An independent optometric practice serving San Mateo since 1987.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Borel%20Eye%20Doctors%201528%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Borel%20Eye%20Doctors%201528%20S%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/sonrisas-dental-health-inc.html">Sonrisas Dental Health, Inc.</a></h3>
         <div class="m">dentist</div>
         <p>Community dental health clinic</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Sonrisas%20Dental%20Health%2C%20Inc.%20430%20N.%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Sonrisas%20Dental%20Health%2C%20Inc.%20430%20N.%20El%20Camino%20Real%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/hot-yoga-plus.html">Hot Yoga Plus</a></h3>
         <div class="m">Hot yoga studio &middot; $$</div>
         <p>An independent hot yoga studio with Bikram-style heated classes.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Hot%20Yoga%20Plus%201528%20S%20El%20Camino%20Real%20%23200%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Hot%20Yoga%20Plus%201528%20S%20El%20Camino%20Real%20%23200%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/fitness-19-san-mateo.html">Fitness 19</a></h3>
         <div class="m">gym</div>
         <p>A gym on South El Camino Real D-E.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Fitness%2019%202727%20S%20El%20Camino%20Real%20D-E" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Fitness%2019%202727%20S%20El%20Camino%20Real%20D-E" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/optimum-strength-and-conditioning-san-mateo.html">Optimum Strength and Conditioning</a></h3>
         <div class="m">gym</div>
         <p>A gym on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Optimum%20Strength%20and%20Conditioning%203600%20S%20El%20Camino%20Real%20Suite%20C" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Optimum%20Strength%20and%20Conditioning%203600%20S%20El%20Camino%20Real%20Suite%20C" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/pilates-v-san-mateo-san-mateo.html">Pilates V San Mateo</a></h3>
         <div class="m">pilates</div>
         <p>A Pilates studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Pilates%20V%20San%20Mateo%204060%20S%20El%20Camino%20Real%20Ste%20e" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Pilates%20V%20San%20Mateo%204060%20S%20El%20Camino%20Real%20Ste%20e" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/symmetra-health-and-chiropractic-san-mateo.html">Symmetra Health and Chiropractic</a></h3>
         <div class="m">chiropractor</div>
         <p>A chiropractor on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Symmetra%20Health%20and%20Chiropractic%203600%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Symmetra%20Health%20and%20Chiropractic%203600%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/izumi-spa-massage-san-mateo.html">Izumi Spa Massage</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Izumi%20Spa%20Massage%204060%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Izumi%20Spa%20Massage%204060%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/body-central-massage-spa-san-mateo.html">Body Central Massage Spa</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Body%20Central%20Massage%20Spa%202833%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Body%20Central%20Massage%20Spa%202833%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/narawadee-massage-therapy-san-mateo.html">Narawadee Massage Therapy</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Narawadee%20Massage%20Therapy%201528%20S%20El%20Camino%20Real%20%23200" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Narawadee%20Massage%20Therapy%201528%20S%20El%20Camino%20Real%20%23200" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/stress-relief-beauty-spa-san-mateo.html">Stress Relief &amp; Beauty Spa</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Stress%20Relief%20%26%20Beauty%20Spa%202615%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Stress%20Relief%20%26%20Beauty%20Spa%202615%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/crystal-cove-san-mateo.html">Crystal Cove</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Crystal%20Cove%201222%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Crystal%20Cove%201222%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/labo-spa-san-mateo.html">LABO SPA</a></h3>
         <div class="m">massage</div>
         <p>A newer massage studio on South El Camino Real, open every day from 10am to 9pm, with a perfect 5-star rating from its first Google reviews.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=LABO%20SPA%202140%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=LABO%20SPA%202140%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/massage-pro-san-mateo.html">Massage Pro</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Massage%20Pro%203718%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Massage%20Pro%203718%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/water-lounge-spa-in-san-mateo-san-mateo.html">Water Lounge Spa in San Mateo</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Water%20Lounge%20Spa%20in%20San%20Mateo%202500%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Water%20Lounge%20Spa%20in%20San%20Mateo%202500%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/skin-friday-massage-skincare-san-mateo.html">Skin Friday Massage &amp; Skincare</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Skin%20Friday%20Massage%20%26%20Skincare%204060%20S%20El%20Camino%20Real%20Studio%2027" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Skin%20Friday%20Massage%20%26%20Skincare%204060%20S%20El%20Camino%20Real%20Studio%2027" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/harmony-massage-san-mateo.html">Harmony Massage</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Harmony%20Massage%201110%20S%20El%20Camino%20Real%20%233" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Harmony%20Massage%201110%20S%20El%20Camino%20Real%20%233" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/verona-massage-san-mateo.html">Verona Massage</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Verona%20Massage%201528%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Verona%20Massage%201528%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/amethyst-thai-massage-san-mateo.html">Amethyst Thai Massage</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Amethyst%20Thai%20Massage%201428%20S%20El%20Camino%20Real%20Unit%20A" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Amethyst%20Thai%20Massage%201428%20S%20El%20Camino%20Real%20Unit%20A" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/yuanyi-acupuncture-san-mateo.html">Yuanyi Acupuncture</a></h3>
         <div class="m">acupuncture</div>
         <p>An acupuncture clinic on North El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Yuanyi%20Acupuncture%20101%20N%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Yuanyi%20Acupuncture%20101%20N%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/three-lotus-dragon-acupuncture-wellness-center-pc-san-mateo.html">Three Lotus Dragon Acupuncture Wellness Center PC</a></h3>
         <div class="m">acupuncture</div>
         <p>An acupuncture clinic on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Three%20Lotus%20Dragon%20Acupuncture%20Wellness%20Center%20PC%201528%20S%20El%20Camino%20Real%20%23200" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Three%20Lotus%20Dragon%20Acupuncture%20Wellness%20Center%20PC%201528%20S%20El%20Camino%20Real%20%23200" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/union-acupuncture-center-san-mateo.html">UNION ACUPUNCTURE CENTER</a></h3>
         <div class="m">acupuncture</div>
         <p>An acupuncture clinic on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=UNION%20ACUPUNCTURE%20CENTER%202304%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=UNION%20ACUPUNCTURE%20CENTER%202304%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/wei-i-tien-acupuncture-san-mateo.html">Wei-I Tien Acupuncture</a></h3>
         <div class="m">acupuncture</div>
         <p>An acupuncture clinic on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Wei-I%20Tien%20Acupuncture%202311%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Wei-I%20Tien%20Acupuncture%202311%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/yeung-wai-keung-herbalist-consulting-center-san-mateo.html">Yeung Wai Keung Herbalist Consulting Center 楊伟强跌打療疗中心</a></h3>
         <div class="m">acupuncture</div>
         <p>An acupuncture clinic on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Yeung%20Wai%20Keung%20Herbalist%20Consulting%20Center%20%E6%A5%8A%E4%BC%9F%E5%BC%BA%E8%B7%8C%E6%89%93%E7%99%82%E7%96%97%E4%B8%AD%E5%BF%83%202205%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Yeung%20Wai%20Keung%20Herbalist%20Consulting%20Center%20%E6%A5%8A%E4%BC%9F%E5%BC%BA%E8%B7%8C%E6%89%93%E7%99%82%E7%96%97%E4%B8%AD%E5%BF%83%202205%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/the-dermal-formula-san-mateo.html">The Dermal Formula</a></h3>
         <div class="m">medspa</div>
         <p>A med spa on North El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=The%20Dermal%20Formula%2070%20N%20El%20Camino%20Real%20Ste%20B" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=The%20Dermal%20Formula%2070%20N%20El%20Camino%20Real%20Ste%20B" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/yes-beauty-spa-san-mateo.html">YES Beauty Spa</a></h3>
         <div class="m">spa</div>
         <p>A day spa on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=YES%20Beauty%20Spa%201502%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=YES%20Beauty%20Spa%201502%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/serenity-day-spa-san-mateo.html">Serenity Day Spa</a></h3>
         <div class="m">spa</div>
         <p>A day spa on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Serenity%20Day%20Spa%202285%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Serenity%20Day%20Spa%202285%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/deccan-dental-samir-nanjapa-dds-san-mateo.html">Deccan Dental - Samir Nanjapa DDS</a></h3>
         <div class="m">dentist</div>
         <p>A dentist on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Deccan%20Dental%20-%20Samir%20Nanjapa%20DDS%201528%20S%20El%20Camino%20Real%20%23408" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Deccan%20Dental%20-%20Samir%20Nanjapa%20DDS%201528%20S%20El%20Camino%20Real%20%23408" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/hui-dental-group-san-mateo.html">Hui Dental Group</a></h3>
         <div class="m">dentist</div>
         <p>A dentist on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Hui%20Dental%20Group%20901%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Hui%20Dental%20Group%20901%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/sachdev-deepak-k-dds-san-mateo.html">Sachdev Deepak K DDS</a></h3>
         <div class="m">dentist</div>
         <p>A dentist on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Sachdev%20Deepak%20K%20DDS%201415%20S%20El%20Camino%20Real%20%233019" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Sachdev%20Deepak%20K%20DDS%201415%20S%20El%20Camino%20Real%20%233019" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/laurel-dental-san-mateo-san-mateo.html">Laurel Dental San Mateo</a></h3>
         <div class="m">dentist</div>
         <p>A dentist on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Laurel%20Dental%20San%20Mateo%20100%20S%20El%20Camino%20Real%20%23100A" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Laurel%20Dental%20San%20Mateo%20100%20S%20El%20Camino%20Real%20%23100A" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/ben-yount-dds-san-mateo.html">Ben Yount DDS</a></h3>
         <div class="m">dentist</div>
         <p>A dentist on North El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Ben%20Yount%20DDS%20720%20N%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Ben%20Yount%20DDS%20720%20N%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/sunesy-hair-design-san-mateo.html">Sunesy Hair Design</a></h3>
         <div class="m">salon</div>
         <p>A hair salon on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Sunesy%20Hair%20Design%202335%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Sunesy%20Hair%20Design%202335%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/artisan-salon-ca-san-mateo.html">Artisan Salon- CA</a></h3>
         <div class="m">salon</div>
         <p>A hair salon on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Artisan%20Salon-%20CA%201228%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Artisan%20Salon-%20CA%201228%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/studio-2325-hair-skin-san-mateo.html">Studio 2325 Hair &amp; Skin</a></h3>
         <div class="m">salon</div>
         <p>A hair salon on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Studio%202325%20Hair%20%26%20Skin%202325%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Studio%202325%20Hair%20%26%20Skin%202325%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/binh-s-family-hair-care-san-mateo.html">Binh's Family Hair Care</a></h3>
         <div class="m">salon</div>
         <p>A hair salon on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Binh's%20Family%20Hair%20Care%202140%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Binh's%20Family%20Hair%20Care%202140%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/style-n-smile-san-mateo.html">Style n’ Smile</a></h3>
         <div class="m">salon</div>
         <p>A hair salon on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Style%20n%E2%80%99%20Smile%202330%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Style%20n%E2%80%99%20Smile%202330%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/beauty-deluxe-salon-san-mateo.html">Beauty Deluxe Salon</a></h3>
         <div class="m">salon</div>
         <p>A beauty salon on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Beauty%20Deluxe%20Salon%201933%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Beauty%20Deluxe%20Salon%201933%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/top-image-salon-san-mateo.html">Top Image Salon</a></h3>
         <div class="m">salon</div>
         <p>A hair salon on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Top%20Image%20Salon%204060%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Top%20Image%20Salon%204060%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/mayfair-hair-nails-care-san-mateo.html">MAYFAIR HAIR &amp; NAILS CARE</a></h3>
         <div class="m">salon</div>
         <p>A hair salon on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=MAYFAIR%20HAIR%20%26%20NAILS%20CARE%202228%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=MAYFAIR%20HAIR%20%26%20NAILS%20CARE%202228%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/ironwood-hair-company-san-mateo.html">Ironwood hair company</a></h3>
         <div class="m">barber</div>
         <p>A barbershop on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Ironwood%20hair%20company%201226%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Ironwood%20hair%20company%201226%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/anna-art-nail-studio-llc-san-mateo.html">Anna Art Nail Studio LLC</a></h3>
         <div class="m">nails</div>
         <p>A nail salon on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Anna%20Art%20Nail%20Studio%20LLC%204060%20S%20El%20Camino%20Real%20Unit%20A%20Studio%2020" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Anna%20Art%20Nail%20Studio%20LLC%204060%20S%20El%20Camino%20Real%20Unit%20A%20Studio%2020" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/kim-s-nail-bar-san-mateo.html">Kim’s Nail Bar</a></h3>
         <div class="m">nails</div>
         <p>A nail salon on South El Camino Real Ste A Room19.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kim%E2%80%99s%20Nail%20Bar%204060%20S%20El%20Camino%20Real%20Ste%20A%20Room19" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kim%E2%80%99s%20Nail%20Bar%204060%20S%20El%20Camino%20Real%20Ste%20A%20Room19" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/kimmy-s-nail-salon-san-mateo.html">Kimmy's Nail Salon</a></h3>
         <div class="m">nails</div>
         <p>A nail salon on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kimmy's%20Nail%20Salon%201218%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kimmy's%20Nail%20Salon%201218%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/stress-free-auto-care-san-mateo.html">Stress-Free Auto Care</a></h3>
         <div class="m">auto</div>
         <p>An auto repair shop on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Stress-Free%20Auto%20Care%203825%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Stress-Free%20Auto%20Care%203825%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/clarity-auto-care-san-mateo.html">Clarity Auto Care</a></h3>
         <div class="m">auto</div>
         <p>An auto repair shop on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Clarity%20Auto%20Care%202160%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Clarity%20Auto%20Care%202160%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/ma-s-european-auto-service-san-mateo.html">Ma's European Auto Service</a></h3>
         <div class="m">auto</div>
         <p>An auto repair shop on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Ma's%20European%20Auto%20Service%202660%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Ma's%20European%20Auto%20Service%202660%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/beacon-auto-care-san-mateo.html">Beacon Auto Care</a></h3>
         <div class="m">auto</div>
         <p>An auto repair shop on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Beacon%20Auto%20Care%202300%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Beacon%20Auto%20Care%202300%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/wheel-works-san-mateo.html">Wheel Works</a></h3>
         <div class="m">auto</div>
         <p>An auto repair shop on South El Camino Real.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Wheel%20Works%202640%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Wheel%20Works%202640%20S%20El%20Camino%20Real" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
     </section>
 
@@ -748,7 +748,7 @@
       <details><summary>Is San Mateo Local a paid directory?</summary><p>No. Nobody pays to be listed, and there are no chains. It's an honest guide, not an ad platform.</p></details>
     </section>
 
-    <div class="localsline" style="margin:1.7rem 0; padding:1.15rem 1.4rem; background:var(--paper-2); border-left:3px solid var(--clay); border-radius:0 8px 8px 0; line-height:1.55;"><strong>Know El Camino Real better than we do?</strong> We're locals too, and we would rather get it right than get it fast. If a spot is missing, has closed, or is filed in the wrong neighborhood, <a href="mailto:hello@sanmateolocal.com?subject=About%20El%20Camino%20Real" style="color:var(--clay-deep); font-weight:700;">tell us</a>. This guide gets better every time a neighbor pitches in.</div>
+    <div class="localsline" style="margin:1.7rem 0; padding:1.15rem 1.4rem; background:var(--paper-2); border-left:3px solid var(--bay); border-radius:0 8px 8px 0; line-height:1.55;"><strong>Know El Camino Real better than we do?</strong> We're locals too, and we would rather get it right than get it fast. If a spot is missing, has closed, or is filed in the wrong neighborhood, <a href="mailto:hello@sanmateolocal.com?subject=About%20El%20Camino%20Real" style="color:var(--bay-deep); font-weight:700;">tell us</a>. This guide gets better every time a neighbor pitches in.</div>
 
     <div class="ownline">Own a business in El Camino Real? <a href="for-business-owners.html#getlisted">Get listed free</a>, or <a href="for-business-owners.html">see how we help you show up better</a> &rarr;</div>
 
@@ -771,7 +771,7 @@
       </div>
     </div>
   </div>
-  <p style="text-align:center; color:var(--ink-soft); font-size:0.92rem; padding:1.75rem 1.5rem 0;">More added every week. Got a favorite? <a href="suggest.html" style="color:var(--clay-deep); font-weight:700;">Vote on the Best Of.</a> &nbsp;&middot;&nbsp; Own a business we're missing? <a href="for-business-owners.html#getlisted" style="color:var(--clay-deep); font-weight:700;">Get listed, free.</a></p>
+  <p style="text-align:center; color:var(--ink-soft); font-size:0.92rem; padding:1.75rem 1.5rem 0;">More added every week. Got a favorite? <a href="suggest.html" style="color:var(--bay-deep); font-weight:700;">Vote on the Best Of.</a> &nbsp;&middot;&nbsp; Own a business we're missing? <a href="for-business-owners.html#getlisted" style="color:var(--bay-deep); font-weight:700;">Get listed, free.</a></p>
   <footer class="site">
     <div class="wrap">
       <div><div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg><span class="brand-name">San Mateo Local</span></div></div>

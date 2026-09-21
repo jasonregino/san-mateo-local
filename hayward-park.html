@@ -32,8 +32,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-  :root { --paper:#FAF6EC; --paper-2:#F2E9D4; --ink:#221D16; --ink-soft:#5E5446; --clay:#C25B3A; --clay-deep:#A5492B; --green:#41614B; --sage-deep:#324C3A; --line:#E3D6BC; --line-soft:#ECE1CB; }
-  [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --green:#88AC8F; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; }
+  :root { --paper:#F6F0E4; --paper-2:#EFE7D5; --ink:#17323A; --ink-soft:#47595C; --clay:#C85A38; --clay-deep:#A5492B; --green:#3C5A43; --sage-deep:#2E4A38; --line:#E1D9C6; --line-soft:#ECE1CB; --bay:#10717A; --bay-deep:#0C5B62; }
+  [data-theme="dark"] { --paper:#181410; --paper-2:#241D17; --ink:#F2E7D4; --ink-soft:#B6A88E; --clay:#E27D50; --clay-deep:#CB6336; --green:#88AC8F; --sage-deep:#6E9077; --line:#3A2E24; --line-soft:#2C231B; --bay:#3FA3AA; --bay-deep:#2E8A90; }
   * { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
   body { overflow-x: hidden; max-width: 100%; font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.65; -webkit-font-smoothing:antialiased; }
@@ -41,7 +41,7 @@
   a { color:inherit; text-decoration:none; }
   .wrap { max-width:1140px; margin:0 auto; padding:0 1.5rem; }
   .article { max-width:48rem; margin:0 auto; padding:0 1.5rem; }
-  .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+  .label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; color:var(--bay-deep); }
   /* masthead */
   .masthead { border-bottom:1.5px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:50; box-shadow:0 6px 24px -18px rgba(0,0,0,0.4); }
   .masthead-top { display:flex; align-items:center; justify-content:space-between; padding:0.85rem 1.5rem; max-width:1140px; margin:0 auto; }
@@ -51,20 +51,20 @@
   .masthead-right { display:flex; align-items:center; gap:1.25rem; }
   .masthead-nav { display:flex; gap:1.4rem; align-items:center; }
   .masthead-nav a { font-size:0.74rem; font-weight:600; letter-spacing:0.13em; text-transform:uppercase; color:var(--ink-soft); }
-  .masthead-nav a:hover { color:var(--clay-deep); }
+  .masthead-nav a:hover { color:var(--bay-deep); }
   .theme-toggle { background:none; border:1.5px solid var(--line); border-radius:999px; width:36px; height:36px; cursor:pointer; color:var(--ink); font-size:1rem; display:inline-flex; align-items:center; justify-content:center; flex:none; }
   .theme-toggle .sun { display:none; } [data-theme="dark"] .theme-toggle .moon { display:none; } [data-theme="dark"] .theme-toggle .sun { display:inline; }
   .menu-btn { display:none; background:none; border:1.5px solid var(--line); border-radius:8px; width:38px; height:38px; cursor:pointer; color:var(--ink); align-items:center; justify-content:center; padding:0; flex:none; }
   .menu-btn svg { width:20px; height:20px; }
   .mobile-nav { display:none; }
   .dateline { border-top:1px solid var(--line); text-align:center; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft); padding:0.4rem 1rem; }
-  @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line-soft); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--clay-deep); } }
+  @media (max-width:880px){ .masthead-nav { display:none; } html { font-size:17px; } .menu-btn { display:inline-flex; } .masthead.nav-open .mobile-nav { display:flex; flex-direction:column; padding:0.2rem 1.5rem 0.9rem; } .mobile-nav a { padding:0.85rem 0.2rem; font-size:1.12rem; font-weight:600; color:var(--ink); border-top:1px solid var(--line-soft); } .mobile-nav a:first-child { border-top:none; } .mobile-nav a.sub { color:var(--bay-deep); } }
   /* hero */
   .hood-head { padding:3.2rem 0 2rem; border-bottom:1.5px solid var(--ink); }
-  .hood-head .back { font-size:0.85rem; font-weight:600; color:var(--clay-deep); }
+  .hood-head .back { font-size:0.85rem; font-weight:600; color:var(--bay-deep); }
   .hood-head h1 { font-size:clamp(2.2rem,6vw,3.4rem); margin:0.7rem 0 0.6rem; }
   .hood-head .intro { color:var(--ink); font-size:1.2rem; font-family:'Cormorant Garamond',serif; font-style:italic; max-width:42rem; }
-  .cat-quickanswer { margin-top:1.1rem; font-size:1.05rem; line-height:1.55; color:var(--ink); background:var(--paper-2); border-left:3px solid var(--clay); padding:0.9rem 1.15rem; border-radius:0 8px 8px 0; max-width:42rem; font-family:'Inter',sans-serif; font-style:normal; }
+  .cat-quickanswer { margin-top:1.1rem; font-size:1.05rem; line-height:1.55; color:var(--ink); background:var(--paper-2); border-left:3px solid var(--bay); padding:0.9rem 1.15rem; border-radius:0 8px 8px 0; max-width:42rem; font-family:'Inter',sans-serif; font-style:normal; }
   .cat-faq { padding:1.8rem 0 0.5rem; }
   .cat-faq h2 { font-size:1.4rem; font-weight:600; margin-bottom:0.5rem; }
   .cat-faq details { border-bottom:1px solid var(--line); padding:0.85rem 0; }
@@ -74,18 +74,18 @@
   .history { padding:2.4rem 0 0.5rem; }
   .history h2 { font-size:1.6rem; margin-bottom:0.7rem; }
   .history p { color:var(--ink-soft); font-size:1.05rem; max-width:44rem; }
-  .facts { margin:1.5rem 0 0.5rem; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--clay); border-radius:0 10px 10px 0; max-width:44rem; }
+  .facts { margin:1.5rem 0 0.5rem; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); border-radius:0 10px 10px 0; max-width:44rem; }
   .facts h3 { font-size:1.05rem; margin-bottom:0.6rem; }
   .facts ul { list-style:none; display:grid; gap:0.5rem; }
   .facts li { padding-left:1.4rem; position:relative; color:var(--ink); font-size:0.98rem; }
-  .facts li::before { content:"\2605"; position:absolute; left:0; color:var(--clay-deep); }
+  .facts li::before { content:"\2605"; position:absolute; left:0; color:var(--bay-deep); }
   /* listings */
   .spots { padding:2rem 0 0.5rem; }
-  .spots > h2 { font-size:1.5rem; margin:2rem 0 0.3rem; padding-bottom:0.5rem; border-bottom:2px solid var(--clay); }
+  .spots > h2 { font-size:1.5rem; margin:2rem 0 0.3rem; padding-bottom:0.5rem; border-bottom:2px solid var(--bay); }
   .spot { padding:1.05rem 0; border-bottom:1px solid var(--line); }
   .spot:last-child { border-bottom:none; }
   .spot h3 { font-size:1.25rem; margin-bottom:0.15rem; }
-  .spot h3 a:hover { color:var(--clay-deep); }
+  .spot h3 a:hover { color:var(--bay-deep); }
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.35rem; }
   .spot p { color:var(--ink-soft); }
   .relguide { margin:2.2rem 0 0.5rem; padding:1.2rem 1.4rem; border:1.5px solid var(--ink); border-radius:12px; background:#fff; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
@@ -93,27 +93,27 @@
   .relguide .rg-t { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.15rem; }
   .relguide a.rg-b { background:var(--clay); color:#fff; font-weight:700; padding:0.6rem 1.2rem; border-radius:8px; font-size:0.95rem; white-space:nowrap; }
   .ownline { margin:1.8rem 0; padding:1.1rem 1.4rem; background:var(--paper-2); border-radius:10px; font-size:0.98rem; color:var(--ink-soft); }
-  .ownline a { color:var(--clay-deep); font-weight:700; }
+  .ownline a { color:var(--bay-deep); font-weight:700; }
   .others { margin:2.5rem 0 1rem; }
   .others h2 { font-size:1.3rem; margin-bottom:0.7rem; }
   .others .row { display:flex; flex-wrap:wrap; gap:0.6rem; }
   .others a { border:1.5px solid var(--line); border-radius:999px; padding:0.5rem 1.1rem; font-weight:600; font-size:0.92rem; color:var(--ink); }
-  .others a:hover { border-color:var(--clay); color:var(--clay-deep); }
+  .others a:hover { border-color:var(--bay); color:var(--bay-deep); }
   /* footer */
   footer.site { padding:3rem 0 2.5rem; border-top:1.5px solid var(--ink); margin-top:2rem; }
   footer.site .wrap { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; align-items:flex-start; }
   footer .brand-name { font-size:1.3rem; }
   .f-nav { display:flex; flex-direction:column; gap:0.4rem; }
   .f-nav a { font-size:0.92rem; color:var(--ink-soft); }
-  .f-nav a:hover { color:var(--clay-deep); }
+  .f-nav a:hover { color:var(--bay-deep); }
   .f-copy { width:100%; border-top:1px solid var(--line); margin-top:1.5rem; padding-top:1.5rem; font-size:0.8rem; color:var(--ink-soft); }</style>
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Hayward Park — San Mateo Local","description":"A local's guide to Hayward Park in San Mateo: the restaurants, shops, and services in the neighborhood. Local and independent, no chains.","itemListElement":[{"@type":"ListItem","position":1,"name":"El Sinaloense","address":"1622 Palm Ave, San Mateo, CA 94402"},{"@type":"ListItem","position":2,"name":"Bucky's Cocktail Lounge","address":"101 South Blvd, San Mateo, CA 94402"},{"@type":"ListItem","position":3,"name":"The Pantry","address":"1855 S Delaware St, San Mateo, CA 94402"},{"@type":"ListItem","position":4,"name":"The Fitness Farm","address":"143 South Blvd, San Mateo, CA 94402"},{"@type":"ListItem","position":5,"name":"Bo Jonsson's Foreign Car Service","address":"111 E 20th Ave, San Mateo, CA 94403"},{"@type":"ListItem","position":6,"name":"Suavecito Birria & Tacos","address":"1100 S Amphlett Blvd, Ste B, San Mateo, CA 94402"},{"@type":"ListItem","position":7,"name":"La Morenita Market","address":"1519 S Claremont St, San Mateo, CA 94402"},{"@type":"ListItem","position":8,"name":"Trinta Park","address":"1950 Leslie St, San Mateo, CA 94403"},{"@type":"ListItem","position":9,"name":"Peace of Mind Structural","address":"180 South Blvd., San Mateo, CA 94402"},{"@type":"ListItem","position":10,"name":"Nob Hill Pizza and Popcorn","address":"155 South Blvd, San Mateo, CA 94402"},{"@type":"ListItem","position":11,"name":"Noma Sushi","address":"152 South Blvd"},{"@type":"ListItem","position":12,"name":"Food Mall","address":"66 21st Ave"},{"@type":"ListItem","position":13,"name":"The Fix Personal Training Studio","address":"1119 S B St"},{"@type":"ListItem","position":14,"name":"Infinity Spine Center","address":"1660 S Amphlett Blvd Unit 308"},{"@type":"ListItem","position":15,"name":"Dream Butterfly Spa","address":"118 South Blvd"},{"@type":"ListItem","position":16,"name":"Live Well Acupuncture & Herbal Medicine","address":"2041 Pioneer Ct"},{"@type":"ListItem","position":17,"name":"Lotus Healing Acupuncture","address":"1650 S Amphlett Blvd #212"},{"@type":"ListItem","position":18,"name":"Kanna Spa","address":"2041 Pioneer Ct"},{"@type":"ListItem","position":19,"name":"Glow Skin & Body Care","address":"160 South Blvd"},{"@type":"ListItem","position":20,"name":"Paradise Dental Care","address":"2041 Pioneer Ct Ste 100"},{"@type":"ListItem","position":21,"name":"A&O Dental San Mateo | David Kim, DMD (Formerly Stan W. Konrad, DDS)","address":"30 28th Ave"},{"@type":"ListItem","position":22,"name":"Orthodontics of San Mateo","address":"2720 Edison St"},{"@type":"ListItem","position":23,"name":"Bayside Family Dentistry Helen Hong DMD","address":"34 28th Ave"},{"@type":"ListItem","position":24,"name":"Unified Hearts Home Care","address":"630 Vanessa Dr"},{"@type":"ListItem","position":25,"name":"Bear's Barber","address":"120 South Blvd"},{"@type":"ListItem","position":26,"name":"Chairmen Barbershop","address":"1626 Palm Ave"},{"@type":"ListItem","position":27,"name":"Mendoza the barber","address":"1119 S B St"},{"@type":"ListItem","position":28,"name":"Pinky Nails","address":"1664 Palm Ave"},{"@type":"ListItem","position":29,"name":"Hudson Automotive","address":"186 South Blvd"},{"@type":"ListItem","position":30,"name":"C & T Automotive Independent Toyota, Lexus specialists","address":"1950 Leslie St"},{"@type":"ListItem","position":31,"name":"Auto 360 Garage - San Mateo","address":"1211 S Railroad Ave"},{"@type":"ListItem","position":32,"name":"San Mateo Mobile Auto Glass Specialist LLC","address":"101 South Blvd"},{"@type":"ListItem","position":33,"name":"TCF Auto Service Inc","address":"1940 Leslie St"},{"@type":"ListItem","position":34,"name":"CARSTAR Ma’s Auto Body San Mateo","address":"1116 S Amphlett Blvd"},{"@type":"ListItem","position":35,"name":"10th Planet Jiu Jitsu","address":"910 S Amphlett Blvd, San Mateo, CA"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many local businesses does San Mateo Local list in Hayward Park?","acceptedAnswer":{"@type":"Answer","text":"35 local, independent spots in Hayward Park, San Mateo, and the list grows every week."}},{"@type":"Question","name":"What kind of businesses are in Hayward Park, San Mateo?","acceptedAnswer":{"@type":"Answer","text":"Hayward Park has a mix of local restaurants, shops, and services. Browse them above, or ask a local for a pick."}},{"@type":"Question","name":"Is San Mateo Local a paid directory?","acceptedAnswer":{"@type":"Answer","text":"No. Nobody pays to be listed, and there are no chains. It's an honest guide, not an ad platform."}}]}</script>
-  <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--clay-deep);">Get on the guide &rarr;</strong></a></div>
-  <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--clay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
+  <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--bay-deep);">Get on the guide &rarr;</strong></a></div>
+  <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--bay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
   <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
   <header class="masthead">
     <div class="masthead-top">
@@ -162,214 +162,214 @@
         <h3><a href="/business/el-sinaloense.html">El Sinaloense</a></h3>
         <div class="m">Mexican (seafood) &middot; $$</div>
         <p>Sinaloa-style seafood, especially ceviche, tostadas, and shrimp dishes.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=El%20Sinaloense%201622%20Palm%20Ave%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=El%20Sinaloense%201622%20Palm%20Ave%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/buckys-cocktail-lounge.html">Bucky's Cocktail Lounge</a></h3>
         <div class="m">Neighborhood lounge &middot; $$</div>
         <p>A renovated neighborhood lounge with dark oak counters, a deep beer-and-whiskey lineup, a back patio, and yard games like cornhole and darts.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Bucky's%20Cocktail%20Lounge%20101%20South%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Bucky's%20Cocktail%20Lounge%20101%20South%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/the-pantry.html">The Pantry</a></h3>
         <div class="m">American / Filipino &middot; $</div>
         <p>A longtime family-run kitchen serving hearty American breakfast and lunch alongside Filipino classics, a Hayward Park favorite for decades.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=The%20Pantry%201855%20S%20Delaware%20St%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=The%20Pantry%201855%20S%20Delaware%20St%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/suavecito-birria-tacos.html">Suavecito Birria &amp; Tacos</a></h3>
         <div class="m">Mexican (birria &amp; tacos) &middot; $$</div>
         <p>A takeout-and-delivery counter for crispy quesabirria, birria ramen, and overstuffed burritos. No seating, just a cult-favorite walk-up window.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Suavecito%20Birria%20%26%20Tacos%201100%20S%20Amphlett%20Blvd%2C%20Ste%20B%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Suavecito%20Birria%20%26%20Tacos%201100%20S%20Amphlett%20Blvd%2C%20Ste%20B%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/nob-hill-pizza-and-popcorn-san-mateo.html">Nob Hill Pizza and Popcorn</a></h3>
         <div class="m">Pizza &middot; $</div>
         <p>A neighborhood pizza spot with popcorn on South Boulevard.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Nob%20Hill%20Pizza%20and%20Popcorn%20155%20South%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Nob%20Hill%20Pizza%20and%20Popcorn%20155%20South%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/noma-sushi-san-mateo.html">Noma Sushi</a></h3>
         <div class="m">Japanese &middot; $$</div>
         <p>A Japanese restaurant on South Boulevard.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Noma%20Sushi%20152%20South%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Noma%20Sushi%20152%20South%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/food-mall-san-mateo.html">Food Mall</a></h3>
         <div class="m">Food Hall &middot; $$</div>
         <p>A food hall on 21st Avenue with several independent counters under one roof.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Food%20Mall%2066%2021st%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Food%20Mall%2066%2021st%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
     <h2>Things to Do</h2>
       <div class="spot">
         <h3><a href="/business/trinta-park.html">Trinta Park</a></h3>
         <div class="m">Sports park</div>
         <p>A neighborhood park with two Little League baseball diamonds, a half basketball court, a playground, and restrooms.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Trinta%20Park%201950%20Leslie%20St%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Trinta%20Park%201950%20Leslie%20St%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
     <h2>Shopping & Markets</h2>
       <div class="spot">
         <h3><a href="/business/la-morenita-market.html">La Morenita Market</a></h3>
         <div class="m">Mexican grocery &middot; $$</div>
         <p>A neighborhood Mexican grocery with an attached taqueria, fresh produce, meats, and prepared foods.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=La%20Morenita%20Market%201519%20S%20Claremont%20St%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=La%20Morenita%20Market%201519%20S%20Claremont%20St%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
     <h2>Local Services</h2>
       <div class="spot">
         <h3><a href="/business/the-fitness-farm.html">The Fitness Farm</a></h3>
         <div class="m">gym &middot; $$$</div>
         <p>A private personal-training gym offering one-on-one coaching, shared training, and open-gym access.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=The%20Fitness%20Farm%20143%20South%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=The%20Fitness%20Farm%20143%20South%20Blvd%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/bo-jonsson-auto.html">Bo Jonsson's Foreign Car Service</a></h3>
         <div class="m">auto &middot; $$</div>
         <p>A family-run European auto specialist serving Volvo, BMW, Mercedes, Audi, and VW owners since 1966.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Bo%20Jonsson's%20Foreign%20Car%20Service%20111%20E%2020th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Bo%20Jonsson's%20Foreign%20Car%20Service%20111%20E%2020th%20Ave%2C%20San%20Mateo%2C%20CA%2094403" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/peace-of-mind-structural.html">Peace of Mind Structural</a></h3>
         <div class="m">services</div>
         <p>Structural engineering / contracting service</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Peace%20of%20Mind%20Structural%20180%20South%20Blvd.%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Peace%20of%20Mind%20Structural%20180%20South%20Blvd.%2C%20San%20Mateo%2C%20CA%2094402" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/the-fix-personal-training-studio-san-mateo.html">The Fix Personal Training Studio</a></h3>
         <div class="m">gym</div>
         <p>A gym on South B Street.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=The%20Fix%20Personal%20Training%20Studio%201119%20S%20B%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=The%20Fix%20Personal%20Training%20Studio%201119%20S%20B%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/infinity-spine-center-san-mateo.html">Infinity Spine Center</a></h3>
         <div class="m">chiropractor</div>
         <p>A chiropractor on South Amphlett Boulevard.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Infinity%20Spine%20Center%201660%20S%20Amphlett%20Blvd%20Unit%20308" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Infinity%20Spine%20Center%201660%20S%20Amphlett%20Blvd%20Unit%20308" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/dream-butterfly-spa-san-mateo.html">Dream Butterfly Spa</a></h3>
         <div class="m">massage</div>
         <p>A massage studio on South Boulevard.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Dream%20Butterfly%20Spa%20118%20South%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Dream%20Butterfly%20Spa%20118%20South%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/live-well-acupuncture-herbal-medicine-san-mateo.html">Live Well Acupuncture &amp; Herbal Medicine</a></h3>
         <div class="m">acupuncture</div>
         <p>An acupuncture clinic on Pioneer Court.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Live%20Well%20Acupuncture%20%26%20Herbal%20Medicine%202041%20Pioneer%20Ct" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Live%20Well%20Acupuncture%20%26%20Herbal%20Medicine%202041%20Pioneer%20Ct" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/lotus-healing-acupuncture-san-mateo.html">Lotus Healing Acupuncture</a></h3>
         <div class="m">acupuncture</div>
         <p>An acupuncture clinic on South Amphlett Boulevard.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Lotus%20Healing%20Acupuncture%201650%20S%20Amphlett%20Blvd%20%23212" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Lotus%20Healing%20Acupuncture%201650%20S%20Amphlett%20Blvd%20%23212" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/kanna-spa-san-mateo.html">Kanna Spa</a></h3>
         <div class="m">spa</div>
         <p>A day spa on Pioneer Court.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kanna%20Spa%202041%20Pioneer%20Ct" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Kanna%20Spa%202041%20Pioneer%20Ct" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/glow-skin-body-care-san-mateo.html">Glow Skin &amp; Body Care</a></h3>
         <div class="m">spa</div>
         <p>A day spa on South Boulevard.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Glow%20Skin%20%26%20Body%20Care%20160%20South%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Glow%20Skin%20%26%20Body%20Care%20160%20South%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/paradise-dental-care-san-mateo.html">Paradise Dental Care</a></h3>
         <div class="m">dentist</div>
         <p>A dentist on Pioneer Court.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Paradise%20Dental%20Care%202041%20Pioneer%20Ct%20Ste%20100" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Paradise%20Dental%20Care%202041%20Pioneer%20Ct%20Ste%20100" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/a-o-dental-san-mateo-david-kim-dmd-formerly-stan-w-konrad-dds-san-mateo.html">A&amp;O Dental San Mateo | David Kim, DMD (Formerly Stan W. Konrad, DDS)</a></h3>
         <div class="m">dentist</div>
         <p>A dentist on 28th Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=A%26O%20Dental%20San%20Mateo%20%7C%20David%20Kim%2C%20DMD%20(Formerly%20Stan%20W.%20Konrad%2C%20DDS)%2030%2028th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=A%26O%20Dental%20San%20Mateo%20%7C%20David%20Kim%2C%20DMD%20(Formerly%20Stan%20W.%20Konrad%2C%20DDS)%2030%2028th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/orthodontics-of-san-mateo-san-mateo.html">Orthodontics of San Mateo</a></h3>
         <div class="m">dentist</div>
         <p>An orthodontics practice on Edison Street.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Orthodontics%20of%20San%20Mateo%202720%20Edison%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Orthodontics%20of%20San%20Mateo%202720%20Edison%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/bayside-family-dentistry-helen-hong-dmd-san-mateo.html">Bayside Family Dentistry Helen Hong DMD</a></h3>
         <div class="m">dentist</div>
         <p>A dentist on 28th Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Bayside%20Family%20Dentistry%20Helen%20Hong%20DMD%2034%2028th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Bayside%20Family%20Dentistry%20Helen%20Hong%20DMD%2034%2028th%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/unified-hearts-home-care-san-mateo.html">Unified Hearts Home Care</a></h3>
         <div class="m">senior-care</div>
         <p>A senior care provider on Vanessa Drive.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Unified%20Hearts%20Home%20Care%20630%20Vanessa%20Dr" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Unified%20Hearts%20Home%20Care%20630%20Vanessa%20Dr" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/bear-s-barber-san-mateo.html">Bear's Barber</a></h3>
         <div class="m">barber</div>
         <p>A barbershop on South Boulevard.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Bear's%20Barber%20120%20South%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Bear's%20Barber%20120%20South%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/chairmen-barbershop-san-mateo.html">Chairmen Barbershop</a></h3>
         <div class="m">barber</div>
         <p>A barbershop on Palm Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Chairmen%20Barbershop%201626%20Palm%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Chairmen%20Barbershop%201626%20Palm%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/mendoza-the-barber-san-mateo.html">Mendoza the barber</a></h3>
         <div class="m">barber</div>
         <p>A barbershop on South B Street.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Mendoza%20the%20barber%201119%20S%20B%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Mendoza%20the%20barber%201119%20S%20B%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/pinky-nails-san-mateo.html">Pinky Nails</a></h3>
         <div class="m">nails</div>
         <p>A nail salon on Palm Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Pinky%20Nails%201664%20Palm%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Pinky%20Nails%201664%20Palm%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/hudson-automotive-san-mateo.html">Hudson Automotive</a></h3>
         <div class="m">auto</div>
         <p>An auto repair shop on South Boulevard.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Hudson%20Automotive%20186%20South%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Hudson%20Automotive%20186%20South%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/c-t-automotive-independent-toyota-lexus-specialists-san-mateo.html">C &amp; T Automotive Independent Toyota, Lexus specialists</a></h3>
         <div class="m">auto</div>
         <p>An auto repair shop on Leslie Street.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=C%20%26%20T%20Automotive%20Independent%20Toyota%2C%20Lexus%20specialists%201950%20Leslie%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=C%20%26%20T%20Automotive%20Independent%20Toyota%2C%20Lexus%20specialists%201950%20Leslie%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/auto-360-garage-san-mateo-san-mateo.html">Auto 360 Garage - San Mateo</a></h3>
         <div class="m">auto</div>
         <p>An auto repair shop on South Railroad Avenue.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Auto%20360%20Garage%20-%20San%20Mateo%201211%20S%20Railroad%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=Auto%20360%20Garage%20-%20San%20Mateo%201211%20S%20Railroad%20Ave" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/san-mateo-mobile-auto-glass-specialist-llc-san-mateo.html">San Mateo Mobile Auto Glass Specialist LLC</a></h3>
         <div class="m">auto</div>
         <p>An auto repair shop on South Boulevard.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=San%20Mateo%20Mobile%20Auto%20Glass%20Specialist%20LLC%20101%20South%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=San%20Mateo%20Mobile%20Auto%20Glass%20Specialist%20LLC%20101%20South%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/tcf-auto-service-inc-san-mateo.html">TCF Auto Service Inc</a></h3>
         <div class="m">auto</div>
         <p>An auto repair shop on Leslie Street.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=TCF%20Auto%20Service%20Inc%201940%20Leslie%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=TCF%20Auto%20Service%20Inc%201940%20Leslie%20St" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/carstar-ma-s-auto-body-san-mateo-san-mateo.html">CARSTAR Ma’s Auto Body San Mateo</a></h3>
         <div class="m">auto</div>
         <p>An auto body shop on South Amphlett Boulevard.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=CARSTAR%20Ma%E2%80%99s%20Auto%20Body%20San%20Mateo%201116%20S%20Amphlett%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=CARSTAR%20Ma%E2%80%99s%20Auto%20Body%20San%20Mateo%201116%20S%20Amphlett%20Blvd" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
       <div class="spot">
         <h3><a href="/business/10th-planet-jiu-jitsu.html">10th Planet Jiu Jitsu</a></h3>
         <div class="m">gym</div>
         <p>A Brazilian jiu-jitsu school in the Amphlett / Hayward Park area of San Mateo.</p>
-        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=10th%20Planet%20Jiu%20Jitsu%20910%20S%20Amphlett%20Blvd%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--clay-deep);text-decoration:none;">Get directions &rarr;</a>
+        <a class="spot-dir" href="https://www.google.com/maps/search/?api=1&query=10th%20Planet%20Jiu%20Jitsu%20910%20S%20Amphlett%20Blvd%2C%20San%20Mateo%2C%20CA" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;font-weight:700;color:var(--bay-deep);text-decoration:none;">Get directions &rarr;</a>
       </div>
     </section>
 
@@ -383,7 +383,7 @@
       <details><summary>Is San Mateo Local a paid directory?</summary><p>No. Nobody pays to be listed, and there are no chains. It's an honest guide, not an ad platform.</p></details>
     </section>
 
-    <div class="localsline" style="margin:1.7rem 0; padding:1.15rem 1.4rem; background:var(--paper-2); border-left:3px solid var(--clay); border-radius:0 8px 8px 0; line-height:1.55;"><strong>Know Hayward Park better than we do?</strong> We're locals too, and we would rather get it right than get it fast. If a spot is missing, has closed, or is filed in the wrong neighborhood, <a href="mailto:hello@sanmateolocal.com?subject=About%20Hayward%20Park" style="color:var(--clay-deep); font-weight:700;">tell us</a>. This guide gets better every time a neighbor pitches in.</div>
+    <div class="localsline" style="margin:1.7rem 0; padding:1.15rem 1.4rem; background:var(--paper-2); border-left:3px solid var(--bay); border-radius:0 8px 8px 0; line-height:1.55;"><strong>Know Hayward Park better than we do?</strong> We're locals too, and we would rather get it right than get it fast. If a spot is missing, has closed, or is filed in the wrong neighborhood, <a href="mailto:hello@sanmateolocal.com?subject=About%20Hayward%20Park" style="color:var(--bay-deep); font-weight:700;">tell us</a>. This guide gets better every time a neighbor pitches in.</div>
 
     <div class="ownline">Own a business in Hayward Park? <a href="for-business-owners.html#getlisted">Get listed free</a>, or <a href="for-business-owners.html">see how we help you show up better</a> &rarr;</div>
 
@@ -406,7 +406,7 @@
       </div>
     </div>
   </div>
-  <p style="text-align:center; color:var(--ink-soft); font-size:0.92rem; padding:1.75rem 1.5rem 0;">More added every week. Got a favorite? <a href="suggest.html" style="color:var(--clay-deep); font-weight:700;">Vote on the Best Of.</a> &nbsp;&middot;&nbsp; Own a business we're missing? <a href="for-business-owners.html#getlisted" style="color:var(--clay-deep); font-weight:700;">Get listed, free.</a></p>
+  <p style="text-align:center; color:var(--ink-soft); font-size:0.92rem; padding:1.75rem 1.5rem 0;">More added every week. Got a favorite? <a href="suggest.html" style="color:var(--bay-deep); font-weight:700;">Vote on the Best Of.</a> &nbsp;&middot;&nbsp; Own a business we're missing? <a href="for-business-owners.html#getlisted" style="color:var(--bay-deep); font-weight:700;">Get listed, free.</a></p>
   <footer class="site">
     <div class="wrap">
       <div><div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg><span class="brand-name">San Mateo Local</span></div></div>
