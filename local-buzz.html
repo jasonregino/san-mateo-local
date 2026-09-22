@@ -89,7 +89,7 @@
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-<!-- BUZZ-FRESH: added=2026-09-16 events=2 -->
+<!-- BUZZ-FRESH: added=2026-09-22 events=2 -->
   <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--bay-deep);">Get on the guide &rarr;</strong></a></div>
   <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--bay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
   <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
@@ -277,6 +277,15 @@
           <h3>Maven Lane Financial Group</h3>
           <p class="meta">El Camino Real</p>
           <p class="d">A local financial advisory firm on El Camino Real.</p>
+          <span class="go">Take a look &rarr;</span>
+        </a>
+        <a class="bcard" href="/business/sm-lock-works.html" data-type="New &amp; Verified" style="--tc:#2E7D32; animation-delay:0.6s;">
+          
+          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> New &amp; Verified</span><span class="fresh">New</span></div>
+          
+          <h3>San Mateo Lock Works</h3>
+          <p class="meta">Downtown</p>
+          <p class="d">A family-owned lock and safe shop in downtown San Mateo since 1927, with a storefront and mobile service.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
         <a class="bcard" href="/business/galine-frye-fitting-frangos.html" data-type="New &amp; Verified" style="--tc:#2E7D32; animation-delay:0.6s;">
