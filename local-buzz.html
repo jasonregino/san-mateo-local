@@ -89,7 +89,7 @@
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-<!-- BUZZ-FRESH: added=2026-09-23 events=3 -->
+<!-- BUZZ-FRESH: added=2026-09-24 events=4 -->
   <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--bay-deep);">Get on the guide &rarr;</strong></a></div>
   <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--bay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
   <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
@@ -277,6 +277,15 @@
           <h3>Maven Lane Financial Group</h3>
           <p class="meta">El Camino Real</p>
           <p class="d">A local financial advisory firm on El Camino Real.</p>
+          <span class="go">Take a look &rarr;</span>
+        </a>
+        <a class="bcard" href="/events.html" data-type="Event" style="--tc:#3B5BA0; animation-delay:0.6s;">
+          
+          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</span><span class="fresh">New</span></div>
+          
+          <h3>End of Summer Car Cruise</h3>
+          <p class="meta">El Camino Real · Sat Sept 26 · 6pm</p>
+          <p class="d">Classic and custom cars cruise a two-mile stretch of El Camino Real between Hillsdale Mall and 3rd Ave. A cruise, not a car show, so the cars keep moving. Free to watch from the sidewalk.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
         <a class="bcard" href="/events.html" data-type="Event" style="--tc:#3B5BA0; animation-delay:0.6s;">
