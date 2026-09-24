@@ -17,7 +17,7 @@
   <!-- growth-review build: gr-7 -->
   <meta name="description" content="A free, personalized review of how your San Mateo business shows up online. A local checks your Google profile, reviews, website, and how customers find and reach you, then sends you the one thing to fix first. No cost, no obligation." />
   <link rel="canonical" href="https://sanmateolocal.com/growth-review.html" />
-  <meta name="theme-color" content="#221D16" />
+  <meta name="theme-color" content="#17323A" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="San Mateo Local" />
   <meta property="og:title" content="Free Business Growth Review | San Mateo Local" />
@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--paper:#FAF6EC;--paper-2:#F2E9D4;--ink:#221D16;--ink-soft:#5E5446;--clay:#C25B3A;--clay-deep:#A5492B;--green:#41614B;--sage-deep:#324C3A;--line:#E3D6BC;--card:#FFFDF7}
+    :root{--paper:#F6F0E4;--paper-2:#EFE7D5;--ink:#17323A;--ink-soft:#47595C;--clay:#C85A38;--clay-deep:#A5492B;--green:#3C5A43;--sage-deep:#2E4A38;--line:#E1D9C6;--card:#FFFDF7;--bay:#10717A;--bay-deep:#0C5B62}
     body{ overflow-x: hidden; max-width: 100%;font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
     h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.12;font-weight:600;letter-spacing:-0.01em}
     a{color:inherit}
@@ -47,10 +47,10 @@
     .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--ink)}
     .brand span{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.25rem;letter-spacing:-0.02em}
     header nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink-soft);text-decoration:none;font-size:.9rem;margin-left:1.2rem}
-    header nav a:hover{color:var(--clay-deep)}
+    header nav a:hover{color:var(--bay-deep)}
     /* hero */
     .hero{padding:3.4rem 0 2rem;text-align:center}
-    .hero .kick{font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;color:var(--clay-deep);font-weight:800}
+    .hero .kick{font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bay-deep);font-weight:800}
     .hero h1{font-size:clamp(2.1rem,6vw,3.1rem);margin:.7rem 0 .6rem}
     .hero p{font-size:1.15rem;color:var(--ink-soft);max-width:600px;margin:0 auto}
     .hero .cta{display:inline-block;margin-top:1.6rem;background:var(--clay);color:#fff;text-decoration:none;font-weight:700;padding:.9rem 1.8rem;border-radius:6px;font-size:1rem}
@@ -61,7 +61,7 @@
     .trust p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--ink);max-width:640px;margin:0 auto}
     /* sections */
     section{padding:2.6rem 0}
-    .sec-label{text-align:center;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--clay-deep);font-weight:700}
+    .sec-label{text-align:center;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bay-deep);font-weight:700}
     .sec-h{text-align:center;font-size:1.8rem;margin:.5rem 0 1.6rem}
     .cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.1rem}
     @media(max-width:720px){.cards{grid-template-columns:1fr}}
@@ -94,7 +94,7 @@
     label.fld{display:block;font-weight:600;font-size:.88rem;margin-bottom:.35rem}
     label.fld span{font-weight:400;color:var(--ink-soft)}
     input[type=text],input[type=email],input[type=tel],textarea{width:100%;border:1.5px solid var(--line);border-radius:8px;padding:.75rem;font:inherit;background:#fff;color:var(--ink)}
-    input:focus,textarea:focus{outline:2px solid var(--clay);border-color:transparent}
+    input:focus,textarea:focus{outline:2px solid var(--bay);border-color:transparent}
     textarea{min-height:80px;resize:vertical}
     button{background:var(--clay);color:#fff;border:none;border-radius:9px;padding:.9rem 1.6rem;font-weight:700;font-size:1rem;cursor:pointer;width:100%}
     button:hover{background:var(--clay-deep)}
@@ -110,20 +110,20 @@
     .gr-msg a{color:inherit;text-decoration:underline}
     .gr-typing{align-self:flex-start;color:var(--ink-soft);font-size:.9rem;font-style:italic;padding:.2rem .4rem}
     .gr-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
-    .gr-chip{background:#fff;border:1.5px solid var(--clay);color:var(--clay-deep);border-radius:999px;padding:.45rem .9rem;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;width:auto}
+    .gr-chip{background:#fff;border:1.5px solid var(--clay);color:var(--bay-deep);border-radius:999px;padding:.45rem .9rem;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;width:auto}
     .gr-chip:hover{background:var(--clay);color:#fff}
     .gr-bar{display:flex;gap:.5rem;margin-top:.9rem}
     .gr-bar input{flex:1;border:1.5px solid var(--line);border-radius:9px;padding:.75rem;font:inherit;background:#fff;color:var(--ink)}
-    .gr-bar input:focus{outline:2px solid var(--clay);border-color:transparent}
+    .gr-bar input:focus{outline:2px solid var(--bay);border-color:transparent}
     .gr-bar button{width:auto;flex:none;padding:.75rem 1.3rem}
     .gr-fallback{text-align:center;margin-top:1rem;font-size:.9rem;color:var(--ink-soft)}
-    .gr-fallback a{display:inline-block;color:var(--clay-deep);font-weight:700;cursor:pointer;text-decoration:underline;padding:.7rem .3rem;min-height:44px}
+    .gr-fallback a{display:inline-block;color:var(--bay-deep);font-weight:700;cursor:pointer;text-decoration:underline;padding:.7rem .3rem;min-height:44px}
     #formFallback{display:none;margin-top:1.2rem}
     .gr-done{margin-top:1rem;background:#EAF3EA;border:1px solid #B9D7B9;color:#2A4A2A;border-radius:12px;padding:1rem 1.2rem;text-align:center;font-weight:600;font-size:.98rem}
     .gr-stage{margin-top:1rem}
     .gr-row{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
     .gr-row input{flex:1 1 240px;border:1.5px solid var(--line);border-radius:9px;padding:.8rem;font:inherit;font-size:1rem;background:#fff;color:var(--ink)}
-    .gr-row input:focus{outline:2px solid var(--clay);border-color:transparent}
+    .gr-row input:focus{outline:2px solid var(--bay);border-color:transparent}
     .gr-next{background:var(--clay);color:#fff;border:none;border-radius:9px;padding:.8rem 1.5rem;font-weight:700;font-size:1rem;cursor:pointer;width:auto}
     .gr-next:hover{background:var(--clay-deep)}
     .gr-skip{display:inline-block;margin-top:.6rem;background:none;border:none;color:var(--ink-soft);text-decoration:underline;cursor:pointer;font:inherit;font-size:.9rem;width:auto;padding:.3rem 0}
@@ -132,7 +132,7 @@
     footer{border-top:1.5px solid var(--ink);margin-top:1rem;padding:2rem 0;color:var(--ink-soft);font-size:.85rem}
     footer .wrap{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center;justify-content:space-between}
     footer a{color:var(--ink-soft);text-decoration:none}
-    footer a:hover{color:var(--clay-deep)}
+    footer a:hover{color:var(--bay-deep)}
     footer .fnav a{display:inline-flex;align-items:center;min-height:44px;margin-right:1rem}
   </style>
 </head>

@@ -14,7 +14,7 @@
   <title>How San Mateo Are You? | San Mateo Local</title>
   <meta name="description" content="A 10-question quiz for real San Mateo locals. Do you remember Magic Mountain, Bay Meadows, the Rolladium? Find out how San Mateo you really are." />
   <link rel="canonical" href="https://sanmateolocal.com/quiz.html" />
-  <meta name="theme-color" content="#221D16" />
+  <meta name="theme-color" content="#17323A" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="How San Mateo Are You?" />
   <meta property="og:description" content="A 10-question quiz for real San Mateo locals. Think you know your hometown?" />
@@ -26,10 +26,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--paper:#FAF6EC;--paper-2:#F3ECD9;--ink:#221D16;--ink-soft:#5E5446;--clay:#C25B3A;--clay-deep:#A8482C;--green:#41614B;--green-deep:#324C3A;--line:#E3D6BC;--card:#fff;--red:#B23A2A}
+    :root{--paper:#F6F0E4;--paper-2:#EFE7D5;--ink:#17323A;--ink-soft:#47595C;--clay:#C85A38;--clay-deep:#A5492B;--green:#3C5A43;--green-deep:#2E4A38;--line:#E1D9C6;--card:#fff;--red:#B23A2A;--bay:#10717A;--bay-deep:#0C5B62}
     body{ overflow-x: hidden; max-width: 100%;font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;min-height:100vh}
     .wrap{max-width:640px;margin:0 auto;padding:0 1.25rem}
-    a{color:var(--clay-deep)}
+    a{color:var(--bay-deep)}
     header.site{border-bottom:1.5px solid var(--ink)}
     header.site .bar{max-width:1080px;margin:0 auto;padding:0 1.25rem;height:60px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none}
@@ -37,18 +37,18 @@
     .brand-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.12rem;color:var(--ink)}
     header .back{font-size:.85rem;color:var(--ink-soft);text-decoration:none}
     .card{background:var(--card);border:1.5px solid var(--ink);border-radius:16px;padding:2rem 1.75rem;margin:2.5rem auto;box-shadow:0 8px 30px rgba(34,29,22,.07)}
-    .kick{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--clay-deep);font-size:1.05rem}
+    .kick{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--bay-deep);font-size:1.05rem}
     h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,6vw,2.7rem);font-weight:600;line-height:1.08;margin:.3rem 0 .8rem}
     .lede{color:var(--ink-soft);font-size:1.05rem;margin-bottom:1.5rem}
     .btn{display:inline-block;background:var(--clay);color:#fff;border:none;font-family:inherit;font-weight:700;font-size:1.05rem;padding:.85rem 1.6rem;border-radius:11px;cursor:pointer;text-decoration:none}
     .btn:hover{filter:brightness(1.06)}
     .btn:disabled{opacity:.45;cursor:default;filter:none}
-    .opt.selected{border-color:var(--clay);background:#F6E6DE;font-weight:700}
-    .prog{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--clay-deep);margin-bottom:.6rem}
+    .opt.selected{border-color:var(--bay);background:#F6E6DE;font-weight:700}
+    .prog{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bay-deep);margin-bottom:.6rem}
     .q{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;line-height:1.25;margin-bottom:1.3rem}
     .opts{display:flex;flex-direction:column;gap:.65rem}
     .opt{text-align:left;background:var(--paper-2);border:1.5px solid var(--line);border-radius:11px;padding:.85rem 1.1rem;font-family:inherit;font-size:1rem;font-weight:500;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
-    .opt:hover{border-color:var(--clay)}
+    .opt:hover{border-color:var(--bay)}
     .opt.correct{background:#E7F3E7;border-color:var(--green);color:var(--green-deep);font-weight:700}
     .opt.wrong{background:#F7E4E1;border-color:var(--red);color:var(--red)}
     .opt:disabled{cursor:default}
@@ -56,8 +56,8 @@
     .next.show{display:inline-block}
     .explain{display:none;margin-top:1rem;font-size:.9rem;color:var(--ink-soft);background:var(--paper-2);border-left:3px solid var(--clay);padding:.65rem .9rem;border-radius:0 8px 8px 0}
     .explain.show{display:block}
-    .explain a{color:var(--clay-deep);font-weight:700}
-    .result .score{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--clay-deep);line-height:1}
+    .explain a{color:var(--bay-deep);font-weight:700}
+    .result .score{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--bay-deep);line-height:1}
     .result h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;margin:.5rem 0 .4rem}
     .result p.tier{color:var(--ink-soft);font-size:1.05rem;margin-bottom:1.4rem}
     .result .links{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:.5rem}
