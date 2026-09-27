@@ -89,7 +89,7 @@
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-<!-- BUZZ-FRESH: added=2026-09-24 events=4 -->
+<!-- BUZZ-FRESH: added=2026-09-27 events=4 -->
   <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--bay-deep);">Get on the guide &rarr;</strong></a></div>
   <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--bay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
   <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
@@ -142,6 +142,7 @@
       <button class="chip" data-f="Deal"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Deal</button>
       <button class="chip" data-f="Happy Hour"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Happy Hour</button>
       <button class="chip" data-f="New &amp; Verified"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> New & Verified</button>
+      <button class="chip" data-f="Menu"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Menu</button>
     </div>
     <div class="buzz-grid">
         <a class="bcard" href="/business/takahashi-market.html" data-type="Event" style="--tc:#3B5BA0; animation-delay:0s;">
@@ -313,6 +314,33 @@
           <h3>Galine, Frye, Fitting &amp; Frangos</h3>
           <p class="meta">Borel Avenue</p>
           <p class="d">A personal injury and employment law firm on Borel Avenue.</p>
+          <span class="go">Take a look &rarr;</span>
+        </a>
+        <a class="bcard" href="/business/foreigner-cafe.html" data-type="Deal" style="--tc:#C0392B; animation-delay:0.6s;">
+          
+          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Deal</span><span class="fresh">New</span></div>
+          
+          <h3>Foreigner Cafe</h3>
+          <p class="meta">Downtown · Weekday mornings</p>
+          <p class="d">Ten percent off weekday mornings, 8 to 11am, through December. Use promo code SAVEBIG8382 at checkout.</p>
+          <span class="go">Take a look &rarr;</span>
+        </a>
+        <a class="bcard" href="/business/3-bees-coffee.html" data-type="Deal" style="--tc:#C0392B; animation-delay:0.6s;">
+          
+          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Deal</span><span class="fresh">New</span></div>
+          
+          <h3>3 Bees Coffee</h3>
+          <p class="meta">Downtown · Spend $15+</p>
+          <p class="d">Fifteen percent off when you spend $15 or more. Mention code DSMA, an offer from the Downtown San Mateo Association.</p>
+          <span class="go">Take a look &rarr;</span>
+        </a>
+        <a class="bcard" href="/business/porterhouse.html" data-type="Menu" style="--tc:#8A6D3B; animation-delay:0.6s;">
+          
+          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Menu</span><span class="fresh">New</span></div>
+          
+          <h3>Porterhouse</h3>
+          <p class="meta">Downtown · Fri &amp; Sat</p>
+          <p class="d">Prime rib is on Fridays and Saturdays, while it lasts.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
     </div>
