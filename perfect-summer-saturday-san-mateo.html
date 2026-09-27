@@ -104,11 +104,11 @@
   .spot p { color:var(--ink-soft); }
   .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; }
   /* ---- Optional post media: hero image, YouTube embed, photo gallery ---- */
-  /* Hero breaks out of the reading column like the gallery does. A portrait photo
-     shown full width would be ~1500px tall and push everything below the fold, so
-     it is cropped to a wide band instead. object-position:center lands on the car. */
-  .post-hero { margin:1.6rem 0 0; width:min(1180px,94vw); margin-left:50%; transform:translateX(-50%); }
-  .post-hero img { width:100%; aspect-ratio:1200/630; object-fit:cover; object-position:center; display:block; border-radius:12px; border:1px solid var(--line); }
+  /* Hero deliberately stays in the reading column and is NOT cropped. Tried a wide
+     cropped banner; it cut the bottom off the photo and looked oversized. Showing
+     the whole frame at reading width is the better call for a portrait hero. */
+  .post-hero { margin:1.6rem 0 0; }
+  .post-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); }
   .post-video { margin:2.2rem 0; }
   .post-video .vid-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
   .post-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
@@ -128,7 +128,7 @@
   .post-gallery figcaption { line-height:1.4; margin-top:0.4rem; font-size:0.84rem; color:var(--ink-soft); }
   .media-credit { font-size:0.84rem; color:var(--ink-soft); margin-top:0.6rem; font-style:italic; }
   @media (max-width:1000px){ .post-gallery .gal-grid { columns:2; } }
-  @media (max-width:560px){ .post-gallery { width:100%; margin-left:0; transform:none; } .post-gallery .gal-grid { columns:2; column-gap:0.6rem; } .post-gallery figure { margin-bottom:0.6rem; } .post-hero { width:100%; margin-left:0; transform:none; } .post-hero img { aspect-ratio:4/3; } }
+  @media (max-width:560px){ .post-gallery { width:100%; margin-left:0; transform:none; } .post-gallery .gal-grid { columns:2; column-gap:0.6rem; } .post-gallery figure { margin-bottom:0.6rem; } }
   @media (prefers-reduced-motion: reduce){ .post-gallery img { transition:none; } .post-gallery a:hover img { transform:none; } }
   .post .outro a { color:var(--bay-deep); font-weight:600; font-style:normal; }
   .post .s-para { font-size:1.08rem; color:var(--ink); margin:1.15rem 0 0; line-height:1.7; }
