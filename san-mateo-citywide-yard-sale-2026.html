@@ -103,6 +103,24 @@
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.4rem; }
   .spot p { color:var(--ink-soft); }
   .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; }
+  /* ---- Optional post media: hero image, YouTube embed, photo gallery ---- */
+  .post-hero { margin:1.6rem 0 0; }
+  .post-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); }
+  .post-video { margin:2.2rem 0; }
+  .post-video .vid-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
+  .post-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .post-gallery { margin:2.2rem 0; }
+  .post-gallery h2 { margin-bottom:0.3rem; }
+  .post-gallery .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
+  .post-gallery .gal-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:0.9rem; }
+  .post-gallery figure { margin:0; }
+  .post-gallery a { display:block; line-height:0; border-radius:10px; overflow:hidden; border:1px solid var(--line); }
+  .post-gallery img { width:100%; height:190px; object-fit:cover; display:block; transition:transform .35s ease; }
+  .post-gallery a:hover img { transform:scale(1.04); }
+  .post-gallery figcaption { line-height:1.4; margin-top:0.4rem; font-size:0.84rem; color:var(--ink-soft); }
+  .media-credit { font-size:0.84rem; color:var(--ink-soft); margin-top:0.6rem; font-style:italic; }
+  @media (max-width:560px){ .post-gallery .gal-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.6rem; } .post-gallery img { height:140px; } }
+  @media (prefers-reduced-motion: reduce){ .post-gallery img { transition:none; } .post-gallery a:hover img { transform:none; } }
   .post .outro a { color:var(--bay-deep); font-weight:600; font-style:normal; }
   .post .s-para { font-size:1.08rem; color:var(--ink); margin:1.15rem 0 0; line-height:1.7; }
   .post ul { margin:0.9rem 0 0.9rem 1.2rem; }
@@ -167,6 +185,7 @@
     <div class="date">Updated July 11, 2026</div>
     <p class="dek">For one weekend, the whole city turns into a treasure hunt. Here's how to sell your own stuff, or go find someone else's.</p>
 
+
     <p class="intro">Once a year, San Mateo throws open its garages. The Citywide Yard Sale returns Saturday, July 25 and Sunday, July 26, and the city puts every participating home on one big map so you can plan your route. Whether you're clearing out the garage or hunting for a deal, here's how it works.</p>
       <h2>The basics</h2>
       <div class="article-body"><ul><li><strong>When:</strong> Saturday, July 25 and Sunday, July 26, 2026.</li><li><strong>Where:</strong> All over the city. The City of San Mateo publishes a map of every participating home.</li><li><strong>Cost:</strong> Free to join, whether you're selling or shopping.</li></ul><p class="s-para">Sellers can set up for one day or both. No pressure to do the whole weekend.</p></div>
@@ -176,6 +195,8 @@
       <div class="article-body"><ul><li><strong>Grab the map first.</strong> Pull up the citywide map and sketch a loop so you're not crisscrossing town.</li><li><strong>Go early.</strong> The best finds are gone by mid-morning. Serious hunters are out by 8am.</li><li><strong>Bring small bills.</strong> Ones and fives make haggling easy, and most sellers can't break a fifty for a two-dollar mug.</li><li><strong>Bring a tote and a tape measure.</strong> You'll thank yourself when you find that shelf.</li></ul></div>
       <h2>A local note</h2>
       <div class="article-body"><p class="s-para">The Citywide Yard Sale is one of those weekends that makes San Mateo feel like a small town again. You'll meet neighbors you've never met, find something with a story, and probably give something of yours a second life. That's the whole point.</p></div>
+
+
     <p class="outro">Hosting a sale, or know something else happening around town? <a href="suggest.html">Tell us here</a>.</p>
 
     <div class="locals-cta" style="margin:2.5rem 0 1.5rem; padding:1.25rem 1.5rem; background:#F2E9D4; border:1px solid #E3D6BC; border-radius:12px; font-size:0.95rem;">

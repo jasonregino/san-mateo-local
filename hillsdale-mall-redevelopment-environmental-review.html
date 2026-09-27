@@ -103,6 +103,24 @@
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.4rem; }
   .spot p { color:var(--ink-soft); }
   .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; }
+  /* ---- Optional post media: hero image, YouTube embed, photo gallery ---- */
+  .post-hero { margin:1.6rem 0 0; }
+  .post-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); }
+  .post-video { margin:2.2rem 0; }
+  .post-video .vid-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
+  .post-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .post-gallery { margin:2.2rem 0; }
+  .post-gallery h2 { margin-bottom:0.3rem; }
+  .post-gallery .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
+  .post-gallery .gal-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:0.9rem; }
+  .post-gallery figure { margin:0; }
+  .post-gallery a { display:block; line-height:0; border-radius:10px; overflow:hidden; border:1px solid var(--line); }
+  .post-gallery img { width:100%; height:190px; object-fit:cover; display:block; transition:transform .35s ease; }
+  .post-gallery a:hover img { transform:scale(1.04); }
+  .post-gallery figcaption { line-height:1.4; margin-top:0.4rem; font-size:0.84rem; color:var(--ink-soft); }
+  .media-credit { font-size:0.84rem; color:var(--ink-soft); margin-top:0.6rem; font-style:italic; }
+  @media (max-width:560px){ .post-gallery .gal-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.6rem; } .post-gallery img { height:140px; } }
+  @media (prefers-reduced-motion: reduce){ .post-gallery img { transition:none; } .post-gallery a:hover img { transform:none; } }
   .post .outro a { color:var(--bay-deep); font-weight:600; font-style:normal; }
   .post .s-para { font-size:1.08rem; color:var(--ink); margin:1.15rem 0 0; line-height:1.7; }
   .post ul { margin:0.9rem 0 0.9rem 1.2rem; }
@@ -167,6 +185,7 @@
     <div class="date">Updated September 7, 2026</div>
     <p class="dek">The city and the developer disagree over how much environmental study the project needs. The city decides by November 2, and residents can weigh in until October 2.</p>
 
+
     <p class="intro">Hillsdale Shopping Center is set for a major redevelopment, and right now it sits at a procedural fork that will shape how closely the project gets studied before it can move forward. Here is what is happening, in plain English, and how to have your say.</p>
       <h2>What's being proposed</h2>
       <div class="article-body"><p>The developer has applied to redevelop the Hillsdale Shopping Center as a large mixed-use project. The city refers to it as the Hillsdale Mall Redevelopment, Mixed-Use. The full application, plans, and supporting documents are posted on the city's project page:</p><p><a href='https://www.cityofsanmateo.org/4856/Hillsdale-Mall-Redevelopment---Mixed-Use' target='_blank' rel='noopener'>City of San Mateo: Hillsdale Mall Redevelopment &rarr;</a></p><p>This article covers the environmental review step the project is in right now, not a full breakdown of the plans. For those, the city's page is the source.</p></div>
@@ -178,6 +197,8 @@
       <div class="article-body"><p>The city has said it will make an updated determination on the environmental review by <strong>November 2, 2026</strong>. That decision settles whether the project proceeds with a full EIR or a lighter, streamlined review. It is a decision about the level of study required, not a final yes-or-no on the project itself.</p></div>
       <h2>How to weigh in</h2>
       <div class="article-body"><p>The city is collecting public input before it decides. If you have objections, comments, evidence, or concerns about the project, you can send them in writing to the project planner:</p><p><strong>Elaine Ling</strong>, Principal Planner<br><a href='mailto:eling@cityofsanmateo.org'>eling@cityofsanmateo.org</a><br>Written comments are due by <strong>October 2, 2026 at 5:00 pm</strong>.</p><p>The background documents, including the city's determination letter and the developer's response, are on the <a href='https://www.cityofsanmateo.org/4856/Hillsdale-Mall-Redevelopment---Mixed-Use' target='_blank' rel='noopener'>city's project page</a>.</p></div>
+
+
     <p class="outro"></p>
 
     <div class="locals-cta" style="margin:2.5rem 0 1.5rem; padding:1.25rem 1.5rem; background:#F2E9D4; border:1px solid #E3D6BC; border-radius:12px; font-size:0.95rem;">

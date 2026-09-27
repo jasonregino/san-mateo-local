@@ -103,6 +103,24 @@
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.4rem; }
   .spot p { color:var(--ink-soft); }
   .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; }
+  /* ---- Optional post media: hero image, YouTube embed, photo gallery ---- */
+  .post-hero { margin:1.6rem 0 0; }
+  .post-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); }
+  .post-video { margin:2.2rem 0; }
+  .post-video .vid-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
+  .post-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .post-gallery { margin:2.2rem 0; }
+  .post-gallery h2 { margin-bottom:0.3rem; }
+  .post-gallery .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
+  .post-gallery .gal-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:0.9rem; }
+  .post-gallery figure { margin:0; }
+  .post-gallery a { display:block; line-height:0; border-radius:10px; overflow:hidden; border:1px solid var(--line); }
+  .post-gallery img { width:100%; height:190px; object-fit:cover; display:block; transition:transform .35s ease; }
+  .post-gallery a:hover img { transform:scale(1.04); }
+  .post-gallery figcaption { line-height:1.4; margin-top:0.4rem; font-size:0.84rem; color:var(--ink-soft); }
+  .media-credit { font-size:0.84rem; color:var(--ink-soft); margin-top:0.6rem; font-style:italic; }
+  @media (max-width:560px){ .post-gallery .gal-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.6rem; } .post-gallery img { height:140px; } }
+  @media (prefers-reduced-motion: reduce){ .post-gallery img { transition:none; } .post-gallery a:hover img { transform:none; } }
   .post .outro a { color:var(--bay-deep); font-weight:600; font-style:normal; }
   .post .s-para { font-size:1.08rem; color:var(--ink); margin:1.15rem 0 0; line-height:1.7; }
   .post ul { margin:0.9rem 0 0.9rem 1.2rem; }
@@ -167,6 +185,7 @@
     <div class="date">Updated August 21, 2026</div>
     <p class="dek">Where can your dog actually run off-leash in San Mateo? Here is every official off-leash park and area in the city, split by all-day parks and early-morning fields, with the exact hours for each.</p>
 
+
     <p class="intro">San Mateo is a good dog town, but the off-leash rules trip people up. Some parks are fully fenced and open all day. Others are regular fields that only go off-leash for a short window first thing in the morning, and if you show up at the wrong hour you are right back on the leash. Here is where your dog can run, split into the all-day fenced parks and the early-morning fields, with the hours for each. One rule applies everywhere: no more than three dogs per person.</p>
     <p style="margin:1.4rem 0 0.5rem; font-size:1.06rem; line-height:1.55; color:var(--ink); background:var(--paper-2); border-left:3px solid var(--bay); padding:0.9rem 1.15rem; border-radius:0 8px 8px 0;">Every off-leash dog park and area in San Mateo, pulled from the city's official list and checked against what is actually open, with the exact hours for each.</p>
       <h2>The fenced dog parks</h2>
@@ -207,6 +226,8 @@
       <details style="border-bottom:1px solid var(--line); padding:0.85rem 0;"><summary style="font-weight:600; font-size:1.02rem; cursor:pointer; color:var(--ink);">How many off-leash spots does San Mateo Local recommend?</summary><p style="margin-top:0.5rem; color:var(--ink-soft);">6, all added by hand and refreshed regularly.</p></details>
       <details style="border-bottom:1px solid var(--line); padding:0.85rem 0;"><summary style="font-weight:600; font-size:1.02rem; cursor:pointer; color:var(--ink);">Is San Mateo Local a paid directory?</summary><p style="margin-top:0.5rem; color:var(--ink-soft);">No. Nobody pays to be listed here, and nothing was scraped or bought. A business can sponsor a guide, and if one does, it is clearly marked as a sponsor.</p></details>
     </section>
+
+
     <p class="outro">That is the full off-leash map for San Mateo. The one rule that applies at every single one: no more than three dogs per handler. Hours here come straight from the City of San Mateo, so if a park changes its schedule, or we missed a spot, tell us and we will fix it. Good luck out there.</p>
 
     <div class="locals-cta" style="margin:2.5rem 0 1.5rem; padding:1.25rem 1.5rem; background:#F2E9D4; border:1px solid #E3D6BC; border-radius:12px; font-size:0.95rem;">

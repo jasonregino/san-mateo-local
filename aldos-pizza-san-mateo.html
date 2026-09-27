@@ -103,6 +103,24 @@
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.4rem; }
   .spot p { color:var(--ink-soft); }
   .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; }
+  /* ---- Optional post media: hero image, YouTube embed, photo gallery ---- */
+  .post-hero { margin:1.6rem 0 0; }
+  .post-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); }
+  .post-video { margin:2.2rem 0; }
+  .post-video .vid-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
+  .post-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .post-gallery { margin:2.2rem 0; }
+  .post-gallery h2 { margin-bottom:0.3rem; }
+  .post-gallery .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
+  .post-gallery .gal-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:0.9rem; }
+  .post-gallery figure { margin:0; }
+  .post-gallery a { display:block; line-height:0; border-radius:10px; overflow:hidden; border:1px solid var(--line); }
+  .post-gallery img { width:100%; height:190px; object-fit:cover; display:block; transition:transform .35s ease; }
+  .post-gallery a:hover img { transform:scale(1.04); }
+  .post-gallery figcaption { line-height:1.4; margin-top:0.4rem; font-size:0.84rem; color:var(--ink-soft); }
+  .media-credit { font-size:0.84rem; color:var(--ink-soft); margin-top:0.6rem; font-style:italic; }
+  @media (max-width:560px){ .post-gallery .gal-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.6rem; } .post-gallery img { height:140px; } }
+  @media (prefers-reduced-motion: reduce){ .post-gallery img { transition:none; } .post-gallery a:hover img { transform:none; } }
   .post .outro a { color:var(--bay-deep); font-weight:600; font-style:normal; }
   .post .s-para { font-size:1.08rem; color:var(--ink); margin:1.15rem 0 0; line-height:1.7; }
   .post ul { margin:0.9rem 0 0.9rem 1.2rem; }
@@ -167,6 +185,7 @@
     <div class="date">Updated August 7, 2026</div>
     <p class="dek">San Mateo's oldest pizzeria has fed Shoreview families since 1958. This summer it came close to closing, and the neighborhood is the reason it's still open.</p>
 
+
     <p class="intro">On South Norfolk Street, in a Shoreview strip mall that has changed a hundred times since the 1950s, one thing has stayed put: Aldo's Pizza. It is the oldest continuously operating pizzeria in San Mateo, and for generations of families here it isn't a pizza option. It's the pizza. The one for the team after the game, for Friday nights as a kid, and for Friday nights again thirty years later with kids of your own.</p>
       <h2>One of the first, back in 1958</h2>
       <div class="article-body"><p>When pizza was still a novelty on the Peninsula, Aldo Scaliucci opened what the Downtown San Mateo Association still calls one of the city's first pizzerias. Shoreview was young then, filling in with new families, and the little shop on Norfolk grew up right alongside the neighborhood. Much of that early history has faded from the record, but the name, the recipes, and the thin, crispy, tangy-sauced pie he built carried Aldo's through everything that came after.</p></div>
@@ -182,6 +201,8 @@
       <div class="article-body"><p>So here's the ask, plain and simple: go get a pizza. Aldo's is open at 600 S Norfolk Street, seven days a week, for dine-in, pickup, and delivery. Order the Star of India, or Manny's Favorite, or whatever you grew up on. Bring the family. Share their posts. In a city that loses restaurants all the time, this is one worth keeping, and right now, keeping it is up to us.</p></div>
       <h2>Sources</h2>
       <div class="article-body"><p style="font-size:0.92rem; color:#5E5446; font-style:italic;">This story draws on the Downtown San Mateo Association, the San Mateo Area Chamber of Commerce's 2024 Shop Small interview with Danica Gordils, Better Business Bureau records, and Aldo's Pizza's own social posts.</p></div>
+
+
     <p class="outro">Aldo's Pizza · 600 S Norfolk St, San Mateo · (650) 344-5051 · aldospizza.com · Open Monday through Thursday 11am to 9pm, Friday through Sunday 11am to 9:30pm. Dine in, order pickup, or get it delivered.</p>
 
     <div class="locals-cta" style="margin:2.5rem 0 1.5rem; padding:1.25rem 1.5rem; background:#F2E9D4; border:1px solid #E3D6BC; border-radius:12px; font-size:0.95rem;">

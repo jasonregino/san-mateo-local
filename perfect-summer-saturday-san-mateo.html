@@ -103,6 +103,24 @@
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.4rem; }
   .spot p { color:var(--ink-soft); }
   .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; }
+  /* ---- Optional post media: hero image, YouTube embed, photo gallery ---- */
+  .post-hero { margin:1.6rem 0 0; }
+  .post-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); }
+  .post-video { margin:2.2rem 0; }
+  .post-video .vid-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
+  .post-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .post-gallery { margin:2.2rem 0; }
+  .post-gallery h2 { margin-bottom:0.3rem; }
+  .post-gallery .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
+  .post-gallery .gal-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:0.9rem; }
+  .post-gallery figure { margin:0; }
+  .post-gallery a { display:block; line-height:0; border-radius:10px; overflow:hidden; border:1px solid var(--line); }
+  .post-gallery img { width:100%; height:190px; object-fit:cover; display:block; transition:transform .35s ease; }
+  .post-gallery a:hover img { transform:scale(1.04); }
+  .post-gallery figcaption { line-height:1.4; margin-top:0.4rem; font-size:0.84rem; color:var(--ink-soft); }
+  .media-credit { font-size:0.84rem; color:var(--ink-soft); margin-top:0.6rem; font-style:italic; }
+  @media (max-width:560px){ .post-gallery .gal-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.6rem; } .post-gallery img { height:140px; } }
+  @media (prefers-reduced-motion: reduce){ .post-gallery img { transition:none; } .post-gallery a:hover img { transform:none; } }
   .post .outro a { color:var(--bay-deep); font-weight:600; font-style:normal; }
   .post .s-para { font-size:1.08rem; color:var(--ink); margin:1.15rem 0 0; line-height:1.7; }
   .post ul { margin:0.9rem 0 0.9rem 1.2rem; }
@@ -167,6 +185,7 @@
     <div class="date">Updated July 15, 2026</div>
     <p class="dek">A local couple's blueprint for a great Saturday in town, from the morning market to a park picnic to dinner downtown. Steal it, or make it your own.</p>
 
+
     <p class="intro">Some of the best days in San Mateo don't cost much and don't need a plan. But if you want one, here's how a born-and-raised local couple would spend a summer Saturday, from an early market run to a slow dinner downtown. Move the pieces around to fit your crew.</p>
       <h2>Morning: coffee, then the market</h2>
       <div class="article-body"><p class="s-para">Start slow. Grab a cup from one of the <a href="best-coffee-in-san-mateo.html">best coffee spots in town</a>, then point the car up the hill to the <a href="https://www.pcfma.org/market/san-mateo-farmers-market" target="_blank" rel="noopener">Saturday farmers' market at the College of San Mateo</a>. It runs 9am to 1pm and it's the biggest around, eighty-plus vendors with produce, flowers, food trucks, and prepared food, plus one of the best views on the Peninsula. Go early if you want the good stuff and an easy parking spot.</p></div>
@@ -182,6 +201,8 @@
       <div class="article-body"><p class="s-para">Cap the night close by. Start with a cocktail at <strong>Mortar &amp; Pestle</strong> on B Street, an industrial-chic lounge known for house-made syrups and Indian-inspired drinks, then walk over to <strong>O'Neill's Irish Pub</strong> to hang with the locals over a pint. For more spots to end the night, the <a href="best-happy-hour-in-san-mateo.html">happy hour guide</a> has you covered. That's a full San Mateo Saturday, market to last call.</p></div>
       <h2>Bonus: make it a Thursday</h2>
       <div class="article-body"><p class="s-para">If your weekend is flexible, the <a href="https://www.cityofsanmateo.org/1367/Central-Park-Music-Series" target="_blank" rel="noopener">Central Park Music Series</a> brings free live music to the park every Thursday evening through August 6. Grab dinner to go, spread out a blanket, and let the kids run. It's summer in San Mateo at its easiest.</p></div>
+
+
     <p class="outro">Have a Saturday ritual of your own, or a stop we should add? <a href="suggest.html">Tell us here</a> and we'll fold it in.</p>
 
     <div class="locals-cta" style="margin:2.5rem 0 1.5rem; padding:1.25rem 1.5rem; background:#F2E9D4; border:1px solid #E3D6BC; border-radius:12px; font-size:0.95rem;">

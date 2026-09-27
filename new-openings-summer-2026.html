@@ -103,6 +103,24 @@
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.4rem; }
   .spot p { color:var(--ink-soft); }
   .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; }
+  /* ---- Optional post media: hero image, YouTube embed, photo gallery ---- */
+  .post-hero { margin:1.6rem 0 0; }
+  .post-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); }
+  .post-video { margin:2.2rem 0; }
+  .post-video .vid-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
+  .post-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .post-gallery { margin:2.2rem 0; }
+  .post-gallery h2 { margin-bottom:0.3rem; }
+  .post-gallery .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
+  .post-gallery .gal-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:0.9rem; }
+  .post-gallery figure { margin:0; }
+  .post-gallery a { display:block; line-height:0; border-radius:10px; overflow:hidden; border:1px solid var(--line); }
+  .post-gallery img { width:100%; height:190px; object-fit:cover; display:block; transition:transform .35s ease; }
+  .post-gallery a:hover img { transform:scale(1.04); }
+  .post-gallery figcaption { line-height:1.4; margin-top:0.4rem; font-size:0.84rem; color:var(--ink-soft); }
+  .media-credit { font-size:0.84rem; color:var(--ink-soft); margin-top:0.6rem; font-style:italic; }
+  @media (max-width:560px){ .post-gallery .gal-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.6rem; } .post-gallery img { height:140px; } }
+  @media (prefers-reduced-motion: reduce){ .post-gallery img { transition:none; } .post-gallery a:hover img { transform:none; } }
   .post .outro a { color:var(--bay-deep); font-weight:600; font-style:normal; }
   .post .s-para { font-size:1.08rem; color:var(--ink); margin:1.15rem 0 0; line-height:1.7; }
   .post ul { margin:0.9rem 0 0.9rem 1.2rem; }
@@ -166,6 +184,7 @@
     <h1>New in San Mateo: Summer 2026</h1>
     <div class="date">Updated July 1, 2026</div>
     <p class="dek">A downtown brunch boom, a matcha bar, Korean BBQ, and more. The freshest spots to open around town.</p>
+
 
     <p class="intro">San Mateo's food scene has been on a tear this year, especially downtown. Here are the newest places worth checking out, all opened in roughly the last year.</p>
     <p style="margin:1.4rem 0 0.5rem; font-size:1.06rem; line-height:1.55; color:var(--ink); background:var(--paper-2); border-left:3px solid var(--bay); padding:0.9rem 1.15rem; border-radius:0 8px 8px 0;">A guide to 11 new spots in San Mateo, put together by a local who eats here. Nobody pays to be on it.</p>
@@ -232,6 +251,8 @@
       <details style="border-bottom:1px solid var(--line); padding:0.85rem 0;"><summary style="font-weight:600; font-size:1.02rem; cursor:pointer; color:var(--ink);">How many new spots does San Mateo Local recommend?</summary><p style="margin-top:0.5rem; color:var(--ink-soft);">11, all added by hand and refreshed regularly.</p></details>
       <details style="border-bottom:1px solid var(--line); padding:0.85rem 0;"><summary style="font-weight:600; font-size:1.02rem; cursor:pointer; color:var(--ink);">Is San Mateo Local a paid directory?</summary><p style="margin-top:0.5rem; color:var(--ink-soft);">No. Nobody pays to be listed here, and nothing was scraped or bought. A business can sponsor a guide, and if one does, it is clearly marked as a sponsor.</p></details>
     </section>
+
+
     <p class="outro">Know a spot we missed? <a href="suggest.html">Tell us here</a> and we'll add it to the guide.</p>
 
     <div class="locals-cta" style="margin:2.5rem 0 1.5rem; padding:1.25rem 1.5rem; background:#F2E9D4; border:1px solid #E3D6BC; border-radius:12px; font-size:0.95rem;">

@@ -103,6 +103,24 @@
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.4rem; }
   .spot p { color:var(--ink-soft); }
   .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; }
+  /* ---- Optional post media: hero image, YouTube embed, photo gallery ---- */
+  .post-hero { margin:1.6rem 0 0; }
+  .post-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); }
+  .post-video { margin:2.2rem 0; }
+  .post-video .vid-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
+  .post-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .post-gallery { margin:2.2rem 0; }
+  .post-gallery h2 { margin-bottom:0.3rem; }
+  .post-gallery .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
+  .post-gallery .gal-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:0.9rem; }
+  .post-gallery figure { margin:0; }
+  .post-gallery a { display:block; line-height:0; border-radius:10px; overflow:hidden; border:1px solid var(--line); }
+  .post-gallery img { width:100%; height:190px; object-fit:cover; display:block; transition:transform .35s ease; }
+  .post-gallery a:hover img { transform:scale(1.04); }
+  .post-gallery figcaption { line-height:1.4; margin-top:0.4rem; font-size:0.84rem; color:var(--ink-soft); }
+  .media-credit { font-size:0.84rem; color:var(--ink-soft); margin-top:0.6rem; font-style:italic; }
+  @media (max-width:560px){ .post-gallery .gal-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.6rem; } .post-gallery img { height:140px; } }
+  @media (prefers-reduced-motion: reduce){ .post-gallery img { transition:none; } .post-gallery a:hover img { transform:none; } }
   .post .outro a { color:var(--bay-deep); font-weight:600; font-style:normal; }
   .post .s-para { font-size:1.08rem; color:var(--ink); margin:1.15rem 0 0; line-height:1.7; }
   .post ul { margin:0.9rem 0 0.9rem 1.2rem; }
@@ -166,6 +184,7 @@
     <h1>The Best Ramen in San Mateo</h1>
     <div class="date">Updated August 14, 2026</div>
     <p class="dek">Downtown alone has a cluster of ramen shops locals will happily wait in line for. Here's where to slurp.</p>
+
     <div style="margin:1.4rem 0 0.4rem; padding:1rem 1.25rem; background:#FBE7DC; border:1px solid #E0B49E; border-radius:12px; font-size:0.95rem; color:var(--ink);">
       <strong>This is a sample.</strong> The Best Ramen in San Mateo is a made-up business we created to show exactly what a Business Spotlight looks like. Yours would be written from your own answers, in your own voice.
     </div>
@@ -209,6 +228,8 @@
       <details style="border-bottom:1px solid var(--line); padding:0.85rem 0;"><summary style="font-weight:600; font-size:1.02rem; cursor:pointer; color:var(--ink);">How many ramen spots does San Mateo Local recommend?</summary><p style="margin-top:0.5rem; color:var(--ink-soft);">6, all added by hand and refreshed regularly.</p></details>
       <details style="border-bottom:1px solid var(--line); padding:0.85rem 0;"><summary style="font-weight:600; font-size:1.02rem; cursor:pointer; color:var(--ink);">Is San Mateo Local a paid directory?</summary><p style="margin-top:0.5rem; color:var(--ink-soft);">No. Nobody pays to be listed here, and nothing was scraped or bought. A business can sponsor a guide, and if one does, it is clearly marked as a sponsor.</p></details>
     </section>
+
+
     <p class="outro">Curated by a born-and-raised local, with no paid placement. Know a ramen spot we missed, or think we've got the order wrong? <a href="suggest.html">Tell us here</a>.</p>
     <div style="margin:2.6rem 0 0; padding:1.4rem 1.5rem; background:var(--paper-2); border:1px solid var(--line); border-radius:12px;">
       <p style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.2rem; margin-bottom:0.7rem;">Where your Spotlight shows up</p>

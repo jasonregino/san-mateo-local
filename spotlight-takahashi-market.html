@@ -103,6 +103,24 @@
   .spot .m { font-size:0.74rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sage-deep); font-weight:600; margin-bottom:0.4rem; }
   .spot p { color:var(--ink-soft); }
   .post .outro { margin:2.4rem 0; padding:1.3rem 1.5rem; background:var(--paper-2); border-left:3px solid var(--bay); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; }
+  /* ---- Optional post media: hero image, YouTube embed, photo gallery ---- */
+  .post-hero { margin:1.6rem 0 0; }
+  .post-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); }
+  .post-video { margin:2.2rem 0; }
+  .post-video .vid-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
+  .post-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .post-gallery { margin:2.2rem 0; }
+  .post-gallery h2 { margin-bottom:0.3rem; }
+  .post-gallery .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
+  .post-gallery .gal-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:0.9rem; }
+  .post-gallery figure { margin:0; }
+  .post-gallery a { display:block; line-height:0; border-radius:10px; overflow:hidden; border:1px solid var(--line); }
+  .post-gallery img { width:100%; height:190px; object-fit:cover; display:block; transition:transform .35s ease; }
+  .post-gallery a:hover img { transform:scale(1.04); }
+  .post-gallery figcaption { line-height:1.4; margin-top:0.4rem; font-size:0.84rem; color:var(--ink-soft); }
+  .media-credit { font-size:0.84rem; color:var(--ink-soft); margin-top:0.6rem; font-style:italic; }
+  @media (max-width:560px){ .post-gallery .gal-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.6rem; } .post-gallery img { height:140px; } }
+  @media (prefers-reduced-motion: reduce){ .post-gallery img { transition:none; } .post-gallery a:hover img { transform:none; } }
   .post .outro a { color:var(--bay-deep); font-weight:600; font-style:normal; }
   .post .s-para { font-size:1.08rem; color:var(--ink); margin:1.15rem 0 0; line-height:1.7; }
   .post ul { margin:0.9rem 0 0.9rem 1.2rem; }
@@ -167,6 +185,7 @@
     <div class="date">Updated July 2026</div>
     <p class="dek">The story of a family market that opened in 1906, came home after internment, and became the Peninsula's go-to for poke, Spam musubi, and a taste of the islands.</p>
 
+
       <p class="s-para">In 1906, a young immigrant named Tokutaro Takahashi opened a small general store on the edge of downtown San Mateo. He had come from Wakayama, Japan, and his shop sold clothing, boots, and household goods to the area's Japanese-speaking families. More than a century later, that store is still on Claremont Street, still run by the Takahashi family, now four generations deep.</p>
       <p class="s-para">The market has lived through the whole American century. During World War II, the Takahashis, like thousands of Japanese-American families, were forced into internment camps. Kenge Takahashi, one of the founder's children, served overseas with the 442nd Regimental Combat Team, the segregated Japanese-American unit that became the most decorated of its size in U.S. history. When the war ended, the family came home and reopened the doors.</p>
       <p class="s-para">The market you walk into today took shape in the late 1950s. As San Francisco International Airport expanded, Hawaiian families moved to the Peninsula and started asking for the flavors of home. Takahashi answered, stocking Hawaiian shoyu, poi, fresh limu, poke, and Spam musubi alongside its Japanese groceries. That mix, Japanese roots with an island heart, is what makes it unlike anywhere else around.</p>
@@ -185,6 +204,8 @@
         <p><strong>Call</strong> &middot; <a href="tel:6503430394">(650) 343-0394</a></p>
         <p><a href="https://takahashimarket.com/" target="_blank" rel="noopener">Visit their site &rarr;</a> &middot; <a href="https://www.google.com/maps/search/?api=1&query=Takahashi%20Market%20San%20Mateo%20San%20Mateo" target="_blank" rel="noopener">Get directions &rarr;</a></p>
       </div>
+
+
     <p class="outro">Know a San Mateo institution that deserves a spotlight? <a href="suggest.html">Tell us here</a>.</p>
 
     <div class="locals-cta" style="margin:2.5rem 0 1.5rem; padding:1.25rem 1.5rem; background:#F2E9D4; border:1px solid #E3D6BC; border-radius:12px; font-size:0.95rem;">
