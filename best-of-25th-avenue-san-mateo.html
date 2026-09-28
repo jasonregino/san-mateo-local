@@ -110,8 +110,19 @@
   .post-hero { margin:1.6rem 0 0; }
   .post-hero img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); }
   .post-video { margin:2.2rem 0; }
+  .post-video h2 { margin-bottom:0.3rem; }
+  .post-video .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
+  .post-video .vid-grid { display:grid; gap:1rem; }
+  .post-video figure { margin:0; }
+  .post-video figcaption { color:var(--ink-soft); font-size:0.9rem; margin-top:0.45rem; }
   .post-video .vid-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
   .post-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  /* Shorts are 9:16. In the 16:9 frame above they sit in enormous black bars, so
+     portrait players get their own ratio and a cap on width - a full-width 9:16
+     player on a phone is taller than the screen. auto-fit keeps them side by side
+     on a desktop and stacks them on a narrow one with no media query. */
+  .post-video.is-vertical .vid-grid { grid-template-columns:repeat(auto-fit,minmax(240px,300px)); justify-content:center; }
+  .post-video.is-vertical .vid-wrap { padding-top:177.78%; }
   .post-gallery { margin:2.2rem 0; }
   .post-gallery h2 { margin-bottom:0.3rem; }
   .post-gallery .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
