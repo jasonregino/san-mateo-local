@@ -124,6 +124,11 @@
   .post-video figure.wide .vid-wrap { padding-top:56.25%; }
   .post-video figure.tall { width:min(300px,46%); }
   .post-video figure.tall .vid-wrap { padding-top:177.78%; }
+  .post-video figure.feature { width:min(430px,100%); }
+  .post-video figure.feature .vid-wrap { padding-top:177.78%; }
+  .post-video figure.feature figcaption { font-size:0.95rem; }
+  .post-video .vid-row { position:relative; padding-top:0.4rem; }
+  .post-video .vid-subhead { width:100%; text-align:center; margin:0 0 0.2rem; color:var(--ink-soft); font-size:0.88rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; }
   .post-gallery { margin:2.2rem 0; }
   .post-gallery h2 { margin-bottom:0.3rem; }
   .post-gallery .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
@@ -166,7 +171,7 @@
 </head>
 <body>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"San Mateo Cruise Night, in Pictures","description":"Classic cars took over two miles of El Camino Real on Saturday night. We were out there from golden hour to closing time. Here is what it looked like.","datePublished":"2026-09-27","author":{"@type":"Organization","name":"San Mateo Local"},"publisher":{"@type":"Organization","name":"San Mateo Local"}}</script>
-  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"VideoObject","name":"San Mateo Cruise Night 2026, in photos","description":"All fifteen photos, set to music.","thumbnailUrl":"https://i.ytimg.com/vi/2W5fCd-gyU4/hqdefault.jpg","uploadDate":"2026-09-27","embedUrl":"https://www.youtube.com/embed/2W5fCd-gyU4","publisher":{"@type":"Organization","name":"San Mateo Local"}},{"@context":"https://schema.org","@type":"VideoObject","name":"San Mateo Cruise Night after dark, End of Summer Cruise 2026","description":"After dark, when the lights came on.","thumbnailUrl":"https://i.ytimg.com/vi/PpHqVl4ucmI/hqdefault.jpg","uploadDate":"2026-09-27","embedUrl":"https://www.youtube.com/embed/PpHqVl4ucmI","publisher":{"@type":"Organization","name":"San Mateo Local"}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"VideoObject","name":"San Mateo Cruise Night 2026, the full cruise down El Camino Real","description":"The full cruise, shot along El Camino Real between Hillsdale and 3rd.","thumbnailUrl":"https://i.ytimg.com/vi/TLaTsFhRj1I/hqdefault.jpg","uploadDate":"2026-09-27","embedUrl":"https://www.youtube.com/embed/TLaTsFhRj1I","publisher":{"@type":"Organization","name":"San Mateo Local"}},{"@context":"https://schema.org","@type":"VideoObject","name":"San Mateo Cruise Night after dark, End of Summer Cruise 2026","description":"After dark, when the lights came on.","thumbnailUrl":"https://i.ytimg.com/vi/PpHqVl4ucmI/hqdefault.jpg","uploadDate":"2026-09-27","embedUrl":"https://www.youtube.com/embed/PpHqVl4ucmI","publisher":{"@type":"Organization","name":"San Mateo Local"}}]</script>
   <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--bay-deep);">Get on the guide &rarr;</strong></a></div>
   <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--bay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
   <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
@@ -217,13 +222,14 @@
       <div class="article-body"><p class="s-para">The last stretch was the best looking. Storefront signs came on, headlights caught the chrome, and a few cars brought their own lighting. People stayed out until the cars did.</p></div>
     <div class="post-video">
       <h2>Watch the cruise</h2>
-      <p class="gal-note">The whole night in one go, plus two clips from the street.</p>
+      <p class="gal-note">The whole thing, start to finish, four minutes down El Camino Real.</p>
       <div class="vid-grid">
-        <figure class="wide">
-          <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/2W5fCd-gyU4" title="San Mateo Cruise Night 2026, in photos" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-          <figcaption>All fifteen photos, set to music.</figcaption>
+        <figure class="feature">
+          <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/TLaTsFhRj1I" title="San Mateo Cruise Night 2026, the full cruise down El Camino Real" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <figcaption>The full cruise, shot along El Camino Real between Hillsdale and 3rd.</figcaption>
         </figure>
         <div class="vid-row">
+          <p class="vid-subhead">Shorter clips</p>
         <figure class="tall">
           <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/PpHqVl4ucmI" title="San Mateo Cruise Night after dark, End of Summer Cruise 2026" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           <figcaption>After dark, when the lights came on.</figcaption>
