@@ -6,14 +6,14 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBBC09ZJZQ"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());(function(){var _i=false;try{var _p=new URLSearchParams(location.search);if(_p.get('internal')==='1')localStorage.setItem('sml-internal','1');if(_p.get('internal')==='0')localStorage.removeItem('sml-internal');_i=localStorage.getItem('sml-internal')==='1';}catch(e){}if(_i)gtag('set',{traffic_type:'internal'});gtag('config','G-ZBBC09ZJZQ',{});})();</script>
   <title>Balanced Hart &middot; Therapeutic massage studio in San Mateo | San Mateo Local</title>
-  <meta name="description" content="An independent massage therapy and personal training studio in San Mateo." />
+  <meta name="description" content="Locally born and raised massage therapist and personal trainer with over 20 years of experience. Every massage is tailored to your needs with a focus on se" />
   <link rel="canonical" href="https://sanmateolocal.com/business/balanced-hart.html" />
   <meta name="theme-color" content="#0C5B62" />
   <meta property="og:type" content="business.business" />
   <meta property="og:title" content="Balanced Hart &middot; San Mateo Local" />
-  <meta property="og:description" content="An independent massage therapy and personal training studio in San Mateo." />
+  <meta property="og:description" content="Locally born and raised massage therapist and personal trainer with over 20 years of experience. Every massage is tailored to your needs with a focus on se" />
   <meta property="og:url" content="https://sanmateolocal.com/business/balanced-hart.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HealthAndBeautyBusiness","name":"Balanced Hart","url":"https://sanmateolocal.com/business/balanced-hart.html","address":{"@type":"PostalAddress","streetAddress":"15 N Ellsworth Ave","addressLocality":"San Mateo","addressRegion":"CA","addressCountry":"US"},"telephone":"(650) 483-2084","sameAs":["https://balancedhart.com/"],"geo":{"@type":"GeoCoordinates","latitude":37.567499,"longitude":-122.325406},"priceRange":"$$","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Tuesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Thursday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Friday","opens":"09:00","closes":"18:00"}],"areaServed":"San Mateo, California","description":"An independent massage therapy and personal training studio in San Mateo."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HealthAndBeautyBusiness","name":"Balanced Hart","url":"https://sanmateolocal.com/business/balanced-hart.html","address":{"@type":"PostalAddress","streetAddress":"15 N Ellsworth Ave","addressLocality":"San Mateo","addressRegion":"CA","addressCountry":"US"},"telephone":"(650) 483-2084","sameAs":["https://balancedhart.com/"],"geo":{"@type":"GeoCoordinates","latitude":37.567499,"longitude":-122.325406},"priceRange":"$$","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Monday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Tuesday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Wednesday","opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Thursday","opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"https://schema.org/Friday","opens":"09:00","closes":"18:00"}],"areaServed":"San Mateo, California","description":"Locally born and raised massage therapist and personal trainer with over 20 years of experience. Every massage is tailored to your needs with a focus on sending you home with suggestions to help improve what ails you. Sharing my knowledge and helping you find answers is wonderful."}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where is Balanced Hart?","acceptedAnswer":{"@type":"Answer","text":"Balanced Hart is located at 15 N Ellsworth Ave, Ste 202, San Mateo, CA 94401, in the North Central San Mateo area of San Mateo."}},{"@type":"Question","name":"What are Balanced Hart's hours?","acceptedAnswer":{"@type":"Answer","text":"Balanced Hart is open Monday, Tuesday, Wednesday, Thursday, Friday (closed Saturday, Sunday). See the full hours above."}},{"@type":"Question","name":"How do I contact Balanced Hart?","acceptedAnswer":{"@type":"Answer","text":"Call (650) 483-2084 or visit their website."}}]}</script>
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="/favicon.png" />
@@ -48,6 +48,13 @@
     .hero-logo { width:96px; height:96px; object-fit:contain; background:#fff; padding:8px; box-shadow:0 8px 20px -8px rgba(0,0,0,.55); margin:0.5rem 0 0.8rem; display:block; border-radius:14px; }
     .hero-logo.round { border-radius:50%; }
     .hero-logo.wide { width:auto; height:auto; max-width:min(380px,82vw); max-height:132px; background:none; padding:0; box-shadow:none; border-radius:0; filter:drop-shadow(0 6px 16px rgba(0,0,0,.38)); }
+    /* A wide logo drawn in one dark colour on a transparent background disappears
+       into the teal hero, and inverting it does not help: dark mode LIGHTENS that
+       gradient, so white washes out exactly where black worked. Set logoPlate on
+       the listing to sit it on its own light card, which reads in both themes and
+       leaves the owner's artwork untouched. Logos that carry their own solid
+       background (Galine Frye) already solve this and need no plate. */
+    .hero-logo.wide.plate { background:#fff; padding:0.85rem 1.15rem; border-radius:14px; max-height:112px; box-shadow:0 10px 24px -10px rgba(0,0,0,.55); filter:none; }
     .hero-mark { display:inline-flex; align-items:center; justify-content:center; width:72px; height:72px; border-radius:18px; background:rgba(255,255,255,.16); border:1.5px solid rgba(255,255,255,.4); font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:2.8rem; line-height:1; color:#fff; margin:0.5rem 0 0.8rem; }
     .hero-kicker { font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:700; color:#CFF0E8; }
     .hero-chain { display:inline-block; margin-left:0.5rem; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:#EAF6F2; border:1px solid rgba(255,255,255,.5); border-radius:999px; padding:0.1rem 0.5rem; vertical-align:middle; }
@@ -143,11 +150,11 @@
   <div class="hero">
     <div class="hero-inner">
       <a class="hero-back" href="/local-services.html">&larr; Local Services</a>
-      <div class="hero-mark" aria-hidden="true">B</div>
+      <img class="hero-logo wide plate" src="/images/logos/balanced-hart-logo.png" alt="Balanced Hart logo" />
       <div class="hero-kicker">Therapeutic massage studio</div>
       <h1>Balanced Hart</h1>
       <div class="hero-loc">North Central San Mateo &middot; San Mateo, California</div>
-      <a class="hero-claim" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Balanced%20Hart&amp;state=CA&amp;phone=%2B16504832084&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fbalancedhart.com%2F&amp;category=Local%20Services&amp;address=15%20N%20Ellsworth%20Ave&amp;directory_type=Therapeutic%20massage%20studio" target="_blank" rel="noopener">Own this business? Claim it free &rsaquo;</a>
+      <span class="hero-verified">&#10003; Verified by owner</span>
       <div class="hero-acts">
         <a class="primary" href="tel:+16504832084">Call</a>
         <a href="https://www.google.com/maps/search/?api=1&query=Balanced%20Hart%2015%20N%20Ellsworth%20Ave%2C%20Ste%20202%2C%20San%20Mateo%2C%20CA%2094401" target="_blank" rel="noopener">Get Directions</a>
@@ -160,10 +167,10 @@
   <main class="article">
     <section class="blk">
       <h2>About Balanced Hart</h2>
-      <p>An independent massage therapy and personal training studio in San Mateo.</p>
+      <p>Locally born and raised massage therapist and personal trainer with over 20 years of experience. Every massage is tailored to your needs with a focus on sending you home with suggestions to help improve what ails you. Sharing my knowledge and helping you find answers is wonderful.</p>
     </section>
 
-    <section class="blk"><h2>Good to know</h2><div class="chips"><span class="chip">Therapeutic massage studio</span><span class="chip">North Central San Mateo</span><span class="chip">Mid-range</span></div></section>
+    <section class="blk"><h2>Good to know</h2><div class="chips"><span class="chip">Therapeutic massage</span><span class="chip">Personal training</span><span class="chip">20+ years experience</span><span class="chip">Locally born and raised</span><span class="chip">Tailored to your needs</span><span class="chip">North Central San Mateo</span><span class="chip">Mid-range</span></div></section>
 
     <section class="blk">
       <h2>Details</h2>
@@ -196,19 +203,11 @@
       <details><summary>How do I contact Balanced Hart?</summary><p>Call (650) 483-2084 or visit <a href="https://balancedhart.com/" target="_blank" rel="noopener">their website</a>.</p></details>
     </section>
 
-    <section class="claim" id="claim">
-      <h2>Is this your business?</h2>
-      <p>This is your free San Mateo Local listing. Claiming it is free, with no card, and lets you:</p>
-      <ul>
-        <li><strong>Stand out.</strong> Add your own photos, so your page is what locals notice instead of scrolling past.</li>
-        <li><strong>Bring people in.</strong> Add an offer for locals, and our Ask a Local assistant mentions it when it recommends you.</li>
-        <li><strong>Let customers act.</strong> Add a reservation, ordering, or social link, so people can book or follow you right from your page.</li>
-        <li><strong>Build trust.</strong> Show the &#10003; verified by owner badge, so customers know a real person stands behind the page.</li>
-        <li><strong>Stay current.</strong> Keep your hours, phone, and details up to date.</li>
-      </ul>
-      <a class="btn" href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd?organization=Balanced%20Hart&amp;state=CA&amp;phone=%2B16504832084&amp;city=San%20Mateo&amp;postal_code=94401&amp;website=https%3A%2F%2Fbalancedhart.com%2F&amp;category=Local%20Services&amp;address=15%20N%20Ellsworth%20Ave&amp;directory_type=Therapeutic%20massage%20studio" target="_blank" rel="noopener">Claim this business &rsaquo;</a>
-      <p class="claim-fine">Takes about a minute, and there's no card.</p>
-      <div class="claim-premium"><p>Some businesses go all in with a Premium page: photos, reviews, and a local offer, all built and kept current for you.</p><a class="premium-cta" href="/premium-example-wellness.html">See what yours could look like &rsaquo;</a><a class="biz-cta" href="/for-business-owners.html">See everything for businesses &rsaquo;</a></div>
+    <section class="claim claimed" id="claim">
+      <h2>Want more from your page?</h2>
+      <p>Some businesses upgrade to a full page with photos, reviews, and a local offer, built and maintained for them.</p>
+      <a class="premium-cta" href="/premium-example-wellness.html">See what yours could look like &rsaquo;</a>
+      <a class="biz-cta" href="/for-business-owners.html">See everything for businesses &rsaquo;</a>
     </section>
   </main>
 
