@@ -112,17 +112,18 @@
   .post-video { margin:2.2rem 0; }
   .post-video h2 { margin-bottom:0.3rem; }
   .post-video .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
-  .post-video .vid-grid { display:grid; gap:1rem; }
+  .post-video .vid-grid { display:flex; flex-direction:column; align-items:center; gap:1.1rem; }
+  .post-video .vid-row { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; width:100%; }
   .post-video figure { margin:0; }
   .post-video figcaption { color:var(--ink-soft); font-size:0.9rem; margin-top:0.45rem; }
-  .post-video .vid-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
+  .post-video .vid-wrap { position:relative; width:100%; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
   .post-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-  /* Shorts are 9:16. In the 16:9 frame above they sit in enormous black bars, so
-     portrait players get their own ratio and a cap on width - a full-width 9:16
-     player on a phone is taller than the screen. auto-fit keeps them side by side
-     on a desktop and stacks them on a narrow one with no media query. */
-  .post-video.is-vertical .vid-grid { grid-template-columns:repeat(auto-fit,minmax(240px,300px)); justify-content:center; }
-  .post-video.is-vertical .vid-wrap { padding-top:177.78%; }
+  /* Two shapes, two ratios. Shorts are 9:16 and get a width cap, because a
+     full-width portrait player is taller than a phone screen. */
+  .post-video figure.wide { width:min(760px,100%); }
+  .post-video figure.wide .vid-wrap { padding-top:56.25%; }
+  .post-video figure.tall { width:min(300px,46%); }
+  .post-video figure.tall .vid-wrap { padding-top:177.78%; }
   .post-gallery { margin:2.2rem 0; }
   .post-gallery h2 { margin-bottom:0.3rem; }
   .post-gallery .gal-note { color:var(--ink-soft); font-size:0.92rem; margin-bottom:1rem; }
@@ -213,14 +214,20 @@
       <div class="article-body"><p class="s-para">Around seven the street changed character. The parked cars started moving, the sidewalks filled in, and El Camino turned into a slow rolling parade of paint and exhaust. Not everything had four wheels, either.</p></div>
       <h2>After dark, headlights and neon</h2>
       <div class="article-body"><p class="s-para">The last stretch was the best looking. Storefront signs came on, headlights caught the chrome, and a few cars brought their own lighting. People stayed out until the cars did.</p></div>
-    <div class="post-video is-vertical">
+    <div class="post-video">
       <h2>Watch the cruise</h2>
-      <p class="gal-note">Two clips from the same night: golden hour before the street filled up, and after dark when the lights came on.</p>
+      <p class="gal-note">The whole night in one go, plus two clips from the street.</p>
       <div class="vid-grid">
-        <figure>
+        <figure class="wide">
+          <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/2W5fCd-gyU4" title="San Mateo Cruise Night 2026, in photos" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <figcaption>All fifteen photos, set to music.</figcaption>
+        </figure>
+        <div class="vid-row">
+        <figure class="tall">
           <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/PpHqVl4ucmI" title="San Mateo Cruise Night after dark, End of Summer Cruise 2026" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           <figcaption>After dark, when the lights came on.</figcaption>
         </figure>
+        </div>
       </div>
     </div>
     <div class="post-gallery">
