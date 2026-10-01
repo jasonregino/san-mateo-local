@@ -2,6 +2,7 @@
   "redirects": [
     { "source": "/blog.html", "destination": "/guides.html", "permanent": true },
     { "source": "/open-late.html", "destination": "/open-late-in-san-mateo.html", "permanent": true },
+    { "source": "/business/anatolian-cafe-and-market.html", "destination": "/business/anatolian-market.html", "permanent": true },
     { "source": "/business/soleil-luna-nail-spa.html", "destination": "/business/heavenly-nail-lounge-and-wellness.html", "permanent": true }
   ]
 }
