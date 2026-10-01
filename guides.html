@@ -221,6 +221,15 @@
     .bestof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.7rem;}
     .bestof-card{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:.85rem 1.1rem;background:var(--paper-2);border:1.5px solid var(--ink);border-top:4px solid var(--bay-deep);text-decoration:none;color:var(--ink);font-weight:600;}
     .bestof-card:hover{background:var(--bay);color:#fff;border-color:var(--bay);}
+    /* Colour-coded so the eye can sort the shelf: best-of = teal (default),
+       walking tour = clay, where-to = sage. */
+    .bestof-tour{border-top:4px solid var(--clay);background:#F7DCCB;}
+    .bestof-tour:hover{background:var(--clay-deep);border-color:var(--clay-deep);color:#fff;}
+    .bestof-where{border-top:4px solid #5B8C3E;background:#DCEBCF;}
+    .bestof-where:hover{background:#4A7A31;border-color:#4A7A31;color:#fff;}
+    [data-theme="dark"] .bestof-tour{background:#3A2419;}
+    [data-theme="dark"] .bestof-where{background:#23331C;border-top-color:#86B566;}
+    [data-theme="dark"] .bestof-where:hover{background:#86B566;border-color:#86B566;color:#181410;}
     .bestof-suggest{background:#FBEBA6;color:#221D16;border-color:#E6C158;}
     .bestof-suggest:hover{background:#F6E293;border-color:#E0B94E;color:#221D16;}
     .feed-head{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;margin:2.2rem 0 .2rem;}
@@ -236,8 +245,8 @@
       <h2>Local guides</h2>
       <p class="bestof-sub">Our evergreen local picks, the spots we send friends to. Kept up to date, never expiring.</p>
       <div class="bestof-grid">
-        <a class="bestof-card" href="where-to-donate-clothes-in-san-mateo.html"><span>Where to Donate Clothes in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
-        <a class="bestof-card" href="where-to-buy-flowers-in-san-mateo.html"><span>Where to Buy Flowers in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
+        <a class="bestof-card bestof-where" href="where-to-donate-clothes-in-san-mateo.html"><span>Where to Donate Clothes in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
+        <a class="bestof-card bestof-where" href="where-to-buy-flowers-in-san-mateo.html"><span>Where to Buy Flowers in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
         <a class="bestof-card" href="best-farmers-markets-in-san-mateo.html"><span>The Best Farmers' Markets in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
         <a class="bestof-card" href="best-boba-in-san-mateo.html"><span>The Best Boba in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
         <a class="bestof-card" href="best-ice-cream-in-san-mateo.html"><span>The Best Ice Cream in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
@@ -255,7 +264,7 @@
         <a class="bestof-card" href="best-of-downtown-san-mateo.html"><span>Best of Downtown San Mateo</span><span aria-hidden="true">&rarr;</span></a>
         <a class="bestof-card" href="best-of-bay-meadows-san-mateo.html"><span>Best of Bay Meadows</span><span aria-hidden="true">&rarr;</span></a>
         <a class="bestof-card" href="open-late-in-san-mateo.html"><span>Open Late in San Mateo</span><span aria-hidden="true">&rarr;</span></a>
-        <a class="bestof-card" href="downtown-walking-tour.html"><span>Historic Downtown Walking Tour</span><span aria-hidden="true">&rarr;</span></a>
+        <a class="bestof-card bestof-tour" href="downtown-walking-tour.html"><span>Historic Downtown Walking Tour</span><span aria-hidden="true">&rarr;</span></a>
         <a class="bestof-card bestof-suggest" href="suggest.html"><span>&#43; Vote on the Best Of</span><span aria-hidden="true">&rarr;</span></a>
       </div>
     </section></div>
