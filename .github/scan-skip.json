@@ -1,0 +1,30 @@
+{
+  "_why": "Businesses Jason has already decided NOT to add (chains, out of scope). The weekly DSMA scan stays quiet about these. Add a name with the date and reason.",
+  "skip": [
+    {
+      "name": "Wave Plastic Surgery",
+      "reason": "chain, 6+ California centers",
+      "decided": "2026-09-28"
+    },
+    {
+      "name": "Poppy Bank",
+      "reason": "regional bank",
+      "decided": "2026-10-01"
+    },
+    {
+      "name": "Pop Mart",
+      "reason": "chain",
+      "decided": "2026-10-01"
+    },
+    {
+      "name": "Planet Fitness",
+      "reason": "chain",
+      "decided": "2026-10-01"
+    },
+    {
+      "name": "Golden Moon Studios",
+      "reason": "same business as Golden Moon Gallery, already listed (units #101/#100)",
+      "decided": "2026-09-28"
+    }
+  ]
+}
