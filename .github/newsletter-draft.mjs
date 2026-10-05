@@ -54,11 +54,13 @@ function pageMeta(slug) {
   let html = '';
   try { html = readFileSync(slug, 'utf8'); } catch { return { title: slug, dek: '' }; }
   const t = html.match(/<title>([^<]*)<\/title>/i);
-  const d = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i)
-        || html.match(/<meta\s+property=["']og:description["']\s+content=["']([^"']*)["']/i);
+  // Match the attribute's own quote type. The old [^"']* stopped at ANY quote, so an
+  // apostrophe inside a double-quoted description ("you won't see...") cut it mid-word.
+  const d = html.match(/<meta\s+name=["']description["']\s+content=(["'])(.*?)\1/i)
+        || html.match(/<meta\s+property=["']og:description["']\s+content=(["'])(.*?)\1/i);
   let title = t ? decodeEntities(t[1]) : slug;
   title = title.replace(/\s*[|·–—-]\s*San Mateo Local.*$/i, '').trim();  // drop the site suffix
-  return { title, dek: d ? decodeEntities(d[1]) : '' };
+  return { title, dek: d ? decodeEntities(d[2]) : '' };
 }
 
 function recentPosts() {
