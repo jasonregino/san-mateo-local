@@ -1,0 +1,30 @@
+name: Monthly closure check
+
+# Runs on GitHub's servers on the 1st of each month. Asks Google whether each listed
+# business is still open and opens an Issue with any that closed. Never edits the site.
+#
+# Schedule note: ONLY the day-of-month is set. Setting day-of-month AND a weekday makes
+# cron run when EITHER matches (that bug made a Cowork "monthly" scan fire 13 times).
+
+on:
+  schedule:
+    - cron: '23 17 1 * *'   # 1st of every month, 17:23 UTC (~10:23am Pacific)
+  workflow_dispatch: {}      # lets Jason run it on demand from the Actions tab
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run closure check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+        run: node .github/closure-check.mjs

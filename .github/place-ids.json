@@ -1,0 +1,5540 @@
+{
+ "_about": "Listing id -> Google Place ID, for the monthly closure check. Built by scripts/build-place-ids.mjs. Do not edit by hand.",
+ "places": {
+  "3-bees-coffee": {
+   "name": "3 Bees Coffee",
+   "placeId": "ChIJbfvnfHCej4ARfiF3DCsIX7o",
+   "google": "3 Bees Coffee"
+  },
+  "pausa-bar-cookery": {
+   "name": "Pausa Bar & Cookery",
+   "placeId": "ChIJjcw0nnqej4ARvrndVxyQY60",
+   "google": "Pausa Bar & Cookery"
+  },
+  "flores-san-mateo": {
+   "name": "Flores",
+   "placeId": "ChIJNXD9Wmefj4ARw5k3-lRu9I8",
+   "google": "Flores San Mateo"
+  },
+  "porterhouse": {
+   "name": "Porterhouse",
+   "placeId": "ChIJ9WyHNXCej4ARr47XTsNUA_Q",
+   "google": "Porterhouse"
+  },
+  "espetus-churrascaria": {
+   "name": "Espetus Churrascaria",
+   "placeId": "ChIJHQ-1AmWej4AR1QryXVCTOi8",
+   "google": "Espetus Churrascaria Brazilian Steakhouse - San Mateo"
+  },
+  "palette-tea-garden": {
+   "name": "Palette Tea Garden & Dim Sum",
+   "placeId": "ChIJaftroqafj4ARP2AjcD1UhoQ",
+   "google": "Palette Tea Garden & Dim Sum 彩苑"
+  },
+  "bahche-mezzehouse": {
+   "name": "Bahche Mezzehouse & Wine Bar",
+   "placeId": "ChIJ_yqFjbqfj4ARUmXo2-T8CSg",
+   "google": "Bahche"
+  },
+  "el-sinaloense": {
+   "name": "El Sinaloense",
+   "placeId": "ChIJHwExAV-ej4ARTtO8nKuvAy8",
+   "google": "El Sinaloense Mexican Restaurant"
+  },
+  "sushi-edomata": {
+   "name": "Sushi Edomata",
+   "placeId": "ChIJPwJWe3Cej4AR2tUwdkF4nL8",
+   "google": "Sushi Edomata"
+  },
+  "joy-sushi": {
+   "name": "Joy Sushi",
+   "placeId": "ChIJsRSv03Cej4ARF2eZmKCM258",
+   "google": "Joy Sushi"
+  },
+  "oceanic-restaurant": {
+   "name": "Oceanic Restaurant",
+   "placeId": "ChIJJzUYqv6ej4ARdP1wPGk7IUA",
+   "google": "Oceanic Restaurant"
+  },
+  "thonglor-thai": {
+   "name": "Thonglor Thai Bistro",
+   "placeId": "ChIJ3-_dDXCej4ARKIbU9TPugzQ",
+   "google": "Thonglor Thai Bistro"
+  },
+  "sole-ristorante": {
+   "name": "Sole Ristorante Italiano",
+   "placeId": "ChIJma5mbxqfj4ARgg-PlO8L6Cw",
+   "google": "Sole Ristorante Italiano"
+  },
+  "tannourine": {
+   "name": "Tannourine Lebanese & Mediterranean",
+   "placeId": "ChIJrzidLPmej4ARioxd87uGxKk",
+   "google": "Tannourine Restaurant - Mediterranean Cuisine"
+  },
+  "champagne-seafood": {
+   "name": "Champagne Seafood Restaurant",
+   "placeId": null,
+   "unmatched": "Champagne Seafood Restaurant | 88 E 4th Ave, San Mateo, CA 94401, USA"
+  },
+  "kaizen-and-coffee": {
+   "name": "Kaizen & Coffee",
+   "placeId": "ChIJgb-xRfmej4ARck6mLp3MPCg",
+   "google": "KAIZEN & COFFEE"
+  },
+  "backhaus": {
+   "name": "Backhaus",
+   "placeId": "ChIJZUKtRO6dj4ARnBtJIUgEkwM",
+   "google": "Backhaus | San Mateo"
+  },
+  "fiero-caffe": {
+   "name": "Fiero Caffe",
+   "placeId": "ChIJqxxHgnGej4ARtiKkJAXq-3E",
+   "google": "Fiero Caffe"
+  },
+  "bonjour-bakehouse": {
+   "name": "Bonjour Bakehouse",
+   "placeId": "ChIJrQxCoJKdj4AR1Tmf4lRpJdU",
+   "google": "Bonjour Bakehouse"
+  },
+  "sama-coffee": {
+   "name": "Sama Coffee Shop",
+   "placeId": "ChIJD3cjhPOfj4ARp9sj08g3cjw",
+   "google": "Sama Coffee Shop"
+  },
+  "taste-and-glory": {
+   "name": "Taste & Glory",
+   "placeId": "ChIJkbgjNQCfj4ARz-TbgafEZOI",
+   "google": "Taste and Glory"
+  },
+  "apple-fritter": {
+   "name": "Apple Fritter",
+   "placeId": "ChIJtyXnf-iej4ARgH5vz-MDChE",
+   "google": "Apple Fritter Coffee Shop"
+  },
+  "breakfast-club-midtown": {
+   "name": "The Breakfast Club at Midtown",
+   "placeId": "ChIJK0sskGefj4ARGu1pA1CT3e8",
+   "google": "The Breakfast Club at Midtown"
+  },
+  "la-casa-de-los-huevos": {
+   "name": "La Casa de los Huevos",
+   "placeId": "ChIJu9fnfEGfj4AReN6R333JaPA",
+   "google": "La Casa de Los Huevos"
+  },
+  "simplycake": {
+   "name": "SimplyCake",
+   "placeId": "ChIJrcF2dlCfj4ARCn8qoWm9R-k",
+   "google": "SimplyCake"
+  },
+  "lolita-bakery": {
+   "name": "Lolita Artisanal Bakery-Cafe",
+   "placeId": "ChIJTY3TnBefj4ARLuBxxvSn0Mw",
+   "google": "Lolita Artisanal Bakery- Cafe"
+  },
+  "patio-coffee-shop": {
+   "name": "Patio Coffee Shop",
+   "placeId": "ChIJV_LFWfmej4ARBVYW_8hBGNs",
+   "google": "Patio Coffee Shop"
+  },
+  "caffeinated-cowboy": {
+   "name": "Caffeinated Cowboy",
+   "placeId": "ChIJXSGbeQCfj4ARwnb3Se8UINs",
+   "google": "Caffeinated Cowboy"
+  },
+  "made-out-of-dough": {
+   "name": "Made Out of Dough",
+   "placeId": null,
+   "unmatched": "Made Out Of Dough | 200 Old County Rd, Belmont, CA 94002, USA"
+  },
+  "fogbird": {
+   "name": "Fogbird",
+   "placeId": "ChIJ_YgYJYufj4ARKw1ULsKCDiE",
+   "google": "Fogbird"
+  },
+  "wunderbar": {
+   "name": "Wunderbar",
+   "placeId": "ChIJQ5Cpuxmfj4AR6J-ovmEli1E",
+   "google": "Wunderbar"
+  },
+  "fieldwork-brewing": {
+   "name": "Fieldwork Brewing Co.",
+   "placeId": "ChIJXYm1UR2fj4ARep4zzoa7lZc",
+   "google": "Fieldwork San Mateo"
+  },
+  "barrel-bistro-wine-bar": {
+   "name": "The Barrel Bistro & Wine Bar",
+   "placeId": "ChIJo_9a_fufj4ARjlc_P089jEg",
+   "google": "The Barrel Bistro and Wine Bar"
+  },
+  "b-street-and-vine": {
+   "name": "B Street & Vine",
+   "placeId": "ChIJSS6QeHCej4ARAssTIDcQIiU",
+   "google": "B Street & Vine"
+  },
+  "a2-wine-bar": {
+   "name": "A2 Wine Bar",
+   "placeId": null,
+   "unmatched": "A2 | 117 S B St Ste A, San Mateo, CA 94401, USA"
+  },
+  "mcgoverns-bar": {
+   "name": "McGovern's Bar",
+   "placeId": "ChIJN0qhdXCej4ARGQmAoMQCf9c",
+   "google": "McGovern's Bar"
+  },
+  "swingin-door": {
+   "name": "The Swingin' Door",
+   "placeId": "ChIJgbqC-_uej4AR9hgwImYJcIc",
+   "google": "The Swingin' Door"
+  },
+  "antones-cocktail-lounge": {
+   "name": "Antone's Cocktail Lounge",
+   "placeId": "ChIJLRjBahqfj4ARXDRVCR4xsXU",
+   "google": "Antone's Cocktail Lounge"
+  },
+  "route-92-lounge": {
+   "name": "Route 92 Cocktail Lounge",
+   "placeId": "ChIJa2fQOPiej4ARV5S72cgiCV4",
+   "google": "Route 92 Sports Bar"
+  },
+  "oneills-irish-pub": {
+   "name": "O'Neill's Irish Pub",
+   "placeId": "ChIJmUm103Cej4AROlDvaAdcuKk",
+   "google": "O'Neill's Irish Pub"
+  },
+  "buckys-cocktail-lounge": {
+   "name": "Bucky's Cocktail Lounge",
+   "placeId": "ChIJd1UWBl-ej4ARbt1ihUH7p_o",
+   "google": "Bucky's Cocktail Lounge"
+  },
+  "steamies-bar": {
+   "name": "Steamies Bar",
+   "placeId": "ChIJabTtjxyfj4ARds4sAWbteTI",
+   "google": "Steamies Bar"
+  },
+  "harrys-shoreview-deli": {
+   "name": "Harry's Shoreview Deli",
+   "placeId": "ChIJ14OHaoeej4ARQa1Xvrjqfoo",
+   "google": "Harry's Shoreview Deli"
+  },
+  "rose-cleaners": {
+   "name": "Rose Cleaners",
+   "placeId": "ChIJCY1YSIeej4AR0ajjDkgNGN0",
+   "google": "Rose Cleaners"
+  },
+  "yumi-yogurt": {
+   "name": "Yumi Yogurt",
+   "placeId": "ChIJ19y7EBefj4AR5gz-Q_lA114",
+   "google": "Yumi Yogurt"
+  },
+  "avenida-restaurant": {
+   "name": "Avenida Restaurant",
+   "placeId": "ChIJ62bRY3Cej4AR3l5NXHnw5fc",
+   "google": "Avenida Restaurant"
+  },
+  "bay-trail-san-mateo": {
+   "name": "San Francisco Bay Trail (Coyote Point to the Bridge)",
+   "placeId": "ChIJ737WOwCdj4ARAhSL4kPatlc",
+   "google": "Coyote Point Beach"
+  },
+  "seal-point-park": {
+   "name": "Seal Point Park",
+   "placeId": "ChIJ2z1kfJuej4ARyBP0JwQ91s4",
+   "google": "Seal Point Park"
+  },
+  "coyote-point": {
+   "name": "Coyote Point Recreation Area",
+   "placeId": "ChIJa9nd2M6dj4ARQDIEYjXhp7E",
+   "google": "Coyote Point Recreation Area"
+  },
+  "the-kite-school": {
+   "name": "The Kite School (Tony Parsons)",
+   "placeId": null,
+   "unmatched": "The Kite School | 30 Lakeside Dr, Foster City, CA 94404, USA"
+  },
+  "central-park": {
+   "name": "Central Park & Japanese Garden",
+   "placeId": "ChIJs-PUwm-ej4ARnRbSM15f7Z4",
+   "google": "San Mateo Central Park"
+  },
+  "curiodyssey": {
+   "name": "CuriOdyssey",
+   "placeId": "ChIJiQpTUcidj4ARTGD_teiggkI",
+   "google": "CuriOdyssey"
+  },
+  "laurelwood-park": {
+   "name": "Laurelwood Park & Sugarloaf",
+   "placeId": null,
+   "unmatched": "Laurelwood Park | Laurelwood Park, 3471 Glendora Dr, San Mateo, CA 94403, USA"
+  },
+  "ryder-park": {
+   "name": "Ryder Park",
+   "placeId": "ChIJ7dL6VYCej4ARyuhV4XLGrbM",
+   "google": "Ryder Park"
+  },
+  "beresford-park": {
+   "name": "Beresford Park",
+   "placeId": null,
+   "unmatched": "2720 Alameda de las Pulgas | 2720 Alameda de las Pulgas, San Mateo, CA 94403, USA"
+  },
+  "shoreview-park": {
+   "name": "Shoreview Park",
+   "placeId": "ChIJhVftYI-ej4ARMtbipO_Vn5I",
+   "google": "Shoreview Park"
+  },
+  "lakeshore-park": {
+   "name": "Lakeshore Park",
+   "placeId": "ChIJCYsKDd6ej4ARbROWsDYSn6I",
+   "google": "Lakeshore Park / Marten's Field"
+  },
+  "bay-meadows-park": {
+   "name": "Bay Meadows Community Park",
+   "placeId": "ChIJZ_QbR-Oej4ARWTLb5ZDMlwU",
+   "google": "Bay Meadows Park"
+  },
+  "bel-mateo-bowl": {
+   "name": "Bel Mateo Bowl",
+   "placeId": "ChIJQ_iGyRWfj4ARP6QUoj8Aves",
+   "google": "Bel Mateo Bowl"
+  },
+  "red-door-escape": {
+   "name": "Red Door Escape Room",
+   "placeId": "ChIJX_Uihcmfj4ARELjhLJu7GKo",
+   "google": "Red Door Escape Room"
+  },
+  "kiddo-adventure": {
+   "name": "Kiddo Adventure Indoor Playground",
+   "placeId": "ChIJ_x67cwCfj4AR8cLvd0lAr8c",
+   "google": "Kiddo Adventure Indoor Playground"
+  },
+  "sm-public-library": {
+   "name": "San Mateo Public Library (Main)",
+   "placeId": "ChIJ1fLw5HGej4ARrQaNChl0Atk",
+   "google": "San Mateo Public Library"
+  },
+  "sm-performing-arts": {
+   "name": "San Mateo Performing Arts Center",
+   "placeId": "ChIJJWerAN2dj4AR_XaPK09NFf0",
+   "google": "San Mateo Performing Arts Center"
+  },
+  "sm-county-event-center": {
+   "name": "San Mateo County Event Center",
+   "placeId": "ChIJ7aqPcvuej4ARn6EPmfnyuk0",
+   "google": "San Mateo County Event Center"
+  },
+  "central-park-music-series": {
+   "name": "Central Park Music Series",
+   "placeId": null,
+   "unmatched": "San Mateo Central Park | 50 E 5th Ave, San Mateo, CA 94401, USA"
+  },
+  "vinyl-solution": {
+   "name": "Vinyl Solution Records",
+   "placeId": "ChIJD6HCKf-ej4ARmfSFi2HBthI",
+   "google": "Vinyl Solution Records"
+  },
+  "golden-nursery": {
+   "name": "Golden Nursery",
+   "placeId": "ChIJn5du0X6ej4ARFhGW8WjM6mk",
+   "google": "Golden Nursery"
+  },
+  "golden-moon-gallery": {
+   "name": "Golden Moon Gallery",
+   "placeId": "ChIJ-e-Ly3Gej4ARRbrXpt_n3yc",
+   "google": "Golden Moon Gallery"
+  },
+  "therapy-stores": {
+   "name": "Therapy Stores",
+   "placeId": "ChIJ1bYkkPafj4ARZC9d5mJUPh8",
+   "google": "Therapy Stores"
+  },
+  "atlas-skateboarding": {
+   "name": "Atlas Skateboarding",
+   "placeId": "ChIJ5_Wk7nCej4ARVor90YZz3sw",
+   "google": "Atlas Skateboard Store"
+  },
+  "aacp-books": {
+   "name": "Asian American Curriculum Project",
+   "placeId": "ChIJz_dmQnqej4AR3yNiQBsjOqk",
+   "google": "Asian American Curriculum Project"
+  },
+  "akiba-hq": {
+   "name": "Akiba HQ",
+   "placeId": "ChIJ3f3yf5efj4ARsZOPxVANDhc",
+   "google": "Akiba HQ Anime & Gundam Store"
+  },
+  "sharonas-chocolate": {
+   "name": "Sharona's Chocolate Shop",
+   "placeId": "ChIJp_5wRHCej4AR-Nc42Sa8LLo",
+   "google": "Sharona's Chocolate Shop"
+  },
+  "edmonds-florist": {
+   "name": "Edmond's Plaza Florist",
+   "placeId": "ChIJi1ClRnCej4ARAQEZFNBONEg",
+   "google": "Edmond's Plaza Florist, Inc."
+  },
+  "hillsdale-shopping-center": {
+   "name": "Hillsdale Shopping Center",
+   "placeId": "ChIJdYut3AKfj4ARvzOZtYDyWMo",
+   "google": "Hillsdale Shopping Center"
+  },
+  "cinemark-century-12": {
+   "name": "Cinemark Century San Mateo 12",
+   "placeId": "ChIJd3dEm3Cej4ARl8USef836uE",
+   "google": "Cinemark Century San Mateo 12"
+  },
+  "cinepolis-hillsdale": {
+   "name": "Cinépolis Luxury Cinemas",
+   "placeId": "ChIJ1afTrWmfj4ARwm1KRh3G_E0",
+   "google": "Cinépolis Luxury Cinemas San Mateo"
+  },
+  "pinstripes-san-mateo": {
+   "name": "Pinstripes San Mateo",
+   "placeId": "ChIJbUWR7Zafj4ARMYECIC0Iey0",
+   "google": "Pinstripes"
+  },
+  "safari-run": {
+   "name": "Safari Run",
+   "placeId": "ChIJ9zTADtqdj4AR9kVkQQkJ6Dk",
+   "google": "Safari Run, San Mateo"
+  },
+  "imagination-city": {
+   "name": "Imagination City",
+   "placeId": "ChIJz0Bos0h3j4ARWCjOVMDdvNw",
+   "google": "Imagination City"
+  },
+  "clay-life": {
+   "name": "Clay Life Art Studios",
+   "placeId": "ChIJRWLSPJmfj4AR7YOLBVFS_vg",
+   "google": "Clay Life Arts Studio & TheClayLife.com"
+  },
+  "marvegos-art": {
+   "name": "The Marvegos Fine Art School",
+   "placeId": "ChIJ-wysNbOfj4ARamy0fvr6xzU",
+   "google": "Marvegos Fine Art School"
+  },
+  "art-academia": {
+   "name": "Art Academia",
+   "placeId": null,
+   "unmatched": "Golden Moon Studios | 28 E 3rd Ave #101, San Mateo, CA 94401, USA"
+  },
+  "peninsula-gymnastics": {
+   "name": "Peninsula Gymnastics",
+   "placeId": "ChIJifCF-fWej4ARSoAhja6_yGA",
+   "google": "Peninsula Gymnastics"
+  },
+  "gymboree-san-mateo": {
+   "name": "Gymboree Play & Music",
+   "placeId": "ChIJ4Sb7p0yej4ARGUZwchk6tRc",
+   "google": "Gymboree Play & Music"
+  },
+  "south-bay-cmt": {
+   "name": "San Mateo Children's Musical Theater",
+   "placeId": null,
+   "unmatched": "San Mateo Performing Arts Center | 600 N Delaware St, San Mateo, CA 94401, USA"
+  },
+  "leos-tacos": {
+   "name": "Leo's Tacos Truck",
+   "placeId": "ChIJw1lxEgCfj4AR1G2b0NVDT-c",
+   "google": "Leo’s Tacos Truck"
+  },
+  "tacos-el-flamingo": {
+   "name": "Tacos El Flamingo",
+   "placeId": null,
+   "unmatched": "Tacos El Flamingo | 168 E 4th Ave, San Mateo, CA 94401, USA"
+  },
+  "camilas-tacos": {
+   "name": "Camila's Tacos",
+   "placeId": "ChIJtexa8l6ej4AREIXNZySKm5g",
+   "google": "Camila's Tacos (Food Truck)"
+  },
+  "los-carnalitos": {
+   "name": "Los Carnalitos",
+   "placeId": "ChIJOycOZACfj4ARmUbln-ELdJs",
+   "google": "Los Carnalitos (Taco Truck)"
+  },
+  "edis-quesabirrias": {
+   "name": "Edi's Quesabirrias and Tacos",
+   "placeId": "ChIJ1dqUT7Kfj4ARJjWhF4JuDFI",
+   "google": "Edi's Quesabirrias & Tacos"
+  },
+  "el-sabor-de-mi-pueblo": {
+   "name": "El Sabor de Mi Pueblo",
+   "placeId": "ChIJTWuhuaKdj4ARZTCofuVb3E8",
+   "google": "Tacos El Sabor De Mi Pueblo (food truck)"
+  },
+  "la-carreta-san-mateo": {
+   "name": "La Carreta",
+   "placeId": "ChIJC8tYWACfj4ARP4VH0nrL1Uc",
+   "google": "La Carreta"
+  },
+  "heidis-pies": {
+   "name": "Heidi's Pies",
+   "placeId": "ChIJC9ir5_eej4ARSXbY44ty6Po",
+   "google": "Heidi's Pies Restaurant"
+  },
+  "the-pantry": {
+   "name": "The Pantry",
+   "placeId": "ChIJUUoh_hmfj4ARhQw2XfMXZQk",
+   "google": "The Pantry Family Restaurant - American & Filipino"
+  },
+  "around-the-edge-barber": {
+   "name": "Around the Edge Barbershop",
+   "placeId": "ChIJ49-q__uej4ARgcbTjIsgTZU",
+   "google": "Around The Edge barbershop"
+  },
+  "classic-touch-salon": {
+   "name": "Classic Touch Salon",
+   "placeId": "ChIJjVDzynqej4ARYwc0Sa5uCoI",
+   "google": "Classic Touch Salon"
+  },
+  "dahliana-nail-spa": {
+   "name": "Dahliana Nail Spa",
+   "placeId": null,
+   "unmatched": "Dahliana Nail & Spa | 356 E Sailer Dr, San Mateo, CA 94403, USA"
+  },
+  "tree-of-life-healing-center": {
+   "name": "Tree of Life Healing Center for the Soul",
+   "placeId": "ChIJ59HKSnSfj4AR6NtSeJTkgU4",
+   "google": "Tree of Life Healing Center for the Soul"
+  },
+  "nandi-yoga": {
+   "name": "Nandi Yoga",
+   "placeId": "ChIJO7Sj-mSej4ARKmX3rON_IK4",
+   "google": "Nandi Yoga"
+  },
+  "y-salon-spa": {
+   "name": "Y Salon Spa",
+   "placeId": "ChIJwUqBTkKfj4ARovvvk1SkneE",
+   "google": "Y Salon & Spa"
+  },
+  "the-fitness-farm": {
+   "name": "The Fitness Farm",
+   "placeId": "ChIJMYOop-Cfj4ARjvDnjQd1bcY",
+   "google": "THE FITNESS FARM"
+  },
+  "sm-dental-arts": {
+   "name": "San Mateo Dental Arts",
+   "placeId": "ChIJoRMIyvmej4ARrbgC-8iG1C4",
+   "google": "San Mateo Dental Arts"
+  },
+  "bella-vita-chiropractic": {
+   "name": "Bella Vita Chiropractic",
+   "placeId": "ChIJaQ1P-luej4ARPGyfYULMofA",
+   "google": "Bella Vita Chiropractic"
+  },
+  "bo-jonsson-auto": {
+   "name": "Bo Jonsson's Foreign Car Service",
+   "placeId": "ChIJYWvIofeej4ARd2-3Qbz0tmg",
+   "google": "Bo Jonsson's Foreign Car Service"
+  },
+  "crystal-cleaning-center": {
+   "name": "Crystal Cleaning Center",
+   "placeId": "ChIJTWgwDMifj4ARcVcMjI4SRHA",
+   "google": "Crystal Cleaning Center"
+  },
+  "perfit-alterations": {
+   "name": "Perfit Alterations",
+   "placeId": "ChIJvwq6PF-ej4ARLrdsEUUwlJY",
+   "google": "Perfit Alterations"
+  },
+  "peninsula-ave-vet": {
+   "name": "Peninsula Avenue Veterinary Clinic",
+   "placeId": "ChIJN_l9Yeidj4AROjEFe_xAsr8",
+   "google": "Peninsula Avenue Veterinary Clinic"
+  },
+  "aragon-vet": {
+   "name": "Aragon Veterinary Clinic",
+   "placeId": "ChIJvR3vXmSej4ARDyBJgzu_wLk",
+   "google": "Aragon Veterinary Clinic Inc"
+  },
+  "bundy-opticians": {
+   "name": "Bundy Opticians",
+   "placeId": "ChIJy0YC_nCej4ARufdscKJQV5g",
+   "google": "Bundy Opticians"
+  },
+  "sm-lock-works": {
+   "name": "San Mateo Lock Works",
+   "placeId": "ChIJVVVVVdGdj4ARK3Mg26kt7Xg",
+   "google": "San Mateo Lock Works & Safe Center"
+  },
+  "neals-coffee-shop": {
+   "name": "Neal's Coffee Shop",
+   "placeId": "ChIJz1gRjsifj4AR9Fq5_CAqEmw",
+   "google": "Neal's Coffee Shop"
+  },
+  "penelopes-coffee": {
+   "name": "Penelope's Coffee & Tea",
+   "placeId": "ChIJKUL5JgCfj4ARXcz9vrkrHMg",
+   "google": "Penelopes Coffee and Tea"
+  },
+  "kaz-teriyaki-grill": {
+   "name": "Kaz Teriyaki Grill",
+   "placeId": "ChIJI8hXPHCej4ARmURyGovdOmk",
+   "google": "Kaz - Teriyaki Grill"
+  },
+  "amigos-grill": {
+   "name": "Amigos Grill Cocina Mexicana",
+   "placeId": "ChIJsaGAlCCfj4ARS1jRydXqytM",
+   "google": "Amigos Grill Cocina Mexicana"
+  },
+  "los-primos": {
+   "name": "Taqueria Los Primos",
+   "placeId": "ChIJZe2ninaej4AR0VJDQPRwrYU",
+   "google": "Taqueria Los Primos #1"
+  },
+  "la-pinata": {
+   "name": "La Piñata Mexicatesen",
+   "placeId": "ChIJ39pZ9naej4ARh1YP9Q7b6yw",
+   "google": "La Piñata"
+  },
+  "suavecito-birria-tacos": {
+   "name": "Suavecito Birria & Tacos",
+   "placeId": "ChIJkUR07V2fj4AR7gvfwL9kCVs",
+   "google": "Suavecito Birria & Tacos"
+  },
+  "norfolk-auto-service": {
+   "name": "Norfolk Auto Service",
+   "placeId": "ChIJqdvT0-eej4AR4N6pRjvpIG4",
+   "google": "Norfolk Auto Services"
+  },
+  "aldos-pizza": {
+   "name": "Aldo's Pizza",
+   "placeId": "ChIJ96g6P4eej4ARKIor0cbehBU",
+   "google": "Aldo's Pizza"
+  },
+  "rainbow-pizza": {
+   "name": "Rainbow Pizza",
+   "placeId": "ChIJJQ0wDMifj4ARJH4RAlBBVkQ",
+   "google": "Rainbow Pizza"
+  },
+  "taqueria-el-chacho": {
+   "name": "Taqueria El Chacho",
+   "placeId": "ChIJq5VmdgCfj4ARu3toZ5YKhn4",
+   "google": "Taqueria El Chacho"
+  },
+  "mortar-pestle-bar": {
+   "name": "Mortar & Pestle Bar",
+   "placeId": "ChIJYWbtt3Cej4ARfYjowhMuzB0",
+   "google": "Mortar & Pestle Bar"
+  },
+  "sky-lounge": {
+   "name": "Sky Lounge",
+   "placeId": "ChIJvZ2xSXCej4AREMM2208dvss",
+   "google": "Sky Lounge"
+  },
+  "honey-and-hive": {
+   "name": "Honey and Hive",
+   "placeId": "ChIJrwnOqhefj4ARh1JMl1qT9Ug",
+   "google": "Honey and Hive"
+  },
+  "san-mateo-handyman": {
+   "name": "San Mateo Handyman",
+   "placeId": "ChIJa8E3pcufj4AR95ConKpbI1o",
+   "google": "San Mateo Handyman"
+  },
+  "cal-pac-roofing": {
+   "name": "Cal-Pac Roofing",
+   "placeId": "ChIJXaXosH2ej4ARgGS_NT4xD1Q",
+   "google": "CAL-PAC ROOFING SAN MATEO"
+  },
+  "ime-painting": {
+   "name": "IME Painting",
+   "placeId": "ChIJKbAOqkqdj4AR19H7N13U9wM",
+   "google": "IME Painting"
+  },
+  "alert-door-service": {
+   "name": "Alert Door Service",
+   "placeId": "ChIJyxCdYsGdj4ARSAiiNmL0D4k",
+   "google": "Alert Door Services Inc"
+  },
+  "all-star-barber-shop": {
+   "name": "All Star Barber Shop",
+   "placeId": "ChIJV2VIZnKfj4ARnnaEoa9TDiQ",
+   "google": "All Star Barber Shop"
+  },
+  "angela-s-dog-grooming-salon": {
+   "name": "Angela's Dog Grooming Salon",
+   "placeId": "ChIJfyqwIyKfj4ARwfRCjB5Orj8",
+   "google": "Angela Dog Grooming Salon"
+  },
+  "hound-away-from-home": {
+   "name": "Hound Away From Home",
+   "placeId": "ChIJiVosbXiej4ARgaGxsAXzJV8",
+   "google": "Hound Away From Home"
+  },
+  "balanced-hart": {
+   "name": "Balanced Hart",
+   "placeId": "ChIJQ9htXV2dj4ARYmNjGHwAMls",
+   "google": "Balanced Hart"
+  },
+  "md-laser-cosmetics": {
+   "name": "MD Laser & Cosmetics",
+   "placeId": "ChIJ9d1NpuCdj4ARZLOxP3pZiDo",
+   "google": "MD Laser and Cosmetics"
+  },
+  "west-bay-sports-medicine-rehab": {
+   "name": "West Bay Sports Medicine & Rehab",
+   "placeId": "ChIJHSUnwGSej4AR5Z3zTXb2NFw",
+   "google": "West Bay Sports Medicine & Rehabilitation Center"
+  },
+  "sage-wellness-center": {
+   "name": "Sage Wellness Center",
+   "placeId": "ChIJsfaXL2Wej4AR9OZINgulc14",
+   "google": "Sage Wellness Center"
+  },
+  "san-mateo-acupuncture-center": {
+   "name": "San Mateo Acupuncture Center",
+   "placeId": "ChIJCyRlqXGej4ARxTZFE3qkaGg",
+   "google": "San Mateo Acupuncture Center"
+  },
+  "tranquil-nail-spa": {
+   "name": "Tranquil Nail Spa",
+   "placeId": "ChIJCykTK_mej4AR_B0dJ60Py-8",
+   "google": "Tranquil Nail Spa"
+  },
+  "7-sisters-nail-spa": {
+   "name": "7 Sisters Nail Spa",
+   "placeId": "ChIJZTYpzP6ej4ARwQS8e37nrf8",
+   "google": "7 Sisters Nail Spa"
+  },
+  "eyeworks-of-san-mateo-optometry": {
+   "name": "Eyeworks of San Mateo Optometry",
+   "placeId": "ChIJd1W5kXCej4AREaRj5BdnFq4",
+   "google": "Eyeworks of San Mateo Optometry"
+  },
+  "laurelwood-optometry": {
+   "name": "Laurelwood Optometry",
+   "placeId": "ChIJmxjjX0uej4ARCWFBzrSDKWw",
+   "google": "Laurelwood Optometry"
+  },
+  "she-sells-resale": {
+   "name": "She Sells Resale",
+   "placeId": "ChIJDYzDKvmej4ARxttIGgygna8",
+   "google": "She Sells Resale"
+  },
+  "steiner-s-jewelry": {
+   "name": "Steiner's Jewelry",
+   "placeId": "ChIJ7QXbVnCej4AREAYKwPBjDGo",
+   "google": "Steiners Jewelry"
+  },
+  "galati-jewelers": {
+   "name": "Galati Jewelers",
+   "placeId": "ChIJ7de8LnCej4AROyZsaXC1TD4",
+   "google": "Galati Jewelers"
+  },
+  "gator-games-hobby": {
+   "name": "Gator Games & Hobby",
+   "placeId": "ChIJNX2tKBSfj4ARm2T81oViZN8",
+   "google": "Gator Games"
+  },
+  "togs-for-dogs-and-cats-too": {
+   "name": "Togs For Dogs (and Cats too!)",
+   "placeId": "ChIJzenNlhafj4AR9Wa4uu0GE9A",
+   "google": "Togs For Dogs & Cats Too"
+  },
+  "golden-lotus-antiques": {
+   "name": "Golden Lotus Antiques",
+   "placeId": "ChIJ_Zg4IPiej4ARI7ZPcVjBvtU",
+   "google": "Golden Lotus Antique"
+  },
+  "whistling-swan-antiques": {
+   "name": "Whistling Swan Antiques",
+   "placeId": null,
+   "unmatched": "She Sells Resale | 136 W 25th Ave, San Mateo, CA 94403, USA"
+  },
+  "the-gourmet-corner": {
+   "name": "The Gourmet Corner",
+   "placeId": "ChIJ8cY2Ceadj4ARj_B605_wVCM",
+   "google": "The Gourmet Corner"
+  },
+  "green-fashion-nursery": {
+   "name": "Green Fashion Nursery",
+   "placeId": "ChIJy9-vfmSej4ARQyoQxBAlB2w",
+   "google": "Green Fashion Nursery"
+  },
+  "fanloli": {
+   "name": "Fanloli",
+   "placeId": "ChIJWY10ZSSfj4AR_v3Cpl2kGX4",
+   "google": "Fanloli"
+  },
+  "takahashi-market": {
+   "name": "Takahashi Market",
+   "placeId": "ChIJI9eeaXqej4ARVJcDscRCXtI",
+   "google": "Takahashi Market"
+  },
+  "suruki-supermarket": {
+   "name": "Suruki Supermarket",
+   "placeId": "ChIJ3zkIPXCej4ARAkSTfM468dY",
+   "google": "Suruki Supermarket"
+  },
+  "india-grocery-spice": {
+   "name": "India Grocery & Spice",
+   "placeId": "ChIJ-7A64x6fj4ARvpTjepgR1XU",
+   "google": "India Grocery and Spice"
+  },
+  "all-spice": {
+   "name": "All Spice",
+   "placeId": "ChIJc3R6j16ej4ARSX5Uq0eROqI",
+   "google": "All Spice"
+  },
+  "la-fonda-de-san-mateo": {
+   "name": "La Fonda de",
+   "placeId": "ChIJ7e-JFfmej4AROyDsovvnp_U",
+   "google": "La Fonda de San Mateo"
+  },
+  "pho-element": {
+   "name": "Pho Element",
+   "placeId": "ChIJ3yb8APmej4ARLbgxXT1Iis8",
+   "google": "Pho Element"
+  },
+  "seniore-s-pizza": {
+   "name": "Seniore's Pizza",
+   "placeId": "ChIJJZ-QAPmej4ARs-KLOLdk_-M",
+   "google": "Seniore's Pizza"
+  },
+  "truffle-poke-bar": {
+   "name": "Truffle Poke Bar",
+   "placeId": "ChIJ-wp0Z2eej4ARc_LvawPcMHg",
+   "google": "Truffle Poké Bar"
+  },
+  "luceti-s-on-25th": {
+   "name": "Luceti's on 25th",
+   "placeId": "ChIJLZhr0v6ej4ARAP-hT1EdtdY",
+   "google": "LUCETI'S on 25th"
+  },
+  "la-lanterna-ristorante": {
+   "name": "La Lanterna Ristorante",
+   "placeId": "ChIJVWjBMv-ej4ARSMCgAcSHQ0E",
+   "google": "La Lanterna Ristorante"
+  },
+  "cobani-gyro-kebab": {
+   "name": "Cobani Gyro & Kebab",
+   "placeId": "ChIJ1abXTPmej4ARcbHKZmE-yaI",
+   "google": "Cobani Gyro & Kebab"
+  },
+  "bob-s-barber-stylist": {
+   "name": "Bob's Barber Stylist",
+   "placeId": "ChIJuRswLfmej4AR0ktdaDzK70U",
+   "google": "Bob's Barber Stylist"
+  },
+  "salon-image": {
+   "name": "Salon Image",
+   "placeId": "ChIJCdFC1v6ej4ARrYT0G0Fxt0M",
+   "google": "Salon Image"
+  },
+  "la-vie-nail-spa": {
+   "name": "La Vie Nail Spa",
+   "placeId": "ChIJh7mR1P6ej4ARcL1hhVAPDRM",
+   "google": "La Vie Nails Spa"
+  },
+  "scrub-a-pup": {
+   "name": "Scrub-A-Pup",
+   "placeId": "ChIJHb751P6ej4ARDvylORJMjjM",
+   "google": "Scrub-A-Pup"
+  },
+  "mk-nail-salon": {
+   "name": "MK Nail Salon",
+   "placeId": "ChIJx_3_Wfmej4AR-Y2c7pQqAlg",
+   "google": "MK Nail Salon"
+  },
+  "ah-sam-floral-co": {
+   "name": "Ah Sam Floral Co.",
+   "placeId": "ChIJfXlZI_yej4ARglHPF_q7ghw",
+   "google": "Ah Sam Floral Co"
+  },
+  "creative-energy": {
+   "name": "Creative Energy",
+   "placeId": "ChIJQ0L9eFiej4ARnUZqY77w2y0",
+   "google": "Creative Energy"
+  },
+  "san-mateo-automotive-service": {
+   "name": "San Mateo Automotive Service",
+   "placeId": "ChIJza0_FRefj4ARp6c9qm6dfjc",
+   "google": "San Mateo Automotive Service"
+  },
+  "all-star-cleaners": {
+   "name": "All Star Cleaners",
+   "placeId": "ChIJXTtRUPmej4ARLMLqofBLJ5w",
+   "google": "All Star Cleaners"
+  },
+  "borel-eye-doctors": {
+   "name": "Borel Eye Doctors",
+   "placeId": "ChIJSdYjNFmej4ARIjVTK6xfUPA",
+   "google": "Borel Eye Doctors of Optometry"
+  },
+  "fiori-dental": {
+   "name": "Fiori Dental",
+   "placeId": "ChIJBQQnz9-dj4ARp7pU2N7RTIw",
+   "google": "Fiori Dental San Mateo"
+  },
+  "courtin-family-dentistry": {
+   "name": "Courtin Family Dentistry",
+   "placeId": "ChIJL8FMvHaej4AR95tV2U5KCao",
+   "google": "Courtin Family Dentistry"
+  },
+  "derek-wong-dds": {
+   "name": "Derek Wong, DDS",
+   "placeId": null,
+   "unmatched": "Derek Wong, DDS | 351 N San Mateo Dr, San Mateo, CA 94401, USA"
+  },
+  "dr-arifa-shaikh-dental": {
+   "name": "Dr. Arifa Shaikh Dental",
+   "placeId": "ChIJed74Pk7Bx24RuMdLi_H6ADk",
+   "google": "Dr Arifa Shaikh DDS"
+  },
+  "mid-peninsula-dental-care": {
+   "name": "Mid-Peninsula Dental Care",
+   "placeId": "ChIJVRjHJ96dj4ARjp4Eddcbx3A",
+   "google": "Mid Peninsula Dental Care"
+  },
+  "san-mateo-dental-care": {
+   "name": "San Mateo Dental Care",
+   "placeId": "ChIJGz4AuHWej4AR4RkbXK2fccs",
+   "google": "San Mateo Dental Care"
+  },
+  "alborzi-orthodontics": {
+   "name": "Alborzi Orthodontics",
+   "placeId": "ChIJn4FCgHWej4AR1cFlPrLN758",
+   "google": "Alborzi Orthodontics"
+  },
+  "sequoia-orthodontics": {
+   "name": "Sequoia Orthodontics",
+   "placeId": "ChIJKVYSNBCfj4ARuXZ8AUqlVgk",
+   "google": "Sequoia Orthodontics, Dr. Kuper-Smith"
+  },
+  "san-mateo-orthodontics": {
+   "name": "San Mateo Orthodontics",
+   "placeId": null,
+   "unmatched": "Orthodontics of San Mateo | 2720 Edison St, San Mateo, CA 94403, USA"
+  },
+  "peninsula-eye-physicians": {
+   "name": "Peninsula Eye Physicians",
+   "placeId": "ChIJf-rxHHGej4ARX72yKErm2W8",
+   "google": "Peninsula Eye Physicians and Surgeons"
+  },
+  "chen-s-natural-healthcare": {
+   "name": "Chen's Natural Healthcare",
+   "placeId": "ChIJmSkKLd6dj4ARDJXrgDScxk0",
+   "google": "Chen's Natural Healthcare"
+  },
+  "upper-cervical-chiropractic-true-health-centers": {
+   "name": "Upper Cervical Chiropractic - True Health Centers",
+   "placeId": null,
+   "unmatched": "True Health Centers | 327 N San Mateo Dr #5, San Mateo, CA 94401, USA"
+  },
+  "mi-rancho-supermarket": {
+   "name": "Mi Rancho Supermarket",
+   "placeId": "ChIJoZV45naej4ARfCHDBOMe1u8",
+   "google": "Mi Rancho Supermarket"
+  },
+  "dean-s-produce": {
+   "name": "Dean's Produce",
+   "placeId": "ChIJiz7LJ3Cej4ARP-ogU1p2j_4",
+   "google": "Dean's Produce"
+  },
+  "nijiya-market": {
+   "name": "Nijiya Market",
+   "placeId": "ChIJLzLU3_eej4ARxSwc9QcRs84",
+   "google": "Nijiya Market San Mateo Store"
+  },
+  "la-hacienda-market": {
+   "name": "La Hacienda Market",
+   "placeId": "ChIJA0L3Dtedj4ARG29cSAnHqAk",
+   "google": "La Hacienda Market"
+  },
+  "mosaic-market": {
+   "name": "Mosaic Market",
+   "placeId": "ChIJK9cp9Jqfj4ARMbNUS_BfZU8",
+   "google": "Mosaic Market"
+  },
+  "la-morenita-market": {
+   "name": "La Morenita Market",
+   "placeId": "ChIJywFcUvWej4ARB-Jtz-v58Wg",
+   "google": "La Morenita Market"
+  },
+  "crystal-springs-produce": {
+   "name": "Crystal Springs Produce",
+   "placeId": "ChIJozmiAsafj4AR_luFVIv2q0Y",
+   "google": "Crystal Springs Produce"
+  },
+  "chavez-supermarket-taqueria": {
+   "name": "Chavez Supermarket & Taqueria",
+   "placeId": "ChIJjxM6V4eej4ARJx7k-ijXwqs",
+   "google": "Chavez Supermarket"
+  },
+  "aladdin-gourmet": {
+   "name": "Aladdin Gourmet",
+   "placeId": "ChIJnwyMhuWfj4AR6lrhd3LAD5U",
+   "google": "Aladdin Gourmet | Grocery & Gourmet Store | Falafel, Humus, Halal Meat in San Mateo"
+  },
+  "anatolian-market": {
+   "name": "Anatolian Cafe & Market",
+   "placeId": "ChIJe9hUWKKfj4ARd4cxNTD2Mo8",
+   "google": "Anatolian Cafe & Market"
+  },
+  "neelam-supermarket": {
+   "name": "Neelam Supermarket",
+   "placeId": "ChIJkV15Xnaej4AR9rKBd-xfjlQ",
+   "google": "Neelam Liquor Store"
+  },
+  "mi-tienda-supermarket": {
+   "name": "Mi Tienda Supermarket",
+   "placeId": "ChIJ3Zl_Lf-ej4ARXJE0B1Hq_5E",
+   "google": "Mi Tienda"
+  },
+  "la-huerta-market-7": {
+   "name": "La Huerta Market #7",
+   "placeId": "ChIJLevZJMCfj4ARE1WnL-zhe5s",
+   "google": "La Huerta Market #7"
+  },
+  "everybody-s-market": {
+   "name": "Everybody's Market",
+   "placeId": "ChIJB23Kc3yej4ARYMD7Tkh7Zvc",
+   "google": "Everybody's Market"
+  },
+  "the-neighborhood-market-and-cafe": {
+   "name": "The Neighborhood Market and Cafe",
+   "placeId": "ChIJobSLg3mej4ARYkFLlwHBtFI",
+   "google": "Neighborhood Market"
+  },
+  "san-mateo-farmers-market": {
+   "name": "San Mateo Farmers' Market",
+   "placeId": null,
+   "unmatched": "San Mateo Farmers' Market | 1700 W Hillsdale Blvd, San Mateo, CA 94402, USA"
+  },
+  "bayside-joinville-park": {
+   "name": "Bayside/Joinville Park",
+   "placeId": "ChIJLQgHBpSej4AR8JC9f-dZuYs",
+   "google": "Bayside/Joinville Park"
+  },
+  "borel-park": {
+   "name": "Borel Park",
+   "placeId": null,
+   "unmatched": "Borel Park | 425 Barneson Ave, San Mateo, CA 94402, USA"
+  },
+  "casanova-park": {
+   "name": "Casanova Park",
+   "placeId": "ChIJT_0ukTufj4ARlyqRrZgLosA",
+   "google": "Casanova Park"
+  },
+  "harborview-park": {
+   "name": "Harborview Park",
+   "placeId": "ChIJnxO7kNOdj4ARjWWstsVsuvU",
+   "google": "Harborview Park"
+  },
+  "indian-springs-park": {
+   "name": "Indian Springs Park",
+   "placeId": null,
+   "unmatched": "Indian Springs Park | Indian Springs Park, 313 W 39th Ave, San Mateo, CA 94403, USA"
+  },
+  "laurie-meadows-park": {
+   "name": "Laurie Meadows Park",
+   "placeId": "ChIJb0Vc4zufj4AR-xpEMGOixO8",
+   "google": "Laurie Meadows Park"
+  },
+  "los-prados-park": {
+   "name": "Los Prados Park",
+   "placeId": "ChIJw3I4qiafj4ARM_2PGFnEU_U",
+   "google": "Los Prados Park"
+  },
+  "mariners-island-park": {
+   "name": "Mariners Island Park",
+   "placeId": null,
+   "unmatched": "Mariners Island Park | 750 Mariners Island Blvd, San Mateo, CA 94404, USA"
+  },
+  "martin-luther-king-jr-park": {
+   "name": "Martin Luther King Jr. Park",
+   "placeId": "ChIJechoAtmdj4ARwGA6sJa-VPk",
+   "google": "Martin Luther King Jr. Park"
+  },
+  "paddock-park": {
+   "name": "Paddock Park",
+   "placeId": "ChIJS-M0dx2fj4ARVzHNeSjrkcA",
+   "google": "Paddock Park"
+  },
+  "parkside-aquatic-park": {
+   "name": "Parkside Aquatic Park",
+   "placeId": "ChIJLWtACuuej4ARHsA6LAM_aD0",
+   "google": "Parkside Aquatic Park"
+  },
+  "trinta-park": {
+   "name": "Trinta Park",
+   "placeId": "ChIJDwpbSfaej4AR7J5Zucx3RNE",
+   "google": "Trinta Park"
+  },
+  "bayside-dog-park": {
+   "name": "Bayside Dog Park",
+   "placeId": "ChIJLQgHBpSej4AR8JC9f-dZuYs",
+   "google": "Bayside/Joinville Park"
+  },
+  "seal-point-dog-park": {
+   "name": "Seal Point Dog Park",
+   "placeId": "ChIJ2z1kfJuej4ARyBP0JwQ91s4",
+   "google": "Seal Point Park"
+  },
+  "los-prados-dog-park": {
+   "name": "Los Prados Dog Park",
+   "placeId": null,
+   "unmatched": "Los Prados Dog Park | 3203 Casa de Campo, San Mateo, CA 94403, USA"
+  },
+  "laurie-meadows-dog-park": {
+   "name": "Laurie Meadows Dog Park",
+   "placeId": "ChIJb0Vc4zufj4AR-xpEMGOixO8",
+   "google": "Laurie Meadows Park"
+  },
+  "autocraft-inc": {
+   "name": "Autocraft Inc",
+   "placeId": "ChIJHSvrV5Sfj4AR5-EIw6OkESM",
+   "google": "Autocraft Auto Repair"
+  },
+  "aj-s-mobile-auto-glass-specialist-san-mateo": {
+   "name": "AJ's Mobile Auto Glass Specialist San Mateo",
+   "placeId": "ChIJ0RF6ljqfj4AREnvZKVYmdW0",
+   "google": "AJ Mobile Auto Glass Specialist San Mateo"
+  },
+  "amici-s-east-coast-pizzeria": {
+   "name": "Amici's East Coast Pizzeria",
+   "placeId": "ChIJwbQzTXCej4AR6AiUPmWLsAY",
+   "google": "Amici's - East Coast Pizzeria"
+  },
+  "atlas-bakery-more": {
+   "name": "Atlas Bakery & More",
+   "placeId": "ChIJ-_zLX4-fj4ARHeb4i5gczRo",
+   "google": "Atlas Bakery & More"
+  },
+  "alfie-holmes-painting": {
+   "name": "Alfie Holmes Painting",
+   "placeId": "ChIJD8w4qYeej4ARt4jaHQDCEfc",
+   "google": "Alfie Holmes Painting"
+  },
+  "bella-nails-spa": {
+   "name": "Bella Nails & Spa",
+   "placeId": "ChIJZejsNbOfj4ARaFOS9pUknKg",
+   "google": "Bella Nails"
+  },
+  "boba-bless": {
+   "name": "Boba Bless",
+   "placeId": "ChIJS6SvL1Cfj4ARbDc7En2_56I",
+   "google": "Boba Bless"
+  },
+  "bartos-architecture-inc": {
+   "name": "Bartos Architecture Inc",
+   "placeId": "ChIJXU2AAPOej4ARB4MJEiwTXM8",
+   "google": "Bartos Architecture Inc"
+  },
+  "cuban-kitchen": {
+   "name": "Cuban Kitchen",
+   "placeId": "ChIJwdQE_hmfj4ARhnRXauveN9M",
+   "google": "Cuban Kitchen"
+  },
+  "cy-danceworks": {
+   "name": "CY Danceworks",
+   "placeId": null,
+   "unmatched": "CY Dance Works | 25 37th Ave, San Mateo, CA 94403, USA"
+  },
+  "second-bloom-wellness": {
+   "name": "Second Bloom Wellness",
+   "placeId": "ChIJObhjQum2j4AR1Zu035htoRA",
+   "google": "Cassandra Mason DC at Second Bloom Wellness"
+  },
+  "chill-spot-rendezvous": {
+   "name": "Chill Spot Rendezvous",
+   "placeId": "ChIJTd1wkaqfj4ARnRoT7536NHg",
+   "google": "Chill Spot Rendezvous"
+  },
+  "express-plumbing-sewer-services": {
+   "name": "Express Plumbing & Sewer Services",
+   "placeId": "ChIJTUaEVNedj4ARgBmYa4uRr4Y",
+   "google": "Express Plumbing & Sewer Services"
+  },
+  "fitphoria": {
+   "name": "FITPHORIA",
+   "placeId": "ChIJTZoedBCdj4ARdu4wrLt54RM",
+   "google": "Jennifer Slaboda, Fitphoria"
+  },
+  "glam-roofing": {
+   "name": "Glam Roofing",
+   "placeId": "ChIJO60KI0Cfj4ARJCq7yanOBIY",
+   "google": "Glam Roofing - San Mateo County"
+  },
+  "home-helpers-in-home-care": {
+   "name": "Home Helpers In Home Care",
+   "placeId": "ChIJn0JTIkWfj4ARwhzIVGnBl-U",
+   "google": "Amada Senior Care"
+  },
+  "kletter-law": {
+   "name": "Kletter.Law",
+   "placeId": "ChIJeQJyF2WAhYARr5ZyG4Gmvjc",
+   "google": "Kletter.Law"
+  },
+  "law-office-of-nicole-warmerdam": {
+   "name": "Law Office of Nicole Warmerdam",
+   "placeId": "ChIJ9UJJrY6fj4ARaWVHEtfn3jA",
+   "google": "Law Office of Nicole Warmerdam"
+  },
+  "miguel-de-leon-dmd": {
+   "name": "Miguel De Leon DMD",
+   "placeId": "ChIJyXvYW3edj4ARsoiWkUFyeBU",
+   "google": "Miguel De Leon, DMD"
+  },
+  "postcard-buddies": {
+   "name": "Postcard Buddies",
+   "placeId": null,
+   "unmatched": "no result"
+  },
+  "peace-of-mind-structural": {
+   "name": "Peace of Mind Structural",
+   "placeId": "ChIJU1dse2Gej4ARIY_7jd_k6x4",
+   "google": "Peace of Mind Structural"
+  },
+  "sunshine-pro-accounting-and-tax": {
+   "name": "Sunshine Pro Accounting and Tax",
+   "placeId": "ChIJzdrgzHafj4ARpVK_MwlXPcE",
+   "google": "Sunshine Pro Accounting and Tax"
+  },
+  "sajj-mediterranean": {
+   "name": "SAJJ Mediterranean",
+   "placeId": "ChIJDeCMOJyfj4ARgW3aYsVHnME",
+   "google": "SAJJ Mediterranean"
+  },
+  "spa-siam-orchid": {
+   "name": "Spa Siam Orchid",
+   "placeId": "ChIJvz4E5yGfj4AR0cYyLVkUUKA",
+   "google": "Spa Siam Orchid"
+  },
+  "spotlight-roofing": {
+   "name": "Spotlight Roofing",
+   "placeId": "ChIJw_3LkcWfj4ARZpKAdbG0AJA",
+   "google": "Spotlight Roofing Inc"
+  },
+  "san-mateo-carpets-inc": {
+   "name": "San Mateo Carpets, Inc.",
+   "placeId": null,
+   "unmatched": "Abbey Carpet Flooring Center | 101 N Amphlett Blvd, San Mateo, CA 94401, USA"
+  },
+  "sonrisas-dental-health-inc": {
+   "name": "Sonrisas Dental Health, Inc.",
+   "placeId": "ChIJA8WOUeCdj4ARAFNA00v1D8c",
+   "google": "Sonrisas Dental Health"
+  },
+  "sibby-s-cupcakery": {
+   "name": "Sibby's Cupcakery",
+   "placeId": "ChIJ7-Nx72Sej4ARlS3NrCI6zZI",
+   "google": "Sibby's Cupcakery"
+  },
+  "tinyb-chocolate": {
+   "name": "tinyB chocolate",
+   "placeId": null,
+   "unmatched": "tinyB chocolate | 407 S B St, San Mateo, CA 94401, USA"
+  },
+  "rise-woodfire-pizza-rotisserie": {
+   "name": "Rise Woodfire Pizza & Rotisserie",
+   "placeId": "ChIJswaXkbifj4ARBk__2-6HPTU",
+   "google": "Rise - Woodfire Pizza & Rotisserie"
+  },
+  "bay-watch-restaurant": {
+   "name": "Bay Watch Restaurant",
+   "placeId": "ChIJdYnq7nCej4ARB-6vA0482oU",
+   "google": "Bay Watch San Mateo"
+  },
+  "ravioli-house": {
+   "name": "Ravioli House",
+   "placeId": "ChIJp5jfy3qej4ARVlOWBNuy_eg",
+   "google": "Ravioli House"
+  },
+  "antoine-s-cookie-shop": {
+   "name": "Antoine's Cookie Shop",
+   "placeId": "ChIJm4PyknCej4ARej1SnUR_TJ0",
+   "google": "Antoine's Cookie Shop San Mateo"
+  },
+  "san-mateo-tax-service": {
+   "name": "San Mateo Tax Service",
+   "placeId": "ChIJ4ykraHqej4ARLt549L9BfZM",
+   "google": "San Mateo Tax Service"
+  },
+  "carrera-motors": {
+   "name": "Carrera Motors",
+   "placeId": "ChIJiSgvR3eej4ARDKVhOQVKSYg",
+   "google": "Carrera Motors"
+  },
+  "rituals-aesthetic-skin-care": {
+   "name": "Rituals Aesthetic Skin Care",
+   "placeId": "ChIJMZENt_Gdj4ARLIpMFTjjpuE",
+   "google": "Rituals Aesthetic Skin Care"
+  },
+  "lion-s-den-shave-parlor": {
+   "name": "Lion's Den Shave Parlor",
+   "placeId": "ChIJgbVipx-fj4ARI8Uk8Pl1q0o",
+   "google": "Lion's Den Shave Parlor"
+  },
+  "relaxing-nails-spa": {
+   "name": "Relaxing Nails & Spa",
+   "placeId": "ChIJ97qAIWWej4ARywnDjFFIBYE",
+   "google": "Relaxing Nails & Spa"
+  },
+  "hassett-hardware": {
+   "name": "Hassett Ace Hardware",
+   "placeId": "ChIJE0ApWHeej4ARSd3iwub19Ks",
+   "google": "Hassett Ace Hardware"
+  },
+  "christensen-rafferty-fine-jewelry": {
+   "name": "Christensen & Rafferty Fine Jewelry",
+   "placeId": "ChIJWSUg5XCej4ARiCmFunknu8c",
+   "google": "Christensen & Rafferty Fine Jewelry"
+  },
+  "holland-car-care": {
+   "name": "Holland Car Care",
+   "placeId": null,
+   "unmatched": "Holland Car Care - San Carlos, CA | 1600 Industrial Rd, San Carlos, CA 94070, USA"
+  },
+  "family-cleaners": {
+   "name": "Family Cleaners",
+   "placeId": "ChIJQa10ZHqej4AROrW3nc5WbXQ",
+   "google": "Family Cleaners"
+  },
+  "happy-mozart-music-school": {
+   "name": "Happy Mozart Music School",
+   "placeId": "ChIJ38YnVGSej4ARESoCzIorz08",
+   "google": "Happy Mozart Music School"
+  },
+  "jeffrey-s-hamburgers": {
+   "name": "Jeffrey's Hamburgers",
+   "placeId": "ChIJJ5RD_Eh2j4ARJXCwvPBwjQY",
+   "google": "Jeffrey's Hamburgers"
+  },
+  "oceana-stained-glass": {
+   "name": "Oceana Stained Glass",
+   "placeId": null,
+   "unmatched": "Aanraku Glass Studios | 41 S Railroad Ave, San Mateo, CA 94401, USA"
+  },
+  "victor-s-shoe-repair": {
+   "name": "Victor's Shoe Repair",
+   "placeId": "ChIJqdYPj3Cej4ARPboFt8jvd30",
+   "google": "Victor's Shoe Repair"
+  },
+  "sereno-salon": {
+   "name": "Sereno Salon",
+   "placeId": "ChIJuVcK7XCej4AROwvZnPyoLyM",
+   "google": "Sereno Salon"
+  },
+  "time-hair-salon": {
+   "name": "Time Hair Salon",
+   "placeId": "ChIJ-7EaaHCej4ARqzDO6o0zQFI",
+   "google": "Time Hair Salon"
+  },
+  "hue-hair-studio": {
+   "name": "Hue Hair Studio",
+   "placeId": "ChIJIXN248-fj4ARyp9SKj_NA00",
+   "google": "Hue Hair Studio"
+  },
+  "passion-salon": {
+   "name": "Passion Salon",
+   "placeId": "ChIJn9-01nCej4ARkUecdTK2IJc",
+   "google": "Passion Salon"
+  },
+  "ask-salon-artistic-destination": {
+   "name": "AsK Salon Artistic Destination",
+   "placeId": "ChIJj_Q6kHqej4ARbyqe3J1eNUw",
+   "google": "A.S.K. Salon an Artistic Destination, Inc."
+  },
+  "jj-nails": {
+   "name": "JJ Nails",
+   "placeId": "ChIJTzLPZqafj4ARwN8IzneQn_4",
+   "google": "JJ Nails"
+  },
+  "come-c-interiors": {
+   "name": "Come C Interiors",
+   "placeId": "ChIJB75V9mSej4ARetrI6a5uia8",
+   "google": "Come C Interiors"
+  },
+  "what-s-on-second": {
+   "name": "What's on Second",
+   "placeId": "ChIJj5Oi63Cej4AROxOnaGi4_Ws",
+   "google": "What's On Second Sports Cards"
+  },
+  "titanic-smoke-shop": {
+   "name": "Titanic Smoke Shop",
+   "placeId": "ChIJhdkUarafj4ARRfTuT_0JMBw",
+   "google": "Titanic Smoke Shop"
+  },
+  "aki-auto-service": {
+   "name": "Aki Auto Service",
+   "placeId": "ChIJQZOqBHqej4ARLnP1nfhdcxg",
+   "google": "Aki Auto Services & Body Shop"
+  },
+  "al-carbon": {
+   "name": "Al Carbon",
+   "placeId": "ChIJSQJ_CHuej4ARezc8vH_W3Mc",
+   "google": "Al Carbón - Pollos a la Brasa"
+  },
+  "munguia-s-bakery": {
+   "name": "Munguia's Bakery",
+   "placeId": "ChIJNVrTB3uej4AR1F7M-4Z4ygs",
+   "google": "Munguia's Bakery"
+  },
+  "parkside-optometry": {
+   "name": "Parkside Optometry",
+   "placeId": "ChIJIb0BLO-ej4AROmokQLrlRM0",
+   "google": "Parkside Optometry"
+  },
+  "parkside-plaza-cleaners": {
+   "name": "Parkside Plaza Cleaners",
+   "placeId": "ChIJp0K2keiej4ARbEQC4D6iUt4",
+   "google": "Parkside Plaza Cleaners"
+  },
+  "champions-martial-arts": {
+   "name": "Champions Martial Arts",
+   "placeId": "ChIJQVINN4Cfj4AReR7yfBCOVGY",
+   "google": "Champions Martial Arts"
+  },
+  "tabla-indian-restaurant": {
+   "name": "Tabla Indian Restaurant",
+   "placeId": "ChIJy-fcrYCej4ARYkqWqiQ_Sxc",
+   "google": "Tabla Indian Restaurant - San Mateo"
+  },
+  "ay-caray-taqueria": {
+   "name": "Ay Caray Taqueria",
+   "placeId": "ChIJv8E7TYeej4ARi-YP0JM5La8",
+   "google": "Ay Caray Taqueria"
+  },
+  "golden-wok-bistro": {
+   "name": "Golden Wok Bistro",
+   "placeId": "ChIJr53DR4eej4ARzRknJcDEGSU",
+   "google": "Golden Wok Bistro"
+  },
+  "shoreview-liquors": {
+   "name": "Shoreview Liquors",
+   "placeId": "ChIJPWhPTYeej4ARuNwm_tkIs0U",
+   "google": "Shoreview Liquors & Pure Water"
+  },
+  "lynn-dental": {
+   "name": "Lynn Dental",
+   "placeId": "ChIJA19KTYeej4ARbiHESWSd1Zw",
+   "google": "Lynn Dental"
+  },
+  "glamour-hair-nails": {
+   "name": "Glamour Hair & Nails",
+   "placeId": "ChIJFVVrW4eej4ARE0phgtQ9MXc",
+   "google": "Glamour Hair & Nails"
+  },
+  "brothers-smoke-fashion": {
+   "name": "Brothers Smoke & Fashion",
+   "placeId": "ChIJZ8I6SYeej4ARfg2nkdZ9A68",
+   "google": "Brothers Smoke Shop and Fashion"
+  },
+  "shoreview-wash-dry": {
+   "name": "Shoreview Wash & Dry",
+   "placeId": "ChIJZ6-KqICej4ARfs2eUNvTnR0",
+   "google": "Shoreview Wash & Dry"
+  },
+  "pho-little-saigon": {
+   "name": "Pho Little Saigon",
+   "placeId": "ChIJLZ-FlCCfj4ARa-WeUMsA_kE",
+   "google": "Pho Little Saigon"
+  },
+  "mr-green-bubble": {
+   "name": "Mr. Green Bubble",
+   "placeId": "ChIJv4Ep6yCfj4ARgHb32_9NMW4",
+   "google": "Mr. Green Bubble | San Mateo"
+  },
+  "hot-wok-cafe": {
+   "name": "Hot Wok Cafe",
+   "placeId": "ChIJszt_iyCfj4AROPCcdeLsXes",
+   "google": "Hot Wok Cafe"
+  },
+  "inshou-cafe": {
+   "name": "Inshou Cafe",
+   "placeId": "ChIJjwe1iSCfj4ARGzwn_xd1I9M",
+   "google": "Inshou Cafe"
+  },
+  "hashi-market": {
+   "name": "Hashi Market",
+   "placeId": "ChIJ-UMZbACfj4ARDx3M7fz8PI8",
+   "google": "Hashi Market"
+  },
+  "marina-liquors": {
+   "name": "Marina Liquors",
+   "placeId": "ChIJqYRE6yCfj4AR3iEMY6kodmU",
+   "google": "Marina Liquor"
+  },
+  "water-nails": {
+   "name": "Water Nails",
+   "placeId": "ChIJe0hrkCCfj4AR-9wciKQHKIE",
+   "google": "Water Nails"
+  },
+  "debe-salon": {
+   "name": "Debe Salon",
+   "placeId": "ChIJgQ5FkCCfj4ARbuYCydie3eM",
+   "google": "Debe Salon"
+  },
+  "hair-logic": {
+   "name": "Hair Logic",
+   "placeId": "ChIJhemY1uifj4ARzmybIirJFzs",
+   "google": "Hair Logic 发艺轩"
+  },
+  "beauty-essentials-shiseido": {
+   "name": "Beauty Essentials",
+   "placeId": "ChIJXdnv6yCfj4ARdL7gozIRBuw",
+   "google": "Beauty Essentials--Shiseido Cosmetics"
+  },
+  "marina-dental-studio": {
+   "name": "Marina Dental Studio",
+   "placeId": "ChIJTaLJ6yCfj4ARLeyJmNbOPNU",
+   "google": "Marina Dental Studio"
+  },
+  "la-ronda": {
+   "name": "La Ronda Restaurant",
+   "placeId": "ChIJ1Y7oOkCfj4AR84UxeQWgh0c",
+   "google": "La Ronda Restaurant Peruvian Cuisine"
+  },
+  "wakuriya": {
+   "name": "Wakuriya",
+   "placeId": "ChIJw5XHiMifj4ARPKqzyYwc8kw",
+   "google": "Wakuriya"
+  },
+  "diandas-italian-american-pastry": {
+   "name": "Diandas Italian American Pastry",
+   "placeId": null,
+   "unmatched": "Dianda's Bakery | San Mateo | 117 De Anza Blvd, San Mateo, CA 94402, USA"
+  },
+  "crystal-springs-tavern": {
+   "name": "Crystal Springs Tavern",
+   "placeId": "ChIJObonFH-fj4ARLrUSRoNnYI8",
+   "google": "Crystal Springs Tavern"
+  },
+  "sourdough-and-co": {
+   "name": "Sourdough & Co.",
+   "placeId": "ChIJUeMTJoifj4ARPCq6MwzU2lw",
+   "google": "Sourdough & Co"
+  },
+  "les-amis-salon-et-spa": {
+   "name": "Les Amis Salon et Spa",
+   "placeId": "ChIJC0PiCMifj4ARY-LDXSYFaqg",
+   "google": "Les Amis Salon et Spa"
+  },
+  "crystal-springs-chiropractic": {
+   "name": "Crystal Springs Chiropractic",
+   "placeId": "ChIJ9cGKgsifj4ARvBMI7OlXuBM",
+   "google": "Crystal Springs Chiropractic"
+  },
+  "piazzas-fine-foods": {
+   "name": "Piazzas Fine Foods",
+   "placeId": "ChIJF3DTzkyej4AR1Zy4SeYqAdY",
+   "google": "Piazza's Fine Foods"
+  },
+  "shiki-japanese": {
+   "name": "Shiki Japanese Restaurant",
+   "placeId": "ChIJtVqBTLOfj4ARQa3Ui7oZCSQ",
+   "google": "Shiki Japanese Restaurant"
+  },
+  "guadalajara-grill": {
+   "name": "Guadalajara Grill",
+   "placeId": "ChIJj_rGBD6fj4AR2yxHbCg-99Y",
+   "google": "Guadalajara Grill"
+  },
+  "town-of-dumpling": {
+   "name": "Town of Dumpling",
+   "placeId": "ChIJr_RGipGfj4ARhmhhx_Txxpw",
+   "google": "Town of dumpling"
+  },
+  "centerwood-liquors": {
+   "name": "Centerwood Liquors",
+   "placeId": null,
+   "unmatched": "Centerwood Liquors | 23 Laurie Meadows Dr, San Mateo, CA 94403, USA"
+  },
+  "golden-9th-deli-market": {
+   "name": "Golden 9th Deli & Market",
+   "placeId": "ChIJP7SzgWOej4ARm8ksqOCHTCw",
+   "google": "Golden 9th Deli & Market"
+  },
+  "el-palenque-taqueria": {
+   "name": "El Palenque Taqueria",
+   "placeId": "ChIJQbNcA9adj4ARmcSDBfrEoOU",
+   "google": "El Palenque Taquería - Authentic Mexican Food"
+  },
+  "mariscos-el-ajoyano": {
+   "name": "Mariscos El Ajoyano",
+   "placeId": "ChIJxyjrMZadj4AR6-EYjcTmpBs",
+   "google": "Mariscos El Ajoyano"
+  },
+  "primas-market": {
+   "name": "Primas Market",
+   "placeId": "ChIJkYUIAtadj4ARkgmjqEpxzvk",
+   "google": "Primas Market"
+  },
+  "the-cake-shop": {
+   "name": "The Cake Shop",
+   "placeId": "ChIJB52nNG-fj4ARFbLdsZXq6WA",
+   "google": "The Cake Shop Bakery"
+  },
+  "elevate-barbershop": {
+   "name": "Elevate Barbershop",
+   "placeId": "ChIJJz101v6ej4ARfFVuWZFrDEI",
+   "google": "Elevate Barbershop San Mateo"
+  },
+  "chicas-hair-salon": {
+   "name": "Chicas Hair Salon",
+   "placeId": null,
+   "unmatched": "Chicas Hair Salon | 702 Tilton Ave, San Mateo, CA 94401, USA"
+  },
+  "andersen-bakery-cafe": {
+   "name": "Andersen Bakery & Cafe",
+   "placeId": null,
+   "unmatched": "Andersen Bakery | Hillsdale Mall, 198 E Sailer Dr, San Mateo, CA 94403, USA"
+  },
+  "little-late-bird": {
+   "name": "Little Late Bird",
+   "placeId": "ChIJUbQYn8Sfj4AR4Ewh5cOk788",
+   "google": "Little Late Bird"
+  },
+  "celias-mexican-restaurant-peninsula-ave-san-mateo": {
+   "name": "Celias Mexican Restaurant Peninsula Ave",
+   "placeId": null,
+   "unmatched": "Celia's | 504 Peninsula Ave, San Mateo, CA 94401, USA"
+  },
+  "celias-mexican-restaurant-campus-dr-san-mateo": {
+   "name": "Celias Mexican Restaurant Campus Dr",
+   "placeId": null,
+   "unmatched": "Celia's Mexican Restaurant | Laurelwood Shopping Center, 3190 Campus Dr, San Mateo, CA 94403, USA"
+  },
+  "blue-moon-bar": {
+   "name": "Blue Moon Bar",
+   "placeId": "ChIJT1D3kHCej4ARvklSw6Y7PfE",
+   "google": "Blue Moon Bar"
+  },
+  "cruel-donuts": {
+   "name": "Cruel Donuts",
+   "placeId": "ChIJratzhEufj4AR0d2nTccsvtM",
+   "google": "Cruel Donuts"
+  },
+  "cruel-donuts-ice-cream": {
+   "name": "Cruel Donuts & Ice Cream",
+   "placeId": "ChIJFRMcD6Wfj4ARe8WY3sKQsdI",
+   "google": "Cruel Donuts & Ice Cream"
+  },
+  "golden-bell-donuts": {
+   "name": "Golden Bell Donuts",
+   "placeId": "ChIJYabONeifj4ARplSs65p9Gu8",
+   "google": "Golden Bell Donuts"
+  },
+  "donut-delite": {
+   "name": "Donut Delite",
+   "placeId": "ChIJ3yl3znCej4ARGoRsIJbg98I",
+   "google": "Donut Delite"
+  },
+  "basecamp-fitness": {
+   "name": "Basecamp Fitness",
+   "placeId": "ChIJA-7jzfCfj4AR0w_CvkymgLs",
+   "google": "Basecamp Fitness San Mateo"
+  },
+  "ramen-parlor": {
+   "name": "Ramen Parlor",
+   "placeId": "ChIJ-wRqZmSej4ARSNYRjsH5aEc",
+   "google": "Ramen Parlor"
+  },
+  "kajiken": {
+   "name": "Kajiken",
+   "placeId": "ChIJoRzWonufj4ARgwyltSJXaP4",
+   "google": "Kajiken"
+  },
+  "teaspoon": {
+   "name": "Teaspoon",
+   "placeId": "ChIJeSHnQ3Cej4ARDMpWufHYiYU",
+   "google": "Teaspoon San Mateo"
+  },
+  "dessert-republic": {
+   "name": "Dessert Republic",
+   "placeId": "ChIJURwyuHCej4ARNI5aGNVMHrs",
+   "google": "Dessert Republic Cafe"
+  },
+  "zhangliang-malatang": {
+   "name": "Zhangliang Malatang",
+   "placeId": "ChIJ4euZB4efj4ARE0P348sbYyc",
+   "google": "Zhangliang Malatang"
+  },
+  "motion-arts-center": {
+   "name": "Motion Arts Center",
+   "placeId": "ChIJLWRta3qej4ARPc4CRUqXqlg",
+   "google": "Motion Arts Center"
+  },
+  "furagu-sushi": {
+   "name": "Furagu Sushi",
+   "placeId": "ChIJKZz8LPmej4ARBbVMIQuCtnk",
+   "google": "Furagu Sushi"
+  },
+  "kobeya": {
+   "name": "Kobeya",
+   "placeId": "ChIJHVNe1fiej4ARCCA1SWQivTw",
+   "google": "Kobeya"
+  },
+  "prime-bbq": {
+   "name": "Prime BBQ",
+   "placeId": "ChIJhVAUTsyfj4ARDeeBUOsZ2JQ",
+   "google": "Prime BBQ"
+  },
+  "miss-shang": {
+   "name": "Miss Shang",
+   "placeId": "ChIJ3VUJ3tKfj4ARIKA9t6cIdzE",
+   "google": "Miss Shang-San Mateo"
+  },
+  "fortune-star": {
+   "name": "Fortune Star",
+   "placeId": "ChIJL3smLP-ej4ARgQN_9BVPdJc",
+   "google": "Fortune Star | Chinese Restaurant (#1 Mandarin Style)"
+  },
+  "little-shanghai": {
+   "name": "Little Shanghai Restaurant",
+   "placeId": "ChIJYYxHV_mej4ARPMAgsqWIHoQ",
+   "google": "Little Shanghai Restaurant"
+  },
+  "mahasan": {
+   "name": "Mahasan",
+   "placeId": "ChIJD3zjWACfj4ARhgPj_2TmP8I",
+   "google": "Mahasan"
+  },
+  "johnnys": {
+   "name": "Johnny's",
+   "placeId": "ChIJ19n6fQCfj4AR09dCkKsNpTg",
+   "google": "Johnny’s"
+  },
+  "eterna-primavera": {
+   "name": "Eterna Primavera",
+   "placeId": "ChIJTeZ4mJ2fj4AR61fU165t5F0",
+   "google": "Eterna Primavera"
+  },
+  "bao-express": {
+   "name": "Bao Express",
+   "placeId": "ChIJAUbpKAOfj4AR-qwoiLt-Mlw",
+   "google": "Bao Express"
+  },
+  "o2-valley": {
+   "name": "O2 Valley",
+   "placeId": "ChIJLaNBqrufj4ARUKZ5rvrIs9w",
+   "google": "O2 Valley"
+  },
+  "dittmann-plumbing": {
+   "name": "Dittmann Plumbing",
+   "placeId": "ChIJ4RFak2Oej4AROVkPQYyELtU",
+   "google": "Dittmann Plumbing, Inc."
+  },
+  "hemis-plumbing-service": {
+   "name": "Hemi’s Plumbing Service",
+   "placeId": null,
+   "unmatched": "no result"
+  },
+  "meat-house": {
+   "name": "Meat House",
+   "placeId": "ChIJ1XrPO8afj4ARl8ErEfc4CVg",
+   "google": "Meat House 无肉不欢"
+  },
+  "color-me-mine": {
+   "name": "Color Me Mine",
+   "placeId": "ChIJrWFHd0ifj4ARsUuDE3e8VcU",
+   "google": "Color Me Mine"
+  },
+  "wizard-plumbing-drain": {
+   "name": "Wizard Plumbing and Drain",
+   "placeId": "ChIJXQA0afmej4ARlUQYrfK5qH8",
+   "google": "Wizard Plumbing and Drain"
+  },
+  "mid-peninsula-plumbing": {
+   "name": "Mid Peninsula Plumbing",
+   "placeId": "ChIJnf_L2XCej4ARMeziJikTKtA",
+   "google": "Mid Peninsula Plumbing"
+  },
+  "boudreau-plumbing-heating": {
+   "name": "Boudreau Plumbing & Heating",
+   "placeId": null,
+   "unmatched": "Boudreau Plumbing & Heating Inc | 868 Warrington Ave, Redwood City, CA 94063, USA"
+  },
+  "promo-plumbing": {
+   "name": "Promo Plumbing",
+   "placeId": "ChIJG6ns0WfTn2cR7dYXR2zIdvE",
+   "google": "Promo Plumbing Inc"
+  },
+  "all-pro-plumbing-and-rooter": {
+   "name": "All Pro Plumbing and Rooter",
+   "placeId": "ChIJ6-lN8Zefj4AR9XyNB4Xtr1k",
+   "google": "All Pro Plumbing and Rooter"
+  },
+  "tremors-plumbing-sewer": {
+   "name": "Tremors Plumbing & Sewer",
+   "placeId": "ChIJ___rX5Kej4ARp6e_oco6jV0",
+   "google": "Tremors Plumbing And Sewer Inc."
+  },
+  "buljan-plumbers": {
+   "name": "Buljan Plumbers",
+   "placeId": "ChIJaVElrSyfj4ARm6YFsJv1M_I",
+   "google": "Buljan Plumbers"
+  },
+  "brycor-plumbing-water-heater": {
+   "name": "Brycor Plumbing & Water Heater",
+   "placeId": "ChIJVVVVVcmfj4AREePeagCb-cs",
+   "google": "Brycor Plumbing & Water Heater"
+  },
+  "lindstrom-company": {
+   "name": "Lindstrom Company",
+   "placeId": "ChIJHWvMnsGdj4ARXlC691v7Yuk",
+   "google": "Lindstrom Company"
+  },
+  "sand-hill-plumbing": {
+   "name": "Sand Hill Plumbing",
+   "placeId": "ChIJubjfYs2fj4ARJUprP_A_Xxs",
+   "google": "Sand Hill Plumbing"
+  },
+  "how-about-dance": {
+   "name": "How About Dance",
+   "placeId": "ChIJkfhvfIyfj4ARzXVuksbVGjw",
+   "google": "How About Dance Studio (San Mateo)"
+  },
+  "whisper": {
+   "name": "Whisper",
+   "placeId": "ChIJBz99fZqfj4AR0xl3FAfBon8",
+   "google": "Whisper"
+  },
+  "reposado": {
+   "name": "Reposado",
+   "placeId": "ChIJUTZt2Xaej4ARkUPLEc7vUXY",
+   "google": "Reposado Restaurant - San Mateo"
+  },
+  "palmita": {
+   "name": "Palmita",
+   "placeId": "ChIJiZQybSCfj4ARUQYiq9JS-yE",
+   "google": "Palmita"
+  },
+  "anton-sv-patisserie": {
+   "name": "Anton SV Patisserie",
+   "placeId": "ChIJE9ICJ8Wfj4AR104uUZF8SfU",
+   "google": "Anton"
+  },
+  "ramen-dojo": {
+   "name": "Ramen Dojo",
+   "placeId": "ChIJe_K0-WSej4ARodOC4dXyLbI",
+   "google": "Ramen Dojo"
+  },
+  "sushi-yoshizumi": {
+   "name": "Sushi Yoshizumi",
+   "placeId": "ChIJIyz_kHqej4AR7iP5Z0yDksM",
+   "google": "Sushi Yoshizumi"
+  },
+  "yakitori-kokko": {
+   "name": "Yakitori Kokko",
+   "placeId": "ChIJi1zXD3qej4ARz_SZHSId8Zc",
+   "google": "Kokko - Yakitori & Japanese"
+  },
+  "fuji-sukiyaki": {
+   "name": "Fuji Sukiyaki",
+   "placeId": "ChIJ3SH8Znqej4ARUMkudLM5pJE",
+   "google": "Fuji Sukiyaki - Japanese Cuisine"
+  },
+  "sushi-maruyama": {
+   "name": "Sushi Maruyama",
+   "placeId": "ChIJHezl03aej4AR1R9NtvewBWg",
+   "google": "Sushi Maruyama"
+  },
+  "izakaya-ginji": {
+   "name": "Izakaya Ginji",
+   "placeId": "ChIJY2V3mXqej4AR-nm6ZMkV3XM",
+   "google": "Izakaya Ginji - Japanese Tapas"
+  },
+  "izakaya-mai": {
+   "name": "Izakaya Mai",
+   "placeId": "ChIJcUAq7XCej4ARXAQVeV53NVI",
+   "google": "Izakaya Mai"
+  },
+  "taishoken": {
+   "name": "Taishoken",
+   "placeId": "ChIJmQba6BWfj4ARsGyybmBYOxA",
+   "google": "Taishoken Ramen"
+  },
+  "ultra-sushi": {
+   "name": "Ultra Sushi",
+   "placeId": "ChIJIRoEncifj4ARJDUsErQXrTw",
+   "google": "Ultra Sushi"
+  },
+  "udon-mugizo": {
+   "name": "Udon Mugizo",
+   "placeId": "ChIJT5eL6Xyfj4ARd__EqjMZhNo",
+   "google": "Udon Mugizo - San Mateo"
+  },
+  "hotaru": {
+   "name": "Hotaru",
+   "placeId": "ChIJeYxGt3Gej4ARWlGEOdBa0LE",
+   "google": "Hotaru Restaurant"
+  },
+  "dash-japanese-tapas-sushi": {
+   "name": "DASH Japanese Tapas & Sushi",
+   "placeId": "ChIJp6yImXCej4ARwQ0kgVjz25w",
+   "google": "Dash Japanese Tapas and Sushi"
+  },
+  "tokie-s": {
+   "name": "Tokie's",
+   "placeId": "ChIJOWymJtWYj4ARenbrS8PUIJ8",
+   "google": "Tokie's Downtown"
+  },
+  "himawari": {
+   "name": "Himawari",
+   "placeId": "ChIJ3xfY7XCej4ARxv7jAZpvKII",
+   "google": "Himawari"
+  },
+  "amour-amour-wine-bar-tapas": {
+   "name": "Amour Amour Wine Bar & Tapas",
+   "placeId": "ChIJ6cW6kHqej4ARiiSPnlGL5eo",
+   "google": "Amour Amour"
+  },
+  "tang-bar": {
+   "name": "Tang Bar",
+   "placeId": "ChIJJUdl6f6fj4AR4IHK3vp6U6k",
+   "google": "Tang Bar San Mateo"
+  },
+  "foreigner-cafe": {
+   "name": "Foreigner Cafe",
+   "placeId": "ChIJBUJUEvufj4AR3Ms-AQad6AU",
+   "google": "Foreigner Cafe"
+  },
+  "avocado-toast": {
+   "name": "Avocado Toast",
+   "placeId": "ChIJb-BteXCej4ARhYpP7JyS9cA",
+   "google": "Avocado Toast"
+  },
+  "new-thai-elephant": {
+   "name": "New Thai Elephant",
+   "placeId": "ChIJb2cMDUyfj4ARMMNpFMGBlv8",
+   "google": "New Thai Elephant"
+  },
+  "ox-9-lanzhou-handpulled-noodles": {
+   "name": "Ox 9 Lanzhou Handpulled Noodles",
+   "placeId": "ChIJKfn1kpKfj4ARJ-KC-Uwze98",
+   "google": "Ox 9 Lanzhou Handpulled Noodles"
+  },
+  "new-wing-fat-chinese-restaurant": {
+   "name": "New Wing Fat Chinese Restaurant",
+   "placeId": "ChIJ9wyeTXqej4ARYxWWs4z7o3s",
+   "google": "New Wing Fat - Chinese Restaurant"
+  },
+  "zen-noodle-bar": {
+   "name": "Zen Noodle Bar",
+   "placeId": "ChIJQ6_pTHqej4ARsN5gHPirK9Y",
+   "google": "Zen Noodle Bar"
+  },
+  "fish-with-you": {
+   "name": "Fish with You",
+   "placeId": "ChIJlZciNwCfj4ARoQRaOS3XOQ4",
+   "google": "Fish With You 鱼你在一起下饭酸菜鱼"
+  },
+  "my-dumpling": {
+   "name": "MY Dumpling",
+   "placeId": "ChIJyXgDJgCfj4ARuDWUSCzHkNw",
+   "google": "MY Dumpling"
+  },
+  "shang-dumpling": {
+   "name": "Shang Dumpling",
+   "placeId": "ChIJubF8OQCfj4ARPSxqC7M4DU8",
+   "google": "Shang Dumpling"
+  },
+  "superstar-dim-sum-and-seafood": {
+   "name": "Superstar Dim Sum and Seafood",
+   "placeId": "ChIJr7UjFGOfj4AR61GzS550UU4",
+   "google": "Superstar Dim Sum & Seafood Restaurant"
+  },
+  "fletch-s-taqueria": {
+   "name": "Fletch's Taqueria",
+   "placeId": "ChIJG2nvYCifj4ARS2YfRVbPyYs",
+   "google": "Fletch's Taqueria"
+  },
+  "las-palomas-taqueria": {
+   "name": "Las Palomas Taqueria",
+   "placeId": "ChIJ45zmZ3qej4ARcQEvOh9jrlQ",
+   "google": "Las Palomas Taquería"
+  },
+  "charlie-s-taqueria": {
+   "name": "Charlie's Taqueria",
+   "placeId": "ChIJzxQm-2Sej4ARd4DGD1s_-YI",
+   "google": "Charlie's Taqueria"
+  },
+  "tacos-al-vapor": {
+   "name": "Tacos Al Vapor",
+   "placeId": "ChIJUwAoqHuej4AR_nF_loM446w",
+   "google": "Tacos Al Vapor - Nueva Italia"
+  },
+  "taqueria-las-pencas-2": {
+   "name": "Taqueria Las Pencas 2",
+   "placeId": "ChIJ3TudkFifj4AR1-KkklUy_3U",
+   "google": "Taquería Las Pencas #2"
+  },
+  "snacks-antojitos-mexicanos": {
+   "name": "Snacks Antojitos Mexicanos",
+   "placeId": "ChIJ5T8k8Haej4ARTLyt_sT27nU",
+   "google": "Snacks Antojitos Mexicanos"
+  },
+  "pupuseria-el-salvador": {
+   "name": "Pupuseria El Salvador",
+   "placeId": "ChIJ7-LfZrKfj4ARPrfz9A-zPoE",
+   "google": "Pupuseria El Salvador ( el rinconcito catracho)"
+  },
+  "hummus-mediterranean-kitchen": {
+   "name": "Hummus Mediterranean Kitchen",
+   "placeId": "ChIJ5VNLDnCej4ARf6DmmGYOkxg",
+   "google": "Hummus Mediterranean Kitchen"
+  },
+  "chopstix-taiwanese-bentos": {
+   "name": "Chopstix & Taiwanese Bentos",
+   "placeId": "ChIJ_apdxcGfj4ARXsR6YZjHLQw",
+   "google": "Chopstix & Taiwanese Bentos"
+  },
+  "samikcha-momo": {
+   "name": "Samikcha MoMo",
+   "placeId": "ChIJlTAjdP2fj4ARRqh4_bN1Y3k",
+   "google": "SAMIKCHA MOMO Indian-Nepali Cuisine"
+  },
+  "urban-momo": {
+   "name": "Urban Momo",
+   "placeId": "ChIJV9Djnkmfj4ARSPTuy_3mZn0",
+   "google": "Urban Momo"
+  },
+  "chingu": {
+   "name": "Chingu",
+   "placeId": "ChIJ-f64XwCfj4ARy9MhdAdp8kY",
+   "google": "Chingu"
+  },
+  "gao-viet-kitchen": {
+   "name": "Gao Viet Kitchen",
+   "placeId": "ChIJpxRGD8efj4AR6j3jq50wM4k",
+   "google": "Gao Viet Kitchen"
+  },
+  "m-sandwiches-cafe": {
+   "name": "M Sandwiches Cafe",
+   "placeId": "ChIJOTbfdHCej4ARIab_uDLZJr0",
+   "google": "M Sandwiches Cafe - San Mateo"
+  },
+  "saigon-city": {
+   "name": "Saigon City",
+   "placeId": "ChIJY2e9Znqej4ARyqMxMoKLZvI",
+   "google": "Saigon City Restaurant"
+  },
+  "sapore-express": {
+   "name": "Sapore Express",
+   "placeId": "ChIJZUMrBe-fj4ARNxc1PWf1LHw",
+   "google": "Sapore Express"
+  },
+  "central-park-bistro": {
+   "name": "Central Park Bistro",
+   "placeId": "ChIJV_JyhqD1UocRck6StTwWwfA",
+   "google": "Central Park Bistro"
+  },
+  "prime-san-mateo": {
+   "name": "San Mateo Prime",
+   "placeId": "ChIJbQOaZ3Cej4ARpMxBFKP_K3A",
+   "google": "San Mateo Prime"
+  },
+  "panaderia-guatemalteca": {
+   "name": "Panaderia Guatemalteca",
+   "placeId": "ChIJ8f-HB3uej4ARMB8GSYnJBTQ",
+   "google": "Panaderia Guatemalteca Tikal"
+  },
+  "icicles": {
+   "name": "Icicles",
+   "placeId": "ChIJ1zZ5e3Cej4ARhbCurqlaTno",
+   "google": "Icicles San Mateo"
+  },
+  "luluyum": {
+   "name": "LuluYum",
+   "placeId": "ChIJPY6GiQ2fj4ARmNfhEoODpJo",
+   "google": "Luluyum"
+  },
+  "tong-sui": {
+   "name": "Tong Sui",
+   "placeId": "ChIJkc4PgMGfj4ARLqAROaUFcRg",
+   "google": "Tong Sui Desserts & Drinks (San Mateo)"
+  },
+  "sweet-moment": {
+   "name": "Sweet Moment",
+   "placeId": "ChIJV5saq2Kfj4ARHmn54fqyDhc",
+   "google": "Sweet Moment"
+  },
+  "tiger-tea-juice": {
+   "name": "Tiger Tea & Juice",
+   "placeId": "ChIJw1I5dqCfj4ARjk6tgk-bdSw",
+   "google": "Tiger Tea & Juice San Mateo"
+  },
+  "molly-tea": {
+   "name": "Molly Tea",
+   "placeId": "ChIJU4CMDpyfj4ARmgzwmcn1-Rs",
+   "google": "Molly Tea (San Mateo)"
+  },
+  "myriad-music-school-dance-academy": {
+   "name": "Myriad Music School & Dance Academy",
+   "placeId": "ChIJvb4nbPmej4ARVHyM-4SzvZg",
+   "google": "Myriad Music School & Dance Academy"
+  },
+  "heartbeat-dance-academy": {
+   "name": "Heartbeat Dance Academy",
+   "placeId": "ChIJgS4K2Wmfj4AR1-RCutV-Xtc",
+   "google": "HeartBeat Dance Academy"
+  },
+  "aloha-time-boxing": {
+   "name": "Aloha Time Boxing",
+   "placeId": "ChIJw9MBWZyfj4AR1EhtAWr8ryQ",
+   "google": "Aloha Time Boxing San Mateo"
+  },
+  "hiptwist-fitness": {
+   "name": "Hiptwist Fitness",
+   "placeId": "ChIJX1oSnD2fj4AR-kogozkf4C0",
+   "google": "Hiptwist Fitness"
+  },
+  "heavenly-nail-lounge-and-wellness": {
+   "name": "Heavenly Nail Lounge & Wellness",
+   "placeId": "ChIJSc0Rzviej4ARjrkjQKp6_Y4",
+   "google": "Heavenly Nail Lounge & Wellness"
+  },
+  "skincare-by-mona": {
+   "name": "SkinCare by Mona",
+   "placeId": "ChIJaf-JR8afj4ARVzrJ58dlqSo",
+   "google": "Blu Monarch Skin Studio - Med Spa & Skincare Clinic San Mateo"
+  },
+  "sceptre-jiu-jitsu": {
+   "name": "Sceptre Jiu Jitsu",
+   "placeId": "ChIJKVek97Kfj4ARj9_g5clowc0",
+   "google": "Sceptre Jiu Jitsu"
+  },
+  "hot-yoga-plus": {
+   "name": "Hot Yoga Plus",
+   "placeId": "ChIJFUVcfV6ej4ARqThTeskDh5Q",
+   "google": "Hot Yoga Plus San Mateo"
+  },
+  "no-filter-brazilian-medspa": {
+   "name": "No Filter Brazilian MedSpa",
+   "placeId": "ChIJqzE3Okufj4ARCmW7hLMjnnA",
+   "google": "No Filter Brazilian MedSpa"
+  },
+  "south-hillsdale-animal-hospital": {
+   "name": "South Hillsdale Animal Hospital",
+   "placeId": "ChIJGyllEhqfj4ARjqdHwFkdRAk",
+   "google": "South Hillsdale Animal Hospital"
+  },
+  "north-peninsula-veterinary-emergency-clinic": {
+   "name": "North Peninsula Veterinary Emergency Clinic",
+   "placeId": "ChIJ4T7JFNedj4ARPob5UtJgH-4",
+   "google": "North Peninsula Veterinary Emergency Clinic"
+  },
+  "chilangos-taco-truck-san-mateo": {
+   "name": "Chilango's Taco Truck",
+   "placeId": null,
+   "unmatched": "Chilango’s | 724 7th St, Arcata, CA 95521, USA"
+  },
+  "ta-contreras-san-mateo": {
+   "name": "Ta' Contreras",
+   "placeId": null,
+   "unmatched": "725 Monte Diablo Ave | 725 Monte Diablo Ave, San Mateo, CA 94401, USA"
+  },
+  "la-pilita-san-mateo": {
+   "name": "La Pilita",
+   "placeId": null,
+   "unmatched": "Los Prados Park | 1837 Bahia St, San Mateo, CA 94403, USA"
+  },
+  "andys-tacos-jalisco-san-mateo": {
+   "name": "Andy's Tacos Jalisco",
+   "placeId": "ChIJeWbWm96dj4ARQOT3ncihZ_Q",
+   "google": "Andy’s Tacos Jalisco Food Truck"
+  },
+  "the-burger-br-san-mateo": {
+   "name": "The Burger Br",
+   "placeId": "ChIJ06nLGwCfj4AR-MnK7x2Gt7s",
+   "google": "The Burger"
+  },
+  "sushilito-boy-san-mateo": {
+   "name": "Sushilito Boy",
+   "placeId": "ChIJo0jyGB-fj4ARcu4tnBtr6Js",
+   "google": "Sushilito Boy"
+  },
+  "el-sipote-food-truck-san-mateo": {
+   "name": "El Sipote Food Truck",
+   "placeId": "ChIJ5WcOiEKfj4ARFdIAz60Q_Wc",
+   "google": "El sipote food truck"
+  },
+  "kusan-bazaar-san-mateo": {
+   "name": "Kusan Bazaar",
+   "placeId": "ChIJe9wBMuWfj4ARltiw-jOeEcA",
+   "google": "Kusan Bazaar｜Silk Road Grill & Noodles 龟兹集市"
+  },
+  "bizza-san-mateo": {
+   "name": "Bizza",
+   "placeId": "ChIJmUsD8Puej4ARjrL6z1BUv0I",
+   "google": "Bizza (San Mateo)"
+  },
+  "pjs-pizza-co-san-mateo": {
+   "name": "PJ's Pizza Co.",
+   "placeId": "ChIJtVBa0viej4ARVQZlZFwYlQI",
+   "google": "PJ's Pizza Co."
+  },
+  "mateo-pizza-restaurant-san-mateo": {
+   "name": "Mateo Pizza Restaurant",
+   "placeId": "ChIJERZ2ZWWdj4ARCAAjBDaa2_Q",
+   "google": "Mateo Pizza Restaurant"
+  },
+  "new-york-pizza-san-mateo": {
+   "name": "New York Pizza",
+   "placeId": "ChIJxd8KkXCej4ARzj6lIWQL8sg",
+   "google": "New York Pizza"
+  },
+  "nob-hill-pizza-and-popcorn-san-mateo": {
+   "name": "Nob Hill Pizza and Popcorn",
+   "placeId": "ChIJx04Wg1-ej4ARhIxqOdSsqVw",
+   "google": "Nob Hill Pizza and Popcorn"
+  },
+  "pizza-my-heart-san-mateo": {
+   "name": "Pizza My Heart",
+   "placeId": "ChIJCeDDEXCej4ARCMv4Lie2nj8",
+   "google": "Pizza My Heart"
+  },
+  "north-beach-pizza-san-mateo": {
+   "name": "North Beach Pizza",
+   "placeId": "ChIJczpPDO2fj4ARYLg1dsNXlIs",
+   "google": "North Beach Pizza"
+  },
+  "golden-boy-pizza-san-mateo": {
+   "name": "Golden Boy Pizza",
+   "placeId": "ChIJh1Pinbedj4ARfPkf5TbAlbI",
+   "google": "Golden Boy Pizza"
+  },
+  "chef-zhao-bistro-san-mateo": {
+   "name": "Chef Zhao Bistro",
+   "placeId": "ChIJkwaiUvmej4ARclO6_O7RvpY",
+   "google": "Chef Zhao Bistro"
+  },
+  "cheung-hing-san-mateo": {
+   "name": "Cheung Hing",
+   "placeId": "ChIJgwpfriyfj4ARvDFTsH7jZYU",
+   "google": "Cheung Hing"
+  },
+  "happy-lamb-hot-pot-san-mateo": {
+   "name": "Happy Lamb Hot Pot",
+   "placeId": "ChIJ01Fn83Cej4ARB9X33o7q96k",
+   "google": "Happy Lamb Hot Pot, San Mateo 快乐小羊"
+  },
+  "kai-kai-dim-sum-san-mateo": {
+   "name": "Kai Kai Dim Sum",
+   "placeId": "ChIJk3mJGCCfj4ARAtq2PZclKIw",
+   "google": "Kai Kai Dim Sum"
+  },
+  "little-hunan-restaurant-san-mateo": {
+   "name": "Little Hunan Restaurant",
+   "placeId": "ChIJXSQlDMifj4ARCQiDUvrmeKM",
+   "google": "Little Hunan Restaurant"
+  },
+  "liuyishou-hotpot-san-mateo": {
+   "name": "Liuyishou Hotpot",
+   "placeId": "ChIJv2lTRnCej4ARxfGlAqjhuoo",
+   "google": "Liuyishou Hotpot (San Mateo)"
+  },
+  "mala-town-express-san-mateo": {
+   "name": "Mala Town Express",
+   "placeId": "ChIJDc_SPM2fj4AR3I0cYL0JLcc",
+   "google": "Mala Town Express 自选麻辣烫"
+  },
+  "peking-alley-san-mateo": {
+   "name": "Peking Alley",
+   "placeId": "ChIJJRmUeRafj4ARQs7iBA7Y80Y",
+   "google": "Peking Alley"
+  },
+  "ping-s-bistro-san-mateo": {
+   "name": "Ping‘s Bistro",
+   "placeId": "ChIJt7a7Ow6fj4AR-POfdZpZVZw",
+   "google": "Ping‘s Bistro"
+  },
+  "rin-tei-san-mateo": {
+   "name": "Rin-Tei",
+   "placeId": "ChIJEdn_l--fj4ARsZH4930Vj_I",
+   "google": "Rin-Tei"
+  },
+  "seapot-hot-pot-korean-bbq-san-mateo": {
+   "name": "Seapot Hot Pot & Korean BBQ",
+   "placeId": "ChIJg1CHCViej4ARakPttIGBCi8",
+   "google": "Seapot Hot Pot & Korean BBQ"
+  },
+  "silver-house-san-mateo": {
+   "name": "Silver House",
+   "placeId": "ChIJ14-fBvmej4ARrGESAkmSw-I",
+   "google": "Silver House"
+  },
+  "silver-lake-seafood-restaurant-san-mateo": {
+   "name": "Silver Lake Seafood Restaurant",
+   "placeId": "ChIJveGSE_mej4ARI3Np6OdTKcg",
+   "google": "Silver Lake - Chinese Seafood Restaurant"
+  },
+  "tai-er-sichuan-cuisine-san-mateo": {
+   "name": "Tai Er Sichuan Cuisine",
+   "placeId": "ChIJMbhCJACfj4ARV_ldP34pF5E",
+   "google": "TAI ER SICHUAN CUISINE 太二川菜 (SAN MATEO)"
+  },
+  "ten-seconds-yunnan-rice-noodle-san-mateo": {
+   "name": "Ten Seconds Yunnan Rice Noodle",
+   "placeId": "ChIJp-CKNwCfj4ARK3SOzG2zLOU",
+   "google": "Ten Seconds Yunnan Rice Noodle"
+  },
+  "the-noodle-shop-san-mateo": {
+   "name": "The Noodle Shop",
+   "placeId": "ChIJIe6VLP-ej4ARL27Gwj9FFGc",
+   "google": "The Noodle Shop"
+  },
+  "toa-yuen-restaurant-san-mateo": {
+   "name": "Toa Yuen Restaurant",
+   "placeId": "ChIJvdanoEyej4ARdulLFkKHOJk",
+   "google": "Toa Yuen Restaurant"
+  },
+  "li-s-knife-cut-noodle-san-mateo": {
+   "name": "Li's Knife Cut Noodle",
+   "placeId": "ChIJT1h6HgCfj4ARgnzghvthQ78",
+   "google": "李面请 大碗刀削面 Li's Knife Cut Noodle"
+  },
+  "dynasty-bbq-san-mateo": {
+   "name": "Dynasty BBQ",
+   "placeId": "ChIJe1hpqKGfj4ARWBFCgo71nII",
+   "google": "人间烟火小酒馆（Dynasty BBQ)"
+  },
+  "daiki-sushi-san-mateo": {
+   "name": "Daiki Sushi",
+   "placeId": "ChIJ-7aII_iej4ARV_TT46jMcrQ",
+   "google": "Daiki Sushi"
+  },
+  "kodawari-japanese-cuisine-san-mateo": {
+   "name": "Kodawari Japanese Cuisine",
+   "placeId": "ChIJc8JISACfj4ARpxD6dtUFFf8",
+   "google": "Kodawari Japanese Cuisine"
+  },
+  "minako-organic-ish-japanese-cuisine-san-mateo": {
+   "name": "Minako Organic-ish Japanese Cuisine",
+   "placeId": "ChIJkYbPmeidj4AR-JfvQZ-F2LI",
+   "google": "Minako Organic-ish Japanese Cuisine"
+  },
+  "noma-sushi-san-mateo": {
+   "name": "Noma Sushi",
+   "placeId": "ChIJkdufYMqfj4ARRzWEPAMY5T8",
+   "google": "Noma - Sushi Bar & Grill"
+  },
+  "santa-ramen-san-mateo": {
+   "name": "Santa Ramen",
+   "placeId": "ChIJ2VGpcliej4ARL6SrI46lA4I",
+   "google": "Santa Ramen"
+  },
+  "totoro-ramen-san-mateo": {
+   "name": "Totoro Ramen",
+   "placeId": "ChIJN6x96hadj4AR7ZVrIZVCt4s",
+   "google": "Totoro Ramen"
+  },
+  "yuzu-san-mateo": {
+   "name": "Yuzu",
+   "placeId": "ChIJX3rgaxqfj4ARTDV4zC6uL8c",
+   "google": "Yuzu"
+  },
+  "keitan-binchotan-yakitori-san-mateo": {
+   "name": "KEITAN Binchotan Yakitori",
+   "placeId": "ChIJ7yCNNyufj4AR4t1ACpzILO4",
+   "google": "KEITAN Binchotan Yakitori"
+  },
+  "daeho-kalbijjim-beef-soup-san-mateo": {
+   "name": "Daeho kalbijjim & beef soup",
+   "placeId": "ChIJJ359_7Sfj4ARJZnEW4YwpzM",
+   "google": "Daeho Kalbijjim & Beef Soup"
+  },
+  "olhso-korean-bbq-house-san-mateo": {
+   "name": "OLHSO Korean BBQ House",
+   "placeId": "ChIJ8aIuCACfj4ARSHJYREySoio",
+   "google": "OLHSO Korean BBQ House"
+  },
+  "myung-dong-tofu-cabin-san-mateo": {
+   "name": "Myung Dong Tofu Cabin",
+   "placeId": "ChIJJ2VXiyCfj4ARjRXqc3nCVhI",
+   "google": "Myung Dong Tofu Cabin"
+  },
+  "clay-oven-cuisine-of-india-san-mateo": {
+   "name": "Clay Oven Cuisine of India",
+   "placeId": "ChIJJaVySXCej4ARuJfHPtKWwbE",
+   "google": "Clay Oven - Cuisine of India"
+  },
+  "lajawab-indian-cuisine-san-mateo": {
+   "name": "Lajawab Indian Cuisine",
+   "placeId": "ChIJ6R-Eyvudj4ARwgVTIVmT0N8",
+   "google": "Lajawab Indian Cuisine"
+  },
+  "shah-restaurant-san-mateo": {
+   "name": "Shah Restaurant",
+   "placeId": "ChIJj7kJBwifj4ARvKPlYeOtKyQ",
+   "google": "Shah Restaurant"
+  },
+  "peninsula-italian-american-social-club-san-mateo": {
+   "name": "Peninsula Italian American Social Club",
+   "placeId": "ChIJje0i-naej4ARp6AWebONsrs",
+   "google": "Peninsula Italian American Social Club"
+  },
+  "jack-s-restaurant-bar-san-mateo": {
+   "name": "Jack's Restaurant & Bar",
+   "placeId": "ChIJCzbe2Viej4ARxdm0aQzctUo",
+   "google": "Jack's Restaurant & Bar"
+  },
+  "the-pasta-affair-san-mateo": {
+   "name": "The Pasta Affair",
+   "placeId": "ChIJB-RQ3nefj4ARE7Tg66RFeiQ",
+   "google": "The Pasta Affair"
+  },
+  "chai-yo-thai-cuisine-san-mateo": {
+   "name": "Chai Yo Thai Cuisine",
+   "placeId": "ChIJfZwk1GCfj4ARGTJ1yrjaMq8",
+   "google": "Chai Yo - Thai Cuisine"
+  },
+  "charm-thai-eatery-san-mateo": {
+   "name": "Charm Thai Eatery",
+   "placeId": "ChIJgWEBd16ej4ARwB83tMxbRYQ",
+   "google": "Charm Thai Eatery"
+  },
+  "fernando-s-mexican-restaurant-san-mateo": {
+   "name": "Fernando's Mexican Restaurant",
+   "placeId": "ChIJkTQUbxqfj4ARnwE0LebF5Gg",
+   "google": "Fernando's Méxican Restaurant"
+  },
+  "hermedia-restaurant-san-mateo": {
+   "name": "Hermedia Restaurant",
+   "placeId": "ChIJm6Faboyfj4ARX1JwveIgJf4",
+   "google": "Hermedia Restaurant"
+  },
+  "jayli-s-cocina-san-mateo": {
+   "name": "Jayli’s Cocina",
+   "placeId": "ChIJN3f1GkCfj4ARUaKFCbughQQ",
+   "google": "Jayli’s Cocina"
+  },
+  "la-chapina-restaurant-san-mateo": {
+   "name": "La Chapina Restaurant",
+   "placeId": "ChIJcVvclg6jj4ARUhTZvdFIKyk",
+   "google": "La Chapina Restaurant"
+  },
+  "maria-s-restaurant-san-mateo": {
+   "name": "Maria's Restaurant",
+   "placeId": "ChIJwRwXQIeej4ARW7apZkKr0vg",
+   "google": "Maria's Restaurant"
+  },
+  "monchi-s-red-tacos-san-mateo": {
+   "name": "Monchi's Red Tacos",
+   "placeId": "ChIJRex2iSmfj4ARL7p5mMxjlbA",
+   "google": "Monchi's Red Tacos"
+  },
+  "mr-taco-man-san-mateo": {
+   "name": "Mr. Taco Man",
+   "placeId": "ChIJO8uBw-ufj4ARyqOY4EJ9Hgo",
+   "google": "Mr. Taco Man"
+  },
+  "s-el-camino-taqueria-san-mateo": {
+   "name": "S El Camino Taqueria",
+   "placeId": "ChIJJbGJdumfj4ARHqzFGHMnOfs",
+   "google": "S El Camino Taqueria"
+  },
+  "tacos-el-grullense-c-d-san-mateo": {
+   "name": "Tacos El Grullense C&D",
+   "placeId": "ChIJoyk2-Gyfj4AR75KHuhEKtt4",
+   "google": "Tacos El Grullense C&D"
+  },
+  "taqueria-los-moreno-san-mateo": {
+   "name": "Taquería Los Moreno",
+   "placeId": "ChIJdUQYkhWfj4ARvv8mWDJD5xY",
+   "google": "Taquería Los Moreno"
+  },
+  "taqueria-pancho-villa-san-mateo": {
+   "name": "Taqueria Pancho Villa",
+   "placeId": "ChIJfRMInHqej4AR-4NtZnaL4q0",
+   "google": "Taqueria Pancho Villa"
+  },
+  "mariscos-el-pariente-2-san-mateo": {
+   "name": "Mariscos el pariente #2",
+   "placeId": "ChIJK0lqulCfj4ARSUuGMqbxZHE",
+   "google": "Mariscos el pariente #2"
+  },
+  "taqueria-el-tigre-san-mateo": {
+   "name": "Taqueria El Tigre",
+   "placeId": "ChIJ2_leLACfj4ARcIbrTHNN09Y",
+   "google": "Taqueria El Tigre"
+  },
+  "gyroo-mediterranean-food-san-mateo": {
+   "name": "Gyroo Mediterranean Food",
+   "placeId": "ChIJS2id_defj4ARkfUh4xOgCaU",
+   "google": "GYROO MEDITERRANEAN FOOD"
+  },
+  "330-bistro-bar-grill-san-mateo": {
+   "name": "330 Bistro Bar & Grill",
+   "placeId": "ChIJcwqGotCdj4ARb4F6T3SC9L8",
+   "google": "330 Bistro Bar & Grill"
+  },
+  "bagel-box-and-coffee-san-mateo": {
+   "name": "Bagel Box And Coffee",
+   "placeId": "ChIJhRbrQQ2fj4ARczAdwL2uJao",
+   "google": "Bagel Box And Coffee"
+  },
+  "cafe-2k-san-mateo": {
+   "name": "Cafe 2k",
+   "placeId": null,
+   "unmatched": "Cafe 2k | 2000 Alameda de las Pulgas, San Mateo, CA 94403, USA"
+  },
+  "dulzura-cafe-san-mateo": {
+   "name": "Dulzura Café",
+   "placeId": "ChIJ_3bHZ_Cej4ARhqJ6zf6UOwY",
+   "google": "Dulzura Café"
+  },
+  "java-blue-san-mateo": {
+   "name": "Java Blue",
+   "placeId": "ChIJW5YQruefj4ARlPFeHKB9wMM",
+   "google": "Java Blue"
+  },
+  "vineyard-cafe-san-mateo": {
+   "name": "Vineyard Cafe",
+   "placeId": "ChIJf3iRnvGej4ARpNGasGB9QVg",
+   "google": "Vineyard Cafe"
+  },
+  "baking-arts-coffee-san-mateo": {
+   "name": "Baking Arts & Coffee",
+   "placeId": "ChIJN3L0vdV_j4ARSTKJmimlbik",
+   "google": "Baking Arts & Coffee"
+  },
+  "izumi-matcha-san-mateo": {
+   "name": "Izumi Matcha",
+   "placeId": "ChIJv-iYVACfj4ARstK8x81FXpk",
+   "google": "Izumi Matcha"
+  },
+  "mb-s-place-san-mateo": {
+   "name": "MB's Place",
+   "placeId": "ChIJIZkmW1efj4ARGs8mWdao6n8",
+   "google": "MB's Place"
+  },
+  "sal-s-burgers-san-mateo": {
+   "name": "Sal's Burgers",
+   "placeId": "ChIJ51llI8Sfj4AR3U6RBSjFVeg",
+   "google": "Sal's Burgers"
+  },
+  "maverick-jack-s-burgers-shakes-san-mateo": {
+   "name": "Maverick Jack's Burgers & Shakes",
+   "placeId": "ChIJ7TKz_xmfj4ARtQgGqsBFIBQ",
+   "google": "Maverick Jack's Burgers & Shakes"
+  },
+  "smash-shack-san-mateo": {
+   "name": "Smash Shack",
+   "placeId": "ChIJvXgJvwOfj4ARDkOxqw-ROUA",
+   "google": "Smash Shack"
+  },
+  "lobster-chef-san-mateo": {
+   "name": "Lobster Chef",
+   "placeId": "ChIJoShLt8Sfj4ARs7XSoeedP98",
+   "google": "Lobster Chef"
+  },
+  "food-mall-san-mateo": {
+   "name": "Food Mall",
+   "placeId": "ChIJBXkQpxWfj4ARJhFur0towwE",
+   "google": "San Mateo Food Mall"
+  },
+  "college-of-san-mateo-athletic-center-san-mateo": {
+   "name": "College of San Mateo Athletic Center",
+   "placeId": "ChIJbZ19wDWej4AROYXdES8gztU",
+   "google": "College of San Mateo Athletic Center"
+  },
+  "the-village-gym-san-mateo": {
+   "name": "The Village Gym",
+   "placeId": "ChIJ3VIAUKKfj4ARabG-z85IT9Y",
+   "google": "The Village Gym"
+  },
+  "fitness-19-san-mateo": {
+   "name": "Fitness 19",
+   "placeId": "ChIJ_Winrv2ej4ARPD9YpG7ak-E",
+   "google": "Fitness 19"
+  },
+  "the-fix-personal-training-studio-san-mateo": {
+   "name": "The Fix Personal Training Studio",
+   "placeId": "ChIJmb69GWGej4ARf7ayDkxD_gw",
+   "google": "The Fix Personal Training Studio"
+  },
+  "morph-fitness-san-mateo": {
+   "name": "Morph Fitness",
+   "placeId": "ChIJDUjfAnqfj4AROIpxeaS1leE",
+   "google": "Morph Fitness"
+  },
+  "bodyrok-san-mateo-reformer-pilates-studio-san-mateo": {
+   "name": "BODYROK San Mateo - Reformer Pilates Studio",
+   "placeId": "ChIJKakRH5Gfj4ARXk7k0IY2VLU",
+   "google": "BODYROK San Mateo - Reformer Pilates Studio"
+  },
+  "lfba-studios-san-mateo-san-mateo": {
+   "name": "LFBA Studios - San Mateo",
+   "placeId": "ChIJbUHeu--fj4ARofx1JhcZOwE",
+   "google": "LFBA Studios - San Mateo"
+  },
+  "quinta-s-jungle-gym-san-mateo": {
+   "name": "Quinta’s Jungle Gym",
+   "placeId": "ChIJ7-16EACfj4ARC2_834D_DfY",
+   "google": "Quinta’s Jungle Gym"
+  },
+  "kg-fitness-studio-san-mateo": {
+   "name": "KG Fitness Studio",
+   "placeId": "ChIJ8UP66uKfj4ARKf874RJpOnA",
+   "google": "KG Fitness Studio"
+  },
+  "optimum-strength-and-conditioning-san-mateo": {
+   "name": "Optimum Strength and Conditioning",
+   "placeId": "ChIJ7UP-QByfj4AR1bghnyqnxk4",
+   "google": "Optimum Strength and Conditioning"
+  },
+  "crossfit-burlingame-san-mateo": {
+   "name": "Crossfit Burlingame",
+   "placeId": "ChIJT3XSEdqdj4ARGEVKqnNELmk",
+   "google": "Crossfit Burlingame"
+  },
+  "opex-kura-personal-training-lifestyle-coaching-san-mateo": {
+   "name": "OPEX KURA | Personal Training & Lifestyle Coaching",
+   "placeId": "ChIJD5D15mSej4ARKMN_PR-FIQQ",
+   "google": "OPEX KURA | Personal Training & Lifestyle Coaching"
+  },
+  "power-up-training-san-mateo": {
+   "name": "Power Up Training",
+   "placeId": "ChIJD3YwxeCfj4ARFAmWCiGxolU",
+   "google": "Power Up Training"
+  },
+  "holly-roser-fitness-studio-san-mateo": {
+   "name": "Holly Roser Fitness Studio",
+   "placeId": "ChIJ__8PsDZ6j4ARHLGF-CZ9Xy4",
+   "google": "Holly Roser Fitness Studio"
+  },
+  "strong-fit-happy-san-mateo": {
+   "name": "Strong Fit & Happy",
+   "placeId": "ChIJy6nCnLKfj4ARd6tB9bZGn2k",
+   "google": "Strong Fit & Happy"
+  },
+  "rocksalt-pilates-san-mateo": {
+   "name": "RockSalt Pilates",
+   "placeId": "ChIJkz_pyHqej4AR8QBDpVim5MQ",
+   "google": "RockSalt Pilates"
+  },
+  "the-body-studio-for-fitness-san-mateo": {
+   "name": "The Body 'Studio For Fitness",
+   "placeId": "ChIJ5xvSZySZj4ARyZC-qEp7L5o",
+   "google": "The Body 'Studio For Fitness"
+  },
+  "perform-for-golf-san-mateo-san-mateo": {
+   "name": "Perform for Golf - San Mateo",
+   "placeId": "ChIJI0gsb5Kfj4ARHQfxxhCPGzw",
+   "google": "Perform for Golf - San Mateo"
+  },
+  "infinite-sports-san-mateo": {
+   "name": "Infinite Sports",
+   "placeId": "ChIJGT5fVWKdj4ARGf6vM2K1iGE",
+   "google": "Infinite Sports"
+  },
+  "pilates-v-san-mateo-san-mateo": {
+   "name": "Pilates V San Mateo",
+   "placeId": "ChIJL0Ax8Bafj4AR_pFv942Ntsk",
+   "google": "Pilates V San Mateo"
+  },
+  "ever-pilates-san-mateo": {
+   "name": "ever Pilates",
+   "placeId": "ChIJaU6l2kufj4ARQjgxGzx02k8",
+   "google": "ever Pilates"
+  },
+  "ninja-republic-san-mateo": {
+   "name": "Ninja Republic",
+   "placeId": "ChIJP8bp2QGfj4ARXc0tsuBx3B4",
+   "google": "Ninja Republic"
+  },
+  "soulful-pilates-san-mateo": {
+   "name": "Soulful Pilates",
+   "placeId": "ChIJCxSublOHhYARwoMB20O_hNg",
+   "google": "Soulful Pilates"
+  },
+  "nicole-byrne-nb-yoga-wellness-san-mateo": {
+   "name": "Nicole Byrne/NB Yoga & Wellness",
+   "placeId": "ChIJo5Zl0Vl3j4ARqVP6rYkwJmU",
+   "google": "Nicole Byrne/NB Yoga & Wellness"
+  },
+  "feri-pilates-san-mateo": {
+   "name": "Feri Pilates",
+   "placeId": "ChIJbVEKQaQpTmARjIX4qx_x6b0",
+   "google": "Feri Pilates"
+  },
+  "little-house-pilates-san-mateo": {
+   "name": "Little House Pilates",
+   "placeId": "ChIJdSlVnm6dj4ARgSQpsGIpJnY",
+   "google": "Little House Pilates"
+  },
+  "lucent-pilates-san-mateo": {
+   "name": "Lucent Pilates",
+   "placeId": "ChIJS207MnCej4ARx-P6Y6pr-mM",
+   "google": "Lucent Pilates"
+  },
+  "movement-refinery-pilates-san-mateo": {
+   "name": "Movement Refinery Pilates",
+   "placeId": "ChIJEQuoaV-ej4ARLqxvOGaFntU",
+   "google": "Movement Refinery Pilates"
+  },
+  "a1-chiropractic-san-mateo": {
+   "name": "A1 Chiropractic",
+   "placeId": "ChIJaa9KDXqfj4ARsCZ5k_jU0D0",
+   "google": "A1 Chiropractic"
+  },
+  "westside-chiropractic-san-mateo": {
+   "name": "Westside Chiropractic",
+   "placeId": "ChIJC4N5zPiej4AREpZ8d_ZwYXA",
+   "google": "Westside Chiropractic"
+  },
+  "high-amplitude-health-chiropractic-san-mateo": {
+   "name": "High Amplitude Health Chiropractic",
+   "placeId": "ChIJx7Vktxufj4ARqyzWvbISx9o",
+   "google": "High Amplitude Health Chiropractic"
+  },
+  "ca-spinal-rehab-clinic-san-mateo": {
+   "name": "CA Spinal Rehab Clinic",
+   "placeId": "ChIJQ1Qqt2-ej4ARLqwDlFQKIt0",
+   "google": "CA Spinal Rehab Clinic"
+  },
+  "symmetra-health-and-chiropractic-san-mateo": {
+   "name": "Symmetra Health and Chiropractic",
+   "placeId": "ChIJnTtr1sGfj4ARQw4B4ZWP0ZU",
+   "google": "Symmetra Health and Chiropractic"
+  },
+  "neurolink-chiropractic-san-mateo": {
+   "name": "Neurolink Chiropractic",
+   "placeId": "ChIJaQ1P-luej4AR9K3RmmFr1p8",
+   "google": "Quarneri Chiropractic | Spine & Disc Center"
+  },
+  "infinity-spine-center-san-mateo": {
+   "name": "Infinity Spine Center",
+   "placeId": "ChIJgb8Wanafj4ARIVxrZHbk3lM",
+   "google": "Infinity Spine Center"
+  },
+  "hamilton-chiropractic-san-mateo": {
+   "name": "Hamilton Chiropractic",
+   "placeId": "ChIJVcLobR-fj4ARd0rY_hs_-tM",
+   "google": "Hamilton Chiropractic"
+  },
+  "body-in-motion-chiropractic-san-mateo": {
+   "name": "Body In Motion Chiropractic",
+   "placeId": "ChIJfc6bMVCij4ARfZoIhOT2M4c",
+   "google": "Body In Motion Chiropractic"
+  },
+  "spine-fine-chiropractic-san-mateo": {
+   "name": "Spine Fine Chiropractic",
+   "placeId": "ChIJ7arPfnGej4AR5i0iqvSKCds",
+   "google": "Spine Fine Chiropractic"
+  },
+  "spicer-chiropractic-san-mateo": {
+   "name": "Spicer Chiropractic",
+   "placeId": "ChIJsTApcGCej4ARQ2a6gCiJm2E",
+   "google": "Spicer Chiropractic"
+  },
+  "san-mateo-chiropractic-san-mateo": {
+   "name": "San Mateo Chiropractic",
+   "placeId": "ChIJB9-vixafj4ARK1ygI7hQuJw",
+   "google": "San Mateo Chiropractic"
+  },
+  "dade-donovan-dc-san-mateo": {
+   "name": "Dade Donovan DC",
+   "placeId": "ChIJ5Xbtz2Sej4AR9GnGPLKDSpY",
+   "google": "Dade Donovan DC"
+  },
+  "daniel-fung-chiropractic-sports-injury-solutions-san-mateo": {
+   "name": "Daniel Fung Chiropractic & Sports Injury Solutions",
+   "placeId": "ChIJCSp_-LN3j4AR5oS65Tqpp0s",
+   "google": "Daniel Fung Chiropractic & Sports Injury Solutions"
+  },
+  "canty-chiropractic-san-mateo": {
+   "name": "Canty Chiropractic",
+   "placeId": "ChIJjzsHy_6ej4ARs84afGW2B7Y",
+   "google": "Canty Chiropractic"
+  },
+  "becker-chiropractic-san-mateo": {
+   "name": "Becker Chiropractic",
+   "placeId": "ChIJMw6chHWej4ARjn-IboATe7E",
+   "google": "Becker Chiropractic"
+  },
+  "eric-isero-dc-qme-san-mateo": {
+   "name": "Eric Isero, DC, QME",
+   "placeId": "ChIJwwekLxCfj4AR-4hu_DNQ3lY",
+   "google": "Eric Isero, DC, QME"
+  },
+  "floyd-minana-dc-san-mateo": {
+   "name": "Floyd Minana, DC",
+   "placeId": "ChIJd2IocGCej4ARXNcXg0zg9MQ",
+   "google": "Floyd Minana, DC"
+  },
+  "freeburg-susan-dc-san-mateo": {
+   "name": "Freeburg Susan DC",
+   "placeId": "ChIJWSUg5XCej4AR38DtX9cnkEE",
+   "google": "Freeburg Susan DC"
+  },
+  "acm-health-center-san-mateo": {
+   "name": "ACM Health Center",
+   "placeId": "ChIJ154fJ96dj4AR7iNMNd6gtm8",
+   "google": "ACM Health Center"
+  },
+  "cherok-chiropractic-san-mateo": {
+   "name": "Cherok Chiropractic",
+   "placeId": "ChIJF0Kbut-dj4ARaymcyT92VWc",
+   "google": "Cherok Chiropractic"
+  },
+  "apex-physical-therapy-san-mateo": {
+   "name": "Apex Physical Therapy",
+   "placeId": "ChIJ-wjrs8Sej4ARIp6yfdGdkQ0",
+   "google": "Apex Physical Therapy"
+  },
+  "agile-physical-therapy-san-mateo": {
+   "name": "Agile Physical Therapy",
+   "placeId": "ChIJKbggYjifj4ARiPNPiZRik-o",
+   "google": "Agile Physical Therapy"
+  },
+  "aero-physical-therapy-and-sports-medicine-san-mateo": {
+   "name": "Aero Physical Therapy and Sports Medicine",
+   "placeId": "ChIJ47BJJ3Sej4ARx3eIlXfCTns",
+   "google": "Aero Physical Therapy and Sports Medicine"
+  },
+  "outdoor-fit-physical-therapy-san-mateo": {
+   "name": "Outdoor Fit Physical Therapy",
+   "placeId": "ChIJu9KfX0ge9YERrMH7BH-b5Lg",
+   "google": "Outdoor Fit Physical Therapy"
+  },
+  "mills-peninsula-outpatient-rehab-san-mateo": {
+   "name": "Mills-Peninsula outpatient rehab",
+   "placeId": "ChIJ16_wug-fj4ARt2o3-n36IaQ",
+   "google": "Mills-Peninsula outpatient rehab"
+  },
+  "campus-physical-therapy-center-san-mateo": {
+   "name": "Campus physical therapy center",
+   "placeId": "ChIJMVVjJHGej4ARCUxJA1Unb24",
+   "google": "Campus physical therapy center"
+  },
+  "potential-physical-therapy-san-mateo": {
+   "name": "Potential Physical Therapy",
+   "placeId": "ChIJ7YAUe4Sfj4ARXG_hW2jb5eY",
+   "google": "Potential Physical Therapy"
+  },
+  "mack-e-mickelson-arthritis-and-rehabilitation-pool-san-mateo": {
+   "name": "Mack E. Mickelson Arthritis and Rehabilitation Pool",
+   "placeId": "ChIJW_MAxvqfj4AR3kfHAfKOCtQ",
+   "google": "Mack E. Mickelson Arthritis and Rehabilitation Pool"
+  },
+  "nursing-rehab-at-home-san-mateo": {
+   "name": "Nursing & Rehab At Home",
+   "placeId": null,
+   "unmatched": "Nursing & Rehab At Home | 1650 Borel Pl #230, San Mateo, CA 94402, USA"
+  },
+  "ayurbliss-llc-ayurveda-physical-therapy-and-yoga-integrative-wellness-center-san-mateo": {
+   "name": "Ayurbliss, LLC- Ayurveda, Physical Therapy and Yoga Integrative Wellness Center",
+   "placeId": "ChIJlbilLt6dj4ARIY-PXryJ07k",
+   "google": "Ayurbliss, LLC- Ayurveda, Physical Therapy and Yoga Integrative Wellness Center"
+  },
+  "brady-physical-therapy-copa-kathy-san-mateo": {
+   "name": "Brady Physical Therapy: Copa Kathy",
+   "placeId": "ChIJdXDqXduej4ARZtRzv9rRthg",
+   "google": "Brady Physical Therapy: Copa Kathy"
+  },
+  "izumi-spa-massage-san-mateo": {
+   "name": "Izumi Spa Massage",
+   "placeId": "ChIJuyBUGsSfj4ARGHFolHgtlqI",
+   "google": "Izumi Spa Massage"
+  },
+  "body-central-massage-spa-san-mateo": {
+   "name": "Body Central Massage Spa",
+   "placeId": "ChIJy0w6ev2ej4ARP00XaBKiDyY",
+   "google": "Body Central Massage Spa"
+  },
+  "ananya-thai-massage-san-mateo": {
+   "name": "Ananya Thai Massage",
+   "placeId": "ChIJfX99NP-ej4ARBKfLDZ0ab_4",
+   "google": "Ananya Thai Massage"
+  },
+  "squeeze-massage-san-mateo-san-mateo": {
+   "name": "Squeeze Massage - San Mateo",
+   "placeId": "ChIJB5qk4rSfj4ARwZOs3tEi2i4",
+   "google": "Squeeze Massage - San Mateo"
+  },
+  "jazzi-s-therapy-san-mateo": {
+   "name": "Jazzi's Therapy",
+   "placeId": "ChIJdQcffzSdj4AR_eUkSMG2xRQ",
+   "google": "Jazzi's Therapy"
+  },
+  "yok-thai-massage-san-mateo": {
+   "name": "Yok Thai Massage",
+   "placeId": "ChIJd5Bk_jV8j4ARhiNj8v9rpzw",
+   "google": "Yok Thai Massage"
+  },
+  "damisa-thai-massage-skincare-san-mateo": {
+   "name": "Damisa Thai Massage & Skincare",
+   "placeId": "ChIJITXPWY-fj4ARmZpPHV9nDjA",
+   "google": "Damisa Thai Massage & Skincare"
+  },
+  "narawadee-massage-therapy-san-mateo": {
+   "name": "Narawadee Massage Therapy",
+   "placeId": "ChIJXfJsaHOfj4ARVsYXkc9nfFU",
+   "google": "Narawadee Massage Therapy"
+  },
+  "stress-relief-beauty-spa-san-mateo": {
+   "name": "Stress Relief & Beauty Spa",
+   "placeId": "ChIJIbhNsdmfj4AR6LBpoCEXQBc",
+   "google": "Stress Relief & Beauty Spa"
+  },
+  "crystal-cove-san-mateo": {
+   "name": "Crystal Cove",
+   "placeId": "ChIJH8g8FQCfj4ARGTKRIDr-j78",
+   "google": "Crystal Cove"
+  },
+  "labo-spa-san-mateo": {
+   "name": "LABO SPA",
+   "placeId": "ChIJmR4bVW6fj4ARRNhabzrTtqg",
+   "google": "LABO SPA"
+  },
+  "peony-garden-massage-san-mateo": {
+   "name": "Peony Garden Massage",
+   "placeId": "ChIJ6ylIr4Cej4AR58hgx-IfhU0",
+   "google": "Peony Garden Massage"
+  },
+  "mellow-spa-san-mateo": {
+   "name": "Mellow SPA",
+   "placeId": "ChIJ2btkefCfj4ARorORMH2dhVE",
+   "google": "Mellow SPA"
+  },
+  "bay-area-lymphatic-massage-san-mateo": {
+   "name": "Bay Area Lymphatic & Massage",
+   "placeId": "ChIJGasvzmSej4ARKkYiFDnY7IQ",
+   "google": "Bay Area Lymphatic & Massage"
+  },
+  "massage-pro-san-mateo": {
+   "name": "Massage Pro",
+   "placeId": "ChIJJRWYBRqfj4ARLZIDYRFm4Ak",
+   "google": "Massage Pro"
+  },
+  "mariana-full-body-massage-san-mateo": {
+   "name": "Mariana full body massage",
+   "placeId": "ChIJ1yVsQmefj4ARzEWk7uBU6-s",
+   "google": "Mariana full body massage"
+  },
+  "posture-lab-san-mateo": {
+   "name": "Posture Lab",
+   "placeId": "ChIJlbilLt6dj4AR8gvVwBDIej8",
+   "google": "Posture Lab"
+  },
+  "water-lounge-spa-in-san-mateo-san-mateo": {
+   "name": "Water Lounge Spa in San Mateo",
+   "placeId": "ChIJUxOwrf6ej4ARLDiEVxCp2Es",
+   "google": "Water Lounge Spa in San Mateo"
+  },
+  "wonderful-massage-san-mateo": {
+   "name": "Wonderful Massage",
+   "placeId": "ChIJsfM5M_mej4ARi9zzA5zVmBE",
+   "google": "Wonderful Massage"
+  },
+  "l-r-wellness-center-san-mateo": {
+   "name": "L&R Wellness Center",
+   "placeId": "ChIJMXT78_afj4ARfUwmao3ff2Q",
+   "google": "L&R Wellness Center"
+  },
+  "bodhi-tree-massage-therapy-san-mateo": {
+   "name": "Bodhi Tree Massage Therapy",
+   "placeId": "ChIJ2adJYnCej4ARlLKDNjinNdI",
+   "google": "Bodhi Tree Massage Therapy"
+  },
+  "mini-spa-san-mateo": {
+   "name": "Mini Spa",
+   "placeId": null,
+   "unmatched": "Harmony East Wellness & Acupuncture | 108 W 25th Ave, San Mateo, CA 94403, USA"
+  },
+  "masahe-bodywork-san-mateo": {
+   "name": "MASAHE BODYWORK",
+   "placeId": "ChIJCRvK-OWdj4ARNKAXAZbhg9Y",
+   "google": "MASAHE BODYWORK"
+  },
+  "bua-thai-wellness-center-san-mateo": {
+   "name": "Bua Thai Wellness Center",
+   "placeId": "ChIJW1wZdxafj4ARg_XSN5zU2WM",
+   "google": "Bua Thai Wellness Center"
+  },
+  "golden-eagle-spa-san-mateo": {
+   "name": "Golden eagle spa",
+   "placeId": "ChIJvUL0Q5mfj4AR5FHkuVDiDxk",
+   "google": "Golden eagle spa"
+  },
+  "european-touch-pro-spa-san-mateo": {
+   "name": "European Touch Pro Spa",
+   "placeId": "ChIJEaIz0xWfj4ARko0gmgx_9-A",
+   "google": "European Touch Pro Spa"
+  },
+  "dream-butterfly-spa-san-mateo": {
+   "name": "Dream Butterfly Spa",
+   "placeId": "ChIJFYXnFxGfj4AR0wlZ1nxDF98",
+   "google": "Dream Butterfly Spa"
+  },
+  "skin-friday-massage-skincare-san-mateo": {
+   "name": "Skin Friday Massage & Skincare",
+   "placeId": "ChIJx5buX3Kfj4AR-flkb7Eouk8",
+   "google": "Skin Friday Massage & Skincare"
+  },
+  "aroma-spa-san-mateo": {
+   "name": "Aroma Spa",
+   "placeId": "ChIJf5b5DmWfj4ARxryUTwZR3A0",
+   "google": "Aroma Spa"
+  },
+  "harmony-massage-san-mateo": {
+   "name": "Harmony Massage",
+   "placeId": "ChIJd08ffl6ej4ARfY-YSbMQzCI",
+   "google": "Harmony Massage"
+  },
+  "verona-massage-san-mateo": {
+   "name": "Verona Massage",
+   "placeId": "ChIJjTMCRQ-fj4ARI4MEL4l-c5w",
+   "google": "Verona Massage"
+  },
+  "amethyst-thai-massage-san-mateo": {
+   "name": "Amethyst Thai Massage",
+   "placeId": "ChIJOdTVwwCfj4ARgqCb6T8OgrI",
+   "google": "Amethyst Thai Massage"
+  },
+  "j-q-massage-new-life-healthcare-san-mateo": {
+   "name": "J & Q Massage-New Life Healthcare",
+   "placeId": "ChIJ__8bknWej4AR04tqvMIvegM",
+   "google": "J & Q Massage-New Life Healthcare"
+  },
+  "mia-massage-san-mateo": {
+   "name": "Mia Massage",
+   "placeId": "ChIJY89kixWfj4ARSBnlgbQlkZw",
+   "google": "Mia Massage"
+  },
+  "spa-zone-san-mateo": {
+   "name": "Spa Zone",
+   "placeId": "ChIJ7QYngwyfj4ARBFrwBk4VBkI",
+   "google": "Spa Zone"
+  },
+  "zen-acupuncture-herbs-san-mateo": {
+   "name": "Zen Acupuncture & Herbs",
+   "placeId": "ChIJX93p6yCfj4ARt-ywwgtT6yU",
+   "google": "Zen Acupuncture & Herbs"
+  },
+  "dr-rebecca-fung-lac-daom-san-mateo": {
+   "name": "Dr. Rebecca Fung LAc DAOM",
+   "placeId": "ChIJ3WAwi-Wfj4ARNBOhPbXHD38",
+   "google": "Dr. Rebecca Fung LAc DAOM"
+  },
+  "yuanyi-acupuncture-san-mateo": {
+   "name": "Yuanyi Acupuncture",
+   "placeId": "ChIJq5igXnSej4ARfcNvzhkS5x8",
+   "google": "Yuanyi Acupuncture"
+  },
+  "three-lotus-dragon-acupuncture-wellness-center-pc-san-mateo": {
+   "name": "Three Lotus Dragon Acupuncture Wellness Center PC",
+   "placeId": null,
+   "unmatched": "Lotus Healing Acupuncture | 1650 S Amphlett Blvd #212, San Mateo, CA 94402, USA"
+  },
+  "jenn-keys-acupuncture-san-mateo": {
+   "name": "Jenn Keys Acupuncture",
+   "placeId": "ChIJWVXOquaAhYAR4acDLuw-aZY",
+   "google": "Jenn Keys Acupuncture"
+  },
+  "union-acupuncture-center-san-mateo": {
+   "name": "UNION ACUPUNCTURE CENTER",
+   "placeId": "ChIJxeHrFfmej4ARwS3kLlkvFqg",
+   "google": "UNION ACUPUNCTURE CENTER"
+  },
+  "wei-i-tien-acupuncture-san-mateo": {
+   "name": "Wei-I Tien Acupuncture",
+   "placeId": "ChIJx0t1avmej4AR2qpotA9AVv4",
+   "google": "Wei-I Tien Acupuncture"
+  },
+  "cosmetic-acupuncture-wellness-san-mateo": {
+   "name": "Cosmetic Acupuncture & Wellness",
+   "placeId": "ChIJA-D9vhh3j4ARcHyb5wH4mdQ",
+   "google": "Cosmetic Acupuncture & Wellness"
+  },
+  "live-well-acupuncture-herbal-medicine-san-mateo": {
+   "name": "Live Well Acupuncture & Herbal Medicine",
+   "placeId": "ChIJ0Uho7leej4ARSXEznuSV16k",
+   "google": "Live Well Acupuncture & Herbal Medicine"
+  },
+  "lotus-healing-acupuncture-san-mateo": {
+   "name": "Lotus Healing Acupuncture",
+   "placeId": "ChIJW_EVx_6ej4ARs2j-xiqJFag",
+   "google": "Lotus Healing Acupuncture"
+  },
+  "yeung-wai-keung-herbalist-consulting-center-san-mateo": {
+   "name": "Yeung Wai Keung Herbalist Consulting Center 楊伟强跌打療疗中心",
+   "placeId": "ChIJAQAAADuHhYARW7b0sWioW68",
+   "google": "Yeung Wai Keung Herbalist Consulting Center 楊伟强跌打療疗中心"
+  },
+  "san-mateo-neighborhood-acupuncture-san-mateo": {
+   "name": "San Mateo Neighborhood Acupuncture",
+   "placeId": "ChIJK9ZYsf6ej4AR00Fslpby5CY",
+   "google": "San Mateo Neighborhood Acupuncture"
+  },
+  "the-space-aesthetics-san-mateo": {
+   "name": "The Space Aesthetics",
+   "placeId": "ChIJ-xvHMU2dj4ARk8-4domjGsw",
+   "google": "The Space Aesthetics"
+  },
+  "zen-scalp-beauty-spa-san-mateo": {
+   "name": "Zen Scalp Beauty Spa",
+   "placeId": "ChIJK_t7oo2fj4ARXOnWUjWPPvY",
+   "google": "Zen Scalp Beauty Spa"
+  },
+  "the-estheticians-san-mateo": {
+   "name": "The Estheticians",
+   "placeId": "ChIJC4HBld-dj4ARatoObRGTDJk",
+   "google": "The Estheticians"
+  },
+  "cryoglowsf-san-mateo": {
+   "name": "CRYOGLOWSF",
+   "placeId": "ChIJZSgxsn6fj4ARkwCYP04EVbo",
+   "google": "CRYOGLOWSF"
+  },
+  "j-beaute-haus-san-mateo": {
+   "name": "J Beauté Haus",
+   "placeId": "ChIJB-laWjWfj4ARuL6gF60Spew",
+   "google": "J Beauté Haus"
+  },
+  "the-dermal-formula-san-mateo": {
+   "name": "The Dermal Formula",
+   "placeId": "ChIJCznj5Nx7j4AROMtSsX-oWgw",
+   "google": "The Dermal Formula"
+  },
+  "skin-foundry-san-mateo": {
+   "name": "Skin Foundry",
+   "placeId": "ChIJ1ZRtWJiZjA0R8KDUmcA-ns0",
+   "google": "Skin Foundry"
+  },
+  "face-massage-san-mateo": {
+   "name": "Face_massage",
+   "placeId": "ChIJ47zZ23afj4ARgzyfhI_KUPY",
+   "google": "Face_massage"
+  },
+  "yes-beauty-spa-san-mateo": {
+   "name": "YES Beauty Spa",
+   "placeId": "ChIJ31qGCQCfj4ARIpbHA2Awi3k",
+   "google": "YES Beauty Spa"
+  },
+  "kanna-spa-san-mateo": {
+   "name": "Kanna Spa",
+   "placeId": "ChIJnyggeXCej4ARfV6b8VO5o7s",
+   "google": "Kanna Spa"
+  },
+  "belbien-skin-care-day-spa-san-mateo": {
+   "name": "Belbien Skin Care & Day Spa",
+   "placeId": "ChIJi-RILrOfj4AR0LMmj9s0RE4",
+   "google": "Belbien Skin Care & Day Spa"
+  },
+  "la-estetica-wellness-spa-san-mateo": {
+   "name": "La Estetica Wellness Spa",
+   "placeId": "ChIJ42z6I96dj4ARGhlM6BIiHjU",
+   "google": "La Estetica Wellness Spa"
+  },
+  "the-zen-room-san-mateo": {
+   "name": "The Zen Room",
+   "placeId": "ChIJ-_sQcUWfj4AR11mTG9EwzzU",
+   "google": "The Zen Room"
+  },
+  "shamrock-day-spa-san-mateo": {
+   "name": "Shamrock Day Spa",
+   "placeId": "ChIJ38e103aej4ARN8xr3PckjAQ",
+   "google": "Shamrock Day Spa"
+  },
+  "rose-wellness-spa-medspa-body-contouring-double-chin-reduction-san-mateo": {
+   "name": "Rose Wellness & Spa- Medspa | Body Contouring | Double Chin Reduction",
+   "placeId": "ChIJB5L3e4edj4ARZtcEftzQflE",
+   "google": "Rose Wellness & Spa- Medspa | Body Contouring | Double Chin Reduction"
+  },
+  "serenity-day-spa-san-mateo": {
+   "name": "Serenity Day Spa",
+   "placeId": "ChIJ7fi2E_mej4ARAH7X6gjBxCo",
+   "google": "Serenity Day Spa"
+  },
+  "glow-skin-body-care-san-mateo": {
+   "name": "Glow Skin & Body Care",
+   "placeId": "ChIJ6Z9SgF-ej4ARQ0eNpCKtYb0",
+   "google": "Glow Skin & Body Care"
+  },
+  "svia-medspa-san-mateo-san-mateo": {
+   "name": "SVIA MedSpa | San Mateo",
+   "placeId": "ChIJb7JwNVmej4ARr3muDpEBRkU",
+   "google": "SVIA MedSpa | San Mateo"
+  },
+  "visible-changes-salon-and-day-spa-san-mateo": {
+   "name": "Visible Changes Salon and Day Spa",
+   "placeId": "ChIJyzvojBWfj4ARRRUT4w2tBYA",
+   "google": "Visible Changes Salon and Day Spa"
+  },
+  "luminaskin-med-spa-san-mateo": {
+   "name": "LuminaSkin Med Spa",
+   "placeId": "ChIJnf_L2XCej4ARiP3TanBwKfU",
+   "google": "LuminaSkin Med Spa"
+  },
+  "new-skin-by-lynn-san-mateo": {
+   "name": "New Skin by Lynn",
+   "placeId": "ChIJM9uRCNefj4ARlFFkEgKhZgo",
+   "google": "New Skin by Lynn"
+  },
+  "life-acumed-spa-san-mateo": {
+   "name": "Life AcuMed Spa",
+   "placeId": "ChIJ87zKlyyfj4ARn0FQqlpiZO0",
+   "google": "Life AcuMed Spa"
+  },
+  "blu-monarch-skin-studio-med-spa-skincare-clinic-san-mateo-san-mateo": {
+   "name": "Blu Monarch Skin Studio - Med Spa & Skincare Clinic San Mateo",
+   "placeId": "ChIJaf-JR8afj4ARVzrJ58dlqSo",
+   "google": "Blu Monarch Skin Studio - Med Spa & Skincare Clinic San Mateo"
+  },
+  "blissfusion-l-san-francisco-bay-area-san-mateo": {
+   "name": "Blissfusion l San Francisco Bay Area",
+   "placeId": "ChIJpw0WHMefj4AR8EYlIpDCoLM",
+   "google": "Blissfusion l San Francisco Bay Area"
+  },
+  "deccan-dental-samir-nanjapa-dds-san-mateo": {
+   "name": "Deccan Dental - Samir Nanjapa DDS",
+   "placeId": "ChIJ4ep0fV6ej4AR_LP9BHWjj0Y",
+   "google": "Deccan Dental - Samir Nanjapa DDS"
+  },
+  "bloom-dental-group-san-mateo": {
+   "name": "Bloom Dental Group",
+   "placeId": "ChIJ38YnVGSej4ARRxRnaKKVca8",
+   "google": "Bloom Dental Group"
+  },
+  "robert-p-choi-dds-san-mateo": {
+   "name": "Robert P. Choi, DDS",
+   "placeId": "ChIJDykcRPmej4ARqbbBuAk3mpM",
+   "google": "Robert P. Choi, DDS"
+  },
+  "the-smile-co-san-mateo": {
+   "name": "The Smile Co.",
+   "placeId": "ChIJl7ragMCfj4ARL5Q70oie3mg",
+   "google": "The Smile Co."
+  },
+  "titus-tang-dds-magd-dental-360-san-mateo": {
+   "name": "Titus Tang DDS, MAGD, Dental 360",
+   "placeId": "ChIJY3TjHiWfj4ARAfXVVzOcgCc",
+   "google": "Titus Tang DDS, MAGD, Dental 360"
+  },
+  "manyak-dental-group-san-mateo": {
+   "name": "Manyak Dental Group",
+   "placeId": "ChIJnf_L2XCej4AR0Y5QHRRCj8g",
+   "google": "Manyak Dental Group"
+  },
+  "paradise-dental-care-san-mateo": {
+   "name": "Paradise Dental Care",
+   "placeId": "ChIJ1e6m71eej4ARl-s5eWNExeY",
+   "google": "Paradise Dental Care"
+  },
+  "a-o-dental-san-mateo-david-kim-dmd-formerly-stan-w-konrad-dds-san-mateo": {
+   "name": "A&O Dental San Mateo | David Kim, DMD (Formerly Stan W. Konrad, DDS)",
+   "placeId": "ChIJr-Szwv2ej4ARy6kV2MGAOvU",
+   "google": "A&O Dental San Mateo | David Kim, DMD"
+  },
+  "foster-city-dental-care-san-mateo": {
+   "name": "Foster City Dental Care",
+   "placeId": "ChIJRw6768Cej4ARfG84j6XkOK4",
+   "google": "Foster City Dental Care"
+  },
+  "takashi-dental-san-mateo": {
+   "name": "Takashi Dental",
+   "placeId": "ChIJfyqepN-dj4AROfK7RUHTUZw",
+   "google": "Takashi Dental"
+  },
+  "hui-dental-group-san-mateo": {
+   "name": "Hui Dental Group",
+   "placeId": "ChIJj1fA_GWej4ARyPBzdN1dH7I",
+   "google": "Hui Dental Group"
+  },
+  "dr-s-wakasa-carlsmith-san-mateo": {
+   "name": "Dr.'s Wakasa & Carlsmith",
+   "placeId": "ChIJWVRcdt-dj4ARq5Joouez8nc",
+   "google": "Dr.'s Wakasa & Carlsmith"
+  },
+  "del-rio-dental-san-mateo": {
+   "name": "Del Rio Dental",
+   "placeId": "ChIJR0QRLv-ej4ARaY0lxSJE93o",
+   "google": "Del Rio Dental"
+  },
+  "every-smile-is-beautiful-of-san-mateo-san-mateo": {
+   "name": "Every Smile Is Beautiful of San Mateo",
+   "placeId": "ChIJe6irhXWej4ARQDxoVLiLmIE",
+   "google": "Every Smile Is Beautiful of San Mateo, Angela An DDS & Associates"
+  },
+  "young-dental-group-san-mateo": {
+   "name": "Young Dental Group",
+   "placeId": "ChIJfzoPrHGej4ARnkmootpsV8A",
+   "google": "Young Dental Group"
+  },
+  "san-mateo-center-for-cosmetic-dentistry-san-mateo": {
+   "name": "San Mateo Center for Cosmetic Dentistry",
+   "placeId": "ChIJWVRcdt-dj4ARnioDVM9vhX8",
+   "google": "San Mateo Center for Cosmetic Dentistry"
+  },
+  "smile-dental-center-san-mateo": {
+   "name": "Smile Dental Center",
+   "placeId": "ChIJYxaeDcifj4ARjR8IS2teLss",
+   "google": "Smile Dental Center"
+  },
+  "kenneth-e-moore-ii-dds-inc-san-mateo": {
+   "name": "Kenneth E. Moore II, DDS, Inc.",
+   "placeId": "ChIJscixoEyej4ARwvrX4hIC2YI",
+   "google": "Kenneth E. Moore II, DDS, Inc."
+  },
+  "jeff-powers-dds-san-mateo": {
+   "name": "Jeff Powers DDS",
+   "placeId": "ChIJbZ7Y_1uej4AR6psQZTDprcE",
+   "google": "Jeff Powers DDS"
+  },
+  "mary-dini-dds-san-mateo": {
+   "name": "Mary Dini, DDS",
+   "placeId": "ChIJL8FMvHaej4ARGpHYe8UW5XI",
+   "google": "Mary Dini, DDS"
+  },
+  "a-dental-center-san-mateo": {
+   "name": "A+ Dental Center",
+   "placeId": "ChIJKxf6M96dj4ARI-wW8sZe0rI",
+   "google": "A+ Dental Center"
+  },
+  "laleh-vakili-dmd-san-mateo": {
+   "name": "Laleh Vakili, DMD",
+   "placeId": "ChIJOWmbxl6ej4AR2tZ4jh_jsyM",
+   "google": "Laleh Vakili, DMD"
+  },
+  "sachdev-deepak-k-dds-san-mateo": {
+   "name": "Sachdev Deepak K DDS",
+   "placeId": "ChIJg5Yp4F2ej4ARNLdPxbh8q60",
+   "google": "Sachdev Deepak K DDS"
+  },
+  "leong-dental-san-mateo": {
+   "name": "Leong Dental",
+   "placeId": "ChIJ9a9oj-idj4ARLp-9SFCb7UM",
+   "google": "Leong Dental"
+  },
+  "enhance-dentistry-victor-chu-d-d-s-san-mateo": {
+   "name": "Enhance Dentistry - Victor Chu, D.D.S.",
+   "placeId": "ChIJ8dFNIACfj4ARXlMsF0YItuo",
+   "google": "Enhance Dentistry - Victor Chu, D.D.S."
+  },
+  "laurel-dental-san-mateo-san-mateo": {
+   "name": "Laurel Dental San Mateo",
+   "placeId": "ChIJFXvrBFufj4ARe0Gtdya0-Mk",
+   "google": "Laurel Dental San Mateo"
+  },
+  "contemporary-dental-san-mateo": {
+   "name": "Contemporary Dental",
+   "placeId": "ChIJK8kzfRqfj4ARuh1X4Yi1f-Q",
+   "google": "Contemporary Dental"
+  },
+  "paul-diercks-dds-san-mateo": {
+   "name": "Paul Diercks, DDS",
+   "placeId": "ChIJfyqepN-dj4ARq1DsCMVik5Y",
+   "google": "Paul Diercks, DDS"
+  },
+  "orthodontics-of-san-mateo-san-mateo": {
+   "name": "Orthodontics of San Mateo",
+   "placeId": "ChIJa4Bp2v2ej4ARMLxtHGaFdUE",
+   "google": "Orthodontics of San Mateo"
+  },
+  "peninsula-dental-group-san-mateo": {
+   "name": "Peninsula Dental Group",
+   "placeId": "ChIJi6mHLd6dj4ARfm59o1dDXbE",
+   "google": "Peninsula Dental Group"
+  },
+  "bay-area-endodontics-san-mateo": {
+   "name": "Bay Area Endodontics",
+   "placeId": "ChIJ0c_eJ3Gej4ARqIlGmzA7RlU",
+   "google": "Bay Area Endodontics"
+  },
+  "lee-hubert-l-dds-san-mateo": {
+   "name": "Lee Hubert L DDS",
+   "placeId": "ChIJPUkXIHSej4ARnn84iCKuDiI",
+   "google": "Lee Hubert L DDS"
+  },
+  "ben-yount-dds-san-mateo": {
+   "name": "Ben Yount DDS",
+   "placeId": "ChIJS07zEOSdj4ARDzyq2YfmRgI",
+   "google": "Ben Yount DDS"
+  },
+  "bayside-family-dentistry-helen-hong-dmd-san-mateo": {
+   "name": "Bayside Family Dentistry Helen Hong DMD",
+   "placeId": "ChIJi8QG6P2ej4ARUNeWhztJcyo",
+   "google": "Bayside Family Dentistry Helen Hong DMD"
+  },
+  "dr-jason-lipton-dds-san-mateo": {
+   "name": "Dr. Jason Lipton, DDS",
+   "placeId": "ChIJcXCazt-dj4ARZmgFm4VXXMY",
+   "google": "Dr. Jason Lipton, DDS"
+  },
+  "spitz-davis-pediatric-dentistry-san-mateo": {
+   "name": "Spitz & Davis Pediatric Dentistry",
+   "placeId": "ChIJ3fJuN3Gej4AR8ykvA2h7GyY",
+   "google": "Spitz & Davis Pediatric Dentistry"
+  },
+  "chavez-dental-care-san-mateo": {
+   "name": "Chavez Dental Care",
+   "placeId": "ChIJVVWFe9-dj4ARyKes-xI_OmA",
+   "google": "Chavez Dental Care"
+  },
+  "bridgepointe-family-dental-care-san-mateo": {
+   "name": "Bridgepointe Family Dental Care",
+   "placeId": "ChIJ96r3wcCej4ARyr3VDG6tbeQ",
+   "google": "Bridgepointe Family Dental Care"
+  },
+  "james-chen-orthodontics-san-mateo": {
+   "name": "James Chen Orthodontics",
+   "placeId": "ChIJ5WKqHWeej4ARO5jfgAUoUVw",
+   "google": "James Chen Orthodontics"
+  },
+  "clearchoice-dental-implant-center-san-mateo-san-mateo": {
+   "name": "ClearChoice Dental Implant Center - San Mateo",
+   "placeId": "ChIJtZfH7ep7j4AReHgiVBYQER4",
+   "google": "ClearChoice Dental Implant Center - San Mateo"
+  },
+  "linda-m-showaihat-dds-san-mateo": {
+   "name": "Linda M Showaihat DDS",
+   "placeId": "ChIJnf_L2XCej4ARYObH7l5hVGw",
+   "google": "Linda M Showaihat DDS"
+  },
+  "kids-smile-dental-center-san-mateo-san-mateo": {
+   "name": "Kids Smile Dental Center- San Mateo",
+   "placeId": "ChIJIwG5NiGfj4ARY52LdtFk_ik",
+   "google": "Kids Smile Dental Center- San Mateo"
+  },
+  "florian-orthodontics-san-mateo": {
+   "name": "Florian Orthodontics",
+   "placeId": "ChIJrUD5_UOfj4ARL0CIYfiiEUo",
+   "google": "Florian Orthodontics"
+  },
+  "bay-meadows-orthodontics-san-mateo": {
+   "name": "Bay Meadows Orthodontics",
+   "placeId": "ChIJq7MQuBufj4ARJzJKp78fSYM",
+   "google": "Bay Meadows Orthodontics"
+  },
+  "lee-woo-orthodontics-san-mateo": {
+   "name": "Lee & Woo Orthodontics",
+   "placeId": "ChIJOWmbxl6ej4ARw0ieNNp1W24",
+   "google": "Lee & Woo Orthodontics"
+  },
+  "peninsula-periodontal-associates-san-mateo": {
+   "name": "Peninsula Periodontal Associates",
+   "placeId": "ChIJn4FCgHWej4ARpfKmlsVnoEg",
+   "google": "Peninsula Periodontal Associates"
+  },
+  "optical-illusions-of-san-mateo-an-optometric-practice-hillsdale-mall-san-mateo": {
+   "name": "Optical Illusions of San Mateo | An Optometric Practice - Hillsdale Mall",
+   "placeId": "ChIJdYut3AKfj4ARi48bBePQL60",
+   "google": "Optical Illusions of San Mateo | An Optometric Practice - Hillsdale Mall"
+  },
+  "winking-bee-optometry-san-mateo": {
+   "name": "Winking Bee Optometry",
+   "placeId": null,
+   "unmatched": "Winking Bee Optometry | 1091 Park Pl, San Mateo, CA 94403, USA"
+  },
+  "clear-optometry-san-mateo": {
+   "name": "clear | optometry",
+   "placeId": "ChIJmfNPQ3Cej4ARP-HP18mOF6s",
+   "google": "clear | optometry"
+  },
+  "third-avenue-optometry-san-mateo": {
+   "name": "Third Avenue Optometry",
+   "placeId": "ChIJCTxAfHCej4ARqsN4nBjQDn8",
+   "google": "Third Avenue Optometry"
+  },
+  "dr-benjamin-na-od-san-mateo": {
+   "name": "Dr. Benjamin Na, OD",
+   "placeId": "ChIJHdGL1P6ej4AR4DpmmhMTSM0",
+   "google": "Dr. Benjamin Na, OD"
+  },
+  "tammy-nguyen-od-san-mateo": {
+   "name": "Tammy Nguyen, OD",
+   "placeId": "ChIJ3fJuN3Gej4ARp0Quq36l6ok",
+   "google": "Tammy Nguyen, OD"
+  },
+  "just-for-optical-san-mateo": {
+   "name": "just for optical",
+   "placeId": "ChIJC9Iw7nCej4AR72jCyUGldc0",
+   "google": "just for optical"
+  },
+  "hamill-gary-b-od-san-mateo": {
+   "name": "Hamill Gary B OD",
+   "placeId": "ChIJAWRPy3Wej4ARao6G9kR0G4s",
+   "google": "Hamill Gary B OD"
+  },
+  "bay-area-wellness-center-san-mateo": {
+   "name": "Bay Area Wellness Center",
+   "placeId": "ChIJmXf7YSV2j4ARm0bsZTIjVwU",
+   "google": "Bay Area Wellness Center"
+  },
+  "recover-zone-san-mateo": {
+   "name": "Recover Zone",
+   "placeId": "ChIJn9_yYjOfj4ARRpLf4n1_560",
+   "google": "Recover Zone"
+  },
+  "radiance-wellness-center-san-mateo": {
+   "name": "Radiance Wellness Center",
+   "placeId": null,
+   "unmatched": "Radiance Wellness Center | 415 N San Mateo Dr Ste 2, San Mateo, CA 94401, USA"
+  },
+  "levvit-wellness-and-beauty-san-mateo": {
+   "name": "Levvit Wellness & Beauty",
+   "placeId": "ChIJI01XbHOdj4ARCDn0BhQMDVs",
+   "google": "Levvit wellness and beauty"
+  },
+  "baytree-wellness-center-san-mateo": {
+   "name": "Baytree Wellness Center",
+   "placeId": "ChIJm_-fLPOej4ARcS7JoCATEZk",
+   "google": "Baytree Wellness Center"
+  },
+  "higher-love-healing-san-mateo": {
+   "name": "Higher Love Healing®",
+   "placeId": null,
+   "unmatched": "The Soul Haven | 25 W 25th Ave #2, San Mateo, CA 94403, USA"
+  },
+  "ever-iv-san-mateo": {
+   "name": "Ever IV",
+   "placeId": "ChIJ666o6QGfj4ARSZmk16BxFr8",
+   "google": "Ever IV"
+  },
+  "unified-hearts-home-care-san-mateo": {
+   "name": "Unified Hearts Home Care",
+   "placeId": "ChIJr7ssNm-fj4ARSbYxKpu7E9Q",
+   "google": "Unified Hearts Home Care"
+  },
+  "san-mateo-senior-center-san-mateo": {
+   "name": "San Mateo Senior Center",
+   "placeId": "ChIJtXDcrVWej4ARkoPU546EF-4",
+   "google": "San Mateo Senior Center"
+  },
+  "ron-robinson-senior-care-center-san-mateo": {
+   "name": "Ron Robinson Senior Care Center",
+   "placeId": "ChIJ69Vs7w-fj4AReCQ5ohqVREk",
+   "google": "Ron Robinson Senior Care Center"
+  },
+  "seniors-at-home-san-mateo-san-mateo": {
+   "name": "Seniors At Home San Mateo",
+   "placeId": "ChIJdXDqXduej4ARbcEIQwrAaCA",
+   "google": "Seniors At Home San Mateo"
+  },
+  "enchanted-garden-for-seniors-san-mateo": {
+   "name": "Enchanted Garden for Seniors",
+   "placeId": "ChIJQYi1Kiyej4ARJbeNv8A_ifM",
+   "google": "Enchanted Garden for Seniors"
+  },
+  "one-on-one-senior-care-san-mateo": {
+   "name": "One On One Senior Care",
+   "placeId": "ChIJ_3ENYA-dbAER8nvx399OMGo",
+   "google": "One On One Senior Care"
+  },
+  "alegre-home-care-san-mateo": {
+   "name": "Alegre Home Care",
+   "placeId": "ChIJLV_GusGej4ARwUdcH3oGScU",
+   "google": "Alegre Home Care"
+  },
+  "judy-s-home-care-san-mateo": {
+   "name": "Judy's Home Care",
+   "placeId": "ChIJIQDlvRufj4ARDgAsihzSrt4",
+   "google": "Judy's Home Care"
+  },
+  "pacific-caregivers-for-seniors-san-mateo": {
+   "name": "Pacific Caregivers for Seniors",
+   "placeId": "ChIJZ_Wk9eSfj4ARmtD5pLsqVO8",
+   "google": "Pacific Caregivers for Seniors"
+  },
+  "versailles-senior-condominium-community-san-mateo": {
+   "name": "Versailles Senior Condominium Community",
+   "placeId": "ChIJAZv32XOej4ARsr4yVyJodC4",
+   "google": "Versailles Senior Condominium Community"
+  },
+  "all-around-senior-services-san-mateo": {
+   "name": "All Around Senior Services",
+   "placeId": "ChIJmRn7fnCej4ARuI23Rc_2kiU",
+   "google": "All Around Senior Services"
+  },
+  "advanced-in-home-care-san-mateo": {
+   "name": "Advanced In-Home Care",
+   "placeId": "ChIJW33PC-Ofj4ARWpST6uY5NQ8",
+   "google": "Advanced In-Home Care"
+  },
+  "mission-hospice-home-care-san-mateo": {
+   "name": "Mission Hospice & Home Care",
+   "placeId": "ChIJuWoTnVmej4ARLZM2BaXc114",
+   "google": "Mission Hospice & Home Care"
+  },
+  "l-salon-and-color-group-san-mateo": {
+   "name": "L Salon and Color Group",
+   "placeId": "ChIJ59B4VnCej4AR9UzSXMcl3ok",
+   "google": "L Salon and Color Group"
+  },
+  "sunesy-hair-design-san-mateo": {
+   "name": "Sunesy Hair Design",
+   "placeId": "ChIJt2c3RPmej4ARbT3RIriHzps",
+   "google": "Sunesy Hair Design"
+  },
+  "glow-hair-design-san-mateo": {
+   "name": "Glow Hair Design",
+   "placeId": "ChIJ85L5i5Kfj4ARnCJ64tJD6iA",
+   "google": "Glow Hair Design"
+  },
+  "hair-by-lorena-wycoco-professional-hair-stylist-san-mateo": {
+   "name": "Hair by Lorena Wycoco | Professional Hair Stylist",
+   "placeId": "ChIJ7WWVqVejj4ARWdJQOUCAqaY",
+   "google": "Hair by Lorena Wycoco | Professional Hair Stylist"
+  },
+  "artisan-salon-ca-san-mateo": {
+   "name": "Artisan Salon- CA",
+   "placeId": "ChIJ9zs0XGeej4ARfeCe1Omxy3c",
+   "google": "Artisan Salon- CA"
+  },
+  "revolution-hair-studio-san-mateo": {
+   "name": "Revolution Hair Studio",
+   "placeId": "ChIJwZ-cLn2fj4AR-NpWbSECEbs",
+   "google": "Revolution Hair Studio"
+  },
+  "maison-salon-deux-san-mateo": {
+   "name": "Maison Salon Deux",
+   "placeId": "ChIJcZrBLHeej4ARwNmHOMCcrRM",
+   "google": "Maison Salon Deux"
+  },
+  "stellar-luna-san-mateo": {
+   "name": "Stellar Luna",
+   "placeId": "ChIJDQH9CJefj4ARVOQUs1HPUrs",
+   "google": "Stellar Luna"
+  },
+  "mz-beauty-salon-san-mateo": {
+   "name": "MZ beauty Salon",
+   "placeId": "ChIJdTYEaOKBhYARzJiW-Lc88JU",
+   "google": "MZ beauty Salon"
+  },
+  "v-c-hair-salon-san-mateo": {
+   "name": "V & C Hair Salon",
+   "placeId": "ChIJZXDokHqej4AR5fPV6pN8x3c",
+   "google": "V & C Hair Salon"
+  },
+  "renew-salon-san-mateo": {
+   "name": "Renew Salon",
+   "placeId": "ChIJkaR_qnqej4ARiJ6_bROQTlk",
+   "google": "Renew Salon"
+  },
+  "i-salon-san-mateo": {
+   "name": "I-Salon",
+   "placeId": null,
+   "unmatched": "I-Salon | 6 W 25th Ave, San Mateo, CA 94403, USA"
+  },
+  "at-one-ten-salon-san-mateo": {
+   "name": "At one ten salon",
+   "placeId": "ChIJj1_yqHGej4AR3GtATQ4i-FI",
+   "google": "At one ten salon"
+  },
+  "salon-sur-la-rue-san-mateo": {
+   "name": "Salon Sur La Rue",
+   "placeId": "ChIJpYKSjhafj4AR0jpQaCSbOY0",
+   "google": "Salon Sur La Rue"
+  },
+  "hair-by-maggie-tatyosian-san-mateo": {
+   "name": "Hair By Maggie Tatyosian",
+   "placeId": "ChIJJdjzNKV5j4ARe0qaVOW21TQ",
+   "google": "Hair By Maggie Tatyosian"
+  },
+  "xcaret-hair-salon-san-mateo": {
+   "name": "Xcaret Hair Salon",
+   "placeId": "ChIJmQyFVXCej4ARkO2WCVTwbQs",
+   "google": "Xcaret Hair Salon"
+  },
+  "transforms-head-beauty-spa-san-mateo": {
+   "name": "Transforms Head & Beauty Spa",
+   "placeId": "ChIJOYH5Jn-fj4ARAOsZD3Tq9lk",
+   "google": "Transforms Head & Beauty Spa"
+  },
+  "v-i-p-hair-salon-san-mateo": {
+   "name": "V.I.P. Hair Salon",
+   "placeId": "ChIJXZQu1fiej4ARE19myfrbSYU",
+   "google": "V.I.P. Hair Salon"
+  },
+  "borel-hair-salon-san-mateo": {
+   "name": "Borel Hair Salon",
+   "placeId": "ChIJq9wkNlmej4ARJfD-AgosuCg",
+   "google": "Borel Hair Salon"
+  },
+  "studio-2325-hair-skin-san-mateo": {
+   "name": "Studio 2325 Hair & Skin",
+   "placeId": "ChIJtf1RQfmej4ARyHBur5E7m4c",
+   "google": "Studio 2325 Hair & Skin"
+  },
+  "max-fallopa-hair-salon-san-mateo": {
+   "name": "Max Fallopa Hair Salon",
+   "placeId": "ChIJc8Uh926fj4ARgCjhcSAcBiY",
+   "google": "Max Fallopa Hair Salon"
+  },
+  "paola-s-beauty-studio-san-mateo": {
+   "name": "Paola’s beauty studio",
+   "placeId": "ChIJoWQ9p2afj4AR7Si2RA7aZ6I",
+   "google": "Paola’s beauty studio"
+  },
+  "binh-s-family-hair-care-san-mateo": {
+   "name": "Binh's Family Hair Care",
+   "placeId": "ChIJ76HtSPiej4ARhLFmO2vD-48",
+   "google": "Binh's Family Hair Care"
+  },
+  "silvia-s-styling-salon-san-mateo": {
+   "name": "Silvia's Styling Salon",
+   "placeId": "ChIJk3PZJPmej4AR9R6XSb_r6Lo",
+   "google": "Silvia's Styling Salon"
+  },
+  "style-n-smile-san-mateo": {
+   "name": "Style n’ Smile",
+   "placeId": "ChIJawRbcFSfj4ARfkqI6EDEKTo",
+   "google": "Style n’ Smile"
+  },
+  "sasha-s-beauty-salon-san-mateo": {
+   "name": "Sasha's Beauty Salon",
+   "placeId": "ChIJF5JdYGSej4ARXaRnQ0BdLMU",
+   "google": "Sasha's Beauty Salon"
+  },
+  "hair-designs-by-kelly-dinger-san-mateo": {
+   "name": "Hair Designs by Kelly Dinger",
+   "placeId": "ChIJq6pvLfmej4ARmXwVuqwxCgE",
+   "google": "Hair Designs by Kelly Dinger"
+  },
+  "beauty-deluxe-salon-san-mateo": {
+   "name": "Beauty Deluxe Salon",
+   "placeId": "ChIJYRwh3_eej4ARCQ5gFTM2X4Q",
+   "google": "Beauty Deluxe Salon"
+  },
+  "hair-contour-salon-san-mateo": {
+   "name": "Hair Contour Salon",
+   "placeId": "ChIJadarYUuej4ARFHTlqp8NXVw",
+   "google": "Hair Contour Salon"
+  },
+  "strands-salon-san-mateo": {
+   "name": "Strands Salon",
+   "placeId": "ChIJNzpHWRafj4ARD0IvAP54rpU",
+   "google": "Strands Salon"
+  },
+  "top-image-salon-san-mateo": {
+   "name": "Top Image Salon",
+   "placeId": "ChIJnVxRWRafj4ARqRDJmROr7zg",
+   "google": "Top Image Salon"
+  },
+  "after-glo-beauty-collective-san-mateo": {
+   "name": "After Glo Beauty Collective",
+   "placeId": null,
+   "unmatched": "Sinta Skin | 190 W 25th Ave #3, San Mateo, CA 94403, USA"
+  },
+  "mayfair-hair-nails-care-san-mateo": {
+   "name": "MAYFAIR HAIR & NAILS CARE",
+   "placeId": "ChIJ55xLBPmej4ARW1lkJiLbIG0",
+   "google": "MAYFAIR HAIR & NAILS CARE"
+  },
+  "mimosa-salon-san-mateo": {
+   "name": "Mimosa Salon",
+   "placeId": "ChIJy5zzmoWfj4ARYvcILru_W9g",
+   "google": "Mimosa Salon"
+  },
+  "studio-j-salon-san-mateo": {
+   "name": "Studio J Salon",
+   "placeId": null,
+   "unmatched": "Studio J Salon | 205 E 3rd Ave #2, San Mateo, CA 94401, USA"
+  },
+  "honor-barbershop-san-mateo": {
+   "name": "Honor Barbershop",
+   "placeId": "ChIJA5_tvdudj4ARD3h3CXnt8VU",
+   "google": "Honor Barbershop By Mauricio Nunes"
+  },
+  "44-palms-barbershop-san-mateo": {
+   "name": "44 Palms Barbershop",
+   "placeId": "ChIJBUDms86fj4ARH3qv6aDAaSg",
+   "google": "44 Palms Barbershop"
+  },
+  "coastline-barbershop-san-mateo": {
+   "name": "Coastline Barbershop",
+   "placeId": "ChIJNbALp3Gfj4ARpxOXZSoz5UQ",
+   "google": "Coastline Barbershop"
+  },
+  "juanelo-s-barbershop-shave-parlor-san-mateo": {
+   "name": "Juanelo’s Barbershop & Shave Parlor",
+   "placeId": "ChIJ3796ymafj4ARkFvsr-cC7VQ",
+   "google": "Juanelo’s Barbershop & Shave Parlor"
+  },
+  "hitters-barbershop-san-mateo-san-mateo": {
+   "name": "Hitters Barbershop San Mateo",
+   "placeId": "ChIJhyFDhl-ej4ARY9WYSpnC5SM",
+   "google": "Hitters Barbershop San Mateo"
+  },
+  "bear-s-barber-san-mateo": {
+   "name": "Bear's Barber",
+   "placeId": "ChIJKVbnkD2fj4AReQX_fVgXOOc",
+   "google": "Bear's Barber"
+  },
+  "all-in-barbershop-san-mateo": {
+   "name": "ALL IN BARBERSHOP",
+   "placeId": "ChIJcUITWD-fj4ARUn8FDTO4S9k",
+   "google": "ALL IN BARBERSHOP"
+  },
+  "peoples-barber-san-mateo": {
+   "name": "Peoples Barber",
+   "placeId": "ChIJxSFJ_-Gfj4ARLeeh_rfIUaA",
+   "google": "Peoples Barber"
+  },
+  "full-circle-barbershop-san-mateo": {
+   "name": "Full Circle BarberShop",
+   "placeId": "ChIJxW3Mhj-fj4ARzaw8fGbOEDY",
+   "google": "Full Circle BarberShop"
+  },
+  "bushwacker-on-the-hill-san-mateo": {
+   "name": "Bushwacker on the Hill",
+   "placeId": "ChIJQxVAhtmfj4AR76q0g9_ScXo",
+   "google": "Bushwacker on the Hill"
+  },
+  "ironwood-hair-company-san-mateo": {
+   "name": "Ironwood hair company",
+   "placeId": "ChIJg3rHsMCfj4AR6Zs9uatCchg",
+   "google": "Ironwood hair company"
+  },
+  "star-image-san-mateo": {
+   "name": "Star Image",
+   "placeId": "ChIJR9o18xWfj4ARLMCAwclHyFI",
+   "google": "Star Image"
+  },
+  "chairmen-barbershop-san-mateo": {
+   "name": "Chairmen Barbershop",
+   "placeId": "ChIJc-PhMB2fj4ARDaSmdf_gjiI",
+   "google": "Chairmen Barbershop"
+  },
+  "mendoza-the-barber-san-mateo": {
+   "name": "Mendoza the barber",
+   "placeId": "ChIJ4-sm2A6fj4ARxHV20VqWVH0",
+   "google": "Mendoza the barber"
+  },
+  "keisy-salon-end-barber-shop-san-mateo": {
+   "name": "keisy salon end barber shop",
+   "placeId": "ChIJp9FQYG-dj4ARHY5nTKniIc8",
+   "google": "keisy salon end barber shop"
+  },
+  "ethnic-blendz-by-zaydoc-san-mateo": {
+   "name": "Ethnic Blendz by Zaydoc",
+   "placeId": "ChIJ8zu4uowFtEoRcS9sO_z7MT8",
+   "google": "Ethnic Blendz by Zaydoc"
+  },
+  "d-j-nails-nail-salon-san-mateo": {
+   "name": "D&J Nails - Nail Salon",
+   "placeId": "ChIJvzPUvwWdj4ARl9vLv7k1FjQ",
+   "google": "D&J Nails - Nail Salon"
+  },
+  "glamour-nail-salon-san-mateo": {
+   "name": "Glamour Nail Salon",
+   "placeId": "ChIJ8_pRvnCej4ARBzezd7-jsws",
+   "google": "Glamour Nail Salon"
+  },
+  "anna-art-nail-studio-llc-san-mateo": {
+   "name": "Anna Art Nail Studio LLC",
+   "placeId": "ChIJdyp9gLqfj4ARplmC2bjheIE",
+   "google": "Anna Art Nail Studio LLC"
+  },
+  "footwork-san-mateo": {
+   "name": "Footwork",
+   "placeId": "ChIJscYqR7ufj4ARwbF-zUYSLwU",
+   "google": "Footwork"
+  },
+  "k-spa-san-mateo": {
+   "name": "K Spa",
+   "placeId": "ChIJ54__LHeej4ARsFgPWQf-lsQ",
+   "google": "K Spa"
+  },
+  "kim-s-nail-bar-san-mateo": {
+   "name": "Kim’s Nail Bar",
+   "placeId": "ChIJawNOqUqfj4AR1o75GDVlitk",
+   "google": "Kim’s Nail Bar"
+  },
+  "nail-box-san-mateo-san-mateo": {
+   "name": "Nail Box ( San Mateo )",
+   "placeId": "ChIJDfQ_E4Kfj4ARbQbjVhHrHHc",
+   "google": "Nail Box ( San Mateo )"
+  },
+  "fabulous-vip-nails-san-mateo": {
+   "name": "Fabulous VIP Nails",
+   "placeId": "ChIJUVFX03aej4AR5oU12ZFV04o",
+   "google": "Fabulous VIP Nails"
+  },
+  "pinky-nails-san-mateo": {
+   "name": "Pinky Nails",
+   "placeId": "ChIJTd9SF1-ej4ARKor6fLyoVKs",
+   "google": "Pinky Nails"
+  },
+  "l-chic-nails-san-mateo": {
+   "name": "L'Chic Nails",
+   "placeId": "ChIJx0jkrsifj4ARZ27yaN9oCDo",
+   "google": "L'Chic Nails"
+  },
+  "kimmy-s-nail-salon-san-mateo": {
+   "name": "Kimmy's Nail Salon",
+   "placeId": "ChIJSTnXZ2eej4ARHhd2wLHx3rk",
+   "google": "Kimmy's Nail Salon"
+  },
+  "touch-of-beauty-san-mateo": {
+   "name": "Touch Of Beauty",
+   "placeId": "ChIJnfUiYxafj4ARciEa5IRjQ1o",
+   "google": "Touch Of Beauty"
+  },
+  "valentine-nails-san-mateo": {
+   "name": "Valentine Nails",
+   "placeId": "ChIJS-dAKxSfj4ARKxwK28SIAmU",
+   "google": "Valentine Nails"
+  },
+  "nails-resort-san-mateo": {
+   "name": "Nails Resort",
+   "placeId": "ChIJEVi9QYeej4AR65LrX75RkD0",
+   "google": "Nails Resort"
+  },
+  "star-light-beauty-nails-san-mateo": {
+   "name": "Star Light Beauty & Nails",
+   "placeId": "ChIJndBBdhafj4ARuJdNTP8GIKI",
+   "google": "Star Light Beauty & Nails"
+  },
+  "angel-nails-san-mateo": {
+   "name": "Angel Nails",
+   "placeId": "ChIJCS-V_xWfj4ARcV70Wl8XKOs",
+   "google": "Angel Nails"
+  },
+  "studio-luene-souza-nails-san-mateo": {
+   "name": "Studio Luene Souza Nails",
+   "placeId": "ChIJTUXs1dGdj4ARK9uZslT8NZ4",
+   "google": "Studio Luene Souza Nails"
+  },
+  "vivi-nail-spa-san-mateo": {
+   "name": "Vivi Nail Spa",
+   "placeId": "ChIJ29s7BwSfj4ARPm1ryqRAmPU",
+   "google": "Vivi Nail Spa"
+  },
+  "nailware-san-mateo": {
+   "name": "Nailware",
+   "placeId": "ChIJC45doM59j4ARY2IthJQOAQQ",
+   "google": "Nailware"
+  },
+  "lenity-vet-specialists-emergency-care-san-mateo": {
+   "name": "Lenity Vet Specialists + Emergency Care",
+   "placeId": "ChIJ3aK4QMKdj4AR6hBmyhlehyc",
+   "google": "Lenity Vet Specialists + Emergency Care"
+  },
+  "omega-veterinary-group-san-mateo": {
+   "name": "Omega Veterinary Group",
+   "placeId": "ChIJmcs_Caedj4ARKaEX_cKvtDk",
+   "google": "Omega Veterinary Group"
+  },
+  "crystal-springs-pet-hospital-san-mateo": {
+   "name": "Crystal Springs Pet Hospital",
+   "placeId": "ChIJ9Ux_mcifj4ARd-A0YRu0SoU",
+   "google": "Crystal Springs Pet Hospital"
+  },
+  "laurelwood-veterinary-clinic-san-mateo": {
+   "name": "Laurelwood Veterinary Clinic",
+   "placeId": "ChIJ0VyPTLOfj4AR4DpIcA1EWaY",
+   "google": "Laurelwood Veterinary Clinic"
+  },
+  "spay-neuter-clinic-san-mateo": {
+   "name": "Spay/Neuter Clinic",
+   "placeId": "ChIJpbj5RMCdj4ARe21bNxXD0Vg",
+   "google": "Spay/Neuter Clinic"
+  },
+  "bay-area-vet-mri-san-mateo": {
+   "name": "Bay Area Vet MRI",
+   "placeId": "ChIJccdC1z2dj4ARPpxpISaFZTM",
+   "google": "Bay Area Vet MRI"
+  },
+  "5-direction-integrative-veterinary-care-san-mateo": {
+   "name": "5 Direction Integrative Veterinary Care",
+   "placeId": "ChIJ08OtUTifj4ARvFQJ8qT-4Fc",
+   "google": "5 Direction Integrative Veterinary Care"
+  },
+  "fluffy-doggy-hotel-san-mateo": {
+   "name": "Fluffy Doggy Hotel",
+   "placeId": "ChIJiaTcUNedj4ARHJ4YXgU2_lI",
+   "google": "Fluffy Doggy Hotel"
+  },
+  "stress-free-auto-care-san-mateo": {
+   "name": "Stress-Free Auto Care",
+   "placeId": "ChIJlbrPaQSfj4ARhTgpdCNyBCU",
+   "google": "Stress-Free Auto Care"
+  },
+  "san-mateo-auto-works-san-mateo": {
+   "name": "San Mateo Auto Works",
+   "placeId": "ChIJU8091_mej4ARJg57M-o7PtA",
+   "google": "San Mateo Auto Works"
+  },
+  "four-car-garage-san-mateo": {
+   "name": "Four Car Garage",
+   "placeId": "ChIJx6q1nvSdj4ARVemRU1VpKwc",
+   "google": "Four Car Garage"
+  },
+  "at-the-shop-auto-repair-san-mateo": {
+   "name": "At the Shop Auto Repair",
+   "placeId": "ChIJj47g3mOej4ARmL-FWj_fOG4",
+   "google": "At the Shop Auto Repair"
+  },
+  "clarity-auto-care-san-mateo": {
+   "name": "Clarity Auto Care",
+   "placeId": "ChIJcxql-sqfj4ARXxBBZMpSLNo",
+   "google": "Clarity Auto Care"
+  },
+  "big-e-automotive-san-mateo": {
+   "name": "Big E Automotive",
+   "placeId": "ChIJA8zHZmSej4AR72riEN5P0ro",
+   "google": "Big E Automotive"
+  },
+  "ma-s-european-auto-service-san-mateo": {
+   "name": "Ma's European Auto Service",
+   "placeId": "ChIJeUyUA-edj4ARG4encu-t9TI",
+   "google": "Ma's European Auto Service"
+  },
+  "beacon-auto-care-san-mateo": {
+   "name": "Beacon Auto Care",
+   "placeId": "ChIJEYE43K6fj4ARJTcvXloashY",
+   "google": "Beacon Auto Care"
+  },
+  "peninsula-automotive-clinic-san-mateo": {
+   "name": "Peninsula Automotive Clinic",
+   "placeId": "ChIJq7rW3mSej4ARsCQxWny2STQ",
+   "google": "Peninsula Automotive Clinic"
+  },
+  "ev-auto-service-san-mateo": {
+   "name": "EV Auto Service",
+   "placeId": "ChIJS410_7Cfj4ARpRPwpYlWAA4",
+   "google": "EV Auto Service"
+  },
+  "e-j-auto-repair-san-mateo": {
+   "name": "E & J Auto Repair",
+   "placeId": "ChIJ3YDNIH6ej4ARnVvJfmi-7z0",
+   "google": "E & J Auto Repair"
+  },
+  "hudson-automotive-san-mateo": {
+   "name": "Hudson Automotive",
+   "placeId": "ChIJA2A0jV-ej4ARzLuzbEgJ5PI",
+   "google": "Hudson Automotive"
+  },
+  "san-mateo-mobile-tire-service-san-mateo": {
+   "name": "San Mateo Mobile Tire Service",
+   "placeId": "ChIJuYWn94Kfj4ARX3yn7eqsoas",
+   "google": "San Mateo Mobile Tire Service"
+  },
+  "fix-auto-san-mateo-san-mateo": {
+   "name": "Fix Auto San Mateo",
+   "placeId": "ChIJoTOQYGGej4ARx98HlZBvWio",
+   "google": "Fix Auto San Mateo"
+  },
+  "autotronics-service-body-san-mateo": {
+   "name": "Autotronics Service & Body",
+   "placeId": "ChIJOSMZeN2dj4ARmIBFFKklQns",
+   "google": "Autotronics Service & Body"
+  },
+  "shinozaki-automotive-san-mateo": {
+   "name": "Shinozaki Automotive",
+   "placeId": "ChIJA8DFqWGej4ARZc_I73lIfiU",
+   "google": "Shinozaki Automotive"
+  },
+  "smogpro-tw-automotive-san-mateo": {
+   "name": "Smogpro TW Automotive",
+   "placeId": "ChIJteypC3qej4ARV4Cp1wlABj4",
+   "google": "Smogpro TW Automotive"
+  },
+  "asada-auto-services-san-mateo": {
+   "name": "Asada Auto Services",
+   "placeId": "ChIJ56nZucGdj4AR859kVYl3OYI",
+   "google": "Asada Auto Services"
+  },
+  "gosch-bros-auto-pros-san-mateo": {
+   "name": "Gosch Bros Auto Pros",
+   "placeId": "ChIJdaadNzqfj4AR3cDWss_FBOk",
+   "google": "Gosch Bros Auto Pros"
+  },
+  "motor-masters-automotive-san-mateo": {
+   "name": "Motor Masters Automotive",
+   "placeId": "ChIJea6oCRafj4ARL0a7NFCSYyM",
+   "google": "Motor Masters Automotive"
+  },
+  "auto-repair-crystal-springs-76-san-mateo": {
+   "name": "Auto Repair | Crystal Springs 76",
+   "placeId": "ChIJKxTRSc-fj4ARiBHdmKXgS3k",
+   "google": "Auto Repair | Crystal Springs 76"
+  },
+  "alfredo-s-auto-repairs-body-paint-san-mateo": {
+   "name": "Alfredo's Auto Repairs, Body & Paint",
+   "placeId": "ChIJBQKL82Sej4ARrqvUTq0LBZo",
+   "google": "Alfredo's Auto Repairs, Body & Paint"
+  },
+  "auto-solis-repair-asr-san-mateo": {
+   "name": "Auto Solis Repair (ASR)",
+   "placeId": "ChIJ0WKPnhmfj4ARyY-eqUI6pbw",
+   "google": "Auto Solis Repair (ASR)"
+  },
+  "automotive-city-san-mateo": {
+   "name": "Automotive City",
+   "placeId": "ChIJt6sC3mSej4ARFMV4IQ_znm0",
+   "google": "Automotive City"
+  },
+  "c-t-automotive-independent-toyota-lexus-specialists-san-mateo": {
+   "name": "C & T Automotive Independent Toyota, Lexus specialists",
+   "placeId": "ChIJe5Grpfeej4ARq4W6Oxt7sN0",
+   "google": "C & T Automotive Independent Toyota, Lexus specialists"
+  },
+  "conti-car-care-san-mateo": {
+   "name": "Conti Car Care",
+   "placeId": "ChIJYVOJIX6ej4AR8bVFfV92paY",
+   "google": "Conti Car Care"
+  },
+  "auto-360-garage-san-mateo-san-mateo": {
+   "name": "Auto 360 Garage - San Mateo",
+   "placeId": "ChIJqS5fbsafj4ARzFAl80zrX7U",
+   "google": "Auto 360 Garage - San Mateo"
+  },
+  "wheel-works-san-mateo": {
+   "name": "Wheel Works",
+   "placeId": "ChIJGUTvH_yej4ARDWnQortpoSY",
+   "google": "Wheel Works"
+  },
+  "autobros-performance-san-mateo": {
+   "name": "Autobros Performance",
+   "placeId": "ChIJ83XkRxafj4ARQ0IgCbkOWj4",
+   "google": "Autobros Performance"
+  },
+  "maple-auto-body-san-mateo-inc-san-mateo": {
+   "name": "Maple Auto Body San Mateo Inc",
+   "placeId": "ChIJNcwBPX6dj4ARrINhYfUTmT4",
+   "google": "Maple Auto Body San Mateo Inc"
+  },
+  "benner-automotive-san-mateo": {
+   "name": "Benner Automotive",
+   "placeId": "ChIJJc9tcGGej4ARyMV5SujPKCk",
+   "google": "Benner Automotive"
+  },
+  "francis-road-service-auto-repair-llc-san-mateo": {
+   "name": "Francis Road Service Auto Repair LLC",
+   "placeId": "ChIJi32nUo55j4ARY9g3_CdOWMY",
+   "google": "Francis Road Service Auto Repair LLC"
+  },
+  "peninsula-european-car-service-san-mateo": {
+   "name": "Peninsula European Car Service",
+   "placeId": "ChIJQQN4b1-ej4ARENGJaWewfLE",
+   "google": "Peninsula European Car Service"
+  },
+  "european-car-care-san-mateo": {
+   "name": "European Car Care",
+   "placeId": "ChIJ87wGKWWej4ARpMq7R-KxamY",
+   "google": "European Car Care"
+  },
+  "bacey-automotive-san-mateo": {
+   "name": "Bacey Automotive",
+   "placeId": "ChIJKSIW2WSej4AR3OKjmldDJBc",
+   "google": "Bacey Automotive"
+  },
+  "motorsport-division-san-mateo": {
+   "name": "Motorsport Division",
+   "placeId": "ChIJd_guBRafj4ARgZailwd1ISQ",
+   "google": "Motorsport Division"
+  },
+  "m-j-auto-services-san-mateo": {
+   "name": "M & J Auto Services",
+   "placeId": "ChIJa5tb52Oej4ARsK0yLj02zdQ",
+   "google": "M & J Auto Services"
+  },
+  "rafa-s-auto-care-tires-towing-services-san-mateo": {
+   "name": "Rafa's Auto Care, Tires & Towing Services",
+   "placeId": "ChIJc44tk2Oej4ARFe2zAP4jWJI",
+   "google": "Rafa's Auto Care, Tires & Towing Services"
+  },
+  "san-mateo-mobile-auto-glass-specialist-llc-san-mateo": {
+   "name": "San Mateo Mobile Auto Glass Specialist LLC",
+   "placeId": "ChIJKbmhjcCfj4AR9MvsvsTupw4",
+   "google": "San Mateo Mobile Auto Glass Specialist LLC"
+  },
+  "ec-auto-inc-san-mateo": {
+   "name": "EC Auto Inc",
+   "placeId": "ChIJa5tb52Oej4AR4KTogJo9Ehw",
+   "google": "EC Auto Inc"
+  },
+  "san-mateo-tire-brake-san-mateo": {
+   "name": "San Mateo Tire & Brake",
+   "placeId": "ChIJjWtLm2Sej4AROdhQiyf-4Bs",
+   "google": "San Mateo Tire & Brake"
+  },
+  "ohana-auto-truck-repair-llc-san-mateo": {
+   "name": "Ohana Auto & Truck Repair LLC",
+   "placeId": "ChIJ752v3mOej4AR1mBtG_QuCDw",
+   "google": "Ohana Auto & Truck Repair LLC"
+  },
+  "tcf-auto-service-inc-san-mateo": {
+   "name": "TCF Auto Service Inc",
+   "placeId": "ChIJ0bdlr_eej4AR2kOKO57uNVQ",
+   "google": "TCF Auto Service Inc"
+  },
+  "mb-garage-san-mateo": {
+   "name": "MB GARAGE",
+   "placeId": "ChIJdQR5lvmej4ARJ74J9uZGMoo",
+   "google": "MB GARAGE"
+  },
+  "gs-motors-san-mateo": {
+   "name": "GS MOTORS",
+   "placeId": "ChIJmXNhla-fj4ARKm3VbNddMzc",
+   "google": "GS MOTORS"
+  },
+  "nor-cal-automotive-san-mateo": {
+   "name": "Nor Cal Automotive",
+   "placeId": "ChIJU9W2v8Gdj4AR6X-fXAGpjgw",
+   "google": "Nor Cal Automotive"
+  },
+  "burlingame-independent-san-mateo": {
+   "name": "Burlingame Independent",
+   "placeId": "ChIJHZ0c_4eej4ARrAHCAyGriiM",
+   "google": "Burlingame Independent"
+  },
+  "sm-motors-body-shop-san-mateo": {
+   "name": "SM Motors & Body Shop",
+   "placeId": "ChIJieO0Phmfj4ARag7fpALkIzE",
+   "google": "SM Motors & Body Shop"
+  },
+  "chilton-auto-body-san-mateo-san-mateo": {
+   "name": "Chilton Auto Body San Mateo",
+   "placeId": "ChIJaTa4S3eej4ARuXTxOPeEheA",
+   "google": "Chilton Auto Body San Mateo"
+  },
+  "carstar-palm-avenue-motors-san-mateo": {
+   "name": "CARSTAR Palm Avenue Motors",
+   "placeId": "ChIJeVJjofmej4AR2dLy_P3AKNU",
+   "google": "CARSTAR Palm Avenue Motors"
+  },
+  "crash-champions-collision-repair-san-mateo-san-mateo": {
+   "name": "Crash Champions Collision Repair San Mateo",
+   "placeId": "ChIJcwiXf_eej4ART7w-k_wtBWA",
+   "google": "Crash Champions Collision Repair San Mateo"
+  },
+  "carstar-ma-s-auto-body-san-mateo-san-mateo": {
+   "name": "CARSTAR Ma’s Auto Body San Mateo",
+   "placeId": "ChIJm3A70d2fj4AR94UiDQWCeLo",
+   "google": "CARSTAR Ma’s Auto Body San Mateo"
+  },
+  "mobile-tire-service-san-mateo-san-mateo": {
+   "name": "Mobile tire service San Mateo",
+   "placeId": "ChIJdUtUxxafj4ARL1HyuJCf1tE",
+   "google": "Mobile tire service San Mateo"
+  },
+  "alioto-s-auto-body-san-mateo": {
+   "name": "Alioto’s Auto Body",
+   "placeId": "ChIJmUN6yuedj4ARUL-GF_DK1SE",
+   "google": "Alioto’s Auto Body"
+  },
+  "j-s-tailoring-san-mateo": {
+   "name": "J's Tailoring",
+   "placeId": "ChIJtVIw_nCej4ARyJM12K9Vmkg",
+   "google": "J's Tailoring"
+  },
+  "j-j-alterations-san-mateo": {
+   "name": "J J Alterations",
+   "placeId": "ChIJRzzpFRqfj4AR0O0v_wDjiE8",
+   "google": "J J Alterations"
+  },
+  "fashion-tailor-alterations-san-mateo": {
+   "name": "Fashion Tailor Alterations",
+   "placeId": "ChIJ91q5uUyej4AR2bI9yLYEOtY",
+   "google": "Fashion Tailor Alterations"
+  },
+  "inshou-dimdim-noodle-san-mateo": {
+   "name": "Inshou DimDim Noodle",
+   "placeId": "ChIJvdID1Rifj4ARBICRha9Ey6M",
+   "google": "Inshou DimDim Noodle"
+  },
+  "ultimate-aquarium": {
+   "name": "Ultimate Aquarium Inc",
+   "placeId": "ChIJbZbFGfyej4AR2Kl7_3JZPlQ",
+   "google": "Ultimate Aquarium Inc"
+  },
+  "jefferys-dog-cat-grooming": {
+   "name": "Jeffery's Dog & Cat Grooming",
+   "placeId": "ChIJ8eJGOfmej4AR8Wx6fJ2aXnc",
+   "google": "Jeffery's Dog & Cat Grooming"
+  },
+  "a-cut-above-grooming-west": {
+   "name": "A Cut Above Grooming Salon West",
+   "placeId": "ChIJrS7Qj-Kfj4AR2R6cpffCjHs",
+   "google": "A Cut Above Grooming Salon West"
+  },
+  "zooe-dog-grooming": {
+   "name": "Zooe Dog Grooming",
+   "placeId": "ChIJRVBW0T5bIqMRdFMTlVP0trg",
+   "google": "Zooe Dog Grooming"
+  },
+  "lnimo-pet-grooming": {
+   "name": "LNiMo Pet Grooming",
+   "placeId": "ChIJZUExp-afj4ARjI2RlhwhY8o",
+   "google": "LNiMo Pet Grooming"
+  },
+  "muttleys-playhouse": {
+   "name": "Muttley’s Playhouse LLC",
+   "placeId": "ChIJEQgGUgqfj4ARgpfRO4Cm4Go",
+   "google": "Muttley’s Playhouse LLC"
+  },
+  "dluxe-mobile-grooming": {
+   "name": "DLUXE MOBILE GROOMING",
+   "placeId": "ChIJncrpW0w89ykRBpaji8jtP6g",
+   "google": "DLUXE MOBILE GROOMING"
+  },
+  "thrifty-mobile-pet-grooming": {
+   "name": "Thrifty Mobile Pet Grooming",
+   "placeId": "ChIJAQCU1OCdj4ARSLFoZanbJHo",
+   "google": "Thrifty Mobile Pet Grooming"
+  },
+  "sandbox-vr-san-mateo": {
+   "name": "Sandbox VR",
+   "placeId": "ChIJI-nwbESfj4AR46lo6mwYTaM",
+   "google": "Sandbox VR"
+  },
+  "the-great-entertainer": {
+   "name": "The Great Entertainer",
+   "placeId": "ChIJvSNTGPiej4AR2VuRsmNREHM",
+   "google": "The Great Entertainer"
+  },
+  "gama-ride-arcade": {
+   "name": "GAMA Ride Amusement Center & Arcade",
+   "placeId": "ChIJRznF3MZ5j4AR0QAQ3vzNfZ4",
+   "google": "GAMA Ride Amusement Center & Arcade"
+  },
+  "game-show-studio": {
+   "name": "Game Show Studio San Mateo",
+   "placeId": "ChIJ___Cqpyfj4ARvi0MUGnidjc",
+   "google": "Game Show Studio San Mateo"
+  },
+  "clawesome-claw-arcade": {
+   "name": "Clawesome Claw Arcade and Rentals",
+   "placeId": "ChIJpePgYFyfj4ARYeuYuSiwMjo",
+   "google": "Clawesome Claw Arcade and Rentals"
+  },
+  "nakoko-arcade": {
+   "name": "Nakoko",
+   "placeId": "ChIJLwyOPO-fj4ARhwnVkBQ-cPg",
+   "google": "Nakoko"
+  },
+  "clayroom-san-mateo": {
+   "name": "Clayroom San Mateo",
+   "placeId": "ChIJUfU4om6fj4ARcZ5bg4xDAsw",
+   "google": "Clayroom San Mateo"
+  },
+  "create-mix-and-mingle": {
+   "name": "Create, Mix and Mingle",
+   "placeId": "ChIJsw7kwuiej4ARxsoss7-tIpI",
+   "google": "Create, Mix and Mingle"
+  },
+  "our-art-room": {
+   "name": "Our Art Room",
+   "placeId": "ChIJqxSz3lmej4ARkOIORJyNj_Q",
+   "google": "Our Art Room"
+  },
+  "peninsula-ballet-arts": {
+   "name": "Peninsula Ballet Arts",
+   "placeId": "ChIJJf2NbfGej4ARGrS6mZ22guQ",
+   "google": "Peninsula Ballet Arts"
+  },
+  "peninsula-dance-academy": {
+   "name": "Peninsula Dance Academy",
+   "placeId": "ChIJ5WlwJrifj4ARhCGNtIWS6Y8",
+   "google": "Peninsula Dance Academy"
+  },
+  "small-fry-dance-club": {
+   "name": "Small Fry Dance Club",
+   "placeId": "ChIJVyjvJ9WYj4ARcbql_sR7mnQ",
+   "google": "Small Fry Dance Club"
+  },
+  "elm-roofing-contractors": {
+   "name": "ELM Roofing Contractors",
+   "placeId": "ChIJdXpeBPiRj4AR0LqIXTgT1zA",
+   "google": "ELM Roofing Contractors"
+  },
+  "robert-s-san-mateo-roofing": {
+   "name": "Robert's San Mateo Roofing",
+   "placeId": "ChIJYyY1Xkefj4ARsvDT_xBzy_c",
+   "google": "Robert's San Mateo Roofing"
+  },
+  "ideal-landscape-concrete": {
+   "name": "Ideal Landscape & Concrete",
+   "placeId": "ChIJM9q72cOdj4ARPe72v6HuPCs",
+   "google": "Ideal Landscape & Concrete"
+  },
+  "fisher-garden-landscape-services": {
+   "name": "Fisher Garden & Landscape Services",
+   "placeId": "ChIJcSOhRXWej4ARnFjOaCfqdTs",
+   "google": "Fisher Garden & Landscape Services"
+  },
+  "heavenly-shine-cleaning": {
+   "name": "Heavenly Shine Cleaning",
+   "placeId": "ChIJfeg8QX6fj4AR7xd_l8QxwBI",
+   "google": "Heavenly Shine Cleaning"
+  },
+  "bayhill-heat-air-inc": {
+   "name": "Bayhill Heat & Air, Inc.",
+   "placeId": "ChIJs45de2Gej4ARMVHns2rTXCQ",
+   "google": "Bayhill Heat & Air, Inc."
+  },
+  "cloud-mechanical-heating-ac": {
+   "name": "Cloud Mechanical Heating & AC",
+   "placeId": "ChIJgVKJn2Gej4ARVXNObfx_CRA",
+   "google": "Cloud Mechanical Heating & AC"
+  },
+  "perfect-match-painting-rd": {
+   "name": "Perfect Match Painting Rd",
+   "placeId": "ChIJjyvBThAQ4qsRJ2bgzNo-5JU",
+   "google": "Perfect Match Painting Rd"
+  },
+  "ryan-courtney-painting-and-decorating": {
+   "name": "Ryan Courtney Painting and Decorating",
+   "placeId": "ChIJ8-3EJnafj4AR3aFmK6KMdvY",
+   "google": "Ryan Courtney Painting and Decorating"
+  },
+  "rolling-sea-painting": {
+   "name": "ROLLING SEA PAINTING",
+   "placeId": "ChIJq7wiajV5j4ARmMvdjGqj4HU",
+   "google": "ROLLING SEA PAINTING"
+  },
+  "golden-gate-gutters": {
+   "name": "Golden Gate Gutters",
+   "placeId": "ChIJewTvDFAFi0IRgfMcpCbckrI",
+   "google": "Golden Gate Gutters"
+  },
+  "owens-electric-solar": {
+   "name": "Owens Electric & Solar",
+   "placeId": "ChIJVeP_T9edj4ARBQKLcv2qviw",
+   "google": "Owens Electric & Solar"
+  },
+  "pacific-pest-management": {
+   "name": "Pacific Pest Management",
+   "placeId": "ChIJVVX5MRefj4ARnzXxxCJPk-Y",
+   "google": "Pacific Pest Management"
+  },
+  "abc-tree-farms-san-mateo": {
+   "name": "ABC Tree Farms",
+   "placeId": "ChIJ-ScB5uiej4AROaqyHAZ8h1A",
+   "google": "ABC Tree Farms & Pick of the Patch Pumpkins - SMNO"
+  },
+  "kellys-deli-san-mateo": {
+   "name": "Kelly's Deli",
+   "placeId": "ChIJQUGF3saej4ARXeJv1OsLbOA",
+   "google": "Kelly's Deli"
+  },
+  "bert-s-hair-design": {
+   "name": "Bert's Hair Design",
+   "placeId": "ChIJBzTBYfCej4AROVO1_RiCcRw",
+   "google": "Bert's Hair Design"
+  },
+  "bond-hair-bar": {
+   "name": "Bond Hair Bar",
+   "placeId": "ChIJSTqt6Bmij4ARqY597UWHpn4",
+   "google": "Bond Hair Bar - Hair Extensions Salon & Hair Loss Specialist"
+  },
+  "caraiso": {
+   "name": "Caraiso",
+   "placeId": "ChIJGSgI2nifj4ARevZBfAQq9lc",
+   "google": "Caraiso"
+  },
+  "chi-day-spa": {
+   "name": "CHI Day Spa",
+   "placeId": "ChIJudOr5mSfj4ARSyF5XmAOr5A",
+   "google": "CHI DAY SPA"
+  },
+  "chrystle-cu-dds": {
+   "name": "Chrystle Cu, DDS",
+   "placeId": "ChIJCyRlqXGej4ARPBJ-vaKIcKc",
+   "google": "Chrystle Cu, D.D.S."
+  },
+  "comb-as-you-are": {
+   "name": "Comb As You Are",
+   "placeId": "ChIJjSBpmNCfj4AR39sH803rGLg",
+   "google": "Comb As You Are"
+  },
+  "diana-dizik-dds": {
+   "name": "Diana Dizik, DDS",
+   "placeId": "ChIJY4BvGuSdj4ARpJaS-nP2fyw",
+   "google": "Diana Dizik DDS"
+  },
+  "elitz-barbers": {
+   "name": "Elitz Barbers",
+   "placeId": "ChIJbVzGw8Sfj4ARdPsrqbOGa4Q",
+   "google": "Elitz Barbers"
+  },
+  "hello-yuna": {
+   "name": "Hello Yuna",
+   "placeId": "ChIJz6LAUVafj4AR26ha3-fvcgY",
+   "google": "Hello Yuna"
+  },
+  "instyle-salon": {
+   "name": "Instyle Salon",
+   "placeId": "ChIJE1JPEnCej4ARCMcxsQyijnc",
+   "google": "Instyle Salon"
+  },
+  "manny-the-barber": {
+   "name": "Manny The Barber",
+   "placeId": "ChIJzUD15u2dj4ARoGoN3J31yBM",
+   "google": "Manny The Barber"
+  },
+  "miss-bess-coiffures": {
+   "name": "Miss Bess Coiffures",
+   "placeId": "ChIJxXLeSHCej4ARhAHK-ZLIf34",
+   "google": "Miss Bess Coiffures"
+  },
+  "nancy-loh-dds": {
+   "name": "Nancy Loh, DDS",
+   "placeId": "ChIJRcW_9jWdj4ARZpEJ6zyeUEI",
+   "google": "Nancy Loh, DDS"
+  },
+  "oanh-le-dds": {
+   "name": "Oanh Le, DDS",
+   "placeId": "ChIJS07zEOSdj4AR4gKd9u18sRI",
+   "google": "Oanh Le, DDS"
+  },
+  "pacific-coast-sauna-and-spa": {
+   "name": "Pacific Coast Sauna & Spa",
+   "placeId": "ChIJyew1ARqfj4ARWAd0nQ8zEsA",
+   "google": "Pacific Coast Sauna & Spa"
+  },
+  "pacific-dental-center": {
+   "name": "Pacific Dental Center",
+   "placeId": "ChIJYWPb__uej4ARoZwsWFZLndA",
+   "google": "Pacific Dental Center"
+  },
+  "parlour-151": {
+   "name": "Parlour 151",
+   "placeId": "ChIJBY64v3Cej4ARaaruvdbCjec",
+   "google": "Parlour 151"
+  },
+  "peninsula-prosthodontic-group": {
+   "name": "Peninsula Prosthodontic Group",
+   "placeId": "ChIJbZ7Y_1uej4ARhfK-L2fc054",
+   "google": "Peninsula Prosthodontic Group: Alison Fishman DMD and Sandrine Lam DDS"
+  },
+  "renovate-kids-cuts-and-more": {
+   "name": "Renovate Kids Cuts & More",
+   "placeId": "ChIJv5Q4L6-fj4ARbOfnXGWSRQA",
+   "google": "Renovate Kids Cuts & More"
+  },
+  "roy-the-hair-stylist": {
+   "name": "Roy the Hair Stylist",
+   "placeId": "ChIJq9AH7hGfj4ARSwwJoTtaI64",
+   "google": "Roy the Hair Stylist (Flow salon)"
+  },
+  "senses-nails-and-spa": {
+   "name": "Senses Nails and Spa",
+   "placeId": "ChIJy89kb_Cej4AR9j0c5ni9JCI",
+   "google": "Senses nails and spa"
+  },
+  "shiloh-aesthetics": {
+   "name": "Shiloh Aesthetics",
+   "placeId": "ChIJK-OiPwCfj4ARwmGHZDMgBNY",
+   "google": "Shiloh Aesthetics"
+  },
+  "skin-utopia": {
+   "name": "Skin Utopia",
+   "placeId": "ChIJFV3Zr3aej4ARmdfBJNcVNGI",
+   "google": "Skin Utopia"
+  },
+  "the-beach-house": {
+   "name": "The Beach House",
+   "placeId": "ChIJM2u3keiej4ARy7XsV_gGUVY",
+   "google": "The Beach House"
+  },
+  "yevi-s-beauty-house": {
+   "name": "Yevi's Beauty House",
+   "placeId": "ChIJjw7XPCudj4ARJsobcJwwT9I",
+   "google": "Yevi’s beauty house"
+  },
+  "yweight-spa": {
+   "name": "Yweight Spa",
+   "placeId": "ChIJWwns0viej4ARO6KJI6_uPYc",
+   "google": "Yweight Spa"
+  },
+  "ascend-medical-spa": {
+   "name": "Ascend Medical Spa",
+   "placeId": "ChIJnyBojzOfj4AR7orJf-tvq9w",
+   "google": "Ascend Medical Spa"
+  },
+  "bare-body-aesthetics": {
+   "name": "Bare Body Aesthetics",
+   "placeId": "ChIJ4awDYCmfj4AREV2zZMzU3LY",
+   "google": "Bare Body Aesthetics"
+  },
+  "cosmetica-anti-aging-aesthetic-lasers-and-medical-weight-loss-clinic": {
+   "name": "Cosmetica Anti-Aging, Aesthetic Lasers & Medical Weight Loss Clinic",
+   "placeId": "ChIJcwqjvQOfj4ARMA1004d8Q2I",
+   "google": "Cosmetica Anti-Aging, Aesthetic Lasers & Medical Weight Loss Clinic"
+  },
+  "drmedspa": {
+   "name": "DrMedSpa",
+   "placeId": "ChIJSfQWaUGdj4ARsDniZKX7qno",
+   "google": "DrMedSpa, San Mateo, CA"
+  },
+  "kora-skin-md": {
+   "name": "Kora Skin MD",
+   "placeId": "ChIJAxsDq4-fj4ARBIIty9EoK6s",
+   "google": "Kora Skin MD"
+  },
+  "lasersthetics": {
+   "name": "Lasersthetics",
+   "placeId": "ChIJY3B6OrV3j4ARL18fc-GMpek",
+   "google": "Lasersthetics"
+  },
+  "majorglow-med-spa": {
+   "name": "Majorglow Med Spa",
+   "placeId": "ChIJw35_hCWfj4ARy6i2C8uOGgk",
+   "google": "Majorglow Med Spa"
+  },
+  "pink-opal-aesthetics": {
+   "name": "Pink Opal Aesthetics",
+   "placeId": "ChIJAXkx0DWfj4ARz7gr3ft_o24",
+   "google": "Pink Opal Aesthetics"
+  },
+  "sheila-marie-aesthetics": {
+   "name": "Sheila Marie Aesthetics",
+   "placeId": "ChIJL1wNMU-fj4ARzML8e5Pgdy4",
+   "google": "Sheila Marie Aesthetics"
+  },
+  "timeless-aesthetics-and-longevity-lounge": {
+   "name": "Timeless Aesthetics & Longevity Lounge",
+   "placeId": "ChIJiQ5_ejSdj4ARB8Q0ecqwbWc",
+   "google": "Timeless Aesthetics & Longevity Lounge"
+  },
+  "pallas-athena-skin-care-and-aesthetics": {
+   "name": "Pallas Athena Skin Care & Aesthetics",
+   "placeId": "ChIJJ9AGe9TBj4ARjwm4epJjq_o",
+   "google": "Pallas Athena Skin Care & Aesthetics"
+  },
+  "inner-beauty-brazilian-spa": {
+   "name": "Inner Beauty Brazilian Spa",
+   "placeId": "ChIJg_vu5P-dj4ARFA6Pe7Z0ir0",
+   "google": "Inner Beauty Brazilian SPA"
+  },
+  "10th-planet-jiu-jitsu": {
+   "name": "10th Planet Jiu Jitsu",
+   "placeId": "ChIJBXU7afmej4ARoSexzAgoMFI",
+   "google": "10th Planet Jiu Jitsu San Mateo"
+  },
+  "artyv-studio": {
+   "name": "ARTYV Studio",
+   "placeId": "ChIJzYifOlyfj4AR87plgZE5itc",
+   "google": "ARTYV Studio"
+  },
+  "b-street-boxing": {
+   "name": "B Street Boxing",
+   "placeId": "ChIJ9f2vkXCej4AR8Z4RS8tw_Vc",
+   "google": "B Street Boxing"
+  },
+  "body-moxie": {
+   "name": "Body Moxie",
+   "placeId": "ChIJT9kMxUyfj4ARNwEVtq6D_Uw",
+   "google": "Body Moxie"
+  },
+  "pilates-clinic": {
+   "name": "Pilates Clinic",
+   "placeId": "ChIJrRT1Rhefj4ARK6h--BaInJc",
+   "google": "Pilates Clinic"
+  },
+  "peninsula-spa-center": {
+   "name": "Peninsula Spa Center",
+   "placeId": "ChIJlz57KfGdj4ARb-20GbZ37ZE",
+   "google": "Peninsula Spa Center"
+  },
+  "tomii-healing-and-wellness": {
+   "name": "Tomii Healing & Wellness",
+   "placeId": "ChIJs4LT3rWfj4ARABair3Tn4Ag",
+   "google": "Tomii healing & wellness"
+  },
+  "the-cupping-box": {
+   "name": "The Cupping Box",
+   "placeId": "ChIJtUcrsimfj4ARLvxB5HKHfhQ",
+   "google": "The Cupping Box"
+  },
+  "2dots-integrative-medicine": {
+   "name": "2Dots Integrative Medicine",
+   "placeId": "ChIJgX7Uk3GRhYAR_8XHgOX3fGM",
+   "google": "2Dots Integrative Medicine"
+  },
+  "nura-integrative-health": {
+   "name": "Nura Integrative Health",
+   "placeId": "ChIJVVWlhHWej4ARI-GUxDl6tAI",
+   "google": "Nura Integrative Health"
+  },
+  "holistic-health-center": {
+   "name": "Holistic Health Center",
+   "placeId": "ChIJHaXdMOidj4ARnZq7sIm092Q",
+   "google": "Holistic Health Center"
+  },
+  "back-in-shape-chiropractic": {
+   "name": "Back In Shape Chiropractic",
+   "placeId": "ChIJw7BNy3qej4ARg6YUu8-F55g",
+   "google": "Back In Shape Chiropractic"
+  },
+  "harman-chiropractic-center": {
+   "name": "Harman Chiropractic Center",
+   "placeId": "ChIJucXTcWCej4ARlpLY6xLlvmQ",
+   "google": "Harman Chiropractic Center"
+  },
+  "powerpractic": {
+   "name": "Powerpractic",
+   "placeId": "ChIJh_lVKd6dj4ARKynG3bA2yWA",
+   "google": "Powerpractic"
+  },
+  "hondeville": {
+   "name": "Hondeville",
+   "placeId": "ChIJEfwB1_mej4AR-XcY5iC72BU",
+   "google": "Hondeville"
+  },
+  "pablo-s-auto-body-2": {
+   "name": "Pablo's Auto Body 2",
+   "placeId": "ChIJSQd_-difj4ARrEoTqjVtHsg",
+   "google": "Pablo's Auto Body 2"
+  },
+  "romolos-cannoli-san-mateo": {
+   "name": "Romolo's Cannoli",
+   "placeId": "ChIJS9BFZRqfj4ARfiOqUKH8oIg",
+   "google": "Romolo's Cannoli"
+  },
+  "simple-delights": {
+   "name": "Simple Delights",
+   "placeId": "ChIJ65HoGiKfj4ARkpoxMjcMijc",
+   "google": "Simple Delights"
+  },
+  "sm-public-library-hillsdale": {
+   "name": "San Mateo Public Library (Hillsdale)",
+   "placeId": "ChIJd7AbIQSfj4ARAsz_e1iC20I",
+   "google": "Hillsdale Branch - San Mateo Public Library"
+  },
+  "sm-public-library-marina": {
+   "name": "San Mateo Public Library (Marina)",
+   "placeId": "ChIJQ5YQM-mej4AR1vJHuJwsFwE",
+   "google": "Marina Branch - San Mateo Public Library"
+  },
+  "cuschieri-auto": {
+   "name": "Cuschieri Auto & Truck Repair",
+   "placeId": "ChIJGSKfUleij4ARwTeYkhJ84gE",
+   "google": "Cuschieri Auto & Truck Repair"
+  },
+  "eurasian-auto": {
+   "name": "Eurasian Auto Repair",
+   "placeId": "ChIJGUYEyWSej4ARLgv0RtjktEs",
+   "google": "Eurasian Auto Repair"
+  },
+  "ms-auto-repair": {
+   "name": "M S Auto Repair",
+   "placeId": "ChIJTdk9S4eej4AR4OtAJcsXEfw",
+   "google": "M S Auto Repair"
+  },
+  "murrays-auto": {
+   "name": "Murray's Truck & Auto Repair",
+   "placeId": "ChIJvwKz62Oej4ARS6e5hZKHs_M",
+   "google": "Murray's Truck & Auto Repair"
+  },
+  "palm-ave-motors": {
+   "name": "Palm Ave Motors Auto Repair",
+   "placeId": "ChIJoSTe3WSej4ARFRcktaVC6Nc",
+   "google": "Palm Ave Motors Auto Repair"
+  },
+  "borel-cleaners": {
+   "name": "Borel Cleaners",
+   "placeId": "ChIJLTRqYmWfj4ARKG_YIxsEzdQ",
+   "google": "Borel Cleaners"
+  },
+  "debbies-dry-cleaners": {
+   "name": "Debbie's Dry Cleaners",
+   "placeId": "ChIJ9YzU2F6ej4ARWXkHT4v7DZc",
+   "google": "Debbie's Dry Cleaners"
+  },
+  "fiesta-cleaners": {
+   "name": "Fiesta Cleaners",
+   "placeId": "ChIJ45txb_Cej4ARxSi064cN5Ac",
+   "google": "Fiesta Cleaners"
+  },
+  "hills-cleaners": {
+   "name": "Hills Cleaners",
+   "placeId": "ChIJVX2IIsafj4AReipauFb6J9Y",
+   "google": "Hills Cleaners"
+  },
+  "new-a1-cleaners": {
+   "name": "New A-1 Cleaners",
+   "placeId": "ChIJx6FBK3Cej4ARW1s0bW97adg",
+   "google": "New A-1 Cleaners"
+  },
+  "sm-holiday-cleaners": {
+   "name": "San Mateo Holiday Cleaners",
+   "placeId": "ChIJT3VEXUuej4ARhKwJcoAo8Qw",
+   "google": "San Mateo Holiday Cleaners"
+  },
+  "top-hat-cleaners": {
+   "name": "Top Hat Cleaners",
+   "placeId": "ChIJk0R7Ud6dj4AR5PW5uzXlYN4",
+   "google": "Top Hat Cleaners"
+  },
+  "wardrobe-cleaners": {
+   "name": "Wardrobe Cleaners",
+   "placeId": "ChIJZRbCkXqej4AR6Pc4G8jU4YA",
+   "google": "Wardrobe Cleaners"
+  },
+  "simonian-rug-cleaners": {
+   "name": "Simonian Oriental Rug Cleaners",
+   "placeId": "ChIJUXKnfMGdj4ARbqC_770w4Q0",
+   "google": "Simonian Oriental Rug Cleaners"
+  },
+  "grooming-by-jessica": {
+   "name": "Grooming by Jessica",
+   "placeId": null,
+   "unmatched": "Grooming by Jessica | Mary Lou lane (Front entrance, 119 W 25th Ave #117, San Mateo, CA 94403, USA"
+  },
+  "peninsula-clock-shop": {
+   "name": "Peninsula Clock Shop",
+   "placeId": "ChIJv03VSPmej4AR9riQ_Bu0hx4",
+   "google": "Peninsula Clock Shop"
+  },
+  "fongs-watch-repair": {
+   "name": "Fong's Watch Repair",
+   "placeId": "ChIJPUrgJQCfj4ARPbZ0ESOWTgE",
+   "google": "Fong's Watch Repair"
+  },
+  "design-jewelers": {
+   "name": "Design Jewelers",
+   "placeId": "ChIJRw9RQBCfj4ARgwzTkNl3R4E",
+   "google": "DESIGN JEWELERS"
+  },
+  "appelblom-jewelry-co": {
+   "name": "Appelblom Jewelry Co.",
+   "placeId": "ChIJ32wRSXCej4ARQ4wsiNlltsE",
+   "google": "Appelblom Jewelry Co."
+  },
+  "maaz-jewelers": {
+   "name": "Maaz Jewelers",
+   "placeId": "ChIJhVKuJT95j4ARBNX5ChbTNyE",
+   "google": "MAAZ JEWELERS"
+  },
+  "boat-feet-shoe-repair": {
+   "name": "Boat Feet Shoe Repair",
+   "placeId": "ChIJ91q5uUyej4ARN_GBwg1m9DA",
+   "google": "Boat Feet Shoe Repair"
+  },
+  "aaa-vacuum-and-sewing": {
+   "name": "AAA Vacuum & Sewing",
+   "placeId": "ChIJbXrjyXqej4ARDAT-dmRMxeo",
+   "google": "AAA Vacuum & Sewing"
+  },
+  "marios-bon-decor": {
+   "name": "Mario's Bon Decor",
+   "placeId": "ChIJ4cyGbfmej4ARd0xlIdps5E8",
+   "google": "Mario's Bon Decor Incorporated"
+  },
+  "bay-cycles": {
+   "name": "Bay Cycles",
+   "placeId": "ChIJow0uoYmfj4AR7aXV4gby-Tw",
+   "google": "Bay Cycles"
+  },
+  "belmont-bikes": {
+   "name": "BelMont Bikes",
+   "placeId": "ChIJ4dyaCIWfj4ARWV9RQJHB1aE",
+   "google": "BelMont Bikes"
+  },
+  "cycletoyou": {
+   "name": "CYCLETOYOU",
+   "placeId": null,
+   "unmatched": "CYCLETOYOU | 7 S Eldorado St, San Mateo, CA 94401, USA"
+  },
+  "ken-su-violins": {
+   "name": "Ken Su Violins",
+   "placeId": "ChIJvQT8qfmej4ARercqt5q7hAo",
+   "google": "KEN SU VIOLINS"
+  },
+  "piano-outlet": {
+   "name": "Piano Outlet",
+   "placeId": "ChIJ3y6YAkO_j4ARxxHbZs_mr5g",
+   "google": "Piano Outlet"
+  },
+  "dark-horse-framing": {
+   "name": "Dark Horse Framing",
+   "placeId": "ChIJFaMZKF-ej4ARddzJgJqaMEo",
+   "google": "Dark Horse Framing"
+  },
+  "long-sung-tong-frames": {
+   "name": "Long Sung Tong Frames",
+   "placeId": "ChIJ1yw4E_mej4ARz2JFZC1GLMk",
+   "google": "Long Sung Tong Frames"
+  },
+  "california-art-supply-company": {
+   "name": "California Art Supply Company",
+   "placeId": "ChIJzx4IRBqfj4ARNb0quopUF94",
+   "google": "California Art Supply Company"
+  },
+  "flower-knows": {
+   "name": "Flower Knows",
+   "placeId": "ChIJ68RxuDCfj4ARrZtLrxsWoMs",
+   "google": "Flower Knows"
+  },
+  "resale-therapy": {
+   "name": "Resale Therapy",
+   "placeId": "ChIJGRBHjpCfj4AR7Ws1luVlAkQ",
+   "google": "Resale Therapy"
+  },
+  "pierson-20th-century-design": {
+   "name": "Pierson 20th Century Design",
+   "placeId": "ChIJJYW6BV-ej4ARD3MHzrfk_Ls",
+   "google": "Pierson 20th Century Design"
+  },
+  "takeout-vintage": {
+   "name": "Takeout Vintage",
+   "placeId": null,
+   "unmatched": "Takeout Vintage | Hillsdale Shopping Ctr 245 Floor 2, San Mateo, CA 94403, USA"
+  },
+  "house-of-values": {
+   "name": "House of Values",
+   "placeId": "ChIJ1wGvHPyej4ARMpN_Z9hV6zw",
+   "google": "House of Values"
+  },
+  "laurel-crown-furniture": {
+   "name": "Laurel Crown Furniture",
+   "placeId": "ChIJ9V4st-edj4AR5SojgcHjXFk",
+   "google": "Laurel Crown Furniture"
+  },
+  "turnstyle-thrift-shop": {
+   "name": "Turnstyle Thrift Shop",
+   "placeId": "ChIJvUs43naej4ARlDtRgmZPkA4",
+   "google": "Turnstyle Thrift Shop"
+  },
+  "aanraku-glass-studios": {
+   "name": "Aanraku Glass Studios",
+   "placeId": "ChIJFYX3OHeej4ARWtv0FkQqPWA",
+   "google": "Aanraku Glass Studios"
+  },
+  "print-copy-xpress": {
+   "name": "Print Copy Xpress",
+   "placeId": "ChIJWZiXdPmej4ARiuucbTtHfNc",
+   "google": "Print Copy Xpress"
+  },
+  "all-bikes-repair": {
+   "name": "All Bikes Repair",
+   "placeId": "ChIJG5dUctqdj4ARXMZaIwwX8Zg",
+   "google": "All Bikes Repair"
+  },
+  "lynch-guitar-repair": {
+   "name": "Lynch Guitar Repair",
+   "placeId": null,
+   "unmatched": "Lynch Guitar Repair | 19 Vista Ave, San Mateo, CA 94403, USA"
+  },
+  "luludi-living-art": {
+   "name": "Luludi Living Art",
+   "placeId": null,
+   "unmatched": "Luludi Living Art, Corp | 346 N Ellsworth Ave, San Mateo, CA 94401, USA"
+  },
+  "chien-lung-antiques": {
+   "name": "Chien Lung Antiques",
+   "placeId": "ChIJpdHwLviej4ARqnI6tCh0Drg",
+   "google": "Chien Lung Antiques"
+  },
+  "peninsula-press-printing": {
+   "name": "Peninsula Press Printing",
+   "placeId": "ChIJJXBiX0uej4ARrXVveAiRk7c",
+   "google": "Peninsula Press Printing"
+  },
+  "alba-chiropractic-clinic": {
+   "name": "Alba Chiropractic Clinic",
+   "placeId": null,
+   "unmatched": "Dr. Hamed Alereza, Chiropractor | 400 N San Mateo Dr #1, San Mateo, CA 94401, USA"
+  },
+  "medicine-dharma-healing": {
+   "name": "Medicine Dharma Healing",
+   "placeId": "ChIJw7BNy3qej4ARXSFTdvOrVh8",
+   "google": "Medicine Dharma Healing"
+  },
+  "brazilian-lymphatic-detox": {
+   "name": "Brazilian Lymphatic Detox",
+   "placeId": null,
+   "unmatched": "Brazilian Lymphatic Detox | 1201 Monte Diablo Ave, San Mateo, CA 94401, USA"
+  },
+  "nature-health-medical": {
+   "name": "Nature Health Medical",
+   "placeId": "ChIJz0_Z02Kfj4ARk1m-G7HhlEI",
+   "google": "Nature Health Medical"
+  },
+  "get-your-fix-optics": {
+   "name": "Get Your Fix Optics",
+   "placeId": "ChIJY79G9myfj4ARP4npkm5GAL4",
+   "google": "Get Your Fix Optics"
+  },
+  "california-hearing-center": {
+   "name": "California Hearing Center",
+   "placeId": "ChIJb9gQKHSej4ARg5ABvsM-dt8",
+   "google": "California Hearing Center"
+  },
+  "eartone-hearing-aid-center": {
+   "name": "Eartone Hearing Aid Center",
+   "placeId": "ChIJi0ojC8mfj4AR63cSJ9ggA10",
+   "google": "Eartone Hearing Aid Center"
+  },
+  "wholesome-medical-center": {
+   "name": "Wholesome Medical Center",
+   "placeId": "ChIJSR1Clxufj4AR2_t17ETKhy4",
+   "google": "Wholesome Medical Center"
+  },
+  "body-balance-and-beyond": {
+   "name": "Body Balance and Beyond",
+   "placeId": "ChIJs1wR7l-ej4ARIIh9DkHAos4",
+   "google": "Body Balance and Beyond"
+  },
+  "kristen-marie-skin": {
+   "name": "Kristen Marie Skin",
+   "placeId": "ChIJUa79dl-fj4ARuQ0DWXv2wi4",
+   "google": "Kristen Marie Skin"
+  },
+  "ednas-wax-bar": {
+   "name": "Edna's Wax Bar",
+   "placeId": "ChIJ1-8QKHCej4ARBJ3wNVJH8KY",
+   "google": "Edna's Wax Bar"
+  },
+  "bling-lash-studio": {
+   "name": "Bling Lash Studio",
+   "placeId": "ChIJP7WNFy17j4AR8iiM1rvlGgA",
+   "google": "Bling Lash Studio"
+  },
+  "dolly-effect-lash": {
+   "name": "Dolly Effect Lash",
+   "placeId": "ChIJ9zCyzsWfj4AROMd-LNyTwZI",
+   "google": "DOLLY EFFECT - Your Lash Beautifier"
+  },
+  "ilash-studio": {
+   "name": "iLash Studio",
+   "placeId": "ChIJedN8jBWfj4AR6tkqS13hZ1s",
+   "google": "iLash Studio, Inc"
+  },
+  "lux-lashus": {
+   "name": "Lux Lashus",
+   "placeId": "ChIJmW1wR1Kdj4AR-A0zLhdEdTI",
+   "google": "Lux Lashus"
+  },
+  "lux-beauty-by-jade": {
+   "name": "Lux Beauty by Jade",
+   "placeId": "ChIJm29HowWHj4ARmhs-Haz5DQs",
+   "google": "Lux Beauty by Jade"
+  },
+  "celestial-lashes-and-skincare": {
+   "name": "Celestial Lashes and Skincare",
+   "placeId": "ChIJMXlj46R3j4AR1dEM5Albelw",
+   "google": "Celestial Lashes And Skincare"
+  },
+  "stari-eyed-beauty": {
+   "name": "Stari Eyed Beauty",
+   "placeId": "ChIJbXAauHaej4ARbfCBBThu_XI",
+   "google": "Stari Eyed Beauty"
+  },
+  "youtime-beauty": {
+   "name": "YouTime Beauty",
+   "placeId": "ChIJMf-KwNGfj4ARBtntNkqCl7Q",
+   "google": "YouTime Beauty"
+  },
+  "sabis-threading-and-skin-care": {
+   "name": "Sabi's Threading & Skin Care",
+   "placeId": "ChIJW35O2feej4ARS1guc9YD_gA",
+   "google": "Sabi's Threading & Skin Care"
+  },
+  "brow-famous": {
+   "name": "Brow Famous",
+   "placeId": "ChIJGSxWzMifj4ARFxsN_Cbr2lI",
+   "google": "Brow Famous"
+  },
+  "aankura-beauty-care": {
+   "name": "Aankura Beauty Care",
+   "placeId": "ChIJI_kmF7l5j4ARgzpGrW0fDoY",
+   "google": "Aankura Beauty Care"
+  },
+  "framed-brow-studio-and-piercing-bar": {
+   "name": "Framed Brow Studio & Piercing Bar",
+   "placeId": "ChIJL65D6ISfj4ARaJjCYSunTT8",
+   "google": "Framed Brow Studio and Piercing Bar"
+  },
+  "lotus-beauty-services": {
+   "name": "Lotus Beauty Services",
+   "placeId": "ChIJ-YciokmVj4AR4JIwNeCBU_Y",
+   "google": "Lotus Beauty Services"
+  },
+  "bueno-brows": {
+   "name": "Bueno Brows",
+   "placeId": "ChIJC7K6K7Sfj4ARJ0dn3qocMWk",
+   "google": "Bueno Brows"
+  },
+  "baran-brows": {
+   "name": "Baran Brows",
+   "placeId": "ChIJrfMN0_6ej4ARd6FX6RPDj5Q",
+   "google": "baran brows"
+  },
+  "lyfestyle-ink": {
+   "name": "Lyfestyle Ink",
+   "placeId": "ChIJpZ1t2Peej4ARsnig8oRGYZs",
+   "google": "Lyfestyle Ink"
+  },
+  "paw-tattoo": {
+   "name": "Paw Tattoo",
+   "placeId": "ChIJ1Sfecpifj4ARyEJduob7108",
+   "google": "Paw Tattoo"
+  },
+  "hello-tattoo": {
+   "name": "Hello Tattoo",
+   "placeId": "ChIJy9kPb2-fj4ARuI1PVanGH90",
+   "google": "Hello Tattoo"
+  },
+  "godspeed-tattoo": {
+   "name": "Godspeed Tattoo",
+   "placeId": "ChIJgcVpPoeej4ARmNiNYgf4LGs",
+   "google": "Godspeed Tattoo"
+  },
+  "lyfestyle-ink-2": {
+   "name": "Lyfestyle Ink 2",
+   "placeId": "ChIJ5-LbJTGfj4AR3-yHfiOJjdw",
+   "google": "Lyfestyle Ink 2"
+  },
+  "honeybee-tattoo": {
+   "name": "Honeybee Tattoo",
+   "placeId": "ChIJJ0td59Wfj4ARVFc8uMrXLa8",
+   "google": "Honeybee Tattoo"
+  },
+  "savage-tattoo-studio": {
+   "name": "Savage Tattoo Studio",
+   "placeId": "ChIJfTXeBnmfj4ARhXtPHJOMdC8",
+   "google": "Savage Tattoo Studio"
+  },
+  "secret-ink": {
+   "name": "Secret Ink",
+   "placeId": "ChIJG00Nqc2WIQURKfnZOWvzBJ4",
+   "google": "Secret Ink LLC"
+  },
+  "grow-inkk": {
+   "name": "Grow.inkk",
+   "placeId": "ChIJKU-QgCWfj4ARTju_CutM7NU",
+   "google": "Grow.inkk"
+  },
+  "beauty-by-le-muller": {
+   "name": "Beauty by Le Muller",
+   "placeId": "ChIJGWbl9dWC9oQRUMlAWzxWz1A",
+   "google": "Beauty by Le Muller | Bay Area Professional Hairstylist and Makeup Artist"
+  },
+  "a-dose-of-ink": {
+   "name": "A Dose of Ink",
+   "placeId": "ChIJa_B82Iefj4ARfru1FL-LSg8",
+   "google": "A Dose Of Ink"
+  },
+  "ink-by-wendy": {
+   "name": "Ink+ by Wendy",
+   "placeId": "ChIJ7xzK_oCfj4AR8mD8XWvelSs",
+   "google": "Ink+ By Wendy, Inc."
+  },
+  "beautifly-aesthetics": {
+   "name": "Beautifly Aesthetics",
+   "placeId": "ChIJ8zt1_5yfj4AR3fQoomu9_6o",
+   "google": "Beautifly Aesthetics | Microblading | Facials | Permanent Makeup | Lashes | Spa"
+  },
+  "kith-n-kin-barbershop": {
+   "name": "Kith N Kin Barbershop",
+   "placeId": "ChIJw3wbwVGfj4ARO9Y2LFwXg8w",
+   "google": "Kith n kin barbershop"
+  },
+  "cathys-clean-dogs": {
+   "name": "Cathy's Clean Dogs",
+   "placeId": "ChIJU1HGLeifj4AR16t3w_F_By0",
+   "google": "Cathy's Clean Dogs"
+  },
+  "paws-dog-camp": {
+   "name": "Paws Dog Camp",
+   "placeId": "ChIJv0lPGXmej4ARWKgV-S-HDcQ",
+   "google": "Paws Dog Camp"
+  },
+  "petboss-24": {
+   "name": "Petboss 24",
+   "placeId": null,
+   "unmatched": "Petboss 24 | 738 Marlin Ave, Foster City, CA 94404, USA"
+  },
+  "k9-master-dog-training": {
+   "name": "K9 Master Dog Training",
+   "placeId": "ChIJ1cs9xL17j4AR-vQMnBC9RW4",
+   "google": "K9 Master Dog Training"
+  },
+  "bee-positive-dog-training": {
+   "name": "Bee Positive Dog Training",
+   "placeId": "ChIJa4qv0UQtfQURT2tByiKYRnU",
+   "google": "Bee Positive Dog Training"
+  },
+  "peninsula-critter-care": {
+   "name": "Peninsula Critter Care",
+   "placeId": "ChIJ_V2BYnmej4ARsRU0NdVN7tI",
+   "google": "Peninsula Critter Care"
+  },
+  "point-fetch-match": {
+   "name": "Point Fetch Match",
+   "placeId": "ChIJ_Q0RlOGej4ARILuNthd-_20",
+   "google": "Point Fetch Match"
+  },
+  "studio-east-west": {
+   "name": "Studio East West",
+   "placeId": "ChIJsfaXL2Wej4ARhy3O9Y1ZCag",
+   "google": "Studio East West"
+  },
+  "fit-sf": {
+   "name": "FIT SF",
+   "placeId": "ChIJV5sUGWGej4ARpsEWlbCHggo",
+   "google": "FIT SF"
+  },
+  "marco-nascimento-brazilian-jiu-jitsu": {
+   "name": "Marco Nascimento Brazilian Jiu-Jitsu",
+   "placeId": null,
+   "unmatched": "Marco Nascimento Brazilian Jiu Jitsu | 1743 S El Camino Real, San Mateo, CA 94402, USA"
+  },
+  "charles-gracie-brazilian-jiu-jitsu-academy": {
+   "name": "Charles Gracie Brazilian Jiu-Jitsu Academy",
+   "placeId": "ChIJr6apBRqfj4ARY7xqCCsMD2c",
+   "google": "Charles Gracie Brazilian Jiu-Jitsu Academy - San Mateo"
+  },
+  "aikido-by-the-bay": {
+   "name": "Aikido By the Bay",
+   "placeId": "ChIJaaruYj-fj4ARTRhKn5lUFJs",
+   "google": "Aikido By the Bay"
+  },
+  "tat-wong-kung-fu-academy": {
+   "name": "Tat Wong Kung Fu Academy",
+   "placeId": "ChIJiyuolhWfj4ARkz00XMRh8Dc",
+   "google": "Flying Dragon Kung Fu Academy"
+  },
+  "kuk-sool-won-of-san-mateo": {
+   "name": "Kuk Sool Won of San Mateo",
+   "placeId": "ChIJt-Vmyv6ej4ARVaoB-pceJ3E",
+   "google": "Kuk Sool Won of San Mateo"
+  },
+  "core-taekwondo": {
+   "name": "Core Taekwondo",
+   "placeId": "ChIJGx4XqXqej4AReKt9OjUIU8k",
+   "google": "Core Taekwondo"
+  },
+  "pure-shaolin-kung-fu": {
+   "name": "Pure Shaolin Kung Fu",
+   "placeId": "ChIJ4z8OkEWfj4AR3b-EaxXcKII",
+   "google": "Pure Shaolin Kung Fu"
+  },
+  "progressive-kinetic-wellness": {
+   "name": "Progressive Kinetic Wellness",
+   "placeId": "ChIJraxhC6Cfj4AROLZDZ0qGMN0",
+   "google": "Progressive Kinetic Wellness | San Mateo Personal Trainer"
+  },
+  "grit-fit": {
+   "name": "GRIT FIT",
+   "placeId": "ChIJGcviWuadj4AR0GpHdq9ExSw",
+   "google": "GRIT FIT"
+  },
+  "peninsula-family-ymca": {
+   "name": "Peninsula Family YMCA",
+   "placeId": "ChIJtwMksvGej4ARfb4Zsype4Q4",
+   "google": "Peninsula Family YMCA"
+  },
+  "precision-fitness": {
+   "name": "Precision Fitness",
+   "placeId": "ChIJGcviWuadj4ARugjU29uM4NM",
+   "google": "Precision Fitness"
+  },
+  "curry-and-kabab": {
+   "name": "Curry & Kabab",
+   "placeId": "ChIJTV5S5-Ofj4ARcKTVvNe9Z7E",
+   "google": "Curry & Kabab - San Mateo"
+  },
+  "nelcis-kitchen": {
+   "name": "Nelci's Kitchen",
+   "placeId": "ChIJYf_SdHCej4ARmizgPvuXVx0",
+   "google": "Nelci’s Kitchen (Formerly Mr Pizza Man San Mateo)"
+  },
+  "claires-crunch-cake": {
+   "name": "Claire's Crunch Cake",
+   "placeId": "ChIJq6r2tNmdj4ARSJuuq9GMJ7g",
+   "google": "Claire's Crunch Cake"
+  },
+  "odd-one-out-tea": {
+   "name": "Odd One Out Tea",
+   "placeId": "ChIJYYnVigWfj4ARoVWKkH-rECo",
+   "google": "Odd One Out Tea San Mateo"
+  },
+  "rare-tea": {
+   "name": "Rare Tea",
+   "placeId": "ChIJ5zhBCUmfj4AReoC2HheiDnQ",
+   "google": "Rare Tea | San Mateo / Half Moon Bay"
+  },
+  "cajun-bowl": {
+   "name": "Cajun Bowl",
+   "placeId": "ChIJQbLqm0yfj4ARAp96SCrcv14",
+   "google": "Cajun Bowl San Mateo"
+  },
+  "sweet-artisan-creations": {
+   "name": "Sweet Artisan Creations",
+   "placeId": null,
+   "unmatched": "Sweet Artisan Creations - Custom Dessert Design Studio | 28th Ave, San Mateo, CA 94403, USA"
+  },
+  "la-cumbre-taqueria-san-mateo": {
+   "name": "La Cumbre Taqueria",
+   "placeId": "ChIJZ9Q8J3eej4AROFxbodDBg_c",
+   "google": "La Cumbre Taqueria SM"
+  },
+  "sapporo-rock-roll-sushi-san-mateo": {
+   "name": "Sapporo Rock & Roll Sushi",
+   "placeId": "ChIJT-x_Pbyfj4ARWOx5qh3aANw",
+   "google": "Sapporo Rock & Roll Sushi"
+  },
+  "no-5-house-san-mateo": {
+   "name": "No.5 House",
+   "placeId": "ChIJ30KkXSOfj4AR-BP4ArnxwN0",
+   "google": "No.5 House"
+  },
+  "taste-of-shaxian-san-mateo": {
+   "name": "Taste of Shaxian",
+   "placeId": "ChIJ9WHlHACfj4ARfU8L1ZrFfvo",
+   "google": "Taste of Shaxian"
+  },
+  "taki-nori-hand-roll-bar-san-mateo": {
+   "name": "Taki Nori Hand Roll Bar",
+   "placeId": "ChIJDVXtW-qfj4ARhosLW1QX71s",
+   "google": "Taki Nori - Hand Roll Bar"
+  },
+  "universe-nail-spa-san-mateo": {
+   "name": "Universe Nail Spa",
+   "placeId": "ChIJk6O5Lv-ej4ARwfi7zRhYSbs",
+   "google": "Universe Nail Spa"
+  },
+  "hey-yogurt": {
+   "name": "Hey Yogurt",
+   "placeId": "ChIJPdbKXACfj4AR7PxfJ1XgGN4",
+   "google": "Hey Yogurt"
+  },
+  "central-market": {
+   "name": "Central Market",
+   "placeId": "ChIJw7BNy3qej4ARVuPzX-Gy0Ds",
+   "google": "Central Market"
+  },
+  "magdalis-produce-store": {
+   "name": "Magdali's Produce Store",
+   "placeId": "ChIJJXgPXnaej4ARVEYe70NJklY",
+   "google": "Magdali's Produce Store"
+  },
+  "pirooz-market": {
+   "name": "Pirooz Market",
+   "placeId": "ChIJL08SjV6ej4ARIK9xIjIRY0c",
+   "google": "Pirooz Market Internationalفروشگاه موادغذایی ایرانی پیروز مارکت(Persian Grocery ), Middle Eastern and Mediterranean Market"
+  },
+  "neelam-islanders-market": {
+   "name": "Neelam Islanders Market",
+   "placeId": "ChIJG1vIXXaej4ARvga80jgtThY",
+   "google": "Neelam Islanders Market"
+  },
+  "everyday-flowers-and-balloons": {
+   "name": "Everyday Flowers and Balloons",
+   "placeId": null,
+   "unmatched": "Everyday Flowers and Balloons Inc. | 512 El Camino Real, Redwood City, CA 94063, USA"
+  },
+  "green-fashion-florist": {
+   "name": "Green Fashion Florist",
+   "placeId": "ChIJBciJj2Oej4ARlmjXQICJQdc",
+   "google": "Green Fashion Florist"
+  },
+  "marlove-flowers": {
+   "name": "Marlove Flowers",
+   "placeId": "ChIJffHi4USBhYARBkF6R1rYqMQ",
+   "google": "Marlove Flowers"
+  },
+  "san-mateo-florist": {
+   "name": "San Mateo Florist",
+   "placeId": "ChIJcYV3T1-fj4ARXy6dMTKUuR0",
+   "google": "San Mateo Florist"
+  },
+  "bay-home-and-linens": {
+   "name": "Bay Home & Linens",
+   "placeId": "ChIJDQwphHCej4ARBWOY1IE7aZQ",
+   "google": "Bay Home & Linens"
+  },
+  "better-source-liquidators": {
+   "name": "Better Source Liquidators",
+   "placeId": "ChIJpeJzwuiej4ARHJOPAiIkOck",
+   "google": "Better Source Liquidators"
+  },
+  "cuevas-home": {
+   "name": "Cuevas Home",
+   "placeId": "ChIJP0eZLrOfj4ARZW_YKP_TbhE",
+   "google": "Cuevas Home"
+  },
+  "toms-outdoor-furniture": {
+   "name": "Tom's Outdoor Furniture",
+   "placeId": "ChIJZwjqMACjj4ARjDdGH8i1_hg",
+   "google": "Tom's Outdoor Furniture"
+  },
+  "perfect-edge-cutlery": {
+   "name": "Perfect Edge Cutlery",
+   "placeId": "ChIJSfBIBV-ej4ARMk4DOsXcFsY",
+   "google": "Perfect Edge Cutlery"
+  },
+  "isis-candle-shop": {
+   "name": "Isis Candle Shop",
+   "placeId": "ChIJV80kiBafj4AR325_m44mMe4",
+   "google": "Isis Candle Shop"
+  },
+  "late-bloomers": {
+   "name": "Late Bloomers",
+   "placeId": "ChIJqbI8MnCej4ARyUoTHn2KWA4",
+   "google": "Late Bloomers"
+  },
+  "nouvelle-vogue-bridal-boutique": {
+   "name": "Nouvelle Vogue Bridal Boutique",
+   "placeId": "ChIJ-RWdQ3Cej4ARdSIzxwDpS8U",
+   "google": "Nouvelle Vogue | Bridal Boutique near San Francisco Bay Area"
+  },
+  "the-camp-couture": {
+   "name": "The Camp Couture",
+   "placeId": "ChIJJYNn-1eej4ARsR-Ij-YbqWk",
+   "google": "The Camp Couture"
+  },
+  "secrets-boutique": {
+   "name": "Secrets Boutique",
+   "placeId": "ChIJExDAFPmej4ARq1Fx-495nPs",
+   "google": "Secrets Boutique - San Mateo"
+  },
+  "san-mateo-smoke-shop": {
+   "name": "San Mateo Smoke Shop",
+   "placeId": "ChIJa_jzT_-fj4AR7YuNUhj5Cwc",
+   "google": "San Mateo smoke shop"
+  },
+  "the-cave-smoke-shop": {
+   "name": "The Cave Smoke Shop",
+   "placeId": null,
+   "unmatched": "San Mateo smoke shop | 26 E 25th Ave, San Mateo, CA 94403, USA"
+  },
+  "goodwill-store-and-donation-center": {
+   "name": "Goodwill Store & Donation Center",
+   "placeId": "ChIJeQSrSvmej4ARtqae9uJFDvQ",
+   "google": "Goodwill Store & Donation Center"
+  },
+  "st-vincent-de-paul-thrift-store": {
+   "name": "St. Vincent de Paul Thrift Store",
+   "placeId": "ChIJf7nCIHeej4AR1sNRh2yFr0E",
+   "google": "St. Vincent de Paul (SVDP) Thrift Store"
+  },
+  "marina-food-market": {
+   "name": "Marina Food Market",
+   "placeId": "ChIJRRfPlCCfj4ARdq1b6662mEI",
+   "google": "Marina Food Market"
+  },
+  "diddams-party-and-toy-store": {
+   "name": "Diddams Party & Toy Store",
+   "placeId": "ChIJWTfwdViej4ARIfLGbbqocZw",
+   "google": "Diddams Party & Toy Store"
+  },
+  "the-futon-shop": {
+   "name": "The Futon Shop",
+   "placeId": "ChIJuZDOLF-ej4ARy_C-ZrpGf1s",
+   "google": "The Futon Shop"
+  },
+  "ana-furniture": {
+   "name": "Ana Furniture",
+   "placeId": "ChIJjfPd1gKfj4ARBw0jkTlvN9o",
+   "google": "Ana Furniture - San Mateo"
+  },
+  "the-collective-powered-by-celery": {
+   "name": "The Collective powered by Celery",
+   "placeId": "ChIJPfvQjlCfj4ARo1axOtqC95s",
+   "google": "Celery Retail"
+  },
+  "fresh-apparel": {
+   "name": "Fresh Apparel",
+   "placeId": null,
+   "unmatched": "Fresh Apparel | 270 E Sailer Dr, San Mateo, CA 94403, USA"
+  },
+  "maven-lane-financial-group": {
+   "name": "Maven Lane Financial Group",
+   "placeId": "ChIJAc3szfGej4ARljrMirg7qeI",
+   "google": "Maven Lane Financial Group"
+  },
+  "avenue-25-gallery": {
+   "name": "Avenue 25 Gallery",
+   "placeId": "ChIJPZVu1Zmfj4ARjTCTtYJW0c4",
+   "google": "Avenue 25 Gallery"
+  },
+  "bayside-performing-arts-center": {
+   "name": "Bayside Performing Arts Center",
+   "placeId": "ChIJgceo05Oej4ARkhkq1Fso5Vw",
+   "google": "Bayside Performing Arts Center"
+  },
+  "galine-frye-fitting-frangos": {
+   "name": "Galine, Frye, Fitting & Frangos, LLP",
+   "placeId": "ChIJudMbaFuej4ARB423FO-JSF0",
+   "google": "GFF&F - Galine, Frye, Fitting & Frangos, LLP"
+  },
+  "self-help-for-the-elderly": {
+   "name": "Self-Help for the Elderly",
+   "placeId": "ChIJJ7k05G-ej4ARRQ7CKYtwmDw",
+   "google": "Self Help For the Elderly"
+  },
+  "brothers-cafe": {
+   "name": "Brothers Cafe",
+   "placeId": "ChIJEZSWcoqfj4ARRh1KStl4i3s",
+   "google": "Brothers Cafe"
+  },
+  "krembo-baked-goods": {
+   "name": "Krembo Baked Goods",
+   "placeId": "ChIJ6ymF-Nefj4AROTtYA6NiiWg",
+   "google": "Krembo Baked Goods"
+  },
+  "raymonds-sourdough-bread": {
+   "name": "Raymond's Sourdough Bread",
+   "placeId": "ChIJQSJIMgCfj4AR0nYPRKZ5Lwg",
+   "google": "Raymond’s Sourdough Bread"
+  },
+  "harmony-east-wellness-acupuncture": {
+   "name": "Harmony East Wellness & Acupuncture",
+   "placeId": "ChIJqzLjZ_afj4ARpcOL05fUgro",
+   "google": "Harmony East Wellness & Acupuncture"
+  },
+  "kaname-chiropractic": {
+   "name": "Kaname Chiropractic San Mateo",
+   "placeId": "ChIJrVurH1Wjj4AR6YRVuauGUCA",
+   "google": "Kaname Chiropractic San Mateo"
+  },
+  "level-up-performance-training": {
+   "name": "Level Up Performance Training",
+   "placeId": null,
+   "unmatched": "no result"
+  },
+  "quarneri-chiropractic": {
+   "name": "Quarneri Chiropractic",
+   "placeId": "ChIJaQ1P-luej4AR9K3RmmFr1p8",
+   "google": "Quarneri Chiropractic | Spine & Disc Center"
+  },
+  "dana-wellness-medical-aesthetics": {
+   "name": "danA Wellness Medical Aesthetics",
+   "placeId": "ChIJJ2ALim2fj4ARsXQJWK6hy2E",
+   "google": "danA Wellness Medical Aesthetics"
+  },
+  "the-athletes-edge": {
+   "name": "The Athlete's Edge",
+   "placeId": "ChIJC5-r64-ej4ARL69WUlYdU5U",
+   "google": "The Athlete's Edge"
+  },
+  "downtown-san-mateo-farmers-market": {
+   "name": "Downtown San Mateo Farmers' Market",
+   "placeId": null,
+   "unmatched": "San Mateo Farmers' Market | 1700 W Hillsdale Blvd, San Mateo, CA 94402, USA"
+  },
+  "victor-shoe-repair": {
+   "name": "Victor Shoe Repair",
+   "placeId": "ChIJqdYPj3Cej4ARPboFt8jvd30",
+   "google": "Victor's Shoe Repair"
+  },
+  "bons-hair-design": {
+   "name": "Bon's Hair Design",
+   "placeId": "ChIJAUS3bhqfj4ARSX8ak7R2pm0",
+   "google": "Bon's Hair Design"
+  },
+  "shear-design": {
+   "name": "Shear Design",
+   "placeId": "ChIJiyQZNLOfj4AR_JNYmeruZlk",
+   "google": "Shear Design"
+  },
+  "dons-salon": {
+   "name": "Don's Salon",
+   "placeId": "ChIJV1wrkhafj4AR0729jvTm7Co",
+   "google": "Don's Salon"
+  },
+  "prettie-hair": {
+   "name": "Prettie Hair",
+   "placeId": "ChIJR1sGtnGej4AR8QhdCzOro3c",
+   "google": "Prettie Hair"
+  },
+  "le-juin-beauty-spa": {
+   "name": "Le Juin Beauty Spa",
+   "placeId": "ChIJ5Qh2qXqej4ARTQ3TM-8MLxk",
+   "google": "Le Juin Beauty Spa"
+  }
+ }
+}
