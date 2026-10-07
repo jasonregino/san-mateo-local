@@ -1356,11 +1356,6 @@
    "placeId": "ChIJhdkUarafj4ARRfTuT_0JMBw",
    "google": "Titanic Smoke Shop"
   },
-  "aki-auto-service": {
-   "name": "Aki Auto Service",
-   "placeId": "ChIJQZOqBHqej4ARLnP1nfhdcxg",
-   "google": "Aki Auto Services & Body Shop"
-  },
   "al-carbon": {
    "name": "Al Carbon",
    "placeId": "ChIJSQJ_CHuej4ARezc8vH_W3Mc",
@@ -1375,11 +1370,6 @@
    "name": "Parkside Optometry",
    "placeId": "ChIJIb0BLO-ej4AROmokQLrlRM0",
    "google": "Parkside Optometry"
-  },
-  "parkside-plaza-cleaners": {
-   "name": "Parkside Plaza Cleaners",
-   "placeId": "ChIJp0K2keiej4ARbEQC4D6iUt4",
-   "google": "Parkside Plaza Cleaners"
   },
   "champions-martial-arts": {
    "name": "Champions Martial Arts",
@@ -1430,11 +1420,6 @@
    "name": "Pho Little Saigon",
    "placeId": "ChIJLZ-FlCCfj4ARa-WeUMsA_kE",
    "google": "Pho Little Saigon"
-  },
-  "mr-green-bubble": {
-   "name": "Mr. Green Bubble",
-   "placeId": "ChIJv4Ep6yCfj4ARgHb32_9NMW4",
-   "google": "Mr. Green Bubble | San Mateo"
   },
   "hot-wok-cafe": {
    "name": "Hot Wok Cafe",
@@ -1615,11 +1600,6 @@
    "name": "Golden Bell Donuts",
    "placeId": "ChIJYabONeifj4ARplSs65p9Gu8",
    "google": "Golden Bell Donuts"
-  },
-  "donut-delite": {
-   "name": "Donut Delite",
-   "placeId": "ChIJ3yl3znCej4ARGoRsIJbg98I",
-   "google": "Donut Delite"
   },
   "basecamp-fitness": {
    "name": "Basecamp Fitness",
@@ -2036,11 +2016,6 @@
    "placeId": "ChIJ1zZ5e3Cej4ARhbCurqlaTno",
    "google": "Icicles San Mateo"
   },
-  "luluyum": {
-   "name": "LuluYum",
-   "placeId": "ChIJPY6GiQ2fj4ARmNfhEoODpJo",
-   "google": "Luluyum"
-  },
   "tong-sui": {
    "name": "Tong Sui",
    "placeId": "ChIJkc4PgMGfj4ARLqAROaUFcRg",
@@ -2050,11 +2025,6 @@
    "name": "Sweet Moment",
    "placeId": "ChIJV5saq2Kfj4ARHmn54fqyDhc",
    "google": "Sweet Moment"
-  },
-  "tiger-tea-juice": {
-   "name": "Tiger Tea & Juice",
-   "placeId": "ChIJw1I5dqCfj4ARjk6tgk-bdSw",
-   "google": "Tiger Tea & Juice San Mateo"
   },
   "molly-tea": {
    "name": "Molly Tea",
@@ -2210,11 +2180,6 @@
    "name": "Happy Lamb Hot Pot",
    "placeId": "ChIJ01Fn83Cej4ARB9X33o7q96k",
    "google": "Happy Lamb Hot Pot, San Mateo 快乐小羊"
-  },
-  "kai-kai-dim-sum-san-mateo": {
-   "name": "Kai Kai Dim Sum",
-   "placeId": "ChIJk3mJGCCfj4ARAtq2PZclKIw",
-   "google": "Kai Kai Dim Sum"
   },
   "little-hunan-restaurant-san-mateo": {
    "name": "Little Hunan Restaurant",
@@ -2535,11 +2500,6 @@
    "name": "The Village Gym",
    "placeId": "ChIJ3VIAUKKfj4ARabG-z85IT9Y",
    "google": "The Village Gym"
-  },
-  "fitness-19-san-mateo": {
-   "name": "Fitness 19",
-   "placeId": "ChIJ_Winrv2ej4ARPD9YpG7ak-E",
-   "google": "Fitness 19"
   },
   "the-fix-personal-training-studio-san-mateo": {
    "name": "The Fix Personal Training Studio",
@@ -2886,11 +2846,6 @@
    "placeId": "ChIJ6ylIr4Cej4AR58hgx-IfhU0",
    "google": "Peony Garden Massage"
   },
-  "mellow-spa-san-mateo": {
-   "name": "Mellow SPA",
-   "placeId": "ChIJ2btkefCfj4ARorORMH2dhVE",
-   "google": "Mellow SPA"
-  },
   "bay-area-lymphatic-massage-san-mateo": {
    "name": "Bay Area Lymphatic & Massage",
    "placeId": "ChIJGasvzmSej4ARKkYiFDnY7IQ",
@@ -2915,11 +2870,6 @@
    "name": "Water Lounge Spa in San Mateo",
    "placeId": "ChIJUxOwrf6ej4ARLDiEVxCp2Es",
    "google": "Water Lounge Spa in San Mateo"
-  },
-  "wonderful-massage-san-mateo": {
-   "name": "Wonderful Massage",
-   "placeId": "ChIJsfM5M_mej4ARi9zzA5zVmBE",
-   "google": "Wonderful Massage"
   },
   "l-r-wellness-center-san-mateo": {
    "name": "L&R Wellness Center",
@@ -2950,11 +2900,6 @@
    "name": "Golden eagle spa",
    "placeId": "ChIJvUL0Q5mfj4AR5FHkuVDiDxk",
    "google": "Golden eagle spa"
-  },
-  "european-touch-pro-spa-san-mateo": {
-   "name": "European Touch Pro Spa",
-   "placeId": "ChIJEaIz0xWfj4ARko0gmgx_9-A",
-   "google": "European Touch Pro Spa"
   },
   "dream-butterfly-spa-san-mateo": {
    "name": "Dream Butterfly Spa",
@@ -3350,11 +3295,6 @@
    "name": "Bayside Family Dentistry Helen Hong DMD",
    "placeId": "ChIJi8QG6P2ej4ARUNeWhztJcyo",
    "google": "Bayside Family Dentistry Helen Hong DMD"
-  },
-  "dr-jason-lipton-dds-san-mateo": {
-   "name": "Dr. Jason Lipton, DDS",
-   "placeId": "ChIJcXCazt-dj4ARZmgFm4VXXMY",
-   "google": "Dr. Jason Lipton, DDS"
   },
   "spitz-davis-pediatric-dentistry-san-mateo": {
    "name": "Spitz & Davis Pediatric Dentistry",
