@@ -49,6 +49,15 @@ function fmtDay(ms) {
   });
 }
 
+// "2026-10-13 00:00:00" (San Mateo local time) -> "Tue, Oct 13", with no timezone shift.
+function localDay(s) {
+  const m = String(s || '').match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!m) return '';
+  return new Date(Date.UTC(+m[1], +m[2] - 1, +m[3], 12)).toLocaleDateString('en-US', {
+    weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC',
+  });
+}
+
 // --- Recent site posts, from the committed sitemap + committed post HTML ------------
 function pageMeta(slug) {
   let html = '';
@@ -95,7 +104,11 @@ async function dsmaEvents() {
   for (const ev of (data.events || [])) {
     const start = new Date(String(ev.start_date || '').replace(' ', 'T')).getTime();
     if (!start || start < now || start > horizon) continue;
-    out.push({ title: decodeEntities(ev.title), when: start, url: ev.url || '' });
+    // DSMA's start_date is San Mateo wall-clock time ("2026-10-13 00:00:00"), but this
+    // runs on a UTC machine, so `start` is off by 7-8 hours and fmtDay(start) labeled
+    // midnight events a day EARLY ("Mon, Oct 12" for a Tuesday). Label the day from
+    // the date string itself instead. (Fixed 2026-10-08.)
+    out.push({ title: decodeEntities(ev.title), when: start, day: localDay(ev.start_date), url: ev.url || '' });
   }
   out.sort((a, b) => a.when - b.when);
   const seen = new Set(), deduped = [];   // a recurring event lists once per day; keep the soonest
@@ -151,7 +164,7 @@ function buildBody({ posts, events, news, council }) {
     L.push('## Downtown happenings');
     for (const e of events) {
       const label = e.url ? `[${e.title}](${e.url})` : e.title;
-      L.push(`- ${fmtDay(e.when)}: ${label}`);
+      L.push(`- ${e.day || fmtDay(e.when)}: ${label}`);
     }
     L.push('');
   }
