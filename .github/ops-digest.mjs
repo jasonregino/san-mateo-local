@@ -26,6 +26,7 @@ const SECTIONS = [
   { label: 'coverage-scan', heading: 'Missing businesses to review (coverage scan)' },
   { label: 'this-weekend-freshness', heading: 'Homepage "This Weekend" lead' },
   { label: 'local-buzz-freshness', heading: 'Local Buzz needs events' },
+  { label: 'events-freshness', heading: 'Events page: missing or running thin' },
 ];
 
 async function openIssues(label) {

@@ -1,0 +1,29 @@
+name: Events freshness check
+
+# Runs on GitHub's servers every Monday. Counts upcoming events on the deployed Events
+# page and lists DSMA calendar events we don't have yet, in ONE issue labeled
+# events-freshness that the Ops Digest emails to Jason. It NEVER edits the site.
+# Past events hide themselves on the live page (data-end), so this only covers the
+# "list running thin / missing events" half.
+
+on:
+  schedule:
+    - cron: '43 15 * * 1'   # Mondays 15:43 UTC (~8:43am Pacific), before the 9:15 Ops Digest
+  workflow_dispatch: {}       # lets Jason run it on demand from the Actions tab
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check Events freshness
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/events-freshness.mjs
