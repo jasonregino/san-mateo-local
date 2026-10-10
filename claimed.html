@@ -12,18 +12,18 @@
     gtag('js', new Date());
     (function(){var _i=false;try{var _p=new URLSearchParams(location.search);if(_p.get('internal')==='1')localStorage.setItem('sml-internal','1');if(_p.get('internal')==='0')localStorage.removeItem('sml-internal');_i=localStorage.getItem('sml-internal')==='1';}catch(e){}if(_i)gtag('set',{traffic_type:'internal'});gtag('config','G-ZBBC09ZJZQ',{});})();
   </script>
-  <title>You're in | San Mateo Local</title>
+  <title>Claim received | San Mateo Local</title>
   <meta name="description" content="Your San Mateo Local listing claim was received. Here's what happens next." />
   <link rel="canonical" href="https://sanmateolocal.com/claimed.html" />
   <meta name="theme-color" content="#17323A" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="San Mateo Local" />
-  <meta property="og:title" content="You're in | San Mateo Local" />
+  <meta property="og:title" content="Claim received | San Mateo Local" />
   <meta property="og:description" content="Your San Mateo Local listing claim was received. Here's what happens next." />
   <meta property="og:url" content="https://sanmateolocal.com/claimed.html" />
   <meta property="og:image" content="https://sanmateolocal.com/images/central-park-japanese-garden.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="You're in | San Mateo Local" />
+  <meta name="twitter:title" content="Claim received | San Mateo Local" />
   <meta name="twitter:description" content="Your San Mateo Local listing claim was received. Here's what happens next." />
   <meta name="twitter:image" content="https://sanmateolocal.com/images/central-park-japanese-garden.jpg" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -203,20 +203,20 @@
     </nav>
     <div class="dateline">A born-and-raised local's guide to San Mateo, California</div>
   </header>
-  <section class="cat-hero" style="background-image:url('/images/sml-downtown-life.jpg');background-position:center 55%;min-height:260px"><div class="wrap cat-hero-in">
-    <span class="label">Claim received</span>
-    <h1>You're in!</h1>
-    <p class="cat-hero-lead" id="thanks">Thanks for claiming your business on San Mateo Local.</p>
+  <section class="biz-hero"><div class="biz-hero-in">
+    <a class="biz-hero-back" href="/for-business-owners.html">&larr; For business owners</a>
+    <div class="biz-hero-kicker">Claim received &middot; Not verified yet</div>
+    <h1>We got your claim</h1>
+    <p class="biz-hero-sub" id="thanks">Thanks for claiming your business on San Mateo Local. We'll check the details and get back to you.</p>
   </div></section>
   <style>
-    .cat-hero { position:relative; min-height:44vh; display:flex; align-items:flex-end; background-size:cover; background-position:center; background-color:var(--ink); }
-    .cat-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(24,17,12,.88) 0%, rgba(24,17,12,.32) 55%, rgba(24,17,12,.55) 100%); }
-    .cat-hero-in { position:relative; z-index:2; padding:2.6rem 0 2.8rem; color:#fff; }
-    .cat-hero-in .back { font-size:0.72rem; font-weight:600; letter-spacing:0.13em; text-transform:uppercase; color:rgba(255,255,255,.82); display:inline-block; margin-bottom:0.5rem; }
-    .cat-hero-in .label { display:block; color:rgba(255,255,255,.92); margin-bottom:0.2rem; }
-    .cat-hero-in h1 { font-size:clamp(2.8rem,6.8vw,4.6rem); font-weight:600; line-height:1.04; margin:0.3rem 0 0.7rem; color:#fff; }
-    .cat-hero-lead { color:rgba(255,255,255,.9); font-size:1.14rem; max-width:42rem; margin:0; }
-    .cat-hero-in{padding-left:1.25rem;padding-right:1.25rem;box-sizing:border-box;width:100%;max-width:46rem;margin:0 auto}
+    .biz-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--bay-deep,#0C5B62) 0%,var(--bay,#10717A) 55%,var(--sage,#3C5A43) 100%);border-bottom:1.5px solid var(--ink)}
+    .biz-hero::after{content:'';position:absolute;right:-70px;top:-70px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.15),transparent 70%);pointer-events:none}
+    .biz-hero-in{position:relative;z-index:1;max-width:46rem;margin:0 auto;padding:1.2rem 1.25rem 1.9rem;box-sizing:border-box}
+    .biz-hero-back{display:inline-flex;align-items:center;min-height:40px;font-size:.82rem;font-weight:700;color:#EAF6F2;opacity:.92}
+    .biz-hero-kicker{margin-top:.6rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#CFF0E8}
+    .biz-hero h1{color:#fff;font-size:clamp(2.2rem,6vw,3.2rem);margin:.2rem 0 .5rem;text-shadow:0 2px 14px rgba(0,0,0,.3)}
+    .biz-hero-sub{color:#EAF6F2;font-size:1.05rem;line-height:1.5;margin:0;max-width:38rem}
     .cl-wrap{max-width:46rem;margin:0 auto;padding:0 1.25rem}
     .cl-card{margin:1.6rem 0 0;padding:1.4rem 1.6rem;background:var(--paper-2);border:1.5px solid var(--line);border-radius:12px}
     .cl-card h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;line-height:1.2;margin:0 0 .6rem}
@@ -278,7 +278,7 @@
   (function(){
     var q=new URLSearchParams(location.search);
     var name=(q.get('organization')||q.get('company_name')||q.get('business')||'').trim();
-    if(name){document.getElementById('thanks').textContent='Thanks for claiming '+name+' on San Mateo Local.';}
+    if(name){document.getElementById('thanks').textContent='Thanks for claiming '+name+' on San Mateo Local. We\'ll check the details and get back to you.';}
     // Pick the sample page that matches their business. Works from ?demo=, or from the
     // category / directory_type fields the claim form carries, if GHL passes them back.
     var pick=(q.get('demo')||'').toLowerCase();
