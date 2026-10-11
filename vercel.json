@@ -6,6 +6,11 @@
       "permanent": false
     },
     {
+      "source": "/qr",
+      "destination": "/?utm_source=qr&utm_medium=print&utm_campaign=qr_code",
+      "permanent": false
+    },
+    {
       "source": "/blog.html",
       "destination": "/guides.html",
       "permanent": true
