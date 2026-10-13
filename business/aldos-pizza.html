@@ -127,6 +127,17 @@
     .f-nav { display:flex; flex-direction:column; gap:0.4rem; }
     .f-nav a { font-size:0.92rem; color:var(--ink-soft); }
     .f-copy { width:100%; border-top:1px solid var(--line); margin-top:1.3rem; padding-top:1.3rem; font-size:0.8rem; color:var(--ink-soft); }
+    .story-card { display:flex; gap:1rem; align-items:stretch; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--clay); border-radius:12px; overflow:hidden; color:var(--ink); text-decoration:none; }
+    .story-card + .story-card { margin-top:0.8rem; }
+    .story-card img { width:38%; max-width:220px; object-fit:cover; display:block; }
+    .story-txt { padding:1rem 1.1rem; display:flex; flex-direction:column; gap:0.3rem; }
+    .story-card img + .story-txt { padding-left:0; }
+    .story-k { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+    .story-txt strong { font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; line-height:1.2; }
+    .story-d { font-size:0.92rem; color:var(--ink-soft); line-height:1.45; }
+    .story-go { font-size:0.9rem; font-weight:700; color:var(--clay-deep); margin-top:auto; }
+    .story-card:hover { border-color:var(--clay); }
+    @media (max-width:560px){ .story-card { flex-direction:column; } .story-card img { width:100%; max-width:none; height:180px; } .story-card img + .story-txt { padding:0 1.1rem 1.1rem; } }
   </style>
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
@@ -168,6 +179,11 @@
     <section class="blk">
       <h2>About Aldo's Pizza</h2>
       <p>San Mateo's oldest pizzeria, serving Shoreview since 1958, known for a thin, crispy pie and old-school specialties. Nearly closed this summer; the neighborhood is keeping it open, so go grab a pie while you still can.</p>
+    </section>
+
+    <section class="blk">
+      <h2>Read our story</h2>
+      <a class="story-card" href="/aldos-pizza-san-mateo.html"><span class="story-txt"><span class="story-k">Our story</span><strong>Aldo's Pizza: 68 Years, Three Owners, and a Neighborhood Keeping It Alive</strong><span class="story-d">San Mateo's oldest pizzeria has fed Shoreview families since 1958. This summer it came close to closing, and the neighborhood is the reason it's still open.</span><span class="story-go">Read the story &rarr;</span></span></a>
     </section>
 
     <section class="blk"><h2>Good to know</h2><div class="chips"><span class="chip">Pizza</span><span class="chip">Shoreview</span><span class="chip">Mid-range</span></div></section>
