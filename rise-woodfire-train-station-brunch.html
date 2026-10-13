@@ -143,6 +143,9 @@
   .post-gallery img { width:100%; height:auto; display:block; transition:transform .35s ease; }
   .post-gallery a:hover img { transform:scale(1.04); }
   .post-gallery figcaption { line-height:1.4; margin-top:0.4rem; font-size:0.84rem; color:var(--ink-soft); }
+  .post-gallery.gal-small { width:auto; margin-left:0; transform:none; }
+  .post-gallery.gal-small .gal-grid { columns:2; }
+  @media (max-width:560px){ .post-gallery.gal-small .gal-grid { columns:1; } }
   .media-credit { font-size:0.84rem; color:var(--ink-soft); margin-top:0.6rem; font-style:italic; }
   @media (max-width:1000px){ .post-gallery .gal-grid { columns:2; } }
   @media (max-width:560px){ .post-gallery { width:100%; margin-left:0; transform:none; } .post-gallery .gal-grid { columns:2; column-gap:0.6rem; } .post-gallery figure { margin-bottom:0.6rem; } }
@@ -233,7 +236,7 @@
         </figure>
       </div>
     </div>
-    <div class="post-gallery">
+    <div class="post-gallery gal-small">
       <h2>From the brunch menu</h2>
       <div class="gal-grid">
         <figure><a href="/images/rise/rise-shine-chilaquiles.jpg" target="_blank" rel="noopener"><img src="/images/rise/rise-shine-chilaquiles.jpg" alt="Chilaquiles topped with eggs, avocado, black beans and sour cream" loading="lazy" /></a><figcaption>Chef Domingo Segovia's chilaquiles. Photo: Rise Woodfire</figcaption></figure>
