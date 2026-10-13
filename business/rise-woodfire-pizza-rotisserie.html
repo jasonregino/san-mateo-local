@@ -137,17 +137,16 @@
     .biz-video figure.tall .vid-wrap { padding-top:177.78%; }
     .biz-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
     .biz-video figcaption { color:var(--ink-soft); font-size:0.9rem; margin-top:0.45rem; }
-    .story-card { display:flex; gap:1rem; align-items:stretch; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--clay); border-radius:12px; overflow:hidden; color:var(--ink); text-decoration:none; }
+    .story-card { display:flex; flex-direction:column; align-items:stretch; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--clay); border-radius:12px; overflow:hidden; color:var(--ink); text-decoration:none; }
     .story-card + .story-card { margin-top:0.8rem; }
-    .story-card img { width:38%; max-width:220px; object-fit:cover; display:block; }
+    .story-card img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; }
     .story-txt { padding:1rem 1.1rem; display:flex; flex-direction:column; gap:0.3rem; }
-    .story-card img + .story-txt { padding-left:0; }
+    .story-card img + .story-txt { padding-top:0.9rem; }
     .story-k { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
     .story-txt strong { font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; line-height:1.2; }
     .story-d { font-size:0.92rem; color:var(--ink-soft); line-height:1.45; }
     .story-go { font-size:0.9rem; font-weight:700; color:var(--clay-deep); margin-top:auto; }
     .story-card:hover { border-color:var(--clay); }
-    @media (max-width:560px){ .story-card { flex-direction:column; } .story-card img { width:100%; max-width:none; height:180px; } .story-card img + .story-txt { padding:0 1.1rem 1.1rem; } }
   </style>
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
