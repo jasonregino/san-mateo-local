@@ -145,7 +145,19 @@ async function rssItems(url, limit) {
 }
 
 // --- Assemble the issue in the proven format (## headings, never bold) --------------
-function buildBody({ posts, events, news, council }) {
+// Local Buzz specials (deals, happy hours, menus, music) that are live this week, from the
+// committed data/buzz.json. Free editorial pick of what's on Local Buzz; nobody pays to be
+// in the newsletter itself (Jason, 2026-10-15). Chains are never in buzz.json.
+function buzzSpecials() {
+  let items = [];
+  try { const b = JSON.parse(readFileSync('data/buzz.json', 'utf8')); items = Array.isArray(b) ? b : (b.items || []); } catch { return []; }
+  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
+  const TYPES = new Set(['Deal', 'Happy Hour', 'Menu', 'Live Music']);
+  return items.filter(i => TYPES.has(i.type) && (!i.until || i.until >= today) && i.business && i.blurb).slice(0, 6)
+    .map(i => ({ business: i.business, blurb: i.blurb, url: i.url && i.url.startsWith('/') ? `${SITE}${i.url}` : `${SITE}/local-buzz.html` }));
+}
+
+function buildBody({ posts, events, news, council, buzz = [] }) {
   const L = [];
   L.push('Hi there,', '');
   L.push("Here's what's worth knowing around San Mateo this week.", '');
@@ -168,12 +180,18 @@ function buildBody({ posts, events, news, council }) {
     }
     L.push('');
   }
+  if (buzz.length) {
+    L.push('## Local Buzz: deals and specials');
+    for (const b of buzz) L.push(`- [${b.business}](${b.url}): ${b.blurb}`);
+    L.push(`- [See everything on Local Buzz](${SITE}/local-buzz.html)`);
+    L.push('');
+  }
   if (posts.length) {
     L.push('## New on the site');
     for (const p of posts) L.push(`- [${p.title}](${p.url})${p.dek ? `. ${p.dek}` : ''}`);
     L.push('');
   }
-  if (!news.length && !council.length && !events.length && !posts.length) {
+  if (!news.length && !council.length && !events.length && !posts.length && !buzz.length) {
     L.push('Light week, nothing major to flag. Back next Friday.', '');
   }
 
@@ -203,7 +221,8 @@ const [events, news, council] = await Promise.all([
 ]);
 
 const subject = buildSubject({ news, events, posts });
-const body = buildBody({ posts, events, news, council });
+const buzz = buzzSpecials();
+const body = buildBody({ posts, events, news, council, buzz });
 
 console.log(`Assembled: ${posts.length} post(s), ${events.length} event(s), ${news.length} news item(s), ${council.length} council item(s).`);
 
