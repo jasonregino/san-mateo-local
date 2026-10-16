@@ -5,7 +5,7 @@
 //   - skip claimed (verified) businesses and public/civic pages.
 // GA4 auth: keyless Workload Identity Federation (no key file exists), read-only.
 // Contacts come from .github/warm-lookup.json (written by build-business-pages --all; public fields only).
-// WARM_SKIP (repo SECRET, masked in logs; this repo and its logs are public). Master copy: data/warm-skip.txt (gitignored); update it, then `gh secret set WARM_SKIP < data/warm-skip.txt`.: comma-separated listing ids already contacted.
+// WARM_SKIP (repo SECRET, masked in logs; this repo and its logs are public). Master copy: data/warm-skip.json (gitignored, backed up by sync.sh); see its _note for the update command.: comma-separated listing ids already contacted.
 // Emails Jason via a throwaway Buttondown draft preview (same as the ops digest). Never touches the site.
 import { readFileSync } from 'node:fs';
 
