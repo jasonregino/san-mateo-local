@@ -70,7 +70,7 @@ if (!top.length) L.push('No new warm leads this week. Nothing to send.');
 top.forEach((o, i) => {
   const l = o.l, fresh = o.lastDate >= weekAgo ? ' · **active this week**' : '';
   L.push(`**${i + 1}. ${l.name}** (${l.cat})`);
-  L.push(`${o.days >= 2 ? `Came back on ${o.days} different days` : `One visit, ${Math.round(o.seconds)} seconds of reading`} · last visit ${nice(o.lastDate)} · ${o.views} views${fresh}`);
+  L.push(`${o.days >= 2 ? `Came back on ${o.days} different days` : `One visit, ${Math.round(o.seconds)} seconds of reading`} · last visit ${nice(o.lastDate)} · ${o.views} view${o.views === 1 ? '' : 's'}${fresh}`);
   const c = [l.website && `[Website](${l.website})`, l.phone, l.ig && `Instagram: ${l.ig}`].filter(Boolean).join(' · ');
   L.push(`[Their page](https://sanmateolocal.com/business/${l.id}.html)${c ? ' · ' + c : ' · no contact info on file'}`);
   L.push('');
