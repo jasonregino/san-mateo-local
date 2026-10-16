@@ -1,0 +1,37 @@
+name: Friday warm leads
+
+# Every Friday morning: pulls the last 4 weeks of business-page traffic from GA4 (keyless,
+# read-only), ranks unclaimed businesses people spent real time on, and emails Jason the
+# shortlist to send claim invites through the day. Never edits the site.
+# Auth: Workload Identity Federation. No key file exists; Google only trusts this repo.
+
+on:
+  schedule:
+    - cron: '7 15 * * 5'   # Fridays 15:07 UTC (~8am Pacific). Weekday only, no day-of-month.
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  leads:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/916326327666/locations/global/workloadIdentityPools/github/providers/san-mateo-local
+          service_account: sml-ga4-reader@project-904c9dfe-0f36-4746-892.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/analytics.readonly
+      - name: Build shortlist + email Jason
+        env:
+          GA_TOKEN: ${{ steps.auth.outputs.access_token }}
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          WARM_SKIP: ${{ secrets.WARM_SKIP }}
+        run: node .github/warm-leads.mjs
