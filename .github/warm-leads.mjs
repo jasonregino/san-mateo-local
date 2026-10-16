@@ -5,7 +5,7 @@
 //   - skip claimed (verified) businesses and public/civic pages.
 // GA4 auth: keyless Workload Identity Federation (no key file exists), read-only.
 // Contacts come from .github/warm-lookup.json (written by build-business-pages --all; public fields only).
-// WARM_SKIP (repo SECRET, masked in logs; this repo and its logs are public): comma-separated listing ids already contacted.
+// WARM_SKIP (repo SECRET, masked in logs; this repo and its logs are public). Master copy: data/warm-skip.txt (gitignored); update it, then `gh secret set WARM_SKIP < data/warm-skip.txt`.: comma-separated listing ids already contacted.
 // Emails Jason via a throwaway Buttondown draft preview (same as the ops digest). Never touches the site.
 import { readFileSync } from 'node:fs';
 
@@ -69,8 +69,8 @@ L.push('');
 if (!top.length) L.push('No new warm leads this week. Nothing to send.');
 top.forEach((o, i) => {
   const l = o.l, fresh = o.lastDate >= weekAgo ? ' · **active this week**' : '';
-  L.push(`**${i + 1}. ${l.name}** (${l.cat})`);
-  L.push(`${o.days >= 2 ? `Came back on ${o.days} different days` : `One visit, ${Math.round(o.seconds)} seconds of reading`} · last visit ${nice(o.lastDate)} · ${o.views} view${o.views === 1 ? '' : 's'}${fresh}`);
+  L.push(`**${i + 1}. ${l.name}** (${l.cat})  `);
+  L.push(`${o.days >= 2 ? `Came back on ${o.days} different days` : `One visit, ${Math.round(o.seconds)} seconds of reading`} · last visit ${nice(o.lastDate)} · ${o.views} view${o.views === 1 ? '' : 's'}${fresh}  `);
   const c = [l.website && `[Website](${l.website})`, l.phone, l.ig && `Instagram: ${l.ig}`].filter(Boolean).join(' · ');
   L.push(`[Their page](https://sanmateolocal.com/business/${l.id}.html)${c ? ' · ' + c : ' · no contact info on file'}`);
   L.push('');
