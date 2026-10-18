@@ -65,6 +65,23 @@
     .stop .today{font-size:.9rem;color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:8px;padding:.4rem .65rem;margin:0 0 .55rem;line-height:1.45}
     .stop .today span{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--clay-deep);margin-right:.35rem}
     .stop .today a{color:var(--bay-deep);font-weight:600}
+    .stop .hist{display:inline-block;margin:.5rem 0 0 1rem;padding:0;background:none;border:0;font:inherit;font-size:.85rem;font-weight:700;color:var(--clay-deep);cursor:pointer}
+    .stop .hist:hover{text-decoration:underline}
+    .stop .hist:focus-visible,.hd-x:focus-visible{outline:2px solid var(--clay-deep);outline-offset:3px;border-radius:4px}
+    .hdlg{margin:auto;width:min(560px,calc(100% - 2rem));max-height:min(80vh,720px);padding:0;border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);box-shadow:0 24px 60px -20px rgba(0,0,0,.45);overflow:auto}
+    .hdlg::backdrop{background:rgba(20,16,12,.55)}
+    .hd-head{position:sticky;top:0;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1.1rem 1.3rem .8rem;background:var(--card);border-bottom:1px solid var(--line)}
+    .hd-k{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--sage-deep)}
+    .hd-head h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.45rem;line-height:1.15;margin-top:.15rem}
+    .hd-x{flex:none;width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:var(--paper-2);color:var(--ink);font-size:1.4rem;line-height:1;cursor:pointer}
+    .hd-list{list-style:none;margin:0;padding:.6rem 1.3rem .2rem}
+    .hd-list li{display:grid;grid-template-columns:7.2rem 1fr;gap:.8rem;padding:.65rem 0;border-bottom:1px solid var(--line);font-size:.95rem;line-height:1.5;color:var(--ink-soft)}
+    .hd-list li:last-child{border-bottom:none}
+    .hd-list .hy{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;color:var(--clay-deep);padding-top:.2rem}
+    .hd-list a{color:var(--bay-deep);font-weight:600}
+    .hd-src{margin:0;padding:.8rem 1.3rem 1.2rem;font-size:.78rem;line-height:1.6;color:var(--ink-soft);border-top:1px solid var(--line)}
+    .hd-src a{color:var(--ink-soft)}
+    @media (max-width:600px){.hdlg{width:100%;max-width:100%;max-height:85vh;margin:auto 0 0;border-radius:16px 16px 0 0}.hd-list li{grid-template-columns:1fr;gap:.15rem}.stop .hist{margin-left:0;display:block}}
     .endnote{margin:2rem 0;padding:1.3rem 1.5rem;background:var(--paper-2);border-radius:12px}
     .endnote a{color:var(--bay-deep);font-weight:700}
     footer{border-top:1.5px solid var(--ink);margin-top:1rem;padding:2rem 0;color:var(--ink-soft);font-size:.85rem}
@@ -98,7 +115,7 @@
     <div class="intro">
       <p>San Mateo started as a Catholic mission outpost in the 1790s and a stage stop between San Francisco and San Jose. The railroad made it a town: by the 1880s, brick buildings lined the square around the station, and for decades South B Street was where everyone shopped, the pharmacies, meat markets, cigar stores, hardware and lumber.</p>
       <p>When East Third Avenue filled in through the 1920s and 1930s, San Mateo boomed as a San Francisco suburb, and the downtown took on the Spanish Colonial and Art Deco look it still wears. When the malls arrived in the 1950s, the big stores drifted south to Hillsdale, and that quiet exodus is exactly what left downtown's 1930s character intact. Here are the stops worth slowing down for.</p>
-      <p class="credit">Building histories drawn from the City of San Mateo Planning Division's Downtown Historic Building Self-Guided Walking Tour. Most of these buildings still stand, look up above the storefronts. Each stop also shows what&rsquo;s there today, so you know you&rsquo;re in the right spot (checked October 2026; storefronts change, so look for the address numbers too).</p>
+      <p class="credit">Building histories drawn from the City of San Mateo Planning Division's Downtown Historic Building Self-Guided Walking Tour. Most of these buildings still stand, look up above the storefronts. Each stop also shows what&rsquo;s there today, so you know you&rsquo;re in the right spot (checked October 2026; storefronts change, so look for the address numbers too). Tap &ldquo;History of this address&rdquo; on a stop to see the businesses that came before, with sources.</p>
     </div>
 
     <div class="endnote" style="margin-top:0;">
@@ -131,14 +148,16 @@
         <div class="today"><span>Today</span> <a href="/business/zhangliang-malatang.html">Zhangliang Malatang</a>, the malatang (build-your-own spicy soup) spot.</div>
         <p>In the 1920s this address was Noah's Cafeteria, run by one of the first known Black businessmen in San Mateo. Well known across the area with a growing clientele, Noah later moved his restaurant up to Third Avenue.</p>
         <a class="find" href="https://www.google.com/maps/search/?api=1&amp;query=139%20S%20B%20St%20San%20Mateo" target="_blank" rel="noopener">Find it &rarr;</a>
+        <button type="button" class="hist" data-dlg="h-139-s-b-st">History of this address &rarr;</button>
       </div></div>
 
       <div class="stop"><div class="n">4</div><div class="b">
         <h3>The old bank building</h3>
         <div class="meta">164 S B St &middot; Built 1925</div>
         <div class="today"><span>Today</span> <a href="/business/porterhouse.html">Porterhouse</a>, the steakhouse.</div>
-        <p>An elegant Greek Revival building that cost $50,000, designed by architect W.H. Weeks and built by Samuel Wisnom, one of Robert's sons. A bank was the original occupant; look for the paired fluted pilasters.</p>
+        <p>An elegant Greek Revival building that cost $50,000, designed by architect W.H. Weeks and built by Samuel Wisnom, one of Robert's sons. Its original occupant was the National Bank of San Mateo, and it&rsquo;s on the National Register of Historic Places. Look for the paired fluted pilasters.</p>
         <a class="find" href="https://www.google.com/maps/search/?api=1&amp;query=164%20S%20B%20St%20San%20Mateo" target="_blank" rel="noopener">Find it &rarr;</a>
+        <button type="button" class="hist" data-dlg="h-164-s-b-st">History of this address &rarr;</button>
       </div></div>
 
       <div class="stop"><div class="n">5</div><div class="b">
@@ -147,6 +166,7 @@
         <div class="today"><span>Today</span> Offices. Look up for the octagonal corner bays.</div>
         <p>Considered by many the most significant historic building in San Mateo. German immigrants Carl and Cuna Merkel opened a cigar store on this corner in 1918, then built this Art Deco landmark and filled it with a soda fountain, confectionary, liquor store, billiard parlor, and horse betting. It was a gathering place for over fifty years. Look up at the octagonal corner bays and terra cotta tiling.</p>
         <a class="find" href="https://www.google.com/maps/search/?api=1&amp;query=201%20S%20B%20St%20San%20Mateo" target="_blank" rel="noopener">Find it &rarr;</a>
+        <button type="button" class="hist" data-dlg="h-201-s-b-st">History of this address &rarr;</button>
       </div></div>
 
       <div class="stop"><div class="n">6</div><div class="b">
@@ -177,8 +197,9 @@
         <h3>National Bank of San Mateo</h3>
         <div class="meta">301 S B St &middot; Built 1912</div>
         <div class="today"><span>Today</span> MIXT Salads.</div>
-        <p>A reinforced-concrete Mission Revival building that housed the National Bank of San Mateo, San Mateo Hardware, and Pope's Drug Store in its first thirty years. It's one of the six San Mateo buildings on the National Register of Historic Places.</p>
+        <p>A reinforced-concrete Mission Revival building that housed the National Bank of San Mateo, San Mateo Hardware, and Pope's Drug Store in its first thirty years. The bank later built its own landmark at 164 S B St (stop 4).</p>
         <a class="find" href="https://www.google.com/maps/search/?api=1&amp;query=301%20S%20B%20St%20San%20Mateo" target="_blank" rel="noopener">Find it &rarr;</a>
+        <button type="button" class="hist" data-dlg="h-301-s-b-st">History of this address &rarr;</button>
       </div></div>
     </section>
 
@@ -192,6 +213,7 @@
         <div class="today"><span>Today</span> Look up: the building rises eight stories.</div>
         <p>Eight stories, built for $250,000 as a resort for vacationing San Franciscans, designed by architect W.H. Weeks. The building still stands and still anchors the block, even as new businesses fill it.</p>
         <a class="find" href="https://www.google.com/maps/search/?api=1&amp;query=36%20E%203rd%20Ave%20San%20Mateo" target="_blank" rel="noopener">Find it &rarr;</a>
+        <button type="button" class="hist" data-dlg="h-36-e-3rd-ave">History of this address &rarr;</button>
       </div></div>
 
       <div class="stop"><div class="n">11</div><div class="b">
@@ -200,6 +222,7 @@
         <div class="today"><span>Today</span> Look for the half-timbered Tudor front.</div>
         <p>An excellent Tudor-style building, decorative half-timbering, an elaborate chimney, scalloped bargeboards, a rare bit of storybook architecture downtown. For years this was the Levy Brothers store, a San Mateo retail institution.</p>
         <a class="find" href="https://www.google.com/maps/search/?api=1&amp;query=51%20E%203rd%20Ave%20San%20Mateo" target="_blank" rel="noopener">Find it &rarr;</a>
+        <button type="button" class="hist" data-dlg="h-51-e-3rd-ave">History of this address &rarr;</button>
       </div></div>
 
       <div class="stop"><div class="n">12</div><div class="b">
@@ -208,6 +231,7 @@
         <div class="today"><span>Today</span> Offices upstairs, and <a href="/business/foreigner-cafe.html">Foreigner Cafe</a> in Suite 108.</div>
         <p>Once a downtown movie theatre, later converted to offices. Its marquee and surface decoration were stripped away and a new front pushed out for ground-level shops, but the original upper portion is still visible above.</p>
         <a class="find" href="https://www.google.com/maps/search/?api=1&amp;query=60%20E%203rd%20Ave%20San%20Mateo" target="_blank" rel="noopener">Find it &rarr;</a>
+        <button type="button" class="hist" data-dlg="h-60-e-3rd-ave">History of this address &rarr;</button>
       </div></div>
 
       <div class="stop"><div class="n">13</div><div class="b">
@@ -216,6 +240,7 @@
         <div class="today"><span>Today</span> Offices, right between <a href="/business/amici-s-east-coast-pizzeria.html">Amici&rsquo;s East Coast Pizzeria</a> (69) and <a href="/business/udon-mugizo.html">Udon Mugizo</a> (73).</div>
         <p>The five-and-dime J.J. Newberry & Company moved in as the first tenant in 1935 and stayed until 1957, when it followed the shoppers south to the brand-new Hillsdale Mall, a small moment that captured the whole downtown-to-mall shift.</p>
         <a class="find" href="https://www.google.com/maps/search/?api=1&amp;query=71%20E%203rd%20Ave%20San%20Mateo" target="_blank" rel="noopener">Find it &rarr;</a>
+        <button type="button" class="hist" data-dlg="h-71-e-3rd-ave">History of this address &rarr;</button>
       </div></div>
 
       <div class="stop"><div class="n">14</div><div class="b">
@@ -224,6 +249,7 @@
         <div class="today"><span>Today</span> Paris Baguette.</div>
         <p>A simple modern building with Art Deco details at Third and Ellsworth. Its early tenant was the Greenline Drug Company; JCPenney moved in during the mid-1940s; and for decades after the 1950s it was home to Schneider's, a locally owned clothier. Schneider's has since closed, but the building keeps its clean Art Deco lines.</p>
         <a class="find" href="https://www.google.com/maps/search/?api=1&amp;query=208%20E%203rd%20Ave%20San%20Mateo" target="_blank" rel="noopener">Find it &rarr;</a>
+        <button type="button" class="hist" data-dlg="h-208-e-3rd-ave">History of this address &rarr;</button>
       </div></div>
 
       <div class="stop"><div class="n">15</div><div class="b">
@@ -232,6 +258,7 @@
         <div class="today"><span>Today</span> HiroNori Craft Ramen, <a href="/business/shang-dumpling.html">Shang Dumpling</a> and <a href="/business/ten-seconds-yunnan-rice-noodle-san-mateo.html">Ten Seconds Yunnan Rice Noodle</a> along the street, with offices upstairs.</div>
         <p>A handsome modernistic block with Art Deco ornament, one section four stories, one three. Chevrons decorate the spandrels between the piers, and the splayed main entrance keeps its original ornamental tile in stylized floral and geometric patterns.</p>
         <a class="find" href="https://www.google.com/maps/search/?api=1&amp;query=205%20E%203rd%20Ave%20San%20Mateo" target="_blank" rel="noopener">Find it &rarr;</a>
+        <button type="button" class="hist" data-dlg="h-205-221-e-3rd-ave">History of this address &rarr;</button>
       </div></div>
 
       <div class="stop"><div class="n">16</div><div class="b">
@@ -288,5 +315,56 @@
     </div>
   </footer>
   <script src="/ask-widget.js" defer></script>
+  <dialog class="hdlg" id="h-139-s-b-st" aria-labelledby="h-139-s-b-st-t">
+    <div class="hd-head"><div><span class="hd-k">139 S B St</span><h3 id="h-139-s-b-st-t">Noah&rsquo;s Cafeteria site</h3></div><button type="button" class="hd-x" aria-label="Close">&times;</button></div>
+    <ol class="hd-list"><li><span class="hy">Today</span><span><a href="/business/zhangliang-malatang.html">Zhangliang Malatang</a>, a malatang (build-your-own spicy soup) spot.</span></li><li><span class="hy">2010 on</span><span>Osteria Coppa, an Italian pizza and pasta restaurant, opened here August 25, 2010. It has since closed.</span></li><li><span class="hy">Before 2010</span><span>Pomaroma Cafe, the space Osteria Coppa took over.</span></li><li><span class="hy">1920s</span><span>Noah&rsquo;s Cafeteria, run by one of the first known Black businessmen in San Mateo.</span></li></ol>
+    <p class="hd-src">Sources: <a href="https://www.tablehopper.com/chatterbox/osteria-coppa-opens-in-san-mateo-wednesday-august-25th/" target="_blank" rel="noopener">tablehopper (2010)</a> &middot; <a href="https://www.tablehopper.com/san-mateo-joins-the-artisan-pizzapasta-craze/" target="_blank" rel="noopener">tablehopper</a> &middot; <a href="https://dsma.org/wp-content/uploads/2022/03/DT-Historic-Tour-Final.pdf" target="_blank" rel="noopener">City of San Mateo walking tour (2019)</a></p>
+  </dialog>
+  <dialog class="hdlg" id="h-164-s-b-st" aria-labelledby="h-164-s-b-st-t">
+    <div class="hd-head"><div><span class="hd-k">164 S B St</span><h3 id="h-164-s-b-st-t">The old bank building</h3></div><button type="button" class="hd-x" aria-label="Close">&times;</button></div>
+    <ol class="hd-list"><li><span class="hy">Today</span><span><a href="/business/porterhouse.html">Porterhouse</a> moved here and celebrated its opening in February 2023.</span></li><li><span class="hy">2020</span><span>Dahlia Mexican Grill, an upscale Mexican restaurant, held its grand opening in November 2020.</span></li><li><span class="hy">Until 2020</span><span>Vault 164, a New American restaurant and bar, closed in July 2020 after a nine-year run.</span></li><li><span class="hy">Before that</span><span>B Street Billiards, a pool hall.</span></li><li><span class="hy">1996 to 1997</span><span>The building sat empty in 1996, then joined the National Register of Historic Places in 1997.</span></li><li><span class="hy">1955 to 1980s</span><span>A Crocker-Anglo Bank branch. It closed after Wells Fargo took over Crocker in the 1980s.</span></li><li><span class="hy">1920s</span><span>Built for the National Bank of San Mateo, its original occupant. The bank&rsquo;s first home was down the street at 301 S B St (stop 9).</span></li></ol>
+    <p class="hd-src">Sources: <a href="https://www.smdailyjournal.com/news/local/porterhouse-restaurant-celebrates-move-reopening-in-downtown-san-mateo/article_23529a16-a603-11ed-a927-7fbb5bfb2b53.html" target="_blank" rel="noopener">San Mateo Daily Journal (2023)</a> &middot; <a href="https://patch.com/california/sanmateo/upscale-mexican-restaurant-opens-downtown-san-mateo" target="_blank" rel="noopener">Patch (2020)</a> &middot; <a href="https://theclio.com/tour/2762/3" target="_blank" rel="noopener">Clio</a> &middot; <a href="https://en.wikipedia.org/wiki/National_Bank_of_San_Mateo" target="_blank" rel="noopener">Wikipedia: National Bank of San Mateo</a></p>
+  </dialog>
+  <dialog class="hdlg" id="h-201-s-b-st" aria-labelledby="h-201-s-b-st-t">
+    <div class="hd-head"><div><span class="hd-k">201 S B St</span><h3 id="h-201-s-b-st-t">The House of Merkel</h3></div><button type="button" class="hd-x" aria-label="Close">&times;</button></div>
+    <ol class="hd-list"><li><span class="hy">Today</span><span>Offices. Prometheus Real Estate Group bought the building in 2018, after Kingfish closed.</span></li><li><span class="hy">About 2000 to 2018</span><span>Kingfish, a Creole restaurant and sister to Nola, closed after an 18-year run.</span></li><li><span class="hy">1994</span><span>Barley and Hopps, a restaurant and microbrewery, opened here, with Blues on B, a blues club, on the ground floor.</span></li><li><span class="hy">At one point</span><span>Red Bird Brewing Company, for about 18 months.</span></li><li><span class="hy">1970s and 80s</span><span>An antique shop, a Japanese restaurant, a shoe repair shop and a cab company.</span></li><li><span class="hy">1918 on</span><span>Carl and Cuna Merkel&rsquo;s cigar store, then the House of Merkel, a gathering place for over 50 years.</span></li></ol>
+    <p class="hd-src">Sources: <a href="https://www.smdailyjournal.com/news/local/prometheus-buys-kingfish-building-for-10-5m/article_0f8bf070-aa79-11e8-b2af-f37489e508d3.html" target="_blank" rel="noopener">San Mateo Daily Journal (2018)</a> &middot; <a href="https://www.smdailyjournal.com/news/local/the-historic-view-of-the-house-of-merkel/article_17eabce1-043e-5578-bfe3-4cbbc66f7ead.html" target="_blank" rel="noopener">San Mateo Daily Journal (2002)</a> &middot; <a href="https://patch.com/california/millbrae/restaurant-of-the-week-king-fish" target="_blank" rel="noopener">Patch</a></p>
+  </dialog>
+  <dialog class="hdlg" id="h-301-s-b-st" aria-labelledby="h-301-s-b-st-t">
+    <div class="hd-head"><div><span class="hd-k">301 S B St</span><h3 id="h-301-s-b-st-t">National Bank of San Mateo&rsquo;s first home</h3></div><button type="button" class="hd-x" aria-label="Close">&times;</button></div>
+    <ol class="hd-list"><li><span class="hy">Today</span><span>MIXT, the salad shop, opened here in March 2026.</span></li><li><span class="hy">About 2010 to 2025</span><span>B Street Books, a used and rare bookstore. Its last day here was in April 2025, when it moved to Burlingame Avenue.</span></li><li><span class="hy">1912 to 1940s</span><span>In its first 30 years: the National Bank of San Mateo, San Mateo Hardware and Pope&rsquo;s Drug Store. The bank later built its own landmark at 164 S B St (stop 4).</span></li></ol>
+    <p class="hd-src">Sources: <a href="https://www.mixt.com/2026/02/the-salad-of-the-bay-since-06-touches-down-in-san-mateo/" target="_blank" rel="noopener">MIXT (2026)</a> &middot; <a href="https://www.smdailyjournal.com/news/local/bookstore-marks-years-downtown/article_e4f3b0c8-a69e-11e9-8a76-3776495bed89.html" target="_blank" rel="noopener">San Mateo Daily Journal (2019)</a> &middot; <a href="https://www.smdailyjournal.com/news/local/b-street-books-is-moving-to-bgame/article_c6589119-89f0-4e34-973f-4e2bde1619ac.html" target="_blank" rel="noopener">San Mateo Daily Journal (2025)</a> &middot; <a href="https://dsma.org/wp-content/uploads/2022/03/DT-Historic-Tour-Final.pdf" target="_blank" rel="noopener">City of San Mateo walking tour (2019)</a></p>
+  </dialog>
+  <dialog class="hdlg" id="h-36-e-3rd-ave" aria-labelledby="h-36-e-3rd-ave-t">
+    <div class="hd-head"><div><span class="hd-k">36 E 3rd Ave</span><h3 id="h-36-e-3rd-ave-t">The Benjamin Franklin Hotel</h3></div><button type="button" class="hd-x" aria-label="Close">&times;</button></div>
+    <ol class="hd-list"><li><span class="hy">Fun fact</span><span>It&rsquo;s named for its developers, Benjamin Getz and his son-in-law A. C. Franklin, not the founding father. When it opened it was the tallest commercial building in San Mateo County.</span></li><li><span class="hy">2011 on</span><span>Tim Draper bought the building in 2011. Draper University, an entrepreneurship school with students living upstairs, launched here in 2013.</span></li><li><span class="hy">2003 to 2007</span><span>The hotel emptied out after United Airlines crews stopped staying here in 2003, and the empty hotel was sold in 2007.</span></li><li><span class="hy">1989 on</span><span>Run by the Empire Group, mostly for United crews, with the Lark Creek San Mateo restaurant.</span></li><li><span class="hy">1985 to 1989</span><span>A Westin hotel; the restaurant became Benjamin&rsquo;s.</span></li><li><span class="hy">1955 to 1985</span><span>Run by the Best family, with the Greenwillow Restaurant. United crews started laying over here around 1960.</span></li></ol>
+    <p class="hd-src">Sources: <a href="https://www.smdailyjournal.com/news/local/benjamin-franklin-was-san-mateos-biggest-hotel/article_aeefd0f3-2558-50fd-a3bc-57a417e55f8c.html" target="_blank" rel="noopener">San Mateo Daily Journal (2003)</a> &middot; <a href="https://www.smdailyjournal.com/news/local/draper-university-makes-the-grade/article_cc71fccb-4358-5cc4-862e-d61eb564c037.html" target="_blank" rel="noopener">San Mateo Daily Journal (2013)</a> &middot; <a href="https://www.hotel-online.com/News/PR2007_1st/Feb07_ColliersSanMateo.html" target="_blank" rel="noopener">Hotel Online (2007)</a></p>
+  </dialog>
+  <dialog class="hdlg" id="h-51-e-3rd-ave" aria-labelledby="h-51-e-3rd-ave-t">
+    <div class="hd-head"><div><span class="hd-k">51 E 3rd Ave</span><h3 id="h-51-e-3rd-ave-t">Levy Brothers</h3></div><button type="button" class="hd-x" aria-label="Close">&times;</button></div>
+    <ol class="hd-list"><li><span class="hy">About 2013 on</span><span>Hero City, Tim Draper&rsquo;s coworking space and startup incubator, at 55 E 3rd.</span></li><li><span class="hy">Until about 2013</span><span>Collective Antiques.</span></li><li><span class="hy">Until 1952</span><span>Levy Bros., the department store, before it moved to Fourth and Ellsworth. The company, a Peninsula institution for over 100 years, closed in 1986.</span></li></ol>
+    <p class="hd-src">Sources: <a href="https://www.smdailyjournal.com/news/local/draper-opens-hero-city-chamber-honors-university-founder-along-with-other-business-leaders/article_a870e2b4-78ad-5490-a8f6-102fe13b41ea.html" target="_blank" rel="noopener">San Mateo Daily Journal</a> &middot; <a href="https://www.smdailyjournal.com/news/local/many-remember-the-levy-brothers-stores/article_71516de9-0aa7-5391-aaf9-97e9189702a4.html" target="_blank" rel="noopener">San Mateo Daily Journal (2003)</a></p>
+  </dialog>
+  <dialog class="hdlg" id="h-60-e-3rd-ave" aria-labelledby="h-60-e-3rd-ave-t">
+    <div class="hd-head"><div><span class="hd-k">60 E 3rd Ave</span><h3 id="h-60-e-3rd-ave-t">The old San Mateo Theatre</h3></div><button type="button" class="hd-x" aria-label="Close">&times;</button></div>
+    <ol class="hd-list"><li><span class="hy">Today</span><span>Offices upstairs, and <a href="/business/foreigner-cafe.html">Foreigner Cafe</a>, which opened in 2019.</span></li><li><span class="hy">1925 to early 1970s</span><span>The San Mateo Theatre opened July 23, 1925, and was later run by Fox and then Mann. It was downtown&rsquo;s last movie house when it closed in the early 1970s. (Cinema Treasures lists it at 66 E 3rd Ave.)</span></li></ol>
+    <p class="hd-src">Sources: <a href="https://cinematreasures.org/theaters/3780" target="_blank" rel="noopener">Cinema Treasures</a> &middot; <a href="https://www.smdailyjournal.com/news/local/cinema-revives-memories-of-old-movie-houses/article_8ffaaa99-27f4-5dcd-82cd-5bbda1c59d1b.html" target="_blank" rel="noopener">San Mateo Daily Journal</a> &middot; <a href="https://www.opentable.com/r/foreigner-cafe-san-mateo" target="_blank" rel="noopener">OpenTable</a></p>
+  </dialog>
+  <dialog class="hdlg" id="h-71-e-3rd-ave" aria-labelledby="h-71-e-3rd-ave-t">
+    <div class="hd-head"><div><span class="hd-k">71 E 3rd Ave</span><h3 id="h-71-e-3rd-ave-t">J.J. Newberry</h3></div><button type="button" class="hd-x" aria-label="Close">&times;</button></div>
+    <ol class="hd-list"><li><span class="hy">2005</span><span>Widely reported as YouTube&rsquo;s very first office, upstairs above a pizzeria and a Japanese restaurant. A sale listing for this building calls it YouTube&rsquo;s first headquarters. Today those neighbors are Amici&rsquo;s (69) and Udon Mugizo (73).</span></li><li><span class="hy">1935 to 1957</span><span>J.J. Newberry, the five-and-dime, until it followed the shoppers to Hillsdale.</span></li></ol>
+    <p class="hd-src">Sources: <a href="https://historyofinformation.com/detail.php?id=1161" target="_blank" rel="noopener">History of Information</a> &middot; <a href="https://www.showcase.com/71-e-3rd-ave-san-mateo-ca-94401/39964287/" target="_blank" rel="noopener">Showcase sale listing</a></p>
+  </dialog>
+  <dialog class="hdlg" id="h-208-e-3rd-ave" aria-labelledby="h-208-e-3rd-ave-t">
+    <div class="hd-head"><div><span class="hd-k">208 E 3rd Ave</span><h3 id="h-208-e-3rd-ave-t">Schneider&rsquo;s</h3></div><button type="button" class="hd-x" aria-label="Close">&times;</button></div>
+    <ol class="hd-list"><li><span class="hy">2023 on</span><span>Paris Baguette opened on this corner of Third and Ellsworth.</span></li><li><span class="hy">Before that</span><span>Jos. A. Bank, the men&rsquo;s clothing store. The corner then sat empty for several years.</span></li><li><span class="hy">1950s on</span><span>Schneider&rsquo;s, a locally owned clothier, after JCPenney (mid-1940s) and the Greenline Drug Company.</span></li></ol>
+    <p class="hd-src">Sources: <a href="https://www.smdailyjournal.com/news/local/paris-baguette-coming-to-san-mateo/article_c8f30ce2-0410-11ee-8a23-3b7bddd0998f.html" target="_blank" rel="noopener">San Mateo Daily Journal (2023)</a> &middot; <a href="https://dsma.org/wp-content/uploads/2022/03/DT-Historic-Tour-Final.pdf" target="_blank" rel="noopener">City of San Mateo walking tour (2019)</a></p>
+  </dialog>
+  <dialog class="hdlg" id="h-205-221-e-3rd-ave" aria-labelledby="h-205-221-e-3rd-ave-t">
+    <div class="hd-head"><div><span class="hd-k">205-221 E 3rd Ave</span><h3 id="h-205-221-e-3rd-ave-t">The Medical Arts Building</h3></div><button type="button" class="hd-x" aria-label="Close">&times;</button></div>
+    <ol class="hd-list"><li><span class="hy">211 E 3rd</span><span>HiroNori Craft Ramen took over the former Ajisen Ramen in 2022.</span></li><li><span class="hy">213 E 3rd</span><span><a href="/business/shang-dumpling.html">Shang Dumpling</a>, Shanghai-style dumplings.</span></li><li><span class="hy">215 E 3rd</span><span><a href="/business/ten-seconds-yunnan-rice-noodle-san-mateo.html">Ten Seconds Yunnan Rice Noodle</a> today; Little China Kitchen was here by 2011.</span></li><li><span class="hy">Upstairs</span><span>Ryptic Room Escape, an escape room, was open at 205 E 3rd by 2019.</span></li></ol>
+    <p class="hd-src">Sources: <a href="https://whatnow.com/?p=158309" target="_blank" rel="noopener">What Now San Francisco (2022)</a> &middot; <a href="https://www.shangdumpling.com/" target="_blank" rel="noopener">Shang Dumpling</a> &middot; <a href="https://spiritsjournal.klwines.com/klwinescom-spirits-blog/2011/5/26/things-you-need-to-know-2.html" target="_blank" rel="noopener">K&amp;L Spirits Journal (2011)</a> &middot; <a href="https://www.thescarefactor.com/escape-the-aliens-at-ryptic-room-escape-san-mateo-3rd-ave-review-2019" target="_blank" rel="noopener">The Scare Factor (2019)</a></p>
+  </dialog>
+  <script>(function(){document.querySelectorAll('.hist').forEach(function(b){b.addEventListener('click',function(){var d=document.getElementById(b.getAttribute('data-dlg'));if(d&&d.showModal){d.showModal();}});});document.querySelectorAll('.hdlg').forEach(function(d){d.querySelector('.hd-x').addEventListener('click',function(){d.close();});d.addEventListener('click',function(e){if(e.target===d)d.close();});});})();</script>
 </body>
 </html>
