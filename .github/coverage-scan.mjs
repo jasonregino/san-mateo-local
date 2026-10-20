@@ -35,7 +35,7 @@ const pick = ROTATION[weekNo % ROTATION.length];
 // National / regional chains to skip (curation moat = independent & local).
 const CHAINS = ['starbucks', 'peets', 'philz', 'blue bottle', '7-eleven', 'mcdonald', 'burger king', 'subway', 'jack in the box', 'taco bell', 'chipotle', 'panera', 'jamba', 'supercuts', 'great clips', 'sport clips', 'european wax', 'club pilates', 'orangetheory', '24 hour fitness', 'planet fitness', 'crunch fitness', 'massage envy', 'hand and stone', 'western dental', 'aspen dental', 'lenscrafters', 'warby parker', 'jiffy lube', 'valvoline', 'midas', 'meineke', 'big o tires', 'discount tire', 'les schwab', 'pep boys', 'banfield', 'vca', 'petsmart', 'petco', 'h&r block', 'ups store', 'fedex office', 'cvs', 'walgreens', 'safeway', 'trader joe', 'whole foods', 'target', 'walmart', 'ross dress', 'marshalls', 'tj maxx', 'nordstrom', 'kaiser'];
 
-const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, ' ').replace(/\b(the|a|an|of|inc|llc|co)\b/g, ' ').replace(/\s+/g, ' ').trim();
+const norm = s => String(s || '').toLowerCase().replace(/['’]/g, '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, ' ').replace(/\b(the|a|an|of|inc|llc|co)\b/g, ' ').replace(/\s+/g, ' ').trim();
 
 // Baseline: everything already in the guide (concierge-data.json is committed and served).
 const baseline = new Set();
