@@ -5465,6 +5465,36 @@
    "name": "Sinta Skin",
    "placeId": "ChIJaUhKNSCfj4ARJmv5frWgXf0",
    "google": "Sinta Skin"
+  },
+  "animal-cove-pet-hospital": {
+   "name": "Animal Cove Pet Hospital",
+   "placeId": "ChIJt2enaDWZj4ARGon-LofryGs",
+   "google": "Animal Cove Pet Hospital"
+  },
+  "scouts-house-animal-rehab": {
+   "name": "Scout's House",
+   "placeId": "ChIJreR5Ra6kj4ARplqz_gV1Ft0",
+   "google": "Scout's House: A Rehab Center for Animals"
+  },
+  "hillsdale-transmission": {
+   "name": "Hillsdale Transmission & Auto Repair",
+   "placeId": "ChIJqdATuGSej4ARh2NdMI_K8PQ",
+   "google": "Hillsdale Transmission"
+  },
+  "envirotech-auto": {
+   "name": "Envirotech Independent Toyota & Lexus Repair",
+   "placeId": "ChIJiVYv-_Wej4ARzNwLlwcWYoQ",
+   "google": "Envirotech Toyota Lexus Scion Independent Auto"
+  },
+  "hitech-auto-clinic": {
+   "name": "HiTech Auto Clinic",
+   "placeId": "ChIJL5DsQ-ifj4ARFeZtzcOdOOw",
+   "google": "HiTech Auto clinic"
+  },
+  "lawsons-auto-truck-service": {
+   "name": "Lawson's Auto & Truck Service",
+   "placeId": "ChIJV5bTZ_mej4ARauOaUdyoXRw",
+   "google": "Lawson's Auto & Truck Service"
   }
  }
 }
