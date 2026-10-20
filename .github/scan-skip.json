@@ -100,6 +100,211 @@
       "name": "Integrity Motors",
       "reason": "used-car dealer, outside what SML lists",
       "decided": "2026-10-20"
+    },
+    {
+      "name": "American Eagle & Aerie",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Ann Taylor",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Banana Republic",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Barcelino - Hillsdale Men's",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Barcelino Per Donna - Hillsdale Women's",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Barnes & Noble",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "BED BATH & BEYOND + The Container Store",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Build-A-Bear Workshop",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Chico's",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Flip Flop Shops - Hillsdale",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "francesca's",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "H&M",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Hollister Co.",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Hot Topic",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Lucky Brand",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Mancini's Sleepworld San Mateo",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Mendocino Farms",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Old Navy",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Plato's Closet San Mateo",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Scandinavian Designs Furniture",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "See's Candies",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Shane Co.",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Sleep Number Mattress Store",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Smart & Final Extra!",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Steve's Hallmark Shop",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "The LEGO\u00ae Store Hillsdale Shopping Center",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "The White Barn Candle Co.",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "UNIQLO Hillsdale",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Vans",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "west elm",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "White House Black Market",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Williams-Sonoma",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "World Market",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Zumiez",
+      "reason": "chain or franchise (coverage #26)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Casabellahome",
+      "reason": "no storefront info (no reviews, website or hours); likely home-based",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "EarthyTreasuresSC",
+      "reason": "online seller at a residential address, no shop hours",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Piazza's Fine Foods",
+      "reason": "already listed (piazzas-fine-foods)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "St. Vincent de Paul (SVDP) Thrift Store",
+      "reason": "already listed",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Steiners Jewelry",
+      "reason": "already listed (steiner-s-jewelry)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Brothers Smoke Shop and Fashion",
+      "reason": "already listed (brothers-smoke-fashion)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Celery Retail",
+      "reason": "already listed as The Collective powered by Celery",
+      "decided": "2026-10-20"
     }
   ]
 }

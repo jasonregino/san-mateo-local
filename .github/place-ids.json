@@ -5495,6 +5495,16 @@
    "name": "Lawson's Auto & Truck Service",
    "placeId": "ChIJV5bTZ_mej4ARauOaUdyoXRw",
    "google": "Lawson's Auto & Truck Service"
+  },
+  "sleep-haven-bedding": {
+   "name": "Sleep Haven Bedding",
+   "placeId": "ChIJ6TMlMvyej4ARvWw5PXYCsbI",
+   "google": "Sleep Haven Bedding Bay Area"
+  },
+  "st-matthews-episcopal-thrift-shop": {
+   "name": "St. Matthew's Episcopal Church Thrift Shop",
+   "placeId": "ChIJeRQAYHGej4ARSHsW63foG-U",
+   "google": "Thrift Shop St. Matthew's Episcopal Church"
   }
  }
 }
