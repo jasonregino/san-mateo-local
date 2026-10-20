@@ -30,6 +30,21 @@
       "name": "SweatHouz",
       "reason": "national franchise (contrast-therapy studios); chain policy",
       "decided": "2026-10-12"
+    },
+    {
+      "name": "Orange Theory San Mateo",
+      "reason": "chain (Orangetheory Fitness franchise)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Orangetheory Fitness",
+      "reason": "chain (franchise)",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Giacomo Fenocchio",
+      "reason": "Italian winemaker named in a DSMA wine-tasting event, not a San Mateo business",
+      "decided": "2026-10-20"
     }
   ]
 }
