@@ -94,6 +94,31 @@
       "source": "/business/dr-jason-lipton-dds-san-mateo.html",
       "destination": "/local-services.html",
       "permanent": true
+    },
+    {
+      "source": "/business/holland-car-care.html",
+      "destination": "/local-services.html",
+      "permanent": true
+    },
+    {
+      "source": "/business/everyday-flowers-and-balloons.html",
+      "destination": "/shopping.html",
+      "permanent": true
+    },
+    {
+      "source": "/business/art-academia.html",
+      "destination": "/things-to-do.html",
+      "permanent": true
+    },
+    {
+      "source": "/business/san-mateo-carpets-inc.html",
+      "destination": "/local-services.html",
+      "permanent": true
+    },
+    {
+      "source": "/business/after-glo-beauty-collective-san-mateo.html",
+      "destination": "/business/sinta-skin.html",
+      "permanent": true
     }
   ]
 }

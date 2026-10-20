@@ -411,11 +411,6 @@
    "placeId": "ChIJ-wysNbOfj4ARamy0fvr6xzU",
    "google": "Marvegos Fine Art School"
   },
-  "art-academia": {
-   "name": "Art Academia",
-   "placeId": null,
-   "unmatched": "Golden Moon Studios | 28 E 3rd Ave #101, San Mateo, CA 94401, USA"
-  },
   "peninsula-gymnastics": {
    "name": "Peninsula Gymnastics",
    "placeId": "ChIJifCF-fWej4ARSoAhja6_yGA",
@@ -904,7 +899,7 @@
   "san-mateo-orthodontics": {
    "name": "San Mateo Orthodontics",
    "placeId": null,
-   "unmatched": "Orthodontics of San Mateo | 2720 Edison St, San Mateo, CA 94403, USA"
+   "unmatched": "Dr. Tom Ellerhorst | 256 N San Mateo Dr, San Mateo, CA 94401, USA"
   },
   "peninsula-eye-physicians": {
    "name": "Peninsula Eye Physicians",
@@ -1206,11 +1201,6 @@
    "placeId": "ChIJw_3LkcWfj4ARZpKAdbG0AJA",
    "google": "Spotlight Roofing Inc"
   },
-  "san-mateo-carpets-inc": {
-   "name": "San Mateo Carpets, Inc.",
-   "placeId": null,
-   "unmatched": "Abbey Carpet Flooring Center | 101 N Amphlett Blvd, San Mateo, CA 94401, USA"
-  },
   "sonrisas-dental-health-inc": {
    "name": "Sonrisas Dental Health, Inc.",
    "placeId": "ChIJA8WOUeCdj4ARAFNA00v1D8c",
@@ -1280,11 +1270,6 @@
    "name": "Christensen & Rafferty Fine Jewelry",
    "placeId": "ChIJWSUg5XCej4ARiCmFunknu8c",
    "google": "Christensen & Rafferty Fine Jewelry"
-  },
-  "holland-car-care": {
-   "name": "Holland Car Care",
-   "placeId": null,
-   "unmatched": "Holland Car Care - San Carlos, CA | 1600 Industrial Rd, San Carlos, CA 94070, USA"
   },
   "family-cleaners": {
    "name": "Family Cleaners",
@@ -2964,7 +2949,7 @@
   "three-lotus-dragon-acupuncture-wellness-center-pc-san-mateo": {
    "name": "Three Lotus Dragon Acupuncture Wellness Center PC",
    "placeId": null,
-   "unmatched": "Lotus Healing Acupuncture | 1650 S Amphlett Blvd #212, San Mateo, CA 94402, USA"
+   "unmatched": "Zhang’s Herbal Treatments Center 張氏跌打治療中心 | 2205 S El Camino Real, San Mateo, CA 94403, USA"
   },
   "jenn-keys-acupuncture-san-mateo": {
    "name": "Jenn Keys Acupuncture",
@@ -3403,8 +3388,8 @@
   },
   "radiance-wellness-center-san-mateo": {
    "name": "Radiance Wellness Center",
-   "placeId": null,
-   "unmatched": "Radiance Wellness Center | 415 N San Mateo Dr Ste 2, San Mateo, CA 94401, USA"
+   "placeId": "ChIJ2adJYnCej4ARXqBXw3UOmsU",
+   "google": "Radiance Wellness Center"
   },
   "levvit-wellness-and-beauty-san-mateo": {
    "name": "Levvit Wellness & Beauty",
@@ -3419,7 +3404,7 @@
   "higher-love-healing-san-mateo": {
    "name": "Higher Love Healing®",
    "placeId": null,
-   "unmatched": "The Soul Haven | 25 W 25th Ave #2, San Mateo, CA 94403, USA"
+   "unmatched": "Wild Lotus Energy | 25 W 25th Ave #2, San Mateo, CA 94403, USA"
   },
   "ever-iv-san-mateo": {
    "name": "Ever IV",
@@ -3645,11 +3630,6 @@
    "name": "Top Image Salon",
    "placeId": "ChIJnVxRWRafj4ARqRDJmROr7zg",
    "google": "Top Image Salon"
-  },
-  "after-glo-beauty-collective-san-mateo": {
-   "name": "After Glo Beauty Collective",
-   "placeId": null,
-   "unmatched": "Sinta Skin | 190 W 25th Ave #3, San Mateo, CA 94403, USA"
   },
   "mayfair-hair-nails-care-san-mateo": {
    "name": "MAYFAIR HAIR & NAILS CARE",
@@ -5251,11 +5231,6 @@
    "placeId": "ChIJG1vIXXaej4ARvga80jgtThY",
    "google": "Neelam Islanders Market"
   },
-  "everyday-flowers-and-balloons": {
-   "name": "Everyday Flowers and Balloons",
-   "placeId": null,
-   "unmatched": "Everyday Flowers and Balloons Inc. | 512 El Camino Real, Redwood City, CA 94063, USA"
-  },
   "green-fashion-florist": {
    "name": "Green Fashion Florist",
    "placeId": "ChIJBciJj2Oej4ARlmjXQICJQdc",
@@ -5328,8 +5303,8 @@
   },
   "the-cave-smoke-shop": {
    "name": "The Cave Smoke Shop",
-   "placeId": null,
-   "unmatched": "San Mateo smoke shop | 26 E 25th Ave, San Mateo, CA 94403, USA"
+   "placeId": "ChIJXTtRUPmej4ARlwF8Q2zVvrY",
+   "google": "The Cave Smoke Shop"
   },
   "goodwill-store-and-donation-center": {
    "name": "Goodwill Store & Donation Center",
@@ -5485,6 +5460,11 @@
    "name": "Doho by JND Collective",
    "placeId": "ChIJc3Zxrbefj4ARHhNRtOX7ynI",
    "google": "Doho by JND Collective"
+  },
+  "sinta-skin": {
+   "name": "Sinta Skin",
+   "placeId": "ChIJaUhKNSCfj4ARJmv5frWgXf0",
+   "google": "Sinta Skin"
   }
  }
 }
