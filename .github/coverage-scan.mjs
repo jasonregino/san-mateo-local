@@ -46,6 +46,9 @@ try {
 } catch (e) { console.log('Could not read concierge-data.json:', e.message); }
 const seen = c => { for (const e of baseline) { if (e === c || (e.length > 6 && c.length > 6 && (e.startsWith(c) || c.startsWith(e)))) return true; } return false; };
 const isChain = n => { const x = norm(n); return CHAINS.some(c => x.includes(norm(c))); };
+// Names Jason already decided against (.github/scan-skip.json, shared with the DSMA scan).
+const SKIP = new Set();
+try { for (const x of JSON.parse(readFileSync('.github/scan-skip.json', 'utf8')).skip || []) SKIP.add(norm(x.name)); } catch (e) { console.log('Could not read scan-skip.json:', e.message); }
 
 const MASK = 'places.displayName,places.formattedAddress,places.primaryTypeDisplayName,nextPageToken';
 async function search(q, token) {
@@ -71,7 +74,7 @@ for (const q of pick.terms) {
       if (!/San Mateo, CA/i.test(addr)) continue;      // San Mateo city only
       const key = norm(name);
       if (!key || found.has(key)) continue;
-      if (seen(key) || isChain(name)) continue;
+      if (seen(key) || isChain(name) || SKIP.has(key)) continue;
       const hay = ((p.primaryTypeDisplayName?.text || '') + ' ' + name).toLowerCase();
       if (!pick.accept.test(hay)) continue; // must actually look like this focus
       found.set(key, { name, addr: addr.replace(/, San Mateo, CA.*$/, ''), type: p.primaryTypeDisplayName?.text || '' });

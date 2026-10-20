@@ -45,6 +45,36 @@
       "name": "Giacomo Fenocchio",
       "reason": "Italian winemaker named in a DSMA wine-tasting event, not a San Mateo business",
       "decided": "2026-10-20"
+    },
+    {
+      "name": "Aragon High School Theater",
+      "reason": "school facility, not a business",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "College of San Mateo Theatre",
+      "reason": "school facility, not a business",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "SMHS PAC",
+      "reason": "school facility (San Mateo High), not a business",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Fiesta Hall",
+      "reason": "part of the San Mateo County Event Center, already listed",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "Giannini Foundation of Agricultural Economics Mural",
+      "reason": "odd Google pin (1 review, UC research site), not a business",
+      "decided": "2026-10-20"
+    },
+    {
+      "name": "The Positive Edge",
+      "reason": "online calligraphy print shop with a mailbox address, no walk-in gallery",
+      "decided": "2026-10-20"
     }
   ]
 }
