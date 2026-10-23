@@ -63,22 +63,75 @@ const weekAgo = new Date(Date.now() - 7 * 86400000).toLocaleDateString('en-CA', 
 const nice = d => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
 const top = leads.slice(0, 10);
 
+// ---- Contact finder (2026-10-23, Jason: "copy-paste messages would be an immense help") ----
+// Reads each lead's own website (home + common contact pages) for a public email and an
+// Instagram handle. Public info only, never guessed. Results go only to Jason's inbox.
+const JUNK = /example|yourname|your@|email@|name@|sentry|wixpress|godaddy|domain\.com|\.(png|jpe?g|gif|svg|webp)$|@2x|@sentry/i;
+async function fetchText(url) {
+  try {
+    const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 8000);
+    const r = await fetch(url, { signal: ctl.signal, redirect: 'follow', headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh) Chrome/129' } });
+    clearTimeout(t); return r.ok ? await r.text() : '';
+  } catch { return ''; }
+}
+async function findContact(website) {
+  const out = { email: '', ig: '' };
+  if (!website) return out;
+  let base; try { base = new URL(website); } catch { return out; }
+  const host = base.hostname.replace(/^www\./, '');
+  for (const path of ['', '/contact', '/contact-us', '/pages/contact', '/about']) {
+    const html = (await fetchText(new URL(path || '/', base).href)).replace(/&#64;|&commat;/g, '@');
+    if (!html) continue;
+    const emails = [...new Set((html.match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g) || []).map(e => e.toLowerCase()))].filter(e => !JUNK.test(e));
+    if (!out.email && emails.length) out.email = emails.find(e => e.endsWith('@' + host)) || emails[0];
+    if (!out.ig) { const m = html.match(/instagram\.com\/([A-Za-z0-9_.]{2,30})/); if (m && !/^(p|reel|explore|accounts|sharer)$/i.test(m[1])) out.ig = '@' + m[1]; }
+    if (out.email && out.ig) break;
+  }
+  return out;
+}
+for (const o of top) Object.assign(o, await findContact(o.l.website));
+for (const o of top) if (!o.ig && o.l.ig) o.ig = o.l.ig.startsWith('@') ? o.l.ig : '@' + String(o.l.ig).replace(/^.*instagram\.com\//, '').replace(/\/.*$/, '');
+
+const page = l => `https://sanmateolocal.com/business/${l.id}.html`;
+const why = o => `${o.days >= 2 ? `Came back on ${o.days} different days` : `One visit, ${Math.round(o.seconds)} seconds of reading`} · last visit ${nice(o.lastDate)}${o.lastDate >= weekAgo ? ' · **active this week**' : ''}`;
+const emailBody = l => [
+  'Hi there,',
+  'Jason here, I run San Mateo Local, a local guide to independent businesses in San Mateo.',
+  `I noticed ${l.name}'s page has been getting a little interest on the site, so I wanted to reach out and let you know you can claim it for free. Claiming adds a verified check mark, lets you add your logo and photos, and keep your hours and other details current. San Mateo Lock Works, downtown since 1927, just claimed theirs, and so did Hiptwist Fitness, whose grand opening we featured on the homepage and in Local Buzz. They were pretty thrilled with the response.`,
+  ...(l.website ? ["Your listing also links straight to your website, so it's another place people find you and a link back to your site from an established local guide."] : []),
+  `Here's the page:<br>${l.name} on San Mateo Local: ${page(l)}`,
+  'There\'s a "Claim it free" link right at the top of the page. It only takes a minute or two, and there\'s no cost.',
+  `Either way, glad to have ${l.name} on the guide!`,
+  'Jason Regino<br>Founder · San Mateo Local<br>(650) 260-8084<br>jason@sanmateolocal.com · sanmateolocal.com',
+].map(x => '> ' + x).join('\n>\n');
+const shortMsg = l => `> Hi, this is Jason with San Mateo Local, the local guide for San Mateo. ${l.name} has a page on the site and it's been getting looked up lately. It's free to claim so you can add your own photos, hours, and a booking or call link. Here's the page: ${page(l)}. Just reply here if you'd like a hand.`;
+
+const byEmail = top.filter(o => o.email), byIg = top.filter(o => !o.email && o.ig), byPhone = top.filter(o => !o.email && !o.ig);
 const L = [];
-L.push(`Business pages people spent real time on in the last 4 weeks, from owners who haven't claimed their free page yet. Best leads first.`);
+L.push(`Business pages people spent real time on in the last 4 weeks, from owners who haven't claimed their free page yet. Messages are ready to copy and paste.`);
 L.push('');
 if (!top.length) L.push('No new warm leads this week. Nothing to send.');
-top.forEach((o, i) => {
-  const l = o.l, fresh = o.lastDate >= weekAgo ? ' · **active this week**' : '';
-  L.push(`**${i + 1}. ${l.name}** (${l.cat})  `);
-  L.push(`${o.days >= 2 ? `Came back on ${o.days} different days` : `One visit, ${Math.round(o.seconds)} seconds of reading`} · last visit ${nice(o.lastDate)} · ${o.views} view${o.views === 1 ? '' : 's'}${fresh}  `);
-  const c = [l.website && `[Website](${l.website})`, l.phone, l.ig && `Instagram: ${l.ig}`].filter(Boolean).join(' · ');
-  L.push(`[Their page](https://sanmateolocal.com/business/${l.id}.html)${c ? ' · ' + c : ' · no contact info on file'}`);
-  L.push('');
-});
+if (byEmail.length) {
+  L.push(`## Ready to email (${byEmail.length})`, '');
+  byEmail.forEach(o => {
+    L.push(`### ${o.l.name}`, `${why(o)} · [their page](${page(o.l)})`, '', `**To:** ${o.email}  `, `**Subject:** ${o.l.name} on San Mateo Local`, '', emailBody(o.l), '');
+  });
+}
+if (byIg.length) {
+  L.push(`## Send as an Instagram DM (${byIg.length})`, 'No email on their website. Open their Instagram, tap Message, and paste:', '');
+  byIg.forEach(o => { L.push(`### ${o.l.name}`, `${why(o)} · Instagram: [${o.ig}](https://instagram.com/${o.ig.slice(1)})`, '', shortMsg(o.l), ''); });
+}
+if (byPhone.length) {
+  L.push(`## Phone or website form only (${byPhone.length})`, 'No email or Instagram found. Text the number, or paste into the contact form on their site:', '');
+  byPhone.forEach(o => {
+    const c = [o.l.phone, o.l.website && `[website](${o.l.website})`].filter(Boolean).join(' · ') || 'no contact info on file';
+    L.push(`### ${o.l.name}`, `${why(o)} · ${c}`, '', shortMsg(o.l), '');
+  });
+}
 if (leads.length > top.length) L.push(`Plus ${leads.length - top.length} more lower on the list (ask Code for the full list).`, '');
-L.push('**How to send:** use the standard claim invite (subject: "[Business] on San Mateo Local"). Then tell Code who you contacted so they drop off next week\'s list.');
+L.push("**After you send:** tell Code who you contacted so they drop off next week's list.");
 L.push('');
-L.push(`_Skipped: ${claimed} already claimed, ${contacted} already contacted, ${civic} parks/libraries/city pages, ${cold} quick bounces${gone ? `, ${gone} removed pages` : ''}. Your own visits are filtered out by Google Analytics._`);
+L.push(`_Skipped: ${claimed} already claimed, ${contacted} already contacted, ${civic} parks/libraries/city pages, ${cold} quick bounces${gone ? `, ${gone} removed pages` : ''}. Emails and Instagram handles come from each business's own website. Your own visits are filtered out by Google Analytics._`);
 
 const subject = top.length ? `Warm leads for Friday: ${top.length} business${top.length === 1 ? '' : 'es'} to invite (${nice(today)})` : `Warm leads for Friday: none this week (${nice(today)})`;
 const body = L.join('\n');
