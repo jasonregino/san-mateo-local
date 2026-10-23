@@ -83,7 +83,7 @@ async function findContact(website) {
     const html = (await fetchText(new URL(path || '/', base).href)).replace(/&#64;|&commat;/g, '@');
     if (!html) continue;
     const emails = [...new Set((html.match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g) || []).map(e => e.toLowerCase()))].filter(e => !JUNK.test(e));
-    if (!out.email && emails.length) out.email = emails.find(e => e.endsWith('@' + host)) || emails[0];
+    if (!out.email && emails.length) { out.email = emails.find(e => e.endsWith('@' + host)) || emails[0]; out.offDomain = !out.email.endsWith('@' + host); }
     if (!out.ig) { const m = html.match(/instagram\.com\/([A-Za-z0-9_.]{2,30})/); if (m && !/^(p|reel|explore|accounts|sharer)$/i.test(m[1])) out.ig = '@' + m[1]; }
     if (out.email && out.ig) break;
   }
@@ -114,7 +114,7 @@ if (!top.length) L.push('No new warm leads this week. Nothing to send.');
 if (byEmail.length) {
   L.push(`## Ready to email (${byEmail.length})`, '');
   byEmail.forEach(o => {
-    L.push(`### ${o.l.name}`, `${why(o)} · [their page](${page(o.l)})`, '', `**To:** ${o.email}  `, `**Subject:** ${o.l.name} on San Mateo Local`, '', emailBody(o.l), '');
+    L.push(`### ${o.l.name}`, `${why(o)} · [their page](${page(o.l)})`, '', `**To:** ${o.email}${o.offDomain ? ` _(this address uses a different domain than their website, so it may be outdated. If it bounces, use the contact form or phone: ${o.l.phone || 'see their site'})_` : ''}  `, `**Subject:** ${o.l.name} on San Mateo Local`, '', emailBody(o.l), '');
   });
 }
 if (byIg.length) {
