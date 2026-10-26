@@ -305,6 +305,151 @@
       "name": "Celery Retail",
       "reason": "already listed as The Collective powered by Celery",
       "decided": "2026-10-20"
+    },
+    {
+      "name": "Beard Papa's",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "BJ's Restaurant & Brewhouse",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "California Fish Grill",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Fire Wings San Mateo",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Lazy Dog Restaurant & Bar",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Meet Fresh | San Mateo",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Mikiya Wagyu Shabu House | San Mateo",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Mrs. Fields",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Nick The Greek",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Pacific Catch",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Paris Baguette",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Sheng Kee Bakery #3 - San Mateo",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "WFM Coffee Bar",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Ben's Fast Food",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Naya Cafe San Mateo",
+      "reason": "chain",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "A2",
+      "reason": "already listed (a2-wine-bar)",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Anton",
+      "reason": "already listed (anton-sv-patisserie)",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Bahche",
+      "reason": "already listed (bahche-mezzehouse)",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Celia's",
+      "reason": "already listed",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Dianda's Bakery | San Mateo",
+      "reason": "already listed",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Route 92 Sports Bar",
+      "reason": "already listed (route-92-lounge)",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Silver Lake - Chinese Seafood Restaurant",
+      "reason": "already listed",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Tacos El Sabor De Mi Pueblo (food truck)",
+      "reason": "already listed (el-sabor-de-mi-pueblo)",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "The Pantry Family Restaurant - American & Filipino",
+      "reason": "already listed (the-pantry)",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Bluebird Treats",
+      "reason": "home bakery, online orders only",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Dessee Bakery",
+      "reason": "shares Bonjour Bakehouse address, no reviews",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "Nash Bakes",
+      "reason": "shares Bonjour Bakehouse address, 1 review",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "The Backhouse",
+      "reason": "ghost kitchen, pre-order platters only",
+      "decided": "2026-10-26"
+    },
+    {
+      "name": "HEAD WEST Marketplace",
+      "reason": "recurring event, not a business",
+      "decided": "2026-10-26"
     }
   ]
 }

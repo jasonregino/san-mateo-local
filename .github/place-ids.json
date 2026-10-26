@@ -5510,6 +5510,16 @@
    "name": "Peninsula Tires",
    "placeId": "ChIJmaFqMkidj4ARVNb0GOvjG5Y",
    "google": "Peninsula Tires Inc"
+  },
+  "mariscos-y-taqueria-ixpalino-sinaloa-san-mateo": {
+   "name": "Mariscos Y Taqueria Ixpalino Sinaloa",
+   "placeId": "ChIJizmDgi-fj4ARUFmM9f_j4ko",
+   "google": "Mariscos Y Taqueria Ixpalino Sinaloa"
+  },
+  "lilys-creperie": {
+   "name": "Lily's Crêperie",
+   "placeId": "ChIJOfR9l8ifj4ARrySgX1RoFIw",
+   "google": "Lily's Crêperie"
   }
  }
 }
