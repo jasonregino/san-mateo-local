@@ -1,0 +1,35 @@
+name: Monthly feature views
+
+# 1st of each month: views on every free owner feature since it went live, emailed to Jason.
+# This is the proof log for the future Local Story Package. Never edits the site.
+# Auth: Workload Identity Federation. No key file exists; Google only trusts this repo.
+
+on:
+  schedule:
+    - cron: '17 16 1 * *'   # 1st of the month, 16:17 UTC (~8-9am Pacific)
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  views:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/916326327666/locations/global/workloadIdentityPools/github/providers/san-mateo-local
+          service_account: sml-ga4-reader@project-904c9dfe-0f36-4746-892.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/analytics.readonly
+      - name: Feature views + email Jason
+        env:
+          GA_TOKEN: ${{ steps.auth.outputs.access_token }}
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+        run: node .github/feature-views.mjs
