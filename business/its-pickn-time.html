@@ -127,6 +127,16 @@
     .f-nav { display:flex; flex-direction:column; gap:0.4rem; }
     .f-nav a { font-size:0.92rem; color:var(--ink-soft); }
     .f-copy { width:100%; border-top:1px solid var(--line); margin-top:1.3rem; padding-top:1.3rem; font-size:0.8rem; color:var(--ink-soft); }
+    .story-card { display:flex; flex-direction:column; align-items:stretch; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--clay); border-radius:12px; overflow:hidden; color:var(--ink); text-decoration:none; }
+    .story-card + .story-card { margin-top:0.8rem; }
+    .story-card img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; }
+    .story-txt { padding:1rem 1.1rem; display:flex; flex-direction:column; gap:0.3rem; }
+    .story-card img + .story-txt { padding-top:0.9rem; }
+    .story-k { font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:var(--clay-deep); }
+    .story-txt strong { font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; line-height:1.2; }
+    .story-d { font-size:0.92rem; color:var(--ink-soft); line-height:1.45; }
+    .story-go { font-size:0.9rem; font-weight:700; color:var(--clay-deep); margin-top:auto; }
+    .story-card:hover { border-color:var(--clay); }
   </style>
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
@@ -168,6 +178,11 @@
     <section class="blk">
       <h2>About It's Pick'n Time</h2>
       <p>Guitar and ukulele lessons for kids and families, taught by Brett Burdette for more than 13 years, now in a new studio near Hillsdale High.</p>
+    </section>
+
+    <section class="blk">
+      <h2>Read our story</h2>
+      <a class="story-card" href="/its-pickn-time-guitar-lessons-san-mateo.html"><img src="/images/pickn-time/brett-in-studio-v2.jpg" alt="" loading="lazy"><span class="story-txt"><span class="story-k">Our story</span><strong>“I Can Actually Do This”: A Guitar Teacher's New Studio Near Hillsdale High</strong><span class="story-d">For more than 13 years, Brett Burdette has taught guitar and ukulele to Peninsula kids and families. At his new San Mateo studio, he is building something bigger than a weekly lesson.</span><span class="story-go">Read the story &rarr;</span></span></a>
     </section>
 
     <section class="blk"><h2>Good to know</h2><div class="chips"><span class="chip">Guitar lessons</span><span class="chip">Ukulele lessons</span><span class="chip">Kids and adults</span><span class="chip">Parent and child pricing</span><span class="chip">By appointment</span></div></section>

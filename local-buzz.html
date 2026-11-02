@@ -89,7 +89,7 @@
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-<!-- BUZZ-FRESH: added=2026-10-30 events=2 -->
+<!-- BUZZ-FRESH: added=2026-11-02 events=2 -->
   <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--bay-deep);">Get on the guide &rarr;</strong></a></div>
   <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--bay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
   <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
@@ -136,12 +136,12 @@
       <button class="chip on" data-f="all">Everything</button>
       <button class="chip" data-f="Featured"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Featured</button>
       <button class="chip" data-f="New &amp; Verified"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> New & Verified</button>
+      <button class="chip" data-f="Menu"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Menu</button>
       <button class="chip" data-f="Support Local"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Support Local</button>
       <button class="chip" data-f="Live Music"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Live Music</button>
       <button class="chip" data-f="Arts"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Arts</button>
       <button class="chip" data-f="Deal"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Deal</button>
       <button class="chip" data-f="Happy Hour"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Happy Hour</button>
-      <button class="chip" data-f="Menu"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Menu</button>
       <button class="chip" data-f="Event"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</button>
     </div>
     <div class="buzz-grid">
@@ -181,16 +181,7 @@
           <p class="d">A family florist that has bloomed in San Mateo since 1933.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard bcard-span" href="/business/galine-frye-fitting-frangos.html" data-type="New &amp; Verified" style="--tc:#2E7D32; animation-delay:0.2s;">
-          
-          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> New &amp; Verified</span></div>
-          <img class="bcard-logo" src="/images/logos/galine-frye-fitting-frangos-logo.png" alt="Galine, Frye, Fitting &amp; Frangos" loading="lazy">
-          <h3>Galine, Frye, Fitting &amp; Frangos</h3>
-          <p class="meta">Borel Avenue</p>
-          <p class="d">A personal injury and employment law firm on Borel Avenue.</p>
-          <span class="go">Take a look &rarr;</span>
-        </a>
-        <a class="bcard bcard-span" href="/business/digital-monkey-piano-school.html" data-type="New &amp; Verified" style="--tc:#2E7D32; animation-delay:0.25s;">
+        <a class="bcard bcard-span" href="/business/digital-monkey-piano-school.html" data-type="New &amp; Verified" style="--tc:#2E7D32; animation-delay:0.2s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> New &amp; Verified</span></div>
           <img class="bcard-logo" src="/images/logos/digital-monkey-piano-school-logo.jpg" alt="Digital Monkey Piano School" loading="lazy">
@@ -199,7 +190,7 @@
           <p class="d">Private and group piano lessons and music theory, by appointment.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard bcard-span" href="/business/rise-woodfire-pizza-rotisserie.html" data-type="New &amp; Verified" style="--tc:#2E7D32; animation-delay:0.30000000000000004s;">
+        <a class="bcard bcard-span" href="/business/rise-woodfire-pizza-rotisserie.html" data-type="New &amp; Verified" style="--tc:#2E7D32; animation-delay:0.25s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> New &amp; Verified</span></div>
           <img class="bcard-logo" src="/images/logos/rise-woodfire-logo.jpg" alt="Rise Woodfire Pizza &amp; Rotisserie" loading="lazy">
@@ -208,13 +199,22 @@
           <p class="d">Wood-fired pizza and rotisserie in the historic train station, now with weekend brunch.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard bcard-span" href="/business/its-pickn-time.html" data-type="New &amp; Verified" style="--tc:#2E7D32; animation-delay:0.35000000000000003s;">
+        <a class="bcard bcard-span" href="/its-pickn-time-guitar-lessons-san-mateo.html" data-type="New &amp; Verified" style="--tc:#2E7D32; animation-delay:0.30000000000000004s;">
           
-          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> New &amp; Verified</span><span class="fresh">New</span></div>
+          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> New &amp; Verified</span><span class="fresh">Added Oct 30</span></div>
           <img class="bcard-logo" src="/images/logos/its-pickn-time-logo.jpg" alt="It's Pick'n Time" loading="lazy">
           <h3>It's Pick'n Time</h3>
           <p class="meta">Near Hillsdale High</p>
-          <p class="d">Guitar and ukulele lessons for kids and families, with special pricing for parent and child pairs.</p>
+          <p class="d">Guitar and ukulele lessons for kids and families. Read Brett's story about the moment students realize &quot;I can actually do this.&quot;</p>
+          <span class="go">Take a look &rarr;</span>
+        </a>
+        <a class="bcard bcard-span" href="/business/rise-woodfire-pizza-rotisserie.html" data-type="Menu" style="--tc:#8A6D3B; animation-delay:0.35000000000000003s;">
+          
+          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Menu</span><span class="fresh">New</span></div>
+          <img class="bcard-logo" src="/images/logos/rise-woodfire-logo.jpg" alt="Rise Woodfire Pizza &amp; Rotisserie" loading="lazy">
+          <h3>Rise Woodfire Pizza &amp; Rotisserie</h3>
+          <p class="meta">At the train station</p>
+          <p class="d">Rise Woodfire is offering holiday meal packages this season: a Holiday Turkey Feast, a Holiday Prime Rib Feast, and a Woodfire Holiday Feast. Contact Rise for details and ordering.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
         <a class="bcard" href="aldos-pizza-san-mateo.html" data-type="Support Local" style="--tc:#A5492B; animation-delay:0.4s;">
