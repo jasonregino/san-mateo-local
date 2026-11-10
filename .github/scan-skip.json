@@ -227,7 +227,7 @@
       "decided": "2026-10-20"
     },
     {
-      "name": "The LEGO\u00ae Store Hillsdale Shopping Center",
+      "name": "The LEGO® Store Hillsdale Shopping Center",
       "reason": "chain or franchise (coverage #26)",
       "decided": "2026-10-20"
     },
@@ -450,6 +450,11 @@
       "name": "HEAD WEST Marketplace",
       "reason": "recurring event, not a business",
       "decided": "2026-10-26"
+    },
+    {
+      "name": "Sean T. Moloney, MD",
+      "reason": "no San Mateo address found; only office is Daly City (1800 Sullivan Ave). Revisit if a downtown office appears.",
+      "decided": "2026-11-09"
     }
   ]
 }
