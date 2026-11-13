@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBBC09ZJZQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    (function(){var _i=false;try{var _p=new URLSearchParams(location.search);if(_p.get('internal')==='1')localStorage.setItem('sml-internal','1');if(_p.get('internal')==='0')localStorage.removeItem('sml-internal');_i=localStorage.getItem('sml-internal')==='1';}catch(e){}if(_i)gtag('set',{traffic_type:'internal'});gtag('config','G-ZBBC09ZJZQ',{});})();
+  </script>
+  <title>San Mateo Word Search | San Mateo Local</title>
+  <meta name="description" content="A free San Mateo word search you can play on your phone or print. This week: San Mateo streets. A new local theme every week." />
+  <link rel="canonical" href="https://sanmateolocal.com/wordsearch.html" />
+  <meta name="theme-color" content="#17323A" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="San Mateo Word Search" />
+  <meta property="og:description" content="Can you find all the San Mateo streets? Play free on your phone or print it out." />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--paper:#F6F0E4;--paper-2:#EFE7D5;--ink:#17323A;--ink-soft:#47595C;--clay:#C85A38;--green:#3C5A43;--green-deep:#2E4A38;--line:#E1D9C6;--card:#fff;--bay:#10717A;--bay-deep:#0C5B62}
+    body{overflow-x:hidden;max-width:100%;font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;min-height:100vh}
+    .wrap{max-width:640px;margin:0 auto;padding:0 1rem}
+    a{color:var(--bay-deep)}
+    header.site{border-bottom:1.5px solid var(--ink)}
+    header.site .bar{max-width:1080px;margin:0 auto;padding:0 1.25rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+    .brand svg{width:25px;height:25px}
+    .brand-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.12rem;color:var(--ink)}
+    header .back{font-size:.85rem;color:var(--ink-soft);text-decoration:none}
+    .card{background:var(--card);border:1.5px solid var(--ink);border-radius:16px;padding:1.6rem 1.25rem;margin:2rem auto;box-shadow:0 8px 30px rgba(34,29,22,.07)}
+    .kick{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--bay-deep);font-size:1.05rem}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,6vw,2.7rem);font-weight:600;line-height:1.08;margin:.3rem 0 .6rem;text-wrap:balance}
+    .lede{color:var(--ink-soft);font-size:1.02rem;margin-bottom:1rem}
+    .how{font-size:.85rem;color:var(--ink-soft);margin-bottom:1rem}
+    .status{display:flex;justify-content:space-between;align-items:baseline;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bay-deep);margin-bottom:.5rem;font-variant-numeric:tabular-nums}
+    .grid{display:grid;gap:2px;width:100%;max-width:520px;margin:0 auto;touch-action:none;user-select:none;-webkit-user-select:none;background:var(--paper-2);border:1.5px solid var(--ink);border-radius:10px;padding:6px}
+    .cell{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:clamp(.82rem,3.6vw,1.2rem);border-radius:7px;cursor:pointer;color:var(--ink);transition:background .1s}
+    .cell.sel{background:var(--clay);color:#fff}
+    .cell.anchor{outline:2.5px solid var(--clay);outline-offset:-2px}
+    .cell.found{color:#fff}
+    .words{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.4rem .9rem;margin:1.2rem 0 .4rem}
+    .words li{font-size:.95rem;font-weight:700;letter-spacing:.04em}
+    .words li span{display:block;font-weight:400;font-size:.76rem;letter-spacing:0;color:var(--ink-soft)}
+    .words li.done{color:var(--ink-soft);text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:var(--clay)}
+    .actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.1rem}
+    .btn{display:inline-block;background:var(--clay);color:#fff;border:none;font-family:inherit;font-weight:700;font-size:1rem;padding:.8rem 1.4rem;border-radius:11px;cursor:pointer;text-decoration:none}
+    .btn.ghost{background:var(--paper-2);color:var(--ink);border:1.5px solid var(--line)}
+    .btn:focus-visible,.cell:focus-visible{outline:3px solid var(--bay);outline-offset:2px}
+    .done-box{display:none;margin-top:1.2rem;background:#E7F3E7;border:1.5px solid var(--green);border-radius:12px;padding:1rem 1.1rem}
+    .done-box.show{display:block}
+    .done-box h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--green-deep);line-height:1.15}
+    .done-box p{color:var(--ink-soft);margin:.3rem 0 .8rem}
+    .more{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+    .more a{background:var(--paper-2);border:1.5px solid var(--line);border-radius:9px;padding:.5rem .9rem;text-decoration:none;font-weight:600;font-size:.88rem;color:var(--ink)}
+    .source{font-size:.78rem;color:var(--ink-soft);margin-top:1rem}
+    .print-only{display:none}
+    @media (max-width:480px){.card{padding:1.3rem .8rem;margin:1.2rem auto}.grid{padding:4px;gap:1px}}
+    footer{text-align:center;color:var(--ink-soft);font-size:.82rem;padding:1.5rem 0 3rem}
+    @media (prefers-reduced-motion:reduce){.cell{transition:none}}
+    @media print{
+      header.site,footer,.actions,.how,.status,.done-box,.source,.kick{display:none!important}
+      body{background:#fff;min-height:0}
+      body>*:not(.wrap){display:none!important}
+      @page{margin:.5in}
+      .card{border:none;box-shadow:none;margin:0;padding:0}
+      .grid{background:#fff;border:1.5px solid #000;max-width:5.4in}
+      .words{margin-top:.8rem}.words li{font-size:10pt}.words li span{font-size:8pt}.lede{margin-bottom:.6rem}
+      .cell{color:#000!important;background:#fff!important;font-size:15pt}
+      .words li.done{text-decoration:none;color:#000}
+      .print-only{display:block;text-align:center;font-size:10pt;margin-top:.3in}
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="bar">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="6" fill="#C25B3A"/><path d="M1 27 Q9 19 16 23 T31 25 V32 H1 Z" fill="#41614B"/></svg>
+        <span class="brand-name">San Mateo Local</span>
+      </a>
+      <a class="back" href="index.html">&larr; Back to the guide</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="kick">&#10022; This week's San Mateo word search</div>
+      <h1 id="title"></h1>
+      <p class="lede" id="intro"></p>
+      <p class="how">Drag your finger across a word to circle it. Or tap the first letter, then the last. Words run across, down, and diagonally.</p>
+      <div class="status"><span id="count"></span><span id="clock">0:00</span></div>
+      <div class="grid" id="grid" role="grid" aria-label="Word search grid"></div>
+      <ul class="words" id="words"></ul>
+      <div class="done-box" id="doneBox">
+        <h2 id="doneTitle"></h2>
+        <p id="doneText"></p>
+        <button class="btn" id="shareBtn">Challenge a friend</button>
+        <div class="more">
+          <a href="quiz.html">Take the How San Mateo Are You? quiz</a>
+          <a href="gone-but-not-forgotten.html">Gone But Not Forgotten</a>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn ghost" id="printBtn">Print it</button>
+        <button class="btn ghost" id="revealBtn">Show the answers</button>
+      </div>
+      <p class="source" id="source"></p>
+      <p class="print-only">Play online or find more puzzles at sanmateolocal.com/wordsearch.html</p>
+    </div>
+  </div>
+
+  <footer>San Mateo Local &middot; The San Mateo only locals know &middot; <a href="https://www.youtube.com/@sanmateolocal" target="_blank" rel="noopener">Watch on YouTube &rarr;</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></footer>
+
+  <script>
+  var PUZZLE = /*PUZZLE-START*/{"id": "2026-11-streets", "title": "San Mateo Streets", "intro": "Fifteen streets every local has driven, parked on, or gotten stuck on. How fast can you find them?", "source": "Every street comes from a real San Mateo address in our business directory.", "size": 13, "grid": ["THAMPHLETTBPB", "LEUHNTONEASEA", "ENOEUAOVDUNNY", "TOERLMOEMSIIW", "NRLDEBBEAWLNO", "IFCRELHODDLSO", "DOAETLLLLSIUD", "YLMAOUASLDOLD", "CKIPNBBWWOTAL", "KINGSTONAOTDT", "BHOPEOLLRRRTO", "MNHILLSDALETS", "TILTONOOSWOEH"], "words": [{"word": "ELCAMINO", "label": "El Camino Real", "start": [3, 2], "end": [10, 2]}, {"word": "NORFOLK", "label": "Norfolk Street", "start": [2, 1], "end": [8, 1]}, {"word": "DELAWARE", "label": "Delaware Street", "start": [4, 3], "end": [11, 10]}, {"word": "HILLSDALE", "label": "Hillsdale Boulevard", "start": [11, 2], "end": [11, 10]}, {"word": "CLAREMONT", "label": "Claremont Street", "start": [8, 0], "end": [0, 8]}, {"word": "AMPHLETT", "label": "Amphlett Boulevard", "start": [0, 2], "end": [0, 9]}, {"word": "BALDWIN", "label": "Baldwin Avenue", "start": [8, 5], "end": [2, 11]}, {"word": "ELLSWORTH", "label": "Ellsworth Avenue", "start": [4, 4], "end": [12, 12]}, {"word": "KINGSTON", "label": "Kingston Street", "start": [9, 0], "end": [9, 7]}, {"word": "BAYWOOD", "label": "Baywood Avenue", "start": [0, 12], "end": [6, 12]}, {"word": "BOVET", "label": "Bovet Road", "start": [4, 5], "end": [0, 9]}, {"word": "TILTON", "label": "Tilton Avenue", "start": [12, 0], "end": [12, 5]}, {"word": "HUMBOLDT", "label": "Humboldt Street", "start": [1, 3], "end": [8, 10]}, {"word": "POLHEMUS", "label": "Polhemus Road", "start": [8, 3], "end": [1, 10]}, {"word": "PENINSULA", "label": "Peninsula Avenue", "start": [0, 11], "end": [8, 11]}]}/*PUZZLE-END*/;
+  var COLORS = ['#10717A','#C85A38','#3C5A43','#7A5C99','#B07A1F','#2F6E9E','#9A4A5E','#5C7A2E'];
+  var N = PUZZLE.size, grid = document.getElementById('grid');
+  var cells = [], found = {}, startTime = null, timer = null, anchor = null, dragFrom = null, dragging = false;
+  var KEY = 'sml-ws-' + PUZZLE.id;
+
+  document.getElementById('title').textContent = PUZZLE.title;
+  document.getElementById('intro').textContent = PUZZLE.intro;
+  document.getElementById('source').textContent = PUZZLE.source;
+  grid.style.gridTemplateColumns = 'repeat(' + N + ',minmax(0,1fr))';
+
+  for (var r = 0; r < N; r++) for (var c = 0; c < N; c++) {
+    var d = document.createElement('div');
+    d.className = 'cell'; d.textContent = PUZZLE.grid[r][c];
+    d.dataset.r = r; d.dataset.c = c;
+    grid.appendChild(d); cells.push(d);
+  }
+  function cellAt(r, c){ return cells[r * N + c]; }
+
+  var list = document.getElementById('words');
+  PUZZLE.words.forEach(function(w){
+    var li = document.createElement('li');
+    li.id = 'w-' + w.word;
+    li.innerHTML = w.word + '<span>' + w.label + '</span>';
+    list.appendChild(li);
+  });
+
+  // a straight line (any of 8 directions) between two cells, or just the start cell if not straight
+  function line(a, b){
+    var dr = b.r - a.r, dc = b.c - a.c;
+    if (dr && dc && Math.abs(dr) !== Math.abs(dc)) {
+      if (Math.abs(dr) > Math.abs(dc)) dc = 0; else dr = 0;
+    }
+    var len = Math.max(Math.abs(dr), Math.abs(dc)), sr = Math.sign(dr), sc = Math.sign(dc), out = [];
+    for (var i = 0; i <= len; i++) out.push({r: a.r + sr * i, c: a.c + sc * i});
+    return out;
+  }
+  function paintSel(path){
+    cells.forEach(function(x){ x.classList.remove('sel'); });
+    (path || []).forEach(function(p){ cellAt(p.r, p.c).classList.add('sel'); });
+  }
+  function pos(el){ return {r: +el.dataset.r, c: +el.dataset.c}; }
+  function same(a, b){ return a.r === b[0] && a.c === b[1]; }
+
+  function tryWord(path){
+    var a = path[0], b = path[path.length - 1];
+    for (var i = 0; i < PUZZLE.words.length; i++) {
+      var w = PUZZLE.words[i];
+      if (found[w.word]) continue;
+      if ((same(a, w.start) && same(b, w.end)) || (same(a, w.end) && same(b, w.start))) { markFound(w, i, true); return true; }
+    }
+    return false;
+  }
+  function markFound(w, i, fresh){
+    found[w.word] = true;
+    line({r: w.start[0], c: w.start[1]}, {r: w.end[0], c: w.end[1]}).forEach(function(p){
+      var el = cellAt(p.r, p.c); el.classList.add('found'); el.style.background = COLORS[i % COLORS.length];
+    });
+    document.getElementById('w-' + w.word).classList.add('done');
+    if (fresh) save();
+    update();
+  }
+  function update(){
+    var n = Object.keys(found).length, total = PUZZLE.words.length;
+    document.getElementById('count').textContent = n + ' of ' + total + ' found';
+    if (n === total && !PUZZLE.revealed) finish();
+  }
+  function startClock(){
+    if (startTime) return;
+    startTime = Date.now();
+    timer = setInterval(function(){ document.getElementById('clock').textContent = fmt(Date.now() - startTime); }, 1000);
+  }
+  function fmt(ms){ var s = Math.floor(ms / 1000); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+  var finalTime = '';
+  function finish(){
+    clearInterval(timer);
+    finalTime = startTime ? fmt(Date.now() - startTime) : '';
+    document.getElementById('doneTitle').textContent = 'You found all ' + PUZZLE.words.length + '!';
+    document.getElementById('doneText').textContent = (finalTime ? 'Your time: ' + finalTime + '. ' : '') + 'A new San Mateo puzzle comes out every week.';
+    document.getElementById('doneBox').classList.add('show');
+    if (!restoring) try { gtag('event', 'wordsearch_complete', {puzzle_id: PUZZLE.id}); } catch(e){}
+  }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(Object.keys(found))); } catch(e){} }
+
+  grid.addEventListener('pointerdown', function(e){
+    var el = e.target.closest('.cell'); if (!el) return;
+    e.preventDefault(); startClock();
+    dragFrom = pos(el); dragging = true; paintSel([dragFrom]);
+  });
+  grid.addEventListener('pointermove', function(e){
+    if (!dragging) return;
+    var el = document.elementFromPoint(e.clientX, e.clientY);
+    el = el && el.closest ? el.closest('.cell') : null;
+    if (el) paintSel(line(dragFrom, pos(el)));
+  });
+  window.addEventListener('pointerup', function(e){
+    if (!dragging) return;
+    dragging = false;
+    var el = document.elementFromPoint(e.clientX, e.clientY);
+    el = el && el.closest ? el.closest('.cell') : null;
+    var end = el ? pos(el) : dragFrom;
+    if (end.r === dragFrom.r && end.c === dragFrom.c) {
+      // a tap: first tap sets the start, second tap sets the end
+      if (anchor) {
+        var path = line(anchor, end);
+        cellAt(anchor.r, anchor.c).classList.remove('anchor'); anchor = null;
+        tryWord(path); paintSel([]);
+      } else {
+        anchor = end; cellAt(end.r, end.c).classList.add('anchor'); paintSel([]);
+      }
+      return;
+    }
+    if (anchor) { cellAt(anchor.r, anchor.c).classList.remove('anchor'); anchor = null; }
+    tryWord(line(dragFrom, end)); paintSel([]);
+  });
+
+  document.getElementById('printBtn').onclick = function(){ window.print(); };
+  document.getElementById('revealBtn').onclick = function(){
+    PUZZLE.revealed = true;
+    PUZZLE.words.forEach(function(w, i){ if (!found[w.word]) markFound(w, i, false); });
+    clearInterval(timer);
+  };
+  document.getElementById('shareBtn').onclick = function(){
+    var text = 'I found all ' + PUZZLE.words.length + ' in the San Mateo word search' + (finalTime ? ' in ' + finalTime : '') + '. Can you beat me?';
+    var url = 'https://sanmateolocal.com/wordsearch.html';
+    if (navigator.share) { navigator.share({title: 'San Mateo Word Search', text: text, url: url}).catch(function(){}); }
+    else { navigator.clipboard.writeText(text + ' ' + url).then(function(){ document.getElementById('shareBtn').textContent = 'Link copied!'; }, function(){}); }
+  };
+
+  var restoring = true;
+  try {
+    (JSON.parse(localStorage.getItem(KEY)) || []).forEach(function(word){
+      PUZZLE.words.forEach(function(w, i){ if (w.word === word && !found[word]) markFound(w, i, false); });
+    });
+  } catch(e){}
+  restoring = false;
+  update();
+  </script>
+  <script src="/ask-widget.js" defer></script>
+</body>
+</html>
