@@ -119,6 +119,31 @@
       "source": "/business/after-glo-beauty-collective-san-mateo.html",
       "destination": "/business/sinta-skin.html",
       "permanent": true
+    },
+    {
+      "source": "/business/harrys-shoreview-deli.html",
+      "destination": "/eat-drink.html",
+      "permanent": true
+    },
+    {
+      "source": "/business/mr-taco-man-san-mateo.html",
+      "destination": "/eat-drink.html",
+      "permanent": true
+    },
+    {
+      "source": "/business/wheel-works-san-mateo.html",
+      "destination": "/local-services.html",
+      "permanent": true
+    },
+    {
+      "source": "/business/the-cave-smoke-shop.html",
+      "destination": "/shopping.html",
+      "permanent": true
+    },
+    {
+      "source": "/business/mariana-full-body-massage-san-mateo.html",
+      "destination": "/local-services.html",
+      "permanent": true
     }
   ]
 }
