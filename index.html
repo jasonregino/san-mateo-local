@@ -929,18 +929,19 @@
     })();
   </script>
   <script src="/ask-widget.js" defer></script>
-  <!-- This Weekend freshness guard: if the front-page "This Weekend" lead is more than 7
-       days old, hide it so a stale post never shows as current, even if we forget to refresh.
-       Runs in the visitor's browser on every load. Pairs with the weekly this-weekend-freshness
-       GitHub Action that opens an Issue when the post goes stale. -->
+  <!-- This Weekend freshness guard: a This Weekend post goes stale the moment its weekend
+       ends, so hide the front-page lead from the Monday after the post's weekend (the first
+       Sunday on or after data-tw-date). Runs in the visitor's browser on every load, so a
+       stale post never shows as current even if we forget to refresh. Pairs with the
+       this-weekend-freshness GitHub Action, which uses the same rule to open an Issue. -->
   <script>
   (function(){
-    var STALE_DAYS = 7;
     var lead = document.querySelector('.latest-lead[data-tw-date]');
     if (!lead) return;
-    var t = Date.parse(lead.getAttribute('data-tw-date') + 'T00:00:00');
-    if (isNaN(t)) return;
-    if ((Date.now() - t) / 86400000 > STALE_DAYS) { lead.remove(); }
+    var d = new Date(lead.getAttribute('data-tw-date') + 'T00:00:00');
+    if (isNaN(d.getTime())) return;
+    d.setDate(d.getDate() + (7 - d.getDay()) % 7 + 1); // Monday after the post's weekend
+    if (Date.now() >= d.getTime()) { lead.remove(); }
   })();
   </script>
 </body>

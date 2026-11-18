@@ -245,12 +245,13 @@
     .cat-hero-in h1 { font-size:clamp(2.8rem,6.8vw,4.6rem); font-weight:600; line-height:1.04; margin:0.3rem 0 0.7rem; color:#fff; }
     .cat-hero-lead { color:rgba(255,255,255,.9); font-size:1.14rem; max-width:42rem; margin:0; }
   </style>
-  <div class="wrap"><a class="pinned" href="this-weekend.html">
+  <div class="wrap"><a class="pinned" data-tw-date="2026-11-12" href="this-weekend.html">
       <span class="pinned-flag">&#9733; This weekend</span>
       <h2>Aldo's Last Day, a Free Chamber Concert, and '90s Rock This Weekend</h2>
       <p>Sunday is the last day at Aldo's Pizza after 68 years. Plus a free Neave Trio concert at the Main Library, a cocktail class at Fogbird, '90s rock at McGovern's, and a pottery and audiobook night at Color Me Mine.</p>
       <span class="pinned-read">See the weekend &rarr;</span>
     </a></div>
+  <script>(function(){var a=document.querySelector('.pinned[data-tw-date]');if(!a)return;var d=new Date(a.getAttribute('data-tw-date')+'T00:00:00');if(isNaN(d.getTime()))return;d.setDate(d.getDate()+(7-d.getDay())%7+1);if(Date.now()>=d.getTime())a.parentNode.remove();})();</script>
   <div class="wrap"><section class="bestof">
       <h2>Jump to</h2>
       <div class="bestof-grid">

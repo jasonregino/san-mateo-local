@@ -1,13 +1,14 @@
 name: This Weekend freshness check
 
-# Runs on GitHub's servers every Monday — no need for anything to be open on Jason's end.
-# It reads the deployed homepage's This Weekend date and, if it's stale (7+ days old),
+# Runs on GitHub's servers every Monday and Wednesday — no need for anything to be open on Jason's end.
+# It reads the homepage's This Weekend date and, if that post's weekend has already ended,
 # opens an Issue so the front-page lead gets refreshed. It NEVER edits the site.
 # Pairs with the browser-side guard in index.html that hides a stale lead on load.
 
 on:
   schedule:
     - cron: '45 15 * * 1'   # Mondays 15:45 UTC (~8:45am Pacific), just after the DSMA + coverage scans
+    - cron: '45 15 * * 3'   # Wednesdays, a second nudge so the new post is up by Thursday
   workflow_dispatch: {}       # lets Jason run it on demand from the Actions tab
 
 permissions:
