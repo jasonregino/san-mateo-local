@@ -1,7 +1,7 @@
 // Weekly newsletter draft — runs in GitHub Actions (.github/workflows/newsletter-draft.yml).
 //
-// Every Thursday morning it assembles the week's San Mateo happenings — new posts on
-// the site, Downtown San Mateo events, and city news + upcoming City Council meetings —
+// Every Thursday morning it assembles the week's San Mateo happenings — new openings and
+// posts on the site, this week's word search, Downtown San Mateo events, and city news + upcoming City Council meetings —
 // creates that issue as a DRAFT in Buttondown, and emails Jason a preview of it.
 //
 // It NEVER sends to subscribers. Jason reads the Thursday preview and, if it's good,
@@ -108,7 +108,9 @@ async function dsmaEvents() {
     // runs on a UTC machine, so `start` is off by 7-8 hours and fmtDay(start) labeled
     // midnight events a day EARLY ("Mon, Oct 12" for a Tuesday). Label the day from
     // the date string itself instead. (Fixed 2026-10-08.)
-    out.push({ title: decodeEntities(ev.title), when: start, day: localDay(ev.start_date), url: ev.url || '' });
+    const title = decodeEntities(ev.title).replace(/\*+/g, '').replace(/\s+[–—]\s+/g, ': ').trim();   // no long dashes in our copy
+    if (/\b(cancel+ed|postponed)\b/i.test(title)) continue;   // DSMA keeps canceled events up with a "**Canceled**" prefix
+    out.push({ title, when: start, day: localDay(ev.start_date), url: ev.url || '' });
   }
   out.sort((a, b) => a.when - b.when);
   const seen = new Set(), deduped = [];   // a recurring event lists once per day; keep the soonest
@@ -144,23 +146,67 @@ async function rssItems(url, limit) {
   return out;
 }
 
-// --- Assemble the issue in the proven format (## headings, never bold) --------------
-// Local Buzz specials (deals, happy hours, menus, music) that are live this week, from the
-// committed data/buzz.json. Free editorial pick of what's on Local Buzz; nobody pays to be
-// in the newsletter itself (Jason, 2026-10-15). Chains are never in buzz.json.
-function buzzSpecials() {
-  let items = [];
-  try { const b = JSON.parse(readFileSync('data/buzz.json', 'utf8')); items = Array.isArray(b) ? b : (b.items || []); } catch { return []; }
-  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
-  const TYPES = new Set(['Deal', 'Happy Hour', 'Menu', 'Live Music']);
-  return items.filter(i => TYPES.has(i.type) && (!i.until || i.until >= today) && i.business && i.blurb).slice(0, 6)
-    .map(i => ({ business: i.business, blurb: i.blurb, url: i.url && i.url.startsWith('/') ? `${SITE}${i.url}` : `${SITE}/local-buzz.html` }));
+// --- Local Buzz cards, from the committed, built local-buzz.html ----------------------
+// data/ is gitignored, so this job can't see data/buzz.json; the built page is the
+// committed copy. Each card: <a class="bcard" href=... data-type="..."> with an
+// "Added Mon D" stamp, <h3> name, <p class="meta">, <p class="d"> blurb.
+function buzzCards() {
+  let html;
+  try { html = readFileSync('local-buzz.html', 'utf8'); } catch { return []; }
+  const today = new Date(new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' }) + 'T12:00:00Z');
+  const out = [];
+  const re = /<a class="bcard[^"]*" href="([^"]*)" data-type="([^"]*)"[^>]*>([\s\S]*?)<\/a>/g;
+  let m;
+  while ((m = re.exec(html))) {
+    const [, href, type, inner] = m;
+    const pick = (r) => { const x = inner.match(r); return x ? decodeEntities(x[1].replace(/<[^>]+>/g, '')) : ''; };
+    const name = pick(/<h3>([\s\S]*?)<\/h3>/), blurb = pick(/<p class="d">([\s\S]*?)<\/p>/);
+    let added = null;
+    const a = inner.match(/Added ([A-Z][a-z]{2}) (\d{1,2})/);
+    if (a) {   // "Added Nov 14" has no year: assume this year, unless that lands in the future
+      added = new Date(`${a[1]} ${a[2]}, ${today.getUTCFullYear()} 12:00 UTC`);
+      if (added > today) added.setUTCFullYear(added.getUTCFullYear() - 1);
+    }
+    const url = href.startsWith('/') ? `${SITE}${href}` : href.startsWith('http') ? href : `${SITE}/local-buzz.html`;
+    if (name && blurb) out.push({ type, name, blurb, url, added });
+  }
+  return out;
 }
 
-function buildBody({ posts, events, news, council, buzz = [] }) {
+// Local Buzz specials (deals, happy hours, menus, music). Free editorial pick of what's on
+// Local Buzz; nobody pays to be in the newsletter itself (Jason, 2026-10-15).
+function buzzSpecials(cards) {
+  const TYPES = new Set(['Deal', 'Happy Hour', 'Menu', 'Live Music']);
+  return cards.filter(c => TYPES.has(c.type)).slice(0, 6).map(c => ({ business: c.name, blurb: c.blurb, url: c.url }));
+}
+
+// New openings added to Local Buzz in the last DAYS_NEW + 3 days (a Monday add still
+// makes the next Thursday issue, with a little slack).
+function newOpenings(cards) {
+  const cutoff = Date.now() - (DAYS_NEW + 3) * 864e5;
+  return cards.filter(c => /new opening|now open|grand opening/i.test(c.type) && c.added && c.added.getTime() >= cutoff).slice(0, 4);
+}
+
+// This week's word search (wordsearch.html carries the puzzle as JSON with "title"/"intro").
+function wordSearch() {
+  let html;
+  try { html = readFileSync('wordsearch.html', 'utf8'); } catch { return null; }
+  const t = html.match(/"title":\s*"([^"]+)"/), i = html.match(/"intro":\s*"([^"]+)"/);
+  return t ? { title: decodeEntities(t[1]), intro: i ? decodeEntities(i[1]) : '' } : null;
+}
+
+// --- Assemble the issue in the proven format (## headings, never bold) --------------
+function buildBody({ posts, events, news, council, buzz = [], openings = [], ws = null }) {
   const L = [];
   L.push('Hi there,', '');
   L.push("Here's what's worth knowing around San Mateo this week.", '');
+
+  if (openings.length || posts.length) {
+    L.push('## New on San Mateo Local');
+    for (const o of openings) L.push(`- **${o.name}**: ${o.blurb} [Take a look](${o.url})`);
+    for (const p of posts) L.push(`- [${p.title}](${p.url})${p.dek ? `. ${p.dek}` : ''}`);
+    L.push('');
+  }
 
   if (news.length) {
     L.push('## City news');
@@ -186,15 +232,14 @@ function buildBody({ posts, events, news, council, buzz = [] }) {
     L.push(`- [See everything on Local Buzz](${SITE}/local-buzz.html)`);
     L.push('');
   }
-  if (posts.length) {
-    L.push('## New on the site');
-    for (const p of posts) L.push(`- [${p.title}](${p.url})${p.dek ? `. ${p.dek}` : ''}`);
-    L.push('');
-  }
-  if (!news.length && !council.length && !events.length && !posts.length && !buzz.length) {
+  if (!news.length && !council.length && !events.length && !posts.length && !buzz.length && !openings.length) {
     L.push('Light week, nothing major to flag. Back next Friday.', '');
   }
 
+  if (ws) {
+    L.push(`## This week's word search: ${ws.title}`);
+    L.push(`${ws.intro ? ws.intro + ' ' : ''}[Play it](${SITE}/wordsearch.html).`, '');
+  }
   L.push('## Think you know your hometown?');
   L.push(`Twenty questions, no Googling. [Take the quiz](${SITE}/quiz.html).`, '');
   L.push("That's the week. Thanks for reading, and feel free to reply anytime. I read every one.", '');
@@ -202,11 +247,12 @@ function buildBody({ posts, events, news, council, buzz = [] }) {
   return L.join('\n');
 }
 
-function buildSubject({ news, events, posts }) {
+function buildSubject({ openings, events, posts, ws }) {
   const bits = [];
-  if (news[0]) bits.push(news[0].title);
-  if (events[0]) bits.push(events[0].title);
-  else if (posts[0]) bits.push(posts[0].title);
+  if (openings[0]) bits.push(`${openings[0].name} opens`);
+  if (events[0]) bits.push(events[0].title.replace(/\s+at\s+.*$/i, ''));
+  if (bits.length < 2 && posts[0]) bits.push(posts[0].title);
+  if (bits.length < 2 && ws) bits.push(`the ${ws.title} word search`);
   if (!bits.length) return `San Mateo Local, this week (${fmtDay(Date.now())})`;
   const subj = 'This week in San Mateo: ' + bits.slice(0, 2).join(', ');
   return subj.length > 120 ? subj.slice(0, 117) + '...' : subj;
@@ -220,11 +266,14 @@ const [events, news, council] = await Promise.all([
   rssItems(CITY_COUNCIL_RSS, 3),
 ]);
 
-const subject = buildSubject({ news, events, posts });
-const buzz = buzzSpecials();
-const body = buildBody({ posts, events, news, council, buzz });
+const cards = buzzCards();
+const openings = newOpenings(cards);
+const buzz = buzzSpecials(cards);
+const ws = wordSearch();
+const subject = buildSubject({ openings, events, posts, ws });
+const body = buildBody({ posts, events, news, council, buzz, openings, ws });
 
-console.log(`Assembled: ${posts.length} post(s), ${events.length} event(s), ${news.length} news item(s), ${council.length} council item(s).`);
+console.log(`Assembled: ${openings.length} opening(s), ${posts.length} post(s), ${events.length} event(s), ${news.length} news item(s), ${council.length} council item(s), ${buzz.length} special(s), word search: ${ws ? ws.title : 'none'}.`);
 
 if (!BD_KEY) {
   console.log('\nNo BUTTONDOWN_API_KEY set — dry run. The assembled issue is below.\n');
