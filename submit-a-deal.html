@@ -54,6 +54,7 @@
     @media (max-width:760px){ body { font-size:17px; } }
   </style>
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <link rel="stylesheet" href="/sml-form.css" />
 </head>
 <body>
   <header class="masthead"><div class="masthead-top">
@@ -82,17 +83,28 @@
     <section class="formwrap">
       <h2>Submit your deal</h2>
       <p class="sub">Tell us the offer and we'll take it from there.</p>
-      <iframe
-          src="https://api.leadconnectorhq.com/widget/form/TYZz90Rkw3tDBhiSpSLR"
-          style="width:100%;min-height:980px;border:none;border-radius:8px"
-          id="inline-TYZz90Rkw3tDBhiSpSLR"
-          data-layout="{'id':'INLINE'}"
-          data-form-name="Deal Submission"
-          data-height="968"
-          data-form-id="TYZz90Rkw3tDBhiSpSLR"
-          title="Deal Submission">
-      </iframe>
-      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+      <form class="w3" data-w3="deal_submission" data-name-field="organization" data-done="dealDone">
+        <input type="hidden" name="access_key" value="16f8e5ea-b747-42ab-b5fd-eb46cacdfac4" />
+        <input type="hidden" name="subject" value="SML deal submission" />
+        <input type="hidden" name="from_name" value="San Mateo Local: Deals" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+        <div class="w3-two">
+          <div class="w3-row"><label for="d-name">Contact name</label><input type="text" id="d-name" name="name" required maxlength="80" autocomplete="name" /></div>
+          <div class="w3-row"><label for="d-email">Email</label><input type="email" id="d-email" name="email" required maxlength="120" autocomplete="email" /></div>
+        </div>
+        <div class="w3-row"><label for="d-org">Business name</label><input type="text" id="d-org" name="organization" required maxlength="120" /></div>
+        <div class="w3-row"><label for="d-deal">Deal or offer</label><textarea id="d-deal" name="deal" required maxlength="1000" placeholder="e.g. 10% off any order, mention San Mateo Local"></textarea></div>
+        <div class="w3-row"><label for="d-exp">Expiration date <span class="opt">(optional)</span></label><input type="date" id="d-exp" name="expires" /></div>
+        <div class="w3-row"><label for="d-terms">Terms <span class="opt">(optional)</span></label><textarea id="d-terms" name="terms" maxlength="1000"></textarea></div>
+        <button type="submit">Submit my deal</button>
+        <p class="w3-msg" role="alert"></p>
+        <p class="w3-fine">Have a photo or flyer for the deal? Email it to <a href="mailto:jason@sanmateolocal.com">jason@sanmateolocal.com</a>.</p>
+      </form>
+      <div class="w3-done" id="dealDone" hidden>
+        <h3>Thanks, your deal is in.</h3>
+        <p>We'll give it a quick look and let you know when it's live on San Mateo Local.</p>
+      </div>
+      <script src="/sml-form.js" defer></script>
     </section>
   </main>
 

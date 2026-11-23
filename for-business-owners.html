@@ -128,6 +128,7 @@
       body{padding-bottom:4.6rem;}
     }
   </style>
+  <link rel="stylesheet" href="/sml-form.css" />
 </head>
 <body>
   <header class="site">
@@ -309,7 +310,7 @@
         <h2 style="text-align:left; font-size:1.6rem; margin:.3rem 0 .35rem;">Show up where locals are already looking</h2>
         <p style="color:var(--ink-soft);">A completely separate offer from the services above, and a free place to start: get your business onto the San Mateo guide residents actually browse. A basic listing is always free, with a few ways to stand out.</p>
         <p style="margin-top:.8rem;"><a href="list-your-business.html" style="color:var(--clay-deep); font-weight:700; font-size:.95rem;">New to this? Why list on San Mateo Local &rarr;</a></p>
-        <p style="margin-top:.4rem;"><a href="https://api.leadconnectorhq.com/widget/form/dUEsAU5iNxjX6vnM5jLd" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700; font-size:.95rem;">Already listed? Claim your listing free &rarr;</a></p>
+        <p style="margin-top:.4rem;"><a href="/claim.html" style="color:var(--clay-deep); font-weight:700; font-size:.95rem;">Already listed? Claim your listing free &rarr;</a></p>
       </div>
     </section>
   </div>
@@ -348,10 +349,39 @@
              offers remain fully reachable via the pricing tiers above (featStart etc.). If we want a
              post-signup upsell again, rebuild it inside the GHL form's own confirmation/redirect. -->
         <div style="margin-top:1.2rem;">
-          <iframe src="https://api.leadconnectorhq.com/widget/form/OU906kLSNvVRj3rtE4dy"
-            style="width:100%; min-height:640px; border:none; border-radius:12px; background:#fff;"
-            id="ghl-get-listed" data-form-id="OU906kLSNvVRj3rtE4dy"
-            title="Add your business to San Mateo Local"></iframe>
+          <form class="w3" id="getListedForm" data-w3="get_listed" data-name-field="organization" data-done="getListedDone">
+            <input type="hidden" name="access_key" value="16f8e5ea-b747-42ab-b5fd-eb46cacdfac4" />
+            <input type="hidden" name="subject" value="SML business request" />
+            <input type="hidden" name="from_name" value="San Mateo Local: Business form" />
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+            <div class="w3-row"><label for="gl-want">What are you looking for?</label>
+              <select id="gl-want" name="looking_for" required>
+                <option>Get listed free</option>
+                <option>Claim or fix my listing</option>
+                <option>Featured listing</option>
+                <option>Local Buzz for my specials or events</option>
+                <option>Business Spotlight story</option>
+                <option>Help with my website or Google reviews</option>
+                <option>Something else</option>
+              </select></div>
+            <div class="w3-two">
+              <div class="w3-row"><label for="gl-org">Business name</label><input type="text" id="gl-org" name="organization" required maxlength="120" /></div>
+              <div class="w3-row"><label for="gl-type">Business type</label><input type="text" id="gl-type" name="business_type" required maxlength="80" placeholder="e.g. Bakery, plumber, yoga studio" /></div>
+            </div>
+            <div class="w3-row"><label for="gl-about">Tell us about your business <span class="opt">(optional)</span></label><textarea id="gl-about" name="about" maxlength="2000" placeholder="A few sentences about what you do, what makes your business special, or what you'd like people to know."></textarea></div>
+            <div class="w3-row"><label for="gl-addr">Business address <span class="opt">(optional)</span></label><input type="text" id="gl-addr" name="address" maxlength="200" /></div>
+            <div class="w3-row"><label for="gl-name">Your name</label><input type="text" id="gl-name" name="name" required maxlength="80" autocomplete="name" /></div>
+            <div class="w3-two">
+              <div class="w3-row"><label for="gl-phone">Phone</label><input type="tel" id="gl-phone" name="phone" required maxlength="30" autocomplete="tel" /></div>
+              <div class="w3-row"><label for="gl-email">Email</label><input type="email" id="gl-email" name="email" required maxlength="120" autocomplete="email" /></div>
+            </div>
+            <button type="submit">Send it to San Mateo Local</button>
+            <p class="w3-msg" role="alert"></p>
+          </form>
+          <div class="w3-done" id="getListedDone" hidden>
+            <h3>Got it, thank you!</h3>
+            <p>Jason will read it and get back to you, usually within a couple of days. Free listings stay free.</p>
+          </div>
         </div>
         <p style="text-align:center; margin-top:.9rem; color:var(--ink-soft); font-size:.9rem;">Free listing is all most businesses need. <a href="for-business-owners.html#feature" target="_blank" rel="noopener" style="color:var(--clay-deep); font-weight:700;">Curious what else the guide can do? &rarr;</a></p>
       </div>
@@ -787,9 +817,7 @@
     })();
   })();
   </script>
-  <!-- BCM lead-capture chat (GHL) — business pages only -->
-  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a7a99e7e427c78bb5f65491"></script>
-  <!-- GHL form auto-resize for the single get-listed iframe -->
-  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+  <!-- On-site forms (GHL chat + get-listed iframe removed 2026-11-22 ahead of the GHL pause) -->
+  <script src="/sml-form.js" defer></script>
 </body>
 </html>

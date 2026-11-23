@@ -135,6 +135,7 @@
     footer a:hover{color:var(--bay-deep)}
     footer .fnav a{display:inline-flex;align-items:center;min-height:44px;margin-right:1rem}
   </style>
+  <link rel="stylesheet" href="/sml-form.css" />
 </head>
 <body>
   <header class="site">
@@ -173,17 +174,28 @@
         <div class="formwrap">
           <h2>Request your free Growth Review</h2>
           <p class="sub">Tell us where to look, and where to send it.</p>
-          <iframe
-              src="https://api.leadconnectorhq.com/widget/form/aRPdopwYRW2h4H9vndno"
-              style="width:100%;min-height:820px;border:none;border-radius:8px"
-              id="inline-aRPdopwYRW2h4H9vndno"
-              data-layout="{'id':'INLINE'}"
-              data-form-name="Free Growth Review Request"
-              data-height="786"
-              data-form-id="aRPdopwYRW2h4H9vndno"
-              title="Free Growth Review Request">
-          </iframe>
-          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+          <form class="w3" data-w3="growth_review_form" data-name-field="organization" data-done="grDone">
+            <input type="hidden" name="access_key" value="16f8e5ea-b747-42ab-b5fd-eb46cacdfac4" />
+            <input type="hidden" name="subject" value="SML Growth Review request" />
+            <input type="hidden" name="from_name" value="San Mateo Local: Growth Review" />
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+            <div class="w3-row"><label for="gr-org">Business name</label><input type="text" id="gr-org" name="organization" required maxlength="120" /></div>
+            <div class="w3-row"><label for="gr-do">What do you do? <span class="opt">(optional)</span></label><input type="text" id="gr-do" name="what_you_do" maxlength="200" /></div>
+            <div class="w3-row"><label for="gr-name">Your name</label><input type="text" id="gr-name" name="name" required maxlength="80" autocomplete="name" /></div>
+            <div class="w3-two">
+              <div class="w3-row"><label for="gr-email">Email</label><input type="email" id="gr-email" name="email" required maxlength="120" autocomplete="email" /></div>
+              <div class="w3-row"><label for="gr-phone">Phone</label><input type="tel" id="gr-phone" name="phone" required maxlength="30" autocomplete="tel" /></div>
+            </div>
+            <div class="w3-row"><label for="gr-web">Website <span class="opt">(optional)</span></label><input type="text" id="gr-web" name="website" maxlength="200" /></div>
+            <div class="w3-row"><label for="gr-gbp">Google Business Profile link <span class="opt">(optional)</span></label><input type="text" id="gr-gbp" name="google_profile" maxlength="300" /></div>
+            <button type="submit">Request my free Growth Review</button>
+            <p class="w3-msg" role="alert"></p>
+          </form>
+          <div class="w3-done" id="grDone" hidden>
+            <h3>You're all set.</h3>
+            <p>A local will take a look and email your Growth Review within about five business days. Nothing more you need to do right now.</p>
+          </div>
+          <script src="/sml-form.js" defer></script>
         </div>
       </div>
     </section>
@@ -374,8 +386,9 @@
       async function submit(){
         loading('Sending...');
         try{
-          var res=await fetch('/api/growth-review',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({step:'submit',business_name:S.business_name,first_name:S.first_name,email:S.email,goal:S.goal,notes:S.notes})});
-          if(!res.ok) throw new Error('bad');
+          // Delivered by Web3Forms (emails Jason); the old GHL webhook was retired 2026-11-22.
+          var res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:'16f8e5ea-b747-42ab-b5fd-eb46cacdfac4',subject:'SML Growth Review (chat): '+S.business_name,from_name:'San Mateo Local: Growth Review chat',business_name:S.business_name,name:S.first_name,email:S.email,main_concern:S.goal||'',chat_notes:S.notes||''})});
+          var j=await res.json(); if(!j||!j.success) throw new Error('bad');
           try{gtag('event','lead_submit',{form_name:'growth_review_chat'});}catch(e){}
           bot("You're all set, "+S.first_name+". Your free Growth Review is submitted. A local will take a look and email it to you within about five business days. Nothing more you need to do right now.");
           finish(); return;

@@ -154,11 +154,11 @@
 })();
 
 /* claim_click — fires a GA4 event when someone clicks a "Claim this business / Verify your
-   information" CTA (the GHL claim form). Delegated, catches every such link on the page.
+   information" CTA (/claim.html; was the GHL form until 2026-11-22). Delegated, catches every such link on the page.
    Mark it as a key event in GA4. */
 (function () {
   document.addEventListener('click', function (e) {
-    var a = e.target && e.target.closest ? e.target.closest('a[href*="leadconnectorhq"]') : null;
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="claim.html"]') : null;
     if (!a || typeof window.gtag !== 'function') return;
     window.gtag('event', 'claim_click', {
       link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80),

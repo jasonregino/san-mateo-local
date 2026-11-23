@@ -1,0 +1,29 @@
+/* Shared styles for San Mateo Local on-site forms (see sml-form.js). */
+form.w3 { display:grid; gap:1rem; text-align:left; }
+form.w3 .w3-row { display:grid; gap:.35rem; }
+form.w3 .w3-two { display:grid; gap:1rem; grid-template-columns:1fr 1fr; }
+@media (max-width:560px) { form.w3 .w3-two { grid-template-columns:1fr; } }
+form.w3 label { font-weight:600; font-size:.88rem; color:var(--ink); }
+form.w3 label .opt { font-weight:400; color:var(--ink-soft); }
+form.w3 input[type=text], form.w3 input[type=email], form.w3 input[type=tel], form.w3 input[type=url],
+form.w3 input[type=date], form.w3 select, form.w3 textarea {
+  width:100%; box-sizing:border-box; border:1.5px solid var(--line); border-radius:8px; padding:.75rem;
+  font:inherit; font-size:1rem; background:var(--paper); color:var(--ink);
+}
+form.w3 textarea { min-height:6.5rem; resize:vertical; }
+form.w3 input:focus, form.w3 select:focus, form.w3 textarea:focus { outline:2px solid var(--bay); border-color:transparent; }
+form.w3 .w3-check { display:flex; gap:.55rem; align-items:flex-start; font-weight:400; color:var(--ink-soft); cursor:pointer; }
+form.w3 .w3-check input { margin-top:.3rem; width:auto; }
+form.w3 button[type=submit] {
+  background:var(--clay); color:#fff; border:none; border-radius:9px; padding:.95rem 1.6rem; min-height:48px;
+  font:inherit; font-weight:700; font-size:1rem; cursor:pointer; width:100%;
+}
+form.w3 button[type=submit]:hover { background:var(--clay-deep); }
+form.w3 button[type=submit]:disabled { opacity:.7; cursor:wait; }
+form.w3 button[type=submit]:focus-visible { outline:3px solid var(--bay); outline-offset:2px; }
+form.w3 .w3-msg { color:var(--clay-deep); font-weight:600; font-size:.92rem; min-height:1px; }
+form.w3 .w3-msg a { text-decoration:underline; }
+form.w3 .w3-fine { font-size:.85rem; color:var(--ink-soft); }
+.w3-done { padding:1.3rem 1.4rem; border-radius:12px; background:var(--paper-2); border-left:5px solid var(--bay); }
+.w3-done h3 { font-family:'Cormorant Garamond',Georgia,serif; font-size:1.5rem; margin:0 0 .4rem; }
+.w3-done p { color:var(--ink-soft); margin:.3rem 0; }
