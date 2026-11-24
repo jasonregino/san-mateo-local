@@ -89,7 +89,7 @@
   <script>(function(){try{document.documentElement.classList.add('js');var s=localStorage.getItem('sml-theme');var t=s||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-<!-- BUZZ-FRESH: added=2026-11-14 events=2 -->
+<!-- BUZZ-FRESH: added=2026-11-24 events=3 -->
   <div style="background:var(--paper-2); border-bottom:1px solid var(--line); font-size:0.82rem; text-align:center; padding:0.5rem 1rem;"><a href="for-business-owners.html" style="color:var(--ink-soft);">Own a San Mateo business? <strong style="color:var(--bay-deep);">Get on the guide &rarr;</strong></a></div>
   <div style="background:var(--paper); border-bottom:1px solid var(--line); font-size:0.8rem; text-align:center; padding:0.4rem 1rem; color:var(--ink-soft);">Now featuring <strong class="bizcount" style="color:var(--bay-deep); font-weight:700;">899</strong> local, independent San Mateo businesses and counting</div>
   <script>fetch('/concierge-data.json').then(function(r){return r.json();}).then(function(d){var n=d&&(d.localCount||(d.places&&d.places.length));if(n)document.querySelectorAll('.bizcount').forEach(function(e){e.textContent=n.toLocaleString();});}).catch(function(){});</script>
@@ -136,13 +136,13 @@
       <button class="chip on" data-f="all">Everything</button>
       <button class="chip" data-f="Featured"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Featured</button>
       <button class="chip" data-f="New &amp; Verified"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> New & Verified</button>
+      <button class="chip" data-f="Event"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</button>
       <button class="chip" data-f="New Opening"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg> New Opening</button>
       <button class="chip" data-f="Menu"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Menu</button>
       <button class="chip" data-f="Live Music"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Live Music</button>
       <button class="chip" data-f="Arts"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Arts</button>
       <button class="chip" data-f="Deal"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Deal</button>
       <button class="chip" data-f="Happy Hour"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Happy Hour</button>
-      <button class="chip" data-f="Event"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</button>
     </div>
     <div class="buzz-grid">
         <a class="bcard" href="eat-drink.html" data-type="Featured" style="--tc:#C25B3A; animation-delay:0s;">
@@ -190,7 +190,16 @@
           <p class="d">Guitar and ukulele lessons for kids and families. Read Brett's story about the moment students realize &quot;I can actually do this.&quot;</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="/business/fork-it-pasta.html" data-type="New Opening" style="--tc:#41614B; animation-delay:0.25s;">
+        <a class="bcard" href="https://dsma.org/event/shop-small-to-win-big-in-san-mateo-2/" data-type="Event" style="--tc:#3B5BA0; animation-delay:0.25s;">
+          
+          <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Event</span><span class="fresh">New</span></div>
+          
+          <h3>Shop Small to Win Big</h3>
+          <p class="meta">Sat Nov 28 · giveaway through Dec 14</p>
+          <p class="d">Buy anything from a San Mateo small business through Dec 14 and you're entered to win prizes from local businesses. On Saturday, Aragon High's jazz ensemble plays B Street from 1 to 3pm.</p>
+          <span class="go">Take a look &rarr;</span>
+        </a>
+        <a class="bcard" href="/business/fork-it-pasta.html" data-type="New Opening" style="--tc:#41614B; animation-delay:0.30000000000000004s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg> New Opening</span><span class="fresh">Added Nov 14</span></div>
           
@@ -199,7 +208,7 @@
           <p class="d">Just opened in the Laurelwood shops: a fast-casual pasta house with about 10 signature pastas, salads, kids' meals and croissant desserts.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard bcard-span" href="/business/rise-woodfire-pizza-rotisserie.html" data-type="Menu" style="--tc:#8A6D3B; animation-delay:0.30000000000000004s;">
+        <a class="bcard bcard-span" href="/business/rise-woodfire-pizza-rotisserie.html" data-type="Menu" style="--tc:#8A6D3B; animation-delay:0.35000000000000003s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Menu</span></div>
           <img class="bcard-logo" src="/images/logos/rise-woodfire-logo.jpg" alt="Rise Woodfire Pizza &amp; Rotisserie" loading="lazy">
@@ -208,7 +217,7 @@
           <p class="d">Rise Woodfire is offering holiday meal packages this season: a Holiday Turkey Feast, a Holiday Prime Rib Feast, and a Woodfire Holiday Feast. Contact Rise for details and ordering.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="eat-drink.html" data-type="Live Music" style="--tc:#2E7D8A; animation-delay:0.35000000000000003s;">
+        <a class="bcard" href="eat-drink.html" data-type="Live Music" style="--tc:#2E7D8A; animation-delay:0.4s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Live Music</span></div>
           
@@ -217,7 +226,7 @@
           <p class="d">Old-school Italian with live jazz several nights a week.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="eat-drink.html" data-type="Featured" style="--tc:#C25B3A; animation-delay:0.4s;">
+        <a class="bcard" href="eat-drink.html" data-type="Featured" style="--tc:#C25B3A; animation-delay:0.45s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Featured</span></div>
           
@@ -226,7 +235,7 @@
           <p class="d">Earned its 9th Michelin Bib Gourmand in 2026. Scratch-made Northern-Italian pastas and an all-Italian wine list.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="downtown-walking-tour.html" data-type="Arts" style="--tc:#B07D2B; animation-delay:0.45s;">
+        <a class="bcard" href="downtown-walking-tour.html" data-type="Arts" style="--tc:#B07D2B; animation-delay:0.5s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> Arts</span></div>
           
@@ -235,7 +244,7 @@
           <p class="d">A vibrant new mural by Leysar Garcia, winner of last year's Mural Madness live-painting competition, funded by the county and downtown partners.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="local-services.html" data-type="Deal" style="--tc:#C0392B; animation-delay:0.5s;">
+        <a class="bcard" href="local-services.html" data-type="Deal" style="--tc:#C0392B; animation-delay:0.55s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg> Deal</span></div>
           
@@ -244,7 +253,7 @@
           <p class="d">Weekly happy-hour specials on services at this downtown salon.</p>
           <span class="go">Take a look &rarr;</span>
         </a>
-        <a class="bcard" href="eat-drink.html" data-type="Happy Hour" style="--tc:#D98A2B; animation-delay:0.55s;">
+        <a class="bcard" href="eat-drink.html" data-type="Happy Hour" style="--tc:#D98A2B; animation-delay:0.6s;">
           
           <div class="bcard-top"><span class="pill"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; flex:none;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Happy Hour</span></div>
           
